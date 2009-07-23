@@ -1,0 +1,156 @@
+﻿<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="3.5">
+  <PropertyGroup>
+    <AssemblyName>TestApiCore</AssemblyName>
+    <RootNamespace>Microsoft.Test</RootNamespace>
+    <OutputType>Library</OutputType>
+    <ProjectGuid>{11195B2B-C8B1-41C3-BE64-82857E2A72BB}</ProjectGuid>
+    <DocumentationFile>obj\$(Configuration)\$(AssemblyName).xml</DocumentationFile>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Core" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Include="ApplicationControl\ApplicationSettings.cs" />
+    <Compile Include="ApplicationControl\AutomatedApplication.cs" />
+    <Compile Include="ApplicationControl\AutomatedApplicationEventArgs.cs" />
+    <Compile Include="ApplicationControl\AutomatedApplicationEventType.cs" />
+    <Compile Include="ApplicationControl\AutomatedApplicationFocusChangedEventArgs.cs" />
+    <Compile Include="ApplicationControl\IAutomatedApplicationImpl.cs" />    
+    <Compile Include="ApplicationControl\IAutomatedApplicationImplFactory.cs" />
+    <Compile Include="ApplicationControl\InProcessApplication.cs" />
+    <Compile Include="ApplicationControl\InProcessApplicationSettings.cs" />
+    <Compile Include="ApplicationControl\InProcessApplicationType.cs" />
+    <Compile Include="ApplicationControl\IOutOfProcessAutomatedApplicationImpl.cs" />    
+    <Compile Include="ApplicationControl\OutOfProcessApplication.cs" />
+    <Compile Include="ApplicationControl\OutOfProcessApplicationSettings.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Include="CommandLineParsing\Command.cs" />
+    <Compile Include="CommandLineParsing\CommandLineDictionary.cs" />
+    <Compile Include="CommandLineParsing\CommandLineParser.cs" />
+    <Compile Include="CommandLineParsing\DirectoryInfoConverter.cs" />
+    <Compile Include="CommandLineParsing\FileInfoConverter.cs" />
+    <Compile Include="CommandLineParsing\RequiredAttribute.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Include="FaultInjection\BuiltInConditions.cs" />
+    <Compile Include="FaultInjection\BuiltInFaults.cs" />
+    <Compile Include="FaultInjection\ComRegistrar.cs" />
+    <Compile Include="FaultInjection\Conditions\TriggerOnEveryCall.cs" />
+    <Compile Include="FaultInjection\Conditions\TriggerOnEveryNthCall.cs" />
+    <Compile Include="FaultInjection\Conditions\TriggerOnFirstCall.cs" />
+    <Compile Include="FaultInjection\Constants\ApiErrorMessages.cs" />
+    <Compile Include="FaultInjection\Constants\EnvironmentVariable.cs" />
+    <Compile Include="FaultInjection\Constants\XmlErrorMessages.cs"/>
+    <Compile Include="FaultInjection\BuiltInType.cs" />
+    <Compile Include="FaultInjection\CallStack.cs" />
+    <Compile Include="FaultInjection\Constants\EngineInfo.cs" />
+    <Compile Include="FaultInjection\FaultDispatcher.cs" />
+    <Compile Include="FaultInjection\Constants\FaultDispatcherMessages.cs" />
+    <Compile Include="FaultInjection\FaultInjectionException.cs" />
+    <Compile Include="FaultInjection\FaultRule.cs" />
+    <Compile Include="FaultInjection\FaultRuleLoader.cs" />
+    <Compile Include="FaultInjection\FaultSession.cs" />
+    <Compile Include="FaultInjection\Faults\ReturnFault.cs" />
+    <Compile Include="FaultInjection\ICondition.cs" />
+    <Compile Include="FaultInjection\IFault.cs" />
+    <Compile Include="FaultInjection\IRuntimeContext.cs" />
+    <Compile Include="FaultInjection\MethodFilter.cs" />
+    <Compile Include="FaultInjection\Conditions\NeverTrigger.cs" />
+    <Compile Include="FaultInjection\Faults\ReturnValueFault.cs" />
+    <Compile Include="FaultInjection\Faults\ReturnValueRuntimeFault.cs" />
+    <Compile Include="FaultInjection\RuntimeContext.cs" />
+    <Compile Include="FaultInjection\Faults\RuntimeFaultAttribute.cs" />
+    <Compile Include="FaultInjection\Serializer.cs" />
+    <Compile Include="FaultInjection\Faults\ThrowExceptionFault.cs" />
+    <Compile Include="FaultInjection\Faults\ThrowExceptionRuntimeFault.cs" />
+    <Compile Include="FaultInjection\Conditions\TriggerIfCalledBy.cs" />
+    <Compile Include="FaultInjection\Conditions\TriggerIfStackContains.cs" />
+    <Compile Include="FaultInjection\Conditions\TriggerOnNthCall.cs" />
+    <Compile Include="FaultInjection\Conditions\TriggerOnNthCallBy.cs" />
+    <Compile Include="FaultInjection\SignatureParsing\Expression.cs" />
+    <Compile Include="FaultInjection\SignatureParsing\MethodSignatureTranslator.cs" />
+    <Compile Include="FaultInjection\SignatureParsing\Signature.cs" />
+    <Compile Include="FaultInjection\SignatureParsing\SignatureStyle.cs" />
+  </ItemGroup>
+
+
+  <ItemGroup>
+    <Compile Include="Text\StringFactory.cs" />
+    <Compile Include="Text\StringProperties.cs" />
+  </ItemGroup>
+
+
+  <ItemGroup>
+    <Compile Include="VariationGeneration\Constraint.cs" />
+    <Compile Include="VariationGeneration\ConstraintSatisfaction.cs" />
+    <Compile Include="VariationGeneration\Constraints\AndConstraint.cs" />
+    <Compile Include="VariationGeneration\Constraints\ConditionConstraint.cs" />
+    <Compile Include="VariationGeneration\Constraints\EqualConstraint.cs" />
+    <Compile Include="VariationGeneration\Constraints\ConstraintHelpers.cs" />
+    <Compile Include="VariationGeneration\Constraints\GreaterThanConstraint.cs" />
+    <Compile Include="VariationGeneration\Constraints\GreaterThanOrEqualConstraint.cs" />
+    <Compile Include="VariationGeneration\Constraints\IfThenConstraint.cs" />
+    <Compile Include="VariationGeneration\Constraints\LessThanConstraint.cs" />
+    <Compile Include="VariationGeneration\Constraints\LessThanOrEqualConstraint.cs" />
+    <Compile Include="VariationGeneration\Constraints\NotConstraint.cs" />
+    <Compile Include="VariationGeneration\Constraints\NotEqualConstraint.cs" />
+    <Compile Include="VariationGeneration\Constraints\OrConstraint.cs" />
+    <Compile Include="VariationGeneration\InternalConstraintHelpers.cs" />
+    <Compile Include="VariationGeneration\InternalVariationGenerationException.cs" />
+    <Compile Include="VariationGeneration\Model.cs" />
+    <Compile Include="VariationGeneration\Parameter.cs" />
+    <Compile Include="VariationGeneration\ParameterInteraction.cs" />
+    <Compile Include="VariationGeneration\ParameterInteractionTable.cs" />
+    <Compile Include="VariationGeneration\ValueCombination.cs" />
+    <Compile Include="VariationGeneration\ValueCombinationState.cs" />
+    <Compile Include="VariationGeneration\Variation.cs" />
+    <Compile Include="VariationGeneration\VariationGenerator.cs" />
+  </ItemGroup>
+
+
+  <ItemGroup>
+    <Compile Include="VisualVerification\ColorDifference.cs" />
+    <Compile Include="VisualVerification\ColorExtensions.cs" />
+    <Compile Include="VisualVerification\HighFidelityColor.cs" />
+    <Compile Include="VisualVerification\Histogram.cs" />
+    <Compile Include="VisualVerification\NativeMethods.cs" />
+    <Compile Include="VisualVerification\Snapshot.cs" />
+    <Compile Include="VisualVerification\SnapshotColorVerifier.cs" />
+    <Compile Include="VisualVerification\SnapshotHistogramVerifier.cs" />
+    <Compile Include="VisualVerification\SnapshotToleranceMapVerifier.cs" />
+    <Compile Include="VisualVerification\SnapshotVerifier.cs" />
+    <Compile Include="VisualVerification\VerificationResult.cs" />
+    <Compile Include="VisualVerification\WindowSnapshotMode.cs" />
+  </ItemGroup>
+
+
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
