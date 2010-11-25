@@ -1,0 +1,202 @@
+// Microsoft Visual C++ generated resource script.
+//
+#include "resource.h"
+
+#define APSTUDIO_READONLY_SYMBOLS
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 2 resource.
+//
+#include "winres.h"
+
+/////////////////////////////////////////////////////////////////////////////
+#undef APSTUDIO_READONLY_SYMBOLS
+
+/////////////////////////////////////////////////////////////////////////////
+// Chinese (P.R.C.) resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_CHS)
+#ifdef _WIN32
+LANGUAGE LANG_CHINESE, SUBLANG_CHINESE_SIMPLIFIED
+#pragma code_page(936)
+#endif //_WIN32
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// REGISTRY
+//
+
+IDR_ENGINE              REGISTRY                "Engine.rgs"
+#endif    // Chinese (P.R.C.) resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+/////////////////////////////////////////////////////////////////////////////
+// English (U.S.) resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENU)
+#ifdef _WIN32
+LANGUAGE LANG_ENGLISH, SUBLANG_ENGLISH_US
+#pragma code_page(1252)
+#endif //_WIN32
+
+#ifdef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// TEXTINCLUDE
+//
+
+1 TEXTINCLUDE 
+BEGIN
+    "resource.h\0"
+END
+
+2 TEXTINCLUDE 
+BEGIN
+    "#include ""winres.h""\r\n"
+    "\0"
+END
+
+3 TEXTINCLUDE 
+BEGIN
+    "1 TYPELIB ""FaultInjectionEngine.tlb""\r\n"
+    "\0"
+END
+
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Version
+//
+
+VS_VERSION_INFO VERSIONINFO
+ FILEVERSION 1,0,0,1
+ PRODUCTVERSION 1,0,0,1
+ FILEFLAGSMASK 0x3fL
+#ifdef _DEBUG
+ FILEFLAGS 0x1L
+#else
+ FILEFLAGS 0x0L
+#endif
+ FILEOS 0x4L
+ FILETYPE 0x2L
+ FILESUBTYPE 0x0L
+BEGIN
+    BLOCK "StringFileInfo"
+    BEGIN
+        BLOCK "040904e4"
+        BEGIN
+            VALUE "CompanyName", "TODO: <Company name>"
+            VALUE "FileDescription", "TODO: <File description>"
+            VALUE "FileVersion", "1.0.0.1"
+            VALUE "LegalCopyright", "TODO: (c) <Company name>.  All rights reserved."
+            VALUE "InternalName", "FaultInjectionEngine.dll"
+            VALUE "OriginalFilename", "FaultInjectionEngine.dll"
+            VALUE "ProductName", "TODO: <Product name>"
+            VALUE "ProductVersion", "1.0.0.1"
+        END
+    END
+    BLOCK "VarFileInfo"
+    BEGIN
+        VALUE "Translation", 0x409, 1252
+    END
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// REGISTRY
+//
+
+IDR_FAULTINJECTIONENGINE REGISTRY                "FaultInjectionEngine.rgs"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// String Table
+//
+
+STRINGTABLE 
+BEGIN
+    IDS_PROJNAME            "FaultInjectionEngine"
+END
+
+STRINGTABLE 
+BEGIN
+    IDS_PROCESS_ID_AS_NAME  "%1!08X!"
+    IDS_EVENT_LOG_FILE_PATHNAME 
+                            "%1!s!\\FaultEngine.%2!s!.%3!04d!%4!02d!%5!02d!.%6!02d!%7!02d!%8!02d!.log"
+    IDS_MEMORY_DUMP_ADDRESS_INFO " @ Addr[%1!X!, %2!X!) Size=%3!d!(%3!X!h)"
+    IDS_EVENT_LEVEL_ERROR   "ERROR(%1!04X!:%2!04X!) : "
+    IDS_EVENT_LEVEL_WARNING "WARNING(%1!04X!:%2!04X!) : "
+    IDS_EVENT_LEVEL_INFO    "INFO.(%1!04X!:%2!04X!) : "
+    IDS_EVENT_LEVEL_TRACE   "DEBUG(%1!04X!:%2!04X!) : "
+    IDS_EVENT_LEVEL_DUMP    "DEBUG(%1!04X!:%2!04X!) : "
+END
+
+STRINGTABLE 
+BEGIN
+    IDS_REPORT_OPEN_METHOD_FILTER_FAILED 
+                            "Cannot open method filter file '%1!s!'"
+    IDS_REPORT_METHOD_INSIDE_PROTECTED_NAMESPACE 
+                            "Method %1!s!(...) will NOT be trapped because it's in protected namespace %2!s!"
+    IDS_REPORT_METHOD_FILTER_LIST_HEADER 
+                            "Method filter is loaded! Following methods will be trapped:"
+    IDS_REPORT_METHOD_FILTER_LIST_ELEMENT "  #%1!02d!: %2!s!(...)"
+    IDS_REPORT_METHOD_FILTER_LIST_FOOTER "<--- End of List --->"
+    IDS_REPORT_ENGINE_START "Microsoft Windows Server Solutions Fault Injection Engine Start!"
+    IDS_REPORT_FAILED_QUERY_INTERFACE 
+                            "CLR Error : ((%2!s!*)(0x%1!08x!))->QueryInterface(%3!s!) failed."
+    IDS_REPORT_FAILED_GET_FUNCTION_INFO 
+                            "CLR Error : ICorProfilerInfo::GetFunctionInfo(0x%2!X!, ...) failed with error 0x%1!X!"
+END
+
+STRINGTABLE 
+BEGIN
+    IDS_REPORT_FAILED_GET_MODULE_METADATA 
+                            "CLR Error : ICorProfilerInfo::GetModuleMetaData(0x%2!X!, %3!s!, %4!s!, ...) failed with error 0x%1!08X!"
+    IDS_REPORT_FAILED_GET_FUNCTION_ALLOCATOR 
+                            "CLR Error : ICorProfilerInfo::GetILFunctionBodyAllocator(0x%2!X!, ...) failed with error 0x%1!08X!"
+    IDS_REPORT_FAILED_GET_METHOD_PROPS 
+                            "CLR Error : IMetaDataImport::GetMethodProps(0x%2!X!, ...) failed with error 0x%1!08X!"
+    IDS_REPORT_FAILED_GET_TYPE_PROPS 
+                            "CLR Error : IMetaDataImport::GetTypeProps(0x%2!X!, ...) failed with error 0x%1!08X!"
+    IDS_REPORT_FAILED_GET_NESTED_CLASS_PROPS 
+                            "CLR Error : IMetaDataImport::GetNestedClassProps(0x%2!X!, ...) failed with error 0x%1!08X!"
+    IDS_REPORT_FAILED_GET_FUNCTION_BODY 
+                            "CLR Error : ICorProfilerInfo::GetILFunctionBody(0x%2!X!, 0x%3!X!, ...) failed with error 0x%1!08X!"
+    IDS_REPORT_FAILED_EMIT_TYPEREF_TOKEN 
+                            "CLR Error : Failed to emit type-ref token for [%1!s!]%2!s!"
+    IDS_REPORT_FAILED_EMIT_METHODREF_TOKEN 
+                            "CLR Error:Failed to emit method-ref token for [%1!s!]%2!s!.%3!s!(...)"
+    IDS_REPORT_FAILED_GET_SIG_FROM_TOKEN 
+                            "CLR Error : IMetaDataImport::GetSigFromToken(0x%2!X!, ...) failed with error 0x%1!08X!"
+    IDS_REPORT_FAILED_GET_TOKEN_FROM_SIG 
+                            "CLR Error : IMetaDataEmit::GetTokenFromSig(0x%2!X!, %3!d!, ...) failed with error 0x%1!08X!"
+    IDS_REPORT_FAILED_ALLOC "CLR Error : IMethodMalloc::Alloc(%2!d!) failed with error 0x%1!08X!"
+    IDS_REPORT_FAILED_SET_FUNCTION_BODY 
+                            "CLR Error : ICorProfilerInfo::SetILFunctionBody(0x%2!X!, 0x%3!X!, 0x%4!X!) failed with error 0x%1!08X!"
+    IDS_REPORT_FAILED_GET_TOKEN_FROM_TYPESPEC 
+                            "CLR Error : IMetaDataEmit::GetTokenFromTypeSpec(0x%2!x!, %3!d!,...) failed with error 0x%1!08X!"
+    IDS_REPORT_INVALID_SIGNATURE 
+                            "CLR Error : Invalide signature at address[%1!X!, %2!X!), size=%3!d!(%3!X!h)"
+    IDS_REPORT_SUCCESSFULLY_MODIFY_METHOD 
+                            "Successfully modify method %1!s!(...)."
+END
+
+#endif    // English (U.S.) resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+
+#ifndef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 3 resource.
+//
+1 TYPELIB "FaultInjectionEngine.tlb"
+
+/////////////////////////////////////////////////////////////////////////////
+#endif    // not APSTUDIO_INVOKED
+
