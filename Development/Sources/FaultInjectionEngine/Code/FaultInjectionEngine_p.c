@@ -4,7 +4,7 @@
 
 
  /* File created by MIDL compiler version 7.00.0555 */
-/* at Sun Nov 28 18:47:28 2010
+/* at Sun Nov 28 23:15:08 2010
  */
 /* Compiler settings for FaultInjectionEngine.idl:
     Oicf, W1, Zp8, env=Win32 (32b run), target_arch=X86 7.00.0555 
