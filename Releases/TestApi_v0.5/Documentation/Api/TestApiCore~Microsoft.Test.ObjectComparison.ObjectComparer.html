@@ -1,0 +1,83 @@
+<html dir="LTR" xmlns:ndoc="urn:ndoc-schema">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=Windows-1252" />
+    <meta name="vs_targetSchema" content="http://schemas.microsoft.com/intellisense/ie5" />
+    <title>ObjectComparer Class</title>
+    <xml>
+    </xml>
+    <link rel="stylesheet" type="text/css" href="MSDN.css" />
+  </head>
+  <body id="bodyID" class="dtBODY">
+    <div id="nsbanner">
+      <div id="bannerrow1">
+        <table class="bannerparthead" cellspacing="0">
+          <tr id="hdr">
+            <td class="runninghead">TestApi 0.5</td>
+            <td class="product">
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div id="TitleRow">
+        <h1 class="dtH1">ObjectComparer Class</h1>
+      </div>
+    </div>
+    <div id="nstext">
+      <p> Represents a generic object comparer. This class uses an <a href="TestApiCore~Microsoft.Test.ObjectComparison.ObjectComparer.ObjectGraphFactory.html">ObjectGraphFactory</a> instance to convert objects to graph representations before comparing the representations. </p>
+      <p>For a list of all members of this type, see <a href="TestApiCore~Microsoft.Test.ObjectComparison.ObjectComparer~Members.html">ObjectComparer Members</a>.</p>
+      <p>
+        <a href="http://msdn.microsoft.com/en-us/library/System.Object(VS.90).aspx">System.Object</a>
+        <br />   <b>ObjectComparer</b></p>
+      <div class="syntax">
+        <div>public sealed class ObjectComparer</div>
+      </div>
+      <H4 class="dtH4">Thread Safety</H4>
+      <P>
+          Public static (<b>Shared</b> in Visual Basic) members of this type are
+          safe for multithreaded operations. Instance members are <b>not</b> guaranteed to be
+          thread-safe.
+        </P>
+      <h4 class="dtH4">Remarks</h4>
+      <p> Comparing two objects for equivalence is a relatively common task during test validation. One example would be to test whether a type follows the rules required by a particular serializer by saving and loading the object and comparing the two. A deep object comparison is one where all the properties and its properties are compared repeatedly until primitives are reached. The .NET Framework provides mechanisms to perform such comparisons but requires the types in question to implement part of the comparison logic (IComparable, .Equals). However, there are often types that do not follow these mechanisms. This API provides a mechanism to deep compare two objects using reflection. </p>
+      <h4 class="dtH4">Example</h4>
+      <p> The following example demonstrates how to compare two objects using a general-purpose object comparison strategy (represented by <a href="TestApiCore~Microsoft.Test.ObjectComparison.PublicPropertyObjectGraphFactory.html">PublicPropertyObjectGraphFactory</a>). <pre class="code"> Person p1 = new Person("John");
+ p1.Children.Add(new Person("Peter"));
+ p1.Children.Add(new Person("Mary"));
+
+ Person p2 = new Person("John");
+ p2.Children.Add(new Person("Peter"));
+ 
+ ObjectGraphFactory factory = new PublicPropertyObjectGraphFactory();
+ ObjectComparer comparer = new ObjectComparer(factory);
+ Console.WriteLine(
+     "Objects p1 and p2 {0}", 
+     comparer.Compare(p1, p2) ? "match!" : "do NOT match!");
+ </pre> where Person is declared as follows: <pre class="code">class Person
+{
+    public Person(string name) 
+    { 
+        Name = name;
+        Children = new Collection&lt;Person&gt;();
+    }
+    public string Name { get; set; }
+    public Collection&lt;Person&gt; Children { get; private set;  }
+}
+</pre> In addition, the object comparison API allows the user to get back a list of comparison mismatches. For an example, see <a href="TestApiCore~Microsoft.Test.ObjectComparison.ObjectComparisonMismatch.html">ObjectComparisonMismatch</a> objects). </p>
+      <h4 class="dtH4">Requirements</h4>
+      <p>
+        <b>Namespace: </b>
+        <a href="~Microsoft.Test.ObjectComparison.html">Microsoft.Test.ObjectComparison</a>
+      </p>
+      <p>
+        <b>Assembly: </b>TestApiCore (in TestApiCore.dll)
+					</p>
+      <h4 class="dtH4">See Also</h4>
+      <p>
+        <a href="TestApiCore~Microsoft.Test.ObjectComparison.ObjectComparer~Members.html">ObjectComparer Members</a> | <a href="~Microsoft.Test.ObjectComparison.html">Microsoft.Test.ObjectComparison Namespace</a></p>
+      <object type="application/x-oleobject" classid="clsid:1e2a7bd0-dab9-11d0-b93a-00c04fc99f9e" viewastext="true" style="display: none;">
+        <param name="Keyword" value="ObjectComparer class, about ObjectComparer class">
+        </param>
+      </object>
+    </div>
+  </body>
+</html>

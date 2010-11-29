@@ -1,0 +1,67 @@
+<html dir="LTR" xmlns:ndoc="urn:ndoc-schema">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=Windows-1252" />
+    <meta name="vs_targetSchema" content="http://schemas.microsoft.com/intellisense/ie5" />
+    <title>CommandLineDictionary Class</title>
+    <xml>
+    </xml>
+    <link rel="stylesheet" type="text/css" href="MSDN.css" />
+  </head>
+  <body id="bodyID" class="dtBODY">
+    <div id="nsbanner">
+      <div id="bannerrow1">
+        <table class="bannerparthead" cellspacing="0">
+          <tr id="hdr">
+            <td class="runninghead">TestApi 0.5</td>
+            <td class="product">
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div id="TitleRow">
+        <h1 class="dtH1">CommandLineDictionary Class</h1>
+      </div>
+    </div>
+    <div id="nstext">
+      <p> Represents a dictionary that is aware of command line input patterns. All lookups for keys ignore case. </p>
+      <p>For a list of all members of this type, see <a href="TestApiCore~Microsoft.Test.CommandLineParsing.CommandLineDictionary~Members.html">CommandLineDictionary Members</a>.</p>
+      <p>
+        <a href="http://msdn.microsoft.com/en-us/library/System.Object(VS.90).aspx">System.Object</a>
+        <br />   <b>CommandLineDictionary</b></p>
+      <div class="syntax">
+        <div>public class CommandLineDictionary<b> : <a href="">Dictionary</a>&lt;<a href="">string</a>, <a href="">string</a>&gt;</b></div>
+      </div>
+      <H4 class="dtH4">Thread Safety</H4>
+      <P>
+          Public static (<b>Shared</b> in Visual Basic) members of this type are
+          safe for multithreaded operations. Instance members are <b>not</b> guaranteed to be
+          thread-safe.
+        </P>
+      <h4 class="dtH4">Example</h4>
+      <p> The example below demonstrates parsing a command line such as "Test.exe /verbose /runId=10" <pre class="code"> CommandLineDictionary d = CommandLineDictionary.FromArguments(args);
+
+ bool verbose = d.ContainsKey("verbose");
+ int runId = Int32.Parse(d["runId"]);
+ </pre> You can also explicitly provide key and value identifiers for the cases that use other characters (rather than '/' and '=') as key/value identifiers. The example below demonstrates parsing a command line such as "Test.exe -verbose -runId:10" <pre class="code"> CommandLineDictionary d = CommandLineDictionary.FromArguments(args, '-', ':');  
+
+ bool verbose = d.ContainsKey("verbose");
+ int runId = Int32.Parse(d["runId"]);
+ </pre></p>
+      <h4 class="dtH4">Requirements</h4>
+      <p>
+        <b>Namespace: </b>
+        <a href="~Microsoft.Test.CommandLineParsing.html">Microsoft.Test.CommandLineParsing</a>
+      </p>
+      <p>
+        <b>Assembly: </b>TestApiCore (in TestApiCore.dll)
+					</p>
+      <h4 class="dtH4">See Also</h4>
+      <p>
+        <a href="TestApiCore~Microsoft.Test.CommandLineParsing.CommandLineDictionary~Members.html">CommandLineDictionary Members</a> | <a href="~Microsoft.Test.CommandLineParsing.html">Microsoft.Test.CommandLineParsing Namespace</a></p>
+      <object type="application/x-oleobject" classid="clsid:1e2a7bd0-dab9-11d0-b93a-00c04fc99f9e" viewastext="true" style="display: none;">
+        <param name="Keyword" value="CommandLineDictionary class, about CommandLineDictionary class">
+        </param>
+      </object>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,120 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<TestRun id="d6447791-9ecd-41a2-938a-b622e0a4ea83" name="alexisr@ALEXISR-WPFDEV 2009-11-20 16:56:21" runUser="REDMOND\alexisr" xmlns="http://microsoft.com/schemas/VisualStudio/TeamTest/2006">
+  <TestRunConfiguration name="Default Run Configuration" id="55f3f279-50e3-4a81-bfb4-c840dc0322cb">
+    <Deployment runDeploymentRoot="C:\dd\WPF_1\binaries\x86chk\wpf\Test\TestApi\Samples\MSTest\TestResults\alexisr_ALEXISR-WPFDEV 2009-11-20 16_56_21">
+      <DeploymentItem filename="C:\dd\WPF_1\binaries\x86chk\wpf\Test\TestApi\Samples\SampleApp\bin\Debug\SampleApp.exe" />
+      <DeploymentItem filename="C:\dd\WPF_1\binaries\x86chk\wpf\Test\TestApi\Binaries\TestApiCore.dll" />
+      <DeploymentItem filename="C:\dd\WPF_1\binaries\x86chk\wpf\Test\TestApi\Binaries\TestApiWpf.dll" />
+    </Deployment>
+    <Hosts skipUnhostableTests="false" />
+    <TestTypeSpecific />
+  </TestRunConfiguration>
+  <ResultSummary outcome="Failed">
+    <Counters total="6" executed="6" passed="5" error="0" failed="1" timeout="0" aborted="0" inconclusive="0" passedButRunAborted="0" notRunnable="0" notExecuted="0" disconnected="0" warning="0" completed="0" inProgress="0" pending="0" />
+  </ResultSummary>
+  <Times creation="2009-11-20T16:56:21.6623049-08:00" queuing="2009-11-20T16:56:24.3611395-08:00" start="2009-11-20T16:56:24.7355443-08:00" finish="2009-11-20T16:56:31.9368973-08:00" />
+  <TestDefinitions>
+    <UnitTest name="FaultAppendText" storage="c:\dd\wpf_1\binaries\x86chk\wpf\test\testapi\samples\mstest\tests\bin\debug\tests.dll" id="75ab352d-fc58-6855-4d93-baf42240b57e">
+      <Css projectStructure="" iteration="" />
+      <Owners>
+        <Owner name="" />
+      </Owners>
+      <DeploymentItems>
+        <DeploymentItem filename="FaultInjectionEngine\x86\FaultInjectionEngine.dll" outputDirectory="FaultInjectionEngine\x86" />
+        <DeploymentItem filename="FaultInjectionEngine\x64\FaultInjectionEngine.pdb" outputDirectory="FaultInjectionEngine\x64" />
+        <DeploymentItem filename="FaultInjectionEngine\x86\FaultInjectionEngine.pdb" outputDirectory="FaultInjectionEngine\x86" />
+        <DeploymentItem filename="FaultInjectionEngine\x64\FaultInjectionEngine.dll" outputDirectory="FaultInjectionEngine\x64" />
+      </DeploymentItems>
+      <Execution id="60c9046e-498f-4637-a383-4f0326e4a415" />
+      <TestMethod codeBase="C:\dd\WPF_1\binaries\x86chk\wpf\Test\TestApi\Samples\MSTest\Tests\bin\Debug\Tests.dll" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.Adapter, Version=9.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" className="Tests.FaultInjectionTests, Tests" name="FaultAppendText" />
+    </UnitTest>
+    <UnitTest name="VerifyWindowAppearance" storage="c:\dd\wpf_1\binaries\x86chk\wpf\test\testapi\samples\mstest\tests\bin\debug\tests.dll" id="70884c20-5e5b-dcd8-2ad1-9a939d156749">
+      <Css projectStructure="" iteration="" />
+      <Owners>
+        <Owner name="" />
+      </Owners>
+      <DeploymentItems>
+        <DeploymentItem filename="ToleranceMap.png" />
+        <DeploymentItem filename="Master.png" />
+      </DeploymentItems>
+      <Execution id="7043016a-7750-41b5-ac1a-433d6e7d4536" />
+      <TestMethod codeBase="C:\dd\WPF_1\binaries\x86chk\wpf\Test\TestApi\Samples\MSTest\Tests\bin\Debug\Tests.dll" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.Adapter, Version=9.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" className="VisualVerificationTests, Tests" name="VerifyWindowAppearance" />
+    </UnitTest>
+    <UnitTest name="SampleWithExpectedResultsTest" storage="c:\dd\wpf_1\binaries\x86chk\wpf\test\testapi\samples\mstest\tests\bin\debug\tests.dll" id="2e5bb3d8-be5c-9144-6791-718d76c89a50">
+      <Css projectStructure="" iteration="" />
+      <Owners>
+        <Owner name="" />
+      </Owners>
+      <Execution id="55efa8c1-4457-4dee-b463-384b6db09a7b" />
+      <TestMethod codeBase="C:\dd\WPF_1\binaries\x86chk\wpf\Test\TestApi\Samples\MSTest\Tests\bin\Debug\Tests.dll" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.Adapter, Version=9.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" className="Tests.VariationGenerationTests, Tests" name="SampleWithExpectedResultsTest" />
+    </UnitTest>
+    <UnitTest name="CompareObjects" storage="c:\dd\wpf_1\binaries\x86chk\wpf\test\testapi\samples\mstest\tests\bin\debug\tests.dll" id="087f2f08-2d1e-f5a7-8a08-16ec74e6f49e">
+      <Css projectStructure="" iteration="" />
+      <Owners>
+        <Owner name="" />
+      </Owners>
+      <Execution id="93464b1f-c4f0-4c56-ab90-aa2d65b04d27" />
+      <TestMethod codeBase="C:\dd\WPF_1\binaries\x86chk\wpf\Test\TestApi\Samples\MSTest\Tests\bin\Debug\Tests.dll" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.Adapter, Version=9.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" className="Tests.ObjectComparisonTests, Tests" name="CompareObjects" />
+    </UnitTest>
+    <UnitTest name="VerifyInput" storage="c:\dd\wpf_1\binaries\x86chk\wpf\test\testapi\samples\mstest\tests\bin\debug\tests.dll" id="de00bf0d-d40e-00e8-4c38-127bf9612889">
+      <Css projectStructure="" iteration="" />
+      <Owners>
+        <Owner name="" />
+      </Owners>
+      <Execution id="8dc787c0-c067-429c-87ff-4a4427f4acb1" />
+      <TestMethod codeBase="C:\dd\WPF_1\binaries\x86chk\wpf\Test\TestApi\Samples\MSTest\Tests\bin\Debug\Tests.dll" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.Adapter, Version=9.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" className="UIAutomationTests, Tests" name="VerifyInput" />
+    </UnitTest>
+    <UnitTest name="SampleTest" storage="c:\dd\wpf_1\binaries\x86chk\wpf\test\testapi\samples\mstest\tests\bin\debug\tests.dll" id="6530dd78-05e6-ebf3-afc9-dff1a0167c48">
+      <Css projectStructure="" iteration="" />
+      <Owners>
+        <Owner name="" />
+      </Owners>
+      <Execution id="87281fe1-725e-4c4b-b529-6156b4f1295f" />
+      <TestMethod codeBase="C:\dd\WPF_1\binaries\x86chk\wpf\Test\TestApi\Samples\MSTest\Tests\bin\Debug\Tests.dll" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.Adapter, Version=9.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" className="Tests.VariationGenerationTests, Tests" name="SampleTest" />
+    </UnitTest>
+  </TestDefinitions>
+  <TestLists>
+    <TestList name="Results Not in a List" id="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestList name="All Loaded Results" id="19431567-8539-422a-85d7-44ee4e166bda" />
+  </TestLists>
+  <TestEntries>
+    <TestEntry testId="75ab352d-fc58-6855-4d93-baf42240b57e" executionId="60c9046e-498f-4637-a383-4f0326e4a415" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="087f2f08-2d1e-f5a7-8a08-16ec74e6f49e" executionId="93464b1f-c4f0-4c56-ab90-aa2d65b04d27" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="de00bf0d-d40e-00e8-4c38-127bf9612889" executionId="8dc787c0-c067-429c-87ff-4a4427f4acb1" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="6530dd78-05e6-ebf3-afc9-dff1a0167c48" executionId="87281fe1-725e-4c4b-b529-6156b4f1295f" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="2e5bb3d8-be5c-9144-6791-718d76c89a50" executionId="55efa8c1-4457-4dee-b463-384b6db09a7b" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="70884c20-5e5b-dcd8-2ad1-9a939d156749" executionId="7043016a-7750-41b5-ac1a-433d6e7d4536" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+  </TestEntries>
+  <Results>
+    <UnitTestResult executionId="60c9046e-498f-4637-a383-4f0326e4a415" testId="75ab352d-fc58-6855-4d93-baf42240b57e" testName="FaultAppendText" computerName="ALEXISR-WPFDEV" duration="00:00:01.8800061" startTime="2009-11-20T16:56:24.8759461-08:00" endTime="2009-11-20T16:56:27.2643959-08:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Failed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d">
+      <Output>
+        <ErrorInfo>
+          <Message>Assert.AreEqual failed. Expected:&lt;&gt;. Actual:&lt;TestTest
+&gt;. </Message>
+          <StackTrace>   at Tests.FaultInjectionTests.FaultAppendText() in C:\dd\WPF_1\binaries\x86chk\wpf\Test\TestApi\Samples\MSTest\Tests\FaultInjectionTests.cs:line 87
+</StackTrace>
+        </ErrorInfo>
+      </Output>
+    </UnitTestResult>
+    <UnitTestResult executionId="93464b1f-c4f0-4c56-ab90-aa2d65b04d27" testId="087f2f08-2d1e-f5a7-8a08-16ec74e6f49e" testName="CompareObjects" computerName="ALEXISR-WPFDEV" duration="00:00:00.0146141" startTime="2009-11-20T16:56:27.2799961-08:00" endTime="2009-11-20T16:56:27.2955963-08:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d">
+      <Output>
+      </Output>
+    </UnitTestResult>
+    <UnitTestResult executionId="8dc787c0-c067-429c-87ff-4a4427f4acb1" testId="de00bf0d-d40e-00e8-4c38-127bf9612889" testName="VerifyInput" computerName="ALEXISR-WPFDEV" duration="00:00:01.6175087" startTime="2009-11-20T16:56:27.2955963-08:00" endTime="2009-11-20T16:56:28.9254328-08:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d">
+      <Output>
+      </Output>
+    </UnitTestResult>
+    <UnitTestResult executionId="87281fe1-725e-4c4b-b529-6156b4f1295f" testId="6530dd78-05e6-ebf3-afc9-dff1a0167c48" testName="SampleTest" computerName="ALEXISR-WPFDEV" duration="00:00:00.0923227" startTime="2009-11-20T16:56:28.9410330-08:00" endTime="2009-11-20T16:56:29.0346342-08:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d">
+      <Output>
+      </Output>
+    </UnitTestResult>
+    <UnitTestResult executionId="55efa8c1-4457-4dee-b463-384b6db09a7b" testId="2e5bb3d8-be5c-9144-6791-718d76c89a50" testName="SampleWithExpectedResultsTest" computerName="ALEXISR-WPFDEV" duration="00:00:00.0272615" startTime="2009-11-20T16:56:29.0346342-08:00" endTime="2009-11-20T16:56:29.0658346-08:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d">
+      <Output>
+      </Output>
+    </UnitTestResult>
+    <UnitTestResult executionId="7043016a-7750-41b5-ac1a-433d6e7d4536" testId="70884c20-5e5b-dcd8-2ad1-9a939d156749" testName="VerifyWindowAppearance" computerName="ALEXISR-WPFDEV" duration="00:00:02.7396797" startTime="2009-11-20T16:56:29.0814348-08:00" endTime="2009-11-20T16:56:31.8120957-08:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d">
+      <Output>
+      </Output>
+    </UnitTestResult>
+  </Results>
+</TestRun>

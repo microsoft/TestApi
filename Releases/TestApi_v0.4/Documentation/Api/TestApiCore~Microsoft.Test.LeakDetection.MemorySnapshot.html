@@ -1,0 +1,55 @@
+<html dir="LTR" xmlns:ndoc="urn:ndoc-schema">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=Windows-1252" />
+    <meta name="vs_targetSchema" content="http://schemas.microsoft.com/intellisense/ie5" />
+    <title>MemorySnapshot Class</title>
+    <xml>
+    </xml>
+    <link rel="stylesheet" type="text/css" href="MSDN.css" />
+  </head>
+  <body id="bodyID" class="dtBODY">
+    <div id="nsbanner">
+      <div id="bannerrow1">
+        <table class="bannerparthead" cellspacing="0">
+          <tr id="hdr">
+            <td class="runninghead">TestApi 0.4</td>
+            <td class="product">
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div id="TitleRow">
+        <h1 class="dtH1">MemorySnapshot Class</h1>
+      </div>
+    </div>
+    <div id="nstext"> Represents a snapshot in time of the memory consumed by a specified OS process. MemorySnapshot objects can be instantiated from a running process or from a file. <p xmlns="urn:ndoc-schema">MemorySnapshot objects are used for detection of <a href="http://en.wikipedia.org/wiki/Memory_leak">memory leaks</a>.</p><p>For a list of all members of this type, see <a href="TestApiCore~Microsoft.Test.LeakDetection.MemorySnapshot~Members.html">MemorySnapshot Members</a>.</p><p><a href="http://msdn.microsoft.com/en-us/library/System.Object(VS.90).aspx">System.Object</a><br />   <b>MemorySnapshot</b></p><div class="syntax"><div>public class MemorySnapshot</div></div><H4 class="dtH4">Thread Safety</H4><P>
+          Public static (<b>Shared</b> in Visual Basic) members of this type are
+          safe for multithreaded operations. Instance members are <b>not</b> guaranteed to be
+          thread-safe.
+        </P><h4 class="dtH4">Remarks</h4><p xmlns="urn:ndoc-schema">For more information on memory leak detection in native code, refer to the <a href="http://msdn.microsoft.com/en-us/library/x98tx3cf.aspx"> Memory Leak Detection and Isolation</a> article. The table below provides a relationship between the metrics reported by the different tools: </p><table style="font-size:xx-small" border="1" bordercolor="#CCCCCC" cellpadding="1" cellspacing="0" xmlns="urn:ndoc-schema"><tr><td><strong>TestApi</strong></td><td><strong><a href="http://msdn.microsoft.com/en-us/library/aa373083(VS.85).aspx">Performance Counters</a></strong></td><td><strong><a href="http://technet.microsoft.com/en-us/sysinternals/bb896653.aspx">Process Explorer</a></strong></td><td><strong>Task Manager (Windows 7)</strong></td></tr><tr><td><a href="TestApiCore~Microsoft.Test.LeakDetection.MemorySnapshot.GdiObjectCount.html" xmlns="">GdiObjectCount</a></td><td> - </td><td>Handles : GDI Objects</td><td>GDI Handles</td></tr><tr><td><a href="TestApiCore~Microsoft.Test.LeakDetection.MemorySnapshot.HandleCount.html" xmlns="">HandleCount</a></td><td>HandleCount</td><td>Handles : Handles</td><td>Handles</td></tr><tr><td><a href="TestApiCore~Microsoft.Test.LeakDetection.MemorySnapshot.PageFileBytes.html" xmlns="">PageFileBytes</a></td><td>PageFileBytes</td><td> - </td><td> - </td></tr><tr><td><a href="TestApiCore~Microsoft.Test.LeakDetection.MemorySnapshot.PageFilePeakBytes.html" xmlns="">PageFilePeakBytes</a></td><td>PageFileBytesPeak</td><td> - </td><td> - </td></tr><tr><td><a href="TestApiCore~Microsoft.Test.LeakDetection.MemorySnapshot.PoolNonpagedBytes.html" xmlns="">PoolNonpagedBytes</a></td><td>Pool Nonpaged Bytes</td><td> - </td><td>NonPaged Pool</td></tr><tr><td><a href="TestApiCore~Microsoft.Test.LeakDetection.MemorySnapshot.PoolPagedBytes.html" xmlns="">PoolPagedBytes</a></td><td>Pool Paged Bytes</td><td> - </td><td>Paged Pool</td></tr><tr><td><a href="TestApiCore~Microsoft.Test.LeakDetection.MemorySnapshot.ThreadCount.html" xmlns="">ThreadCount</a></td><td> - </td><td>Threads</td><td>Threads</td></tr><tr><td><a href="TestApiCore~Microsoft.Test.LeakDetection.MemorySnapshot.Timestamp.html" xmlns="">Timestamp</a></td><td> - </td><td> - </td><td> - </td></tr><tr><td><a href="TestApiCore~Microsoft.Test.LeakDetection.MemorySnapshot.UserObjectCount.html" xmlns="">UserObjectCount</a></td><td> - </td><td>Handles : USER Objects</td><td>USER Handles</td></tr><tr><td><a href="TestApiCore~Microsoft.Test.LeakDetection.MemorySnapshot.VirtualMemoryBytes.html" xmlns="">VirtualMemoryBytes</a></td><td>VirtualBytes</td><td>Virtual Memory : Virtual Size</td><td> - </td></tr><tr><td><a href="TestApiCore~Microsoft.Test.LeakDetection.MemorySnapshot.VirtualMemoryPrivateBytes.html" xmlns="">VirtualMemoryPrivateBytes</a></td><td>PrivateBytes</td><td>Virtual Memory : Private Bytes</td><td>Commit Size</td></tr><tr><td><a href="TestApiCore~Microsoft.Test.LeakDetection.MemorySnapshot.WorkingSetBytes.html" xmlns="">WorkingSetBytes</a></td><td>WorkingSet</td><td>Physical Memory : WorkingSet</td><td>Working Set (Memory)</td></tr><tr><td><a href="TestApiCore~Microsoft.Test.LeakDetection.MemorySnapshot.WorkingSetPeakBytes.html" xmlns="">WorkingSetPeakBytes</a></td><td>WorkingSetPeak</td><td>Physical Memory : Peak Working Set</td><td>Peak Working Set (Memory)</td></tr><tr><td><a href="TestApiCore~Microsoft.Test.LeakDetection.MemorySnapshot.WorkingSetPrivateBytes.html" xmlns="">WorkingSetPrivateBytes</a></td><td>WorkingSetPrivate</td><td>Physical Memory : Working Set : WS Private</td><td>Memory (Private Working Set)</td></tr></table><h4 class="dtH4">Example</h4><p><pre class="code"> // Start an instance of the target process and wait for it to reach steady state.
+ // Then take a memory snapshot.
+ Process p = Process.Start("notepad.exe");
+ p.WaitForInputIdle(5000);
+ MemorySnapshot s1 = MemorySnapshot.FromProcess(p.Id);
+ 
+ // Perform operations that may cause a leak in the target process...
+ // Then take another second memory snapshot
+ MemorySnapshot s2 = MemorySnapshot.FromProcess(p.Id);
+
+ // Compare the two memory snapshots and generate a diff.
+ // Check the fields of the resulting diff for possible leaks (indicated by fields with non-zero values).
+ MemorySnapshot diff = s2.CompareTo(s1);
+ if (diff.GdiObjectCount != 0)
+ {
+     s1.ToFile(@"\s1.xml");
+     s2.ToFile(@"\s2.xml");
+     Console.WriteLine("Possible GDI handle leak! Review the saved memory snapshots.");
+ }
+ 
+ // Close the process.
+ p.CloseMainWindow();
+ p.Close();
+ </pre></p><h4 class="dtH4">Requirements</h4><p><b>Namespace: </b><a href="~Microsoft.Test.LeakDetection.html">Microsoft.Test.LeakDetection</a></p><p><b>Assembly: </b>TestApiCore (in TestApiCore.dll)
+					</p><h4 class="dtH4">See Also</h4><p><a href="TestApiCore~Microsoft.Test.LeakDetection.MemorySnapshot~Members.html">MemorySnapshot Members</a> | <a href="~Microsoft.Test.LeakDetection.html">Microsoft.Test.LeakDetection Namespace</a></p><object type="application/x-oleobject" classid="clsid:1e2a7bd0-dab9-11d0-b93a-00c04fc99f9e" viewastext="true" style="display: none;"><param name="Keyword" value="MemorySnapshot class, about MemorySnapshot class"></param></object></div>
+  </body>
+</html>

@@ -1,0 +1,89 @@
+<html dir="LTR" xmlns:ndoc="urn:ndoc-schema">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=Windows-1252" />
+    <meta name="vs_targetSchema" content="http://schemas.microsoft.com/intellisense/ie5" />
+    <title>MemorySnapshotCollection Class</title>
+    <xml>
+    </xml>
+    <link rel="stylesheet" type="text/css" href="MSDN.css" />
+  </head>
+  <body id="bodyID" class="dtBODY">
+    <div id="nsbanner">
+      <div id="bannerrow1">
+        <table class="bannerparthead" cellspacing="0">
+          <tr id="hdr">
+            <td class="runninghead">TestApi 0.4</td>
+            <td class="product">
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div id="TitleRow">
+        <h1 class="dtH1">MemorySnapshotCollection Class</h1>
+      </div>
+    </div>
+    <div id="nstext">
+      <p> A collection of MemorySnapshots that can be serialized to an XML file. </p>
+      <p>For a list of all members of this type, see <a href="TestApiCore~Microsoft.Test.LeakDetection.MemorySnapshotCollection~Members.html">MemorySnapshotCollection Members</a>.</p>
+      <p>
+        <a href="http://msdn.microsoft.com/en-us/library/System.Object(VS.90).aspx">System.Object</a>
+        <br />   <b>MemorySnapshotCollection</b></p>
+      <div class="syntax">
+        <div>public class MemorySnapshotCollection<b> : <a href="">Collection</a>&lt;<a href="TestApiCore~Microsoft.Test.LeakDetection.MemorySnapshot.html">MemorySnapshot</a>&gt;</b></div>
+      </div>
+      <H4 class="dtH4">Thread Safety</H4>
+      <P>
+          Public static (<b>Shared</b> in Visual Basic) members of this type are
+          safe for multithreaded operations. Instance members are <b>not</b> guaranteed to be
+          thread-safe.
+        </P>
+      <h4 class="dtH4">Example</h4>
+      <p>
+        <pre class="code">
+// Create a memory snapshot collection and add the snapshots to it.
+MemorySnapshotCollection c = new MemorySnapshotCollection();     
+
+// Start an instance of the target process and wait for it to reach steady state.
+// Then take a memory snapshot.
+Process p = Process.Start("notepad.exe");
+p.WaitForInputIdle(5000);
+MemorySnapshot s1 = MemorySnapshot.FromProcess(p.Id);
+c.Add(s1);
+
+// Perform operations that may cause a leak in the target process...
+// Then take another second memory snapshot
+MemorySnapshot s2 = MemorySnapshot.FromProcess(p.Id);
+c.Add(s2);
+
+// Save the collection to a XML file.
+c.ToFile(@"C:\mySnapshots.xml");
+
+// Close the process.
+p.CloseMainWindow();
+p.Close();
+
+</pre>
+        <pre class="code">
+// Load up a saved collection from a XML file.
+MemorySnapshotCollection c = MemorySnapshotCollection.FromFile(@"C:\SampleSnapshots.xml");
+
+</pre>
+      </p>
+      <h4 class="dtH4">Requirements</h4>
+      <p>
+        <b>Namespace: </b>
+        <a href="~Microsoft.Test.LeakDetection.html">Microsoft.Test.LeakDetection</a>
+      </p>
+      <p>
+        <b>Assembly: </b>TestApiCore (in TestApiCore.dll)
+					</p>
+      <h4 class="dtH4">See Also</h4>
+      <p>
+        <a href="TestApiCore~Microsoft.Test.LeakDetection.MemorySnapshotCollection~Members.html">MemorySnapshotCollection Members</a> | <a href="~Microsoft.Test.LeakDetection.html">Microsoft.Test.LeakDetection Namespace</a></p>
+      <object type="application/x-oleobject" classid="clsid:1e2a7bd0-dab9-11d0-b93a-00c04fc99f9e" viewastext="true" style="display: none;">
+        <param name="Keyword" value="MemorySnapshotCollection class, about MemorySnapshotCollection class">
+        </param>
+      </object>
+    </div>
+  </body>
+</html>

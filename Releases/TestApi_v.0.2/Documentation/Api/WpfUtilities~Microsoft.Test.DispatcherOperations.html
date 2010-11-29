@@ -1,0 +1,75 @@
+<html dir="LTR" xmlns:ndoc="urn:ndoc-schema">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=Windows-1252" />
+    <meta name="vs_targetSchema" content="http://schemas.microsoft.com/intellisense/ie5" />
+    <title>DispatcherOperations Class</title>
+    <xml>
+    </xml>
+    <link rel="stylesheet" type="text/css" href="MSDN.css" />
+  </head>
+  <body id="bodyID" class="dtBODY">
+    <div id="nsbanner">
+      <div id="bannerrow1">
+        <table class="bannerparthead" cellspacing="0">
+          <tr id="hdr">
+            <td class="runninghead">TestApi 0.2</td>
+            <td class="product">
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div id="TitleRow">
+        <h1 class="dtH1">DispatcherOperations Class</h1>
+      </div>
+    </div>
+    <div id="nstext">
+      <p> Helper class for the WPF Dispatcher. This class provides simple and consistent wrappers for common dispatcher operations. </p>
+      <p>For a list of all members of this type, see <a href="WpfUtilities~Microsoft.Test.DispatcherOperations~Members.html">DispatcherOperations Members</a>.</p>
+      <p>
+        <a href="http://msdn.microsoft.com/en-us/library/System.Object(VS.90).aspx">System.Object</a>
+        <br />   <b>DispatcherOperations</b></p>
+      <div class="syntax">
+        <div>public static class DispatcherOperations</div>
+      </div>
+      <H4 class="dtH4">Thread Safety</H4>
+      <P>
+          Public static (<b>Shared</b> in Visual Basic) members of this type are
+          safe for multithreaded operations. Instance members are <b>not</b> guaranteed to be
+          thread-safe.
+        </P>
+      <h4 class="dtH4">Example</h4>
+      <p>
+        <pre class="code">        // SAMPLE USAGE #1:
+        // Move the mouse to a certain location on the screen. Wait for a popup to appear. 
+        // Verify that it appeared.
+        TimeSpan defaultPopupDelay = TimeSpan.FromSeconds(2);
+        Mouse.MoveTo(new System.Drawing.Point(100, 100));
+        DispatcherOperations.WaitFor(defaultPopupDelay);
+        // verify that the popup showed up.
+
+        // SAMPLE USAGE #2:
+        // Click on a button and verify that a mouse click event handler gets called.
+        Mouse.MoveTo(new System.Drawing.Point(100, 100));
+        Mouse.Click(System.Windows.Input.MouseButton.Left);
+        DispatcherOperations.WaitFor(DispatcherPriority.SystemIdle);
+        // verify that the handler has been clicked (e.g. check a isClicked variable)
+</pre>
+      </p>
+      <h4 class="dtH4">Requirements</h4>
+      <p>
+        <b>Namespace: </b>
+        <a href="~Microsoft.Test.html">Microsoft.Test</a>
+      </p>
+      <p>
+        <b>Assembly: </b>WpfUtilities (in WpfUtilities.dll)
+					</p>
+      <h4 class="dtH4">See Also</h4>
+      <p>
+        <a href="WpfUtilities~Microsoft.Test.DispatcherOperations~Members.html">DispatcherOperations Members</a> | <a href="~Microsoft.Test.html">Microsoft.Test Namespace</a></p>
+      <object type="application/x-oleobject" classid="clsid:1e2a7bd0-dab9-11d0-b93a-00c04fc99f9e" viewastext="true" style="display: none;">
+        <param name="Keyword" value="DispatcherOperations class, about DispatcherOperations class">
+        </param>
+      </object>
+    </div>
+  </body>
+</html>

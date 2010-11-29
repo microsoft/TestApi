@@ -1,0 +1,58 @@
+﻿<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="3.5">
+  <PropertyGroup>
+    <AssemblyName>FrameworkUtilities</AssemblyName>
+    <RootNamespace>Microsoft.Test</RootNamespace>
+    <OutputType>Library</OutputType>
+    <ProjectGuid>{11195B2B-C8B1-41C3-BE64-82857E2A72BB}</ProjectGuid>
+    <DocumentationFile>obj\$(Configuration)\$(AssemblyName).xml</DocumentationFile>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Include="ColorDifference.cs" />
+    <Compile Include="ColorExtensions.cs" />
+    <Compile Include="Command.cs" />
+    <Compile Include="CommandLineDictionary.cs" />
+    <Compile Include="CommandLineParser.cs" />
+    <Compile Include="DirectoryInfoConverter.cs" />
+    <Compile Include="FileInfoConverter.cs" />
+    <Compile Include="HighFidelityColor.cs" />
+    <Compile Include="Histogram.cs" />
+    <Compile Include="NativeMethods.cs" />
+    <Compile Include="RequiredAttribute.cs" />
+    <Compile Include="Snapshot.cs" />
+    <Compile Include="SnapshotColorVerifier.cs" />
+    <Compile Include="SnapshotHistogramVerifier.cs" />
+    <Compile Include="SnapshotToleranceMapVerifier.cs" />
+    <Compile Include="SnapshotVerifier.cs" />
+    <Compile Include="VerificationResult.cs" />
+    <Compile Include="WindowSnapshotMode.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Core" />
+  </ItemGroup>
+
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

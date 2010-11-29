@@ -1,0 +1,106 @@
+<html dir="LTR" xmlns:ndoc="urn:ndoc-schema">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=Windows-1252" />
+    <meta name="vs_targetSchema" content="http://schemas.microsoft.com/intellisense/ie5" />
+    <title>ParameterAttribute Class</title>
+    <xml>
+    </xml>
+    <link rel="stylesheet" type="text/css" href="MSDN.css" />
+  </head>
+  <body id="bodyID" class="dtBODY">
+    <div id="nsbanner">
+      <div id="bannerrow1">
+        <table class="bannerparthead" cellspacing="0">
+          <tr id="hdr">
+            <td class="runninghead">TestApi 0.5</td>
+            <td class="product">
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div id="TitleRow">
+        <h1 class="dtH1">ParameterAttribute Class</h1>
+      </div>
+    </div>
+    <div id="nstext">
+      <p> Specifies an attribute to decorate the properties of the class that is used for generating model parameters. </p>
+      <p>For a list of all members of this type, see <a href="TestApiCore~Microsoft.Test.VariationGeneration.ParameterAttribute~Members.html">ParameterAttribute Members</a>.</p>
+      <p>
+        <a href="http://msdn.microsoft.com/en-us/library/System.Object(VS.90).aspx">System.Object</a>
+        <br />   <b>ParameterAttribute</b></p>
+      <div class="syntax">
+        <div>public class ParameterAttribute<b> : <a href="">Attribute</a></b></div>
+      </div>
+      <H4 class="dtH4">Thread Safety</H4>
+      <P>
+          Public static (<b>Shared</b> in Visual Basic) members of this type are
+          safe for multithreaded operations. Instance members are <b>not</b> guaranteed to be
+          thread-safe.
+        </P>
+      <h4 class="dtH4">Remarks</h4>
+      <p> When a <a href="TestApiCore~Microsoft.Test.VariationGeneration.Model.html">Model</a> property is decorated with a single attribute, the values from the attribute are added to the parameters that are created on the model and used for variation generation. When multiple attributes decorate the same property, a single value is selected from the values of each attribute (the number of values in the Model parameter is equal to the number of attributes that are set on the property). </p>
+      <h4 class="dtH4">Example</h4>
+      <p> The example below demonstrates how to use the Parameter attribute to declare a variation model. <pre class="code"> // First, provide a model class definition
+ class OsConfigurationEx
+ {
+     [Parameter(512, 1024, 2048)]
+     public int Memory { get; set; }
+
+     [Parameter("WinXP", "Vista", "Win2K8", "Win7")]
+     public string OS { get; set; }
+
+     [Parameter("enu", "jpn", "deu", "chs", "ptb")]
+     public string Language { get; set; }
+
+     [Parameter("NVidia", "ATI", "Intel")]
+     public string Graphics { get; set; }
+ }
+
+ // Then instantiate a model 
+ var model = new Model&lt;OsConfigurationEx&gt;();
+ foreach (OsConfigurationEx c in model.GenerateVariations(2))
+ {
+     Console.WriteLine("{0} {1} {2} {3}", 
+         c.Memory, 
+         c.OS,
+         c.Language,
+         c.Graphics);
+ }
+ </pre> This example shows how to use attributes of the model definition class to support equivalence classes with different weights. <pre class="code"> class OsConfigurationEx
+ {
+     [Parameter("WinXP", Weight = .3F)]
+     [Parameter("Vista", "Win7", Weight = .5F)]
+     public string OS { get; set; }
+
+     [Parameter("EN-US")]
+     [Parameter("JP-JP", "CN-CH")]
+     [Parameter("HE-IL", "AR-SA")]
+     public string Language { get; set; }
+ }
+
+ var model = new Model&lt;OsConfigurationEx&gt;();
+ foreach (OsConfigurationEx c in model.GenerateVariations(1))
+ {
+     Console.WriteLine("{0} {1}",
+         c.OS,
+         c.Language);
+ }
+ </pre></p>
+      <h4 class="dtH4">Requirements</h4>
+      <p>
+        <b>Namespace: </b>
+        <a href="~Microsoft.Test.VariationGeneration.html">Microsoft.Test.VariationGeneration</a>
+      </p>
+      <p>
+        <b>Assembly: </b>TestApiCore (in TestApiCore.dll)
+					</p>
+      <h4 class="dtH4">See Also</h4>
+      <p>
+        <a href="TestApiCore~Microsoft.Test.VariationGeneration.ParameterAttribute~Members.html">ParameterAttribute Members</a> | <a href="~Microsoft.Test.VariationGeneration.html">Microsoft.Test.VariationGeneration Namespace</a></p>
+      <object type="application/x-oleobject" classid="clsid:1e2a7bd0-dab9-11d0-b93a-00c04fc99f9e" viewastext="true" style="display: none;">
+        <param name="Keyword" value="ParameterAttribute class, about ParameterAttribute class">
+        </param>
+      </object>
+    </div>
+  </body>
+</html>

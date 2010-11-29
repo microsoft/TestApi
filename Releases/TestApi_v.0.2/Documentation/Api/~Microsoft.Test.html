@@ -1,0 +1,196 @@
+<html dir="LTR" xmlns:ndoc="urn:ndoc-schema">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=Windows-1252" />
+    <meta name="vs_targetSchema" content="http://schemas.microsoft.com/intellisense/ie5" />
+    <title>Microsoft.Test</title>
+    <xml>
+    </xml>
+    <link rel="stylesheet" type="text/css" href="MSDN.css" />
+  </head>
+  <body id="bodyID" class="dtBODY">
+    <div id="nsbanner">
+      <div id="bannerrow1">
+        <table class="bannerparthead" cellspacing="0">
+          <tr id="hdr">
+            <td class="runninghead">TestApi 0.2</td>
+            <td class="product">
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div id="TitleRow">
+        <h1 class="dtH1">Microsoft.Test Namespace</h1>
+      </div>
+    </div>
+    <div id="nstext">
+      <p>
+        <a href="~Microsoft.Test~Hierarchy.html">Namespace Hierarchy</a>
+      </p>
+      <h3 class="dtH3">Classes</h3>
+      <div class="tablediv">
+        <table class="dtTABLE" cellspacing="0">
+          <tr valign="top">
+            <th width="50%">Class</th>
+            <th width="50%">Description</th>
+          </tr>
+          <tr valign="top">
+            <td width="50%">
+              <a href="WpfUtilities~Microsoft.Test.AutomatedApplication.html">AutomatedApplication</a>
+            </td>
+            <td width="50%"> The AutomatedApplication class allows the user to load and start a test application either in the current process or in a new, separate process. The application is described using either InProcessSettings or OutOfProcessSettings which enable setting delegates and describe the application to launch. These delegates are called when the applcation's main window opens and/or when the application exits. </td>
+          </tr>
+          <tr valign="top">
+            <td width="50%">
+              <a href="WpfUtilities~Microsoft.Test.AutomationUtilities.html">AutomationUtilities</a>
+            </td>
+            <td width="50%"> The AutomationUtilities API provides a simple interface to common <a href="http://msdn.microsoft.com/en-us/library/ms747327.aspx" xmlns="urn:ndoc-schema">UI Automation</a> (UIA) operations. The most common class of UIA operations in testing involves discovery of UI elements. </td>
+          </tr>
+          <tr valign="top">
+            <td width="50%">
+              <a href="FrameworkUtilities~Microsoft.Test.ColorDifference.html">ColorDifference</a>
+            </td>
+            <td width="50%"> Represents the per-channel difference between two colors. </td>
+          </tr>
+          <tr valign="top">
+            <td width="50%">
+              <a href="FrameworkUtilities~Microsoft.Test.Command.html">Command</a>
+            </td>
+            <td width="50%"> An abstract class describing a command which has a name and an execute method. </td>
+          </tr>
+          <tr valign="top">
+            <td width="50%">
+              <a href="FrameworkUtilities~Microsoft.Test.CommandLineDictionary.html">CommandLineDictionary</a>
+            </td>
+            <td width="50%"> A dictionary that is aware of command line input patterns. All lookups for keys ignore case. </td>
+          </tr>
+          <tr valign="top">
+            <td width="50%">
+              <a href="FrameworkUtilities~Microsoft.Test.CommandLineParser.html">CommandLineParser</a>
+            </td>
+            <td width="50%"> Provides utilities for parsing command-line values. </td>
+          </tr>
+          <tr valign="top">
+            <td width="50%">
+              <a href="FrameworkUtilities~Microsoft.Test.DirectoryInfoConverter.html">DirectoryInfoConverter</a>
+            </td>
+            <td width="50%"> Converter that can convert from a string to a DirectoryInfo. </td>
+          </tr>
+          <tr valign="top">
+            <td width="50%">
+              <a href="WpfUtilities~Microsoft.Test.DispatcherOperations.html">DispatcherOperations</a>
+            </td>
+            <td width="50%"> Helper class for the WPF Dispatcher. This class provides simple and consistent wrappers for common dispatcher operations. </td>
+          </tr>
+          <tr valign="top">
+            <td width="50%">
+              <a href="FrameworkUtilities~Microsoft.Test.FileInfoConverter.html">FileInfoConverter</a>
+            </td>
+            <td width="50%"> Converter that can convert from a string to a FileInfo. </td>
+          </tr>
+          <tr valign="top">
+            <td width="50%">
+              <a href="FrameworkUtilities~Microsoft.Test.Histogram.html">Histogram</a>
+            </td>
+            <td width="50%"> The Histogram class represents a histogram curve, expressed in terms of frequency (proportion of total pixels) over brightness (from 0 to 255). In other words, the Histogram class represents the percentage (proportion) of pixels that have brightness of 0, 1, etc. <a href="http://en.wikipedia.org/wiki/Image_histogram" xmlns="urn:ndoc-schema">This page</a> provides a good introduction to <i xmlns="urn:ndoc-schema">image histograms</i>. <p xmlns="urn:ndoc-schema"></p> For testing purposes "brightness" is often equated to "difference". Thus, one is able to construct a "difference histogram" from a "difference shapshot" and compare that histogram to a histogram of "expected maximum differences" (also knows as a "tolerance histogram") in order to determine whether a visual verification test passes or fails. <p xmlns="urn:ndoc-schema"></p> A Histogram object can be loaded from a XML file or generated from a Snapshot object. </td>
+          </tr>
+          <tr valign="top">
+            <td width="50%">
+              <a href="WpfUtilities~Microsoft.Test.InProcessSettings.html">InProcessSettings</a>
+            </td>
+            <td width="50%"> An InProcessSettings object can be passed to the AutomatedApplication.Start method to indicate an AutomatedApplication should be created inside the current process. The settings describe how to create the process through the path to the executable and the application type name. Optionally, the settings can also specify delegates to be called when the AutomatedApplication's main window opens or when the process exits. </td>
+          </tr>
+          <tr valign="top">
+            <td width="50%">
+              <a href="WpfUtilities~Microsoft.Test.Keyboard.html">Keyboard</a>
+            </td>
+            <td width="50%"> Exposes a simple interface to common keyboard operations, allowing the user to simulate keyboard input. </td>
+          </tr>
+          <tr valign="top">
+            <td width="50%">
+              <a href="WpfUtilities~Microsoft.Test.Mouse.html">Mouse</a>
+            </td>
+            <td width="50%"> Exposes a simple interface to common mouse operations, allowing the user to simulate mouse input. </td>
+          </tr>
+          <tr valign="top">
+            <td width="50%">
+              <a href="WpfUtilities~Microsoft.Test.OutOfProcessSettings.html">OutOfProcessSettings</a>
+            </td>
+            <td width="50%"> An OutOfProcessSettings object can be passed to the AutomatedApplication.Start method to indicate an AutomatedApplication should be created in its own process. The settings describe how to create the process through a ProcessStartInfo object. Optionally, the settings can also specify delegates to be called when the AutomatedApplication's main window opens or when the process exits. </td>
+          </tr>
+          <tr valign="top">
+            <td width="50%">
+              <a href="FrameworkUtilities~Microsoft.Test.RequiredAttribute.html">RequiredAttribute</a>
+            </td>
+            <td width="50%"> Defines whether a property value is required to be specified. </td>
+          </tr>
+          <tr valign="top">
+            <td width="50%">
+              <a href="FrameworkUtilities~Microsoft.Test.Snapshot.html">Snapshot</a>
+            </td>
+            <td width="50%"> Represents image pixels in a two-dimensional array for use in visual verification. Every element of the array represents a pixel at the given [row, column] of the image. A Snapshot object can be instantiated from a file or captured from the screen. </td>
+          </tr>
+          <tr valign="top">
+            <td width="50%">
+              <a href="FrameworkUtilities~Microsoft.Test.SnapshotColorVerifier.html">SnapshotColorVerifier</a>
+            </td>
+            <td width="50%"> Verifies that all pixels in a Snapshot are within tolerance range of ExpectedColor. </td>
+          </tr>
+          <tr valign="top">
+            <td width="50%">
+              <a href="FrameworkUtilities~Microsoft.Test.SnapshotHistogramVerifier.html">SnapshotHistogramVerifier</a>
+            </td>
+            <td width="50%"> Verifies a diffed image based on the number of pixels of a given brightness per color. A tolerance Histogram curve can be created from an XML file, produced from a reference image, or manually created for use as a tolerance. <p xmlns="urn:ndoc-schema"></p> For more information on histograms, refer to the description of the Histogram class. </td>
+          </tr>
+          <tr valign="top">
+            <td width="50%">
+              <a href="FrameworkUtilities~Microsoft.Test.SnapshotToleranceMapVerifier.html">SnapshotToleranceMapVerifier</a>
+            </td>
+            <td width="50%"> Verifies that all pixels in a Snapshot are within the tolerance range, defined by the tolerance map. </td>
+          </tr>
+          <tr valign="top">
+            <td width="50%">
+              <a href="FrameworkUtilities~Microsoft.Test.SnapshotVerifier.html">SnapshotVerifier</a>
+            </td>
+            <td width="50%"> Base class for all Snapshot verifier types. This establishes a single method contract: Verify(Snapshot). </td>
+          </tr>
+        </table>
+      </div>
+      <h3 class="dtH3">Delegates</h3>
+      <div class="tablediv">
+        <table class="dtTABLE" cellspacing="0">
+          <tr valign="top">
+            <th width="50%">Delegate</th>
+            <th width="50%">Description</th>
+          </tr>
+          <tr valign="top">
+            <td width="50%">
+              <a href="WpfUtilities~Microsoft.Test.AutomatedApplicationCallback.html">AutomatedApplicationCallback</a>
+            </td>
+            <td width="50%"> A delegate that will be called when the appropriate event is raised by an AutomatedApplication. </td>
+          </tr>
+        </table>
+      </div>
+      <h3 class="dtH3">Enumerations</h3>
+      <div class="tablediv">
+        <table class="dtTABLE" cellspacing="0">
+          <tr valign="top">
+            <th width="50%">Enumeration</th>
+            <th width="50%">Description</th>
+          </tr>
+          <tr valign="top">
+            <td width="50%">
+              <a href="FrameworkUtilities~Microsoft.Test.VerificationResult.html">VerificationResult</a>
+            </td>
+            <td width="50%"> Specifies values used to report the outcome of the SnapshotVerifier.Verify method. </td>
+          </tr>
+          <tr valign="top">
+            <td width="50%">
+              <a href="FrameworkUtilities~Microsoft.Test.WindowSnapshotMode.html">WindowSnapshotMode</a>
+            </td>
+            <td width="50%"> WindowSnapshotMode determines if window border should be captured as part of Snapshot. </td>
+          </tr>
+        </table>
+      </div>
+    </div>
+  </body>
+</html>
