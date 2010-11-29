@@ -14,6 +14,30 @@ EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "FaultInjectionEngine", "FaultInjectionEngine\Code\FaultInjectionEngine.vcxproj", "{D0666C5C-22E7-40CB-81F6-5B651351BF92}"
 EndProject
 Global
+	GlobalSection(TeamFoundationVersionControl) = preSolution
+		SccNumberOfProjects = 7
+		SccEnterpriseProvider = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
+		SccTeamFoundationServer = https://tfs.codeplex.com/tfs/tfs03
+		SccLocalPath0 = .
+		SccProjectUniqueName1 = TestApiCore\\Code\\TestApiCore.csproj
+		SccProjectName1 = TestApiCore/Code
+		SccLocalPath1 = TestApiCore\\Code
+		SccProjectUniqueName2 = TestApiCore\\AcceptanceTests\\TestApiCoreAcceptanceTests.csproj
+		SccProjectName2 = TestApiCore/AcceptanceTests
+		SccLocalPath2 = TestApiCore\\AcceptanceTests
+		SccProjectUniqueName3 = TestApiWpf\\Code\\TestApiWpf.csproj
+		SccProjectName3 = TestApiWpf/Code
+		SccLocalPath3 = TestApiWpf\\Code
+		SccProjectUniqueName4 = TestApiWpf\\AcceptanceTests\\TestApiWpfAcceptanceTests.csproj
+		SccProjectName4 = TestApiWpf/AcceptanceTests
+		SccLocalPath4 = TestApiWpf\\AcceptanceTests
+		SccProjectUniqueName5 = TestApiWpf\\AcceptanceTests\\ApplicationControlTestApp\\WpfTestApplication.csproj
+		SccProjectName5 = TestApiWpf/AcceptanceTests/ApplicationControlTestApp
+		SccLocalPath5 = TestApiWpf\\AcceptanceTests\\ApplicationControlTestApp
+		SccProjectUniqueName6 = FaultInjectionEngine\\Code\\FaultInjectionEngine.vcxproj
+		SccProjectName6 = FaultInjectionEngine/Code
+		SccLocalPath6 = FaultInjectionEngine\\Code
+	EndGlobalSection
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
 		Debug|Mixed Platforms = Debug|Mixed Platforms
