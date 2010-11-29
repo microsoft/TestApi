@@ -1,0 +1,27 @@
+HKCR
+{
+    FaultInjectionEngine.Engine.1 = s 'Engine Class'
+    {
+        CLSID = s '{2EB6DCDB-3250-4D7F-AA42-41B1B84113ED}'
+    }
+    FaultInjectionEngine.Engine = s 'Engine Class'
+    {
+        CLSID = s '{2EB6DCDB-3250-4D7F-AA42-41B1B84113ED}'
+        CurVer = s 'FaultInjectionEngine.Engine.1'
+    }
+    NoRemove CLSID
+    {
+        ForceRemove {2EB6DCDB-3250-4D7F-AA42-41B1B84113ED} = s 'Engine Class'
+        {
+            ProgID = s 'FaultInjectionEngine.Engine.1'
+            VersionIndependentProgID = s 'FaultInjectionEngine.Engine'
+            ForceRemove 'Programmable'
+            InprocServer32 = s '%MODULE%'
+            {
+                val ThreadingModel = s 'Apartment'
+            }
+            val AppID = s '%APPID%'
+            'TypeLib' = s '{E0283982-4C3C-40C7-B3E0-1137821F5208}'
+        }
+    }
+}

@@ -1,0 +1,9 @@
+; FaultInjectionEngine.def : Declares the module parameters.
+
+LIBRARY      "FaultInjectionEngine.DLL"
+
+EXPORTS
+    DllCanUnloadNow        PRIVATE
+    DllGetClassObject    PRIVATE
+    DllRegisterServer    PRIVATE
+    DllUnregisterServer    PRIVATE
