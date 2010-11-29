@@ -1,0 +1,133 @@
+<html dir="LTR" xmlns:ndoc="urn:ndoc-schema">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=Windows-1252" />
+    <meta name="vs_targetSchema" content="http://schemas.microsoft.com/intellisense/ie5" />
+    <title>Model Class</title>
+    <xml>
+    </xml>
+    <link rel="stylesheet" type="text/css" href="MSDN.css" />
+  </head>
+  <body id="bodyID" class="dtBODY">
+    <div id="nsbanner">
+      <div id="bannerrow1">
+        <table class="bannerparthead" cellspacing="0">
+          <tr id="hdr">
+            <td class="runninghead">TestApi 0.5</td>
+            <td class="product">
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div id="TitleRow">
+        <h1 class="dtH1">Model Class</h1>
+      </div>
+    </div>
+    <div id="nstext">
+      <p> Provides a general-purpose model that generates a <a href="TestApiCore~Microsoft.Test.VariationGeneration.Variation.html">Variation</a>. See also <a href="TestApiCore~Microsoft.Test.VariationGeneration.Model$1.html">Model(T)</a>. </p>
+      <p>For a list of all members of this type, see <a href="TestApiCore~Microsoft.Test.VariationGeneration.Model~Members.html">Model Members</a>.</p>
+      <p>
+        <a href="http://msdn.microsoft.com/en-us/library/System.Object(VS.90).aspx">System.Object</a>
+        <br />   <b>Model</b></p>
+      <div class="syntax">
+        <div>public class Model<b> : <a href="TestApiCore~Microsoft.Test.VariationGeneration.Model$1.html">Model</a>&lt;<a href="TestApiCore~Microsoft.Test.VariationGeneration.Variation.html">Variation</a>&gt;</b></div>
+      </div>
+      <H4 class="dtH4">Thread Safety</H4>
+      <P>
+          Public static (<b>Shared</b> in Visual Basic) members of this type are
+          safe for multithreaded operations. Instance members are <b>not</b> guaranteed to be
+          thread-safe.
+        </P>
+      <h4 class="dtH4">Remarks</h4>
+      <p> Exhaustively testing all possible inputs to any nontrivial software component is generally not possible because of the enormous number of variations. Combinatorial testing is one approach to achieve high coverage with a much smaller set of variations. Pairwise, the most common combinatorial strategy, tests every possible pair of values. Higher orders of combinations (three-wise, four-wise, and so on) can also be used for higher coverage at the expense of more variations. See <a href="http://pairwise.org" xmlns="urn:ndoc-schema">Pairwise Testing</a> and <a href="http://www.pairwise.org/docs/pnsqc2006/PNSQC%20140%20-%20Jacek%20Czerwonka%20-%20Pairwise%20Testing%20-%20BW.pdf" xmlns="urn:ndoc-schema"> Pairwise Testing in Real World</a> for more resources. </p>
+      <h4 class="dtH4">Example</h4>
+      <p> The following example shows how to create a set of test-run configurations by using a model that only uses variables. <pre class="code"> // Specify the parameters and parameter values
+ var os = new Parameter&lt;string&gt;("OS") { "WinXP", "Win2k3", "Vista", "Win7" };
+ var memory = new Parameter&lt;int&gt;("Memory") { 512, 1024, 2048, 4096 };
+ var graphics = new Parameter&lt;string&gt;("Graphics") { "Nvidia", "ATI", "Intel" };
+ var lang = new Parameter&lt;string&gt;("Lang") { "enu", "jpn", "deu", "chs", "ptb" };
+
+ var parameters = new List&lt;ParameterBase&gt; { os, memory, graphics, lang };
+
+ var model = new Model(parameters);
+
+ // The model is complete; now generate the configurations and print out
+ foreach (var config in model.GenerateVariations(2))
+ {
+     Console.WriteLine("{0} {1} {2} {3}",
+         config["OS"],
+         config["Memory"],
+         config["Graphics"],
+         config["Lang"]);
+ }
+ </pre> The following example shows how to create variations for a vacation planner that has a signature like this: CallVacationPlanner(string destination, int hotelQuality, string activity). This example demonstrates that certain activities are only available for certain destinations. <pre class="code"> var de = new Parameter&lt;string&gt;("Destination") { "Whistler", "Hawaii", "Las Vegas" };
+ var ho = new Parameter&lt;int&gt;("Hotel Quality") { 5, 4, 3, 2, 1 };
+ var ac = new Parameter&lt;string&gt;("Activity") { "gambling", "swimming", "shopping", "skiing" };
+
+ var parameters = new List&lt;ParameterBase&gt; { de, ho, ac };
+ var constraints = new List&lt;Constraint&lt;Variation&gt;&gt;
+ {
+     // If going to Whistler or Hawaii, then no gambling
+     Constraint&lt;Variation&gt;
+         .If(v =&gt; de.GetValue(v) == "Whistler" || de.GetValue(v) == "Hawaii")
+         .Then(v =&gt; ac.GetValue(v) != "gambling"),
+
+     // If going to Las Vegas or Hawaii, then no skiing
+     Constraint&lt;Variation&gt;
+         .If(v =&gt; de.GetValue(v) == "Las Vegas" || de.GetValue(v) == "Hawaii")
+         .Then(v =&gt; ac.GetValue(v) != "skiing"),
+
+     // If going to Whistler, then no swimming
+     Constraint&lt;Variation&gt;
+         .If(v =&gt; de.GetValue(v) == "Whistler")
+         .Then(v =&gt; ac.GetValue(v) != "swimming"),
+ };
+ var model = new Model(parameters, constraints);
+
+
+ foreach (var vacationOption in model.GenerateVariations(2))
+ {
+     Console.WriteLine("{0}, {1} stars -- {2}",
+         vacationOption["Destination"],
+         vacationOption["Hotel Quality"],
+         vacationOption["Activity"]);
+ }
+ </pre> The following example shows how to create variations for a vacation planner that adds weights and tags to certain values. Adding weights changes the frequency in which a value will occur. Adding tags allows expected values to be added to variations. <pre class="code"> var de = new Parameter&lt;string&gt;("Destination") 
+ { 
+     "Whistler", 
+     "Hawaii",
+     new ParameterValue&lt;string&gt;("Las Vegas") { Weight = 10.0 },
+     new ParameterValue&lt;string&gt;("Cleveland") { Tag = false }
+ };
+ var ho = new Parameter&lt;int&gt;("Hotel Quality") { 5, 4, 3, 2, 1 };
+ var ac = new Parameter&lt;string&gt;("Activity") { "gambling", "swimming", "shopping", "skiing" };
+ var parameters = new List&lt;ParameterBase&gt; { de, ho, ac };
+
+ var model = new Model(parameters) { DefaultVariationTag = true };
+
+ foreach (var v in model.GenerateVariations(1))
+ {
+     Console.WriteLine("{0} {1} {2} {3}",
+         v["Destination"],
+         v["Hotel Quality"],
+         v["Activity"],
+         ((bool)v.Tag == false) ? "--&gt; don't go!" : "");
+ }
+ </pre></p>
+      <h4 class="dtH4">Requirements</h4>
+      <p>
+        <b>Namespace: </b>
+        <a href="~Microsoft.Test.VariationGeneration.html">Microsoft.Test.VariationGeneration</a>
+      </p>
+      <p>
+        <b>Assembly: </b>TestApiCore (in TestApiCore.dll)
+					</p>
+      <h4 class="dtH4">See Also</h4>
+      <p>
+        <a href="TestApiCore~Microsoft.Test.VariationGeneration.Model~Members.html">Model Members</a> | <a href="~Microsoft.Test.VariationGeneration.html">Microsoft.Test.VariationGeneration Namespace</a></p>
+      <object type="application/x-oleobject" classid="clsid:1e2a7bd0-dab9-11d0-b93a-00c04fc99f9e" viewastext="true" style="display: none;">
+        <param name="Keyword" value="Model class, about Model class">
+        </param>
+      </object>
+    </div>
+  </body>
+</html>

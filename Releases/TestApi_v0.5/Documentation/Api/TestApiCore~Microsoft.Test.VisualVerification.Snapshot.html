@@ -1,0 +1,68 @@
+<html dir="LTR" xmlns:ndoc="urn:ndoc-schema">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=Windows-1252" />
+    <meta name="vs_targetSchema" content="http://schemas.microsoft.com/intellisense/ie5" />
+    <title>Snapshot Class</title>
+    <xml>
+    </xml>
+    <link rel="stylesheet" type="text/css" href="MSDN.css" />
+  </head>
+  <body id="bodyID" class="dtBODY">
+    <div id="nsbanner">
+      <div id="bannerrow1">
+        <table class="bannerparthead" cellspacing="0">
+          <tr id="hdr">
+            <td class="runninghead">TestApi 0.5</td>
+            <td class="product">
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div id="TitleRow">
+        <h1 class="dtH1">Snapshot Class</h1>
+      </div>
+    </div>
+    <div id="nstext">
+      <p> Represents image pixels in a two-dimensional array for use in visual verification. Every element of the array represents a pixel at the given [row, column] of the image. A Snapshot object can be instantiated from a file or captured from the screen. </p>
+      <p>For a list of all members of this type, see <a href="TestApiCore~Microsoft.Test.VisualVerification.Snapshot~Members.html">Snapshot Members</a>.</p>
+      <p>
+        <a href="http://msdn.microsoft.com/en-us/library/System.Object(VS.90).aspx">System.Object</a>
+        <br />   <b>Snapshot</b></p>
+      <div class="syntax">
+        <div>public class Snapshot<b> : <a href="">ICloneable</a></b></div>
+      </div>
+      <H4 class="dtH4">Thread Safety</H4>
+      <P>
+          Public static (<b>Shared</b> in Visual Basic) members of this type are
+          safe for multithreaded operations. Instance members are <b>not</b> guaranteed to be
+          thread-safe.
+        </P>
+      <h4 class="dtH4">Example</h4>
+      <p> Takes a snapshot and verifies it is an absolute match to an expected image. <pre class="code">Snapshot actual = Snapshot.FromRectangle(new Rectangle(0, 0, 800, 600));
+Snapshot expected = Snapshot.FromFile("Expected.bmp");
+Snapshot diff = actual.CompareTo(expected);
+
+SnapshotVerifier v = new SnapshotColorVerifier(Color.Black, new ColorDifference(0, 0, 0, 0));
+if (v.Verify(diff) == VerificationResult.Fail)
+{
+    diff.ToFile("Actual.bmp", ImageFormat.Bmp);
+}
+</pre></p>
+      <h4 class="dtH4">Requirements</h4>
+      <p>
+        <b>Namespace: </b>
+        <a href="~Microsoft.Test.VisualVerification.html">Microsoft.Test.VisualVerification</a>
+      </p>
+      <p>
+        <b>Assembly: </b>TestApiCore (in TestApiCore.dll)
+					</p>
+      <h4 class="dtH4">See Also</h4>
+      <p>
+        <a href="TestApiCore~Microsoft.Test.VisualVerification.Snapshot~Members.html">Snapshot Members</a> | <a href="~Microsoft.Test.VisualVerification.html">Microsoft.Test.VisualVerification Namespace</a></p>
+      <object type="application/x-oleobject" classid="clsid:1e2a7bd0-dab9-11d0-b93a-00c04fc99f9e" viewastext="true" style="display: none;">
+        <param name="Keyword" value="Snapshot class, about Snapshot class">
+        </param>
+      </object>
+    </div>
+  </body>
+</html>

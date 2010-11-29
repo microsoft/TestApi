@@ -1,0 +1,105 @@
+<html dir="LTR" xmlns:ndoc="urn:ndoc-schema">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=Windows-1252" />
+    <meta name="vs_targetSchema" content="http://schemas.microsoft.com/intellisense/ie5" />
+    <title>FaultRule Class</title>
+    <xml>
+    </xml>
+    <link rel="stylesheet" type="text/css" href="MSDN.css" />
+  </head>
+  <body id="bodyID" class="dtBODY">
+    <div id="nsbanner">
+      <div id="bannerrow1">
+        <table class="bannerparthead" cellspacing="0">
+          <tr id="hdr">
+            <td class="runninghead">TestApi 0.3</td>
+            <td class="product">
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div id="TitleRow">
+        <h1 class="dtH1">FaultRule Class</h1>
+      </div>
+    </div>
+    <div id="nstext">
+      <p> Defines which method to fault, under what conditions the fault will occur, and how the method will fail. See also the <a href="TestApiCore~Microsoft.Test.FaultInjection.FaultSession.html">FaultSession</a> class. </p>
+      <p>For a list of all members of this type, see <a href="TestApiCore~Microsoft.Test.FaultInjection.FaultRule~Members.html">FaultRule Members</a>.</p>
+      <p>
+        <a href="http://msdn.microsoft.com/en-us/library/System.Object(VS.90).aspx">System.Object</a>
+        <br />   <b>FaultRule</b></p>
+      <div class="syntax">
+        <div>public sealed class FaultRule</div>
+      </div>
+      <H4 class="dtH4">Thread Safety</H4>
+      <P>
+          Public static (<b>Shared</b> in Visual Basic) members of this type are
+          safe for multithreaded operations. Instance members are <b>not</b> guaranteed to be
+          thread-safe.
+        </P>
+      <h4 class="dtH4">Remarks</h4>
+      <p> There can only be one fault rule per target method. </p>
+      <h4 class="dtH4">Example</h4>
+      <p>Creates a new FaultSession with several FaultRules and launches the application <pre class="code">            string sampleAppPath = "SampleApp.exe";
+     
+            FaultRule[] ruleArray = new FaultRule[]
+            {     
+                // Instance method
+                new FaultRule(
+                    "SampleApp.TargetType.TargetMethod(string, string)",
+                    BuiltInConditions.TriggerOnEveryCall,
+                    BuiltInFaults.ReturnValueFault("")),
+     
+                // Constructor
+                new FaultRule(
+                    "SampleApp.TargetType.TargetType(string, int)",
+                    BuiltInConditions.TriggerOnEveryCall,
+                    BuiltInFaults.ThrowExceptionFault(new InvalidOperationException())),
+     
+                // Static method
+                new FaultRule(
+                    "static SampleApp.TargetType.StaticTargetMethod()",
+                    BuiltInConditions.TriggerOnEveryNthCall(2),
+                    BuiltInFaults.ThrowExceptionFault(new InvalidOperationException())),
+     
+                // Generic method
+                new FaultRule(
+                    "SampleApp.TargetType.GenericTargetMethod&lt;T&gt;(string)",
+                    BuiltInConditions.TriggerOnEveryCall,
+                    BuiltInFaults.ReturnFault);
+     
+                // Property 
+                new FaultRule(
+                    "SampleApp.TargetType.get_TargetProperty()",
+                    BuiltInConditions.TriggerOnEveryNthCall(3),
+                    BuiltInFaults.ReturnFault);
+     
+                // Operator overload
+                new FaultRule(
+                    "SampleApp.TargetType.op_Increment(int, int)",
+                    BuiltInConditions.TriggerOnEveryCall,
+                    BuiltInFaults.ThrowExceptionFault(new InvalidOperationException()))
+            }     
+     
+            FaultSession session = new FaultSession(ruleArray);
+            ProcessStartInfo psi = session.GetProcessStartInfo(sampleAppPath);
+            Process.Start(psi);
+</pre></p>
+      <h4 class="dtH4">Requirements</h4>
+      <p>
+        <b>Namespace: </b>
+        <a href="~Microsoft.Test.FaultInjection.html">Microsoft.Test.FaultInjection</a>
+      </p>
+      <p>
+        <b>Assembly: </b>TestApiCore (in TestApiCore.dll)
+					</p>
+      <h4 class="dtH4">See Also</h4>
+      <p>
+        <a href="TestApiCore~Microsoft.Test.FaultInjection.FaultRule~Members.html">FaultRule Members</a> | <a href="~Microsoft.Test.FaultInjection.html">Microsoft.Test.FaultInjection Namespace</a></p>
+      <object type="application/x-oleobject" classid="clsid:1e2a7bd0-dab9-11d0-b93a-00c04fc99f9e" viewastext="true" style="display: none;">
+        <param name="Keyword" value="FaultRule class, about FaultRule class">
+        </param>
+      </object>
+    </div>
+  </body>
+</html>

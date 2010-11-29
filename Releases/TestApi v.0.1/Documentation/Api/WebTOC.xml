@@ -1,0 +1,113 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<HelpTOC>
+
+  <HelpTOCNode Id="cd4308ee-98c9-4ce8-ad90-758efe41b8cc" Title="Microsoft.Test Namespace" Url="html/9e56cb75-d7f2-2192-9f33-0f8e7926559e.htm">
+    <HelpTOCNode Id="4228e141-6605-4170-b84f-2a0168ffad6d" Title="AutomationUtilities Class" Url="html/73e697bc-70bc-4f79-3197-5d7adeae7fff.htm">
+      <HelpTOCNode Title="FindElementByIndex Method (rootElement, index)" Url="html/6b6882c2-c8d0-4788-8a6e-de62fb718448.htm" />
+      <HelpTOCNode Title="FindElements Method (rootElement, conditions)" Url="html/ecf40728-8108-ce7e-c68f-6340994b2caf.htm" />
+      <HelpTOCNode Title="FindElementsByClassName Method (rootElement, className)" Url="html/34f9cd20-5e1b-2e4d-a7e8-564e1bc92649.htm" />
+      <HelpTOCNode Title="FindElementsByControlType Method (rootElement, controlType)" Url="html/482b6010-76df-1a0f-b953-49dbedcdb4af.htm" />
+      <HelpTOCNode Title="FindElementsById Method (rootElement, automationId)" Url="html/d56f15a7-5f61-a00a-dcbb-0ea6ae1fdb7e.htm" />
+      <HelpTOCNode Title="FindElementsByName Method (rootElement, name)" Url="html/cb6b94e4-9591-0158-d2c0-07e83922452b.htm" />
+    </HelpTOCNode>
+    <HelpTOCNode Id="8bb98982-b840-41ca-852b-9672dc6f5164" Title="ColorDifference Class" Url="html/6218f2ef-5d11-5cb1-e777-5b40653d4ab3.htm">
+      <HelpTOCNode Id="681ee35f-f911-4f6b-94e7-6de5ed59446e" Title="ColorDifference Constructor " Url="html/64172738-9791-6bb8-878f-b39362634fec.htm">
+        <HelpTOCNode Title="ColorDifference Constructor " Url="html/bbae14bc-4cc9-0fae-cca8-110bf775501a.htm" />
+        <HelpTOCNode Title="ColorDifference Constructor (alpha, red, green, blue)" Url="html/8e263a0f-2212-a12d-6a90-b1f3ac5d295a.htm" />
+      </HelpTOCNode>
+      <HelpTOCNode Title="A Property " Url="html/16d2253d-8566-9be6-5d10-f8a587ff5803.htm" />
+      <HelpTOCNode Title="B Property " Url="html/b53a5b3c-709c-e2a9-87a2-1ca33d54f1e1.htm" />
+      <HelpTOCNode Title="G Property " Url="html/da007a05-8a9d-fbab-109f-a6c0e94dcc3a.htm" />
+      <HelpTOCNode Title="R Property " Url="html/867bff5a-7154-18ba-a4e6-ff3efa855ec6.htm" />
+    </HelpTOCNode>
+    <HelpTOCNode Id="0859fca3-268f-4230-b235-a37fba68bb29" Title="Command Class" Url="html/816b02e6-5a38-83fd-565f-ecc16d5d58e0.htm">
+      <HelpTOCNode Title="Command Constructor " Url="html/28ad6120-f7cf-5100-79ca-8c49cbf097e7.htm" />
+      <HelpTOCNode Title="Execute Method " Url="html/f485c21d-99c5-00c9-6a5f-4059933cbeea.htm" />
+      <HelpTOCNode Title="Name Property " Url="html/f8a52851-3116-fe29-bcdc-83d2bd9067a2.htm" />
+    </HelpTOCNode>
+    <HelpTOCNode Id="dacde033-6cd2-4cbd-aa14-c7a70b53e479" Title="CommandLineDictionary Class" Url="html/df82001a-5650-f8f9-065b-0c416b1556a5.htm">
+      <HelpTOCNode Id="7ecfb9e7-cb8f-4082-b8bd-e82c286b28b2" Title="CommandLineDictionary Constructor " Url="html/2d57a474-5bf1-19c7-c232-b028ea2a90be.htm">
+        <HelpTOCNode Title="CommandLineDictionary Constructor (arguments)" Url="html/39ca44f6-0dd4-1a23-fef3-11b4f3d21fdb.htm" />
+        <HelpTOCNode Title="CommandLineDictionary Constructor (arguments, keyCharacter, valueCharacter)" Url="html/61eaaf23-ea25-c7f8-3e81-5b26d0fecdfa.htm" />
+        <HelpTOCNode Title="CommandLineDictionary Constructor (info, context)" Url="html/9039dc92-2b6c-7c09-bcc2-04200c870d73.htm" />
+      </HelpTOCNode>
+      <HelpTOCNode Title="GetObjectData Method (info, context)" Url="html/36395eb8-a3d8-6fd8-8dbb-2e0c0bed72eb.htm" />
+      <HelpTOCNode Title="ToString Method " Url="html/32da551c-b45c-0d68-6a2a-15d84236c9c8.htm" />
+    </HelpTOCNode>
+    <HelpTOCNode Id="8403bd3d-0f36-4161-b915-bba17ad4c6cf" Title="CommandLineParser Class" Url="html/9d054bf1-45e9-e3ea-a813-b160f88b6111.htm">
+      <HelpTOCNode Title="ParseArguments Method (arguments, valueToPopulate)" Url="html/e7a874a0-60e4-b057-fba7-715a596cecbb.htm" />
+      <HelpTOCNode Title="ParseCommand Method (arguments, commands)" Url="html/6475815e-3e7c-3748-7e4b-63e7a42fa67c.htm" />
+      <HelpTOCNode Title="PrintArgumentsUsage Method (value)" Url="html/c179efe0-246c-a9c4-c35d-fefde485d864.htm" />
+      <HelpTOCNode Title="PrintCommandUsage Method (args, commands)" Url="html/cf3a1803-da06-ebf0-4969-50982f4ad97f.htm" />
+      <HelpTOCNode Title="ToString Method (valueToConvert)" Url="html/01de5554-732f-2b19-4125-2f24b88b975f.htm" />
+    </HelpTOCNode>
+    <HelpTOCNode Id="976fc30a-9b76-4874-b08c-cd69f870ba3e" Title="DispatcherOperations Class" Url="html/401718a7-b7a9-aedf-8e9f-f11306b7218e.htm">
+      <HelpTOCNode Id="1fcb3c74-95e2-4fc8-9959-bb303f85d873" Title="WaitFor Method " Url="html/b2f0cbd2-3aca-fca1-0396-6a3e9cf5a41d.htm">
+        <HelpTOCNode Title="WaitFor Method (time)" Url="html/f86f7c02-65c3-e66e-1aa0-1b17ca1e4898.htm" />
+        <HelpTOCNode Title="WaitFor Method (priority)" Url="html/cbd9b238-bc6b-fb2d-1764-83ec9574b1a5.htm" />
+      </HelpTOCNode>
+    </HelpTOCNode>
+    <HelpTOCNode Id="e8878cde-18a6-47fd-be1d-ea01c17cdf83" Title="FileInfoConverter Class" Url="html/893df5e4-c1a9-f973-c687-0508c98e3a17.htm">
+      <HelpTOCNode Title="FileInfoConverter Constructor " Url="html/7442f6da-60f0-917d-dfc0-bd06c4a9d526.htm" />
+      <HelpTOCNode Title="ConvertFrom Method (context, culture, value)" Url="html/b0c4dcf5-44d1-5a81-80d6-000db781cc12.htm" />
+    </HelpTOCNode>
+    <HelpTOCNode Id="1d4c62f4-aa1a-45b0-ad06-3aa2c94f30de" Title="Histogram Class" Url="html/909df13b-e5ae-c7c4-6942-76245eeb5233.htm">
+      <HelpTOCNode Title="FromFile Method (filePath)" Url="html/a51f93c2-98a1-bde6-6164-16675df7f9a9.htm" />
+      <HelpTOCNode Title="FromSnapshot Method (snapshot)" Url="html/50cb3a9a-8948-d1cc-4550-dcc8da87f198.htm" />
+      <HelpTOCNode Title="Merge Method (histogram)" Url="html/8e22a131-baf5-1c12-cb64-c396355130b8.htm" />
+      <HelpTOCNode Title="ToFile Method (filePath)" Url="html/48c2e105-8a31-8567-372e-7de79f3a89a1.htm" />
+    </HelpTOCNode>
+    <HelpTOCNode Id="3b5f2676-52b6-4cd5-8e20-60b191af8d0b" Title="Keyboard Class" Url="html/5929b03b-e3f9-797d-bdf6-34956fb7d81b.htm">
+      <HelpTOCNode Title="Press Method (key)" Url="html/3cf0c98c-9652-8364-86c5-b2a7fb361f30.htm" />
+      <HelpTOCNode Title="Release Method (key)" Url="html/a4054785-48f3-5d3a-ce72-1fdec48852f3.htm" />
+      <HelpTOCNode Title="Reset Method " Url="html/956005b7-b20d-9a94-e2ad-de18a7d84695.htm" />
+      <HelpTOCNode Id="e76ac4c5-f2aa-4db5-910f-6b41db7f23de" Title="Type Method " Url="html/b612d165-8490-c740-66a2-cd9f59d2fce4.htm">
+        <HelpTOCNode Title="Type Method (text)" Url="html/1a1abb47-a7dc-9cb2-1993-4e3cc4ba664a.htm" />
+        <HelpTOCNode Title="Type Method (key)" Url="html/c1d416fe-9363-6b81-f799-aa6dd1ec32d3.htm" />
+      </HelpTOCNode>
+    </HelpTOCNode>
+    <HelpTOCNode Id="cd985d78-969c-419a-b1cb-da0ff14b25a1" Title="Mouse Class" Url="html/7779d250-80af-88c2-310b-22821e6c7145.htm">
+      <HelpTOCNode Title="Click Method (mouseButton)" Url="html/83dbd435-5b35-d4ad-40e7-1a0a4860d92f.htm" />
+      <HelpTOCNode Title="DoubleClick Method (mouseButton)" Url="html/55360dab-00fd-3211-fd0c-7d5f7af6098d.htm" />
+      <HelpTOCNode Title="Down Method (mouseButton)" Url="html/0dea8e6b-0bb5-c31c-e685-b5a97b44a347.htm" />
+      <HelpTOCNode Title="MoveTo Method (point)" Url="html/39bf100c-1341-bfb7-6cd6-97743094e059.htm" />
+      <HelpTOCNode Title="Reset Method " Url="html/92ce136a-8abf-02f5-2c1f-4ff6ec810e49.htm" />
+      <HelpTOCNode Title="Scroll Method (lines)" Url="html/02c97c40-1925-8122-0d5b-cb62c9066a0c.htm" />
+      <HelpTOCNode Title="Up Method (mouseButton)" Url="html/1dbbb092-eb19-6bc2-5ec9-32b5beac6049.htm" />
+    </HelpTOCNode>
+    <HelpTOCNode Id="d4d20d11-624d-443d-ab5e-3e44d6140d4d" Title="Snapshot Class" Url="html/1c3fdc1d-f9f1-2fa6-6565-20e72e4bb393.htm">
+      <HelpTOCNode Id="c116ec6f-a494-49e5-8adc-14cb50a93e4f" Title="CompareTo Method " Url="html/d04ecde0-aea5-f731-a2ab-7830bd4c012b.htm">
+        <HelpTOCNode Title="CompareTo Method (snapshot)" Url="html/cef88f92-d521-cce1-fe2a-85fa1f2a3f58.htm" />
+        <HelpTOCNode Title="CompareTo Method (snapshot, compareAlphaChannel)" Url="html/50af4a6a-5b61-2d77-bef3-b6fae7330a8a.htm" />
+      </HelpTOCNode>
+      <HelpTOCNode Title="FromFile Method (filePath)" Url="html/1eee892e-1451-d17d-bf17-22f7aa62f0cc.htm" />
+      <HelpTOCNode Title="FromRectangle Method (rectangle)" Url="html/6dd66c22-627e-54e2-7453-f8a2f9e196d5.htm" />
+      <HelpTOCNode Title="Height Property " Url="html/ae24c759-7d60-a8f2-68a7-3b14bafa6f10.htm" />
+      <HelpTOCNode Title="Item Property (row, column)" Url="html/b795d5dd-a020-4596-85c4-5dcf053728e3.htm" />
+      <HelpTOCNode Title="ToFile Method (filePath, imageFormat)" Url="html/95693e3b-3e93-027f-b383-c2e5f52cf7d7.htm" />
+      <HelpTOCNode Title="Width Property " Url="html/fe5f3b70-a4cf-edb2-b07f-146c2cd2654d.htm" />
+    </HelpTOCNode>
+    <HelpTOCNode Id="49df6b2a-e226-4730-b981-faf24377e0a6" Title="SnapshotColorVerifier Class" Url="html/79fdbdc0-a133-a0b3-e279-0c7a5c9cbe40.htm">
+      <HelpTOCNode Id="4932bdc3-07b0-47ea-83fc-ddb103d9364d" Title="SnapshotColorVerifier Constructor " Url="html/448fd239-9b9c-e7e7-63a8-94e7c127de8f.htm">
+        <HelpTOCNode Title="SnapshotColorVerifier Constructor " Url="html/db202f34-b329-a0e2-45f0-017b4b6b317d.htm" />
+        <HelpTOCNode Title="SnapshotColorVerifier Constructor (expectedColor, tolerance)" Url="html/27ae6296-b266-ca1a-4de4-0e2572b7b657.htm" />
+      </HelpTOCNode>
+      <HelpTOCNode Title="ExpectedColor Property " Url="html/0e606d76-803f-4854-6bfe-ad04f869951f.htm" />
+      <HelpTOCNode Title="Tolerance Property " Url="html/38cbfa1a-4276-6d71-38db-f0468182afb7.htm" />
+      <HelpTOCNode Title="Verify Method (image)" Url="html/b65985e4-4c3b-7129-324d-db972a88057d.htm" />
+    </HelpTOCNode>
+    <HelpTOCNode Id="338448c8-0c6f-48fc-9060-d95c05554fdc" Title="SnapshotHistogramVerifier Class" Url="html/cd55ce71-65a5-1a10-082d-b57ee3537608.htm">
+      <HelpTOCNode Id="8a30b954-ca9e-44ac-9c33-442f02247617" Title="SnapshotHistogramVerifier Constructor " Url="html/4c030842-36d0-3416-e83a-1f1e63e4596e.htm">
+        <HelpTOCNode Title="SnapshotHistogramVerifier Constructor " Url="html/c0f6ce2f-658d-b045-1fc5-afd221a4a21c.htm" />
+        <HelpTOCNode Title="SnapshotHistogramVerifier Constructor (tolerance)" Url="html/e49df994-7369-ad55-1fc7-d0aae64d9139.htm" />
+      </HelpTOCNode>
+      <HelpTOCNode Title="Tolerance Property " Url="html/801f5bac-d2f7-bc1c-1cf7-537e9c3dfc76.htm" />
+      <HelpTOCNode Title="Verify Method (image)" Url="html/f9f841a1-25d6-445a-f628-502743c3ff88.htm" />
+    </HelpTOCNode>
+    <HelpTOCNode Id="dea77388-5ce9-4a4f-9824-b0fbaa2396c3" Title="SnapshotVerifier Class" Url="html/decc20fe-fadc-c262-9f3f-53fd129d5402.htm">
+      <HelpTOCNode Title="SnapshotVerifier Constructor " Url="html/1096c55e-4fde-95fa-5f75-9e17b935ef00.htm" />
+      <HelpTOCNode Title="Verify Method (image)" Url="html/8efc2a58-0dcf-6db0-9870-f8575853f2ba.htm" />
+    </HelpTOCNode>
+    <HelpTOCNode Title="VerificationResult Enumeration" Url="html/502cf22c-7599-efe7-b9ff-bbcdfc250103.htm" />
+  </HelpTOCNode>
+</HelpTOC>

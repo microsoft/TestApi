@@ -1,0 +1,73 @@
+<html dir="LTR" xmlns:ndoc="urn:ndoc-schema">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=Windows-1252" />
+    <meta name="vs_targetSchema" content="http://schemas.microsoft.com/intellisense/ie5" />
+    <title>MemorySnapshot Members</title>
+    <xml>
+    </xml>
+    <link rel="stylesheet" type="text/css" href="MSDN.css" />
+  </head>
+  <body id="bodyID" class="dtBODY">
+    <div id="nsbanner">
+      <div id="bannerrow1">
+        <table class="bannerparthead" cellspacing="0">
+          <tr id="hdr">
+            <td class="runninghead">TestApi 0.5</td>
+            <td class="product">
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div id="TitleRow">
+        <h1 class="dtH1">MemorySnapshot Members
+					</h1>
+      </div>
+    </div>
+    <div id="nstext">
+      <p>
+        <a href="TestApiCore~Microsoft.Test.LeakDetection.MemorySnapshot.html">MemorySnapshot overview</a>
+      </p>
+      <h4 class="dtH4">Public Static Methods</h4>
+      <div class="tablediv">
+        <table class="dtTABLE" cellspacing="0">
+<tr VALIGN="top"><td width="50%"><img src="pubmethod.gif"></img><img src="static.gif" /><a href="TestApiCore~Microsoft.Test.LeakDetection.MemorySnapshot.FromFile.html">FromFile</a></td><td width="50%"> Creates a MemorySnapshot instance from data in the specified file. </td></tr>
+<tr VALIGN="top"><td width="50%"><img src="pubmethod.gif"></img><img src="static.gif" /><a href="TestApiCore~Microsoft.Test.LeakDetection.MemorySnapshot.FromProcess.html">FromProcess</a></td><td width="50%"> Creates a MemorySnapshot instance for the specified OS process. </td></tr></table>
+      </div>
+      <h4 class="dtH4">Public Instance Properties</h4>
+      <div class="tablediv">
+        <table class="dtTABLE" cellspacing="0">
+<tr VALIGN="top"><td width="50%"><img src="pubproperty.gif"></img><a href="TestApiCore~Microsoft.Test.LeakDetection.MemorySnapshot.GdiObjectCount.html">GdiObjectCount</a></td><td width="50%"> The number of handles to GDI objects in use by the process. For more information see the <a href="http://msdn.microsoft.com/en-us/library/ms683192(VS.85).aspx" xmlns="urn:ndoc-schema">GetGuiResources</a> function. </td></tr>
+<tr VALIGN="top"><td width="50%"><img src="pubproperty.gif"></img><a href="TestApiCore~Microsoft.Test.LeakDetection.MemorySnapshot.HandleCount.html">HandleCount</a></td><td width="50%"> The total number of handles currently open by the process. This number is equal to the sum of the handles currently open by each thread in this process. </td></tr>
+<tr VALIGN="top"><td width="50%"><img src="pubproperty.gif"></img><a href="TestApiCore~Microsoft.Test.LeakDetection.MemorySnapshot.PageFileBytes.html">PageFileBytes</a></td><td width="50%"> The current amount of virtual memory that this process has reserved for use in the paging file or files. Those pages may or may not be in memory. </td></tr>
+<tr VALIGN="top"><td width="50%"><img src="pubproperty.gif"></img><a href="TestApiCore~Microsoft.Test.LeakDetection.MemorySnapshot.PageFilePeakBytes.html">PageFilePeakBytes</a></td><td width="50%"> The maximum amount of virtual memory that this process has reserved for use in the paging file or files. </td></tr>
+<tr VALIGN="top"><td width="50%"><img src="pubproperty.gif"></img><a href="TestApiCore~Microsoft.Test.LeakDetection.MemorySnapshot.PoolNonpagedBytes.html">PoolNonpagedBytes</a></td><td width="50%"> The size of the <i xmlns="urn:ndoc-schema">nonpaged pool</i>, an area of system memory (physical memory used by the operating system) for objects that cannot be written to disk but must remain in physical memory as long as they are allocated. For more information, see the <a href="http://msdn.microsoft.com/en-us/library/ms683219(VS.85).aspx" xmlns="urn:ndoc-schema">GetProcessMemoryInfo</a> function and the <a href="http://msdn.microsoft.com/en-us/library/ms684874(VS.85).aspx" xmlns="urn:ndoc-schema">PROCESS_MEMORY_COUNTERS_EX</a> structure. </td></tr>
+<tr VALIGN="top"><td width="50%"><img src="pubproperty.gif"></img><a href="TestApiCore~Microsoft.Test.LeakDetection.MemorySnapshot.PoolPagedBytes.html">PoolPagedBytes</a></td><td width="50%"> The size of the <i xmlns="urn:ndoc-schema">paged pool</i>, an area of system memory (physical memory used by the operating system) for objects that can be written to disk when they are not being used. For more information, see the <a href="http://msdn.microsoft.com/en-us/library/ms683219(VS.85).aspx" xmlns="urn:ndoc-schema">GetProcessMemoryInfo</a> function and the <a href="http://msdn.microsoft.com/en-us/library/ms684874(VS.85).aspx" xmlns="urn:ndoc-schema">PROCESS_MEMORY_COUNTERS_EX</a> structure. </td></tr>
+<tr VALIGN="top"><td width="50%"><img src="pubproperty.gif"></img><a href="TestApiCore~Microsoft.Test.LeakDetection.MemorySnapshot.ThreadCount.html">ThreadCount</a></td><td width="50%"> The number of threads currently active in the process. </td></tr>
+<tr VALIGN="top"><td width="50%"><img src="pubproperty.gif"></img><a href="TestApiCore~Microsoft.Test.LeakDetection.MemorySnapshot.Timestamp.html">Timestamp</a></td><td width="50%"> The time when the memory snapshot was taken. </td></tr>
+<tr VALIGN="top"><td width="50%"><img src="pubproperty.gif"></img><a href="TestApiCore~Microsoft.Test.LeakDetection.MemorySnapshot.UserObjectCount.html">UserObjectCount</a></td><td width="50%"> The number of handles to USER objects in use by the process. For more information see the <a href="http://msdn.microsoft.com/en-us/library/ms683192(VS.85).aspx" xmlns="urn:ndoc-schema">GetGuiResources</a> function. </td></tr>
+<tr VALIGN="top"><td width="50%"><img src="pubproperty.gif"></img><a href="TestApiCore~Microsoft.Test.LeakDetection.MemorySnapshot.VirtualMemoryBytes.html">VirtualMemoryBytes</a></td><td width="50%"> The current size of the virtual address space that the process is using. Use of virtual address space does not necessarily imply corresponding use of either disk or main memory pages. Virtual space is finite, and the process can limit its ability to load libraries. For more information see the <a href="http://msdn.microsoft.com/en-us/library/aa366589(VS.85).aspx" xmlns="urn:ndoc-schema">GlobalMemoryStatusEx</a> function and the <a href="http://msdn.microsoft.com/en-us/library/aa366770(VS.85).aspx" xmlns="urn:ndoc-schema">MEMORYSTATUSEX</a> structure. This metric is calculated as MEMORYSTATUSEX.ullTotalVirtual – MEMORYSTATUSEX.ullAvailVirtual. </td></tr>
+<tr VALIGN="top"><td width="50%"><img src="pubproperty.gif"></img><a href="TestApiCore~Microsoft.Test.LeakDetection.MemorySnapshot.VirtualMemoryPrivateBytes.html">VirtualMemoryPrivateBytes</a></td><td width="50%"> The current size of memory that this process has allocated that cannot be shared with other processes. For more information see the <a href="http://msdn.microsoft.com/en-us/library/ms683219(VS.85).aspx" xmlns="urn:ndoc-schema">GetProcessMemoryInfo</a> function and the <a href="http://msdn.microsoft.com/en-us/library/ms684874(VS.85).aspx" xmlns="urn:ndoc-schema">PROCESS_MEMORY_COUNTERS_EX</a> structure (this metric corresponds to the <b xmlns="urn:ndoc-schema">PrivateUsage</b> field in the structure). </td></tr>
+<tr VALIGN="top"><td width="50%"><img src="pubproperty.gif"></img><a href="TestApiCore~Microsoft.Test.LeakDetection.MemorySnapshot.WorkingSetBytes.html">WorkingSetBytes</a></td><td width="50%"> The current size of the <i xmlns="urn:ndoc-schema">working set</i> of the process. The working set is the set of memory pages recently touched by the threads in the process. If free memory in the computer is above a threshold, pages are left in the working set of a process even if they are not in use. When free memory falls below a threshold, pages are trimmed from working sets. If they are needed they will then be soft-faulted back into the working set before leaving main memory. </td></tr>
+<tr VALIGN="top"><td width="50%"><img src="pubproperty.gif"></img><a href="TestApiCore~Microsoft.Test.LeakDetection.MemorySnapshot.WorkingSetPeakBytes.html">WorkingSetPeakBytes</a></td><td width="50%"> The maximum size, in bytes, of the working set of the process at any one time. For more information see the <a href="http://msdn.microsoft.com/en-us/library/ms683219(VS.85).aspx" xmlns="urn:ndoc-schema">GetProcessMemoryInfo</a> function and the <a href="http://msdn.microsoft.com/en-us/library/ms684874(VS.85).aspx" xmlns="urn:ndoc-schema">PROCESS_MEMORY_COUNTERS_EX</a> structure. </td></tr>
+<tr VALIGN="top"><td width="50%"><img src="pubproperty.gif"></img><a href="TestApiCore~Microsoft.Test.LeakDetection.MemorySnapshot.WorkingSetPrivateBytes.html">WorkingSetPrivateBytes</a></td><td width="50%"> The size of the working set that is only used for the process and not shared nor shareable by other processes. For more information see the <a href="http://msdn.microsoft.com/en-us/library/aa965225%28VS.85%29.aspx" xmlns="urn:ndoc-schema">Memory Performance Information</a> article. </td></tr></table>
+      </div>
+      <h4 class="dtH4">Public Instance Methods</h4>
+      <div class="tablediv">
+        <table class="dtTABLE" cellspacing="0">
+<tr VALIGN="top"><td width="50%"><img src="pubmethod.gif"></img><a href="TestApiCore~Microsoft.Test.LeakDetection.MemorySnapshot.CompareTo.html">CompareTo</a></td><td width="50%"> Compares the current MemorySnapshot instance to the specified MemorySnapshot to produce a difference. </td></tr>
+<tr VALIGN="top"><td width="50%"><img src="pubmethod.gif"></img><a href="TestApiCore~Microsoft.Test.LeakDetection.MemorySnapshot.ToFile.html">ToFile</a></td><td width="50%"> Writes the current MemorySnapshot to a file. </td></tr></table>
+      </div>
+      <h4 class="dtH4">See Also</h4>
+      <p>
+        <a href="TestApiCore~Microsoft.Test.LeakDetection.MemorySnapshot.html">MemorySnapshot Class</a> | <a href="~Microsoft.Test.LeakDetection.html">Microsoft.Test.LeakDetection Namespace</a></p>
+      <object type="application/x-oleobject" classid="clsid:1e2a7bd0-dab9-11d0-b93a-00c04fc99f9e" viewastext="true" style="display: none;">
+        <param name="Keyword" value="MemorySnapshot class">
+        </param>
+        <param name="Keyword" value="Microsoft.Test.LeakDetection.MemorySnapshot class">
+        </param>
+        <param name="Keyword" value="MemorySnapshot class, all members">
+        </param>
+      </object>
+    </div>
+  </body>
+</html>

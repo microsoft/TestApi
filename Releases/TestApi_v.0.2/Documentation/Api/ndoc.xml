@@ -1,0 +1,989 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ndoc SchemaVersion="2.0" xmlns="urn:ndoc-schema">
+  <threadsafety static="true" instance="false" />
+  <namespaceHierarchies>
+    <namespaceHierarchy name="Microsoft.Test">
+      <hierarchyType id="T:System.Object" displayName="Object" namespace="System" assembly="mscorlib">
+        <hierarchyType id="T:Microsoft.Test.AutomationUtilities" displayName="AutomationUtilities" namespace="Microsoft.Test" assembly="WpfUtilities" />
+        <hierarchyType id="T:Microsoft.Test.ColorDifference" displayName="ColorDifference" namespace="Microsoft.Test" assembly="FrameworkUtilities" />
+        <hierarchyType id="T:Microsoft.Test.Command" displayName="Command" namespace="Microsoft.Test" assembly="FrameworkUtilities" />
+        <hierarchyType id="T:Microsoft.Test.CommandLineParser" displayName="CommandLineParser" namespace="Microsoft.Test" assembly="FrameworkUtilities" />
+        <hierarchyType id="T:Microsoft.Test.DispatcherOperations" displayName="DispatcherOperations" namespace="Microsoft.Test" assembly="WpfUtilities" />
+        <hierarchyType id="T:Microsoft.Test.Histogram" displayName="Histogram" namespace="Microsoft.Test" assembly="FrameworkUtilities" />
+        <hierarchyType id="T:Microsoft.Test.Keyboard" displayName="Keyboard" namespace="Microsoft.Test" assembly="WpfUtilities" />
+        <hierarchyType id="T:Microsoft.Test.Mouse" displayName="Mouse" namespace="Microsoft.Test" assembly="WpfUtilities" />
+        <hierarchyType id="T:Microsoft.Test.OutOfProcessSettings" displayName="OutOfProcessSettings" namespace="Microsoft.Test" assembly="WpfUtilities" />
+        <hierarchyType id="T:Microsoft.Test.Snapshot" displayName="Snapshot" namespace="Microsoft.Test" assembly="FrameworkUtilities">
+          <hierarchyInterfaces>
+            <hierarchyInterface id="T:System.ICloneable" displayName="ICloneable" namespace="System" fullName="System.ICloneable" assembly="mscorlib" />
+          </hierarchyInterfaces>
+        </hierarchyType>
+        <hierarchyType id="T:Microsoft.Test.SnapshotVerifier" displayName="SnapshotVerifier" namespace="Microsoft.Test" assembly="FrameworkUtilities">
+          <hierarchyType id="T:Microsoft.Test.SnapshotColorVerifier" displayName="SnapshotColorVerifier" namespace="Microsoft.Test" assembly="FrameworkUtilities" />
+          <hierarchyType id="T:Microsoft.Test.SnapshotHistogramVerifier" displayName="SnapshotHistogramVerifier" namespace="Microsoft.Test" assembly="FrameworkUtilities" />
+          <hierarchyType id="T:Microsoft.Test.SnapshotToleranceMapVerifier" displayName="SnapshotToleranceMapVerifier" namespace="Microsoft.Test" assembly="FrameworkUtilities" />
+        </hierarchyType>
+        <hierarchyType id="T:System.Attribute" displayName="Attribute" namespace="System" assembly="mscorlib">
+          <hierarchyType id="T:Microsoft.Test.RequiredAttribute" displayName="RequiredAttribute" namespace="Microsoft.Test" assembly="FrameworkUtilities" />
+        </hierarchyType>
+        <hierarchyType id="T:System.Collections.Generic.Dictionary`2" displayName="Dictionary(TKey,TValue)" namespace="System.Collections.Generic" assembly="mscorlib">
+          <hierarchyInterfaces>
+            <hierarchyInterface id="T:System.Collections.Generic.ICollection`1" displayName="ICollection(T)" namespace="System.Collections.Generic" fullName="System.Collections.Generic.ICollection`1" assembly="mscorlib" />
+            <hierarchyInterface id="T:System.Collections.Generic.IDictionary`2" displayName="IDictionary(TKey,TValue)" namespace="System.Collections.Generic" fullName="System.Collections.Generic.IDictionary`2" assembly="mscorlib" />
+            <hierarchyInterface id="T:System.Collections.Generic.IEnumerable`1" displayName="IEnumerable(T)" namespace="System.Collections.Generic" fullName="System.Collections.Generic.IEnumerable`1" assembly="mscorlib" />
+            <hierarchyInterface id="T:System.Collections.ICollection" displayName="ICollection" namespace="System.Collections" fullName="System.Collections.ICollection" assembly="mscorlib" />
+            <hierarchyInterface id="T:System.Collections.IDictionary" displayName="IDictionary" namespace="System.Collections" fullName="System.Collections.IDictionary" assembly="mscorlib" />
+            <hierarchyInterface id="T:System.Collections.IEnumerable" displayName="IEnumerable" namespace="System.Collections" fullName="System.Collections.IEnumerable" assembly="mscorlib" />
+            <hierarchyInterface id="T:System.Runtime.Serialization.IDeserializationCallback" displayName="IDeserializationCallback" namespace="System.Runtime.Serialization" fullName="System.Runtime.Serialization.IDeserializationCallback" assembly="mscorlib" />
+            <hierarchyInterface id="T:System.Runtime.Serialization.ISerializable" displayName="ISerializable" namespace="System.Runtime.Serialization" fullName="System.Runtime.Serialization.ISerializable" assembly="mscorlib" />
+          </hierarchyInterfaces>
+          <hierarchyType id="T:Microsoft.Test.CommandLineDictionary" displayName="CommandLineDictionary" namespace="Microsoft.Test" assembly="FrameworkUtilities" />
+        </hierarchyType>
+        <hierarchyType id="T:System.ComponentModel.TypeConverter" displayName="TypeConverter" namespace="System.ComponentModel" assembly="System">
+          <hierarchyType id="T:Microsoft.Test.DirectoryInfoConverter" displayName="DirectoryInfoConverter" namespace="Microsoft.Test" assembly="FrameworkUtilities" />
+          <hierarchyType id="T:Microsoft.Test.FileInfoConverter" displayName="FileInfoConverter" namespace="Microsoft.Test" assembly="FrameworkUtilities" />
+        </hierarchyType>
+        <hierarchyType id="T:System.Delegate" displayName="Delegate" namespace="System" assembly="mscorlib">
+          <hierarchyInterfaces>
+            <hierarchyInterface id="T:System.ICloneable" displayName="ICloneable" namespace="System" fullName="System.ICloneable" assembly="mscorlib" />
+            <hierarchyInterface id="T:System.Runtime.Serialization.ISerializable" displayName="ISerializable" namespace="System.Runtime.Serialization" fullName="System.Runtime.Serialization.ISerializable" assembly="mscorlib" />
+          </hierarchyInterfaces>
+          <hierarchyType id="T:System.MulticastDelegate" displayName="MulticastDelegate" namespace="System" assembly="mscorlib">
+            <hierarchyType id="T:Microsoft.Test.AutomatedApplicationCallback" displayName="AutomatedApplicationCallback" namespace="Microsoft.Test" assembly="WpfUtilities" />
+          </hierarchyType>
+        </hierarchyType>
+        <hierarchyType id="T:System.MarshalByRefObject" displayName="MarshalByRefObject" namespace="System" assembly="mscorlib">
+          <hierarchyType id="T:Microsoft.Test.AutomatedApplication" displayName="AutomatedApplication" namespace="Microsoft.Test" assembly="WpfUtilities" />
+          <hierarchyType id="T:Microsoft.Test.InProcessSettings" displayName="InProcessSettings" namespace="Microsoft.Test" assembly="WpfUtilities" />
+        </hierarchyType>
+        <hierarchyType id="T:System.ValueType" displayName="ValueType" namespace="System" assembly="mscorlib">
+          <hierarchyType id="T:System.Enum" displayName="Enum" namespace="System" assembly="mscorlib">
+            <hierarchyInterfaces>
+              <hierarchyInterface id="T:System.IComparable" displayName="IComparable" namespace="System" fullName="System.IComparable" assembly="mscorlib" />
+              <hierarchyInterface id="T:System.IConvertible" displayName="IConvertible" namespace="System" fullName="System.IConvertible" assembly="mscorlib" />
+              <hierarchyInterface id="T:System.IFormattable" displayName="IFormattable" namespace="System" fullName="System.IFormattable" assembly="mscorlib" />
+            </hierarchyInterfaces>
+            <hierarchyType id="T:Microsoft.Test.VerificationResult" displayName="VerificationResult" namespace="Microsoft.Test" assembly="FrameworkUtilities" />
+            <hierarchyType id="T:Microsoft.Test.WindowSnapshotMode" displayName="WindowSnapshotMode" namespace="Microsoft.Test" assembly="FrameworkUtilities" />
+          </hierarchyType>
+        </hierarchyType>
+      </hierarchyType>
+    </namespaceHierarchy>
+  </namespaceHierarchies>
+  <assembly name="FrameworkUtilities">
+    <assemblyReference name="mscorlib" />
+    <assemblyReference name="System" />
+    <assemblyReference name="System.Drawing" />
+    <assemblyReference name="System.Core" />
+    <assemblyReference name="System.Xml" />
+    <module name="FrameworkUtilities.dll">
+      <namespace name="Microsoft.Test">
+        <class name="ColorDifference" displayName="ColorDifference" namespace="Microsoft.Test" id="T:Microsoft.Test.ColorDifference" access="Public">
+          <documentation><summary> Represents the per-channel difference between two colors. </summary></documentation>
+          <constructor name=".ctor" id="M:Microsoft.Test.ColorDifference.#ctor" access="Public" contract="Normal" overload="1">
+            <documentation><summary> Initializes a new instance of the ColorDifference class using values of zero, indicating no difference. </summary></documentation>
+          </constructor>
+          <constructor name=".ctor" id="M:Microsoft.Test.ColorDifference.#ctor(System.Byte,System.Byte,System.Byte,System.Byte)" access="Public" contract="Normal" overload="2">
+            <documentation><summary> Initializes a new instance of the ColorDifference class, using the specified alpha, red, green and blue values. </summary>
+<param name="alpha">The alpha (transparency) color channel difference.</param>
+<param name="red">The red color channel difference.</param>
+<param name="green">The green color channel difference.</param>
+<param name="blue">The blue color channel difference.</param></documentation>
+            <parameter name="alpha" typeId="T:System.Byte" valueType="true" />
+            <parameter name="red" typeId="T:System.Byte" valueType="true" />
+            <parameter name="green" typeId="T:System.Byte" valueType="true" />
+            <parameter name="blue" typeId="T:System.Byte" valueType="true" />
+          </constructor>
+          <property name="A" id="P:Microsoft.Test.ColorDifference.A" access="Public" contract="Normal" typeId="T:System.Byte" valueType="true" get="Public" set="Public">
+            <documentation><summary> Alpha (transparency) color channel difference. </summary></documentation>
+          </property>
+          <property name="R" id="P:Microsoft.Test.ColorDifference.R" access="Public" contract="Normal" typeId="T:System.Byte" valueType="true" get="Public" set="Public">
+            <documentation><summary> Red color channel difference. </summary></documentation>
+          </property>
+          <property name="G" id="P:Microsoft.Test.ColorDifference.G" access="Public" contract="Normal" typeId="T:System.Byte" valueType="true" get="Public" set="Public">
+            <documentation><summary> Green color channel difference. </summary></documentation>
+          </property>
+          <property name="B" id="P:Microsoft.Test.ColorDifference.B" access="Public" contract="Normal" typeId="T:System.Byte" valueType="true" get="Public" set="Public">
+            <documentation><summary> Blue color channel difference. </summary></documentation>
+          </property>
+        </class>
+        <class name="Command" displayName="Command" namespace="Microsoft.Test" id="T:Microsoft.Test.Command" access="Public" abstract="true">
+          <documentation><summary> An abstract class describing a command which has a name and an execute method. </summary></documentation>
+          <constructor name=".ctor" id="M:Microsoft.Test.Command.#ctor" access="Family" contract="Normal">
+            <documentation>
+              <summary>Initializes a new instance of the <see cref="T:Microsoft.Test.Command" /> class.</summary>
+            </documentation>
+          </constructor>
+          <property name="Name" id="P:Microsoft.Test.Command.Name" access="Public" contract="Virtual" typeId="T:System.String" valueType="false" get="Public" set="false">
+            <documentation><summary> The name of the command. The base implementation is to strip off the last instance of "Command" from the end of the type name. So "DiscoverCommand" would become "Discover". If the type name does not have the string "Command" in it, then the name of the command is the same as the type name. This behavior can be overridden, but most derived classes are going to be of the form [Command Name] + Command. </summary></documentation>
+          </property>
+          <method name="Execute" displayName="Execute" id="M:Microsoft.Test.Command.Execute" access="Public" contract="Abstract" valueType="true">
+            <returnType type="System.Void" id="T:System.Void" />
+            <documentation><summary> Executes the command. </summary></documentation>
+          </method>
+        </class>
+        <class name="CommandLineDictionary" displayName="CommandLineDictionary" namespace="Microsoft.Test" id="T:Microsoft.Test.CommandLineDictionary" access="Public">
+          <documentation><summary> A dictionary that is aware of command line input patterns. All lookups for keys ignore case. </summary>
+<example> This is a sample for parsing the following command line: Test.exe /verbose /runId=10 <code>        CommandLineDictionary cld = CommandLineDictionary.FromArguments(args);
+        bool verbose = cld.ContainsKey("verbose");
+        int runId = Int32.Parse(cld["runId"]);
+
+        // You can also explicitly provide key and value identifiers for the cases
+        // that use other characters (rather than ‘/’ and ‘=’) as key/value identifiers
+        CommandLineDictionary cld = CommandLineDictionary.FromArguments(args, '-', ':');   
+</code></example></documentation>
+          <attribute name="System.SerializableAttribute" />
+          <baseType name="Dictionary`2" id="T:System.Collections.Generic.Dictionary`2" displayName="Dictionary`2" namespace="System.Collections.Generic" assembly="mscorlib">
+            <genericargument name="System.String" />
+            <genericargument name="System.String" />
+          </baseType>
+          <implementsClass type="System.Collections.Generic.IDictionary`2" id="T:System.Collections.Generic.IDictionary`2" displayName="IDictionary(TKey,TValue)" namespace="System.Collections.Generic" inherited="true">
+            <genericargument name="TKey" />
+            <genericargument name="TValue" />
+          </implementsClass>
+          <implementsClass type="System.Collections.Generic.ICollection`1" id="T:System.Collections.Generic.ICollection`1" displayName="ICollection(T)" namespace="System.Collections.Generic" inherited="true">
+            <genericargument name="T" />
+          </implementsClass>
+          <implementsClass type="System.Collections.Generic.IEnumerable`1" id="T:System.Collections.Generic.IEnumerable`1" displayName="IEnumerable(T)" namespace="System.Collections.Generic" inherited="true">
+            <genericargument name="T" />
+          </implementsClass>
+          <implementsClass type="System.Collections.IEnumerable" id="T:System.Collections.IEnumerable" displayName="IEnumerable" namespace="System.Collections" inherited="true" />
+          <implementsClass type="System.Collections.IDictionary" id="T:System.Collections.IDictionary" displayName="IDictionary" namespace="System.Collections" inherited="true" />
+          <implementsClass type="System.Collections.ICollection" id="T:System.Collections.ICollection" displayName="ICollection" namespace="System.Collections" inherited="true" />
+          <implementsClass type="System.Runtime.Serialization.ISerializable" id="T:System.Runtime.Serialization.ISerializable" displayName="ISerializable" namespace="System.Runtime.Serialization" inherited="true" />
+          <implementsClass type="System.Runtime.Serialization.IDeserializationCallback" id="T:System.Runtime.Serialization.IDeserializationCallback" displayName="IDeserializationCallback" namespace="System.Runtime.Serialization" inherited="true" />
+          <constructor name=".ctor" id="M:Microsoft.Test.CommandLineDictionary.#ctor" access="Public" contract="Normal" overload="1">
+            <documentation><summary> Create an empty CommandLineDictionary using the default key/value separators of '/' and '='. </summary></documentation>
+          </constructor>
+          <constructor name=".ctor" id="M:Microsoft.Test.CommandLineDictionary.#ctor(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext)" access="Family" contract="Normal" overload="2">
+            <documentation><summary> Creates a dictionary using a serialization info and context. This is used for Xml deserialization and isn't normally called from user code. </summary>
+<param name="info">Data needed to deserialize the dictionary.</param>
+<param name="context">Describes source and destination of the stream.</param></documentation>
+            <parameter name="info" typeId="T:System.Runtime.Serialization.SerializationInfo" valueType="false" />
+            <parameter name="context" typeId="T:System.Runtime.Serialization.StreamingContext" valueType="true" />
+          </constructor>
+          <property name="Comparer" id="P:Microsoft.Test.CommandLineDictionary.Comparer" access="Public" contract="Normal" typeId="T:System.Collections.Generic.IEqualityComparer`1" valueType="false" declaringType="System.Collections.Generic.Dictionary`2" get="Public" set="false">
+            <documentation><summary></summary></documentation>
+            <genericargument name="System.String" />
+          </property>
+          <property name="Count" id="P:Microsoft.Test.CommandLineDictionary.Count" access="Public" contract="Final" typeId="T:System.Int32" valueType="true" declaringType="System.Collections.Generic.Dictionary`2" get="Public" set="false">
+            <documentation><summary></summary></documentation>
+            <implements name="Count" id="P:System.Collections.ICollection.Count" interface="ICollection" assembly="mscorlib" interfaceId="T:System.Collections.ICollection" declaringType="System.Collections.ICollection" />
+          </property>
+          <property name="Keys" id="P:Microsoft.Test.CommandLineDictionary.Keys" access="Public" contract="Normal" typeId="T:System.Collections.Generic.Dictionary`2.KeyCollection" valueType="false" declaringType="System.Collections.Generic.Dictionary`2" get="Public" set="false">
+            <documentation><summary></summary></documentation>
+            <genericargument name="System.String" />
+            <genericargument name="System.String" />
+          </property>
+          <property name="Values" id="P:Microsoft.Test.CommandLineDictionary.Values" access="Public" contract="Normal" typeId="T:System.Collections.Generic.Dictionary`2.ValueCollection" valueType="false" declaringType="System.Collections.Generic.Dictionary`2" get="Public" set="false">
+            <documentation><summary></summary></documentation>
+            <genericargument name="System.String" />
+            <genericargument name="System.String" />
+          </property>
+          <property name="Item" id="P:Microsoft.Test.CommandLineDictionary.Item(System.String)" access="Public" contract="Final" typeId="T:System.String" valueType="false" declaringType="System.Collections.Generic.Dictionary`2" get="Public" set="Public">
+            <documentation><summary></summary></documentation>
+            <parameter name="key" typeId="T:System.String" valueType="false" />
+            <implements name="Item" id="P:System.Collections.Generic.IDictionary`2.Item(System.String)" interface="IDictionary`2" assembly="mscorlib" interfaceId="T:System.Collections.Generic.IDictionary`2" declaringType="System.Collections.Generic.IDictionary`2" />
+          </property>
+          <method name="FromArguments" displayName="FromArguments" id="M:Microsoft.Test.CommandLineDictionary.FromArguments(System.Collections.Generic.IEnumerable{System.String})" access="Public" contract="Static" valueType="false" overload="1">
+            <returnType type="Microsoft.Test.CommandLineDictionary" id="T:Microsoft.Test.CommandLineDictionary" />
+            <documentation><summary> Initializes a new instance of the CommandLineDictionary class, populating a dictionary with key/value pairs from a command line that supports syntax where options are provided in the form "/key=value". </summary>
+<param name="arguments">Key/value pairs.</param>
+<returns></returns></documentation>
+            <parameter name="arguments" typeId="T:System.Collections.Generic.IEnumerable`1" valueType="false">
+              <genericargument name="System.String" />
+            </parameter>
+          </method>
+          <method name="FromArguments" displayName="FromArguments" id="M:Microsoft.Test.CommandLineDictionary.FromArguments(System.Collections.Generic.IEnumerable{System.String},System.Char,System.Char)" access="Public" contract="Static" valueType="false" overload="2">
+            <returnType type="Microsoft.Test.CommandLineDictionary" id="T:Microsoft.Test.CommandLineDictionary" />
+            <documentation><summary> Creates a dictionary that is populated with key/value pairs from a command line that supports syntax where options are provided in the form "/key=value". This method supports the ability to specify delimiter characters for options in the command line. </summary>
+<param name="arguments">Key/value pairs.</param>
+<param name="keyCharacter">A character that precedes a key.</param>
+<param name="valueCharacter">A character that separates a key from a value.</param>
+<returns></returns></documentation>
+            <parameter name="arguments" typeId="T:System.Collections.Generic.IEnumerable`1" valueType="false">
+              <genericargument name="System.String" />
+            </parameter>
+            <parameter name="keyCharacter" typeId="T:System.Char" valueType="true" />
+            <parameter name="valueCharacter" typeId="T:System.Char" valueType="true" />
+          </method>
+          <method name="ToString" displayName="ToString" id="M:Microsoft.Test.CommandLineDictionary.ToString" access="Public" contract="Override" valueType="false">
+            <returnType type="System.String" id="T:System.String" />
+            <documentation><summary> Converts dictionary contents to a command line string of key/value pairs. </summary>
+<returns>Command line string.</returns></documentation>
+          </method>
+          <method name="GetObjectData" displayName="GetObjectData" id="M:Microsoft.Test.CommandLineDictionary.GetObjectData(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext)" access="Public" contract="Override" valueType="true">
+            <returnType type="System.Void" id="T:System.Void" />
+            <documentation><summary> Populates a SerializationInfo with data needed to serialize the dictionary. This is used by Xml serialization and isn't normally called from user code. </summary>
+<param name="info">SerializationInfo object to populate.</param>
+<param name="context">StreamingContext to populate data from.</param></documentation>
+            <parameter name="info" typeId="T:System.Runtime.Serialization.SerializationInfo" valueType="false" />
+            <parameter name="context" typeId="T:System.Runtime.Serialization.StreamingContext" valueType="true" />
+            <implements name="GetObjectData" id="M:System.Runtime.Serialization.ISerializable.GetObjectData(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext)" interface="ISerializable" interfaceId="T:System.Runtime.Serialization.ISerializable" assembly="mscorlib" declaringType="System.Runtime.Serialization.ISerializable" />
+          </method>
+        </class>
+        <class name="CommandLineParser" displayName="CommandLineParser" namespace="Microsoft.Test" id="T:Microsoft.Test.CommandLineParser" access="Public" static="true">
+          <documentation><summary> Provides utilities for parsing command-line values. </summary>
+<example> The following example shows how to parse to a strongly typed data structure and to an executable command structure. <code>        // SAMPLE USAGE #1:
+        // Sample for parsing the following command-line:
+        // Test.exe /verbose /runId=10
+        // This sample declares a class in which the strongly typed arguments are populated
+        public class CommandLineArguments
+        {
+           bool? Verbose { get; set; }
+           int? RunId { get; set; }
+        }
+    
+        CommandLineArguments cla = new CommandLineArguments();
+        cla.ParseArguments(args);
+    
+        // SAMPLE USAGE #2:
+        // Sample for parsing the following command-line:
+        // Test.exe run /verbose /id=10
+        // In this particular case we have an actual command on the command-line (“run”),
+        // which we want to effectively de-serialize and execute.
+        public class RunCommand : Command
+        {
+            bool? Verbose { get; set; }
+            int? RunId { get; set; }
+ 
+            public override void Execute()
+            {
+            }
+        }
+
+        Command command = new RunCommand();
+        command.ParseArguments(args);
+        command.Execute();
+</code></example></documentation>
+          <method name="ParseArguments" displayName="ParseArguments" id="M:Microsoft.Test.CommandLineParser.ParseArguments(System.Object,System.Collections.Generic.IEnumerable{System.String})" access="Public" contract="Static" valueType="true">
+            <returnType type="System.Void" id="T:System.Void" />
+            <documentation><summary> Sets properties on an object from a series of key/value string arguments that are in the form "/PropertyName=Value", where the value is converted from a string into the property type. </summary>
+<param name="valueToPopulate">The object to set properties on.</param>
+<param name="args">The key/value arguments describing the property names and values to set.</param>
+<returns> Indicates whether the properties were successfully set. Reasons for failure reasons include a property name that does not exist or a value that cannot be converted from a string. </returns>
+<exception cref="T:System.ArgumentException">Thrown when one of the key/value strings cannot be parsed into a property.</exception></documentation>
+            <parameter name="valueToPopulate" typeId="T:System.Object" valueType="false" extension="true" />
+            <parameter name="args" typeId="T:System.Collections.Generic.IEnumerable`1" valueType="false" extension="true">
+              <genericargument name="System.String" />
+            </parameter>
+          </method>
+          <method name="PrintUsage" displayName="PrintUsage" id="M:Microsoft.Test.CommandLineParser.PrintUsage(System.Object)" access="Public" contract="Static" valueType="true">
+            <returnType type="System.Void" id="T:System.Void" />
+            <documentation><summary> Prints names and descriptions for properties on the specified component. </summary>
+<param name="component">The component to print usage for.</param></documentation>
+            <parameter name="component" typeId="T:System.Object" valueType="false" />
+          </method>
+          <method name="PrintCommands" displayName="PrintCommands" id="M:Microsoft.Test.CommandLineParser.PrintCommands(System.Collections.Generic.IEnumerable{Microsoft.Test.Command})" access="Public" contract="Static" valueType="true">
+            <returnType type="System.Void" id="T:System.Void" />
+            <documentation><summary> Prints a general summary of each command. </summary>
+<param name="commands">A collection of possible commands.</param></documentation>
+            <parameter name="commands" typeId="T:System.Collections.Generic.IEnumerable`1" valueType="false">
+              <genericargument name="Microsoft.Test.Command" />
+            </parameter>
+          </method>
+          <method name="ToString" displayName="ToString" id="M:Microsoft.Test.CommandLineParser.ToString(System.Object)" access="Public" contract="Static" valueType="false" overload="1">
+            <returnType type="System.String" id="T:System.String" />
+            <documentation><summary> Creates a string that represents key/value arguments for the properties of the specified object. For example, an object with a name (string) of "example" and a priority value (integer) of 1 translates to '/name=example /priority=1'. This can be used to send data structures through the command line. </summary>
+<param name="valueToConvert">Value to create key/value arguments from.</param>
+<returns>Space-delimited key/value arguments.</returns></documentation>
+            <parameter name="valueToConvert" typeId="T:System.Object" valueType="false" />
+          </method>
+        </class>
+        <class name="DirectoryInfoConverter" displayName="DirectoryInfoConverter" namespace="Microsoft.Test" id="T:Microsoft.Test.DirectoryInfoConverter" access="Public">
+          <documentation><summary> Converter that can convert from a string to a DirectoryInfo. </summary></documentation>
+          <baseType name="TypeConverter" id="T:System.ComponentModel.TypeConverter" displayName="TypeConverter" namespace="System.ComponentModel" assembly="System" />
+          <constructor name=".ctor" id="M:Microsoft.Test.DirectoryInfoConverter.#ctor" access="Public" contract="Normal">
+            <documentation>
+              <summary>Initializes a new instance of the <see cref="T:Microsoft.Test.DirectoryInfoConverter" /> class.</summary>
+            </documentation>
+          </constructor>
+          <method name="ConvertFrom" displayName="ConvertFrom" id="M:Microsoft.Test.DirectoryInfoConverter.ConvertFrom(System.ComponentModel.ITypeDescriptorContext,System.Globalization.CultureInfo,System.Object)" access="Public" contract="Override" valueType="false" overload="1">
+            <returnType type="System.Object" id="T:System.Object" />
+            <documentation><summary> Converts from a string to a DirectoryInfo. </summary>
+<param name="context">Context.</param>
+<param name="culture">Culture.</param>
+<param name="value">Value to convert.</param>
+<returns>DirectoryInfo, or null if value was null or non-string.</returns></documentation>
+            <parameter name="context" typeId="T:System.ComponentModel.ITypeDescriptorContext" valueType="false" />
+            <parameter name="culture" typeId="T:System.Globalization.CultureInfo" valueType="false" />
+            <parameter name="value" typeId="T:System.Object" valueType="false" />
+          </method>
+          <method name="CanConvertFrom" displayName="CanConvertFrom" id="M:Microsoft.Test.DirectoryInfoConverter.CanConvertFrom(System.ComponentModel.ITypeDescriptorContext,System.Type)" access="Public" contract="Override" valueType="true" overload="1">
+            <returnType type="System.Boolean" id="T:System.Boolean" />
+            <documentation><summary> Returns whether this converter can convert an object of the given type to the type of this converter, using the specified context. </summary>
+<param name="context">An ITypeDescriptorContext that provides a format context.</param>
+<param name="sourceType">A Type that represents the type you want to convert from.</param>
+<returns>True if this converter can perform the conversion; otherwise, False.</returns></documentation>
+            <parameter name="context" typeId="T:System.ComponentModel.ITypeDescriptorContext" valueType="false" />
+            <parameter name="sourceType" typeId="T:System.Type" valueType="false" />
+          </method>
+        </class>
+        <class name="FileInfoConverter" displayName="FileInfoConverter" namespace="Microsoft.Test" id="T:Microsoft.Test.FileInfoConverter" access="Public">
+          <documentation><summary> Converter that can convert from a string to a FileInfo. </summary></documentation>
+          <baseType name="TypeConverter" id="T:System.ComponentModel.TypeConverter" displayName="TypeConverter" namespace="System.ComponentModel" assembly="System" />
+          <constructor name=".ctor" id="M:Microsoft.Test.FileInfoConverter.#ctor" access="Public" contract="Normal">
+            <documentation>
+              <summary>Initializes a new instance of the <see cref="T:Microsoft.Test.FileInfoConverter" /> class.</summary>
+            </documentation>
+          </constructor>
+          <method name="ConvertFrom" displayName="ConvertFrom" id="M:Microsoft.Test.FileInfoConverter.ConvertFrom(System.ComponentModel.ITypeDescriptorContext,System.Globalization.CultureInfo,System.Object)" access="Public" contract="Override" valueType="false" overload="1">
+            <returnType type="System.Object" id="T:System.Object" />
+            <documentation><summary> Converts from a string to a FileInfo. </summary>
+<param name="context">Context.</param>
+<param name="culture">Culture.</param>
+<param name="value">Value to convert.</param>
+<returns>FileInfo, or null if value was null or non-string.</returns></documentation>
+            <parameter name="context" typeId="T:System.ComponentModel.ITypeDescriptorContext" valueType="false" />
+            <parameter name="culture" typeId="T:System.Globalization.CultureInfo" valueType="false" />
+            <parameter name="value" typeId="T:System.Object" valueType="false" />
+          </method>
+          <method name="CanConvertFrom" displayName="CanConvertFrom" id="M:Microsoft.Test.FileInfoConverter.CanConvertFrom(System.ComponentModel.ITypeDescriptorContext,System.Type)" access="Public" contract="Override" valueType="true" overload="1">
+            <returnType type="System.Boolean" id="T:System.Boolean" />
+            <documentation><summary> Returns whether this converter can convert an object of the given type to the type of this converter, using the specified context. </summary>
+<param name="context">An ITypeDescriptorContext that provides a format context.</param>
+<param name="sourceType">A Type that represents the type you want to convert from.</param>
+<returns>True if this converter can perform the conversion; otherwise, False.</returns></documentation>
+            <parameter name="context" typeId="T:System.ComponentModel.ITypeDescriptorContext" valueType="false" />
+            <parameter name="sourceType" typeId="T:System.Type" valueType="false" />
+          </method>
+        </class>
+        <class name="Histogram" displayName="Histogram" namespace="Microsoft.Test" id="T:Microsoft.Test.Histogram" access="Public">
+          <documentation><summary> The Histogram class represents a histogram curve, expressed in terms of frequency (proportion of total pixels) over brightness (from 0 to 255). In other words, the Histogram class represents the percentage (proportion) of pixels that have brightness of 0, 1, etc. <a href="http://en.wikipedia.org/wiki/Image_histogram">This page</a> provides a good introduction to <i>image histograms</i>. <p /> For testing purposes "brightness" is often equated to "difference". Thus, one is able to construct a "difference histogram" from a "difference shapshot" and compare that histogram to a histogram of "expected maximum differences" (also knows as a "tolerance histogram") in order to determine whether a visual verification test passes or fails. <p /> A Histogram object can be loaded from a XML file or generated from a Snapshot object. </summary></documentation>
+          <method name="FromSnapshot" displayName="FromSnapshot" id="M:Microsoft.Test.Histogram.FromSnapshot(Microsoft.Test.Snapshot)" access="Public" contract="Static" valueType="false">
+            <returnType type="Microsoft.Test.Histogram" id="T:Microsoft.Test.Histogram" />
+            <documentation><summary> Creates a Histogram object from an existing Snapshot object. </summary>
+<param name="snapshot">The Snapshot object to derive the Histogram from.</param>
+<returns>A new instance of Histogram, based on the provided snapshot.</returns></documentation>
+            <parameter name="snapshot" typeId="T:Microsoft.Test.Snapshot" valueType="false" />
+          </method>
+          <method name="FromFile" displayName="FromFile" id="M:Microsoft.Test.Histogram.FromFile(System.String)" access="Public" contract="Static" valueType="false">
+            <returnType type="Microsoft.Test.Histogram" id="T:Microsoft.Test.Histogram" />
+            <documentation><summary> Creates a Histogram object from a histogram curve file. </summary>
+<param name="filePath">Name of the file containing the histogram curve.</param>
+<returns>A new instance of Histogram, based on the specified file.</returns></documentation>
+            <parameter name="filePath" typeId="T:System.String" valueType="false" />
+          </method>
+          <method name="Merge" displayName="Merge" id="M:Microsoft.Test.Histogram.Merge(Microsoft.Test.Histogram)" access="Public" contract="Normal" valueType="false">
+            <returnType type="Microsoft.Test.Histogram" id="T:Microsoft.Test.Histogram" />
+            <documentation><summary> Merges the specified input histogram curve with the current histogram by accumulating the per-brightness peak error quantities of two histograms. The Merge operation merges the peak values of the two histograms. </summary>
+<param name="histogram">The histogram curve to be merged with.</param>
+<returns>A new Histogram object, containing the peak values of both histogram curves.</returns></documentation>
+            <parameter name="histogram" typeId="T:Microsoft.Test.Histogram" valueType="false" />
+          </method>
+          <method name="ToFile" displayName="ToFile" id="M:Microsoft.Test.Histogram.ToFile(System.String)" access="Public" contract="Normal" valueType="true">
+            <returnType type="System.Void" id="T:System.Void" />
+            <documentation><summary> Saves the Histogram object to an XML file representation. </summary>
+<param name="filePath">The path of the XML histogram file to be stored.</param></documentation>
+            <parameter name="filePath" typeId="T:System.String" valueType="false" />
+          </method>
+        </class>
+        <class name="RequiredAttribute" displayName="RequiredAttribute" namespace="Microsoft.Test" id="T:Microsoft.Test.RequiredAttribute" access="Public" sealed="true">
+          <documentation><summary> Defines whether a property value is required to be specified. </summary></documentation>
+          <baseType name="Attribute" id="T:System.Attribute" displayName="Attribute" namespace="System" assembly="mscorlib" />
+          <constructor name=".ctor" id="M:Microsoft.Test.RequiredAttribute.#ctor" access="Public" contract="Normal">
+            <documentation>
+              <summary>Initializes a new instance of the <see cref="T:Microsoft.Test.RequiredAttribute" /> class.</summary><summary /></documentation>
+          </constructor>
+          <property name="TypeId" id="P:Microsoft.Test.RequiredAttribute.TypeId" access="Public" contract="Virtual" typeId="T:System.Object" valueType="false" declaringType="System.Attribute" get="Public" set="false">
+            <documentation><summary></summary></documentation>
+          </property>
+        </class>
+        <class name="Snapshot" displayName="Snapshot" namespace="Microsoft.Test" id="T:Microsoft.Test.Snapshot" access="Public">
+          <documentation><summary> Represents image pixels in a two-dimensional array for use in visual verification. Every element of the array represents a pixel at the given [row, column] of the image. A Snapshot object can be instantiated from a file or captured from the screen. </summary>
+<example>Takes a snapshot and verifies it is an absolute match to an expected image. <code>        // Take a snapshot, compare to master image, validate match and save the diff
+        // in case of a poor match.
+        Snapshot actual = Snapshot.FromRectangle(new Rectangle(0, 0, 800, 600));
+        Snapshot expected = Snapshot.FromFile("Expected.bmp");
+        Snapshot diff = actual.CompareTo(expected);
+     
+        // The SnapshotColorVerifier.Verify() method compares every pixel of a diff bitmap 
+        // against the threshold defined by the ColorDifference tolerance. If all pixels
+        // fall within the tolerance, then the method returns VerificationResult.Pass
+        SnapshotVerifier v = new SnapshotColorVerifier(Color.Black, new ColorDifference(0, 0, 0, 0));
+        if (v.Verify(diff) == VerificationResult.Fail)
+        {
+            diff.ToFile("Actual.bmp", ImageFormat.Bmp);
+        }
+</code></example></documentation>
+          <implementsClass type="System.ICloneable" id="T:System.ICloneable" displayName="ICloneable" namespace="System" />
+          <property name="Item" id="P:Microsoft.Test.Snapshot.Item(System.Int32,System.Int32)" access="Public" contract="Normal" typeId="T:System.Drawing.Color" valueType="true" get="Public" set="Public">
+            <documentation><summary> Returns a Color instance for the pixel at the specified row and column. </summary>
+<param name="row">Zero-based row position of the pixel.</param>
+<param name="column">Zero-based column position of the pixel.</param>
+<returns>A Color instance for the pixel at the specified row and column.</returns></documentation>
+            <parameter name="row" typeId="T:System.Int32" valueType="true" />
+            <parameter name="column" typeId="T:System.Int32" valueType="true" />
+          </property>
+          <property name="Width" id="P:Microsoft.Test.Snapshot.Width" access="Public" contract="Normal" typeId="T:System.Int32" valueType="true" get="Public" set="false">
+            <documentation><summary> Returns the width of the pixel buffer. </summary></documentation>
+          </property>
+          <property name="Height" id="P:Microsoft.Test.Snapshot.Height" access="Public" contract="Normal" typeId="T:System.Int32" valueType="true" get="Public" set="false">
+            <documentation><summary> Returns the height of the pixel buffer. </summary></documentation>
+          </property>
+          <method name="FromFile" displayName="FromFile" id="M:Microsoft.Test.Snapshot.FromFile(System.String)" access="Public" contract="Static" valueType="false">
+            <returnType type="Microsoft.Test.Snapshot" id="T:Microsoft.Test.Snapshot" />
+            <documentation><summary> Creates a Snapshot instance from data in the specified image file. </summary>
+<param name="filePath">Path to the image file.</param>
+<returns>A Snapshot instance containing the pixels in the loaded file.</returns></documentation>
+            <parameter name="filePath" typeId="T:System.String" valueType="false" />
+          </method>
+          <method name="FromWindow" displayName="FromWindow" id="M:Microsoft.Test.Snapshot.FromWindow(System.IntPtr,Microsoft.Test.WindowSnapshotMode)" access="Public" contract="Static" valueType="false">
+            <returnType type="Microsoft.Test.Snapshot" id="T:Microsoft.Test.Snapshot" />
+            <documentation><summary> Creates a Snapshot instance populated with pixels sampled from the rectangle of the specified window. </summary>
+<param name="windowHandle">The Win32 window handle (also known as an HWND), identifying the window to capture from.</param>
+<param name="windowSnapshotMode">Determines if window border region should captured as part of Snapshot.</param>
+<returns>A Snapshot instance of the pixels captured.</returns></documentation>
+            <parameter name="windowHandle" typeId="T:System.IntPtr" valueType="true" />
+            <parameter name="windowSnapshotMode" typeId="T:Microsoft.Test.WindowSnapshotMode" valueType="true" />
+          </method>
+          <method name="FromRectangle" displayName="FromRectangle" id="M:Microsoft.Test.Snapshot.FromRectangle(System.Drawing.Rectangle)" access="Public" contract="Static" valueType="false">
+            <returnType type="Microsoft.Test.Snapshot" id="T:Microsoft.Test.Snapshot" />
+            <documentation><summary> Creates a Snapshot instance populated with pixels sampled from the specified screen rectangle, from the context of the Desktop. </summary>
+<param name="rectangle">Rectangle of the screen region to be sampled from.</param>
+<returns>A Snapshot instance of the pixels from the bounds of the screen rectangle.</returns></documentation>
+            <parameter name="rectangle" typeId="T:System.Drawing.Rectangle" valueType="true" />
+          </method>
+          <method name="Clone" displayName="Clone" id="M:Microsoft.Test.Snapshot.Clone" access="Public" contract="Final" valueType="false">
+            <returnType type="System.Object" id="T:System.Object" />
+            <documentation><summary> Creates a deep-copied clone Snapshot with the same value as the existing instance. </summary>
+<returns>Clone instance</returns></documentation>
+            <implements name="Clone" id="M:System.ICloneable.Clone" interface="ICloneable" interfaceId="T:System.ICloneable" assembly="mscorlib" declaringType="System.ICloneable" />
+          </method>
+          <method name="CompareTo" displayName="CompareTo" id="M:Microsoft.Test.Snapshot.CompareTo(Microsoft.Test.Snapshot)" access="Public" contract="Normal" valueType="false" overload="1">
+            <returnType type="Microsoft.Test.Snapshot" id="T:Microsoft.Test.Snapshot" />
+            <documentation><summary> Compares the current Snapshot instance to the specified Snapshot to produce a difference image. Note: This does not compare alpha channels. </summary>
+<param name="snapshot">The Snapshot to be compared to.</param>
+<returns>A new Snapshot object representing the difference image (i.e. the result of the comparison).</returns></documentation>
+            <parameter name="snapshot" typeId="T:Microsoft.Test.Snapshot" valueType="false" />
+          </method>
+          <method name="CompareTo" displayName="CompareTo" id="M:Microsoft.Test.Snapshot.CompareTo(Microsoft.Test.Snapshot,System.Boolean)" access="Public" contract="Normal" valueType="false" overload="2">
+            <returnType type="Microsoft.Test.Snapshot" id="T:Microsoft.Test.Snapshot" />
+            <documentation><summary> Compares the current Snapshot instance to the specified Snapshot to produce a difference image. </summary>
+<param name="snapshot">The target Snapshot to be compared to.</param>
+<param name="compareAlphaChannel">If true, compares alpha channels. If false, the alpha channel difference values are fixed to 255.</param>
+<returns>A new Snapshot object representing the difference image (i.e. the result of the comparison).</returns></documentation>
+            <parameter name="snapshot" typeId="T:Microsoft.Test.Snapshot" valueType="false" />
+            <parameter name="compareAlphaChannel" typeId="T:System.Boolean" valueType="true" />
+          </method>
+          <method name="ToFile" displayName="ToFile" id="M:Microsoft.Test.Snapshot.ToFile(System.String,System.Drawing.Imaging.ImageFormat)" access="Public" contract="Normal" valueType="true">
+            <returnType type="System.Void" id="T:System.Void" />
+            <documentation><summary> Writes the current Snapshot (at 32 bits per pixel) to a file. </summary>
+<param name="filePath">The path to the output file.</param>
+<param name="imageFormat">The file storage format to be used.</param></documentation>
+            <parameter name="filePath" typeId="T:System.String" valueType="false" />
+            <parameter name="imageFormat" typeId="T:System.Drawing.Imaging.ImageFormat" valueType="false" />
+          </method>
+          <method name="Crop" displayName="Crop" id="M:Microsoft.Test.Snapshot.Crop(System.Drawing.Rectangle)" access="Public" contract="Normal" valueType="false">
+            <returnType type="Microsoft.Test.Snapshot" id="T:Microsoft.Test.Snapshot" />
+            <documentation><summary> Creates a new Snapshot based on the cropped bounds of the current snapshot. </summary>
+<param name="bounds">The bounding rectangle of the Snapshot.</param>
+<returns></returns></documentation>
+            <parameter name="bounds" typeId="T:System.Drawing.Rectangle" valueType="true" />
+          </method>
+          <method name="Resize" displayName="Resize" id="M:Microsoft.Test.Snapshot.Resize(System.Drawing.Size)" access="Public" contract="Normal" valueType="false">
+            <returnType type="Microsoft.Test.Snapshot" id="T:Microsoft.Test.Snapshot" />
+            <documentation><summary> Creates a new Snapshot of the specified size from the original using bilinear interpolation. </summary>
+<param name="size">Desired size of new image</param>
+<returns></returns></documentation>
+            <parameter name="size" typeId="T:System.Drawing.Size" valueType="true" />
+          </method>
+          <method name="Or" displayName="Or" id="M:Microsoft.Test.Snapshot.Or(Microsoft.Test.Snapshot)" access="Public" contract="Normal" valueType="true">
+            <returnType type="System.Void" id="T:System.Void" />
+            <documentation><summary> Modifies the current image to contain the result of a bitwise OR of this Snapshot and the mask. This technique can be used to merge data from two images. http://en.wikipedia.org/wiki/Bitmask#Image_masks </summary>
+<param name="mask">Mask Snapshot to use in the bitwise OR operation.</param></documentation>
+            <parameter name="mask" typeId="T:Microsoft.Test.Snapshot" valueType="false" />
+          </method>
+          <method name="And" displayName="And" id="M:Microsoft.Test.Snapshot.And(Microsoft.Test.Snapshot)" access="Public" contract="Normal" valueType="true">
+            <returnType type="System.Void" id="T:System.Void" />
+            <documentation><summary> Modifies the current image to contain the result of a bitwise AND of this Snapshot and the mask. This technique can be used to remove data from an image. http://en.wikipedia.org/wiki/Bitmask#Image_masks </summary>
+<param name="mask">Mask Snapshot to use in the bitwise AND operation.</param></documentation>
+            <parameter name="mask" typeId="T:Microsoft.Test.Snapshot" valueType="false" />
+          </method>
+        </class>
+        <class name="SnapshotVerifier" displayName="SnapshotVerifier" namespace="Microsoft.Test" id="T:Microsoft.Test.SnapshotVerifier" access="Public" abstract="true">
+          <documentation><summary> Base class for all Snapshot verifier types. This establishes a single method contract: Verify(Snapshot). </summary></documentation>
+          <derivedBy id="T:Microsoft.Test.SnapshotColorVerifier" displayName="SnapshotColorVerifier" namespace="Microsoft.Test" assembly="FrameworkUtilities" />
+          <derivedBy id="T:Microsoft.Test.SnapshotHistogramVerifier" displayName="SnapshotHistogramVerifier" namespace="Microsoft.Test" assembly="FrameworkUtilities" />
+          <derivedBy id="T:Microsoft.Test.SnapshotToleranceMapVerifier" displayName="SnapshotToleranceMapVerifier" namespace="Microsoft.Test" assembly="FrameworkUtilities" />
+          <constructor name=".ctor" id="M:Microsoft.Test.SnapshotVerifier.#ctor" access="Family" contract="Normal">
+            <documentation>
+              <summary>Initializes a new instance of the <see cref="T:Microsoft.Test.SnapshotVerifier" /> class.</summary>
+            </documentation>
+          </constructor>
+          <method name="Verify" displayName="Verify" id="M:Microsoft.Test.SnapshotVerifier.Verify(Microsoft.Test.Snapshot)" access="Public" contract="Abstract" valueType="true">
+            <returnType type="Microsoft.Test.VerificationResult" id="T:Microsoft.Test.VerificationResult" />
+            <documentation><summary> Verifies the specified Snapshot instance against the current settings of the SnapshotVerifier instance. </summary>
+<param name="image">The image to be verified.</param>
+<returns>The verification result based on the supplied image and the current settings of the SnapshotVerifier instance.</returns></documentation>
+            <parameter name="image" typeId="T:Microsoft.Test.Snapshot" valueType="false" />
+          </method>
+        </class>
+        <class name="SnapshotColorVerifier" displayName="SnapshotColorVerifier" namespace="Microsoft.Test" id="T:Microsoft.Test.SnapshotColorVerifier" access="Public">
+          <documentation><summary> Verifies that all pixels in a Snapshot are within tolerance range of ExpectedColor. </summary></documentation>
+          <baseType name="SnapshotVerifier" id="T:Microsoft.Test.SnapshotVerifier" displayName="SnapshotVerifier" namespace="Microsoft.Test" assembly="FrameworkUtilities" />
+          <constructor name=".ctor" id="M:Microsoft.Test.SnapshotColorVerifier.#ctor" access="Public" contract="Normal" overload="1">
+            <documentation><summary> Initializes a new instance of a SnapshotColorVerifier class, using black pixels with zero tolerance. </summary></documentation>
+          </constructor>
+          <constructor name=".ctor" id="M:Microsoft.Test.SnapshotColorVerifier.#ctor(System.Drawing.Color,Microsoft.Test.ColorDifference)" access="Public" contract="Normal" overload="2">
+            <documentation><summary> Initializes a new instance of the SnapshotColorVerifier class, using the specified tolerance value. </summary>
+<param name="expectedColor">The expected color to test against.</param>
+<param name="tolerance">A ColorDifference instance specifying the desired tolerance.</param></documentation>
+            <parameter name="expectedColor" typeId="T:System.Drawing.Color" valueType="true" />
+            <parameter name="tolerance" typeId="T:Microsoft.Test.ColorDifference" valueType="false" />
+          </constructor>
+          <property name="Tolerance" id="P:Microsoft.Test.SnapshotColorVerifier.Tolerance" access="Public" contract="Normal" typeId="T:Microsoft.Test.ColorDifference" valueType="false" get="Public" set="Public">
+            <documentation><summary> The color tolerance range for verification. To pass verification, all Snapshot pixels must be within range of the expected color tolerance. </summary></documentation>
+          </property>
+          <property name="ExpectedColor" id="P:Microsoft.Test.SnapshotColorVerifier.ExpectedColor" access="Public" contract="Normal" typeId="T:System.Drawing.Color" valueType="true" get="Public" set="Public">
+            <documentation><summary> The expected Color value for verification. </summary></documentation>
+          </property>
+          <method name="Verify" displayName="Verify" id="M:Microsoft.Test.SnapshotColorVerifier.Verify(Microsoft.Test.Snapshot)" access="Public" contract="Override" valueType="true">
+            <returnType type="Microsoft.Test.VerificationResult" id="T:Microsoft.Test.VerificationResult" />
+            <documentation><summary> Ensures that the image colors are all within tolerance range of the expected Color. </summary>
+<param name="image">The actual image being verified.</param>
+<returns>A VerificationResult enumeration value based on the image, the expected color, and the tolerance.</returns></documentation>
+            <parameter name="image" typeId="T:Microsoft.Test.Snapshot" valueType="false" />
+          </method>
+        </class>
+        <class name="SnapshotHistogramVerifier" displayName="SnapshotHistogramVerifier" namespace="Microsoft.Test" id="T:Microsoft.Test.SnapshotHistogramVerifier" access="Public">
+          <documentation><summary> Verifies a diffed image based on the number of pixels of a given brightness per color. A tolerance Histogram curve can be created from an XML file, produced from a reference image, or manually created for use as a tolerance. <p /> For more information on histograms, refer to the description of the Histogram class. </summary>
+<example>Takes a snapshot and verifies it is an absolute match to an expected image. <code>        // Take a snapshot, compare to a master image, validate match using a tolerance histogram 
+        // and save the diff in case of a poor match.
+        Snapshot actual = Snapshot.FromRectangle(new Rectangle(0, 0, 800, 600));
+        Snapshot expected = Snapshot.FromFile("Expected.bmp");
+        Snapshot diff = actual.CompareTo(expected);
+     
+        SnapshotVerifier v = new SnapshotHistogramVerifier(Histogram.FromFile("ToleranceHistogram.xml"));
+        if (v.Verify(diff) == VerificationResult.Fail)
+        {
+            diff.ToFile("Actual.bmp", ImageFormat.Bmp);
+        }
+</code></example></documentation>
+          <baseType name="SnapshotVerifier" id="T:Microsoft.Test.SnapshotVerifier" displayName="SnapshotVerifier" namespace="Microsoft.Test" assembly="FrameworkUtilities" />
+          <constructor name=".ctor" id="M:Microsoft.Test.SnapshotHistogramVerifier.#ctor" access="Public" contract="Normal" overload="1">
+            <documentation><summary> Initializes a new instance of the SnapshotHistgramVerifier class, with the tolerance histogram curve initialized to zero tolerance for non-black values. </summary></documentation>
+          </constructor>
+          <constructor name=".ctor" id="M:Microsoft.Test.SnapshotHistogramVerifier.#ctor(Microsoft.Test.Histogram)" access="Public" contract="Normal" overload="2">
+            <documentation><summary> Initializes a new instance of the SnapshotHistgramVerifier class, with the tolerance histogram curve initialized to the specified tolerance value. </summary>
+<param name="tolerance">The tolerance Histogram to use for verification.</param></documentation>
+            <parameter name="tolerance" typeId="T:Microsoft.Test.Histogram" valueType="false" />
+          </constructor>
+          <property name="Tolerance" id="P:Microsoft.Test.SnapshotHistogramVerifier.Tolerance" access="Public" contract="Normal" typeId="T:Microsoft.Test.Histogram" valueType="false" get="Public" set="Public">
+            <documentation><summary> The tolerance Histogram that is used to test snapshots; snapshots must produce a histogram which falls below this curve in order to pass. </summary></documentation>
+          </property>
+          <method name="Verify" displayName="Verify" id="M:Microsoft.Test.SnapshotHistogramVerifier.Verify(Microsoft.Test.Snapshot)" access="Public" contract="Override" valueType="true">
+            <returnType type="Microsoft.Test.VerificationResult" id="T:Microsoft.Test.VerificationResult" />
+            <documentation><summary> Verifies a diffed image based on the number of pixels of a given brightness per color. A tolerance Histogram curve can be created from an XML file, produced from a reference image, or manually created for use as a tolerance. </summary>
+<param name="image">The actual Snapshot to be verified.</param>
+<returns>A VerificationResult enumeration value based on the image, the expected color, and the tolerance.</returns></documentation>
+            <parameter name="image" typeId="T:Microsoft.Test.Snapshot" valueType="false" />
+          </method>
+        </class>
+        <class name="SnapshotToleranceMapVerifier" displayName="SnapshotToleranceMapVerifier" namespace="Microsoft.Test" id="T:Microsoft.Test.SnapshotToleranceMapVerifier" access="Public">
+          <documentation><summary> Verifies that all pixels in a Snapshot are within the tolerance range, defined by the tolerance map. </summary>
+<example> This sample demonstrates the use of SnapshotToleranceMapVerifier. <code>        Snapshot expected = Shapshot.FromFile("expectedImage.png");
+        Shapshot actual = Snapshot.FromRectangle(new Rectangle(10, 10, 200, 100));
+        Snapshot diff = actual.CompareTo(master);
+        
+        Snapshot toleranceMap = Snapshot.FromFile("expectedImageTolerances.png");
+
+        SnapshotVerifier v = new SnapshotToleranceMapVerifier(toleranceMap);
+        if (v.Verify() == VerificationResult.Pass)
+        {
+            // Log success
+        }
+        else
+        {
+            // Log failure. Store the actual snapshot and the diff for investigation
+            actual.ToFile("actualImage.png");
+            diff.ToFile("diffImage.png");
+        }
+</code></example></documentation>
+          <baseType name="SnapshotVerifier" id="T:Microsoft.Test.SnapshotVerifier" displayName="SnapshotVerifier" namespace="Microsoft.Test" assembly="FrameworkUtilities" />
+          <constructor name=".ctor" id="M:Microsoft.Test.SnapshotToleranceMapVerifier.#ctor(Microsoft.Test.Snapshot)" access="Public" contract="Normal">
+            <documentation><summary> Initializes a new instance of the SnapshotToleranceMapVerifier class, using the specified tolerance map. </summary>
+<param name="toleranceMap"> A Snapshot instance defining the tolerance map, used by the verifier. A black tolerance map (a snapshot, where all pixels are with zero values) means zero tolerance. A white tolerance map (a snapshot, where all pixels are with value 0xFF) means infinitely high tolerance. </param></documentation>
+            <parameter name="toleranceMap" typeId="T:Microsoft.Test.Snapshot" valueType="false" />
+          </constructor>
+          <property name="ToleranceMap" id="P:Microsoft.Test.SnapshotToleranceMapVerifier.ToleranceMap" access="Public" contract="Normal" typeId="T:Microsoft.Test.Snapshot" valueType="false" get="Public" set="Public">
+            <documentation><summary> A Snapshot defining the tolerance map used by the verifier. A black tolerance map (a snapshot, where all pixels are with zero values) means zero tolerance. A white tolerance map (a snapshot, where all pixels are with value 0xFF) means infinitely high tolerance. </summary></documentation>
+          </property>
+          <method name="Verify" displayName="Verify" id="M:Microsoft.Test.SnapshotToleranceMapVerifier.Verify(Microsoft.Test.Snapshot)" access="Public" contract="Override" valueType="true">
+            <returnType type="Microsoft.Test.VerificationResult" id="T:Microsoft.Test.VerificationResult" />
+            <documentation><summary> Ensures that the image colors are all with smaller values than the image colors of the tolerance map. </summary>
+<param name="image">The actual image being verified.</param>
+<returns>A VerificationResult enumeration value based on the image, and the tolerance map.</returns></documentation>
+            <parameter name="image" typeId="T:Microsoft.Test.Snapshot" valueType="false" />
+          </method>
+        </class>
+        <enumeration name="VerificationResult" id="T:Microsoft.Test.VerificationResult" displayName="VerificationResult" namespace="Microsoft.Test" access="Public">
+          <documentation><summary> Specifies values used to report the outcome of the SnapshotVerifier.Verify method. </summary></documentation>
+          <field name="Fail" id="F:Microsoft.Test.VerificationResult.Fail" access="Public" contract="Static" typeId="T:Microsoft.Test.VerificationResult" valueType="true" literal="true" value="0">
+            <documentation><summary> Object does not meet Verification criteria. </summary></documentation>
+          </field>
+          <field name="Pass" id="F:Microsoft.Test.VerificationResult.Pass" access="Public" contract="Static" typeId="T:Microsoft.Test.VerificationResult" valueType="true" literal="true" value="1">
+            <documentation><summary> Object meets Verification criteria. </summary></documentation>
+          </field>
+        </enumeration>
+        <enumeration name="WindowSnapshotMode" id="T:Microsoft.Test.WindowSnapshotMode" displayName="WindowSnapshotMode" namespace="Microsoft.Test" access="Public">
+          <documentation><summary> WindowSnapshotMode determines if window border should be captured as part of Snapshot. </summary></documentation>
+          <field name="ExcludeWindowBorder" id="F:Microsoft.Test.WindowSnapshotMode.ExcludeWindowBorder" access="Public" contract="Static" typeId="T:Microsoft.Test.WindowSnapshotMode" valueType="true" literal="true" value="0">
+            <documentation><summary> Capture a snapshot of only the window client area. This mode excludes the window border. </summary></documentation>
+          </field>
+          <field name="IncludeWindowBorder" id="F:Microsoft.Test.WindowSnapshotMode.IncludeWindowBorder" access="Public" contract="Static" typeId="T:Microsoft.Test.WindowSnapshotMode" valueType="true" literal="true" value="1">
+            <documentation><summary> Capture a snapshot of the entire window area. This mode includes the window border. </summary></documentation>
+          </field>
+        </enumeration>
+      </namespace>
+    </module>
+  </assembly>
+  <assembly name="WpfUtilities">
+    <assemblyReference name="mscorlib" />
+    <assemblyReference name="UIAutomationClient" />
+    <assemblyReference name="System" />
+    <assemblyReference name="PresentationFramework" />
+    <assemblyReference name="UIAutomationTypes" />
+    <assemblyReference name="WindowsBase" />
+    <assemblyReference name="PresentationCore" />
+    <assemblyReference name="System.Drawing" />
+    <assemblyReference name="System.Core" />
+    <module name="WpfUtilities.dll">
+      <namespace name="Microsoft.Test">
+        <class name="AutomatedApplication" displayName="AutomatedApplication" namespace="Microsoft.Test" id="T:Microsoft.Test.AutomatedApplication" access="Public">
+          <documentation><summary> The AutomatedApplication class allows the user to load and start a test application either in the current process or in a new, separate process. The application is described using either InProcessSettings or OutOfProcessSettings which enable setting delegates and describe the application to launch. These delegates are called when the applcation's main window opens and/or when the application exits. </summary>
+<example> The following example shows in-process usage. The code runs the target application in a separate thread within the current process. <code>    public void MyTest()
+    {
+        InProcessSettings settings = new InProcessSettings(
+            "c:\\myTestApp.exe",
+            "MyTestApp",
+            OnMainWindowCreated,
+            OnExit);
+        
+        AutomatedApplication a = AutomatedApplication.Start(settings);
+        a.WaitForMainWindow(TimeSpan.FromSeconds(5));
+        
+        // Perform various tests...
+
+        a.Close();
+    }
+     
+    private static void OnMainWindowCreated(AutomatedApplication ap)
+    {
+        Console.WriteLine("The main window of the application was created.");
+    }
+
+    private static void OnExit(AutomatedApplication a)
+    {
+        Console.WriteLine("The application has exited.");
+    }
+</code></example>
+<example> The following example demonstrates out-of-process usage: <code>    public void MyTest()
+    {
+        ProcessStartInfo psi = new ProcessStartInfo("c:\\myTestApp.exe");
+        OutOfProcessSettings settings = new OutOfProcessSettings(
+            psi,
+            OnMainWindowOpened,
+            OnExit);
+     
+        AutomatedApplication a = AutomatedApplication.Start(settings);
+        a.WaitForMainWindow(TimeSpan.FromSeconds(5));
+     
+        // Perform various tests...
+      
+        a.Close();
+    }
+
+    private static void OnMainWindowCreated(AutomatedApplication ap)
+    {
+        Console.WriteLine("The main window of the application was created.");
+    }
+
+    private static void OnExit(AutomatedApplication ap)
+    {
+        Console.WriteLine("The application has exited.");
+    }
+</code></example></documentation>
+          <baseType name="MarshalByRefObject" id="T:System.MarshalByRefObject" displayName="MarshalByRefObject" namespace="System" assembly="mscorlib" />
+          <constructor name=".ctor" id="M:Microsoft.Test.AutomatedApplication.#ctor" access="Public" contract="Normal">
+            <documentation><summary> AutomatedApplication objects should be created using the appropriate Start method rather than the public constructor. </summary></documentation>
+          </constructor>
+          <property name="MainWindow" id="P:Microsoft.Test.AutomatedApplication.MainWindow" access="Public" contract="Normal" typeId="T:System.Windows.Automation.AutomationElement" valueType="false" get="Public" set="Private">
+            <documentation><summary> A read-only property that returns a handle to the main window of the test application. </summary></documentation>
+          </property>
+          <method name="Start" displayName="Start" id="M:Microsoft.Test.AutomatedApplication.Start(Microsoft.Test.InProcessSettings)" access="Public" contract="Static" valueType="false" overload="1">
+            <returnType type="Microsoft.Test.AutomatedApplication" id="T:Microsoft.Test.AutomatedApplication" />
+            <documentation><summary> Starts a new application using the settings provided and returns an AutomatedApplication to wrap it. </summary>
+<param name="settings"> The settings specify that the application should be started inside the current process. They specify the application to create, which is described by the application path and type name. If applicable the settings also describe the delegates to set. </param>
+<returns> Returns an AutomatedApplication handle which gives the user access to the main window and the ability to close the application. </returns></documentation>
+            <parameter name="settings" typeId="T:Microsoft.Test.InProcessSettings" valueType="false" />
+          </method>
+          <method name="Start" displayName="Start" id="M:Microsoft.Test.AutomatedApplication.Start(Microsoft.Test.OutOfProcessSettings)" access="Public" contract="Static" valueType="false" overload="2">
+            <returnType type="Microsoft.Test.AutomatedApplication" id="T:Microsoft.Test.AutomatedApplication" />
+            <documentation><summary> Starts a new application using the settings provided and returns an AutomatedApplication to wrap it. </summary>
+<param name="settings"> The settings specify that the application should be started in a new process. They specify the application to create, as described by a ProcessStartInfo object. If applicable the settings also describe the delegates to set. </param>
+<returns> Returns an AutomatedApplication handle which gives the user access to the main window and the ability to close the application. </returns></documentation>
+            <parameter name="settings" typeId="T:Microsoft.Test.OutOfProcessSettings" valueType="false" />
+          </method>
+          <method name="Close" displayName="Close" id="M:Microsoft.Test.AutomatedApplication.Close" access="Public" contract="Normal" valueType="true">
+            <returnType type="System.Void" id="T:System.Void" />
+            <documentation><summary> Closes the automated application gracefully. </summary></documentation>
+          </method>
+          <method name="WaitForMainWindow" displayName="WaitForMainWindow" id="M:Microsoft.Test.AutomatedApplication.WaitForMainWindow(System.TimeSpan)" access="Public" contract="Normal" valueType="true">
+            <returnType type="System.Void" id="T:System.Void" />
+            <documentation><summary> Blocks execution of the current thread until the main window of the application is displayed or until the specified timeout interval elapses. </summary>
+<param name="timeout">The timeout interval.</param></documentation>
+            <parameter name="timeout" typeId="T:System.TimeSpan" valueType="true" />
+          </method>
+        </class>
+        <class name="AutomationUtilities" displayName="AutomationUtilities" namespace="Microsoft.Test" id="T:Microsoft.Test.AutomationUtilities" access="Public" static="true">
+          <documentation><summary> The AutomationUtilities API provides a simple interface to common <a href="http://msdn.microsoft.com/en-us/library/ms747327.aspx">UI Automation</a> (UIA) operations. The most common class of UIA operations in testing involves discovery of UI elements. </summary>
+<example> This sample discovers and clicks the "Close" button in an "About" dialog box, thus dismissing the "About" dialog box. <code>        string aboutDialogName = "About";
+        string closeButtonName = "Close";
+
+        AutomationElementCollection aboutDialogs = AutomationUtilities.FindElementsByName(
+            AutomationElement.RootElement,
+            aboutDialogName);
+
+        AutomationElementCollection closeButtons = AutomationUtilities.FindElementsByName(
+            aboutDialogs[0],
+            closeButtonName);
+
+        // You can either invoke the discovered control, through its invoke pattern ...
+        InvokePattern p = 
+            closeButtons[0].GetCurrentPattern(InvokePattern.Pattern) as InvokePattern;
+        p.Invoke();
+
+        // ... or you can handle the mouse directly and click on the control.
+        System.Windows.Point winPoint = closeButtons[0].GetClickablePoint();
+        System.Drawing.Point drawingPoint = new System.Drawing.Point((int)winPoint.X, (int)winPoint.Y);
+        Mouse.MoveTo(drawingPoint);
+        Mouse.Click(System.Windows.Input.MouseButton.Left);
+</code></example></documentation>
+          <method name="FindElementByIndex" displayName="FindElementByIndex" id="M:Microsoft.Test.AutomationUtilities.FindElementByIndex(System.Windows.Automation.AutomationElement,System.Int32)" access="Public" contract="Static" valueType="false">
+            <returnType type="System.Windows.Automation.AutomationElement" id="T:System.Windows.Automation.AutomationElement" />
+            <documentation><summary> Retrieves the child element with the specified index. </summary>
+<param name="rootElement">The parent element (e.g., a ListBox control).</param>
+<param name="index"> The index of the child element to find.</param>
+<returns>An AutomationElement representing the discovered child element.</returns></documentation>
+            <parameter name="rootElement" typeId="T:System.Windows.Automation.AutomationElement" valueType="false" />
+            <parameter name="index" typeId="T:System.Int32" valueType="true" />
+          </method>
+          <method name="FindElements" displayName="FindElements" id="M:Microsoft.Test.AutomationUtilities.FindElements(System.Windows.Automation.AutomationElement,System.Windows.Automation.Condition[])" access="Public" contract="Static" valueType="false">
+            <returnType type="System.Windows.Automation.AutomationElementCollection" id="T:System.Windows.Automation.AutomationElementCollection" />
+            <documentation><summary> Retrieves all UIA elements that meet the specified conditions. </summary>
+<param name="rootElement">Parent element, such as an application window, or AutomationElement.RootElement when searching for the application window.</param>
+<param name="conditions">Conditions that the returned collection should meet.</param>
+<returns>A UIA element collection.</returns></documentation>
+            <parameter name="rootElement" typeId="T:System.Windows.Automation.AutomationElement" valueType="false" />
+            <parameter name="conditions" typeId="T:System.Windows.Automation.Condition" valueType="false" isParamArray="true" />
+          </method>
+          <method name="FindElementsByClassName" displayName="FindElementsByClassName" id="M:Microsoft.Test.AutomationUtilities.FindElementsByClassName(System.Windows.Automation.AutomationElement,System.String)" access="Public" contract="Static" valueType="false">
+            <returnType type="System.Windows.Automation.AutomationElementCollection" id="T:System.Windows.Automation.AutomationElementCollection" />
+            <documentation><summary> Retrieves a UIA collection of all elements with a given class name. </summary>
+<param name="rootElement">Parent element, such as an application window, or AutomationElement.RootElement when searching for the application window.</param>
+<param name="className">The class name of the control type to find.</param>
+<returns>A UIA element collection.</returns></documentation>
+            <parameter name="rootElement" typeId="T:System.Windows.Automation.AutomationElement" valueType="false" />
+            <parameter name="className" typeId="T:System.String" valueType="false" />
+          </method>
+          <method name="FindElementsByControlType" displayName="FindElementsByControlType" id="M:Microsoft.Test.AutomationUtilities.FindElementsByControlType(System.Windows.Automation.AutomationElement,System.Windows.Automation.ControlType)" access="Public" contract="Static" valueType="false">
+            <returnType type="System.Windows.Automation.AutomationElementCollection" id="T:System.Windows.Automation.AutomationElementCollection" />
+            <documentation><summary> Retrieves a UIA collection of all elements of a given control type. </summary>
+<param name="rootElement">Parent element, such as an application window, or AutomationElement.RootElement when searching for the application window.</param>
+<param name="controlType">Control type of the control, such as Button.</param>
+<returns>A UIA element collection.</returns></documentation>
+            <parameter name="rootElement" typeId="T:System.Windows.Automation.AutomationElement" valueType="false" />
+            <parameter name="controlType" typeId="T:System.Windows.Automation.ControlType" valueType="false" />
+          </method>
+          <method name="FindElementsById" displayName="FindElementsById" id="M:Microsoft.Test.AutomationUtilities.FindElementsById(System.Windows.Automation.AutomationElement,System.String)" access="Public" contract="Static" valueType="false">
+            <returnType type="System.Windows.Automation.AutomationElementCollection" id="T:System.Windows.Automation.AutomationElementCollection" />
+            <documentation><summary> Retrieves a UIA collection of all elements with a given UIA identifier. </summary>
+<param name="rootElement">Parent element, such as an application window, or AutomationElement.RootElement when searching for the application window.</param>
+<param name="automationId">UIA identifier of the searched element, such as "button1".</param>
+<returns>A UIA element collection.</returns></documentation>
+            <parameter name="rootElement" typeId="T:System.Windows.Automation.AutomationElement" valueType="false" />
+            <parameter name="automationId" typeId="T:System.String" valueType="false" />
+          </method>
+          <method name="FindElementsByName" displayName="FindElementsByName" id="M:Microsoft.Test.AutomationUtilities.FindElementsByName(System.Windows.Automation.AutomationElement,System.String)" access="Public" contract="Static" valueType="false">
+            <returnType type="System.Windows.Automation.AutomationElementCollection" id="T:System.Windows.Automation.AutomationElementCollection" />
+            <documentation><summary> Retrieves a UIA collection of all elements with a given name. </summary>
+<param name="rootElement">Parent element, such as an application window, or AutomationElement.RootElement when searching for the application window.</param>
+<param name="name">Name of the searched element, such as "button1".</param>
+<returns>A UIA element collection.</returns></documentation>
+            <parameter name="rootElement" typeId="T:System.Windows.Automation.AutomationElement" valueType="false" />
+            <parameter name="name" typeId="T:System.String" valueType="false" />
+          </method>
+        </class>
+        <class name="DispatcherOperations" displayName="DispatcherOperations" namespace="Microsoft.Test" id="T:Microsoft.Test.DispatcherOperations" access="Public" static="true">
+          <documentation><summary> Helper class for the WPF Dispatcher. This class provides simple and consistent wrappers for common dispatcher operations. </summary>
+<example>
+  <code>        // SAMPLE USAGE #1:
+        // Move the mouse to a certain location on the screen. Wait for a popup to appear. 
+        // Verify that it appeared.
+        TimeSpan defaultPopupDelay = TimeSpan.FromSeconds(2);
+        Mouse.MoveTo(new System.Drawing.Point(100, 100));
+        DispatcherOperations.WaitFor(defaultPopupDelay);
+        // verify that the popup showed up.
+
+        // SAMPLE USAGE #2:
+        // Click on a button and verify that a mouse click event handler gets called.
+        Mouse.MoveTo(new System.Drawing.Point(100, 100));
+        Mouse.Click(System.Windows.Input.MouseButton.Left);
+        DispatcherOperations.WaitFor(DispatcherPriority.SystemIdle);
+        // verify that the handler has been clicked (e.g. check a isClicked variable)
+</code>
+</example></documentation>
+          <method name="WaitFor" displayName="WaitFor" id="M:Microsoft.Test.DispatcherOperations.WaitFor(System.Windows.Threading.DispatcherPriority)" access="Public" contract="Static" valueType="true" overload="1">
+            <returnType type="System.Void" id="T:System.Void" />
+            <documentation><summary> This method will wait until all pending DispatcherOperations of a priority higher than the specified priority have been processed. </summary>
+<param name="priority">The priority to wait for before continuing.</param></documentation>
+            <parameter name="priority" typeId="T:System.Windows.Threading.DispatcherPriority" valueType="true" />
+          </method>
+          <method name="WaitFor" displayName="WaitFor" id="M:Microsoft.Test.DispatcherOperations.WaitFor(System.TimeSpan)" access="Public" contract="Static" valueType="true" overload="2">
+            <returnType type="System.Void" id="T:System.Void" />
+            <documentation><summary> This method will wait for the specified TimeSpan, allowing pending DispatcherOperations (such as UI rendering) to continue during that time. This method should be used with caution. Waiting for time is generally discouraged, because it may have an adverse effect on the overall run time of a test suite when the test suite has a large number of tests. </summary>
+<param name="time">Amount of time to wait.</param></documentation>
+            <parameter name="time" typeId="T:System.TimeSpan" valueType="true" />
+          </method>
+        </class>
+        <class name="InProcessSettings" displayName="InProcessSettings" namespace="Microsoft.Test" id="T:Microsoft.Test.InProcessSettings" access="Public">
+          <documentation><summary> An InProcessSettings object can be passed to the AutomatedApplication.Start method to indicate an AutomatedApplication should be created inside the current process. The settings describe how to create the process through the path to the executable and the application type name. Optionally, the settings can also specify delegates to be called when the AutomatedApplication's main window opens or when the process exits. </summary></documentation>
+          <baseType name="MarshalByRefObject" id="T:System.MarshalByRefObject" displayName="MarshalByRefObject" namespace="System" assembly="mscorlib" />
+          <constructor name=".ctor" id="M:Microsoft.Test.InProcessSettings.#ctor(System.String,System.String,Microsoft.Test.AutomatedApplicationCallback,Microsoft.Test.AutomatedApplicationCallback)" access="Public" contract="Normal">
+            <documentation><summary> The constructor to set the StartInfo and applicable AutomationApplicationCallback delegates. </summary>
+<param name="path"> The full path to the application including the file name and extension. </param>
+<param name="applicationType"> The name of the application type. </param>
+<param name="mainWindowOpened"> The AutomatedApplicationCallback to be called when the application's main window opens. </param>
+<param name="exited"> The AutomatedApplicationCallback to be called when the application exits. </param></documentation>
+            <parameter name="path" typeId="T:System.String" valueType="false" />
+            <parameter name="applicationType" typeId="T:System.String" valueType="false" />
+            <parameter name="mainWindowOpened" typeId="T:Microsoft.Test.AutomatedApplicationCallback" valueType="false" />
+            <parameter name="exited" typeId="T:Microsoft.Test.AutomatedApplicationCallback" valueType="false" />
+          </constructor>
+          <property name="Path" id="P:Microsoft.Test.InProcessSettings.Path" access="Public" contract="Normal" typeId="T:System.String" valueType="false" get="Public" set="Public">
+            <documentation><summary> Information about the test application to launch. </summary></documentation>
+          </property>
+          <property name="ApplicationType" id="P:Microsoft.Test.InProcessSettings.ApplicationType" access="Public" contract="Normal" typeId="T:System.String" valueType="false" get="Public" set="Public">
+            <documentation><summary> Information about the test application to launch. </summary></documentation>
+          </property>
+          <property name="MainWindowOpened" id="P:Microsoft.Test.InProcessSettings.MainWindowOpened" access="Public" contract="Normal" typeId="T:Microsoft.Test.AutomatedApplicationCallback" valueType="false" get="Public" set="Public">
+            <documentation><summary> The AutomatedApplicationCallback to be called when the application's main window opens. </summary></documentation>
+          </property>
+          <property name="Exited" id="P:Microsoft.Test.InProcessSettings.Exited" access="Public" contract="Normal" typeId="T:Microsoft.Test.AutomatedApplicationCallback" valueType="false" get="Public" set="Public">
+            <documentation><summary> The AutomatedApplicationCallback to be called when the application exits. </summary></documentation>
+          </property>
+        </class>
+        <class name="Keyboard" displayName="Keyboard" namespace="Microsoft.Test" id="T:Microsoft.Test.Keyboard" access="Public" static="true">
+          <documentation><summary> Exposes a simple interface to common keyboard operations, allowing the user to simulate keyboard input. </summary>
+<example> The following code types "Hello world" with the specified casing, and then types "hello, capitalized world" which will be in all caps because the left shift key is being held down. <code>            Keyboard.Type("Hello world");
+            Keyboard.Press(Key.LeftShift);
+            Keyboard.Type("hello, capitalized world");
+            Keyboard.Release(Key.LeftShift);
+</code></example></documentation>
+          <method name="Press" displayName="Press" id="M:Microsoft.Test.Keyboard.Press(System.Windows.Input.Key)" access="Public" contract="Static" valueType="true">
+            <returnType type="System.Void" id="T:System.Void" />
+            <documentation><summary> Presses down a key. </summary>
+<param name="key">The key to press.</param></documentation>
+            <parameter name="key" typeId="T:System.Windows.Input.Key" valueType="true" />
+          </method>
+          <method name="Release" displayName="Release" id="M:Microsoft.Test.Keyboard.Release(System.Windows.Input.Key)" access="Public" contract="Static" valueType="true">
+            <returnType type="System.Void" id="T:System.Void" />
+            <documentation><summary> Releases a key. </summary>
+<param name="key">The key to release.</param></documentation>
+            <parameter name="key" typeId="T:System.Windows.Input.Key" valueType="true" />
+          </method>
+          <method name="Reset" displayName="Reset" id="M:Microsoft.Test.Keyboard.Reset" access="Public" contract="Static" valueType="true">
+            <returnType type="System.Void" id="T:System.Void" />
+            <documentation><summary> Resets the system keyboard to a clean state. </summary></documentation>
+          </method>
+          <method name="Type" displayName="Type" id="M:Microsoft.Test.Keyboard.Type(System.Windows.Input.Key)" access="Public" contract="Static" valueType="true" overload="1">
+            <returnType type="System.Void" id="T:System.Void" />
+            <documentation><summary> Performs a press-and-release operation for the specified key, which is effectively equivallent to typing. </summary>
+<param name="key">The key to press.</param></documentation>
+            <parameter name="key" typeId="T:System.Windows.Input.Key" valueType="true" />
+          </method>
+          <method name="Type" displayName="Type" id="M:Microsoft.Test.Keyboard.Type(System.String)" access="Public" contract="Static" valueType="true" overload="2">
+            <returnType type="System.Void" id="T:System.Void" />
+            <documentation><summary> Types the specified text. </summary>
+<param name="text">The text to type.</param></documentation>
+            <parameter name="text" typeId="T:System.String" valueType="false" />
+          </method>
+        </class>
+        <class name="Mouse" displayName="Mouse" namespace="Microsoft.Test" id="T:Microsoft.Test.Mouse" access="Public" static="true">
+          <documentation><summary> Exposes a simple interface to common mouse operations, allowing the user to simulate mouse input. </summary>
+<example>The following code moves to screen coordinate 100,100 and left clicks. <code>        Mouse.MoveTo(new Point(100, 100));
+        Mouse.Click(MouseButton.Left);
+</code></example></documentation>
+          <method name="Click" displayName="Click" id="M:Microsoft.Test.Mouse.Click(System.Windows.Input.MouseButton)" access="Public" contract="Static" valueType="true">
+            <returnType type="System.Void" id="T:System.Void" />
+            <documentation><summary> Clicks a mouse button. </summary>
+<param name="mouseButton">The mouse button to click.</param></documentation>
+            <parameter name="mouseButton" typeId="T:System.Windows.Input.MouseButton" valueType="true" />
+          </method>
+          <method name="DoubleClick" displayName="DoubleClick" id="M:Microsoft.Test.Mouse.DoubleClick(System.Windows.Input.MouseButton)" access="Public" contract="Static" valueType="true">
+            <returnType type="System.Void" id="T:System.Void" />
+            <documentation><summary> Double-clicks a mouse button. </summary>
+<param name="mouseButton">The mouse button to click.</param></documentation>
+            <parameter name="mouseButton" typeId="T:System.Windows.Input.MouseButton" valueType="true" />
+          </method>
+          <method name="Down" displayName="Down" id="M:Microsoft.Test.Mouse.Down(System.Windows.Input.MouseButton)" access="Public" contract="Static" valueType="true">
+            <returnType type="System.Void" id="T:System.Void" />
+            <documentation><summary> Performs a mouse-down operation for a specified mouse button. </summary>
+<param name="mouseButton">The mouse button to use.</param></documentation>
+            <parameter name="mouseButton" typeId="T:System.Windows.Input.MouseButton" valueType="true" />
+          </method>
+          <method name="MoveTo" displayName="MoveTo" id="M:Microsoft.Test.Mouse.MoveTo(System.Drawing.Point)" access="Public" contract="Static" valueType="true">
+            <returnType type="System.Void" id="T:System.Void" />
+            <documentation><summary> Moves the mouse pointer to the specified screen coordinates. </summary>
+<param name="point">The screen coordinates to move to.</param></documentation>
+            <parameter name="point" typeId="T:System.Drawing.Point" valueType="true" />
+          </method>
+          <method name="Reset" displayName="Reset" id="M:Microsoft.Test.Mouse.Reset" access="Public" contract="Static" valueType="true">
+            <returnType type="System.Void" id="T:System.Void" />
+            <documentation><summary> Resets the system mouse to a clean state. </summary></documentation>
+          </method>
+          <method name="Scroll" displayName="Scroll" id="M:Microsoft.Test.Mouse.Scroll(System.Double)" access="Public" contract="Static" valueType="true">
+            <returnType type="System.Void" id="T:System.Void" />
+            <documentation><summary> Simulates scrolling of the mouse wheel up or down. </summary>
+<param name="lines">The number of lines to scroll. Use positive numbers to scroll up and negative numbers to scroll down.</param></documentation>
+            <parameter name="lines" typeId="T:System.Double" valueType="true" />
+          </method>
+          <method name="Up" displayName="Up" id="M:Microsoft.Test.Mouse.Up(System.Windows.Input.MouseButton)" access="Public" contract="Static" valueType="true">
+            <returnType type="System.Void" id="T:System.Void" />
+            <documentation><summary> Performs a mouse-up operation for a specified mouse button. </summary>
+<param name="mouseButton">The mouse button to use.</param></documentation>
+            <parameter name="mouseButton" typeId="T:System.Windows.Input.MouseButton" valueType="true" />
+          </method>
+        </class>
+        <class name="OutOfProcessSettings" displayName="OutOfProcessSettings" namespace="Microsoft.Test" id="T:Microsoft.Test.OutOfProcessSettings" access="Public">
+          <documentation><summary> An OutOfProcessSettings object can be passed to the AutomatedApplication.Start method to indicate an AutomatedApplication should be created in its own process. The settings describe how to create the process through a ProcessStartInfo object. Optionally, the settings can also specify delegates to be called when the AutomatedApplication's main window opens or when the process exits. </summary></documentation>
+          <constructor name=".ctor" id="M:Microsoft.Test.OutOfProcessSettings.#ctor(System.Diagnostics.ProcessStartInfo,Microsoft.Test.AutomatedApplicationCallback,Microsoft.Test.AutomatedApplicationCallback)" access="Public" contract="Normal">
+            <documentation><summary> The constructor to set the StartInfo and applicable AutomatedApplicationCallback delegates. </summary>
+<param name="startInfo"> Information about the test application to launch. </param>
+<param name="mainWindowOpened"> The AutomatedApplicationCallback to be called when the application's main window opens. </param>
+<param name="exited"> The AutomatedApplicationCallback to be called when the application exits. </param></documentation>
+            <parameter name="startInfo" typeId="T:System.Diagnostics.ProcessStartInfo" valueType="false" />
+            <parameter name="mainWindowOpened" typeId="T:Microsoft.Test.AutomatedApplicationCallback" valueType="false" />
+            <parameter name="exited" typeId="T:Microsoft.Test.AutomatedApplicationCallback" valueType="false" />
+          </constructor>
+          <property name="StartInfo" id="P:Microsoft.Test.OutOfProcessSettings.StartInfo" access="Public" contract="Normal" typeId="T:System.Diagnostics.ProcessStartInfo" valueType="false" get="Public" set="Public">
+            <documentation><summary> Information about the test application to launch. </summary></documentation>
+          </property>
+          <property name="MainWindowOpened" id="P:Microsoft.Test.OutOfProcessSettings.MainWindowOpened" access="Public" contract="Normal" typeId="T:Microsoft.Test.AutomatedApplicationCallback" valueType="false" get="Public" set="Public">
+            <documentation><summary> The AutomatedApplicationCallback to be called when the application's main window opens. </summary></documentation>
+          </property>
+          <property name="Exited" id="P:Microsoft.Test.OutOfProcessSettings.Exited" access="Public" contract="Normal" typeId="T:Microsoft.Test.AutomatedApplicationCallback" valueType="false" get="Public" set="Public">
+            <documentation><summary> The AutomatedApplicationCallback to be called when the application exits. </summary></documentation>
+          </property>
+        </class>
+        <delegate name="AutomatedApplicationCallback" displayName="AutomatedApplicationCallback" namespace="Microsoft.Test" id="T:Microsoft.Test.AutomatedApplicationCallback" access="Public" valueType="true">
+          <returnType type="System.Void" id="T:System.Void" />
+          <documentation><summary> A delegate that will be called when the appropriate event is raised by an AutomatedApplication. </summary>
+<param name="application"> The delegate will be passed a handle to the associated AutomatedApplication. </param></documentation>
+          <parameter name="application" typeId="T:Microsoft.Test.AutomatedApplication" valueType="false" />
+        </delegate>
+      </namespace>
+    </module>
+  </assembly>
+</ndoc>
