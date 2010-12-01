@@ -134,7 +134,7 @@
     <Compile Include="ObjectComparison\CustomTypes.cs" />
     <Compile Include="ObjectComparison\ObjectComparerTests.cs" />
     <Compile Include="ObjectComparison\ObjectGraphFactoryTests.cs" />
-    <Compile Include="Text\CommonRegularExpressionsTests.cs" />
+    <Compile Include="Text\CommonRegexPatternsTests.cs" />
     <Compile Include="VariationGeneration\ConstraintTests.cs" />
     <Compile Include="VariationGeneration\DeclarativeTests.cs" />
     <Compile Include="VariationGeneration\ModelTests.cs" />
