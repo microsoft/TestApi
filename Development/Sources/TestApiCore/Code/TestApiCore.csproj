@@ -76,6 +76,7 @@
     <Compile Include="ApplicationControl\InProcessApplicationSettings.cs" />
     <Compile Include="ApplicationControl\InProcessApplicationType.cs" />
     <Compile Include="ApplicationControl\IOutOfProcessAutomatedApplicationImpl.cs" />
+    <Compile Include="ApplicationControl\NamespaceDoc.cs" />
     <Compile Include="ApplicationControl\OutOfProcessApplication.cs" />
     <Compile Include="ApplicationControl\OutOfProcessApplicationSettings.cs" />
   </ItemGroup>
@@ -85,6 +86,7 @@
     <Compile Include="CommandLineParsing\CommandLineParser.cs" />
     <Compile Include="CommandLineParsing\DirectoryInfoConverter.cs" />
     <Compile Include="CommandLineParsing\FileInfoConverter.cs" />
+    <Compile Include="CommandLineParsing\NamespaceDoc.cs" />
     <Compile Include="CommandLineParsing\RequiredAttribute.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -114,6 +116,7 @@
     <Compile Include="FaultInjection\Conditions\NeverTrigger.cs" />
     <Compile Include="FaultInjection\Faults\ReturnValueFault.cs" />
     <Compile Include="FaultInjection\Faults\ReturnValueRuntimeFault.cs" />
+    <Compile Include="FaultInjection\NamespaceDoc.cs" />
     <Compile Include="FaultInjection\RuntimeContext.cs" />
     <Compile Include="FaultInjection\Faults\RuntimeFaultAttribute.cs" />
     <Compile Include="FaultInjection\Serializer.cs" />
@@ -134,6 +137,7 @@
     <Compile Include="Input\Mouse.cs" />
     <Compile Include="Input\MouseButton.cs" />
     <Compile Include="Input\MouseButtonState.cs" />
+    <Compile Include="Input\NamespaceDoc.cs" />
     <Compile Include="Input\NativeMethods.cs" />
     <Compile Include="Input\SendMouseInputFlags.cs" />
   </ItemGroup>
@@ -141,10 +145,12 @@
     <Compile Include="LeakDetection\MemoryInterop.cs" />
     <Compile Include="LeakDetection\MemorySnapshot.cs" />
     <Compile Include="LeakDetection\MemorySnapshotCollection.cs" />
+    <Compile Include="LeakDetection\NamespaceDoc.cs" />
     <Compile Include="LeakDetection\NativeMethods.cs" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ObjectComparison\GraphNode.cs" />
+    <Compile Include="ObjectComparison\NamespaceDoc.cs" />
     <Compile Include="ObjectComparison\ObjectComparer.cs" />
     <Compile Include="ObjectComparison\ObjectComparisonMismatch.cs" />
     <Compile Include="ObjectComparison\ObjectComparisonMismatchType.cs" />
@@ -160,6 +166,7 @@
     <Compile Include="Text\Group.cs" />
     <Compile Include="Text\GroupAttributes.cs" />
     <Compile Include="Text\LineBreakProperty.cs" />
+    <Compile Include="Text\NamespaceDoc.cs" />
     <Compile Include="Text\NumberProperty.cs" />
     <Compile Include="Text\PropertyFactory.cs" />
     <Compile Include="Text\RangePropertyCollector.cs" />
@@ -176,6 +183,7 @@
     <Compile Include="Text\UnicodeRangeProperty.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Theming\NamespaceDoc.cs" />
     <Compile Include="Theming\Theme.cs" />
     <Compile Include="Theming\HwndInfo.cs" />
     <Compile Include="Theming\NativeMethods.cs" />
@@ -194,11 +202,13 @@
     <Compile Include="VariationGeneration\Constraints\IfThenConstraint.cs" />
     <Compile Include="VariationGeneration\Constraints\IfThenElseConstraint.cs" />
     <Compile Include="VariationGeneration\Constraints\LambdaParameterExpressionVisitor.cs" />
+    <Compile Include="VariationGeneration\Constraints\NamespaceDoc.cs" />
     <Compile Include="VariationGeneration\Constraints\ParameterListBuilder.cs" />
     <Compile Include="VariationGeneration\Constraints\TaggedValueConstraint.cs" />
     <Compile Include="VariationGeneration\InternalConstraintHelpers.cs" />
     <Compile Include="VariationGeneration\InternalVariationGenerationException.cs" />
     <Compile Include="VariationGeneration\Model.cs" />
+    <Compile Include="VariationGeneration\NamespaceDoc.cs" />
     <Compile Include="VariationGeneration\Parameter.cs" />
     <Compile Include="VariationGeneration\ParameterAttribute.cs" />
     <Compile Include="VariationGeneration\ParameterBase.cs" />
@@ -218,6 +228,7 @@
     <Compile Include="VisualVerification\ColorExtensions.cs" />
     <Compile Include="VisualVerification\HighFidelityColor.cs" />
     <Compile Include="VisualVerification\Histogram.cs" />
+    <Compile Include="VisualVerification\NamespaceDoc.cs" />
     <Compile Include="VisualVerification\NativeMethods.cs" />
     <Compile Include="VisualVerification\Snapshot.cs" />
     <Compile Include="VisualVerification\SnapshotColorVerifier.cs" />

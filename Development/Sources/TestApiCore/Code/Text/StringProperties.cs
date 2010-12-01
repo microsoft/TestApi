@@ -9,17 +9,6 @@ using System.Text;
 namespace Microsoft.Test.Text
 {
     /// <summary>
-    /// Contains types for the generation, manipulation and validation of strings and text, for testing purposes.  
-    /// </summary>
-    // Suppressed the warning that the class is never instantiated.
-    [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Performance", "CA1812")]
-    [System.Runtime.CompilerServices.CompilerGenerated()]
-    class NamespaceDoc
-    {
-        // Empty class used only for generation of namespace comments.
-    }
-
-    /// <summary>
     /// Defines the desired properties of a character string. 
     /// For more information on character strings, see <a href="http://msdn.microsoft.com/en-us/library/dd317711(VS.85).aspx">this article</a>.
     /// </summary>
