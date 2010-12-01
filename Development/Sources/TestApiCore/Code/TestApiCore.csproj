@@ -154,6 +154,7 @@
   <ItemGroup>
     <Compile Include="Text\BidiProperty.cs" />
     <Compile Include="Text\CombiningMarksProperty.cs" />
+    <Compile Include="Text\CommonRegularExpressions.cs" />
     <Compile Include="Text\EudcProperty.cs" />
     <Compile Include="Text\IStringProperty.cs" />
     <Compile Include="Text\Group.cs" />

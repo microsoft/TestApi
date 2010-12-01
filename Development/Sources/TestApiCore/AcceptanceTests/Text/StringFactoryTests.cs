@@ -1,13 +1,11 @@
-// (c) Copyright Microsoft Corporation.
+﻿// (c) Copyright Microsoft Corporation.
 // This source is subject to the Microsoft Public License (Ms-PL).
 // Please see http://go.microsoft.com/fwlink/?LinkID=131993 for details.
 // All other rights reserved.
 
 using System;
-using System.Collections.Generic;
-using System.Collections.ObjectModel;
-using System.IO;
 using System.Text;
+using System.Text.RegularExpressions;
 using Microsoft.Test.Text;
 using Xunit;
 using Xunit.Extensions;
@@ -495,6 +493,42 @@ namespace Microsoft.Test.AcceptanceTests.Text
                 }
             }
             Assert.True(isInTheRange);
+        }
+
+        [Theory]
+        [InlineData(@"((\(\d{3}\)?)|(\d{3}-))\d{3}-\d{4}",                                  1234, @"555-898-7332")]          // North American phone number
+        [InlineData(@"[A-Za-z0-9]+@(([A-Za-z0-9\-])+\.)+([A-Za-z\-])+",                     3456, @"testapi@microsoft.com")] // email address
+        [InlineData(@"(\d|1[12])/[1-2]\d/((\d{2})|(\d{4}))",                                78, @"12-01-2010")]              // calendar date
+        [InlineData(@"([^/:\*\?<>\|\x00-\x1F\x7F\\])",                                      9, @"W")]                        // valid filename character
+        [InlineData(@"([^\xFFFE\xFFFF\xFDD0-\xFDEF\xD800-\xDBFF\xDC00-\xDFFF]|([\xD800-\xDBFF][\xDC00-\xDFFF]))", -3, @"Ж")] // valid Unicode character
+        [InlineData(@"((?<num>(1?\d?\d)|(2[0-4]\d)|(25[0-4]))\.){3}\k<num>",                121, @"128.0.0.1")]              // ip address
+        [InlineData(@"(((0?\d)|(1[012])):[0-6]\d ?([ap]m)|((2[0-3])|([01] ?\d)):[0-6]\d)",  0, @"13:05")]                    // time
+        public void GenerateRandomStringFromRegularExpression(string regexStr, int seed, string expectedMatch)
+        {
+            Regex regex = new Regex(regexStr);
+
+            string s = StringFactory.GenerateRandomString(regex, seed);
+
+            Assert.True(regex.IsMatch(s));
+            Assert.True(regex.IsMatch(expectedMatch));
+        }
+
+        [Theory]
+        [InlineData(@"((\(\d{3}\)?)|(\d{3}-))\d{3}-\d{4}",                                  1234)]  // North American phone number
+        [InlineData(@"[A-Za-z0-9]+@(([A-Za-z0-9\-])+\.)+([A-Za-z\-])+",                     3456)]  // email address
+        [InlineData(@"(\d|1[12])/[1-2]\d/((\d{2})|(\d{4}))",                                78)]    // calendar date
+        [InlineData(@"([^/:\*\?<>\|\x00-\x1F\x7F\\])",                                      9)]     // valid filename character
+        [InlineData(@"([^\xFFFE\xFFFF\xFDD0-\xFDEF\xD800-\xDBFF\xDC00-\xDFFF]|([\xD800-\xDBFF][\xDC00-\xDFFF]))", -3)] // valid Unicode character
+        [InlineData(@"((?<num>(1?\d?\d)|(2[0-4]\d)|(25[0-4]))\.){3}\k<num>",                121)]   // ip address
+        [InlineData(@"(((0?\d)|(1[012])):[0-6]\d ?([ap]m)|((2[0-3])|([01] ?\d)):[0-6]\d)",  0)]     // time
+        public void VerifyReproducibilityOfRandomStringsFromRegularExpression(string regexStr, int seed)
+        {
+            Regex regex = new Regex(regexStr);
+
+            string s1 = StringFactory.GenerateRandomString(regex, seed);
+            string s2 = StringFactory.GenerateRandomString(regex, seed);
+
+            Assert.Equal<string>(s1, s2);
         }
     }
 }
