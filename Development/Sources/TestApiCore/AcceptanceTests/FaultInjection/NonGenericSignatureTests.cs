@@ -5,7 +5,6 @@
 
 using System;
 using Microsoft.Test.FaultInjection;
-using Microsoft.Test.FaultInjection.Constants;
 using Xunit;
 
 namespace Microsoft.Test.AcceptanceTests.FaultInjection

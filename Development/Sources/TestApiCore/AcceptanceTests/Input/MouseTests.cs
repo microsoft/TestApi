@@ -9,7 +9,6 @@ using System.Runtime.InteropServices;
 using Microsoft.Test.Input;
 using Xunit;
 using Xunit.Extensions;
-using System.Diagnostics;
 
 namespace Microsoft.Test.AcceptanceTests.Input
 {

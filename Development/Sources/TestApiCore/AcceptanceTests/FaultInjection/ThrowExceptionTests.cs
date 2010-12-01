@@ -4,8 +4,6 @@
 // All other rights reserved.
 
 using System;
-using System.Text;
-using System.Collections.Generic;
 using System.Runtime.Serialization;
 using Microsoft.Test.FaultInjection;
 using Xunit;

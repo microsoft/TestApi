@@ -3,10 +3,7 @@
 // Please see http://go.microsoft.com/fwlink/?LinkID=131993 for details.
 // All other rights reserved.
 
-using System;
-using System.IO;
 using Microsoft.Test.VisualVerification;
-using Xunit;
 using Xunit.Extensions;
 
 namespace Microsoft.Test.AcceptanceTests.VisualVerification

@@ -5,8 +5,6 @@
 
 using System;
 using Microsoft.Test.FaultInjection;
-using Microsoft.Test.FaultInjection.Conditions;
-using Microsoft.Test.FaultInjection.Faults;
 
 namespace Microsoft.Test.AcceptanceTests.FaultInjection
 {

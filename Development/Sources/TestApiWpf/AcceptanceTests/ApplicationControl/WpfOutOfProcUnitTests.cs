@@ -4,17 +4,11 @@
 // All other rights reserved.
 
 using System;
-using System.Collections;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Globalization;
-using System.IO;
 using System.Threading;
-using System.Reflection;
-using System.Windows;
 using System.Windows.Automation;
-using System.Windows.Controls;
-using System.Windows.Threading;
 using Microsoft.Test.ApplicationControl;
 using Microsoft.Test.Input;
 using Xunit;

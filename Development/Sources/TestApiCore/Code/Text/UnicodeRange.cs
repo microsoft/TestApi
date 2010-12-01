@@ -6,7 +6,6 @@
 using System;
 using System.Globalization;
 
-
 namespace Microsoft.Test.Text
 {
     /// <summary>

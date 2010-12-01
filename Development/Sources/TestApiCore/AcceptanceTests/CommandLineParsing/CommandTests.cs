@@ -4,7 +4,6 @@
 // All other rights reserved.
 
 using System;
-using System.Globalization;
 using Microsoft.Test.CommandLineParsing;
 using Xunit;
 using Xunit.Extensions;

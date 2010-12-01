@@ -6,8 +6,6 @@
 using System;
 using System.Diagnostics;
 using System.IO;
-using System.Threading;
-using Microsoft.Test;
 using Microsoft.Test.Theming;
 using Xunit;
 

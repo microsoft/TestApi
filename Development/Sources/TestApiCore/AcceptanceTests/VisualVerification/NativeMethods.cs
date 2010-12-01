@@ -4,7 +4,6 @@
 // All other rights reserved.
 
 using System;
-using System.Drawing;
 using System.Runtime.InteropServices;
 
 namespace Microsoft.Test.AcceptanceTests.VisualVerification

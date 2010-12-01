@@ -8,7 +8,6 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using Microsoft.Test.VariationGeneration;
-using Microsoft.Test.VariationGeneration.Constraints;
 using Xunit;
 
 namespace Microsoft.Test.AcceptanceTests.VariationGeneration

@@ -5,7 +5,6 @@
 
 using System;
 
-
 namespace Microsoft.Test.Text
 {
     /// <summary>

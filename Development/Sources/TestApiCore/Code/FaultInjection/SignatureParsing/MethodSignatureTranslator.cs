@@ -4,8 +4,8 @@
 // All other rights reserved.
 
 using System;
-using System.Globalization;
 using System.Collections.Generic;
+using System.Globalization;
 
 namespace Microsoft.Test.FaultInjection.SignatureParsing
 {
