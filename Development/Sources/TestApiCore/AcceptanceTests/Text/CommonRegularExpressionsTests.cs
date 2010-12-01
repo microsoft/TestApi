@@ -15,33 +15,78 @@ namespace Microsoft.Test.AcceptanceTests.Text
 {
     public class CommonRegularExpressionsTests
     {
-        /// <summary>
-        /// InlineData requires all inline data to be constants. 
-        /// With PropertyData we can get around that limitation, which allows us to supply  
-        /// static readonly property values (CommonRegularExpressions.XXX) to the data-driven test.
-        /// </summary>
         [Theory]
-        [PropertyData("CommonRegularExpressionsTestData")]
-        public void GenerateRandomStringFromCommonRegularExpression(Regex regex, string expectedMatch)
+        [PropertyData("CommonRegularExpressionsFactory")]
+        public void VerifyCommonRegularExpression(Regex regex, string matchCandiate, bool isMatchExpected)
         {
-            string s = StringFactory.GenerateRandomString(regex, 1234);
+            bool isMatchActual = regex.IsMatch(matchCandiate);
 
-            Assert.True(regex.IsMatch(s));
-            Assert.True(regex.IsMatch(expectedMatch));
+            Assert.Equal<bool>(isMatchExpected, isMatchActual);
         }
 
-        public static IEnumerable<object[]> CommonRegularExpressionsTestData
+        public static IEnumerable<object[]> CommonRegularExpressionsFactory
         {
             get
             {
-                yield return new object[] { CommonRegularExpressions.CalendarDate, @"12-01-2010" };
-                yield return new object[] { CommonRegularExpressions.EmailAddress, @"somebody@microsoft.com" };
-                yield return new object[] { CommonRegularExpressions.IpAddress, @"128.0.0.1" };
-                yield return new object[] { CommonRegularExpressions.Time, @"13:01" };
-                yield return new object[] { CommonRegularExpressions.UsaPhoneNumber, @"123-456-7890" };
-                yield return new object[] { CommonRegularExpressions.UsaSocialSecurityNumber, @"555-22-9999" };
-                yield return new object[] { CommonRegularExpressions.UsaZipCode, @"12345" };
-                yield return new object[] { CommonRegularExpressions.UsaZipCodeExtended, @"12345-6789" };
+                yield return new object[] { CommonRegularExpressions.CalendarDate, @"12/31/2010", true };
+                yield return new object[] { CommonRegularExpressions.CalendarDate, @"1/1/2010", true };
+                yield return new object[] { CommonRegularExpressions.CalendarDate, @"12/01/2010", true };
+                yield return new object[] { CommonRegularExpressions.CalendarDate, @"01/01/2010", true };
+                yield return new object[] { CommonRegularExpressions.CalendarDate, @"02/30/2010", true };
+                yield return new object[] { CommonRegularExpressions.CalendarDate, @"13/01/2010", true };  // bug in the regex
+                yield return new object[] { CommonRegularExpressions.CalendarDate, @"12-32-2010", false };
+                yield return new object[] { CommonRegularExpressions.CalendarDate, @"12/32/2010", false };
+
+                yield return new object[] { CommonRegularExpressions.EmailAddress, @"somebody@microsoft.com" , true };
+                yield return new object[] { CommonRegularExpressions.EmailAddress, @"Some.Name@microsoft.com", true };
+                yield return new object[] { CommonRegularExpressions.EmailAddress, @"s@microsoft.com", true };
+                yield return new object[] { CommonRegularExpressions.EmailAddress, @"somebody@.com", false };
+                yield return new object[] { CommonRegularExpressions.EmailAddress, @"somebody@microsoft.", false };
+                yield return new object[] { CommonRegularExpressions.EmailAddress, @"somebody@microsoft.c", false };
+
+                yield return new object[] { CommonRegularExpressions.IpAddress, @"128.0.0.1", false }; // bug in the regex
+                yield return new object[] { CommonRegularExpressions.IpAddress, @"128.0.0.0", true };
+                yield return new object[] { CommonRegularExpressions.IpAddress, @"255.255.255.255", false };
+                yield return new object[] { CommonRegularExpressions.IpAddress, @"255.255.255.256", false };
+                yield return new object[] { CommonRegularExpressions.IpAddress, @"0.0.0.1", false };
+
+                yield return new object[] { CommonRegularExpressions.Time, @"13:01", true };
+                yield return new object[] { CommonRegularExpressions.Time, @"01:01", true };
+                yield return new object[] { CommonRegularExpressions.Time, @"00:00", true };
+                yield return new object[] { CommonRegularExpressions.Time, @"1:01", false };
+                yield return new object[] { CommonRegularExpressions.Time, @"13:0", false };
+                yield return new object[] { CommonRegularExpressions.Time, @"25:01", false };
+                yield return new object[] { CommonRegularExpressions.Time, @"10:60", true };  // bug in the regex
+
+                yield return new object[] { CommonRegularExpressions.UsaPhoneNumber, @"123-456-7890" ,true };
+                yield return new object[] { CommonRegularExpressions.UsaPhoneNumber, @"023-456-7890", true };
+                yield return new object[] { CommonRegularExpressions.UsaPhoneNumber, @"555-000-0001", true };
+                yield return new object[] { CommonRegularExpressions.UsaPhoneNumber, @"555-000-0000", true };
+                yield return new object[] { CommonRegularExpressions.UsaPhoneNumber, @"123-456-789", false };
+                yield return new object[] { CommonRegularExpressions.UsaPhoneNumber, @"123-456-78901", false };
+                yield return new object[] { CommonRegularExpressions.UsaPhoneNumber, @"12-456-7890", false };
+                yield return new object[] { CommonRegularExpressions.UsaPhoneNumber, @"123-45-7890", false };
+
+                yield return new object[] { CommonRegularExpressions.UsaSocialSecurityNumber, @"123-45-6789", true };
+                yield return new object[] { CommonRegularExpressions.UsaSocialSecurityNumber, @"333-22-4444", true };
+                yield return new object[] { CommonRegularExpressions.UsaSocialSecurityNumber, @"3333-22-4444", false };
+                yield return new object[] { CommonRegularExpressions.UsaSocialSecurityNumber, @"33-22-4444", false };
+                yield return new object[] { CommonRegularExpressions.UsaSocialSecurityNumber, @"333-222-4444", false };
+                yield return new object[] { CommonRegularExpressions.UsaSocialSecurityNumber, @"333-2-4444", false };
+                yield return new object[] { CommonRegularExpressions.UsaSocialSecurityNumber, @"333-22-44444", false };
+                yield return new object[] { CommonRegularExpressions.UsaSocialSecurityNumber, @"333-22-444", false };
+                yield return new object[] { CommonRegularExpressions.UsaSocialSecurityNumber, @"3a3-22-4444", false };
+
+                yield return new object[] { CommonRegularExpressions.UsaZipCode, @"01234", true };
+                yield return new object[] { CommonRegularExpressions.UsaZipCode, @"12345", true };
+                yield return new object[] { CommonRegularExpressions.UsaZipCode, @"123456", false };
+                yield return new object[] { CommonRegularExpressions.UsaZipCode, @"1234", false };
+                yield return new object[] { CommonRegularExpressions.UsaZipCode, @"123a5", false };
+                yield return new object[] { CommonRegularExpressions.UsaZipCode, @"123-5", false };
+
+                yield return new object[] { CommonRegularExpressions.UsaZipCodeExtended, @"12345-6789", true };
+                yield return new object[] { CommonRegularExpressions.UsaZipCodeExtended, @"12345-678", false };
+                yield return new object[] { CommonRegularExpressions.UsaZipCodeExtended, @"12345-67890", false };
             }
         }
     }
