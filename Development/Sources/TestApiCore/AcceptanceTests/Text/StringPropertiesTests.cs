@@ -3,14 +3,9 @@
 // Please see http://go.microsoft.com/fwlink/?LinkID=131993 for details.
 // All other rights reserved.
 
-using System;
-using System.Collections.Generic;
-using System.Globalization;
-using System.IO;
 using System.Text;
 using Microsoft.Test.Text;
 using Xunit;
-using Xunit.Extensions;
 
 namespace Microsoft.Test.AcceptanceTests.Text
 {

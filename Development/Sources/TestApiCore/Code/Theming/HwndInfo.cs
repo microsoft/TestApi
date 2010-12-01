@@ -1,4 +1,9 @@
-﻿using System;
+﻿// (c) Copyright Microsoft Corporation.
+// This source is subject to the Microsoft Public License (Ms-PL).
+// Please see http://go.microsoft.com/fwlink/?LinkID=131993 for details.
+// All other rights reserved.
+
+using System;
 
 namespace Microsoft.Test.Theming
 {
@@ -19,7 +24,5 @@ namespace Microsoft.Test.Theming
         /// Process ID of Hwnd
         /// </summary>
         public int ProcessId;
-
-        
     }
 }

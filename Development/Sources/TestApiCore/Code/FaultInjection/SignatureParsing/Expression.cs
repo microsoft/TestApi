@@ -5,11 +5,11 @@
 
 using System;
 using System.Collections.Generic;
-using System.Text;
-using System.Reflection;
-using System.Text.RegularExpressions;
 using System.IO;
 using System.Globalization;
+using System.Reflection;
+using System.Text;
+using System.Text.RegularExpressions;
 #if TESTBUILD_CLR20
 // These includes are for the different Assembly.LoadFrom() overload used to make CLR 2.0 CAS policy work
 using System.Security;

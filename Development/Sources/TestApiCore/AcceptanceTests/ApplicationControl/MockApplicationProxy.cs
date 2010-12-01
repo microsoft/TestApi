@@ -4,9 +4,8 @@
 // All other rights reserved.
 
 using System;
-using System.Diagnostics;
-using Microsoft.Test.ApplicationControl;
 using System.Runtime.Serialization;
+using Microsoft.Test.ApplicationControl;
 
 namespace Microsoft.Test.AcceptanceTests.ApplicationControl
 {

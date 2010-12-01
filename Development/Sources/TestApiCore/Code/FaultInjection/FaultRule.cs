@@ -5,8 +5,8 @@
 
 using System;
 using Microsoft.Test.FaultInjection.Conditions;
-using Microsoft.Test.FaultInjection.Faults;
 using Microsoft.Test.FaultInjection.Constants;
+using Microsoft.Test.FaultInjection.Faults;
 using Microsoft.Test.FaultInjection.SignatureParsing;
 
 namespace Microsoft.Test.FaultInjection

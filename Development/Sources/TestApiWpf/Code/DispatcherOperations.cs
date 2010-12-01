@@ -4,11 +4,9 @@
 // All other rights reserved.
 
 using System;
-using System.Collections.Generic;
-using System.Text;
-using System.Windows.Threading;
 using System.Security;
 using System.Security.Permissions;
+using System.Windows.Threading;
 
 namespace Microsoft.Test
 {

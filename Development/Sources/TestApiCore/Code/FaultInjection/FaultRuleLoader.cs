@@ -4,10 +4,9 @@
 // All other rights reserved.
 
 using System;
+using System.Globalization;
 using System.IO;
 using System.Threading;
-using Microsoft.Win32;
-using System.Globalization;
 using Microsoft.Test.FaultInjection.Constants;
 
 namespace Microsoft.Test.FaultInjection

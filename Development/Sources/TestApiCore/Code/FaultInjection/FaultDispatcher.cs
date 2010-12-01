@@ -4,13 +4,9 @@
 // All other rights reserved.
 
 using System;
-using System.Collections.Generic;
-using System.Text;
 using System.Diagnostics;
-using System.Reflection;
-using System.Threading;
 using System.Globalization;
-using System.IO;
+using System.Reflection;
 using Microsoft.Test.FaultInjection.Constants;
 using Microsoft.Test.FaultInjection.SignatureParsing;
 

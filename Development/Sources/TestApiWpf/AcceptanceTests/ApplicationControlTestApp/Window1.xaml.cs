@@ -1,12 +1,12 @@
-﻿using System;
-using System.Collections.Generic;
+﻿// (c) Copyright Microsoft Corporation.
+// This source is subject to the Microsoft Public License (Ms-PL).
+// Please see http://go.microsoft.com/fwlink/?LinkID=131993 for details.
+// All other rights reserved.
+
+using System;
 using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Media;
 using System.Windows.Media.Animation;
-using System.Diagnostics;
-using System.ComponentModel;
-using System.Windows.Input;
 
 namespace Microsoft.Test.AcceptanceTests.WpfTestApplication
 {

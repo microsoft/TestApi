@@ -3,13 +3,10 @@
 // Please see http://go.microsoft.com/fwlink/?LinkID=131993 for details.
 // All other rights reserved.
 
-using System.Collections.ObjectModel;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Diagnostics;
-using System.Xml;
+using System.Collections.ObjectModel;
 using System.IO;
+using System.Xml;
 
 namespace Microsoft.Test.LeakDetection
 {

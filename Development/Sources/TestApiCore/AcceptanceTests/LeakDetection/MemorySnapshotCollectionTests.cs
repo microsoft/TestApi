@@ -5,16 +5,9 @@
 
 using System;
 using System.Collections.Generic;
-using System.ComponentModel;
 using System.Diagnostics;
-using System.Globalization;
-using System.IO;
-using System.Runtime.InteropServices;
-using System.Threading;
-using System.Xml;
 using Microsoft.Test.LeakDetection;
 using Xunit;
-using Xunit.Extensions;
 
 namespace Microsoft.Test.AcceptanceTests.LeakDetection
 {

@@ -4,13 +4,13 @@
 // All other rights reserved.
 
 using System;
-using Microsoft.Win32;
-using System.IO;
 using System.Diagnostics;
+using System.Globalization;
+using System.IO;
 using System.Reflection;
 using System.Runtime.InteropServices;
-using System.Globalization;
 using Microsoft.Test.FaultInjection.Constants;
+using Microsoft.Win32;
 
 namespace Microsoft.Test.FaultInjection
 {

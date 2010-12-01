@@ -7,7 +7,6 @@ using System;
 using System.Diagnostics;
 using System.Runtime.CompilerServices;
 using Microsoft.Test.FaultInjection;
-using Microsoft.Test.FaultInjection.Conditions;
 using Xunit;
 
 namespace Microsoft.Test.AcceptanceTests.FaultInjection

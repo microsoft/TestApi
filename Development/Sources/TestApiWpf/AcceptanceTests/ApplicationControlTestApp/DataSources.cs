@@ -1,8 +1,12 @@
-﻿using System;
-using System.Collections.ObjectModel;
+﻿// (c) Copyright Microsoft Corporation.
+// This source is subject to the Microsoft Public License (Ms-PL).
+// Please see http://go.microsoft.com/fwlink/?LinkID=131993 for details.
+// All other rights reserved.
+
+using System;
 using System.ComponentModel;
-using System.Windows.Media;
 using System.Globalization;
+using System.Windows.Media;
 
 namespace Microsoft.Test.AcceptanceTests.WpfTestApplication
 {
