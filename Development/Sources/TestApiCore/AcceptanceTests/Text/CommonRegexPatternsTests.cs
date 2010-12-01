@@ -8,6 +8,7 @@ using System.Text.RegularExpressions;
 using Microsoft.Test.Text;
 using Xunit;
 using Xunit.Extensions;
+using System;
 
 namespace Microsoft.Test.AcceptanceTests.Text
 {
@@ -47,6 +48,17 @@ namespace Microsoft.Test.AcceptanceTests.Text
                 yield return new object[] { CommonRegexPatterns.EmailAddress, @"somebody@.com", false };
                 yield return new object[] { CommonRegexPatterns.EmailAddress, @"somebody@microsoft.", false };
                 yield return new object[] { CommonRegexPatterns.EmailAddress, @"somebody@microsoft.c", false };
+
+                yield return new object[] { CommonRegexPatterns.Guid, @"0f8fad5b-d9cb-469f-a165-70867728950e", true };
+                yield return new object[] { CommonRegexPatterns.Guid, @"7c9e6679-7425-40de-944b-e07fc1f90ae7", true };
+                yield return new object[] { CommonRegexPatterns.Guid, Guid.NewGuid().ToString(), true };
+                yield return new object[] { CommonRegexPatterns.Guid, Guid.NewGuid().ToString(), true };
+                yield return new object[] { CommonRegexPatterns.Guid, Guid.NewGuid().ToString(), true };
+                yield return new object[] { CommonRegexPatterns.Guid, Guid.NewGuid().ToString(), true };
+                yield return new object[] { CommonRegexPatterns.Guid, Guid.NewGuid().ToString(), true };
+                yield return new object[] { CommonRegexPatterns.Guid, Guid.NewGuid().ToString(), true };
+                yield return new object[] { CommonRegexPatterns.Guid, @"0f8fad5b-d9cb-469f-a165-70867728950", false };
+                yield return new object[] { CommonRegexPatterns.Guid, @"0f8fad5b-d9cb-469f-a165-70867728950ee", false };
 
                 yield return new object[] { CommonRegexPatterns.IpAddress, @"127.0.0.1", true }; 
                 yield return new object[] { CommonRegexPatterns.IpAddress, @"127.0.0.0", true };
