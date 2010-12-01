@@ -13,19 +13,24 @@ namespace Microsoft.Test.Text
     public static class CommonRegularExpressions
     {
         /// <summary>
-        /// Calendar date in formats mm/dd/yyyy and mm-dd-yyyy. Example: 12-1-2010.
+        /// Calendar date in formats MM/DD/YYYY, MM/DD/YY, MM-DD-YYYY, MM-DD-YY, etc. Example: 12/1/2010.
         /// </summary>
-        public static readonly Regex CalendarDate = new Regex(@"((0?[13578]|10|12)(-|\/)((0[0-9])|([12])([0-9]?)|(3[01]?))(-|\/)((\d{4})|(\d{2}))|(0?[2469]|11)(-|\/)((0[0-9])|([12])([0-9]?)|(3[0]?))(-|\/)((\d{4}|\d{2})))");
+        public static readonly Regex Date = new Regex(@"^([0]?[1-9]|[1][0-2])[./-]([0]?[1-9]|[1|2][0-9]|[3][0|1])[./-]([0-9]{4}|[0-9]{2})$");
 
         /// <summary>
-        /// IP address. Example: 128.0.0.1
+        /// Email address. Examples: some.body@microsoft.com, somebody@microsoft.com.
         /// </summary>
-        public static readonly Regex IpAddress = new Regex(@"((?<num>(1?\d?\d)|(2[0-4]\d)|(25[0-4]))\.){3}\k<num>");
+        public static readonly Regex EmailAddress = new Regex(@"^([0-9a-zA-Z]([-.\w]*[0-9a-zA-Z])*@([0-9a-zA-Z][-\w]*[0-9a-zA-Z]\.)+[a-zA-Z]{2,9})$");
 
         /// <summary>
-        /// Time in HH:MM format. Example: 13:01.
+        /// IP address. Example: 127.0.0.1
         /// </summary>
-        public static readonly Regex Time = new Regex(@"(((0?\d)|(1[012])):[0-6]\d ?([ap]m)|((2[0-3])|([01] ?\d)):[0-6]\d)");
+        public static readonly Regex IpAddress = new Regex(@"^(25[0-5]|2[0-4][0-9]|[0-1]{1}[0-9]{2}|[1-9]{1}[0-9]{1}|[1-9])\.(25[0-5]|2[0-4][0-9]|[0-1]{1}[0-9]{2}|[1-9]{1}[0-9]{1}|[1-9]|0)\.(25[0-5]|2[0-4][0-9]|[0-1]{1}[0-9]{2}|[1-9]{1}[0-9]{1}|[1-9]|0)\.(25[0-5]|2[0-4][0-9]|[0-1]{1}[0-9]{2}|[1-9]{1}[0-9]{1}|[0-9])$");
+
+        /// <summary>
+        /// Time in HH:MM format. Examples: 13:01, 23:59, 00:45.
+        /// </summary>
+        public static readonly Regex Time = new Regex(@"^([0-1][0-9]|[2][0-3]):([0-5][0-9])$");
 
         /// <summary>
         /// USA phone number. Example: 123-456-7890.
@@ -46,10 +51,5 @@ namespace Microsoft.Test.Text
         /// USA extended ZIP code. Example: 12345-6789.
         /// </summary>
         public static readonly Regex UsaZipCodeExtended = new Regex(@"^\d{5}-\d{4}$");
-
-        /// <summary>
-        /// Email address. Example: william.rawls@gmail.com.
-        /// </summary>
-        public static readonly Regex EmailAddress = new Regex(@"^([0-9a-zA-Z]([-.\w]*[0-9a-zA-Z])*@([0-9a-zA-Z][-\w]*[0-9a-zA-Z]\.)+[a-zA-Z]{2,9})$");
     }
 }

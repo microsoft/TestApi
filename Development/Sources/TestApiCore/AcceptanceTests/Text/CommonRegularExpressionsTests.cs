@@ -26,35 +26,49 @@ namespace Microsoft.Test.AcceptanceTests.Text
         {
             get
             {
-                yield return new object[] { CommonRegularExpressions.CalendarDate, @"12/31/2010", true };
-                yield return new object[] { CommonRegularExpressions.CalendarDate, @"1/1/2010", true };
-                yield return new object[] { CommonRegularExpressions.CalendarDate, @"12/01/2010", true };
-                yield return new object[] { CommonRegularExpressions.CalendarDate, @"01/01/2010", true };
-                yield return new object[] { CommonRegularExpressions.CalendarDate, @"02/30/2010", true };
-                yield return new object[] { CommonRegularExpressions.CalendarDate, @"13/01/2010", true };  // bug in the regex
-                yield return new object[] { CommonRegularExpressions.CalendarDate, @"12-32-2010", false };
-                yield return new object[] { CommonRegularExpressions.CalendarDate, @"12/32/2010", false };
+                yield return new object[] { CommonRegularExpressions.Date, @"12/31/2010", true };
+                yield return new object[] { CommonRegularExpressions.Date, @"1/1/2010", true };
+                yield return new object[] { CommonRegularExpressions.Date, @"12/01/2010", true };
+                yield return new object[] { CommonRegularExpressions.Date, @"12/1/2010", true };
+                yield return new object[] { CommonRegularExpressions.Date, @"12-1-2010", true };
+                yield return new object[] { CommonRegularExpressions.Date, @"12-01-2010", true };
+                yield return new object[] { CommonRegularExpressions.Date, @"12/1/10", true };
+                yield return new object[] { CommonRegularExpressions.Date, @"12/01/10", true };
+                yield return new object[] { CommonRegularExpressions.Date, @"01/01/2010", true };
+                yield return new object[] { CommonRegularExpressions.Date, @"02/30/2010", true };
+                yield return new object[] { CommonRegularExpressions.Date, @"13/01/2010", false };
+                yield return new object[] { CommonRegularExpressions.Date, @"12/0/2010", false };
+                yield return new object[] { CommonRegularExpressions.Date, @"12-32-2010", false };
+                yield return new object[] { CommonRegularExpressions.Date, @"12/32/2010", false };
 
                 yield return new object[] { CommonRegularExpressions.EmailAddress, @"somebody@microsoft.com" , true };
-                yield return new object[] { CommonRegularExpressions.EmailAddress, @"Some.Name@microsoft.com", true };
+                yield return new object[] { CommonRegularExpressions.EmailAddress, @"Some.Body@microsoft.com", true };
                 yield return new object[] { CommonRegularExpressions.EmailAddress, @"s@microsoft.com", true };
                 yield return new object[] { CommonRegularExpressions.EmailAddress, @"somebody@.com", false };
                 yield return new object[] { CommonRegularExpressions.EmailAddress, @"somebody@microsoft.", false };
                 yield return new object[] { CommonRegularExpressions.EmailAddress, @"somebody@microsoft.c", false };
 
-                yield return new object[] { CommonRegularExpressions.IpAddress, @"128.0.0.1", false }; // bug in the regex
-                yield return new object[] { CommonRegularExpressions.IpAddress, @"128.0.0.0", true };
-                yield return new object[] { CommonRegularExpressions.IpAddress, @"255.255.255.255", false };
+                yield return new object[] { CommonRegularExpressions.IpAddress, @"127.0.0.1", true }; 
+                yield return new object[] { CommonRegularExpressions.IpAddress, @"127.0.0.0", true };
+                yield return new object[] { CommonRegularExpressions.IpAddress, @"255.255.255.255", true };
                 yield return new object[] { CommonRegularExpressions.IpAddress, @"255.255.255.256", false };
                 yield return new object[] { CommonRegularExpressions.IpAddress, @"0.0.0.1", false };
+                yield return new object[] { CommonRegularExpressions.IpAddress, @"256.0.0.1", false };
+                yield return new object[] { CommonRegularExpressions.IpAddress, @"127.0.0.1.", false };
+                yield return new object[] { CommonRegularExpressions.IpAddress, @"127.0.0.", false };
+                yield return new object[] { CommonRegularExpressions.IpAddress, @"127.0.0", false }; 
 
                 yield return new object[] { CommonRegularExpressions.Time, @"13:01", true };
                 yield return new object[] { CommonRegularExpressions.Time, @"01:01", true };
                 yield return new object[] { CommonRegularExpressions.Time, @"00:00", true };
+                yield return new object[] { CommonRegularExpressions.Time, @"00:45", true };
+                yield return new object[] { CommonRegularExpressions.Time, @"23:59", true };
+                yield return new object[] { CommonRegularExpressions.Time, @"23:60", false };
+                yield return new object[] { CommonRegularExpressions.Time, @"10:60", false };
+                yield return new object[] { CommonRegularExpressions.Time, @"24:00", false };
+                yield return new object[] { CommonRegularExpressions.Time, @"25:01", false };
                 yield return new object[] { CommonRegularExpressions.Time, @"1:01", false };
                 yield return new object[] { CommonRegularExpressions.Time, @"13:0", false };
-                yield return new object[] { CommonRegularExpressions.Time, @"25:01", false };
-                yield return new object[] { CommonRegularExpressions.Time, @"10:60", true };  // bug in the regex
 
                 yield return new object[] { CommonRegularExpressions.UsaPhoneNumber, @"123-456-7890" ,true };
                 yield return new object[] { CommonRegularExpressions.UsaPhoneNumber, @"023-456-7890", true };

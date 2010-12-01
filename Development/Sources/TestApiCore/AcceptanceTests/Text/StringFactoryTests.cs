@@ -545,7 +545,7 @@ namespace Microsoft.Test.AcceptanceTests.Text
         {
             get
             {
-                yield return new object[] { CommonRegularExpressions.CalendarDate };
+                yield return new object[] { CommonRegularExpressions.Date };
                 yield return new object[] { CommonRegularExpressions.EmailAddress };
                 yield return new object[] { CommonRegularExpressions.IpAddress };
                 yield return new object[] { CommonRegularExpressions.Time };
