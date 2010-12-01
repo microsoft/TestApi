@@ -545,14 +545,14 @@ namespace Microsoft.Test.AcceptanceTests.Text
         {
             get
             {
-                yield return new object[] { CommonRegularExpressions.Date };
-                yield return new object[] { CommonRegularExpressions.EmailAddress };
-                yield return new object[] { CommonRegularExpressions.IpAddress };
-                yield return new object[] { CommonRegularExpressions.Time };
-                yield return new object[] { CommonRegularExpressions.UsaPhoneNumber };
-                yield return new object[] { CommonRegularExpressions.UsaSocialSecurityNumber };
-                yield return new object[] { CommonRegularExpressions.UsaZipCode };
-                yield return new object[] { CommonRegularExpressions.UsaZipCodeExtended };
+                yield return new object[] { CommonRegexPatterns.Date };
+                yield return new object[] { CommonRegexPatterns.EmailAddress };
+                yield return new object[] { CommonRegexPatterns.IpAddress };
+                yield return new object[] { CommonRegexPatterns.Time };
+                yield return new object[] { CommonRegexPatterns.UsaPhoneNumber };
+                yield return new object[] { CommonRegexPatterns.UsaSocialSecurityNumber };
+                yield return new object[] { CommonRegexPatterns.UsaZipCode };
+                yield return new object[] { CommonRegexPatterns.UsaZipCodeExtended };
             }
         }
     }

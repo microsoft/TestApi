@@ -8,9 +8,9 @@ using System.Text.RegularExpressions;
 namespace Microsoft.Test.Text
 {
     /// <summary>
-    /// Provides a set of commonly-used regular expressions.
+    /// Provides a set of commonly-used regular expression patterns.
     /// </summary>
-    public static class CommonRegularExpressions
+    public static class CommonRegexPatterns
     {
         /// <summary>
         /// Calendar date in formats MM/DD/YYYY, MM/DD/YY, MM-DD-YYYY, MM-DD-YY, etc. Example: 12/1/2010.
