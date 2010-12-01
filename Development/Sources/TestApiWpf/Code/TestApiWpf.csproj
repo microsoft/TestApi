@@ -87,6 +87,7 @@
     <Compile Include="ApplicationControl\WpfInProcessApplicationSettings.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="NamespaceDoc.cs" />
     <Compile Include="VisualVerification\SnapshotHelper.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
