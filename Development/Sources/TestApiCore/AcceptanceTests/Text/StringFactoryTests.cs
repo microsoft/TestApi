@@ -4,6 +4,7 @@
 // All other rights reserved.
 
 using System;
+using System.Collections.Generic;
 using System.Text;
 using System.Text.RegularExpressions;
 using Microsoft.Test.Text;
@@ -529,6 +530,30 @@ namespace Microsoft.Test.AcceptanceTests.Text
             string s2 = StringFactory.GenerateRandomString(regex, seed);
 
             Assert.Equal<string>(s1, s2);
+        }
+
+        [Theory]
+        [PropertyData("CommonRegularExpressionsFactory1")]
+        public void GenerateRandomStringFromCommonRegularExpression(Regex regex)
+        {
+            string s = StringFactory.GenerateRandomString(regex, 1234);
+
+            Assert.True(regex.IsMatch(s));
+        }
+
+        public static IEnumerable<object[]> CommonRegularExpressionsFactory1
+        {
+            get
+            {
+                yield return new object[] { CommonRegularExpressions.CalendarDate };
+                yield return new object[] { CommonRegularExpressions.EmailAddress };
+                yield return new object[] { CommonRegularExpressions.IpAddress };
+                yield return new object[] { CommonRegularExpressions.Time };
+                yield return new object[] { CommonRegularExpressions.UsaPhoneNumber };
+                yield return new object[] { CommonRegularExpressions.UsaSocialSecurityNumber };
+                yield return new object[] { CommonRegularExpressions.UsaZipCode };
+                yield return new object[] { CommonRegularExpressions.UsaZipCodeExtended };
+            }
         }
     }
 }

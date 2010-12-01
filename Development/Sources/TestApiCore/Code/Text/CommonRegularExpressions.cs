@@ -13,9 +13,9 @@ namespace Microsoft.Test.Text
     public static class CommonRegularExpressions
     {
         /// <summary>
-        /// Calendar date (MM-DD-YYYY). Example: 12-01-2010.
+        /// Calendar date in formats mm/dd/yyyy and mm-dd-yyyy. Example: 12-1-2010.
         /// </summary>
-        public static readonly Regex CalendarDate = new Regex(@"(\d|1[12])/[1-2]\d/((\d{2})|(\d{4}))");
+        public static readonly Regex CalendarDate = new Regex(@"((0?[13578]|10|12)(-|\/)((0[0-9])|([12])([0-9]?)|(3[01]?))(-|\/)((\d{4})|(\d{2}))|(0?[2469]|11)(-|\/)((0[0-9])|([12])([0-9]?)|(3[0]?))(-|\/)((\d{4}|\d{2})))");
 
         /// <summary>
         /// IP address. Example: 128.0.0.1
@@ -23,7 +23,7 @@ namespace Microsoft.Test.Text
         public static readonly Regex IpAddress = new Regex(@"((?<num>(1?\d?\d)|(2[0-4]\d)|(25[0-4]))\.){3}\k<num>");
 
         /// <summary>
-        /// Time. Example: 13:01.
+        /// Time in HH:MM format. Example: 13:01.
         /// </summary>
         public static readonly Regex Time = new Regex(@"(((0?\d)|(1[012])):[0-6]\d ?([ap]m)|((2[0-3])|([01] ?\d)):[0-6]\d)");
 
@@ -33,7 +33,7 @@ namespace Microsoft.Test.Text
         public static readonly Regex UsaPhoneNumber = new Regex(@"^\d{3}-\d{3}-\d{4}$");
 
         /// <summary>
-        /// USA social security number. Example: 555-22-9999.
+        /// USA social security number. Example: 123-45-6789.
         /// </summary>
         public static readonly Regex UsaSocialSecurityNumber = new Regex(@"^\d{3}-\d{2}-\d{4}$");
 
