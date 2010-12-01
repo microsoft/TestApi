@@ -1,8 +1,14 @@
+// (c) Copyright Microsoft Corporation.
+// This source is subject to the Microsoft Public License (Ms-PL).
+// Please see http://go.microsoft.com/fwlink/?LinkID=131993 for details.
+// All other rights reserved.
+
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Globalization;
 using System.Text;
+using System.Text.RegularExpressions;
 
 
 namespace Microsoft.Test.Text
@@ -29,17 +35,7 @@ namespace Microsoft.Test.Text
     /// </example>
     public static class StringFactory
     {
-        private static readonly UnicodeRangeDatabase database = new UnicodeRangeDatabase();
-        private static PropertyFactory propertyFactory = null;
-        private static StringProperties properties = null;
-        private static StringProperties cachedProperties = null;
-        private static Collection<UnicodeRange> ranges = new Collection<UnicodeRange>();
-        private static int minNumCodePoints = 0;
-        private static int maxNumCodePoints = 0;
-        private static int numOfCodePoints = 0;
-        
-        private static readonly List<UnicodeRange> alphabetRangeList = new List<UnicodeRange>();
-
+        #region Public Methods
         /// <summary>
         /// Returns a string, conforming to the <see cref="StringProperties"/> provided.
         /// </summary>
@@ -133,6 +129,19 @@ namespace Microsoft.Test.Text
             return retStr;
         }
 
+        /// <summary>
+        /// Returns a random string, conforming to the provided regular expression.
+        /// </summary>
+        /// <param name="regex">The regular expression, which the generated string should conform to.</param>
+        /// <param name="seed">The random number generator seed.</param>
+        /// <returns>A string, conforming to the provided regular expression.</returns>
+        public static string GenerateRandomString(Regex regex, int seed)
+        {
+            throw new NotImplementedException();
+        }
+        #endregion Public Methods
+
+        #region Private Methods
         private static void CacheProperties()
         {
             if (null == cachedProperties)
@@ -829,5 +838,18 @@ namespace Microsoft.Test.Text
                     "Refer to Latin Alphabet range 0x0041 - 0x005A and 0x0061 - 0x007A." + "All " + ranges.Count + " UniCodeRange is in Latin alphabet range");
             }
         }
+        #endregion Private Methods
+
+        #region Private Fields
+        private static readonly UnicodeRangeDatabase database = new UnicodeRangeDatabase();
+        private static PropertyFactory propertyFactory = null;
+        private static StringProperties properties = null;
+        private static StringProperties cachedProperties = null;
+        private static Collection<UnicodeRange> ranges = new Collection<UnicodeRange>();
+        private static int minNumCodePoints = 0;
+        private static int maxNumCodePoints = 0;
+        private static int numOfCodePoints = 0;
+        private static readonly List<UnicodeRange> alphabetRangeList = new List<UnicodeRange>();
+        #endregion Private Fields
     }
 }
