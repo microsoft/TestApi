@@ -5,6 +5,7 @@
 
 using System;
 using System.Diagnostics;
+using System.Reflection;
 using System.Runtime.CompilerServices;
 using Microsoft.Test.FaultInjection;
 using Xunit;
@@ -20,17 +21,36 @@ namespace Microsoft.Test.AcceptanceTests.FaultInjection
 
         /// <summary>
         /// Verifies the condition is triggered when the specified method is 
-        /// on the top of the call stack
+        /// on the top of the call stack. Created using the factory method that
+        /// takes a string.
         /// </summary>
         [Fact]
-        public void TriggerIfCalledByTest()
+        public void TriggerIfCalledByTestString()
         {
-            string method = "System.RuntimeMethodHandle._InvokeMethodFast(System.Object,System.Object[],ref System.SignatureStruct,System.Reflection.MethodAttributes,System.RuntimeTypeHandle)";
+            string method = "Microsoft.Test.AcceptanceTests.BuiltInTriggerTests.TriggerIfCalledByTestString()";
             ICondition condition = BuiltInConditions.TriggerIfCalledBy(method);
+            DoTriggerIfCalledByTest(condition);
+        }
+
+        /// <summary>
+        /// Verifies the condition is triggered when the specified method is 
+        /// on the top of the call stack. Created using the factory method that
+        /// takes a MethodBase.
+        /// </summary>
+        [Fact]
+        public void TriggerIfCalledByTestMethodBase()
+        {
+            MethodBase method = ((Action)TriggerIfCalledByTestMethodBase).Method;
+            ICondition condition = BuiltInConditions.TriggerIfCalledBy(method);
+            DoTriggerIfCalledByTest(condition);
+        }
+
+        private void DoTriggerIfCalledByTest(ICondition condition)
+        {
             RuntimeContext ctx = new RuntimeContext();
             ctx.CallStack = new CallStack(new StackTrace(0));
             int loopTimes = 10;
-            for(int i = 0; i < loopTimes; ++i)
+            for (int i = 0; i < loopTimes; ++i)
             {
                 Assert.True(condition.Trigger(ctx));
             }
@@ -47,16 +67,35 @@ namespace Microsoft.Test.AcceptanceTests.FaultInjection
 
         /// <summary>
         /// Verifies the condition is triggered when the specified method is
-        /// contained  withing the call stack
+        /// contained withing the call stack. Created using the factory method that
+        /// takes a string.
         /// </summary>
         [Fact]
-        public void TriggerIfStackContainsTest()
+        public void TriggerIfStackContainsTestString()
         {
-            string method = "System.RuntimeMethodHandle._InvokeMethodFast(System.Object,System.Object[],ref System.SignatureStruct,System.Reflection.MethodAttributes,System.RuntimeTypeHandle)";
+            string method = "Microsoft.Test.AcceptanceTests.BuiltInTriggerTests.TriggerIfStackContainsTestString()";
             ICondition condition = BuiltInConditions.TriggerIfStackContains(method);
+            DoTriggerIfStackContainsTests(condition);
+        }
+
+        /// <summary>
+        /// Verifies the condition is triggered when the specified method is
+        /// contained withing the call stack. Created using the factory method that
+        /// takes a MethodBase.
+        /// </summary>
+        [Fact]
+        public void TriggerIfStackContainsTestMethodBase()
+        {
+            MethodInfo method = ((Action)TriggerIfStackContainsTestMethodBase).Method;
+            ICondition condition = BuiltInConditions.TriggerIfStackContains(method);
+            DoTriggerIfStackContainsTests(condition);
+        }
+
+        private void DoTriggerIfStackContainsTests(ICondition condition)
+        {
             RuntimeContext ctx = new RuntimeContext();
             ctx.CallStack = new CallStack(new StackTrace(0));
-            
+
             int loopTimes = 10;
             for (int i = 0; i < loopTimes; ++i)
             {

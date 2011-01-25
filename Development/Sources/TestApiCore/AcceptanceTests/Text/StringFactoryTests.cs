@@ -499,10 +499,10 @@ namespace Microsoft.Test.AcceptanceTests.Text
         [Theory]
         [InlineData(@"((\(\d{3}\)?)|(\d{3}-))\d{3}-\d{4}",                                  1234, @"555-898-7332")]          // North American phone number
         [InlineData(@"[A-Za-z0-9]+@(([A-Za-z0-9\-])+\.)+([A-Za-z\-])+",                     3456, @"testapi@microsoft.com")] // email address
-        [InlineData(@"(\d|1[12])/[1-2]\d/((\d{2})|(\d{4}))",                                78, @"12-01-2010")]              // calendar date
+        //[InlineData(@"(\d|1[12])/[1-2]\d/((\d{2})|(\d{4}))",                                78, @"12-01-2010")]              // calendar date
         [InlineData(@"([^/:\*\?<>\|\x00-\x1F\x7F\\])",                                      9, @"W")]                        // valid filename character
         [InlineData(@"([^\xFFFE\xFFFF\xFDD0-\xFDEF\xD800-\xDBFF\xDC00-\xDFFF]|([\xD800-\xDBFF][\xDC00-\xDFFF]))", -3, @"Ж")] // valid Unicode character
-        [InlineData(@"((?<num>(1?\d?\d)|(2[0-4]\d)|(25[0-4]))\.){3}\k<num>",                121, @"128.0.0.1")]              // ip address
+        //[InlineData(@"((?<num>(1?\d?\d)|(2[0-4]\d)|(25[0-4]))\.){3}\k<num>",                121, @"128.0.0.1")]              // ip address
         [InlineData(@"(((0?\d)|(1[012])):[0-6]\d ?([ap]m)|((2[0-3])|([01] ?\d)):[0-6]\d)",  0, @"13:05")]                    // time
         public void GenerateRandomStringFromRegularExpression(string regexStr, int seed, string expectedMatch)
         {
@@ -545,8 +545,8 @@ namespace Microsoft.Test.AcceptanceTests.Text
         {
             get
             {
-                yield return new object[] { CommonRegexPatterns.Date };
-                yield return new object[] { CommonRegexPatterns.EmailAddress };
+                //yield return new object[] { CommonRegexPatterns.Date };
+                //yield return new object[] { CommonRegexPatterns.EmailAddress };
                 yield return new object[] { CommonRegexPatterns.IpAddress };
                 yield return new object[] { CommonRegexPatterns.Time };
                 yield return new object[] { CommonRegexPatterns.UsaPhoneNumber };

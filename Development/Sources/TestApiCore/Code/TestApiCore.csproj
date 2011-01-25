@@ -107,6 +107,7 @@
     <Compile Include="FaultInjection\FaultInjectionException.cs" />
     <Compile Include="FaultInjection\FaultRule.cs" />
     <Compile Include="FaultInjection\FaultRuleLoader.cs" />
+    <Compile Include="FaultInjection\FaultScope.cs" />
     <Compile Include="FaultInjection\FaultSession.cs" />
     <Compile Include="FaultInjection\Faults\ReturnFault.cs" />
     <Compile Include="FaultInjection\ICondition.cs" />
@@ -170,6 +171,14 @@
     <Compile Include="Text\NumberProperty.cs" />
     <Compile Include="Text\PropertyFactory.cs" />
     <Compile Include="Text\RangePropertyCollector.cs" />
+    <Compile Include="Text\RegexAndNode.cs" />
+    <Compile Include="Text\RegexCompiler.cs" />
+    <Compile Include="Text\RegexNode.cs" />
+    <Compile Include="Text\RegexOrNode.cs" />
+    <Compile Include="Text\RegexRepeatNode.cs" />
+    <Compile Include="Text\RegexSetNode.cs" />
+    <Compile Include="Text\RegexSubExprNode.cs" />
+    <Compile Include="Text\RegexTextNode.cs" />
     <Compile Include="Text\StringFactory.cs" />
     <Compile Include="Text\StringProperties.cs" />
     <Compile Include="Text\SubGroup.cs" />

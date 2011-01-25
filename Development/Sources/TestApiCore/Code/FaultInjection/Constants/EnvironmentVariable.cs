@@ -10,6 +10,8 @@ namespace Microsoft.Test.FaultInjection.Constants
         // Environment variables we used to pass informations
         public const string EnableProfiling = "COR_ENABLE_PROFILING";
         public const string Proflier = "COR_PROFILER";
+        public const string ProfilerCompatibility = "COMPLUS_ProfAPI_ProfilerCompatibilitySetting";
+        public const string EnableV2Profiler = "EnableV2Profiler";
         public const string RuleRepository = "FAULT_INJECTION_RULE_REPOSITORY";
         public const string MethodFilter = "FAULT_INJECTION_METHOD_FILTER";
         public const string LogDirectory = "FAULT_INJECTION_LOG_DIR";
