@@ -122,10 +122,13 @@
     <Compile Include="FaultInjection\FaultInjectionTestData.cs" />
     <Compile Include="FaultInjection\BuiltInTriggerTests.cs" />
     <Compile Include="FaultInjection\ConstructorTests.cs" />
+    <Compile Include="FaultInjection\FaultScopeTests.cs" />
     <Compile Include="FaultInjection\NestedClassTests.cs" />
     <Compile Include="FaultInjection\NonGenericSignatureTests.cs" />
+    <Compile Include="FaultInjection\PerformanceTests.cs" />
     <Compile Include="FaultInjection\ReturnTypeErrorTests.cs" />
     <Compile Include="FaultInjection\ReturnValueTests.cs" />
+    <Compile Include="FaultInjection\SignatureTests.cs" />
     <Compile Include="FaultInjection\ThrowExceptionTests.cs" />
     <Compile Include="LeakDetection\MemorySnapshotCollectionTests.cs" />
     <Compile Include="LeakDetection\MemorySnapshotTests.cs" />

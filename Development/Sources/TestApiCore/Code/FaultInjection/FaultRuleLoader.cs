@@ -19,6 +19,7 @@ namespace Microsoft.Test.FaultInjection
         private static FaultRule[] currentRules;
         private static object initializeLock = new object();
         private static object accessCurrentRuleLock = new object();
+        private static string serializationFileName = Environment.GetEnvironmentVariable(EnvironmentVariable.RuleRepository);
 
         #endregion  
 
@@ -26,10 +27,17 @@ namespace Microsoft.Test.FaultInjection
 
         public static FaultRule[] Load()
         {
-            string serializationFileName = Environment.GetEnvironmentVariable(EnvironmentVariable.RuleRepository);
-            if (serializationFileName == null)
+            // Using FaultScope
+            FaultScope currentFaultScope = FaultScope.Current; // save in case it changes on another thread
+            if (currentFaultScope != null)
             {
-                throw new FaultInjectionException(string.Format(CultureInfo.CurrentCulture, ApiErrorMessages.UnableToFindEnvironmentVariable, EnvironmentVariable.RuleRepository));
+                return currentFaultScope.FaultRules;
+            }
+
+            // Using FaultSession / serialization file
+            if (string.IsNullOrEmpty(serializationFileName))
+            {
+                return null;
             }
 
             lock (initializeLock)
@@ -74,6 +82,7 @@ namespace Microsoft.Test.FaultInjection
                 );
                 if (i != -1 && current[i].SerializationVersion < loadedRule.SerializationVersion)
                 {
+                    loadedRule.CopyNumTimesCalled(current[i]);
                     current[i] = loadedRule;
                 }
             }

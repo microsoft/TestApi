@@ -9,7 +9,6 @@ using System.Collections.ObjectModel;
 using System.Text;
 using System.Text.RegularExpressions;
 
-
 namespace Microsoft.Test.Text
 {
     /// <summary>
@@ -179,7 +178,47 @@ namespace Microsoft.Test.Text
         /// </example>
         public static string GenerateRandomString(Regex regex, int seed)
         {
-            throw new NotImplementedException();
+            Random random = new Random(seed);
+
+            //reset the static variables
+            RegexCompiler.IsInvalidSection = false;
+            RegexCompiler.InvalidNode = null;
+            RegexCompiler.InvalidableNodes.Clear();
+
+            //construct the RegEx tree
+            RegexCompiler compiler = new RegexCompiler();
+            RegexNode node = compiler.Compile(regex.ToString());
+
+            //search for a signal to invalidate a node
+            if (regex.ToString().IndexOf("\\i") != -1)
+            {
+                //something should have been invalidated
+                //select a node to invalidate
+                if (RegexCompiler.InvalidableNodes.Count == 0)
+                {
+                    throw new ArgumentException("Asked to generate invalid: Impossible to invalidate");
+                }
+                RegexCompiler.InvalidNode = RegexCompiler.InvalidableNodes[random.Next(RegexCompiler.InvalidableNodes.Count)];
+
+                //Mark REOrNodes and RERepeatNodes to ensure that the invalid node will be part of the string
+                RegexCompiler.InvalidNode.ReservePath(null);
+            }
+
+            //generate and return the string
+            string result = node.Generate(random);
+
+            if (RegexCompiler.InvalidNode != null)
+            {
+                //confirm that the generated string is invalid (e.g. [a-z]|[^a-z] will always fail)
+                Regex compare = new Regex("^" + regex.Replace("\\i", "") + "$");
+                if (compare.IsMatch(result))
+                {
+                    throw new ArgumentException(regex + ": Did not generate invalid string: " + result);
+                }
+            }
+
+            return result;
+
         }
         #endregion Public Methods
 

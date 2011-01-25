@@ -3,7 +3,9 @@
 // Please see http://go.microsoft.com/fwlink/?LinkID=131993 for details.
 // All other rights reserved.
 
+using System.Reflection;
 using Microsoft.Test.FaultInjection.Conditions;
+using Microsoft.Test.FaultInjection.SignatureParsing;
 
 namespace Microsoft.Test.FaultInjection
 {
@@ -36,7 +38,15 @@ namespace Microsoft.Test.FaultInjection
         {
             return new TriggerIfCalledBy(caller);
         }
-        
+
+        /// <summary>
+        /// A built-in condition which triggers a fault if the faulted method is called by a specified method.</summary>
+        /// <param name="caller">The target method's caller.
+        /// </param> 
+        public static ICondition TriggerIfCalledBy(MethodBase caller)
+        {
+            return new TriggerIfCalledBy(MethodSignatureTranslator.GetCSharpMethodString(caller));
+        }
         
         /// <summary>
         /// A built-in condition which triggers a fault if the current call stack contains a specified method.
@@ -49,7 +59,16 @@ namespace Microsoft.Test.FaultInjection
         {
             return new TriggerIfStackContains(method);
         }
-        
+
+        /// <summary>
+        /// A built-in condition which triggers a fault if the current call stack contains a specified method.
+        /// </summary>
+        /// <param name="method">A method in the stack below the target method.
+        /// </param>
+        public static ICondition TriggerIfStackContains(MethodBase method)
+        {
+            return new TriggerIfStackContains(MethodSignatureTranslator.GetCSharpMethodString(method));
+        }
         
         /// <summary>
         /// A built-in condition which triggers a fault after every n times the faulted method is called.
@@ -108,6 +127,17 @@ namespace Microsoft.Test.FaultInjection
         public static ICondition TriggerOnNthCallBy(int n, string caller)
         {
             return new TriggerOnNthCallBy(n, caller);
+        }
+
+        /// <summary>
+        /// A built-in condition which triggers a fault after the faulted method is called n times by the specified caller.
+        /// </summary>
+        /// <param name="n">A positive number.</param>
+        /// <param name="caller">The target method's caller.</param>   
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Naming", "CA1704")]
+        public static ICondition TriggerOnNthCallBy(int n, MethodBase caller)
+        {
+            return new TriggerOnNthCallBy(n, MethodSignatureTranslator.GetCSharpMethodString(caller));
         }
 
         #endregion

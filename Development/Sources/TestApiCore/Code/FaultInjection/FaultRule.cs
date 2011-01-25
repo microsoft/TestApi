@@ -4,6 +4,8 @@
 // All other rights reserved.
 
 using System;
+using System.Reflection;
+using System.Threading;
 using Microsoft.Test.FaultInjection.Conditions;
 using Microsoft.Test.FaultInjection.Constants;
 using Microsoft.Test.FaultInjection.Faults;
@@ -79,6 +81,7 @@ namespace Microsoft.Test.FaultInjection
         private ICondition condition = new NeverTrigger();
         private IFault fault = new ReturnFault();
         private int serializationVersion = 0;
+        private int numTimesCalled = 0;
 
         #endregion
 
@@ -105,6 +108,18 @@ namespace Microsoft.Test.FaultInjection
         {
             this.Condition = condition;
             this.Fault = fault;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of FaultRule class with the specified method, condition and fault.
+        /// </summary>
+        /// <param name="method">The signature of the method where the fault should be injected.</param>
+        /// <param name="condition">The condition that defines when the fault should occur.</param>
+        /// <param name="fault">The fault to be injected.</param>
+        public FaultRule(MethodBase method, ICondition condition, IFault fault)
+            : this(MethodSignatureTranslator.GetCSharpMethodString(method), condition, fault)
+        {
+            //  Nothing
         }
 
         #endregion  // Constructors
@@ -169,6 +184,26 @@ namespace Microsoft.Test.FaultInjection
         {
             get { return serializationVersion; }
             set { serializationVersion = value; }
+        }
+
+        /// <summary>
+        /// Increments and returns the number of times that the associated method has been called. 
+        /// This needs to be stored in order to be passed to the RuntimeContext object.
+        /// </summary>
+        internal int IncrementAndReturnNumTimesCalled()
+        {
+            return Interlocked.Increment(ref numTimesCalled);
+        }
+
+        /// <summary>
+        /// Copies the number of times the FaultRule has been called from another fault rule. 
+        /// This is used when this is a new fault rule that has just been deserialized and it
+        /// is replacing an old fault rule.
+        /// </summary>
+        /// <param name="f">the old FaultRule that internal data should be copied from</param>
+        internal void CopyNumTimesCalled(FaultRule f)
+        {
+            numTimesCalled = f.numTimesCalled;
         }
 
         #endregion

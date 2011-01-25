@@ -16,7 +16,7 @@ namespace Microsoft.Test.FaultInjection
 
         private int calledTimes = 0;
         StackTrace callStackTrace = null;
-        private CallStack callStack = new CallStack(new StackTrace());
+        private CallStack callStack = null;
 
         #endregion
 

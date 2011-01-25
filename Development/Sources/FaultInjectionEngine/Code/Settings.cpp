@@ -22,7 +22,7 @@ BEGIN_DEFAULT_NAMESPACE
 //  other components of Fault Injection.
 
 #define CLI_SYSTEM_ASSEMBLY_NAME    _T("mscorlib")
-#define DISPATCHER_ASSEMBLY_NAME    _T("TestApiCore, Version=4.0.0.0, Culture=neutral, PublicKeyToken=a069dee354d95f76")
+#define DISPATCHER_ASSEMBLY_NAME    _T("TestApiCore, Version=4.0.0.0, Culture=neutral, PublicKeyToken=3d18d97752fc57cc, processorArchitecture=MSIL")
 #define DISPATCHER_CLASS_NAME       _T("Microsoft.Test.FaultInjection.FaultDispatcher")
 #define DISPATCHER_METHOD_NAME      _T("Trap")
 #define QUALIFIED_NAME_SEPARATOR    _T(".")

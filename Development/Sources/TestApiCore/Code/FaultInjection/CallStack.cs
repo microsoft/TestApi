@@ -75,43 +75,8 @@ namespace Microsoft.Test.FaultInjection
             {
                 return null;
             }
-            MethodBase mb = stackFrame.GetMethod();
-            ParameterInfo[] paras = mb.GetParameters();
-            System.String callingFunc = stackFrame.GetMethod().ToString();
-            
-            string signatureBeforeFunName = MethodSignatureTranslator.GetTypeString(mb.DeclaringType);
 
-            System.String[] temps = callingFunc.Split('(');
-            if (temps.Length < 2)
-            {
-                //error handling
-            }
-            temps = temps[0].Split(' ');
-            if (temps.Length < 2)
-            {
-                //error handling
-            }
-            temps[0] = temps[1];
-            
-            temps[0] = temps[0].Replace('[', '<');
-            temps[0] = temps[0].Replace(']', '>');
-            temps[0] = temps[0].Insert(0, signatureBeforeFunName + ".");
-            temps[0] = temps[0].Insert(temps[0].Length, "(");
-
-            foreach (ParameterInfo p in paras)
-            {
-                String typeString = MethodSignatureTranslator.GetTypeString(p.ParameterType);
-                
-                temps[0] = temps[0].Insert(temps[0].Length, typeString);
-                temps[0] = temps[0].Insert(temps[0].Length, ",");
-            }
-            if (paras != null && paras.Length > 0)
-            {
-                temps[0] = temps[0].Remove(temps[0].Length - 1);
-            }
-            temps[0] = temps[0].Insert(temps[0].Length, ")");
-            callingFunc = temps[0];
-            return callingFunc;
+            return MethodSignatureTranslator.GetFormalMethodString(stackFrame.GetMethod());
         }
 
         #endregion

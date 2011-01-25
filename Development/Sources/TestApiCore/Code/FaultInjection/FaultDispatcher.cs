@@ -4,9 +4,13 @@
 // All other rights reserved.
 
 using System;
+using System.Collections.Generic;
+using System.Text;
 using System.Diagnostics;
-using System.Globalization;
 using System.Reflection;
+using System.Threading;
+using System.Globalization;
+using System.IO;
 using Microsoft.Test.FaultInjection.Constants;
 using Microsoft.Test.FaultInjection.SignatureParsing;
 
@@ -21,13 +25,6 @@ namespace Microsoft.Test.FaultInjection
     /// </remarks>
     public static class FaultDispatcher
     {
-        #region Private Data
-
-        static RuntimeContext[] contexts = null;
-        static object initialized = new Object();
-
-        #endregion
-
         #region Public Members
 
         /// <summary>
@@ -43,30 +40,36 @@ namespace Microsoft.Test.FaultInjection
         /// </remarks>
         public static bool Trap(out Exception exceptionValue, out Object returnValue)
         {
+            exceptionValue = null;
+            returnValue = null;
+            FaultRule[] newRules;
+            try
+            {
+                newRules = FaultRuleLoader.Load();
+            }
+            catch (Exception e)
+            {
+                throw new FaultInjectionException(FaultDispatcherMessages.LoadFaultRuleError, e);
+            }
+
+            if (newRules == null || newRules.Length == 0)
+            {
+                return false;
+            }
+
             StackTrace stackTrace = new StackTrace(1);
             CallStack callStack = new CallStack(stackTrace);
             //stackFrame does not include Trap()
             StackFrame stackFrame = stackTrace.GetFrame(0);
             String currentFunction = callStack[0];
 
-            exceptionValue = null;
-            returnValue = null;
-            FaultRule[] newRules;
-
-
-            if (GetNewRulesAndPrepareContext(out newRules, currentFunction) == false)
-            {
-                return false;
-            }
-
             RuntimeContext currentContext = null;
             FaultRule rule = null;
-
 
             try
             {
                 //Get Fault Rule and Update current RuntimeContext
-                int len = contexts.Length;
+                int len = newRules.Length;
                 for (int i = 0; i < len; ++i)
                 {
                     if (newRules[i].FormalSignature != null &&
@@ -74,11 +77,7 @@ namespace Microsoft.Test.FaultInjection
                     {
                         rule = newRules[i];
                         currentContext = new RuntimeContext();
-                        lock (contexts)
-                        {
-                            contexts[i].CalledTimes++;
-                            currentContext.CalledTimes = contexts[i].CalledTimes;
-                        }
+                        currentContext.CalledTimes = rule.IncrementAndReturnNumTimesCalled();
                         currentContext.CallStack = callStack;
                         currentContext.CallStackTrace = stackTrace;
 
@@ -94,15 +93,11 @@ namespace Microsoft.Test.FaultInjection
                 bool triggered = false;
                 try
                 {
-                    lock (contexts)
+                    triggered = rule.Condition.Trigger(currentContext);
+                    if (triggered == true)
                     {
-                        triggered = rule.Condition.Trigger(currentContext);
-                        if (triggered == true)
-                        {
-                            rule.Fault.Retrieve(currentContext, out (exceptionValue), out returnValue);
-                        }
+                        rule.Fault.Retrieve(currentContext, out (exceptionValue), out returnValue);
                     }
-
                 }
                 catch (System.Exception e)
                 {
@@ -130,47 +125,11 @@ namespace Microsoft.Test.FaultInjection
                 return CheckReturnType(returnTypeOfTrappedMethod, returnValue, currentFunction);
             }
             return true;
-
         }
 
         #endregion
 
         #region Private Members
-
-        private static bool GetNewRulesAndPrepareContext(out FaultRule[] newRules, string currentFunction)
-        {
-            try
-            {
-                newRules = FaultRuleLoader.Load();
-            }
-            catch (FaultInjectionException e)
-            {
-                throw e;
-            }
-            catch (Exception e)
-            {
-                throw new FaultInjectionException(FaultDispatcherMessages.LoadFaultRuleError, e);
-            }
-            if (newRules == null || newRules.Length == 0)
-            {
-                return false;
-            }
-
-            lock(initialized)
-            {       
-                if (contexts == null)
-                {
-                    int length = newRules.Length;
-                    contexts = new RuntimeContext[length];
-                    for (int i = 0; i < length; ++i)
-                    {
-                        contexts[i] = new RuntimeContext();
-                    }
-                }
-            }                     
-
-            return true;
-        }
 
         private static bool CheckReturnType(Type returnTypeOfTrappedMethod, Object returnValue, String currentFunction)
         {
@@ -185,12 +144,12 @@ namespace Microsoft.Test.FaultInjection
             if (returnTypeOfTrappedMethod != typeof(void))
             {
                 if (returnValue == null && returnTypeOfTrappedMethod.IsValueType == true)
-                {                    
+                {
                     throw new FaultInjectionException(string.Format(CultureInfo.InvariantCulture.NumberFormat, FaultDispatcherMessages.ReturnValueTypeNullError, MethodSignatureTranslator.GetTypeString(returnTypeOfTrappedMethod)));
                 }
                 else if (returnValue != null &&
                     returnTypeOfTrappedMethod.IsInstanceOfType(returnValue) == false)
-                {                    
+                {
                     throw new FaultInjectionException(string.Format(CultureInfo.InvariantCulture.NumberFormat, FaultDispatcherMessages.ReturnTypeMismatchError, MethodSignatureTranslator.GetTypeString(returnTypeOfTrappedMethod), MethodSignatureTranslator.GetTypeString(returnValue.GetType())));
                 }
             }

@@ -37,8 +37,8 @@ namespace Microsoft.Test.FaultInjection
         /// </summary>
         /// <param name="enginePathName">Path name of engine file.</param>
         public static void Register(string enginePathName)
-        {            
-            if (Registry.ClassesRoot.OpenSubKey(EngineInfo.Engine_RegistryKey) == null)
+        {
+            if (!IsRegistered())
             {
                 if (String.IsNullOrEmpty(enginePathName))
                 {
@@ -99,6 +99,15 @@ namespace Microsoft.Test.FaultInjection
                     string.Format(CultureInfo.CurrentCulture, errorMessage, regsvr32.ExitCode, enginePathName));
             }
 
+        }
+
+        /// <summary>
+        /// Determines whether the fault injection engine has been registered in COM.
+        /// </summary>
+        /// <returns>true if the fault injection COM engine has been registered.</returns>
+        public static bool IsRegistered()
+        {
+            return Registry.ClassesRoot.OpenSubKey(EngineInfo.Engine_RegistryKey) != null;
         }
 
         /// <summary>
