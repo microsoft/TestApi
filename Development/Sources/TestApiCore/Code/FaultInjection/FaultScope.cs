@@ -94,13 +94,13 @@ namespace Microsoft.Test.FaultInjection
                 errors.AppendLine(ApiErrorMessages.ProfilerNotEnabled);
             }
 
-            string profiler = Environment.GetEnvironmentVariable(EnvironmentVariable.Proflier);
+            string profiler = Environment.GetEnvironmentVariable(EnvironmentVariable.Profiler);
             if (profiler != EngineInfo.Engine_CLSID)
             {
                 errors.AppendLine(string.Format(ApiErrorMessages.ProfilerNotSpecified, profiler));
             }
 
-            if (Environment.GetEnvironmentVariable(EnvironmentVariable.ProfilerCompatibility) !=
+            if (Environment.GetEnvironmentVariable(EnvironmentVariable.ProfilerCompatibilityForCLR4) !=
                 EnvironmentVariable.EnableV2Profiler)
             {
                 errors.AppendLine(ApiErrorMessages.ProfilerV2CompatibilityNotSpecified);

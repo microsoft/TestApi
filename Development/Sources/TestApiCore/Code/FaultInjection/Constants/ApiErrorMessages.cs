@@ -7,11 +7,11 @@ namespace Microsoft.Test.FaultInjection.Constants
 {
     internal static class ApiErrorMessages
     {
-        // Error messages for class FaultRule
+        // Error messages for FaultRule
         public const string ConditionNull = "Condition object of a fault rule can't be null.";
         public const string FaultNull = "Fault object of a fault rule can't be null.";
 
-        // Error messages for class FaultSession
+        // Error messages for FaultSession
         public const string FaultRulesNullOrEmpty = "Fault rules used to initialize FaultSession instance can't be null or empty.";
         public const string FaultRulesConflict = "Each method can attach only one FaultRule in one FaultSession.";
         public const string LauncherNull = "Launch delegate can't be null";
@@ -25,8 +25,8 @@ namespace Microsoft.Test.FaultInjection.Constants
         public const string FaultScopeExists = "A FaultScope is already open in this process. Dispose that FaultScope before creating a new one.";
         public const string EngineNotRegistered = "Fault injection engine is not registered. Execute 'regsvr32 " + EngineInfo.FaultEngineFileName + "' to register it.";
         public const string ProfilerNotEnabled = "Environment variable " + EnvironmentVariable.EnableProfiling + " must be set it to 1 in order to enable the fault injection engine.";
-        public const string ProfilerNotSpecified = "Environment variable " + EnvironmentVariable.Proflier + " is set to {0}. Please set it to {" + EngineInfo.Engine_CLSID + "} in order to enable the fault injection engine.";
-        public const string ProfilerV2CompatibilityNotSpecified = "Environment variable " + EnvironmentVariable.Proflier + " must be set to " + EnvironmentVariable.EnableV2Profiler + " in order to enable the fault injection engine.";
+        public const string ProfilerNotSpecified = "Environment variable " + EnvironmentVariable.Profiler + " is set to {0}. Please set it to {" + EngineInfo.Engine_CLSID + "} in order to enable the fault injection engine.";
+        public const string ProfilerV2CompatibilityNotSpecified = "Environment variable " + EnvironmentVariable.Profiler + " must be set to " + EnvironmentVariable.EnableV2Profiler + " in order to enable the fault injection engine.";
         public const string LogDirectoryNotSet = "Environment variable " + EnvironmentVariable.LogDirectory + " was not found." + LogDirectoryExample;
         public const string LogDirectoryAccessDenied = "Environment variable " + EnvironmentVariable.LogDirectory + " has value {0} but that directory does not exist or cannot be opened." + LogDirectoryExample;
         public const string LogDirectoryExample = "Please set it to the name of a directory where log files should be placed.";

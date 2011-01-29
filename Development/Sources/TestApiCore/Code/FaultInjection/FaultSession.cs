@@ -275,7 +275,7 @@ namespace Microsoft.Test.FaultInjection
         {
             // Enable Profiling Callback implemented by Engine
             processStartInfo.EnvironmentVariables.Add(EnvironmentVariable.EnableProfiling, "1");
-            processStartInfo.EnvironmentVariables.Add(EnvironmentVariable.Proflier, ComRegistrar.Clsid);
+            processStartInfo.EnvironmentVariables.Add(EnvironmentVariable.Profiler, ComRegistrar.Clsid);
 
             // Set method filter file name for Engine
             processStartInfo.EnvironmentVariables.Add(EnvironmentVariable.MethodFilter, session.methodFilterFileName);
@@ -284,14 +284,14 @@ namespace Microsoft.Test.FaultInjection
             // Set log directory for Engine and Dispatcher
             processStartInfo.EnvironmentVariables.Add(EnvironmentVariable.LogDirectory, session.LogDirectory);
 
-            processStartInfo.EnvironmentVariables.Add(EnvironmentVariable.CLR4Compatibility, "EnableV2Profiler");
+            processStartInfo.EnvironmentVariables.Add(EnvironmentVariable.ProfilerCompatibilityForCLR4, "EnableV2Profiler");
         }
 
         private static void SetEnvironmentVariable(FaultSession session, EnvironmentVariableTarget target)
         {
             // Enable Profiling Callback implemented by Engine
             Environment.SetEnvironmentVariable(EnvironmentVariable.EnableProfiling, "1", target);
-            Environment.SetEnvironmentVariable(EnvironmentVariable.Proflier, ComRegistrar.Clsid, target);
+            Environment.SetEnvironmentVariable(EnvironmentVariable.Profiler, ComRegistrar.Clsid, target);
 
             // Set method filter file name for Engine
             Environment.SetEnvironmentVariable(EnvironmentVariable.MethodFilter, session.methodFilterFileName, target);
@@ -300,14 +300,14 @@ namespace Microsoft.Test.FaultInjection
             // Set log directory for Engine and Dispatcher
             Environment.SetEnvironmentVariable(EnvironmentVariable.LogDirectory, session.LogDirectory, target);
 
-            Environment.SetEnvironmentVariable(EnvironmentVariable.CLR4Compatibility, "EnableV2Profiler", target);
+            Environment.SetEnvironmentVariable(EnvironmentVariable.ProfilerCompatibilityForCLR4, "EnableV2Profiler", target);
         }
 
         private static void ClearEnvironmentVariable(EnvironmentVariableTarget target)
         {
             // Disable Profiling Callback implemented by Engine
             Environment.SetEnvironmentVariable(EnvironmentVariable.EnableProfiling, "0", target);
-            Environment.SetEnvironmentVariable(EnvironmentVariable.Proflier, string.Empty, target);
+            Environment.SetEnvironmentVariable(EnvironmentVariable.Profiler, string.Empty, target);
             // Clear method filter file name
             Environment.SetEnvironmentVariable(EnvironmentVariable.MethodFilter, string.Empty, target);
             // Clear serialization file name for Dispatcher
@@ -315,7 +315,7 @@ namespace Microsoft.Test.FaultInjection
             // Clear log directory for Engine and Dispatcher
             Environment.SetEnvironmentVariable(EnvironmentVariable.LogDirectory, string.Empty, target);
 
-            Environment.SetEnvironmentVariable(EnvironmentVariable.CLR4Compatibility, string.Empty, target);
+            Environment.SetEnvironmentVariable(EnvironmentVariable.ProfilerCompatibilityForCLR4, string.Empty, target);
         }
 
         private static bool ArrayEquals(byte[] lhs, byte[] rhs)
