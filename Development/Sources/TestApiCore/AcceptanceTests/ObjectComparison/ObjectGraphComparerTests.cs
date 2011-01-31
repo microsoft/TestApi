@@ -14,9 +14,9 @@ using Xunit;
 namespace Microsoft.Test.AcceptanceTests.ObjectComparison
 {
     /// <summary>
-    /// Tests for the ObjectComparer API
+    /// Tests for the <see cref="ObjectGraphComparer"/> API.
     /// </summary>
-    public class ObjectComparerTests
+    public class ObjectGraphComparerTests
     {
         #region Basic comparison tests
 
@@ -40,8 +40,11 @@ namespace Microsoft.Test.AcceptanceTests.ObjectComparison
             BasicTypes rightObject = leftObject.Clone();
 
             ObjectGraphFactory factory = new PublicPropertyObjectGraphFactory();
-            ObjectComparer comparer = new ObjectComparer(factory);
-            bool match = comparer.Compare(leftObject, rightObject);
+            ObjectGraphComparer comparer = new ObjectGraphComparer();
+            var left = factory.CreateObjectGraph(leftObject);
+            var right = factory.CreateObjectGraph(rightObject);
+
+            bool match = comparer.Compare(left, right);
 
             Assert.True(match, "Basic types did not match");
         }
@@ -78,8 +81,10 @@ namespace Microsoft.Test.AcceptanceTests.ObjectComparison
             };
 
             ObjectGraphFactory factory = new PublicPropertyObjectGraphFactory();
-            ObjectComparer comparer = new ObjectComparer(factory);
-            bool match = comparer.Compare(leftObject, rightObject);
+            ObjectGraphComparer comparer = new ObjectGraphComparer();
+            var left = factory.CreateObjectGraph(leftObject);
+            var right = factory.CreateObjectGraph(rightObject);
+            bool match = comparer.Compare(left, right);
 
             Assert.False(match, "Basic types matched when they should not");            
         }
@@ -104,8 +109,10 @@ namespace Microsoft.Test.AcceptanceTests.ObjectComparison
             BasicTypes rightObject = leftObject.Clone();
 
             ObjectGraphFactory factory = new PublicPropertyObjectGraphFactory();
-            ObjectComparer comparer = new ObjectComparer(factory);
-            bool match = comparer.Compare(leftObject, rightObject);
+            ObjectGraphComparer comparer = new ObjectGraphComparer();
+            var left = factory.CreateObjectGraph(leftObject);
+            var right = factory.CreateObjectGraph(rightObject);
+            bool match = comparer.Compare(left, right);
 
             Assert.True(match, "Basic types did not match");
         }
@@ -126,8 +133,10 @@ namespace Microsoft.Test.AcceptanceTests.ObjectComparison
             };
 
             ObjectGraphFactory factory = new PublicPropertyObjectGraphFactory();
-            ObjectComparer comparer = new ObjectComparer(factory);
-            bool match = comparer.Compare(leftObject, rightObject);
+            ObjectGraphComparer comparer = new ObjectGraphComparer();
+            var left = factory.CreateObjectGraph(leftObject);
+            var right = factory.CreateObjectGraph(rightObject);
+            bool match = comparer.Compare(left, right);
 
             Assert.True(match, "List<string> did not match");
         }
@@ -148,8 +157,10 @@ namespace Microsoft.Test.AcceptanceTests.ObjectComparison
             };
 
             ObjectGraphFactory factory = new PublicPropertyObjectGraphFactory();
-            ObjectComparer comparer = new ObjectComparer(factory);
-            bool match = comparer.Compare(leftObject, rightObject);
+            ObjectGraphComparer comparer = new ObjectGraphComparer();
+            var left = factory.CreateObjectGraph(leftObject);
+            var right = factory.CreateObjectGraph(rightObject);
+            bool match = comparer.Compare(left, right);
 
             Assert.True(match, "Dictionary<int, string> did not match");
         }
@@ -184,8 +195,10 @@ namespace Microsoft.Test.AcceptanceTests.ObjectComparison
             };
 
             ObjectGraphFactory factory = new PublicPropertyObjectGraphFactory();
-            ObjectComparer comparer = new ObjectComparer(factory);
-            bool match = comparer.Compare(leftObject, rightObject);
+            ObjectGraphComparer comparer = new ObjectGraphComparer();
+            var left = factory.CreateObjectGraph(leftObject);
+            var right = factory.CreateObjectGraph(rightObject);
+            bool match = comparer.Compare(left, right);
 
             Assert.True(match, "objects did not match");
         }
@@ -216,8 +229,10 @@ namespace Microsoft.Test.AcceptanceTests.ObjectComparison
             };
 
             ObjectGraphFactory factory = new PublicPropertyObjectGraphFactory();
-            ObjectComparer comparer = new ObjectComparer(factory);
-            bool match = comparer.Compare(leftObject, rightObject);
+            ObjectGraphComparer comparer = new ObjectGraphComparer();
+            var left = factory.CreateObjectGraph(leftObject);
+            var right = factory.CreateObjectGraph(rightObject);
+            bool match = comparer.Compare(left, right);
 
             Assert.True(match, "objects did not match");
         }
@@ -240,8 +255,10 @@ namespace Microsoft.Test.AcceptanceTests.ObjectComparison
             rightObject.Content = rightObject;
 
             ObjectGraphFactory factory = new PublicPropertyObjectGraphFactory();
-            ObjectComparer comparer = new ObjectComparer(factory);
-            bool match = comparer.Compare(leftObject, rightObject);
+            ObjectGraphComparer comparer = new ObjectGraphComparer();
+            var left = factory.CreateObjectGraph(leftObject);
+            var right = factory.CreateObjectGraph(rightObject);
+            bool match = comparer.Compare(left, right);
 
             Assert.True(match, "object with loop did not match");
         }
@@ -274,8 +291,10 @@ namespace Microsoft.Test.AcceptanceTests.ObjectComparison
             ((Element)rightObject.Content).Content = rightObject;
 
             ObjectGraphFactory factory = new PublicPropertyObjectGraphFactory();
-            ObjectComparer comparer = new ObjectComparer(factory);
-            bool match = comparer.Compare(leftObject, rightObject);
+            ObjectGraphComparer comparer = new ObjectGraphComparer();
+            var left = factory.CreateObjectGraph(leftObject);
+            var right = factory.CreateObjectGraph(rightObject);
+            bool match = comparer.Compare(left, right);
 
             Assert.True(match, "object with loop did not match");
         }
@@ -306,8 +325,10 @@ namespace Microsoft.Test.AcceptanceTests.ObjectComparison
             };
 
             ObjectGraphFactory factory = new PublicPropertyObjectGraphFactory();
-            ObjectComparer comparer = new ObjectComparer(factory);
-            bool match = comparer.Compare(leftObject, rightObject);
+            ObjectGraphComparer comparer = new ObjectGraphComparer();
+            var left = factory.CreateObjectGraph(leftObject);
+            var right = factory.CreateObjectGraph(rightObject);
+            bool match = comparer.Compare(left, right);
 
             Assert.True(match, "object with loop did not match");
         }
@@ -326,12 +347,136 @@ namespace Microsoft.Test.AcceptanceTests.ObjectComparison
             };
 
             ObjectGraphFactory factory = new PublicPropertyObjectGraphFactory();
-            ObjectComparer comparer = new ObjectComparer(factory);
-            bool match = comparer.Compare(leftObject, rightObject);
+            ObjectGraphComparer comparer = new ObjectGraphComparer();
+            var left = factory.CreateObjectGraph(leftObject);
+            var right = factory.CreateObjectGraph(rightObject);
+            bool match = comparer.Compare(left, right);
 
-            ObjectToConsole(leftObject, factory);
+            TestHelpers.ObjectToConsole(leftObject, factory);
 
             Assert.True(match, "objects did not match");
+        }
+
+        [Fact]
+        public void CompareEqualGraphsDifferentOrder()
+        {
+            var root1 = new GraphNode { Name = "RootNode" };
+            {
+                var child1 = new GraphNode { Name = "Name", Parent = root1, ObjectValue = "Peter" };
+                var child2 = new GraphNode { Name = "Value", Parent = root1 };
+                var child3 = new GraphNode { Name = "Value", Parent = root1 };
+                var child21 = new GraphNode { Name = "Grandchild", Parent = child2, ObjectValue = 1 };
+
+                root1.Children.Add(child1);
+                root1.Children.Add(child2);
+                root1.Children.Add(child3);
+                child2.Children.Add(child21);
+            }
+
+            var root2 = new GraphNode { Name = "RootNode" };
+            {
+                var child1 = new GraphNode { Name = "Name", Parent = root2, ObjectValue = "Peter" };
+                var child3 = new GraphNode { Name = "Value", Parent = root2 };
+                var child2 = new GraphNode { Name = "Value", Parent = root2 };
+                var child21 = new GraphNode { Name = "Grandchild", Parent = child2, ObjectValue = 1 };
+
+                root2.Children.Add(child1);
+                root2.Children.Add(child3);
+                root2.Children.Add(child2);
+                child2.Children.Add(child21);
+            }
+
+            var result = new ObjectGraphComparer().Compare(root1, root2);
+            Assert.True(result);
+        }
+
+        [Fact]
+        public void CompareEqualCyclicGraphsDifferentOrder()
+        {
+            var root1 = new GraphNode { Name = "RootNode" };
+            {
+                var child1 = new GraphNode { Name = "Name", Parent = root1, ObjectValue = "Peter" };
+                var child2 = new GraphNode { Name = "Value", Parent = root1 };
+                var child3 = new GraphNode { Name = "Value", Parent = root1 };
+                var child21 = new GraphNode { Name = "Grandchild", Parent = child2, ObjectValue = 1 };
+
+                root1.Children.Add(child1);
+                root1.Children.Add(child2);
+                root1.Children.Add(child3);
+                child2.Children.Add(child21);
+
+                child21.Children.Add(root1);
+            }
+
+            var root2 = new GraphNode { Name = "RootNode" };
+            {
+                var child1 = new GraphNode { Name = "Name", Parent = root2, ObjectValue = "Peter" };
+                var child3 = new GraphNode { Name = "Value", Parent = root2 };
+                var child2 = new GraphNode { Name = "Value", Parent = root2 };
+                var child21 = new GraphNode { Name = "Grandchild", Parent = child2, ObjectValue = 1 };
+
+                root2.Children.Add(child1);
+                root2.Children.Add(child3);
+                root2.Children.Add(child2);
+                child2.Children.Add(child21);
+
+                child21.Children.Add(root2);
+            }
+
+            var result = new ObjectGraphComparer().Compare(root1, root2);
+            Assert.True(result);
+        }
+
+        [Fact]
+        public void CompareDifferentGraphsDifferentOrder()
+        {
+            var root1 = new GraphNode { Name = "RootNode" };
+            {
+                var child1 = new GraphNode { Name = "Name", Parent = root1, ObjectValue = "Peter" };
+                var child4 = new GraphNode { Name = "Value", Parent = root1, ObjectValue = 3 }; // This node should be reported
+                var child2 = new GraphNode { Name = "Value", Parent = root1 };
+                var child3 = new GraphNode { Name = "Value", Parent = root1 };
+                var child21 = new GraphNode { Name = "Grandchild", Parent = child2, ObjectValue = 1 };
+
+                root1.Children.Add(child1);
+                root1.Children.Add(child4);
+                root1.Children.Add(child2);
+                root1.Children.Add(child3);
+                child2.Children.Add(child21);
+            }
+
+            var root2 = new GraphNode { Name = "RootNode" };
+            {
+                var child1 = new GraphNode { Name = "Name", Parent = root2, ObjectValue = "Peter" };
+                var child2 = new GraphNode { Name = "Value", Parent = root2 };
+                var child3 = new GraphNode { Name = "Value", Parent = root2 };
+                var child21 = new GraphNode { Name = "Grandchild", Parent = child2, ObjectValue = 1 };
+                var child22 = new GraphNode { Name = "Stranger", Parent = child2, ObjectValue = 1 }; // This node should be reported
+
+                root2.Children.Add(child1);
+                root2.Children.Add(child2);
+                root2.Children.Add(child3);
+                child2.Children.Add(child21);
+                child2.Children.Add(child22);
+            }
+
+            IEnumerable<ObjectComparisonMismatch> mismatches;
+            var result = new ObjectGraphComparer().Compare(root1, root2, out mismatches);
+            Assert.False(result);
+
+            var expected = new []
+            {
+                "RightNodeHasFewerChildren:Left=RootNode(Null) Right=RootNode(Null)",
+                "ObjectValuesDoNotMatch:Left=RootNode.Value(3) Right=RootNode.Value(Null)",
+                "MissingLeftNode:Left=Null(Null) Right=RootNode.Value.Grandchild(1)",
+                "MissingLeftNode:Left=Null(Null) Right=RootNode.Value.Stranger(1)",
+                "MissingRightNode:Left=RootNode.Value(Null) Right=Null(Null)"
+            };
+            var actual = TestHelpers.StringFromMismatches(mismatches);
+            for (int i = 0; i < expected.Length; i++)
+            {
+                Assert.Equal(expected[i], actual[i]);
+            }
         }
 
         #endregion
@@ -352,15 +497,17 @@ namespace Microsoft.Test.AcceptanceTests.ObjectComparison
             };
 
             ObjectGraphFactory factory = new PublicPropertyObjectGraphFactory();
-            ObjectComparer comparer = new ObjectComparer(factory);
+            ObjectGraphComparer comparer = new ObjectGraphComparer();
+            var left = factory.CreateObjectGraph(leftObject);
+            var right = factory.CreateObjectGraph(rightObject);
             IEnumerable<ObjectComparisonMismatch> mismatches;
-            bool match = comparer.Compare(leftObject, rightObject, out mismatches);
-            
+            bool match = comparer.Compare(left, right, out mismatches);
+                       
             string[] expectedMismatches = new string[]
             {
                 "ObjectValuesDoNotMatch:Left=RootObject.Name(Content1) Right=RootObject.Name(Content2)",
             };
-            string[] actualMismatches = StringFromMismatches(mismatches);
+            string[] actualMismatches = TestHelpers.StringFromMismatches(mismatches);
 
             Assert.False(match);
             Assert.True(actualMismatches.Length == expectedMismatches.Length);
@@ -388,9 +535,11 @@ namespace Microsoft.Test.AcceptanceTests.ObjectComparison
             };
 
             ObjectGraphFactory factory = new PublicPropertyObjectGraphFactory();
-            ObjectComparer comparer = new ObjectComparer(factory);
+            ObjectGraphComparer comparer = new ObjectGraphComparer();
+            var left = factory.CreateObjectGraph(leftObject);
+            var right = factory.CreateObjectGraph(rightObject);
             IEnumerable<ObjectComparisonMismatch> mismatches;
-            bool match = comparer.Compare(leftObject, rightObject, out mismatches);
+            bool match = comparer.Compare(left, right, out mismatches);
 
             string[] expectedMismatches = new string[]
             {
@@ -399,7 +548,7 @@ namespace Microsoft.Test.AcceptanceTests.ObjectComparison
                 "MissingRightNode:Left=RootObject.Content.Name(OnlyOnLeft) Right=Null(Null)",
             };
 
-            string[] actualMismatches = StringFromMismatches(mismatches);
+            string[] actualMismatches = TestHelpers.StringFromMismatches(mismatches);
 
             Assert.False(match);
             Assert.True(actualMismatches.Length == expectedMismatches.Length);
@@ -423,16 +572,18 @@ namespace Microsoft.Test.AcceptanceTests.ObjectComparison
             };
 
             ObjectGraphFactory factory = new PublicPropertyObjectGraphFactory();
-            ObjectComparer comparer = new ObjectComparer(factory);
+            ObjectGraphComparer comparer = new ObjectGraphComparer();
+            var left = factory.CreateObjectGraph(leftObject);
+            var right = factory.CreateObjectGraph(rightObject);
             IEnumerable<ObjectComparisonMismatch> mismatches;
-            bool match = comparer.Compare(leftObject, rightObject, out mismatches);
+            bool match = comparer.Compare(left, right, out mismatches);
 
             string[] expectedMismatches = new string[]
             {
                 "ObjectTypesDoNotMatch:Left=RootObject.Content(32) Right=RootObject.Content(stringvalue)",
             };
 
-            string[] actualMismatches = StringFromMismatches(mismatches);
+            string[] actualMismatches = TestHelpers.StringFromMismatches(mismatches);
 
             Assert.False(match);
             Assert.True(actualMismatches.Length == expectedMismatches.Length);
@@ -463,19 +614,21 @@ namespace Microsoft.Test.AcceptanceTests.ObjectComparison
             };
 
             ObjectGraphFactory factory = new PublicPropertyObjectGraphFactory();
-            ObjectComparer comparer = new ObjectComparer(factory);
+            ObjectGraphComparer comparer = new ObjectGraphComparer();
+            var left = factory.CreateObjectGraph(leftObject);
+            var right = factory.CreateObjectGraph(rightObject);
             IEnumerable<ObjectComparisonMismatch> mismatches;
-            bool match = comparer.Compare(leftObject, rightObject, out mismatches);
+            bool match = comparer.Compare(left, right, out mismatches);
 
             string[] expectedMismatches = new string[]
             {
                "RightNodeHasFewerChildren:Left=RootObject.Content(System.String[]) Right=RootObject.Content(System.String[])",
                "MissingRightNode:Left=RootObject.Content.IEnumerable1(String2) Right=Null(Null)",
-               "ObjectValuesDoNotMatch:Left=RootObject.Content.LongLength(2) Right=RootObject.Content.LongLength(1)",
                "ObjectValuesDoNotMatch:Left=RootObject.Content.Length(2) Right=RootObject.Content.Length(1)",
+               "ObjectValuesDoNotMatch:Left=RootObject.Content.LongLength(2) Right=RootObject.Content.LongLength(1)",
             };
 
-            string[] actualMismatches = StringFromMismatches(mismatches);
+            string[] actualMismatches = TestHelpers.StringFromMismatches(mismatches);
 
             Assert.False(match);
             Assert.True(actualMismatches.Length == expectedMismatches.Length);
@@ -483,52 +636,6 @@ namespace Microsoft.Test.AcceptanceTests.ObjectComparison
             {
                 Assert.Equal(expectedMismatches[index], actualMismatches[index]);
             }
-        }
-
-        #endregion
-
-        #region Private members
-
-        private static string StringFromGraph(GraphNode graph)
-        {
-            StringBuilder stringBuilder = new StringBuilder();
-            IEnumerable<GraphNode> nodes = graph.GetNodesInDepthFirstOrder();
-            foreach (GraphNode node in nodes)
-            {
-                string type = "Null";
-                if (node.ObjectValue != null)
-                {
-                    type = node.ObjectType.FullName;
-                }
-
-                stringBuilder.AppendLine("".PadLeft(node.Depth*4) + node.Name + "Value = '" + node.ObjectValue + "'" + " Type=" + type);
-            }
-            return stringBuilder.ToString();
-        }
-
-        private static void ObjectToConsole(object value, ObjectGraphFactory factory)
-        {
-            GraphNode root = factory.CreateObjectGraph(value);
-            Console.WriteLine(StringFromGraph(root));
-        }
-
-        private static string[] StringFromMismatches(IEnumerable<ObjectComparisonMismatch> mismatches)
-        {
-            List<string> outputLines = new List<string>();
-            foreach (ObjectComparisonMismatch mismatch in mismatches)
-            {
-                string message = String.Format(CultureInfo.InvariantCulture,
-                    "{0}:Left={1}({2}) Right={3}({4})",
-                    mismatch.MismatchType,
-                    mismatch.LeftObjectNode == null ? "Null" : mismatch.LeftObjectNode.QualifiedName,
-                    mismatch.LeftObjectNode == null ? "Null" : mismatch.LeftObjectNode.ObjectValue ?? "Null",
-                    mismatch.RightObjectNode == null ? "Null" : mismatch.RightObjectNode.QualifiedName,
-                    mismatch.RightObjectNode == null ? "Null" : mismatch.RightObjectNode.ObjectValue ?? "Null");
-
-                outputLines.Add(message);
-            }
-
-            return outputLines.ToArray();
         }
 
         #endregion

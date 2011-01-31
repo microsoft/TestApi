@@ -19,7 +19,7 @@ namespace Microsoft.Test.AcceptanceTests.ObjectComparison
     /// </summary>
     class ExtractAttributeObjectGraphFactory : ObjectGraphFactory
     {
-        public override GraphNode CreateObjectGraph(object value)
+        public override GraphNode CreateObjectGraph(object value, ObjectGraphFactoryMap factoryMap = null)
         {
             // Queue of pending nodes 
             Queue<GraphNode> pendingQueue = new Queue<GraphNode>();

@@ -27,7 +27,7 @@ namespace Microsoft.Test.ObjectComparison
     /// <code>
     /// class SimpleObjectGraphFactory : ObjectGraphFactory
     /// {
-    ///     public override GraphNode CreateObjectGraph(object o)
+    ///     public override GraphNode CreateObjectGraph(object o, ObjectGraphFactoryMap factoryMap = null)
     ///     {
     ///         // Build the object graph with nodes that need to be compared.
     ///         // in this particular case, we only pick up the object itself
@@ -59,10 +59,12 @@ namespace Microsoft.Test.ObjectComparison
         /// Creates a graph for the given object.
         /// </summary>
         /// <param name="value">The object to convert.</param>
+        /// <param name="factoryMap">
+        /// The factory map is used when the currect factory encounters an object of a type
+        /// it does not work with. In this case the factory should use the map to find a factory
+        /// for that type and use it.
+        /// </param>
         /// <returns>The root node of the created graph.</returns>
-        public virtual GraphNode CreateObjectGraph(object value)
-        {
-            throw new NotSupportedException("Please provide a behavior for this method in a derived class");
-        }
+        public abstract GraphNode CreateObjectGraph(object value, ObjectGraphFactoryMap factoryMap = null);
     }
 }

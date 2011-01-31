@@ -21,7 +21,7 @@ namespace Microsoft.Test.ObjectComparison
     /// </summary>
     ///
     /// <example>
-    /// For examples, refer to <see cref="ObjectComparer"/>.
+    /// For examples, refer to <see cref="ObjectGraphComparer"/>.
     /// </example>
     public sealed class PublicPropertyObjectGraphFactory : ObjectGraphFactory
     {
@@ -31,8 +31,13 @@ namespace Microsoft.Test.ObjectComparison
         /// Creates a graph for the given object by extracting public properties.
         /// </summary>
         /// <param name="value">The object to convert.</param>
+        /// <param name="factoryMap">
+        /// If this parameter is not equal <see lang="null"/>, the map is used
+        /// for each inner object to find out whether some other factory wants 
+        /// to process it.
+        /// </param>
         /// <returns>The root node of the created graph.</returns>
-        public override GraphNode CreateObjectGraph(object value)
+        public override GraphNode CreateObjectGraph(object value, ObjectGraphFactoryMap factoryMap = null)
         {
             if (value == null)
             {
@@ -45,8 +50,15 @@ namespace Microsoft.Test.ObjectComparison
             // Dictionary of < object hashcode, node > - to lookup already visited objects 
             Dictionary<int, GraphNode> visitedObjects = new Dictionary<int, GraphNode>();
 
-            // Build the root node and enqueue it 
-            GraphNode root = new GraphNode()
+            GraphNode root;
+            if (TryInvokeForeignFactory(value, factoryMap, out root))
+            {
+                // Everything is done for us
+                return root;
+            }
+
+            // Build the root ourselves and enqueue it
+            root = new GraphNode()
             {
                 Name = "RootObject",
                 ObjectValue = value,
@@ -56,9 +68,9 @@ namespace Microsoft.Test.ObjectComparison
 
             while (pendingQueue.Count != 0)
             {
-                GraphNode currentNode = pendingQueue.Dequeue();
-                object nodeData = currentNode.ObjectValue;
-                Type nodeType = currentNode.ObjectType;
+                var currentNode = pendingQueue.Dequeue();
+                var nodeData = currentNode.ObjectValue;
+                var nodeType = currentNode.ObjectType;
 
                 // If we have reached a leaf node -
                 // no more processing is necessary
@@ -67,12 +79,12 @@ namespace Microsoft.Test.ObjectComparison
                     continue;
                 }
 
-                // Handle loops by checking the visted objects 
+                // Handle loops by checking the visited objects 
                 if (visitedObjects.Keys.Contains(nodeData.GetHashCode()))
                 {
-                    // Caused by a cycle - we have alredy seen this node so
+                    // Caused by a cycle - we have already seen this node so
                     // use the existing node instead of creating a new one
-                    GraphNode prebuiltNode = visitedObjects[nodeData.GetHashCode()];
+                    var prebuiltNode = visitedObjects[nodeData.GetHashCode()];
                     currentNode.Children.Add(prebuiltNode);
                     continue;
                 }
@@ -82,13 +94,18 @@ namespace Microsoft.Test.ObjectComparison
                 }
 
                 // Extract and add child nodes for current object //
-                Collection<GraphNode> childNodes = GetChildNodes(nodeData);
-                foreach (GraphNode childNode in childNodes)
+                var childNodes = GetChildNodes(nodeData, factoryMap);
+                foreach (var childNode in childNodes)
                 {
-                    childNode.Parent = currentNode;
-                    currentNode.Children.Add(childNode);
+                    childNode.Node.Parent = currentNode;
+                    currentNode.Children.Add(childNode.Node);
 
-                    pendingQueue.Enqueue(childNode);
+                    // If a node was created externally, we do not need to
+                    // process it any longer. It is supposed to be fully built
+                    if (!childNode.CreatedExternally)
+                    {
+                        pendingQueue.Enqueue(childNode.Node);
+                    }
                 }
             }
 
@@ -100,16 +117,16 @@ namespace Microsoft.Test.ObjectComparison
         #region Private Members
 
         /// <summary>
-        /// Given an object, get a list of the immediate child nodes
+        /// Given an object, get a list of tuples of the immediate child nodes.
         /// </summary>
         /// <param name="nodeData">The object whose child nodes need to be extracted</param>
-        /// <returns>Collection of child graph nodes</returns>
-        private Collection<GraphNode> GetChildNodes(object nodeData)
+        /// <param name="factoryMap">The factory map.</param>
+        private Collection<GraphNodeTuple> GetChildNodes(object nodeData, ObjectGraphFactoryMap factoryMap)
         {
-            Collection<GraphNode> childNodes = new Collection<GraphNode>();
+            var childNodes = new Collection<GraphNodeTuple>();
 
             // Extract and add properties 
-            foreach (GraphNode child in ExtractProperties(nodeData))
+            foreach (var child in ExtractProperties(nodeData, factoryMap))
             {
                 childNodes.Add(child);
             }
@@ -117,7 +134,7 @@ namespace Microsoft.Test.ObjectComparison
             // Extract and add IEnumerable content 
             if (IsIEnumerable(nodeData))
             {
-                foreach (GraphNode child in GetIEnumerableChildNodes(nodeData))
+                foreach (var child in GetIEnumerableChildNodes(nodeData, factoryMap))
                 {
                     childNodes.Add(child);
                 }
@@ -126,16 +143,16 @@ namespace Microsoft.Test.ObjectComparison
             return childNodes;
         }
 
-        private List<GraphNode> ExtractProperties(object nodeData)
+        private List<GraphNodeTuple> ExtractProperties(object nodeData, ObjectGraphFactoryMap factoryMap)
         {
-            List<GraphNode> childNodes = new List<GraphNode>();
+            var childNodes = new List<GraphNodeTuple>();
 
-            PropertyInfo[] properties = nodeData.GetType().GetProperties(BindingFlags.Public | BindingFlags.Instance);
-            foreach (PropertyInfo property in properties)
+            var properties = nodeData.GetType().GetProperties(BindingFlags.Public | BindingFlags.Instance);
+            foreach (var property in properties)
             {
                 object value = null;
 
-                ParameterInfo[] parameters = property.GetIndexParameters();
+                var parameters = property.GetIndexParameters();
                 // Skip indexed properties and properties that cannot be read
                 if (property.CanRead && parameters.Length == 0)
                 {
@@ -152,36 +169,30 @@ namespace Microsoft.Test.ObjectComparison
                         value = ex.GetType().ToString();
                     }
 
-                    GraphNode childNode = new GraphNode()
-                    {
-                        Name = property.Name,
-                        ObjectValue = value,
-                    };
-
-                    childNodes.Add(childNode);
+                    var tuple = CreateGraphNode(value, factoryMap);
+                    // Set a child name in any case
+                    tuple.Node.Name = property.Name;
+                    childNodes.Add(tuple);
                 }
             };
 
             return childNodes;
         }
 
-        private static List<GraphNode> GetIEnumerableChildNodes(object nodeData)
+        private static List<GraphNodeTuple> GetIEnumerableChildNodes(object nodeData, ObjectGraphFactoryMap factoryMap)
         {
-            List<GraphNode> childNodes = new List<GraphNode>();
+            var childNodes = new List<GraphNodeTuple>();
 
-            IEnumerable enumerableData = nodeData as IEnumerable;
-            IEnumerator enumerator = enumerableData.GetEnumerator();
+            var enumerableData = nodeData as IEnumerable;
+            var enumerator = enumerableData.GetEnumerator();
 
             int count = 0;
             while (enumerator.MoveNext())
             {
-                GraphNode childNode = new GraphNode()
-                {
-                    Name = "IEnumerable" + count++,
-                    ObjectValue = enumerator.Current,
-                };
-
-                childNodes.Add(childNode);
+                var tuple = CreateGraphNode(enumerator.Current, factoryMap);
+                // Set a child name in any case
+                tuple.Node.Name = "IEnumerable" + count++;
+                childNodes.Add(tuple);
             }
 
             return childNodes;
@@ -207,6 +218,32 @@ namespace Microsoft.Test.ObjectComparison
             return nodeData == null ||
                                nodeType.IsPrimitive ||
                                nodeType == typeof(string);
+        }
+
+        private static bool TryInvokeForeignFactory(object value, ObjectGraphFactoryMap factoryMap, out GraphNode root)
+        {
+            root = null;
+
+            ObjectGraphFactory foreignFactory;
+            if (factoryMap != null && factoryMap.TryGetValue(value.GetType(), out foreignFactory))
+            {
+                root = foreignFactory.CreateObjectGraph(value, factoryMap);
+            }
+
+            return root != null;
+        }
+
+        private static GraphNodeTuple CreateGraphNode(object value, ObjectGraphFactoryMap factoryMap)
+        {
+            GraphNode node;
+            bool createdExternally = true;
+            if (!TryInvokeForeignFactory(value, factoryMap, out node))
+            {
+                node = new GraphNode { ObjectValue = value };
+                createdExternally = false;
+            }
+
+            return new GraphNodeTuple(node, createdExternally);
         }
 
         #endregion
