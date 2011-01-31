@@ -38,6 +38,11 @@ namespace Microsoft.Test.ObjectComparison
         /// <summary>
         /// The node values do not match.
         /// </summary>
-        ObjectValuesDoNotMatch = 5
+        ObjectValuesDoNotMatch = 5,
+
+        /// <summary>
+        /// The comparison strategies of nodes are not the same.
+        /// </summary>
+        ComparisonStrategiesDoNotMatch = 6
     }
 }

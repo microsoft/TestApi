@@ -135,8 +135,12 @@
     <Compile Include="LeakDetection\NativeMemoryMethods.cs" />
     <Compile Include="ObjectComparison\CustomObjectGraphFactory.cs" />
     <Compile Include="ObjectComparison\CustomTypes.cs" />
-    <Compile Include="ObjectComparison\ObjectComparerTests.cs" />
+    <Compile Include="ObjectComparison\ObjectGraphCodecTests.cs" />
+    <Compile Include="ObjectComparison\ObjectGraphComparerTests.cs" />
+    <Compile Include="ObjectComparison\ObjectGraphComparisonStrategyTests.cs" />
+    <Compile Include="ObjectComparison\ObjectGraphFactoryMapTests.cs" />
     <Compile Include="ObjectComparison\ObjectGraphFactoryTests.cs" />
+    <Compile Include="ObjectComparison\TestHelpers.cs" />
     <Compile Include="Text\CommonRegexPatternsTests.cs" />
     <Compile Include="VariationGeneration\ConstraintTests.cs" />
     <Compile Include="VariationGeneration\DeclarativeTests.cs" />

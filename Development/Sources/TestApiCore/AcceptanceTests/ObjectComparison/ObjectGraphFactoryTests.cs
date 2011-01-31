@@ -28,9 +28,11 @@ namespace Microsoft.Test.AcceptanceTests.ObjectComparison
             };
 
             ExtractAttributeObjectGraphFactory factory = new ExtractAttributeObjectGraphFactory();
-            ObjectComparer comparer = new ObjectComparer(factory);
+            ObjectGraphComparer comparer = new ObjectGraphComparer();
+            var left = factory.CreateObjectGraph(leftObject);
+            var right = factory.CreateObjectGraph(rightObject);
 
-            Assert.True(comparer.Compare(leftObject, rightObject), "Custom compare failed");
+            Assert.True(comparer.Compare(left, right), "Custom compare failed");
         }
 
         [Fact]
@@ -49,9 +51,50 @@ namespace Microsoft.Test.AcceptanceTests.ObjectComparison
             };
 
             ExtractAttributeObjectGraphFactory factory = new ExtractAttributeObjectGraphFactory();
-            ObjectComparer comparer = new ObjectComparer(factory);
+            ObjectGraphComparer comparer = new ObjectGraphComparer();
+            var left = factory.CreateObjectGraph(leftObject);
+            var right = factory.CreateObjectGraph(rightObject);
 
-            Assert.False(comparer.Compare(leftObject, rightObject), "Custom compare passed when it should have failed");
+            Assert.False(comparer.Compare(left, right), "Custom compare passed when it should have failed");
+        }
+
+        #endregion
+
+        #region PublicPropertyObjectGraphFactory tests
+
+        [Fact]
+        public void CallsFactoriesFromTheFactoryMap()
+        {
+            var o = new NamedTypeWithAttributedProperty
+            {
+                Name = "Ralph",
+                Value = new TypeWithAttributedProperty 
+                {
+                    PropertyWithTestAttribute = "TestValue",
+                    PropertyWithoutTestAttribute = "ShouldBeIgnored"
+                }
+            };
+            
+            var map = new ObjectGraphFactoryMap(true);
+            map[typeof(TypeWithAttributedProperty)] = new ExtractAttributeObjectGraphFactory();
+
+            var factory = new PublicPropertyObjectGraphFactory();
+            var graph = factory.CreateObjectGraph(o, map);
+
+            var expected =
+@"RootObjectValue = 'Microsoft.Test.AcceptanceTests.ObjectComparison.ObjectGraphFactoryTests+NamedTypeWithAttributedProperty' Type=Microsoft.Test.AcceptanceTests.ObjectComparison.ObjectGraphFactoryTests+NamedTypeWithAttributedProperty
+    ValueValue = 'Microsoft.Test.AcceptanceTests.ObjectComparison.TypeWithAttributedProperty' Type=Microsoft.Test.AcceptanceTests.ObjectComparison.TypeWithAttributedProperty
+        PropertyWithTestAttributeValue = 'TestValue' Type=System.String
+    NameValue = 'Ralph' Type=System.String";
+            var actual = TestHelpers.StringFromGraph(graph);
+            Assert.Equal(expected, actual.Trim());
+        }
+
+        class NamedTypeWithAttributedProperty
+        {
+            public string Name { get; set; }
+
+            public TypeWithAttributedProperty Value { get; set; }
         }
 
         #endregion

@@ -151,12 +151,18 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ObjectComparison\GraphNode.cs" />
+    <Compile Include="ObjectComparison\GraphNodeTuple.cs" />
     <Compile Include="ObjectComparison\NamespaceDoc.cs" />
-    <Compile Include="ObjectComparison\ObjectComparer.cs" />
+    <None    Include="ObjectComparison\ObjectComparisonAPI.cd" />
     <Compile Include="ObjectComparison\ObjectComparisonMismatch.cs" />
     <Compile Include="ObjectComparison\ObjectComparisonMismatchType.cs" />
+    <Compile Include="ObjectComparison\ObjectGraphCodec.cs" />
+    <Compile Include="ObjectComparison\ObjectGraphComparer.cs" />
+    <Compile Include="ObjectComparison\ObjectGraphComparisonStrategy.cs" />
     <Compile Include="ObjectComparison\ObjectGraphFactory.cs" />
+    <Compile Include="ObjectComparison\ObjectGraphFactoryMap.cs" />
     <Compile Include="ObjectComparison\PublicPropertyObjectGraphFactory.cs" />
+    <Compile Include="ObjectComparison\XmlObjectGraphCodec.cs" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Text\BidiProperty.cs" />

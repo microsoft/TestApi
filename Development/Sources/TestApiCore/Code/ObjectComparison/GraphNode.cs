@@ -47,6 +47,7 @@ namespace Microsoft.Test.ObjectComparison
         /// </summary>
         public Collection<GraphNode> Children
         {
+            [DebuggerStepThrough]
             get
             {
                 if (this.children == null)
@@ -126,6 +127,20 @@ namespace Microsoft.Test.ObjectComparison
                 }
                 return qualifiedName;
             }
+        }
+
+        /// <summary>
+        /// Gets a comparison strategy for the currect graph node.
+        /// </summary>
+        /// <remarks>
+        /// The comparison strategy is attached by an object graph factory
+        /// to a node if it needs some special comparison algorithm.
+        /// If no comparison strategy is attached, then the default 
+        /// comparison is performed.
+        /// </remarks>
+        public ObjectGraphComparisonStrategy ComparisonStrategy
+        {
+            get; set;
         }
 
         /// <summary>
