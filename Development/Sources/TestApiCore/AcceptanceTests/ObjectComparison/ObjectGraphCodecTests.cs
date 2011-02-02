@@ -253,6 +253,40 @@ namespace Microsoft.Test.AcceptanceTests.ObjectComparison
             Assert.Equal(expected, actual);
         }
 
+        [Fact]
+        public void WorksWithFileStream()
+        {
+            var p1 = new Person("John");
+            p1.Children.Add(new Person("Peter"));
+            p1.Children.Add(new Person("Mary"));
+
+            var factory = new PublicPropertyObjectGraphFactory();
+            var graph1 = factory.CreateObjectGraph(p1);
+
+            // Save the object graph into a file
+            var codec = new XmlObjectGraphCodec();
+            var filePath = Path.Combine(Path.GetTempPath(), Path.GetRandomFileName());
+            using (var file = new FileStream(filePath, FileMode.Create, FileAccess.Write))
+            {
+                codec.EncodeObjectGraph(graph1, file);
+            }
+
+            // Read the object graph from the file
+            GraphNode actual;
+            using (var file = new FileStream(filePath, FileMode.Open, FileAccess.Read))
+            {
+                actual = codec.DecodeObjectGraph(file);
+            }
+
+            File.Delete(filePath);
+
+            var stream = new MemoryStream();
+            codec.EncodeObjectGraph(graph1, stream);
+            var expected = codec.DecodeObjectGraph(stream);
+
+            Assert.True(new ObjectGraphComparer().Compare(expected, actual));
+        }
+
         class IgnoreCaseComparisonStrategy : ObjectGraphComparisonStrategy
         {
             protected override IEnumerable<ObjectComparisonMismatch> Compare(GraphNode left, GraphNode right)
