@@ -27,7 +27,7 @@ namespace Microsoft.Test.AcceptanceTests.FaultInjection
         [Fact]
         public void TriggerIfCalledByTestString()
         {
-            string method = "Microsoft.Test.AcceptanceTests.BuiltInTriggerTests.TriggerIfCalledByTestString()";
+            string method = "Microsoft.Test.AcceptanceTests.FaultInjection.BuiltInTriggerTests.TriggerIfCalledByTestString()";
             ICondition condition = BuiltInConditions.TriggerIfCalledBy(method);
             DoTriggerIfCalledByTest(condition);
         }
@@ -73,7 +73,7 @@ namespace Microsoft.Test.AcceptanceTests.FaultInjection
         [Fact]
         public void TriggerIfStackContainsTestString()
         {
-            string method = "Microsoft.Test.AcceptanceTests.BuiltInTriggerTests.TriggerIfStackContainsTestString()";
+            string method = "Microsoft.Test.AcceptanceTests.FaultInjection.BuiltInTriggerTests.TriggerIfStackContainsTestString()";
             ICondition condition = BuiltInConditions.TriggerIfStackContains(method);
             DoTriggerIfStackContainsTests(condition);
         }
