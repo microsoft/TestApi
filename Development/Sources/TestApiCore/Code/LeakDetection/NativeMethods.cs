@@ -25,7 +25,10 @@ namespace Microsoft.Test.LeakDetection
 
         // Interop call the get performance memory counters
         [DllImport("psapi.dll", SetLastError = true)]
-        internal static extern int GetProcessMemoryInfo(IntPtr hProcess, out PROCESS_MEMORY_COUNTERS_EX counters, int size);        
+        internal static extern int GetProcessMemoryInfo(IntPtr hProcess, out PROCESS_MEMORY_COUNTERS_EX counters, int size);
+
+        [DllImport("kernel32.dll", SetLastError = true)]
+        internal static extern int GetLastError();
     }    
 
     [StructLayout(LayoutKind.Sequential)]
@@ -59,15 +62,15 @@ namespace Microsoft.Test.LeakDetection
     {
         public int cb;
         public int PageFaultCount;
-        public int PeakWorkingSetSize;
-        public int WorkingSetSize;
-        public int QuotaPeakPagedPoolUsage;
-        public int QuotaPagedPoolUsage;
-        public int QuotaPeakNonPagedPoolUsage;
-        public int QuotaNonPagedPoolUsage;
-        public int PagefileUsage;
-        public int PeakPagefileUsage;
-        public int PrivateUsage;
+        public IntPtr PeakWorkingSetSize;
+        public IntPtr WorkingSetSize;
+        public IntPtr QuotaPeakPagedPoolUsage;
+        public IntPtr QuotaPagedPoolUsage;
+        public IntPtr QuotaPeakNonPagedPoolUsage;
+        public IntPtr QuotaNonPagedPoolUsage;
+        public IntPtr PagefileUsage;
+        public IntPtr PeakPagefileUsage;
+        public IntPtr PrivateUsage;
     }
 
     [StructLayout(LayoutKind.Sequential)]

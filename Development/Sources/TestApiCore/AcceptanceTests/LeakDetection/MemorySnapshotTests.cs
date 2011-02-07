@@ -229,14 +229,14 @@ namespace Microsoft.Test.AcceptanceTests.LeakDetection
 
             oracle.Add("GdiObjectCount", NativeMemoryMethods.GetGuiResources(testProcess.Handle, NativeMemoryMethods.GR_GDIOBJECTS));
             oracle.Add("HandleCount", testProcess.HandleCount);
-            oracle.Add("PageFileBytes", counters.PagefileUsage);
-            oracle.Add("PageFilePeakBytes", counters.PeakPagefileUsage);
-            oracle.Add("PoolNonpagedBytes", counters.QuotaNonPagedPoolUsage);
-            oracle.Add("PoolPagedBytes", counters.QuotaPagedPoolUsage);
+            oracle.Add("PageFileBytes", counters.PagefileUsage.ToInt64());
+            oracle.Add("PageFilePeakBytes", counters.PeakPagefileUsage.ToInt64());
+            oracle.Add("PoolNonpagedBytes", counters.QuotaNonPagedPoolUsage.ToInt64());
+            oracle.Add("PoolPagedBytes", counters.QuotaPagedPoolUsage.ToInt64());
             oracle.Add("ThreadCount", testProcess.Threads.Count);
             oracle.Add("UserObjectCount", NativeMemoryMethods.GetGuiResources(testProcess.Handle, NativeMemoryMethods.GR_USEROBJECTS));
             oracle.Add("VirtualMemoryBytes", testProcess.VirtualMemorySize64);
-            oracle.Add("VirtualMemoryPrivateBytes", counters.PrivateUsage);
+            oracle.Add("VirtualMemoryPrivateBytes", counters.PrivateUsage.ToInt64());
             oracle.Add("WorkingSetBytes", testProcess.WorkingSet64);
             oracle.Add("WorkingSetPeakBytes", testProcess.PeakWorkingSet64);
             oracle.Add("WorkingSetPrivateBytes", GetPrivateWorkingSet(testProcess));
@@ -251,14 +251,14 @@ namespace Microsoft.Test.AcceptanceTests.LeakDetection
             // Create oracle with correct data to verify against.            
             diffOracle.Add("GdiObjectCount", latestSnapshot.GdiObjectCount - originalSnapshot.GdiObjectCount);
             diffOracle.Add("HandleCount", latestSnapshot.HandleCount - originalSnapshot.HandleCount);
-            diffOracle.Add("PageFileBytes", latestSnapshot.PageFileBytes - originalSnapshot.PageFileBytes);
-            diffOracle.Add("PageFilePeakBytes", latestSnapshot.PageFilePeakBytes - originalSnapshot.PageFilePeakBytes);
-            diffOracle.Add("PoolNonpagedBytes", latestSnapshot.PoolNonpagedBytes - originalSnapshot.PoolNonpagedBytes);
-            diffOracle.Add("PoolPagedBytes", latestSnapshot.PoolPagedBytes - originalSnapshot.PoolPagedBytes);
+            diffOracle.Add("PageFileBytes", latestSnapshot.PageFileBytes.ToInt64() - originalSnapshot.PageFileBytes.ToInt64());
+            diffOracle.Add("PageFilePeakBytes", latestSnapshot.PageFilePeakBytes.ToInt64() - originalSnapshot.PageFilePeakBytes.ToInt64());
+            diffOracle.Add("PoolNonpagedBytes", latestSnapshot.PoolNonpagedBytes.ToInt64() - originalSnapshot.PoolNonpagedBytes.ToInt64());
+            diffOracle.Add("PoolPagedBytes", latestSnapshot.PoolPagedBytes.ToInt64() - originalSnapshot.PoolPagedBytes.ToInt64());
             diffOracle.Add("ThreadCount", latestSnapshot.ThreadCount - originalSnapshot.ThreadCount);
             diffOracle.Add("UserObjectCount", latestSnapshot.UserObjectCount - originalSnapshot.UserObjectCount);
             diffOracle.Add("VirtualMemoryBytes", latestSnapshot.VirtualMemoryBytes - originalSnapshot.VirtualMemoryBytes);
-            diffOracle.Add("VirtualMemoryPrivateBytes", latestSnapshot.VirtualMemoryPrivateBytes - originalSnapshot.VirtualMemoryPrivateBytes);
+            diffOracle.Add("VirtualMemoryPrivateBytes", latestSnapshot.VirtualMemoryPrivateBytes.ToInt64() - originalSnapshot.VirtualMemoryPrivateBytes.ToInt64());
             diffOracle.Add("WorkingSetBytes", latestSnapshot.WorkingSetBytes - originalSnapshot.WorkingSetBytes);
             diffOracle.Add("WorkingSetPeakBytes", latestSnapshot.WorkingSetPeakBytes - originalSnapshot.WorkingSetPeakBytes);
             diffOracle.Add("WorkingSetPrivateBytes", latestSnapshot.WorkingSetPrivateBytes - originalSnapshot.WorkingSetPrivateBytes);
@@ -270,10 +270,10 @@ namespace Microsoft.Test.AcceptanceTests.LeakDetection
         {
             Assert.Equal(memorySnapshot.GdiObjectCount, oracle["GdiObjectCount"]);
             Assert.Equal(memorySnapshot.HandleCount, oracle["HandleCount"]);
-            Assert.Equal(memorySnapshot.PageFileBytes, oracle["PageFileBytes"]);
-            Assert.Equal(memorySnapshot.PageFilePeakBytes, oracle["PageFilePeakBytes"]);
-            Assert.Equal(memorySnapshot.PoolNonpagedBytes, oracle["PoolNonpagedBytes"]);
-            Assert.Equal(memorySnapshot.PoolPagedBytes, oracle["PoolPagedBytes"]);
+            Assert.Equal(memorySnapshot.PageFileBytes, new IntPtr(oracle["PageFileBytes"]));
+            Assert.Equal(memorySnapshot.PageFilePeakBytes, new IntPtr(oracle["PageFilePeakBytes"]));
+            Assert.Equal(memorySnapshot.PoolNonpagedBytes, new IntPtr(oracle["PoolNonpagedBytes"]));
+            Assert.Equal(memorySnapshot.PoolPagedBytes, new IntPtr(oracle["PoolPagedBytes"]));
             Assert.Equal(memorySnapshot.ThreadCount, oracle["ThreadCount"]);
             Assert.Equal(memorySnapshot.UserObjectCount, oracle["UserObjectCount"]);
             Assert.Equal(memorySnapshot.VirtualMemoryBytes, oracle["VirtualMemoryBytes"]);

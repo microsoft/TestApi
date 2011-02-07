@@ -61,15 +61,15 @@ namespace Microsoft.Test.AcceptanceTests.LeakDetection
     {
         public int cb;
         public int PageFaultCount;
-        public int PeakWorkingSetSize;
-        public int WorkingSetSize;
-        public int QuotaPeakPagedPoolUsage;
-        public int QuotaPagedPoolUsage;
-        public int QuotaPeakNonPagedPoolUsage;
-        public int QuotaNonPagedPoolUsage;
-        public int PagefileUsage;
-        public int PeakPagefileUsage;
-        public int PrivateUsage;
+        public IntPtr PeakWorkingSetSize;
+        public IntPtr WorkingSetSize;
+        public IntPtr QuotaPeakPagedPoolUsage;
+        public IntPtr QuotaPagedPoolUsage;
+        public IntPtr QuotaPeakNonPagedPoolUsage;
+        public IntPtr QuotaNonPagedPoolUsage;
+        public IntPtr PagefileUsage;
+        public IntPtr PeakPagefileUsage;
+        public IntPtr PrivateUsage;
     }
 
     [StructLayoutAttribute(LayoutKind.Sequential)]
