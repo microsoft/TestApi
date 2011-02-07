@@ -17,9 +17,13 @@ namespace Microsoft.Test.LeakDetection
             PROCESS_MEMORY_COUNTERS_EX counters = new PROCESS_MEMORY_COUNTERS_EX();
             counters.cb = Marshal.SizeOf(counters);
 
-            if (NativeMethods.GetProcessMemoryInfo(hProcess, out counters, Marshal.SizeOf(counters)) == 0)
+            if (NativeMethods.GetProcessMemoryInfo(hProcess, out counters, counters.cb) == 0)
             {
-                throw new Win32Exception();
+                int error = NativeMethods.GetLastError();
+                throw new Win32Exception(
+                    "GetProcessMemoryInfo failed with last error " + error.ToString() + ": " +
+                    "Marshal.SizeOf(counters) = " + Marshal.SizeOf(counters).ToString() + ", " +
+                    "counters.cb = " + counters.cb.ToString());
             }
 
             return counters;

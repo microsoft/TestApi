@@ -103,10 +103,10 @@ namespace Microsoft.Test.AcceptanceTests.LeakDetection
         {
             Assert.Equal(memorySnapshot.GdiObjectCount, oracle["GdiObjectCount"]);
             Assert.Equal(memorySnapshot.HandleCount, oracle["HandleCount"]);
-            Assert.Equal(memorySnapshot.PageFileBytes, oracle["PageFileBytes"]);
-            Assert.Equal(memorySnapshot.PageFilePeakBytes, oracle["PageFilePeakBytes"]);
-            Assert.Equal(memorySnapshot.PoolNonpagedBytes, oracle["PoolNonpagedBytes"]);
-            Assert.Equal(memorySnapshot.PoolPagedBytes, oracle["PoolPagedBytes"]);
+            Assert.Equal(memorySnapshot.PageFileBytes, new IntPtr(oracle["PageFileBytes"]));
+            Assert.Equal(memorySnapshot.PageFilePeakBytes, new IntPtr(oracle["PageFilePeakBytes"]));
+            Assert.Equal(memorySnapshot.PoolNonpagedBytes, new IntPtr(oracle["PoolNonpagedBytes"]));
+            Assert.Equal(memorySnapshot.PoolPagedBytes, new IntPtr(oracle["PoolPagedBytes"]));
             Assert.Equal(memorySnapshot.ThreadCount, oracle["ThreadCount"]);
             Assert.Equal(memorySnapshot.UserObjectCount, oracle["UserObjectCount"]);
             Assert.Equal(memorySnapshot.VirtualMemoryBytes, oracle["VirtualMemoryBytes"]);            

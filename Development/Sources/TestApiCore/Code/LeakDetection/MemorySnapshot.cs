@@ -235,14 +235,14 @@ namespace Microsoft.Test.LeakDetection
 
             diff.GdiObjectCount = GdiObjectCount - memorySnapshot.GdiObjectCount;
             diff.HandleCount = HandleCount - memorySnapshot.HandleCount;
-            diff.PageFileBytes = PageFileBytes - memorySnapshot.PageFileBytes;
-            diff.PageFilePeakBytes = PageFilePeakBytes - memorySnapshot.PageFilePeakBytes;
-            diff.PoolNonpagedBytes = PoolNonpagedBytes - memorySnapshot.PoolNonpagedBytes;
-            diff.PoolPagedBytes = PoolPagedBytes - memorySnapshot.PoolPagedBytes;
+            diff.PageFileBytes = new IntPtr(PageFileBytes.ToInt64() - memorySnapshot.PageFileBytes.ToInt64());
+            diff.PageFilePeakBytes = new IntPtr(PageFilePeakBytes.ToInt64() - memorySnapshot.PageFilePeakBytes.ToInt64());
+            diff.PoolNonpagedBytes = new IntPtr(PoolNonpagedBytes.ToInt64() - memorySnapshot.PoolNonpagedBytes.ToInt64());
+            diff.PoolPagedBytes = new IntPtr(PoolPagedBytes.ToInt64() - memorySnapshot.PoolPagedBytes.ToInt64());
             diff.ThreadCount = ThreadCount - memorySnapshot.ThreadCount;
             diff.UserObjectCount = UserObjectCount - memorySnapshot.UserObjectCount;
             diff.VirtualMemoryBytes = VirtualMemoryBytes - memorySnapshot.VirtualMemoryBytes;            
-            diff.VirtualMemoryPrivateBytes = VirtualMemoryPrivateBytes - memorySnapshot.VirtualMemoryPrivateBytes;
+            diff.VirtualMemoryPrivateBytes = new IntPtr(VirtualMemoryPrivateBytes.ToInt64() - memorySnapshot.VirtualMemoryPrivateBytes.ToInt64());
             diff.WorkingSetBytes = WorkingSetBytes - memorySnapshot.WorkingSetBytes;
             diff.WorkingSetPeakBytes = WorkingSetPeakBytes - memorySnapshot.WorkingSetPeakBytes;
             diff.WorkingSetPrivateBytes = WorkingSetPrivateBytes - memorySnapshot.WorkingSetPrivateBytes;            
@@ -323,7 +323,7 @@ namespace Microsoft.Test.LeakDetection
         /// For more information, see the <a href="http://msdn.microsoft.com/en-us/library/ms684874(VS.85).aspx">
         /// PROCESS_MEMORY_COUNTERS_EX</a> structure.
         /// </remarks>
-        public long PageFileBytes { get; private set; }
+        public IntPtr PageFileBytes { get; private set; }
 
         /// <summary>
         /// The maximum amount of virtual memory that this process has reserved for use in 
@@ -349,7 +349,7 @@ namespace Microsoft.Test.LeakDetection
         /// For more information, see the <a href="http://msdn.microsoft.com/en-us/library/ms684874(VS.85).aspx">
         /// PROCESS_MEMORY_COUNTERS_EX</a> structure.
         /// </remarks>
-        public long PageFilePeakBytes { get; private set; }
+        public IntPtr PageFilePeakBytes { get; private set; }
 
         /// <summary>
         /// The size of the <i>nonpaged pool</i>, an area of system memory (physical memory used by the operating 
@@ -376,7 +376,7 @@ namespace Microsoft.Test.LeakDetection
         /// </table>
         /// </remarks>
         [SuppressMessage("Microsoft.Naming", "CA1704:IdentifiersShouldBeSpelledCorrectly", MessageId = "Nonpaged")]
-        public long PoolNonpagedBytes { get; private set; }
+        public IntPtr PoolNonpagedBytes { get; private set; }
 
         /// <summary>
         /// The size of the <i>paged pool</i>, an area of system memory (physical memory used by the operating system) 
@@ -403,7 +403,7 @@ namespace Microsoft.Test.LeakDetection
         ///   <td>Paged Pool</td></tr>
         /// </table>
         /// </remarks>
-        public long PoolPagedBytes { get; private set; }
+        public IntPtr PoolPagedBytes { get; private set; }
 
         /// <summary>
         /// The number of threads currently active in the process. 
@@ -509,7 +509,7 @@ namespace Microsoft.Test.LeakDetection
         ///   <td>Commit Size</td></tr>
         /// </table>
         /// </remarks>
-        public long VirtualMemoryPrivateBytes { get; private set; }
+        public IntPtr VirtualMemoryPrivateBytes { get; private set; }
 
         /// <summary>
         /// The current size of the <i>working set</i> of the process. The working set is the set of memory pages recently touched 
@@ -643,19 +643,19 @@ namespace Microsoft.Test.LeakDetection
         {
             MemorySnapshot memorySnapshot = new MemorySnapshot();
 
-            memorySnapshot.GdiObjectCount = DeserializeNode(rootNode, "GdiObjectCount");
-            memorySnapshot.HandleCount = DeserializeNode(rootNode, "HandleCount");
+            memorySnapshot.GdiObjectCount = (long)DeserializeNode(rootNode, "GdiObjectCount");
+            memorySnapshot.HandleCount = (long)DeserializeNode(rootNode, "HandleCount");
             memorySnapshot.PageFileBytes = DeserializeNode(rootNode, "PageFileBytes");
             memorySnapshot.PageFilePeakBytes = DeserializeNode(rootNode, "PageFilePeakBytes");
             memorySnapshot.PoolNonpagedBytes = DeserializeNode(rootNode, "PoolNonpagedBytes");
             memorySnapshot.PoolPagedBytes = DeserializeNode(rootNode, "PoolPagedBytes");
-            memorySnapshot.ThreadCount = DeserializeNode(rootNode, "ThreadCount");
-            memorySnapshot.UserObjectCount = DeserializeNode(rootNode, "UserObjectCount");
-            memorySnapshot.VirtualMemoryBytes = DeserializeNode(rootNode, "VirtualMemoryBytes");            
+            memorySnapshot.ThreadCount = (long)DeserializeNode(rootNode, "ThreadCount");
+            memorySnapshot.UserObjectCount = (long)DeserializeNode(rootNode, "UserObjectCount");
+            memorySnapshot.VirtualMemoryBytes = (long)DeserializeNode(rootNode, "VirtualMemoryBytes");            
             memorySnapshot.VirtualMemoryPrivateBytes = DeserializeNode(rootNode, "VirtualMemoryPrivateBytes");
-            memorySnapshot.WorkingSetBytes = DeserializeNode(rootNode, "WorkingSetBytes");
-            memorySnapshot.WorkingSetPeakBytes = DeserializeNode(rootNode, "WorkingSetPeakBytes");
-            memorySnapshot.WorkingSetPrivateBytes = DeserializeNode(rootNode, "WorkingSetPrivateBytes");            
+            memorySnapshot.WorkingSetBytes = (long)DeserializeNode(rootNode, "WorkingSetBytes");
+            memorySnapshot.WorkingSetPeakBytes = (long)DeserializeNode(rootNode, "WorkingSetPeakBytes");
+            memorySnapshot.WorkingSetPrivateBytes = (long)DeserializeNode(rootNode, "WorkingSetPrivateBytes");            
 
             // Grab Timestamp.
             XmlNode memoryStatNode = rootNode.SelectSingleNode("Timestamp");
@@ -670,16 +670,16 @@ namespace Microsoft.Test.LeakDetection
             return memorySnapshot;
         }
 
-        private void SerializeNodes(XmlDocument xmlDoc, XmlNode rootNode, string nodeName, long value)
+        private void SerializeNodes<T>(XmlDocument xmlDoc, XmlNode rootNode, string nodeName, T value)
         {
             XmlNode newNode = xmlDoc.CreateElement(nodeName);
             XmlAttribute attribute = xmlDoc.CreateAttribute("Value");
-            attribute.InnerText = value.ToString(CultureInfo.InvariantCulture);
+            attribute.InnerText = value.ToString();
             newNode.Attributes.Append(attribute);
             rootNode.AppendChild(newNode);
         }
 
-        private static long DeserializeNode(XmlNode rootNode, string nodeName)
+        private static IntPtr DeserializeNode(XmlNode rootNode, string nodeName)
         {
             XmlNode memoryStatNode = rootNode.SelectSingleNode(nodeName);
             if (memoryStatNode == null)
@@ -688,7 +688,7 @@ namespace Microsoft.Test.LeakDetection
             }
 
             XmlAttribute attribute = memoryStatNode.Attributes["Value"];
-            return (long)Convert.ToInt64(attribute.InnerText, NumberFormatInfo.InvariantInfo);
+            return new IntPtr(Convert.ToInt64(attribute.InnerText, NumberFormatInfo.InvariantInfo));
         }
 
         #endregion
