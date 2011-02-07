@@ -1,0 +1,90 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="Microsoft.Test.ObjectComparison.XmlObjectGraphCodec">
+    <Position X="5" Y="6.5" Width="2.5" />
+    <Members>
+      <Field Name="ComparisonStrategyXmlAttribute" Hidden="true" />
+      <Field Name="strategies" Hidden="true" />
+      <Method Name="XmlObjectGraphCodec" Hidden="true" />
+    </Members>
+    <TypeIdentifier>
+      <HashCode>AAACAAAARAAAAIQAAAAgAAAAAEAAAACAIAAAAAAAAAA=</HashCode>
+      <FileName>ObjectComparison\XmlObjectGraphCodec.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Microsoft.Test.ObjectComparison.GraphNode">
+    <Position X="0.5" Y="0.5" Width="1.75" />
+    <Members>
+      <Field Name="children" Hidden="true" />
+      <Method Name="GetNodesInDepthFirstOrder" Hidden="true" />
+      <Field Name="name" Hidden="true" />
+    </Members>
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAQAAAAEQgQIAAAEAAAgAIAAAAAAEAA=</HashCode>
+      <FileName>ObjectComparison\GraphNode.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Microsoft.Test.ObjectComparison.ObjectGraphComparer">
+    <Position X="2.5" Y="0.5" Width="2.25" />
+    <Members>
+      <Method Name="CompareNodes" Hidden="true" />
+      <Method Name="CompareObjects" Hidden="true" />
+    </Members>
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAACAACAAAAAAABAAAAAAAA=</HashCode>
+      <FileName>ObjectComparison\ObjectGraphComparer.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Microsoft.Test.ObjectComparison.ObjectComparisonMismatch">
+    <Position X="5" Y="0.5" Width="2.25" />
+    <Members>
+      <Field Name="leftObjectNode" Hidden="true" />
+      <Field Name="mismatchType" Hidden="true" />
+      <Method Name="ObjectComparisonMismatch" Hidden="true" />
+      <Field Name="rightObjectNode" Hidden="true" />
+    </Members>
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAQAQAAEgEAAAIAAAAAAAAAA=</HashCode>
+      <FileName>ObjectComparison\ObjectComparisonMismatch.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Microsoft.Test.ObjectComparison.ObjectGraphCodec">
+    <Position X="4.75" Y="4.5" Width="3" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAARAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>ObjectComparison\ObjectGraphCodec.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Microsoft.Test.ObjectComparison.ObjectGraphFactory">
+    <Position X="1" Y="4.5" Width="2.25" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAABAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>ObjectComparison\ObjectGraphFactory.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Microsoft.Test.ObjectComparison.PublicPropertyObjectGraphFactory">
+    <Position X="0.75" Y="6.5" Width="2.75" />
+    <Members>
+      <Method Name="ExtractProperties" Hidden="true" />
+      <Method Name="GetChildNodes" Hidden="true" />
+      <Method Name="GetIEnumerableChildNodes" Hidden="true" />
+      <Method Name="IsIEnumerable" Hidden="true" />
+      <Method Name="IsLeafNode" Hidden="true" />
+    </Members>
+    <TypeIdentifier>
+      <HashCode>AAAEAAAAAABAAAAAAAAAACAABAAgAAAAAAAAAIAAAAA=</HashCode>
+      <FileName>ObjectComparison\PublicPropertyObjectGraphFactory.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Microsoft.Test.ObjectComparison.ObjectGraphComparisonStrategy">
+    <Position X="2.5" Y="1.75" Width="2.25" />
+    <Members>
+      <Method Name="CompareInnerNodes" Hidden="true" />
+    </Members>
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAgAABAAAAAAAA=</HashCode>
+      <FileName>ObjectComparison\ObjectGraphComparisonStrategy.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

@@ -1,0 +1,327 @@
+﻿<html xmlns:MSHelp="http://msdn.microsoft.com/mshelp" xmlns:mshelp="http://msdn.microsoft.com/mshelp" xmlns:ddue="http://ddue.schemas.microsoft.com/authoring/2003/5" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:msxsl="urn:schemas-microsoft-com:xslt">
+  <head>
+    <META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=UTF-8" />
+    <META NAME="save" CONTENT="history" />
+    <title>Microsoft.Test.FaultInjection Namespace</title>
+    <link rel="stylesheet" type="text/css" href="../styles/presentation.css" />
+    <link rel="stylesheet" type="text/css" href="ms-help://Hx/HxRuntime/HxLink.css" />
+    <script type="text/javascript" src="../scripts/EventUtilities.js"> </script>
+    <script type="text/javascript" src="../scripts/SplitScreen.js"> </script>
+    <script type="text/javascript" src="../scripts/Dropdown.js"> </script>
+    <script type="text/javascript" src="../scripts/script_manifold.js"> </script>
+    <script type="text/javascript" src="../scripts/script_feedBack.js"> </script>
+    <script type="text/javascript" src="../scripts/CheckboxMenu.js"> </script>
+    <script type="text/javascript" src="../scripts/CommonUtilities.js"> </script>
+    <meta name="container" content="Microsoft.Test.FaultInjection" />
+    <meta name="file" content="N_Microsoft_Test_FaultInjection" />
+    <meta name="guid" content="N_Microsoft_Test_FaultInjection" />
+    <xml>
+      <MSHelp:Attr Name="AssetID" Value="N:Microsoft.Test.FaultInjection" />
+      <MSHelp:TOCTitle Title="Microsoft.Test.FaultInjection Namespace" />
+      <MSHelp:RLTitle Title="Microsoft.Test.FaultInjection Namespace ()" />
+      <MSHelp:Keyword Index="A" Term="N:Microsoft.Test.FaultInjection" />
+      <MSHelp:Keyword Index="A" Term="frlrfMicrosoftTestFaultInjection" />
+      <MSHelp:Keyword Index="K" Term="Microsoft.Test.FaultInjection namespace" />
+      <MSHelp:Keyword Index="F" Term="Microsoft.Test.FaultInjection" />
+      <MSHelp:Attr Name="HelpPriority" Value="1" />
+      <MSHelp:Attr Name="DevLang" Value="CSharp" />
+      <MSHelp:Attr Name="DevLang" Value="VB" />
+      <MSHelp:Attr Name="DevLang" Value="C++" />
+      <MSHelp:Attr Name="Locale" Value="en-us" />
+      <MSHelp:Attr Name="TopicType" Value="kbSyntax" />
+      <MSHelp:Attr Name="TopicType" Value="apiref" />
+      <MSHelp:Attr Name="Abstract" Value="Contains facilities for runtime fault injection in managed code. The API allows a test to simulate various faults in order to better exercise code-paths in the tested system." />
+      <MSHelp:Attr Name="NoName" Value="" />
+    </xml>
+  </head>
+  <body>
+    <input type="hidden" id="userDataCache" class="userDataStyle" />
+    <input type="hidden" id="hiddenScrollOffset" />
+    <img id="collapseImage" style="display:none; height:0; width:0;" src="../icons/collapse_all.gif" title="Collapse image" />
+    <img id="expandImage" style="display:none; height:0; width:0;" src="../icons/expand_all.gif" title="Expand Image" />
+    <img id="collapseAllImage" style="display:none; height:0; width:0;" src="../icons/collapse_all.gif" />
+    <img id="expandAllImage" style="display:none; height:0; width:0;" src="../icons/expand_all.gif" />
+    <img id="dropDownImage" style="display:none; height:0; width:0;" src="../icons/dropdown.gif" />
+    <img id="dropDownHoverImage" style="display:none; height:0; width:0;" src="../icons/dropdownHover.gif" />
+    <img id="copyImage" style="display:none; height:0; width:0;" src="../icons/copycode.gif" title="Copy image" />
+    <img id="copyHoverImage" style="display:none; height:0; width:0;" src="../icons/copycodeHighlight.gif" title="CopyHover image" />
+    <div id="header">
+      <table id="topTable" cellspacing="0" cellpadding="0">
+        <tr>
+          <td>
+            <span onclick="ExpandCollapseAll(toggleAllImage)" style="cursor:default;" onkeypress="ExpandCollapseAll_CheckKey(toggleAllImage, event)" tabindex="0">
+              <img ID="toggleAllImage" class="toggleAll" src="../icons/collapse_all.gif" /> <label id="collapseAllLabel" for="toggleAllImage" style="display: none;">Collapse All</label><label id="expandAllLabel" for="toggleAllImage" style="display: none;">Expand All</label> </span>
+            <span>    </span>
+            <span id="devlangsDropdown" class="filter" tabindex="0">
+              <img id="devlangsDropdownImage" src="../icons/dropdown.gif" /> <label id="devlangsMenuAllLabel" for="devlangsDropdownImage" style="display: none;"><nobr>Code: All </nobr></label><label id="devlangsMenuMultipleLabel" for="devlangsDropdownImage" style="display: none;"><nobr>Code: Multiple </nobr></label><label id="devlangsMenuCSharpLabel" for="devlangsDropdownImage" style="display: none;"><nobr>Code: C# </nobr></label><label id="devlangsMenuVisualBasicLabel" for="devlangsDropdownImage" style="display: none;"><nobr>Code: Visual Basic </nobr></label><label id="devlangsMenuManagedCPlusPlusLabel" for="devlangsDropdownImage" style="display: none;"><nobr>Code: Visual C++ </nobr></label></span>
+          </td>
+        </tr>
+      </table>
+      <div id="devlangsMenu">
+        <input id="CSharpCheckbox" type="checkbox" data="CSharp,cs,'persist'" value="on" onClick="SetLanguage(this)" />
+        <label class="checkboxLabel" for="CSharpCheckbox">C#</label>
+        <br />
+        <input id="VisualBasicCheckbox" type="checkbox" data="VisualBasic,vb,'persist'" value="on" onClick="SetLanguage(this)" />
+        <label class="checkboxLabel" for="VisualBasicCheckbox">Visual Basic</label>
+        <br />
+        <input id="ManagedCPlusPlusCheckbox" type="checkbox" data="ManagedCPlusPlus,cpp,'persist'" value="on" onClick="SetLanguage(this)" />
+        <label class="checkboxLabel" for="ManagedCPlusPlusCheckbox">Visual C++</label>
+        <br />
+      </div>
+      <table id="bottomTable" cellpadding="0" cellspacing="0">
+        <tr id="headerTableRow1">
+          <td align="left">
+            <span id="runningHeaderText">.</span>
+          </td>
+        </tr>
+        <tr id="headerTableRow2">
+          <td align="left">
+            <span id="nsrTitle">Microsoft.Test.FaultInjection Namespace</span>
+          </td>
+        </tr>
+        <tr id="headerTableRow3">
+          <td align="left">
+  <span id="headfeedbackarea" class="feedbackhead">
+      <a href="javascript:SubmitFeedback('testapi@microsoft.com','.','','','','%0\dYour%20feedback%20is%20used%20to%20improve%20the%20documentation%20and%20the%20product.%20Your%20e-mail%20address%20will%20not%20be%20used%20for%20any%20other%20purpose%20and%20is%20disposed%20of%20after%20the%20issue%20you%20report%20is%20resolved.%20%20While%20working%20to%20resolve%20the%20issue%20that%20you%20report,%20you%20may%20be%20contacted%20via%20e-mail%20to%20get%20further%20details%20or%20clarification%20on%20the%20feedback%20you%20sent.%20After%20the%20issue%20you%20report%20has%20been%20addressed,%20you%20may%20receive%20an%20e-mail%20to%20let%20you%20know%20that%20your%20feedback%20has%20been%20addressed.%0\A%0\d','Customer%20Feedback');">
+        
+        Send Feedback
+      </a>
+	</span>
+</td>
+        </tr>
+      </table>
+      <table id="gradientTable">
+        <tr>
+          <td class="nsrBottom" background="../icons/gradient.gif" />
+        </tr>
+      </table>
+    </div>
+    <div id="mainSection">
+      <div id="mainBody">
+        <div id="allHistory" class="saveHistory" onsave="saveAll()" onload="loadAll()" />
+        <span style="color: DarkGray"> </span>
+        <div class="summary">
+            Contains facilities for runtime fault injection in managed code. 
+            The API allows a test to simulate various faults in order to better exercise 
+            code-paths in the tested system.
+            </div>
+        <h1 class="heading">
+          <span onclick="ExpandCollapse(classToggle)" style="cursor:default;" onkeypress="ExpandCollapse_CheckKey(classToggle, event)" tabindex="0">
+            <img id="classToggle" class="toggle" name="toggleSwitch" src="../icons/collapse_all.gif" />Classes</span>
+        </h1>
+        <div id="classSection" class="section" name="collapseableSection" style="">
+          <table id="typeList" class="members" frame="lhs" cellpadding="2">
+            <col width="10%" />
+            <tr>
+              <th class="iconColumn">
+           
+       </th>
+              <th class="nameColumn">Class</th>
+              <th class="descriptionColumn">Description</th>
+            </tr>
+            <tr data="class; public">
+              <td>
+                <img src="../icons/pubclass.gif" title="Public class" />
+              </td>
+              <td>
+                <a href="T_Microsoft_Test_FaultInjection_BuiltInConditions.htm">BuiltInConditions</a>
+              </td>
+              <td>
+                <div class="summary">
+            Contains all built-in fault injection conditions.
+            </div>
+              </td>
+            </tr>
+            <tr data="class; public">
+              <td>
+                <img src="../icons/pubclass.gif" title="Public class" />
+              </td>
+              <td>
+                <a href="T_Microsoft_Test_FaultInjection_BuiltInFaults.htm">BuiltInFaults</a>
+              </td>
+              <td>
+                <div class="summary">
+            Contains all built-in faults. 
+            </div>
+              </td>
+            </tr>
+            <tr data="class; public">
+              <td>
+                <img src="../icons/pubclass.gif" title="Public class" />
+              </td>
+              <td>
+                <a href="T_Microsoft_Test_FaultInjection_CallStack.htm">CallStack</a>
+              </td>
+              <td>
+                <div class="summary">
+            Extracts frame information from a StackTrace object.
+            </div>
+              </td>
+            </tr>
+            <tr data="class; public">
+              <td>
+                <img src="../icons/pubclass.gif" title="Public class" />
+              </td>
+              <td>
+                <a href="T_Microsoft_Test_FaultInjection_ComRegistrar.htm">ComRegistrar</a>
+              </td>
+              <td>
+                <div class="summary">
+            Provides facilities for registration and query of the fault injection COM engine.
+            </div>
+              </td>
+            </tr>
+            <tr data="class; public">
+              <td>
+                <img src="../icons/pubclass.gif" title="Public class" />
+              </td>
+              <td>
+                <a href="T_Microsoft_Test_FaultInjection_FaultDispatcher.htm">FaultDispatcher</a>
+              </td>
+              <td>
+                <div class="summary">
+            Calls the appropriate fault for a given faulted method.
+            </div>
+              </td>
+            </tr>
+            <tr data="class; public">
+              <td>
+                <img src="../icons/pubclass.gif" title="Public class" />
+              </td>
+              <td>
+                <a href="T_Microsoft_Test_FaultInjection_FaultInjectionException.htm">FaultInjectionException</a>
+              </td>
+              <td>
+                <div class="summary">
+            An exception that is thrown when and error in the FaultInjection API occurs.
+            </div>
+              </td>
+            </tr>
+            <tr data="class; public">
+              <td>
+                <img src="../icons/pubclass.gif" title="Public class" />
+              </td>
+              <td>
+                <a href="T_Microsoft_Test_FaultInjection_FaultRule.htm">FaultRule</a>
+              </td>
+              <td>
+                <div class="summary">
+             Defines which method to fault, under what conditions the fault will occur, 
+             and how the method will fail. See also the <a href="T_Microsoft_Test_FaultInjection_FaultSession.htm">FaultSession</a> class.
+             </div>
+              </td>
+            </tr>
+            <tr data="class; public">
+              <td>
+                <img src="../icons/pubclass.gif" title="Public class" />
+              </td>
+              <td>
+                <a href="T_Microsoft_Test_FaultInjection_FaultScope.htm">FaultScope</a>
+              </td>
+              <td>
+                <div class="summary">
+      </div>
+              </td>
+            </tr>
+            <tr data="class; public">
+              <td>
+                <img src="../icons/pubclass.gif" title="Public class" />
+              </td>
+              <td>
+                <a href="T_Microsoft_Test_FaultInjection_FaultSession.htm">FaultSession</a>
+              </td>
+              <td>
+                <div class="summary">
+             Maintains information needed for injecting faults into a test application. 
+             For general information on fault injection see <a href="http://en.wikipedia.org/wiki/Fault_injection">this page</a>.
+             </div>
+              </td>
+            </tr>
+            <tr data="class; public">
+              <td>
+                <img src="../icons/pubclass.gif" title="Public class" />
+              </td>
+              <td>
+                <a href="T_Microsoft_Test_FaultInjection_RuntimeContext.htm">RuntimeContext</a>
+              </td>
+              <td>
+                <div class="summary">
+            Stores information about a faulted method.
+            </div>
+              </td>
+            </tr>
+          </table>
+        </div>
+        <h1 class="heading">
+          <span onclick="ExpandCollapse(interfaceToggle)" style="cursor:default;" onkeypress="ExpandCollapse_CheckKey(interfaceToggle, event)" tabindex="0">
+            <img id="interfaceToggle" class="toggle" name="toggleSwitch" src="../icons/collapse_all.gif" />Interfaces</span>
+        </h1>
+        <div id="interfaceSection" class="section" name="collapseableSection" style="">
+          <table id="typeList" class="members" frame="lhs" cellpadding="2">
+            <col width="10%" />
+            <tr>
+              <th class="iconColumn">
+           
+       </th>
+              <th class="nameColumn">Interface</th>
+              <th class="descriptionColumn">Description</th>
+            </tr>
+            <tr data="interface; public">
+              <td>
+                <img src="../icons/pubinterface.gif" title="Public interface" />
+              </td>
+              <td>
+                <a href="T_Microsoft_Test_FaultInjection_ICondition.htm">ICondition</a>
+              </td>
+              <td>
+                <div class="summary">
+            Defines the contract for specifying when a fault will be triggered on a method.
+            </div>
+              </td>
+            </tr>
+            <tr data="interface; public">
+              <td>
+                <img src="../icons/pubinterface.gif" title="Public interface" />
+              </td>
+              <td>
+                <a href="T_Microsoft_Test_FaultInjection_IFault.htm">IFault</a>
+              </td>
+              <td>
+                <div class="summary">
+             Defines the contract for a fault.
+             </div>
+              </td>
+            </tr>
+            <tr data="interface; public">
+              <td>
+                <img src="../icons/pubinterface.gif" title="Public interface" />
+              </td>
+              <td>
+                <a href="T_Microsoft_Test_FaultInjection_IRuntimeContext.htm">IRuntimeContext</a>
+              </td>
+              <td>
+                <div class="summary">
+            Defines the contract for information provided by the faulted method.
+            </div>
+              </td>
+            </tr>
+          </table>
+        </div>
+      </div>
+      <div id="footer">
+        <div class="footerLine">
+          <img width="100%" height="3px" src="../icons/footer.gif" title="Footer image" />
+        </div>
+        <A NAME="feedback"></A>
+        <span id="fb" class="feedbackcss" style="display: none;"> </span>
+<p />Send comments on this topic to
+        <a id="HT_MailLink" href="mailto:testapi%40microsoft.com?Subject=.">testapi@microsoft.com</a>
+        <script type="text/javascript">
+        var HT_mailLink = document.getElementById("HT_MailLink");
+        var HT_mailLinkText = HT_mailLink.innerHTML;
+        HT_mailLink.href += ": " + document.title;
+        HT_mailLink.innerHTML = HT_mailLinkText;
+        </script> </div>
+    </div>
+  </body>
+</html>

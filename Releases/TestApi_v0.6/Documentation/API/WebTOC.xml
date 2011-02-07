@@ -1,0 +1,886 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<HelpTOC>
+
+  <HelpTOCNode Id="b34bf6be-4028-49bc-a642-45855bbee7c1" Title="TestApi 0.6" Url="html/R_Project.htm">
+    <HelpTOCNode Id="db1f15c6-57fe-43b4-9ee8-c117e9ae706e" Title="Microsoft.Test Namespace" Url="html/N_Microsoft_Test.htm">
+      <HelpTOCNode Id="2b9196f6-7753-47e0-bb21-7458d4933033" Title="AutomationUtilities Class" Url="html/T_Microsoft_Test_AutomationUtilities.htm">
+        <HelpTOCNode Title="AutomationUtilities Members" Url="html/AllMembers_T_Microsoft_Test_AutomationUtilities.htm" />
+        <HelpTOCNode Id="dba79620-2d20-4af8-9a3d-e2add04dfc1f" Title="AutomationUtilities Methods " Url="html/Methods_T_Microsoft_Test_AutomationUtilities.htm">
+          <HelpTOCNode Title="FindElementByIndex Method " Url="html/M_Microsoft_Test_AutomationUtilities_FindElementByIndex.htm" />
+          <HelpTOCNode Title="FindElements Method " Url="html/M_Microsoft_Test_AutomationUtilities_FindElements.htm" />
+          <HelpTOCNode Title="FindElementsByClassName Method " Url="html/M_Microsoft_Test_AutomationUtilities_FindElementsByClassName.htm" />
+          <HelpTOCNode Title="FindElementsByControlType Method " Url="html/M_Microsoft_Test_AutomationUtilities_FindElementsByControlType.htm" />
+          <HelpTOCNode Title="FindElementsById Method " Url="html/M_Microsoft_Test_AutomationUtilities_FindElementsById.htm" />
+          <HelpTOCNode Title="FindElementsByName Method " Url="html/M_Microsoft_Test_AutomationUtilities_FindElementsByName.htm" />
+        </HelpTOCNode>
+      </HelpTOCNode>
+      <HelpTOCNode Id="8db1cba4-5876-4922-8827-f66a0ea43841" Title="DispatcherOperations Class" Url="html/T_Microsoft_Test_DispatcherOperations.htm">
+        <HelpTOCNode Title="DispatcherOperations Members" Url="html/AllMembers_T_Microsoft_Test_DispatcherOperations.htm" />
+        <HelpTOCNode Id="18c7a18e-36fb-48fe-9e6e-97bca02e3ef3" Title="DispatcherOperations Methods " Url="html/Methods_T_Microsoft_Test_DispatcherOperations.htm">
+          <HelpTOCNode Id="edef441e-66e6-4c4d-a06d-a11ca117124c" Title="WaitFor Method " Url="html/Overload_Microsoft_Test_DispatcherOperations_WaitFor.htm">
+            <HelpTOCNode Title="WaitFor Method (TimeSpan)" Url="html/M_Microsoft_Test_DispatcherOperations_WaitFor.htm" />
+            <HelpTOCNode Title="WaitFor Method (DispatcherPriority)" Url="html/M_Microsoft_Test_DispatcherOperations_WaitFor_1.htm" />
+          </HelpTOCNode>
+        </HelpTOCNode>
+      </HelpTOCNode>
+    </HelpTOCNode>
+    <HelpTOCNode Id="cd0a59d9-8c75-4c21-bd3f-f5f42aa7ca6d" Title="Microsoft.Test.ApplicationControl Namespace" Url="html/N_Microsoft_Test_ApplicationControl.htm">
+      <HelpTOCNode Id="10adf16f-8e0d-48ba-9d68-4e85a39a8b84" Title="ApplicationSettings Class" Url="html/T_Microsoft_Test_ApplicationControl_ApplicationSettings.htm">
+        <HelpTOCNode Title="ApplicationSettings Members" Url="html/AllMembers_T_Microsoft_Test_ApplicationControl_ApplicationSettings.htm" />
+        <HelpTOCNode Title="ApplicationSettings Constructor " Url="html/M_Microsoft_Test_ApplicationControl_ApplicationSettings__ctor.htm" />
+        <HelpTOCNode Id="5eb265e4-2ed5-4cb5-8fe4-52d6b4ff3edd" Title="ApplicationSettings Properties " Url="html/Properties_T_Microsoft_Test_ApplicationControl_ApplicationSettings.htm">
+          <HelpTOCNode Title="ApplicationImplementationFactory Property " Url="html/P_Microsoft_Test_ApplicationControl_ApplicationSettings_ApplicationImplementationFactory.htm" />
+        </HelpTOCNode>
+      </HelpTOCNode>
+      <HelpTOCNode Id="f6c025d0-049c-406b-be7c-16241b7343ef" Title="AutomatedApplication Class" Url="html/T_Microsoft_Test_ApplicationControl_AutomatedApplication.htm">
+        <HelpTOCNode Title="AutomatedApplication Members" Url="html/AllMembers_T_Microsoft_Test_ApplicationControl_AutomatedApplication.htm" />
+        <HelpTOCNode Title="AutomatedApplication Constructor " Url="html/M_Microsoft_Test_ApplicationControl_AutomatedApplication__ctor.htm" />
+        <HelpTOCNode Id="514c6c95-408c-4c4d-b4d7-9e171d03445a" Title="AutomatedApplication Methods " Url="html/Methods_T_Microsoft_Test_ApplicationControl_AutomatedApplication.htm">
+          <HelpTOCNode Title="AddEventHandler Method " Url="html/M_Microsoft_Test_ApplicationControl_AutomatedApplication_AddEventHandler.htm" />
+          <HelpTOCNode Title="Close Method " Url="html/M_Microsoft_Test_ApplicationControl_AutomatedApplication_Close.htm" />
+          <HelpTOCNode Title="OnExit Method " Url="html/M_Microsoft_Test_ApplicationControl_AutomatedApplication_OnExit.htm" />
+          <HelpTOCNode Title="OnFocusChanged Method " Url="html/M_Microsoft_Test_ApplicationControl_AutomatedApplication_OnFocusChanged.htm" />
+          <HelpTOCNode Title="OnMainWindowOpened Method " Url="html/M_Microsoft_Test_ApplicationControl_AutomatedApplication_OnMainWindowOpened.htm" />
+          <HelpTOCNode Title="RemoveEventHandler Method " Url="html/M_Microsoft_Test_ApplicationControl_AutomatedApplication_RemoveEventHandler.htm" />
+          <HelpTOCNode Title="Start Method " Url="html/M_Microsoft_Test_ApplicationControl_AutomatedApplication_Start.htm" />
+          <HelpTOCNode Title="WaitForInputIdle Method " Url="html/M_Microsoft_Test_ApplicationControl_AutomatedApplication_WaitForInputIdle.htm" />
+          <HelpTOCNode Title="WaitForMainWindow Method " Url="html/M_Microsoft_Test_ApplicationControl_AutomatedApplication_WaitForMainWindow.htm" />
+          <HelpTOCNode Title="WaitForWindow Method " Url="html/M_Microsoft_Test_ApplicationControl_AutomatedApplication_WaitForWindow.htm" />
+        </HelpTOCNode>
+        <HelpTOCNode Id="145c00e7-74c7-4811-99f2-58ba9540702d" Title="AutomatedApplication Properties " Url="html/Properties_T_Microsoft_Test_ApplicationControl_AutomatedApplication.htm">
+          <HelpTOCNode Title="ApplicationImplementation Property " Url="html/P_Microsoft_Test_ApplicationControl_AutomatedApplication_ApplicationImplementation.htm" />
+          <HelpTOCNode Title="IsApplicationRunning Property " Url="html/P_Microsoft_Test_ApplicationControl_AutomatedApplication_IsApplicationRunning.htm" />
+          <HelpTOCNode Title="IsMainWindowOpened Property " Url="html/P_Microsoft_Test_ApplicationControl_AutomatedApplication_IsMainWindowOpened.htm" />
+          <HelpTOCNode Title="MainWindow Property " Url="html/P_Microsoft_Test_ApplicationControl_AutomatedApplication_MainWindow.htm" />
+        </HelpTOCNode>
+        <HelpTOCNode Id="ef8fb4ad-2a76-4cee-b250-5099cdf18db1" Title="AutomatedApplication Events" Url="html/Events_T_Microsoft_Test_ApplicationControl_AutomatedApplication.htm">
+          <HelpTOCNode Title="Exited Event" Url="html/E_Microsoft_Test_ApplicationControl_AutomatedApplication_Exited.htm" />
+          <HelpTOCNode Title="MainWindowOpened Event" Url="html/E_Microsoft_Test_ApplicationControl_AutomatedApplication_MainWindowOpened.htm" />
+        </HelpTOCNode>
+      </HelpTOCNode>
+      <HelpTOCNode Id="8f615894-fdc2-44f7-89de-1a02c079f602" Title="AutomatedApplicationEventArgs Class" Url="html/T_Microsoft_Test_ApplicationControl_AutomatedApplicationEventArgs.htm">
+        <HelpTOCNode Title="AutomatedApplicationEventArgs Members" Url="html/AllMembers_T_Microsoft_Test_ApplicationControl_AutomatedApplicationEventArgs.htm" />
+        <HelpTOCNode Title="AutomatedApplicationEventArgs Constructor " Url="html/M_Microsoft_Test_ApplicationControl_AutomatedApplicationEventArgs__ctor.htm" />
+        <HelpTOCNode Id="948a986e-16df-4d62-a3f5-2c324657a3d6" Title="AutomatedApplicationEventArgs Properties " Url="html/Properties_T_Microsoft_Test_ApplicationControl_AutomatedApplicationEventArgs.htm">
+          <HelpTOCNode Title="AutomatedApplication Property " Url="html/P_Microsoft_Test_ApplicationControl_AutomatedApplicationEventArgs_AutomatedApplication.htm" />
+        </HelpTOCNode>
+      </HelpTOCNode>
+      <HelpTOCNode Title="AutomatedApplicationEventType Enumeration" Url="html/T_Microsoft_Test_ApplicationControl_AutomatedApplicationEventType.htm" />
+      <HelpTOCNode Id="23ae4c26-cc15-4883-8478-7baec248d2e4" Title="AutomatedApplicationFocusChangedEventArgs Class" Url="html/T_Microsoft_Test_ApplicationControl_AutomatedApplicationFocusChangedEventArgs.htm">
+        <HelpTOCNode Title="AutomatedApplicationFocusChangedEventArgs Members" Url="html/AllMembers_T_Microsoft_Test_ApplicationControl_AutomatedApplicationFocusChangedEventArgs.htm" />
+        <HelpTOCNode Title="AutomatedApplicationFocusChangedEventArgs Constructor " Url="html/M_Microsoft_Test_ApplicationControl_AutomatedApplicationFocusChangedEventArgs__ctor.htm" />
+        <HelpTOCNode Id="02b3c496-38a0-48b7-9e61-96908ee84afa" Title="AutomatedApplicationFocusChangedEventArgs Properties " Url="html/Properties_T_Microsoft_Test_ApplicationControl_AutomatedApplicationFocusChangedEventArgs.htm">
+          <HelpTOCNode Title="NewFocusedElement Property " Url="html/P_Microsoft_Test_ApplicationControl_AutomatedApplicationFocusChangedEventArgs_NewFocusedElement.htm" />
+        </HelpTOCNode>
+      </HelpTOCNode>
+      <HelpTOCNode Id="a25c9549-dc7b-45d1-ada9-89770b89025a" Title="IAutomatedApplicationImpl Interface" Url="html/T_Microsoft_Test_ApplicationControl_IAutomatedApplicationImpl.htm">
+        <HelpTOCNode Title="IAutomatedApplicationImpl Members" Url="html/AllMembers_T_Microsoft_Test_ApplicationControl_IAutomatedApplicationImpl.htm" />
+        <HelpTOCNode Id="04649eee-9942-444b-a33e-0d07176aea9f" Title="IAutomatedApplicationImpl Methods " Url="html/Methods_T_Microsoft_Test_ApplicationControl_IAutomatedApplicationImpl.htm">
+          <HelpTOCNode Title="Close Method " Url="html/M_Microsoft_Test_ApplicationControl_IAutomatedApplicationImpl_Close.htm" />
+          <HelpTOCNode Title="Start Method " Url="html/M_Microsoft_Test_ApplicationControl_IAutomatedApplicationImpl_Start.htm" />
+          <HelpTOCNode Title="WaitForInputIdle Method " Url="html/M_Microsoft_Test_ApplicationControl_IAutomatedApplicationImpl_WaitForInputIdle.htm" />
+          <HelpTOCNode Title="WaitForMainWindow Method " Url="html/M_Microsoft_Test_ApplicationControl_IAutomatedApplicationImpl_WaitForMainWindow.htm" />
+          <HelpTOCNode Title="WaitForWindow Method " Url="html/M_Microsoft_Test_ApplicationControl_IAutomatedApplicationImpl_WaitForWindow.htm" />
+        </HelpTOCNode>
+        <HelpTOCNode Id="aa3005dd-4bec-4f8b-bab8-ea0edddc84db" Title="IAutomatedApplicationImpl Properties " Url="html/Properties_T_Microsoft_Test_ApplicationControl_IAutomatedApplicationImpl.htm">
+          <HelpTOCNode Title="ApplicationDriver Property " Url="html/P_Microsoft_Test_ApplicationControl_IAutomatedApplicationImpl_ApplicationDriver.htm" />
+          <HelpTOCNode Title="IsMainWindowOpened Property " Url="html/P_Microsoft_Test_ApplicationControl_IAutomatedApplicationImpl_IsMainWindowOpened.htm" />
+          <HelpTOCNode Title="MainWindow Property " Url="html/P_Microsoft_Test_ApplicationControl_IAutomatedApplicationImpl_MainWindow.htm" />
+        </HelpTOCNode>
+        <HelpTOCNode Id="9ca233a7-dac6-4186-a9c0-9e9bd9f4765a" Title="IAutomatedApplicationImpl Events" Url="html/Events_T_Microsoft_Test_ApplicationControl_IAutomatedApplicationImpl.htm">
+          <HelpTOCNode Title="Exited Event" Url="html/E_Microsoft_Test_ApplicationControl_IAutomatedApplicationImpl_Exited.htm" />
+          <HelpTOCNode Title="FocusChanged Event" Url="html/E_Microsoft_Test_ApplicationControl_IAutomatedApplicationImpl_FocusChanged.htm" />
+          <HelpTOCNode Title="MainWindowOpened Event" Url="html/E_Microsoft_Test_ApplicationControl_IAutomatedApplicationImpl_MainWindowOpened.htm" />
+        </HelpTOCNode>
+      </HelpTOCNode>
+      <HelpTOCNode Id="d5896a32-1956-43d1-8414-cbff15804f41" Title="IAutomatedApplicationImplFactory Interface" Url="html/T_Microsoft_Test_ApplicationControl_IAutomatedApplicationImplFactory.htm">
+        <HelpTOCNode Title="IAutomatedApplicationImplFactory Members" Url="html/AllMembers_T_Microsoft_Test_ApplicationControl_IAutomatedApplicationImplFactory.htm" />
+        <HelpTOCNode Id="945260f0-639b-4a89-913b-430b52bccfa2" Title="IAutomatedApplicationImplFactory Methods " Url="html/Methods_T_Microsoft_Test_ApplicationControl_IAutomatedApplicationImplFactory.htm">
+          <HelpTOCNode Title="Create Method " Url="html/M_Microsoft_Test_ApplicationControl_IAutomatedApplicationImplFactory_Create.htm" />
+        </HelpTOCNode>
+      </HelpTOCNode>
+      <HelpTOCNode Id="0d5b06ce-2b76-4bde-8949-5780733181fd" Title="InProcessApplication Class" Url="html/T_Microsoft_Test_ApplicationControl_InProcessApplication.htm">
+        <HelpTOCNode Title="InProcessApplication Members" Url="html/AllMembers_T_Microsoft_Test_ApplicationControl_InProcessApplication.htm" />
+        <HelpTOCNode Title="InProcessApplication Constructor " Url="html/M_Microsoft_Test_ApplicationControl_InProcessApplication__ctor.htm" />
+        <HelpTOCNode Id="144c3731-fcba-4760-be97-66c0d5b44eb2" Title="InProcessApplication Methods " Url="html/Methods_T_Microsoft_Test_ApplicationControl_InProcessApplication.htm">
+          <HelpTOCNode Title="Start Method " Url="html/M_Microsoft_Test_ApplicationControl_InProcessApplication_Start.htm" />
+        </HelpTOCNode>
+        <HelpTOCNode Id="a0a6906f-93bd-49df-be4d-94a6f9ee39e3" Title="InProcessApplication Properties " Url="html/Properties_T_Microsoft_Test_ApplicationControl_InProcessApplication.htm">
+          <HelpTOCNode Title="ApplicationDriver Property " Url="html/P_Microsoft_Test_ApplicationControl_InProcessApplication_ApplicationDriver.htm" />
+          <HelpTOCNode Title="ApplicationSettings Property " Url="html/P_Microsoft_Test_ApplicationControl_InProcessApplication_ApplicationSettings.htm" />
+        </HelpTOCNode>
+        <HelpTOCNode Title="InProcessApplication Events" Url="html/Events_T_Microsoft_Test_ApplicationControl_InProcessApplication.htm" />
+      </HelpTOCNode>
+      <HelpTOCNode Id="5ae2516b-ee92-4481-b0df-bf980a7d2318" Title="InProcessApplicationSettings Class" Url="html/T_Microsoft_Test_ApplicationControl_InProcessApplicationSettings.htm">
+        <HelpTOCNode Title="InProcessApplicationSettings Members" Url="html/AllMembers_T_Microsoft_Test_ApplicationControl_InProcessApplicationSettings.htm" />
+        <HelpTOCNode Title="InProcessApplicationSettings Constructor " Url="html/M_Microsoft_Test_ApplicationControl_InProcessApplicationSettings__ctor.htm" />
+        <HelpTOCNode Id="ac78a2cd-76de-4b94-8ea7-b972fb8d4604" Title="InProcessApplicationSettings Properties " Url="html/Properties_T_Microsoft_Test_ApplicationControl_InProcessApplicationSettings.htm">
+          <HelpTOCNode Title="InProcessApplicationType Property " Url="html/P_Microsoft_Test_ApplicationControl_InProcessApplicationSettings_InProcessApplicationType.htm" />
+          <HelpTOCNode Title="Path Property " Url="html/P_Microsoft_Test_ApplicationControl_InProcessApplicationSettings_Path.htm" />
+        </HelpTOCNode>
+      </HelpTOCNode>
+      <HelpTOCNode Title="InProcessApplicationType Enumeration" Url="html/T_Microsoft_Test_ApplicationControl_InProcessApplicationType.htm" />
+      <HelpTOCNode Id="154820da-52fd-421e-b744-20dc4d67ceda" Title="IOutOfProcessAutomatedApplicationImpl Interface" Url="html/T_Microsoft_Test_ApplicationControl_IOutOfProcessAutomatedApplicationImpl.htm">
+        <HelpTOCNode Title="IOutOfProcessAutomatedApplicationImpl Members" Url="html/AllMembers_T_Microsoft_Test_ApplicationControl_IOutOfProcessAutomatedApplicationImpl.htm" />
+        <HelpTOCNode Title="IOutOfProcessAutomatedApplicationImpl Methods " Url="html/Methods_T_Microsoft_Test_ApplicationControl_IOutOfProcessAutomatedApplicationImpl.htm" />
+        <HelpTOCNode Id="93aba37c-158c-4368-b644-7bd26ff5af5a" Title="IOutOfProcessAutomatedApplicationImpl Properties " Url="html/Properties_T_Microsoft_Test_ApplicationControl_IOutOfProcessAutomatedApplicationImpl.htm">
+          <HelpTOCNode Title="Process Property " Url="html/P_Microsoft_Test_ApplicationControl_IOutOfProcessAutomatedApplicationImpl_Process.htm" />
+        </HelpTOCNode>
+        <HelpTOCNode Title="IOutOfProcessAutomatedApplicationImpl Events" Url="html/Events_T_Microsoft_Test_ApplicationControl_IOutOfProcessAutomatedApplicationImpl.htm" />
+      </HelpTOCNode>
+      <HelpTOCNode Id="cc7b8a30-8580-4440-ae2e-9fdb461e9c49" Title="OutOfProcessApplication Class" Url="html/T_Microsoft_Test_ApplicationControl_OutOfProcessApplication.htm">
+        <HelpTOCNode Title="OutOfProcessApplication Members" Url="html/AllMembers_T_Microsoft_Test_ApplicationControl_OutOfProcessApplication.htm" />
+        <HelpTOCNode Title="OutOfProcessApplication Constructor " Url="html/M_Microsoft_Test_ApplicationControl_OutOfProcessApplication__ctor.htm" />
+        <HelpTOCNode Id="e529daae-7e88-4282-b953-44c252f80e79" Title="OutOfProcessApplication Methods " Url="html/Methods_T_Microsoft_Test_ApplicationControl_OutOfProcessApplication.htm">
+          <HelpTOCNode Title="Start Method " Url="html/M_Microsoft_Test_ApplicationControl_OutOfProcessApplication_Start.htm" />
+        </HelpTOCNode>
+        <HelpTOCNode Id="b67a68f9-7429-403f-a388-5add899748f0" Title="OutOfProcessApplication Properties " Url="html/Properties_T_Microsoft_Test_ApplicationControl_OutOfProcessApplication.htm">
+          <HelpTOCNode Title="ApplicationSettings Property " Url="html/P_Microsoft_Test_ApplicationControl_OutOfProcessApplication_ApplicationSettings.htm" />
+          <HelpTOCNode Title="Process Property " Url="html/P_Microsoft_Test_ApplicationControl_OutOfProcessApplication_Process.htm" />
+        </HelpTOCNode>
+        <HelpTOCNode Title="OutOfProcessApplication Events" Url="html/Events_T_Microsoft_Test_ApplicationControl_OutOfProcessApplication.htm" />
+      </HelpTOCNode>
+      <HelpTOCNode Id="c7c59e45-58cf-4543-bf96-20ce1e74b9b1" Title="OutOfProcessApplicationSettings Class" Url="html/T_Microsoft_Test_ApplicationControl_OutOfProcessApplicationSettings.htm">
+        <HelpTOCNode Title="OutOfProcessApplicationSettings Members" Url="html/AllMembers_T_Microsoft_Test_ApplicationControl_OutOfProcessApplicationSettings.htm" />
+        <HelpTOCNode Title="OutOfProcessApplicationSettings Constructor " Url="html/M_Microsoft_Test_ApplicationControl_OutOfProcessApplicationSettings__ctor.htm" />
+        <HelpTOCNode Id="f870c82b-4fb2-4a51-8f65-52f2b5b7ee16" Title="OutOfProcessApplicationSettings Properties " Url="html/Properties_T_Microsoft_Test_ApplicationControl_OutOfProcessApplicationSettings.htm">
+          <HelpTOCNode Title="ProcessStartInfo Property " Url="html/P_Microsoft_Test_ApplicationControl_OutOfProcessApplicationSettings_ProcessStartInfo.htm" />
+        </HelpTOCNode>
+      </HelpTOCNode>
+      <HelpTOCNode Id="b564f473-9078-47eb-9fc6-85c4f85a86cf" Title="UIAutomationOutOfProcessApplicationFactory Class" Url="html/T_Microsoft_Test_ApplicationControl_UIAutomationOutOfProcessApplicationFactory.htm">
+        <HelpTOCNode Title="UIAutomationOutOfProcessApplicationFactory Members" Url="html/AllMembers_T_Microsoft_Test_ApplicationControl_UIAutomationOutOfProcessApplicationFactory.htm" />
+        <HelpTOCNode Title="UIAutomationOutOfProcessApplicationFactory Constructor " Url="html/M_Microsoft_Test_ApplicationControl_UIAutomationOutOfProcessApplicationFactory__ctor.htm" />
+        <HelpTOCNode Id="5e2fba83-91ce-4563-a5aa-8fc6d88999e6" Title="UIAutomationOutOfProcessApplicationFactory Methods " Url="html/Methods_T_Microsoft_Test_ApplicationControl_UIAutomationOutOfProcessApplicationFactory.htm">
+          <HelpTOCNode Title="Create Method " Url="html/M_Microsoft_Test_ApplicationControl_UIAutomationOutOfProcessApplicationFactory_Create.htm" />
+        </HelpTOCNode>
+      </HelpTOCNode>
+      <HelpTOCNode Id="89ef96cc-7d0f-43bc-bd96-47fd74f37da5" Title="WpfInProcessApplicationFactory Class" Url="html/T_Microsoft_Test_ApplicationControl_WpfInProcessApplicationFactory.htm">
+        <HelpTOCNode Title="WpfInProcessApplicationFactory Members" Url="html/AllMembers_T_Microsoft_Test_ApplicationControl_WpfInProcessApplicationFactory.htm" />
+        <HelpTOCNode Title="WpfInProcessApplicationFactory Constructor " Url="html/M_Microsoft_Test_ApplicationControl_WpfInProcessApplicationFactory__ctor.htm" />
+        <HelpTOCNode Id="51de50a7-f3c3-4de3-9fff-1b2bf7900607" Title="WpfInProcessApplicationFactory Methods " Url="html/Methods_T_Microsoft_Test_ApplicationControl_WpfInProcessApplicationFactory.htm">
+          <HelpTOCNode Title="Create Method " Url="html/M_Microsoft_Test_ApplicationControl_WpfInProcessApplicationFactory_Create.htm" />
+        </HelpTOCNode>
+      </HelpTOCNode>
+      <HelpTOCNode Id="905d7a0b-5f78-4a1c-a918-d76d65f59717" Title="WpfInProcessApplicationSettings Class" Url="html/T_Microsoft_Test_ApplicationControl_WpfInProcessApplicationSettings.htm">
+        <HelpTOCNode Title="WpfInProcessApplicationSettings Members" Url="html/AllMembers_T_Microsoft_Test_ApplicationControl_WpfInProcessApplicationSettings.htm" />
+        <HelpTOCNode Title="WpfInProcessApplicationSettings Constructor " Url="html/M_Microsoft_Test_ApplicationControl_WpfInProcessApplicationSettings__ctor.htm" />
+        <HelpTOCNode Id="3cb68b50-a07c-4c44-91ed-14590924c7d1" Title="WpfInProcessApplicationSettings Properties " Url="html/Properties_T_Microsoft_Test_ApplicationControl_WpfInProcessApplicationSettings.htm">
+          <HelpTOCNode Title="WindowClassName Property " Url="html/P_Microsoft_Test_ApplicationControl_WpfInProcessApplicationSettings_WindowClassName.htm" />
+        </HelpTOCNode>
+      </HelpTOCNode>
+    </HelpTOCNode>
+    <HelpTOCNode Id="91729629-5388-41bc-bb7a-007bf8fe8148" Title="Microsoft.Test.CommandLineParsing Namespace" Url="html/N_Microsoft_Test_CommandLineParsing.htm">
+      <HelpTOCNode Id="3d492d05-ed2a-4453-ba4f-5b0de0801da3" Title="Command Class" Url="html/T_Microsoft_Test_CommandLineParsing_Command.htm">
+        <HelpTOCNode Title="Command Members" Url="html/AllMembers_T_Microsoft_Test_CommandLineParsing_Command.htm" />
+        <HelpTOCNode Title="Command Constructor " Url="html/M_Microsoft_Test_CommandLineParsing_Command__ctor.htm" />
+        <HelpTOCNode Id="b10a3681-4e2c-45c6-9d80-2cd2e60841cf" Title="Command Methods " Url="html/Methods_T_Microsoft_Test_CommandLineParsing_Command.htm">
+          <HelpTOCNode Title="Execute Method " Url="html/M_Microsoft_Test_CommandLineParsing_Command_Execute.htm" />
+        </HelpTOCNode>
+        <HelpTOCNode Id="20a8b7ab-ec9d-4a26-a379-6a45a33c8cea" Title="Command Properties " Url="html/Properties_T_Microsoft_Test_CommandLineParsing_Command.htm">
+          <HelpTOCNode Title="Name Property " Url="html/P_Microsoft_Test_CommandLineParsing_Command_Name.htm" />
+        </HelpTOCNode>
+      </HelpTOCNode>
+      <HelpTOCNode Id="00b881af-b40f-4455-af05-7ed0e7e75325" Title="CommandLineDictionary Class" Url="html/T_Microsoft_Test_CommandLineParsing_CommandLineDictionary.htm">
+        <HelpTOCNode Title="CommandLineDictionary Members" Url="html/AllMembers_T_Microsoft_Test_CommandLineParsing_CommandLineDictionary.htm" />
+        <HelpTOCNode Id="5cea6276-05c4-4500-a189-70b0b0742232" Title="CommandLineDictionary Constructor " Url="html/Overload_Microsoft_Test_CommandLineParsing_CommandLineDictionary__ctor.htm">
+          <HelpTOCNode Title="CommandLineDictionary Constructor " Url="html/M_Microsoft_Test_CommandLineParsing_CommandLineDictionary__ctor.htm" />
+          <HelpTOCNode Title="CommandLineDictionary Constructor (SerializationInfo, StreamingContext)" Url="html/M_Microsoft_Test_CommandLineParsing_CommandLineDictionary__ctor_1.htm" />
+        </HelpTOCNode>
+        <HelpTOCNode Id="4729b901-33dc-4132-abd4-1989d792f347" Title="CommandLineDictionary Methods " Url="html/Methods_T_Microsoft_Test_CommandLineParsing_CommandLineDictionary.htm">
+          <HelpTOCNode Id="8ae74d83-2b48-4cb2-8d45-73583a158df2" Title="FromArguments Method " Url="html/Overload_Microsoft_Test_CommandLineParsing_CommandLineDictionary_FromArguments.htm">
+            <HelpTOCNode Title="FromArguments Method (IEnumerable(String))" Url="html/M_Microsoft_Test_CommandLineParsing_CommandLineDictionary_FromArguments.htm" />
+            <HelpTOCNode Title="FromArguments Method (IEnumerable(String), Char, Char)" Url="html/M_Microsoft_Test_CommandLineParsing_CommandLineDictionary_FromArguments_1.htm" />
+          </HelpTOCNode>
+          <HelpTOCNode Title="GetObjectData Method " Url="html/M_Microsoft_Test_CommandLineParsing_CommandLineDictionary_GetObjectData.htm" />
+          <HelpTOCNode Title="ToString Method " Url="html/M_Microsoft_Test_CommandLineParsing_CommandLineDictionary_ToString.htm" />
+        </HelpTOCNode>
+        <HelpTOCNode Title="CommandLineDictionary Properties " Url="html/Properties_T_Microsoft_Test_CommandLineParsing_CommandLineDictionary.htm" />
+      </HelpTOCNode>
+      <HelpTOCNode Id="34e01cb9-9fc4-4043-8b9d-67bb8bb70e72" Title="CommandLineParser Class" Url="html/T_Microsoft_Test_CommandLineParsing_CommandLineParser.htm">
+        <HelpTOCNode Title="CommandLineParser Members" Url="html/AllMembers_T_Microsoft_Test_CommandLineParsing_CommandLineParser.htm" />
+        <HelpTOCNode Id="348a640b-a90b-43ea-82b8-80f3eb08032a" Title="CommandLineParser Methods " Url="html/Methods_T_Microsoft_Test_CommandLineParsing_CommandLineParser.htm">
+          <HelpTOCNode Title="ParseArguments Method " Url="html/M_Microsoft_Test_CommandLineParsing_CommandLineParser_ParseArguments.htm" />
+          <HelpTOCNode Title="PrintCommands Method " Url="html/M_Microsoft_Test_CommandLineParsing_CommandLineParser_PrintCommands.htm" />
+          <HelpTOCNode Title="PrintUsage Method " Url="html/M_Microsoft_Test_CommandLineParsing_CommandLineParser_PrintUsage.htm" />
+          <HelpTOCNode Title="ToString Method " Url="html/M_Microsoft_Test_CommandLineParsing_CommandLineParser_ToString.htm" />
+        </HelpTOCNode>
+      </HelpTOCNode>
+      <HelpTOCNode Id="7840626f-a671-4cf1-9b8b-02de6cacbca0" Title="DirectoryInfoConverter Class" Url="html/T_Microsoft_Test_CommandLineParsing_DirectoryInfoConverter.htm">
+        <HelpTOCNode Title="DirectoryInfoConverter Members" Url="html/AllMembers_T_Microsoft_Test_CommandLineParsing_DirectoryInfoConverter.htm" />
+        <HelpTOCNode Title="DirectoryInfoConverter Constructor " Url="html/M_Microsoft_Test_CommandLineParsing_DirectoryInfoConverter__ctor.htm" />
+        <HelpTOCNode Id="14bd311f-12ba-4223-bca3-e8fa4dff973a" Title="DirectoryInfoConverter Methods " Url="html/Methods_T_Microsoft_Test_CommandLineParsing_DirectoryInfoConverter.htm">
+          <HelpTOCNode Title="CanConvertFrom Method " Url="html/M_Microsoft_Test_CommandLineParsing_DirectoryInfoConverter_CanConvertFrom.htm" />
+          <HelpTOCNode Title="ConvertFrom Method " Url="html/M_Microsoft_Test_CommandLineParsing_DirectoryInfoConverter_ConvertFrom.htm" />
+        </HelpTOCNode>
+      </HelpTOCNode>
+      <HelpTOCNode Id="8e0526aa-1570-480b-b6b1-9e2ae24fda28" Title="FileInfoConverter Class" Url="html/T_Microsoft_Test_CommandLineParsing_FileInfoConverter.htm">
+        <HelpTOCNode Title="FileInfoConverter Members" Url="html/AllMembers_T_Microsoft_Test_CommandLineParsing_FileInfoConverter.htm" />
+        <HelpTOCNode Title="FileInfoConverter Constructor " Url="html/M_Microsoft_Test_CommandLineParsing_FileInfoConverter__ctor.htm" />
+        <HelpTOCNode Id="58deb230-d25d-4b5d-8747-0cbd1f905a5a" Title="FileInfoConverter Methods " Url="html/Methods_T_Microsoft_Test_CommandLineParsing_FileInfoConverter.htm">
+          <HelpTOCNode Title="CanConvertFrom Method " Url="html/M_Microsoft_Test_CommandLineParsing_FileInfoConverter_CanConvertFrom.htm" />
+          <HelpTOCNode Title="CanConvertTo Method " Url="html/M_Microsoft_Test_CommandLineParsing_FileInfoConverter_CanConvertTo.htm" />
+          <HelpTOCNode Title="ConvertFrom Method " Url="html/M_Microsoft_Test_CommandLineParsing_FileInfoConverter_ConvertFrom.htm" />
+          <HelpTOCNode Title="ConvertTo Method " Url="html/M_Microsoft_Test_CommandLineParsing_FileInfoConverter_ConvertTo.htm" />
+        </HelpTOCNode>
+      </HelpTOCNode>
+      <HelpTOCNode Id="827ffa9a-ffb2-47aa-9e31-2d89c4f80940" Title="RequiredAttribute Class" Url="html/T_Microsoft_Test_CommandLineParsing_RequiredAttribute.htm">
+        <HelpTOCNode Title="RequiredAttribute Members" Url="html/AllMembers_T_Microsoft_Test_CommandLineParsing_RequiredAttribute.htm" />
+        <HelpTOCNode Title="RequiredAttribute Constructor " Url="html/M_Microsoft_Test_CommandLineParsing_RequiredAttribute__ctor.htm" />
+      </HelpTOCNode>
+    </HelpTOCNode>
+    <HelpTOCNode Id="f82a495a-cef7-4f13-b295-f8ca01299e59" Title="Microsoft.Test.FaultInjection Namespace" Url="html/N_Microsoft_Test_FaultInjection.htm">
+      <HelpTOCNode Id="29f19b12-a489-4f7b-a12b-90df1ad0a277" Title="BuiltInConditions Class" Url="html/T_Microsoft_Test_FaultInjection_BuiltInConditions.htm">
+        <HelpTOCNode Title="BuiltInConditions Members" Url="html/AllMembers_T_Microsoft_Test_FaultInjection_BuiltInConditions.htm" />
+        <HelpTOCNode Id="8447c9b4-b322-48f1-832d-5d7d16638c5d" Title="BuiltInConditions Methods " Url="html/Methods_T_Microsoft_Test_FaultInjection_BuiltInConditions.htm">
+          <HelpTOCNode Id="2e3b5969-1a3f-4dc2-be5d-fbded3cda22b" Title="TriggerIfCalledBy Method " Url="html/Overload_Microsoft_Test_FaultInjection_BuiltInConditions_TriggerIfCalledBy.htm">
+            <HelpTOCNode Title="TriggerIfCalledBy Method (MethodBase)" Url="html/M_Microsoft_Test_FaultInjection_BuiltInConditions_TriggerIfCalledBy.htm" />
+            <HelpTOCNode Title="TriggerIfCalledBy Method (String)" Url="html/M_Microsoft_Test_FaultInjection_BuiltInConditions_TriggerIfCalledBy_1.htm" />
+          </HelpTOCNode>
+          <HelpTOCNode Id="a95c5367-c051-4c2e-97a9-adbf2021b5c3" Title="TriggerIfStackContains Method " Url="html/Overload_Microsoft_Test_FaultInjection_BuiltInConditions_TriggerIfStackContains.htm">
+            <HelpTOCNode Title="TriggerIfStackContains Method (MethodBase)" Url="html/M_Microsoft_Test_FaultInjection_BuiltInConditions_TriggerIfStackContains.htm" />
+            <HelpTOCNode Title="TriggerIfStackContains Method (String)" Url="html/M_Microsoft_Test_FaultInjection_BuiltInConditions_TriggerIfStackContains_1.htm" />
+          </HelpTOCNode>
+          <HelpTOCNode Title="TriggerOnEveryNthCall Method " Url="html/M_Microsoft_Test_FaultInjection_BuiltInConditions_TriggerOnEveryNthCall.htm" />
+          <HelpTOCNode Title="TriggerOnNthCall Method " Url="html/M_Microsoft_Test_FaultInjection_BuiltInConditions_TriggerOnNthCall.htm" />
+          <HelpTOCNode Id="f8a30252-f383-4500-a6b8-27227d14a4bf" Title="TriggerOnNthCallBy Method " Url="html/Overload_Microsoft_Test_FaultInjection_BuiltInConditions_TriggerOnNthCallBy.htm">
+            <HelpTOCNode Title="TriggerOnNthCallBy Method (Int32, MethodBase)" Url="html/M_Microsoft_Test_FaultInjection_BuiltInConditions_TriggerOnNthCallBy.htm" />
+            <HelpTOCNode Title="TriggerOnNthCallBy Method (Int32, String)" Url="html/M_Microsoft_Test_FaultInjection_BuiltInConditions_TriggerOnNthCallBy_1.htm" />
+          </HelpTOCNode>
+        </HelpTOCNode>
+        <HelpTOCNode Id="4ced77a9-d4b0-4dda-9dc4-a81bb6336c03" Title="BuiltInConditions Properties " Url="html/Properties_T_Microsoft_Test_FaultInjection_BuiltInConditions.htm">
+          <HelpTOCNode Title="NeverTrigger Property " Url="html/P_Microsoft_Test_FaultInjection_BuiltInConditions_NeverTrigger.htm" />
+          <HelpTOCNode Title="TriggerOnEveryCall Property " Url="html/P_Microsoft_Test_FaultInjection_BuiltInConditions_TriggerOnEveryCall.htm" />
+          <HelpTOCNode Title="TriggerOnFirstCall Property " Url="html/P_Microsoft_Test_FaultInjection_BuiltInConditions_TriggerOnFirstCall.htm" />
+        </HelpTOCNode>
+      </HelpTOCNode>
+      <HelpTOCNode Id="8a636aae-eaa9-4577-bb8b-fe07098a7505" Title="BuiltInFaults Class" Url="html/T_Microsoft_Test_FaultInjection_BuiltInFaults.htm">
+        <HelpTOCNode Title="BuiltInFaults Members" Url="html/AllMembers_T_Microsoft_Test_FaultInjection_BuiltInFaults.htm" />
+        <HelpTOCNode Id="cf43130b-860f-457c-8f0e-788f04c0628f" Title="BuiltInFaults Methods " Url="html/Methods_T_Microsoft_Test_FaultInjection_BuiltInFaults.htm">
+          <HelpTOCNode Title="ReturnFault Method " Url="html/M_Microsoft_Test_FaultInjection_BuiltInFaults_ReturnFault.htm" />
+          <HelpTOCNode Title="ReturnValueFault Method " Url="html/M_Microsoft_Test_FaultInjection_BuiltInFaults_ReturnValueFault.htm" />
+          <HelpTOCNode Title="ReturnValueRuntimeFault Method " Url="html/M_Microsoft_Test_FaultInjection_BuiltInFaults_ReturnValueRuntimeFault.htm" />
+          <HelpTOCNode Title="ThrowExceptionFault Method " Url="html/M_Microsoft_Test_FaultInjection_BuiltInFaults_ThrowExceptionFault.htm" />
+          <HelpTOCNode Title="ThrowExceptionRuntimeFault Method " Url="html/M_Microsoft_Test_FaultInjection_BuiltInFaults_ThrowExceptionRuntimeFault.htm" />
+        </HelpTOCNode>
+      </HelpTOCNode>
+      <HelpTOCNode Id="6f599a6f-2ca2-4622-9fbe-7a900a882f4e" Title="CallStack Class" Url="html/T_Microsoft_Test_FaultInjection_CallStack.htm">
+        <HelpTOCNode Title="CallStack Members" Url="html/AllMembers_T_Microsoft_Test_FaultInjection_CallStack.htm" />
+        <HelpTOCNode Title="CallStack Constructor " Url="html/M_Microsoft_Test_FaultInjection_CallStack__ctor.htm" />
+        <HelpTOCNode Id="7e937314-eb55-4ba7-a5be-c5cc74baf116" Title="CallStack Properties " Url="html/Properties_T_Microsoft_Test_FaultInjection_CallStack.htm">
+          <HelpTOCNode Title="FrameCount Property " Url="html/P_Microsoft_Test_FaultInjection_CallStack_FrameCount.htm" />
+          <HelpTOCNode Title="Item Property " Url="html/P_Microsoft_Test_FaultInjection_CallStack_Item.htm" />
+        </HelpTOCNode>
+      </HelpTOCNode>
+      <HelpTOCNode Id="cd959594-bade-4650-af36-63c8ef8fc3f3" Title="ComRegistrar Class" Url="html/T_Microsoft_Test_FaultInjection_ComRegistrar.htm">
+        <HelpTOCNode Title="ComRegistrar Members" Url="html/AllMembers_T_Microsoft_Test_FaultInjection_ComRegistrar.htm" />
+        <HelpTOCNode Id="b558adff-a223-4817-9626-7d11ca2da6ae" Title="ComRegistrar Fields" Url="html/Fields_T_Microsoft_Test_FaultInjection_ComRegistrar.htm">
+          <HelpTOCNode Title="Clsid Field" Url="html/F_Microsoft_Test_FaultInjection_ComRegistrar_Clsid.htm" />
+        </HelpTOCNode>
+        <HelpTOCNode Id="e584aa97-9daf-4b77-86fe-2e06302a5637" Title="ComRegistrar Methods " Url="html/Methods_T_Microsoft_Test_FaultInjection_ComRegistrar.htm">
+          <HelpTOCNode Title="IsRegistered Method " Url="html/M_Microsoft_Test_FaultInjection_ComRegistrar_IsRegistered.htm" />
+          <HelpTOCNode Title="Register Method " Url="html/M_Microsoft_Test_FaultInjection_ComRegistrar_Register.htm" />
+          <HelpTOCNode Title="SuppressAutoRegister Method " Url="html/M_Microsoft_Test_FaultInjection_ComRegistrar_SuppressAutoRegister.htm" />
+          <HelpTOCNode Title="Unregister Method " Url="html/M_Microsoft_Test_FaultInjection_ComRegistrar_Unregister.htm" />
+        </HelpTOCNode>
+      </HelpTOCNode>
+      <HelpTOCNode Id="3bbc17ce-1c28-4d30-b65d-5647cc8728f9" Title="FaultDispatcher Class" Url="html/T_Microsoft_Test_FaultInjection_FaultDispatcher.htm">
+        <HelpTOCNode Title="FaultDispatcher Members" Url="html/AllMembers_T_Microsoft_Test_FaultInjection_FaultDispatcher.htm" />
+        <HelpTOCNode Id="2b828fc1-21f9-439c-b081-0cbc94e52ef1" Title="FaultDispatcher Methods " Url="html/Methods_T_Microsoft_Test_FaultInjection_FaultDispatcher.htm">
+          <HelpTOCNode Title="Trap Method " Url="html/M_Microsoft_Test_FaultInjection_FaultDispatcher_Trap.htm" />
+        </HelpTOCNode>
+      </HelpTOCNode>
+      <HelpTOCNode Id="f45502dc-b576-4eb5-adac-45298941ca1d" Title="FaultInjectionException Class" Url="html/T_Microsoft_Test_FaultInjection_FaultInjectionException.htm">
+        <HelpTOCNode Title="FaultInjectionException Members" Url="html/AllMembers_T_Microsoft_Test_FaultInjection_FaultInjectionException.htm" />
+        <HelpTOCNode Id="32d0a7e9-2180-447c-a925-674bb0a9e0cf" Title="FaultInjectionException Constructor " Url="html/Overload_Microsoft_Test_FaultInjection_FaultInjectionException__ctor.htm">
+          <HelpTOCNode Title="FaultInjectionException Constructor " Url="html/M_Microsoft_Test_FaultInjection_FaultInjectionException__ctor.htm" />
+          <HelpTOCNode Title="FaultInjectionException Constructor (String)" Url="html/M_Microsoft_Test_FaultInjection_FaultInjectionException__ctor_2.htm" />
+          <HelpTOCNode Title="FaultInjectionException Constructor (SerializationInfo, StreamingContext)" Url="html/M_Microsoft_Test_FaultInjection_FaultInjectionException__ctor_1.htm" />
+          <HelpTOCNode Title="FaultInjectionException Constructor (String, Exception)" Url="html/M_Microsoft_Test_FaultInjection_FaultInjectionException__ctor_3.htm" />
+        </HelpTOCNode>
+      </HelpTOCNode>
+      <HelpTOCNode Id="1ba8ba23-c32a-4f1d-ab96-6df7831bc97a" Title="FaultRule Class" Url="html/T_Microsoft_Test_FaultInjection_FaultRule.htm">
+        <HelpTOCNode Title="FaultRule Members" Url="html/AllMembers_T_Microsoft_Test_FaultInjection_FaultRule.htm" />
+        <HelpTOCNode Id="681abbf6-a6be-4f58-8014-57b4eba8198a" Title="FaultRule Constructor " Url="html/Overload_Microsoft_Test_FaultInjection_FaultRule__ctor.htm">
+          <HelpTOCNode Title="FaultRule Constructor (String)" Url="html/M_Microsoft_Test_FaultInjection_FaultRule__ctor_1.htm" />
+          <HelpTOCNode Title="FaultRule Constructor (MethodBase, ICondition, IFault)" Url="html/M_Microsoft_Test_FaultInjection_FaultRule__ctor.htm" />
+          <HelpTOCNode Title="FaultRule Constructor (String, ICondition, IFault)" Url="html/M_Microsoft_Test_FaultInjection_FaultRule__ctor_2.htm" />
+        </HelpTOCNode>
+        <HelpTOCNode Id="6aeb0ea7-ddf7-4cb9-a781-6b8056f659a8" Title="FaultRule Properties " Url="html/Properties_T_Microsoft_Test_FaultInjection_FaultRule.htm">
+          <HelpTOCNode Title="Condition Property " Url="html/P_Microsoft_Test_FaultInjection_FaultRule_Condition.htm" />
+          <HelpTOCNode Title="Fault Property " Url="html/P_Microsoft_Test_FaultInjection_FaultRule_Fault.htm" />
+          <HelpTOCNode Title="MethodSignature Property " Url="html/P_Microsoft_Test_FaultInjection_FaultRule_MethodSignature.htm" />
+        </HelpTOCNode>
+      </HelpTOCNode>
+      <HelpTOCNode Id="9a63257c-0807-41de-b764-996a23780747" Title="FaultScope Class" Url="html/T_Microsoft_Test_FaultInjection_FaultScope.htm">
+        <HelpTOCNode Title="FaultScope Members" Url="html/AllMembers_T_Microsoft_Test_FaultInjection_FaultScope.htm" />
+        <HelpTOCNode Title="FaultScope Constructor " Url="html/M_Microsoft_Test_FaultInjection_FaultScope__ctor.htm" />
+        <HelpTOCNode Id="43a75163-7bad-45b2-95e0-a0973179b348" Title="FaultScope Methods " Url="html/Methods_T_Microsoft_Test_FaultInjection_FaultScope.htm">
+          <HelpTOCNode Title="AssertFaultInjectionEnabled Method " Url="html/M_Microsoft_Test_FaultInjection_FaultScope_AssertFaultInjectionEnabled.htm" />
+          <HelpTOCNode Title="Dispose Method " Url="html/M_Microsoft_Test_FaultInjection_FaultScope_Dispose.htm" />
+        </HelpTOCNode>
+        <HelpTOCNode Id="1cdfad2f-00ce-4b20-84ce-d1ad52e3e7f5" Title="FaultScope Properties " Url="html/Properties_T_Microsoft_Test_FaultInjection_FaultScope.htm">
+          <HelpTOCNode Title="Current Property " Url="html/P_Microsoft_Test_FaultInjection_FaultScope_Current.htm" />
+        </HelpTOCNode>
+      </HelpTOCNode>
+      <HelpTOCNode Id="c7784ec2-b5e0-4739-94ae-6df3d2cbfc06" Title="FaultSession Class" Url="html/T_Microsoft_Test_FaultInjection_FaultSession.htm">
+        <HelpTOCNode Title="FaultSession Members" Url="html/AllMembers_T_Microsoft_Test_FaultInjection_FaultSession.htm" />
+        <HelpTOCNode Title="FaultSession Constructor " Url="html/M_Microsoft_Test_FaultInjection_FaultSession__ctor.htm" />
+        <HelpTOCNode Id="d09ef1ad-58bd-4fe1-b97a-389e57a9df66" Title="FaultSession Methods " Url="html/Methods_T_Microsoft_Test_FaultInjection_FaultSession.htm">
+          <HelpTOCNode Title="ClearGlobalFault Method " Url="html/M_Microsoft_Test_FaultInjection_FaultSession_ClearGlobalFault.htm" />
+          <HelpTOCNode Title="FindRule Method " Url="html/M_Microsoft_Test_FaultInjection_FaultSession_FindRule.htm" />
+          <HelpTOCNode Title="GetProcessStartInfo Method " Url="html/M_Microsoft_Test_FaultInjection_FaultSession_GetProcessStartInfo.htm" />
+          <HelpTOCNode Title="NotifyRuleChanges Method " Url="html/M_Microsoft_Test_FaultInjection_FaultSession_NotifyRuleChanges.htm" />
+          <HelpTOCNode Title="SetGlobalFault Method " Url="html/M_Microsoft_Test_FaultInjection_FaultSession_SetGlobalFault.htm" />
+        </HelpTOCNode>
+        <HelpTOCNode Id="1a85e0ee-767f-4ff4-860d-c95aa3d72e80" Title="FaultSession Properties " Url="html/Properties_T_Microsoft_Test_FaultInjection_FaultSession.htm">
+          <HelpTOCNode Title="LogDirectory Property " Url="html/P_Microsoft_Test_FaultInjection_FaultSession_LogDirectory.htm" />
+        </HelpTOCNode>
+      </HelpTOCNode>
+      <HelpTOCNode Id="de6420fa-397c-4567-a0cf-2a51adea1abc" Title="ICondition Interface" Url="html/T_Microsoft_Test_FaultInjection_ICondition.htm">
+        <HelpTOCNode Title="ICondition Members" Url="html/AllMembers_T_Microsoft_Test_FaultInjection_ICondition.htm" />
+        <HelpTOCNode Id="911c6443-8be0-44d1-b67f-d42e24d4d4d9" Title="ICondition Methods " Url="html/Methods_T_Microsoft_Test_FaultInjection_ICondition.htm">
+          <HelpTOCNode Title="Trigger Method " Url="html/M_Microsoft_Test_FaultInjection_ICondition_Trigger.htm" />
+        </HelpTOCNode>
+      </HelpTOCNode>
+      <HelpTOCNode Id="1f42995f-716e-472c-9dfa-c6c1b1dcb8c4" Title="IFault Interface" Url="html/T_Microsoft_Test_FaultInjection_IFault.htm">
+        <HelpTOCNode Title="IFault Members" Url="html/AllMembers_T_Microsoft_Test_FaultInjection_IFault.htm" />
+        <HelpTOCNode Id="60ee4319-8e0f-4938-af87-53e345beb982" Title="IFault Methods " Url="html/Methods_T_Microsoft_Test_FaultInjection_IFault.htm">
+          <HelpTOCNode Title="Retrieve Method " Url="html/M_Microsoft_Test_FaultInjection_IFault_Retrieve.htm" />
+        </HelpTOCNode>
+      </HelpTOCNode>
+      <HelpTOCNode Id="06833d2b-4736-46ed-8857-c4bcf2d53079" Title="IRuntimeContext Interface" Url="html/T_Microsoft_Test_FaultInjection_IRuntimeContext.htm">
+        <HelpTOCNode Title="IRuntimeContext Members" Url="html/AllMembers_T_Microsoft_Test_FaultInjection_IRuntimeContext.htm" />
+        <HelpTOCNode Id="e1e9a394-2290-441b-9e04-0809e0a2fda7" Title="IRuntimeContext Properties " Url="html/Properties_T_Microsoft_Test_FaultInjection_IRuntimeContext.htm">
+          <HelpTOCNode Title="CalledTimes Property " Url="html/P_Microsoft_Test_FaultInjection_IRuntimeContext_CalledTimes.htm" />
+          <HelpTOCNode Title="Caller Property " Url="html/P_Microsoft_Test_FaultInjection_IRuntimeContext_Caller.htm" />
+          <HelpTOCNode Title="CallStack Property " Url="html/P_Microsoft_Test_FaultInjection_IRuntimeContext_CallStack.htm" />
+          <HelpTOCNode Title="CallStackTrace Property " Url="html/P_Microsoft_Test_FaultInjection_IRuntimeContext_CallStackTrace.htm" />
+        </HelpTOCNode>
+      </HelpTOCNode>
+      <HelpTOCNode Id="c48be851-c673-46b2-99a5-e142e99f7679" Title="RuntimeContext Class" Url="html/T_Microsoft_Test_FaultInjection_RuntimeContext.htm">
+        <HelpTOCNode Title="RuntimeContext Members" Url="html/AllMembers_T_Microsoft_Test_FaultInjection_RuntimeContext.htm" />
+        <HelpTOCNode Title="RuntimeContext Constructor " Url="html/M_Microsoft_Test_FaultInjection_RuntimeContext__ctor.htm" />
+        <HelpTOCNode Id="df8b5026-52ee-4102-950f-4af12e5f7ba9" Title="RuntimeContext Properties " Url="html/Properties_T_Microsoft_Test_FaultInjection_RuntimeContext.htm">
+          <HelpTOCNode Title="CalledTimes Property " Url="html/P_Microsoft_Test_FaultInjection_RuntimeContext_CalledTimes.htm" />
+          <HelpTOCNode Title="Caller Property " Url="html/P_Microsoft_Test_FaultInjection_RuntimeContext_Caller.htm" />
+          <HelpTOCNode Title="CallStack Property " Url="html/P_Microsoft_Test_FaultInjection_RuntimeContext_CallStack.htm" />
+          <HelpTOCNode Title="CallStackTrace Property " Url="html/P_Microsoft_Test_FaultInjection_RuntimeContext_CallStackTrace.htm" />
+        </HelpTOCNode>
+      </HelpTOCNode>
+    </HelpTOCNode>
+    <HelpTOCNode Id="92e48b90-7be8-4877-a83e-7ab7aee013b5" Title="Microsoft.Test.Input Namespace" Url="html/N_Microsoft_Test_Input.htm">
+      <HelpTOCNode Title="Key Enumeration" Url="html/T_Microsoft_Test_Input_Key.htm" />
+      <HelpTOCNode Id="5327e963-dab5-488e-8174-9c153f6db9db" Title="Keyboard Class" Url="html/T_Microsoft_Test_Input_Keyboard.htm">
+        <HelpTOCNode Title="Keyboard Members" Url="html/AllMembers_T_Microsoft_Test_Input_Keyboard.htm" />
+        <HelpTOCNode Title="Keyboard Constructor " Url="html/M_Microsoft_Test_Input_Keyboard__ctor.htm" />
+        <HelpTOCNode Id="cbb33628-9bc9-4845-a30c-5968e60c44ab" Title="Keyboard Methods " Url="html/Methods_T_Microsoft_Test_Input_Keyboard.htm">
+          <HelpTOCNode Title="Press Method " Url="html/M_Microsoft_Test_Input_Keyboard_Press.htm" />
+          <HelpTOCNode Title="Release Method " Url="html/M_Microsoft_Test_Input_Keyboard_Release.htm" />
+          <HelpTOCNode Title="Reset Method " Url="html/M_Microsoft_Test_Input_Keyboard_Reset.htm" />
+          <HelpTOCNode Id="09396faa-700f-44f1-8dd8-54a73d21423e" Title="Type Method " Url="html/Overload_Microsoft_Test_Input_Keyboard_Type.htm">
+            <HelpTOCNode Title="Type Method (Key)" Url="html/M_Microsoft_Test_Input_Keyboard_Type.htm" />
+            <HelpTOCNode Title="Type Method (String)" Url="html/M_Microsoft_Test_Input_Keyboard_Type_1.htm" />
+          </HelpTOCNode>
+        </HelpTOCNode>
+      </HelpTOCNode>
+      <HelpTOCNode Id="594b5b17-6b59-45f0-b8ec-6d51a74e842f" Title="Mouse Class" Url="html/T_Microsoft_Test_Input_Mouse.htm">
+        <HelpTOCNode Title="Mouse Members" Url="html/AllMembers_T_Microsoft_Test_Input_Mouse.htm" />
+        <HelpTOCNode Id="e224ac8d-61a4-430e-983f-5883c4481d60" Title="Mouse Methods " Url="html/Methods_T_Microsoft_Test_Input_Mouse.htm">
+          <HelpTOCNode Title="Click Method " Url="html/M_Microsoft_Test_Input_Mouse_Click.htm" />
+          <HelpTOCNode Title="DoubleClick Method " Url="html/M_Microsoft_Test_Input_Mouse_DoubleClick.htm" />
+          <HelpTOCNode Title="Down Method " Url="html/M_Microsoft_Test_Input_Mouse_Down.htm" />
+          <HelpTOCNode Title="DragTo Method " Url="html/M_Microsoft_Test_Input_Mouse_DragTo.htm" />
+          <HelpTOCNode Title="MoveTo Method " Url="html/M_Microsoft_Test_Input_Mouse_MoveTo.htm" />
+          <HelpTOCNode Title="Reset Method " Url="html/M_Microsoft_Test_Input_Mouse_Reset.htm" />
+          <HelpTOCNode Title="Scroll Method " Url="html/M_Microsoft_Test_Input_Mouse_Scroll.htm" />
+          <HelpTOCNode Title="Up Method " Url="html/M_Microsoft_Test_Input_Mouse_Up.htm" />
+        </HelpTOCNode>
+      </HelpTOCNode>
+      <HelpTOCNode Title="MouseButton Enumeration" Url="html/T_Microsoft_Test_Input_MouseButton.htm" />
+    </HelpTOCNode>
+    <HelpTOCNode Id="a52f4d96-07ff-4ec2-bd8f-cf59c285efb0" Title="Microsoft.Test.LeakDetection Namespace" Url="html/N_Microsoft_Test_LeakDetection.htm">
+      <HelpTOCNode Id="5531d0b0-6436-44b4-9434-33be877f3e98" Title="MemorySnapshot Class" Url="html/T_Microsoft_Test_LeakDetection_MemorySnapshot.htm">
+        <HelpTOCNode Title="MemorySnapshot Members" Url="html/AllMembers_T_Microsoft_Test_LeakDetection_MemorySnapshot.htm" />
+        <HelpTOCNode Id="ebdfbddd-0b6c-47b3-a977-7142484d3789" Title="MemorySnapshot Methods " Url="html/Methods_T_Microsoft_Test_LeakDetection_MemorySnapshot.htm">
+          <HelpTOCNode Title="CompareTo Method " Url="html/M_Microsoft_Test_LeakDetection_MemorySnapshot_CompareTo.htm" />
+          <HelpTOCNode Title="FromFile Method " Url="html/M_Microsoft_Test_LeakDetection_MemorySnapshot_FromFile.htm" />
+          <HelpTOCNode Title="FromProcess Method " Url="html/M_Microsoft_Test_LeakDetection_MemorySnapshot_FromProcess.htm" />
+          <HelpTOCNode Title="ToFile Method " Url="html/M_Microsoft_Test_LeakDetection_MemorySnapshot_ToFile.htm" />
+        </HelpTOCNode>
+        <HelpTOCNode Id="da2a2c6f-33c8-4e42-b3d7-e8603bcda1e4" Title="MemorySnapshot Properties " Url="html/Properties_T_Microsoft_Test_LeakDetection_MemorySnapshot.htm">
+          <HelpTOCNode Title="GdiObjectCount Property " Url="html/P_Microsoft_Test_LeakDetection_MemorySnapshot_GdiObjectCount.htm" />
+          <HelpTOCNode Title="HandleCount Property " Url="html/P_Microsoft_Test_LeakDetection_MemorySnapshot_HandleCount.htm" />
+          <HelpTOCNode Title="PageFileBytes Property " Url="html/P_Microsoft_Test_LeakDetection_MemorySnapshot_PageFileBytes.htm" />
+          <HelpTOCNode Title="PageFilePeakBytes Property " Url="html/P_Microsoft_Test_LeakDetection_MemorySnapshot_PageFilePeakBytes.htm" />
+          <HelpTOCNode Title="PoolNonpagedBytes Property " Url="html/P_Microsoft_Test_LeakDetection_MemorySnapshot_PoolNonpagedBytes.htm" />
+          <HelpTOCNode Title="PoolPagedBytes Property " Url="html/P_Microsoft_Test_LeakDetection_MemorySnapshot_PoolPagedBytes.htm" />
+          <HelpTOCNode Title="ThreadCount Property " Url="html/P_Microsoft_Test_LeakDetection_MemorySnapshot_ThreadCount.htm" />
+          <HelpTOCNode Title="Timestamp Property " Url="html/P_Microsoft_Test_LeakDetection_MemorySnapshot_Timestamp.htm" />
+          <HelpTOCNode Title="UserObjectCount Property " Url="html/P_Microsoft_Test_LeakDetection_MemorySnapshot_UserObjectCount.htm" />
+          <HelpTOCNode Title="VirtualMemoryBytes Property " Url="html/P_Microsoft_Test_LeakDetection_MemorySnapshot_VirtualMemoryBytes.htm" />
+          <HelpTOCNode Title="VirtualMemoryPrivateBytes Property " Url="html/P_Microsoft_Test_LeakDetection_MemorySnapshot_VirtualMemoryPrivateBytes.htm" />
+          <HelpTOCNode Title="WorkingSetBytes Property " Url="html/P_Microsoft_Test_LeakDetection_MemorySnapshot_WorkingSetBytes.htm" />
+          <HelpTOCNode Title="WorkingSetPeakBytes Property " Url="html/P_Microsoft_Test_LeakDetection_MemorySnapshot_WorkingSetPeakBytes.htm" />
+          <HelpTOCNode Title="WorkingSetPrivateBytes Property " Url="html/P_Microsoft_Test_LeakDetection_MemorySnapshot_WorkingSetPrivateBytes.htm" />
+        </HelpTOCNode>
+      </HelpTOCNode>
+      <HelpTOCNode Id="3658d4d6-b235-4dba-a1de-d9f5e8b2adfd" Title="MemorySnapshotCollection Class" Url="html/T_Microsoft_Test_LeakDetection_MemorySnapshotCollection.htm">
+        <HelpTOCNode Title="MemorySnapshotCollection Members" Url="html/AllMembers_T_Microsoft_Test_LeakDetection_MemorySnapshotCollection.htm" />
+        <HelpTOCNode Title="MemorySnapshotCollection Constructor " Url="html/M_Microsoft_Test_LeakDetection_MemorySnapshotCollection__ctor.htm" />
+        <HelpTOCNode Id="596bce29-1c98-47b2-8be3-b360cccac4db" Title="MemorySnapshotCollection Methods " Url="html/Methods_T_Microsoft_Test_LeakDetection_MemorySnapshotCollection.htm">
+          <HelpTOCNode Title="FromFile Method " Url="html/M_Microsoft_Test_LeakDetection_MemorySnapshotCollection_FromFile.htm" />
+          <HelpTOCNode Title="ToFile Method " Url="html/M_Microsoft_Test_LeakDetection_MemorySnapshotCollection_ToFile.htm" />
+        </HelpTOCNode>
+        <HelpTOCNode Title="MemorySnapshotCollection Properties " Url="html/Properties_T_Microsoft_Test_LeakDetection_MemorySnapshotCollection.htm" />
+      </HelpTOCNode>
+    </HelpTOCNode>
+    <HelpTOCNode Id="bdaf8066-4765-484f-8bb8-6bf6f63957bb" Title="Microsoft.Test.ObjectComparison Namespace" Url="html/N_Microsoft_Test_ObjectComparison.htm">
+      <HelpTOCNode Id="16a31040-894f-4135-bddc-ef9deb55f8c2" Title="GraphNode Class" Url="html/T_Microsoft_Test_ObjectComparison_GraphNode.htm">
+        <HelpTOCNode Title="GraphNode Members" Url="html/AllMembers_T_Microsoft_Test_ObjectComparison_GraphNode.htm" />
+        <HelpTOCNode Title="GraphNode Constructor " Url="html/M_Microsoft_Test_ObjectComparison_GraphNode__ctor.htm" />
+        <HelpTOCNode Id="343d32a0-b905-4c8f-b6a7-f9cb590ba539" Title="GraphNode Methods " Url="html/Methods_T_Microsoft_Test_ObjectComparison_GraphNode.htm">
+          <HelpTOCNode Title="GetNodesInDepthFirstOrder Method " Url="html/M_Microsoft_Test_ObjectComparison_GraphNode_GetNodesInDepthFirstOrder.htm" />
+        </HelpTOCNode>
+        <HelpTOCNode Id="8125ac5b-52f6-48cb-9ca5-5d8b9e44794a" Title="GraphNode Properties " Url="html/Properties_T_Microsoft_Test_ObjectComparison_GraphNode.htm">
+          <HelpTOCNode Title="Children Property " Url="html/P_Microsoft_Test_ObjectComparison_GraphNode_Children.htm" />
+          <HelpTOCNode Title="ComparisonStrategy Property " Url="html/P_Microsoft_Test_ObjectComparison_GraphNode_ComparisonStrategy.htm" />
+          <HelpTOCNode Title="Depth Property " Url="html/P_Microsoft_Test_ObjectComparison_GraphNode_Depth.htm" />
+          <HelpTOCNode Title="Name Property " Url="html/P_Microsoft_Test_ObjectComparison_GraphNode_Name.htm" />
+          <HelpTOCNode Title="ObjectType Property " Url="html/P_Microsoft_Test_ObjectComparison_GraphNode_ObjectType.htm" />
+          <HelpTOCNode Title="ObjectValue Property " Url="html/P_Microsoft_Test_ObjectComparison_GraphNode_ObjectValue.htm" />
+          <HelpTOCNode Title="Parent Property " Url="html/P_Microsoft_Test_ObjectComparison_GraphNode_Parent.htm" />
+          <HelpTOCNode Title="QualifiedName Property " Url="html/P_Microsoft_Test_ObjectComparison_GraphNode_QualifiedName.htm" />
+        </HelpTOCNode>
+      </HelpTOCNode>
+      <HelpTOCNode Id="8e41e553-d6a0-470c-aa98-16b2e8999b59" Title="ObjectComparisonMismatch Class" Url="html/T_Microsoft_Test_ObjectComparison_ObjectComparisonMismatch.htm">
+        <HelpTOCNode Title="ObjectComparisonMismatch Members" Url="html/AllMembers_T_Microsoft_Test_ObjectComparison_ObjectComparisonMismatch.htm" />
+        <HelpTOCNode Title="ObjectComparisonMismatch Constructor " Url="html/M_Microsoft_Test_ObjectComparison_ObjectComparisonMismatch__ctor.htm" />
+        <HelpTOCNode Id="1a91ee46-684a-4e31-ac3f-2a85387b2c34" Title="ObjectComparisonMismatch Properties " Url="html/Properties_T_Microsoft_Test_ObjectComparison_ObjectComparisonMismatch.htm">
+          <HelpTOCNode Title="LeftObjectNode Property " Url="html/P_Microsoft_Test_ObjectComparison_ObjectComparisonMismatch_LeftObjectNode.htm" />
+          <HelpTOCNode Title="MismatchType Property " Url="html/P_Microsoft_Test_ObjectComparison_ObjectComparisonMismatch_MismatchType.htm" />
+          <HelpTOCNode Title="RightObjectNode Property " Url="html/P_Microsoft_Test_ObjectComparison_ObjectComparisonMismatch_RightObjectNode.htm" />
+        </HelpTOCNode>
+      </HelpTOCNode>
+      <HelpTOCNode Title="ObjectComparisonMismatchType Enumeration" Url="html/T_Microsoft_Test_ObjectComparison_ObjectComparisonMismatchType.htm" />
+      <HelpTOCNode Id="4ac289f5-37f4-4ffd-9dba-f2d86f504b72" Title="ObjectGraphCodec Class" Url="html/T_Microsoft_Test_ObjectComparison_ObjectGraphCodec.htm">
+        <HelpTOCNode Title="ObjectGraphCodec Members" Url="html/AllMembers_T_Microsoft_Test_ObjectComparison_ObjectGraphCodec.htm" />
+        <HelpTOCNode Title="ObjectGraphCodec Constructor " Url="html/M_Microsoft_Test_ObjectComparison_ObjectGraphCodec__ctor.htm" />
+        <HelpTOCNode Id="455a5a19-9b07-4404-88d8-ba2087407ced" Title="ObjectGraphCodec Methods " Url="html/Methods_T_Microsoft_Test_ObjectComparison_ObjectGraphCodec.htm">
+          <HelpTOCNode Title="DecodeObjectGraph Method " Url="html/M_Microsoft_Test_ObjectComparison_ObjectGraphCodec_DecodeObjectGraph.htm" />
+          <HelpTOCNode Title="EncodeObjectGraph Method " Url="html/M_Microsoft_Test_ObjectComparison_ObjectGraphCodec_EncodeObjectGraph.htm" />
+        </HelpTOCNode>
+      </HelpTOCNode>
+      <HelpTOCNode Id="b7c3c4ae-5784-4752-9732-121a4f2e0e95" Title="ObjectGraphComparer Class" Url="html/T_Microsoft_Test_ObjectComparison_ObjectGraphComparer.htm">
+        <HelpTOCNode Title="ObjectGraphComparer Members" Url="html/AllMembers_T_Microsoft_Test_ObjectComparison_ObjectGraphComparer.htm" />
+        <HelpTOCNode Title="ObjectGraphComparer Constructor " Url="html/M_Microsoft_Test_ObjectComparison_ObjectGraphComparer__ctor.htm" />
+        <HelpTOCNode Id="cf329ce4-df07-46f4-9d35-a69acafea633" Title="ObjectGraphComparer Methods " Url="html/Methods_T_Microsoft_Test_ObjectComparison_ObjectGraphComparer.htm">
+          <HelpTOCNode Id="700618ab-1147-4234-a9ed-39769711295b" Title="Compare Method " Url="html/Overload_Microsoft_Test_ObjectComparison_ObjectGraphComparer_Compare.htm">
+            <HelpTOCNode Title="Compare Method (GraphNode, GraphNode)" Url="html/M_Microsoft_Test_ObjectComparison_ObjectGraphComparer_Compare.htm" />
+            <HelpTOCNode Title="Compare Method (GraphNode, GraphNode, IEnumerable(ObjectComparisonMismatch))" Url="html/M_Microsoft_Test_ObjectComparison_ObjectGraphComparer_Compare_1.htm" />
+          </HelpTOCNode>
+        </HelpTOCNode>
+      </HelpTOCNode>
+      <HelpTOCNode Id="7c12c9d9-8c46-4b26-a7a0-954bbe2d4645" Title="ObjectGraphComparisonStrategy Class" Url="html/T_Microsoft_Test_ObjectComparison_ObjectGraphComparisonStrategy.htm">
+        <HelpTOCNode Title="ObjectGraphComparisonStrategy Members" Url="html/AllMembers_T_Microsoft_Test_ObjectComparison_ObjectGraphComparisonStrategy.htm" />
+        <HelpTOCNode Title="ObjectGraphComparisonStrategy Constructor " Url="html/M_Microsoft_Test_ObjectComparison_ObjectGraphComparisonStrategy__ctor.htm" />
+        <HelpTOCNode Id="676c78a0-fce1-45c7-9607-d69f5d83e1d0" Title="ObjectGraphComparisonStrategy Methods " Url="html/Methods_T_Microsoft_Test_ObjectComparison_ObjectGraphComparisonStrategy.htm">
+          <HelpTOCNode Title="Compare Method " Url="html/M_Microsoft_Test_ObjectComparison_ObjectGraphComparisonStrategy_Compare.htm" />
+          <HelpTOCNode Title="CompareChildNodes Method " Url="html/M_Microsoft_Test_ObjectComparison_ObjectGraphComparisonStrategy_CompareChildNodes.htm" />
+          <HelpTOCNode Title="IsVisited Method " Url="html/M_Microsoft_Test_ObjectComparison_ObjectGraphComparisonStrategy_IsVisited.htm" />
+          <HelpTOCNode Title="MarkVisited Method " Url="html/M_Microsoft_Test_ObjectComparison_ObjectGraphComparisonStrategy_MarkVisited.htm" />
+        </HelpTOCNode>
+      </HelpTOCNode>
+      <HelpTOCNode Id="14e2be07-9825-455b-b98e-35a375329194" Title="ObjectGraphFactory Class" Url="html/T_Microsoft_Test_ObjectComparison_ObjectGraphFactory.htm">
+        <HelpTOCNode Title="ObjectGraphFactory Members" Url="html/AllMembers_T_Microsoft_Test_ObjectComparison_ObjectGraphFactory.htm" />
+        <HelpTOCNode Title="ObjectGraphFactory Constructor " Url="html/M_Microsoft_Test_ObjectComparison_ObjectGraphFactory__ctor.htm" />
+        <HelpTOCNode Id="16e048d7-42e8-4443-aa0c-e6511f1dbf36" Title="ObjectGraphFactory Methods " Url="html/Methods_T_Microsoft_Test_ObjectComparison_ObjectGraphFactory.htm">
+          <HelpTOCNode Title="CreateObjectGraph Method " Url="html/M_Microsoft_Test_ObjectComparison_ObjectGraphFactory_CreateObjectGraph.htm" />
+        </HelpTOCNode>
+      </HelpTOCNode>
+      <HelpTOCNode Id="decb3dbc-b42d-45a5-9ea8-e05c1e171b9f" Title="ObjectGraphFactoryMap Class" Url="html/T_Microsoft_Test_ObjectComparison_ObjectGraphFactoryMap.htm">
+        <HelpTOCNode Title="ObjectGraphFactoryMap Members" Url="html/AllMembers_T_Microsoft_Test_ObjectComparison_ObjectGraphFactoryMap.htm" />
+        <HelpTOCNode Title="ObjectGraphFactoryMap Constructor " Url="html/M_Microsoft_Test_ObjectComparison_ObjectGraphFactoryMap__ctor.htm" />
+        <HelpTOCNode Id="79a7d2c3-4536-465b-bdbb-fbd8363554d0" Title="ObjectGraphFactoryMap Methods " Url="html/Methods_T_Microsoft_Test_ObjectComparison_ObjectGraphFactoryMap.htm">
+          <HelpTOCNode Id="98e810a7-b6e2-4f5d-9bdf-ff2af0ea6174" Title="Add Method " Url="html/Overload_Microsoft_Test_ObjectComparison_ObjectGraphFactoryMap_Add.htm">
+            <HelpTOCNode Title="Add Method (KeyValuePair(Type, ObjectGraphFactory))" Url="html/M_Microsoft_Test_ObjectComparison_ObjectGraphFactoryMap_Add.htm" />
+            <HelpTOCNode Title="Add Method (Type, ObjectGraphFactory)" Url="html/M_Microsoft_Test_ObjectComparison_ObjectGraphFactoryMap_Add_1.htm" />
+          </HelpTOCNode>
+          <HelpTOCNode Title="Clear Method " Url="html/M_Microsoft_Test_ObjectComparison_ObjectGraphFactoryMap_Clear.htm" />
+          <HelpTOCNode Title="Contains Method " Url="html/M_Microsoft_Test_ObjectComparison_ObjectGraphFactoryMap_Contains.htm" />
+          <HelpTOCNode Title="ContainsKey Method " Url="html/M_Microsoft_Test_ObjectComparison_ObjectGraphFactoryMap_ContainsKey.htm" />
+          <HelpTOCNode Title="CopyTo Method " Url="html/M_Microsoft_Test_ObjectComparison_ObjectGraphFactoryMap_CopyTo.htm" />
+          <HelpTOCNode Title="GetEnumerator Method " Url="html/M_Microsoft_Test_ObjectComparison_ObjectGraphFactoryMap_GetEnumerator.htm" />
+          <HelpTOCNode Id="ab48064c-d864-44e1-81a1-43001315d3ca" Title="Remove Method " Url="html/Overload_Microsoft_Test_ObjectComparison_ObjectGraphFactoryMap_Remove.htm">
+            <HelpTOCNode Title="Remove Method (KeyValuePair(Type, ObjectGraphFactory))" Url="html/M_Microsoft_Test_ObjectComparison_ObjectGraphFactoryMap_Remove.htm" />
+            <HelpTOCNode Title="Remove Method (Type)" Url="html/M_Microsoft_Test_ObjectComparison_ObjectGraphFactoryMap_Remove_1.htm" />
+          </HelpTOCNode>
+          <HelpTOCNode Title="TryGetValue Method " Url="html/M_Microsoft_Test_ObjectComparison_ObjectGraphFactoryMap_TryGetValue.htm" />
+        </HelpTOCNode>
+        <HelpTOCNode Id="0012c3a2-d4b9-4574-8d03-aff76b61202f" Title="ObjectGraphFactoryMap Properties " Url="html/Properties_T_Microsoft_Test_ObjectComparison_ObjectGraphFactoryMap.htm">
+          <HelpTOCNode Title="Count Property " Url="html/P_Microsoft_Test_ObjectComparison_ObjectGraphFactoryMap_Count.htm" />
+          <HelpTOCNode Title="IsReadOnly Property " Url="html/P_Microsoft_Test_ObjectComparison_ObjectGraphFactoryMap_IsReadOnly.htm" />
+          <HelpTOCNode Title="Item Property " Url="html/P_Microsoft_Test_ObjectComparison_ObjectGraphFactoryMap_Item.htm" />
+          <HelpTOCNode Title="Keys Property " Url="html/P_Microsoft_Test_ObjectComparison_ObjectGraphFactoryMap_Keys.htm" />
+          <HelpTOCNode Title="Values Property " Url="html/P_Microsoft_Test_ObjectComparison_ObjectGraphFactoryMap_Values.htm" />
+        </HelpTOCNode>
+      </HelpTOCNode>
+      <HelpTOCNode Id="8c1d4251-3ffc-4019-a394-d8502d78488a" Title="PublicPropertyObjectGraphFactory Class" Url="html/T_Microsoft_Test_ObjectComparison_PublicPropertyObjectGraphFactory.htm">
+        <HelpTOCNode Title="PublicPropertyObjectGraphFactory Members" Url="html/AllMembers_T_Microsoft_Test_ObjectComparison_PublicPropertyObjectGraphFactory.htm" />
+        <HelpTOCNode Title="PublicPropertyObjectGraphFactory Constructor " Url="html/M_Microsoft_Test_ObjectComparison_PublicPropertyObjectGraphFactory__ctor.htm" />
+        <HelpTOCNode Id="9ff7369c-6888-45c9-a4f9-bb44cf2ad26f" Title="PublicPropertyObjectGraphFactory Methods " Url="html/Methods_T_Microsoft_Test_ObjectComparison_PublicPropertyObjectGraphFactory.htm">
+          <HelpTOCNode Title="CreateObjectGraph Method " Url="html/M_Microsoft_Test_ObjectComparison_PublicPropertyObjectGraphFactory_CreateObjectGraph.htm" />
+        </HelpTOCNode>
+      </HelpTOCNode>
+      <HelpTOCNode Id="d4247277-e6f7-4a0c-9059-5d89b99bcbf2" Title="XmlObjectGraphCodec Class" Url="html/T_Microsoft_Test_ObjectComparison_XmlObjectGraphCodec.htm">
+        <HelpTOCNode Title="XmlObjectGraphCodec Members" Url="html/AllMembers_T_Microsoft_Test_ObjectComparison_XmlObjectGraphCodec.htm" />
+        <HelpTOCNode Id="e5728ced-8b33-4d2a-b1a1-ea587b1c9eb6" Title="XmlObjectGraphCodec Constructor " Url="html/Overload_Microsoft_Test_ObjectComparison_XmlObjectGraphCodec__ctor.htm">
+          <HelpTOCNode Title="XmlObjectGraphCodec Constructor " Url="html/M_Microsoft_Test_ObjectComparison_XmlObjectGraphCodec__ctor.htm" />
+          <HelpTOCNode Title="XmlObjectGraphCodec Constructor (HashSet(ObjectGraphComparisonStrategy))" Url="html/M_Microsoft_Test_ObjectComparison_XmlObjectGraphCodec__ctor_1.htm" />
+        </HelpTOCNode>
+        <HelpTOCNode Id="53a362cc-f7ef-4ef5-8841-dbdf7c047837" Title="XmlObjectGraphCodec Fields" Url="html/Fields_T_Microsoft_Test_ObjectComparison_XmlObjectGraphCodec.htm">
+          <HelpTOCNode Title="ComparisonStrategyXmlAttribute Field" Url="html/F_Microsoft_Test_ObjectComparison_XmlObjectGraphCodec_ComparisonStrategyXmlAttribute.htm" />
+        </HelpTOCNode>
+        <HelpTOCNode Id="3277db83-94f8-494a-8e49-469853bfb6d3" Title="XmlObjectGraphCodec Methods " Url="html/Methods_T_Microsoft_Test_ObjectComparison_XmlObjectGraphCodec.htm">
+          <HelpTOCNode Title="DecodeObjectGraph Method " Url="html/M_Microsoft_Test_ObjectComparison_XmlObjectGraphCodec_DecodeObjectGraph.htm" />
+          <HelpTOCNode Title="EncodeObjectGraph Method " Url="html/M_Microsoft_Test_ObjectComparison_XmlObjectGraphCodec_EncodeObjectGraph.htm" />
+        </HelpTOCNode>
+        <HelpTOCNode Id="3aca707c-599e-431d-af51-ca29ce5b28e8" Title="XmlObjectGraphCodec Properties " Url="html/Properties_T_Microsoft_Test_ObjectComparison_XmlObjectGraphCodec.htm">
+          <HelpTOCNode Title="ThrowExceptionOnUnknownComparisonStrategy Property " Url="html/P_Microsoft_Test_ObjectComparison_XmlObjectGraphCodec_ThrowExceptionOnUnknownComparisonStrategy.htm" />
+        </HelpTOCNode>
+      </HelpTOCNode>
+    </HelpTOCNode>
+    <HelpTOCNode Id="22b18f09-5dee-41dc-9959-505c1f1fb7ed" Title="Microsoft.Test.Text Namespace" Url="html/N_Microsoft_Test_Text.htm">
+      <HelpTOCNode Id="e47dae8e-2846-4a20-9c0c-bbe9c53f6bcd" Title="CommonRegexPatterns Class" Url="html/T_Microsoft_Test_Text_CommonRegexPatterns.htm">
+        <HelpTOCNode Title="CommonRegexPatterns Members" Url="html/AllMembers_T_Microsoft_Test_Text_CommonRegexPatterns.htm" />
+        <HelpTOCNode Id="cca797c2-b17d-467e-ab8e-66c578a09967" Title="CommonRegexPatterns Fields" Url="html/Fields_T_Microsoft_Test_Text_CommonRegexPatterns.htm">
+          <HelpTOCNode Title="Date Field" Url="html/F_Microsoft_Test_Text_CommonRegexPatterns_Date.htm" />
+          <HelpTOCNode Title="EmailAddress Field" Url="html/F_Microsoft_Test_Text_CommonRegexPatterns_EmailAddress.htm" />
+          <HelpTOCNode Title="Guid Field" Url="html/F_Microsoft_Test_Text_CommonRegexPatterns_Guid.htm" />
+          <HelpTOCNode Title="IpAddress Field" Url="html/F_Microsoft_Test_Text_CommonRegexPatterns_IpAddress.htm" />
+          <HelpTOCNode Title="Time Field" Url="html/F_Microsoft_Test_Text_CommonRegexPatterns_Time.htm" />
+          <HelpTOCNode Title="UsaPhoneNumber Field" Url="html/F_Microsoft_Test_Text_CommonRegexPatterns_UsaPhoneNumber.htm" />
+          <HelpTOCNode Title="UsaSocialSecurityNumber Field" Url="html/F_Microsoft_Test_Text_CommonRegexPatterns_UsaSocialSecurityNumber.htm" />
+          <HelpTOCNode Title="UsaZipCode Field" Url="html/F_Microsoft_Test_Text_CommonRegexPatterns_UsaZipCode.htm" />
+          <HelpTOCNode Title="UsaZipCodeExtended Field" Url="html/F_Microsoft_Test_Text_CommonRegexPatterns_UsaZipCodeExtended.htm" />
+        </HelpTOCNode>
+      </HelpTOCNode>
+      <HelpTOCNode Id="ca33a45e-28b5-419b-845f-3f26885ef44e" Title="StringFactory Class" Url="html/T_Microsoft_Test_Text_StringFactory.htm">
+        <HelpTOCNode Title="StringFactory Members" Url="html/AllMembers_T_Microsoft_Test_Text_StringFactory.htm" />
+        <HelpTOCNode Id="91625378-97f3-42b5-bd4a-5cb50a4a7a38" Title="StringFactory Methods " Url="html/Methods_T_Microsoft_Test_Text_StringFactory.htm">
+          <HelpTOCNode Id="fea39199-3df1-4234-a216-e296b1122048" Title="GenerateRandomString Method " Url="html/Overload_Microsoft_Test_Text_StringFactory_GenerateRandomString.htm">
+            <HelpTOCNode Title="GenerateRandomString Method (StringProperties, Int32)" Url="html/M_Microsoft_Test_Text_StringFactory_GenerateRandomString.htm" />
+            <HelpTOCNode Title="GenerateRandomString Method (Regex, Int32)" Url="html/M_Microsoft_Test_Text_StringFactory_GenerateRandomString_1.htm" />
+          </HelpTOCNode>
+        </HelpTOCNode>
+      </HelpTOCNode>
+      <HelpTOCNode Id="2e64ff8a-cda4-4564-ae4c-99a2b6358df8" Title="StringProperties Class" Url="html/T_Microsoft_Test_Text_StringProperties.htm">
+        <HelpTOCNode Title="StringProperties Members" Url="html/AllMembers_T_Microsoft_Test_Text_StringProperties.htm" />
+        <HelpTOCNode Title="StringProperties Constructor " Url="html/M_Microsoft_Test_Text_StringProperties__ctor.htm" />
+        <HelpTOCNode Id="54f3370a-b8c7-4af1-a712-a0fcf8ec2c80" Title="StringProperties Properties " Url="html/Properties_T_Microsoft_Test_Text_StringProperties.htm">
+          <HelpTOCNode Title="HasNumbers Property " Url="html/P_Microsoft_Test_Text_StringProperties_HasNumbers.htm" />
+          <HelpTOCNode Title="IsBidirectional Property " Url="html/P_Microsoft_Test_Text_StringProperties_IsBidirectional.htm" />
+          <HelpTOCNode Title="MaxNumberOfCodePoints Property " Url="html/P_Microsoft_Test_Text_StringProperties_MaxNumberOfCodePoints.htm" />
+          <HelpTOCNode Title="MinNumberOfCodePoints Property " Url="html/P_Microsoft_Test_Text_StringProperties_MinNumberOfCodePoints.htm" />
+          <HelpTOCNode Title="MinNumberOfCombiningMarks Property " Url="html/P_Microsoft_Test_Text_StringProperties_MinNumberOfCombiningMarks.htm" />
+          <HelpTOCNode Title="MinNumberOfEndUserDefinedCodePoints Property " Url="html/P_Microsoft_Test_Text_StringProperties_MinNumberOfEndUserDefinedCodePoints.htm" />
+          <HelpTOCNode Title="MinNumberOfLineBreaks Property " Url="html/P_Microsoft_Test_Text_StringProperties_MinNumberOfLineBreaks.htm" />
+          <HelpTOCNode Title="MinNumberOfSurrogatePairs Property " Url="html/P_Microsoft_Test_Text_StringProperties_MinNumberOfSurrogatePairs.htm" />
+          <HelpTOCNode Title="MinNumberOfTextSegmentationCodePoints Property " Url="html/P_Microsoft_Test_Text_StringProperties_MinNumberOfTextSegmentationCodePoints.htm" />
+          <HelpTOCNode Title="NormalizationForm Property " Url="html/P_Microsoft_Test_Text_StringProperties_NormalizationForm.htm" />
+          <HelpTOCNode Title="UnicodeRanges Property " Url="html/P_Microsoft_Test_Text_StringProperties_UnicodeRanges.htm" />
+        </HelpTOCNode>
+      </HelpTOCNode>
+      <HelpTOCNode Title="UnicodeChart Enumeration" Url="html/T_Microsoft_Test_Text_UnicodeChart.htm" />
+      <HelpTOCNode Id="498adfd8-39ad-44cc-82a4-c0bf817a5942" Title="UnicodeRange Class" Url="html/T_Microsoft_Test_Text_UnicodeRange.htm">
+        <HelpTOCNode Title="UnicodeRange Members" Url="html/AllMembers_T_Microsoft_Test_Text_UnicodeRange.htm" />
+        <HelpTOCNode Id="a48762fd-bd95-495a-aae9-1d9368f081a7" Title="UnicodeRange Constructor " Url="html/Overload_Microsoft_Test_Text_UnicodeRange__ctor.htm">
+          <HelpTOCNode Title="UnicodeRange Constructor (UnicodeChart)" Url="html/M_Microsoft_Test_Text_UnicodeRange__ctor.htm" />
+          <HelpTOCNode Title="UnicodeRange Constructor (UnicodeRange)" Url="html/M_Microsoft_Test_Text_UnicodeRange__ctor_1.htm" />
+          <HelpTOCNode Title="UnicodeRange Constructor (Int32, Int32)" Url="html/M_Microsoft_Test_Text_UnicodeRange__ctor_2.htm" />
+        </HelpTOCNode>
+        <HelpTOCNode Id="6a202734-15a6-4d5e-bf09-2ebea3bcf4e7" Title="UnicodeRange Properties " Url="html/Properties_T_Microsoft_Test_Text_UnicodeRange.htm">
+          <HelpTOCNode Title="EndOfUnicodeRange Property " Url="html/P_Microsoft_Test_Text_UnicodeRange_EndOfUnicodeRange.htm" />
+          <HelpTOCNode Title="StartOfUnicodeRange Property " Url="html/P_Microsoft_Test_Text_UnicodeRange_StartOfUnicodeRange.htm" />
+        </HelpTOCNode>
+      </HelpTOCNode>
+    </HelpTOCNode>
+    <HelpTOCNode Id="5cfef929-b893-4f6d-bdf9-6f85225ba1a8" Title="Microsoft.Test.Theming Namespace" Url="html/N_Microsoft_Test_Theming.htm">
+      <HelpTOCNode Id="70435832-cce2-4e6d-89ef-5429b5352dff" Title="Theme Class" Url="html/T_Microsoft_Test_Theming_Theme.htm">
+        <HelpTOCNode Title="Theme Members" Url="html/AllMembers_T_Microsoft_Test_Theming_Theme.htm" />
+        <HelpTOCNode Id="7ed2581b-5006-4e25-bc12-aa32d6cf9ceb" Title="Theme Methods " Url="html/Methods_T_Microsoft_Test_Theming_Theme.htm">
+          <HelpTOCNode Title="GetAvailableSystemThemes Method " Url="html/M_Microsoft_Test_Theming_Theme_GetAvailableSystemThemes.htm" />
+          <HelpTOCNode Title="GetCurrent Method " Url="html/M_Microsoft_Test_Theming_Theme_GetCurrent.htm" />
+          <HelpTOCNode Id="34314ecb-653d-4b57-811a-00e70d397003" Title="SetCurrent Method " Url="html/Overload_Microsoft_Test_Theming_Theme_SetCurrent.htm">
+            <HelpTOCNode Title="SetCurrent Method (Theme)" Url="html/M_Microsoft_Test_Theming_Theme_SetCurrent.htm" />
+            <HelpTOCNode Title="SetCurrent Method (FileInfo)" Url="html/M_Microsoft_Test_Theming_Theme_SetCurrent_1.htm" />
+          </HelpTOCNode>
+        </HelpTOCNode>
+        <HelpTOCNode Id="47494a83-f8a8-48d2-94be-7e83bf7f52e8" Title="Theme Properties " Url="html/Properties_T_Microsoft_Test_Theming_Theme.htm">
+          <HelpTOCNode Title="IsEnabled Property " Url="html/P_Microsoft_Test_Theming_Theme_IsEnabled.htm" />
+          <HelpTOCNode Title="Name Property " Url="html/P_Microsoft_Test_Theming_Theme_Name.htm" />
+          <HelpTOCNode Title="Path Property " Url="html/P_Microsoft_Test_Theming_Theme_Path.htm" />
+          <HelpTOCNode Title="Style Property " Url="html/P_Microsoft_Test_Theming_Theme_Style.htm" />
+        </HelpTOCNode>
+      </HelpTOCNode>
+    </HelpTOCNode>
+    <HelpTOCNode Id="94035fa7-0fb3-446c-b1b1-5b267a29ab4d" Title="Microsoft.Test.VariationGeneration Namespace" Url="html/N_Microsoft_Test_VariationGeneration.htm">
+      <HelpTOCNode Id="32b1679a-9fcd-4c26-a92f-c759017709cf" Title="Constraint(T) Class" Url="html/T_Microsoft_Test_VariationGeneration_Constraint_1.htm">
+        <HelpTOCNode Title="Constraint(T) Members" Url="html/AllMembers_T_Microsoft_Test_VariationGeneration_Constraint_1.htm" />
+        <HelpTOCNode Title="Constraint(T) Constructor " Url="html/M_Microsoft_Test_VariationGeneration_Constraint_1__ctor.htm" />
+        <HelpTOCNode Id="d3926e46-7682-48cc-8b08-87baa9732251" Title="Constraint(T) Methods " Url="html/Methods_T_Microsoft_Test_VariationGeneration_Constraint_1.htm">
+          <HelpTOCNode Title="Conditional Method " Url="html/M_Microsoft_Test_VariationGeneration_Constraint_1_Conditional.htm" />
+          <HelpTOCNode Title="If Method " Url="html/M_Microsoft_Test_VariationGeneration_Constraint_1_If.htm" />
+        </HelpTOCNode>
+      </HelpTOCNode>
+      <HelpTOCNode Id="cca2a278-967c-4d44-8708-fde5eb75bf64" Title="ConstraintExtensions Class" Url="html/T_Microsoft_Test_VariationGeneration_ConstraintExtensions.htm">
+        <HelpTOCNode Title="ConstraintExtensions Members" Url="html/AllMembers_T_Microsoft_Test_VariationGeneration_ConstraintExtensions.htm" />
+        <HelpTOCNode Id="1b916fc6-ecfc-4418-9592-67ab737df272" Title="ConstraintExtensions Methods " Url="html/Methods_T_Microsoft_Test_VariationGeneration_ConstraintExtensions.htm">
+          <HelpTOCNode Title="Else(T) Method " Url="html/M_Microsoft_Test_VariationGeneration_ConstraintExtensions_Else__1.htm" />
+          <HelpTOCNode Title="Then(T) Method " Url="html/M_Microsoft_Test_VariationGeneration_ConstraintExtensions_Then__1.htm" />
+        </HelpTOCNode>
+      </HelpTOCNode>
+      <HelpTOCNode Id="5381c708-c1b3-4cea-b7f2-27652362a036" Title="Model Class" Url="html/T_Microsoft_Test_VariationGeneration_Model.htm">
+        <HelpTOCNode Title="Model Members" Url="html/AllMembers_T_Microsoft_Test_VariationGeneration_Model.htm" />
+        <HelpTOCNode Id="bddda9c3-5417-4ce7-807d-a4cea81d1923" Title="Model Constructor " Url="html/Overload_Microsoft_Test_VariationGeneration_Model__ctor.htm">
+          <HelpTOCNode Title="Model Constructor (IEnumerable(ParameterBase))" Url="html/M_Microsoft_Test_VariationGeneration_Model__ctor.htm" />
+          <HelpTOCNode Title="Model Constructor (IEnumerable(ParameterBase), IEnumerable(Constraint(Variation)))" Url="html/M_Microsoft_Test_VariationGeneration_Model__ctor_1.htm" />
+        </HelpTOCNode>
+        <HelpTOCNode Id="bce750fd-65f3-4db2-8785-5c877f63111f" Title="Model Methods " Url="html/Methods_T_Microsoft_Test_VariationGeneration_Model.htm">
+          <HelpTOCNode Title="GenerateVariations Method " Url="html/Overload_Microsoft_Test_VariationGeneration_Model_GenerateVariations.htm" />
+        </HelpTOCNode>
+        <HelpTOCNode Title="Model Properties " Url="html/Properties_T_Microsoft_Test_VariationGeneration_Model.htm" />
+      </HelpTOCNode>
+      <HelpTOCNode Id="1220603f-d783-4e16-9305-2a03fdb67540" Title="Model(T) Class" Url="html/T_Microsoft_Test_VariationGeneration_Model_1.htm">
+        <HelpTOCNode Title="Model(T) Members" Url="html/AllMembers_T_Microsoft_Test_VariationGeneration_Model_1.htm" />
+        <HelpTOCNode Id="e05a8496-189f-45aa-8906-972be3d5dbf8" Title="Model(T) Constructor " Url="html/Overload_Microsoft_Test_VariationGeneration_Model_1__ctor.htm">
+          <HelpTOCNode Title="Model(T) Constructor " Url="html/M_Microsoft_Test_VariationGeneration_Model_1__ctor.htm" />
+          <HelpTOCNode Title="Model(T) Constructor (IEnumerable(ParameterBase))" Url="html/M_Microsoft_Test_VariationGeneration_Model_1__ctor_1.htm" />
+          <HelpTOCNode Title="Model(T) Constructor (IEnumerable(ParameterBase), IEnumerable(Constraint(T)))" Url="html/M_Microsoft_Test_VariationGeneration_Model_1__ctor_2.htm" />
+        </HelpTOCNode>
+        <HelpTOCNode Id="f30e86ea-986e-431b-9825-f45cb8c68ad3" Title="Model(T) Methods " Url="html/Methods_T_Microsoft_Test_VariationGeneration_Model_1.htm">
+          <HelpTOCNode Id="6b5a72d4-0d6f-42fb-8924-5a0dcba2fc07" Title="GenerateVariations Method " Url="html/Overload_Microsoft_Test_VariationGeneration_Model_1_GenerateVariations.htm">
+            <HelpTOCNode Title="GenerateVariations Method (Int32)" Url="html/M_Microsoft_Test_VariationGeneration_Model_1_GenerateVariations.htm" />
+            <HelpTOCNode Title="GenerateVariations Method (Int32, Int32)" Url="html/M_Microsoft_Test_VariationGeneration_Model_1_GenerateVariations_1.htm" />
+          </HelpTOCNode>
+        </HelpTOCNode>
+        <HelpTOCNode Id="df14edf5-5ffe-418d-92a9-5dc6f62b9fe7" Title="Model(T) Properties " Url="html/Properties_T_Microsoft_Test_VariationGeneration_Model_1.htm">
+          <HelpTOCNode Title="Constraints Property " Url="html/P_Microsoft_Test_VariationGeneration_Model_1_Constraints.htm" />
+          <HelpTOCNode Title="DefaultVariationTag Property " Url="html/P_Microsoft_Test_VariationGeneration_Model_1_DefaultVariationTag.htm" />
+          <HelpTOCNode Title="Parameters Property " Url="html/P_Microsoft_Test_VariationGeneration_Model_1_Parameters.htm" />
+        </HelpTOCNode>
+      </HelpTOCNode>
+      <HelpTOCNode Id="a5d6d913-abea-4f0c-adf6-0ec500173346" Title="Parameter(T) Class" Url="html/T_Microsoft_Test_VariationGeneration_Parameter_1.htm">
+        <HelpTOCNode Title="Parameter(T) Members" Url="html/AllMembers_T_Microsoft_Test_VariationGeneration_Parameter_1.htm" />
+        <HelpTOCNode Title="Parameter(T) Constructor " Url="html/M_Microsoft_Test_VariationGeneration_Parameter_1__ctor.htm" />
+        <HelpTOCNode Id="f7f9a0be-34bd-4f0d-9f23-e6d4b27141c2" Title="Parameter(T) Methods " Url="html/Methods_T_Microsoft_Test_VariationGeneration_Parameter_1.htm">
+          <HelpTOCNode Id="528e6da7-6436-409e-815d-fe55d9ea1b88" Title="Add Method " Url="html/Overload_Microsoft_Test_VariationGeneration_Parameter_1_Add.htm">
+            <HelpTOCNode Title="Add Method (ParameterValue(T))" Url="html/M_Microsoft_Test_VariationGeneration_Parameter_1_Add.htm" />
+            <HelpTOCNode Title="Add Method (T)" Url="html/M_Microsoft_Test_VariationGeneration_Parameter_1_Add_1.htm" />
+          </HelpTOCNode>
+          <HelpTOCNode Title="Clear Method " Url="html/M_Microsoft_Test_VariationGeneration_Parameter_1_Clear.htm" />
+          <HelpTOCNode Title="Contains Method " Url="html/M_Microsoft_Test_VariationGeneration_Parameter_1_Contains.htm" />
+          <HelpTOCNode Title="CopyTo Method " Url="html/M_Microsoft_Test_VariationGeneration_Parameter_1_CopyTo.htm" />
+          <HelpTOCNode Title="GetAt Method " Url="html/M_Microsoft_Test_VariationGeneration_Parameter_1_GetAt.htm" />
+          <HelpTOCNode Title="GetEnumerator Method " Url="html/M_Microsoft_Test_VariationGeneration_Parameter_1_GetEnumerator.htm" />
+          <HelpTOCNode Title="GetValue Method " Url="html/M_Microsoft_Test_VariationGeneration_Parameter_1_GetValue.htm" />
+          <HelpTOCNode Title="IndexOf Method " Url="html/M_Microsoft_Test_VariationGeneration_Parameter_1_IndexOf.htm" />
+          <HelpTOCNode Title="Insert Method " Url="html/M_Microsoft_Test_VariationGeneration_Parameter_1_Insert.htm" />
+          <HelpTOCNode Title="Remove Method " Url="html/M_Microsoft_Test_VariationGeneration_Parameter_1_Remove.htm" />
+          <HelpTOCNode Title="RemoveAt Method " Url="html/M_Microsoft_Test_VariationGeneration_Parameter_1_RemoveAt.htm" />
+        </HelpTOCNode>
+        <HelpTOCNode Id="5bca618f-593f-4691-b4d2-53aacd4f0753" Title="Parameter(T) Properties " Url="html/Properties_T_Microsoft_Test_VariationGeneration_Parameter_1.htm">
+          <HelpTOCNode Title="Count Property " Url="html/P_Microsoft_Test_VariationGeneration_Parameter_1_Count.htm" />
+          <HelpTOCNode Title="IsReadOnly Property " Url="html/P_Microsoft_Test_VariationGeneration_Parameter_1_IsReadOnly.htm" />
+          <HelpTOCNode Title="Item Property " Url="html/P_Microsoft_Test_VariationGeneration_Parameter_1_Item.htm" />
+        </HelpTOCNode>
+      </HelpTOCNode>
+      <HelpTOCNode Id="e1e129bd-e2cd-4c59-95eb-3ed817416405" Title="ParameterAttribute Class" Url="html/T_Microsoft_Test_VariationGeneration_ParameterAttribute.htm">
+        <HelpTOCNode Title="ParameterAttribute Members" Url="html/AllMembers_T_Microsoft_Test_VariationGeneration_ParameterAttribute.htm" />
+        <HelpTOCNode Title="ParameterAttribute Constructor " Url="html/M_Microsoft_Test_VariationGeneration_ParameterAttribute__ctor.htm" />
+        <HelpTOCNode Id="e9801c86-76e5-4b5e-9bc3-aeb01eb890e9" Title="ParameterAttribute Properties " Url="html/Properties_T_Microsoft_Test_VariationGeneration_ParameterAttribute.htm">
+          <HelpTOCNode Title="Tag Property " Url="html/P_Microsoft_Test_VariationGeneration_ParameterAttribute_Tag.htm" />
+          <HelpTOCNode Title="Values Property " Url="html/P_Microsoft_Test_VariationGeneration_ParameterAttribute_Values.htm" />
+          <HelpTOCNode Title="Weight Property " Url="html/P_Microsoft_Test_VariationGeneration_ParameterAttribute_Weight.htm" />
+        </HelpTOCNode>
+      </HelpTOCNode>
+      <HelpTOCNode Id="37e88c22-5309-43b8-bc6c-3107a000d02e" Title="ParameterBase Class" Url="html/T_Microsoft_Test_VariationGeneration_ParameterBase.htm">
+        <HelpTOCNode Title="ParameterBase Members" Url="html/AllMembers_T_Microsoft_Test_VariationGeneration_ParameterBase.htm" />
+        <HelpTOCNode Title="ParameterBase Constructor " Url="html/M_Microsoft_Test_VariationGeneration_ParameterBase__ctor.htm" />
+        <HelpTOCNode Id="69f5e299-d748-4487-8590-86f3f882ed5d" Title="ParameterBase Methods " Url="html/Methods_T_Microsoft_Test_VariationGeneration_ParameterBase.htm">
+          <HelpTOCNode Title="GetAt Method " Url="html/M_Microsoft_Test_VariationGeneration_ParameterBase_GetAt.htm" />
+        </HelpTOCNode>
+        <HelpTOCNode Id="2a58ec76-08e5-4b63-8eca-29ff8d691584" Title="ParameterBase Properties " Url="html/Properties_T_Microsoft_Test_VariationGeneration_ParameterBase.htm">
+          <HelpTOCNode Title="Count Property " Url="html/P_Microsoft_Test_VariationGeneration_ParameterBase_Count.htm" />
+          <HelpTOCNode Title="Name Property " Url="html/P_Microsoft_Test_VariationGeneration_ParameterBase_Name.htm" />
+        </HelpTOCNode>
+      </HelpTOCNode>
+      <HelpTOCNode Id="aee5897a-498c-47e6-b9f2-b91af0e2e307" Title="ParameterValue(T) Class" Url="html/T_Microsoft_Test_VariationGeneration_ParameterValue_1.htm">
+        <HelpTOCNode Title="ParameterValue(T) Members" Url="html/AllMembers_T_Microsoft_Test_VariationGeneration_ParameterValue_1.htm" />
+        <HelpTOCNode Id="4348e4d8-780e-48b7-8e8c-93d7327384a8" Title="ParameterValue(T) Constructor " Url="html/Overload_Microsoft_Test_VariationGeneration_ParameterValue_1__ctor.htm">
+          <HelpTOCNode Title="ParameterValue(T) Constructor (T)" Url="html/M_Microsoft_Test_VariationGeneration_ParameterValue_1__ctor.htm" />
+          <HelpTOCNode Title="ParameterValue(T) Constructor (T, Double)" Url="html/M_Microsoft_Test_VariationGeneration_ParameterValue_1__ctor_1.htm" />
+          <HelpTOCNode Title="ParameterValue(T) Constructor (T, Object)" Url="html/M_Microsoft_Test_VariationGeneration_ParameterValue_1__ctor_2.htm" />
+          <HelpTOCNode Title="ParameterValue(T) Constructor (T, Object, Double)" Url="html/M_Microsoft_Test_VariationGeneration_ParameterValue_1__ctor_3.htm" />
+        </HelpTOCNode>
+        <HelpTOCNode Id="be874503-a17d-4372-a4a7-c9f708736090" Title="ParameterValue(T) Methods " Url="html/Methods_T_Microsoft_Test_VariationGeneration_ParameterValue_1.htm">
+          <HelpTOCNode Title="GetValue Method " Url="html/M_Microsoft_Test_VariationGeneration_ParameterValue_1_GetValue.htm" />
+        </HelpTOCNode>
+        <HelpTOCNode Id="5db17372-01d4-4d3e-ad6e-4e2f23e6883e" Title="ParameterValue(T) Properties " Url="html/Properties_T_Microsoft_Test_VariationGeneration_ParameterValue_1.htm">
+          <HelpTOCNode Title="Value Property " Url="html/P_Microsoft_Test_VariationGeneration_ParameterValue_1_Value.htm" />
+        </HelpTOCNode>
+      </HelpTOCNode>
+      <HelpTOCNode Id="9182c22f-6d08-4e8d-97f0-e7eac295a561" Title="ParameterValueBase Class" Url="html/T_Microsoft_Test_VariationGeneration_ParameterValueBase.htm">
+        <HelpTOCNode Title="ParameterValueBase Members" Url="html/AllMembers_T_Microsoft_Test_VariationGeneration_ParameterValueBase.htm" />
+        <HelpTOCNode Title="ParameterValueBase Constructor " Url="html/M_Microsoft_Test_VariationGeneration_ParameterValueBase__ctor.htm" />
+        <HelpTOCNode Id="5de06ee4-fccc-4b10-8eb1-bf31c731c51d" Title="ParameterValueBase Methods " Url="html/Methods_T_Microsoft_Test_VariationGeneration_ParameterValueBase.htm">
+          <HelpTOCNode Title="GetValue Method " Url="html/M_Microsoft_Test_VariationGeneration_ParameterValueBase_GetValue.htm" />
+        </HelpTOCNode>
+        <HelpTOCNode Id="d696a994-d5c3-4ada-a9f1-fdd0cb703012" Title="ParameterValueBase Properties " Url="html/Properties_T_Microsoft_Test_VariationGeneration_ParameterValueBase.htm">
+          <HelpTOCNode Title="Tag Property " Url="html/P_Microsoft_Test_VariationGeneration_ParameterValueBase_Tag.htm" />
+          <HelpTOCNode Title="Weight Property " Url="html/P_Microsoft_Test_VariationGeneration_ParameterValueBase_Weight.htm" />
+        </HelpTOCNode>
+      </HelpTOCNode>
+      <HelpTOCNode Id="57200c7f-186a-4075-b5d1-909c8a7e7c33" Title="Variation Class" Url="html/T_Microsoft_Test_VariationGeneration_Variation.htm">
+        <HelpTOCNode Title="Variation Members" Url="html/AllMembers_T_Microsoft_Test_VariationGeneration_Variation.htm" />
+        <HelpTOCNode Id="ac8d7829-6092-47b8-82e4-5b616d6faf56" Title="Variation Constructor " Url="html/Overload_Microsoft_Test_VariationGeneration_Variation__ctor.htm">
+          <HelpTOCNode Title="Variation Constructor " Url="html/M_Microsoft_Test_VariationGeneration_Variation__ctor.htm" />
+          <HelpTOCNode Title="Variation Constructor (Object)" Url="html/M_Microsoft_Test_VariationGeneration_Variation__ctor_1.htm" />
+        </HelpTOCNode>
+        <HelpTOCNode Title="Variation Methods " Url="html/Methods_T_Microsoft_Test_VariationGeneration_Variation.htm" />
+        <HelpTOCNode Id="a781ac72-376a-490b-bf4f-6e98320bd3cf" Title="Variation Properties " Url="html/Properties_T_Microsoft_Test_VariationGeneration_Variation.htm">
+          <HelpTOCNode Title="Tag Property " Url="html/P_Microsoft_Test_VariationGeneration_Variation_Tag.htm" />
+        </HelpTOCNode>
+      </HelpTOCNode>
+    </HelpTOCNode>
+    <HelpTOCNode Id="53ba584c-7cc4-4d92-a673-ca9e12022af4" Title="Microsoft.Test.VariationGeneration.Constraints Namespace" Url="html/N_Microsoft_Test_VariationGeneration_Constraints.htm">
+      <HelpTOCNode Id="2e304ce1-85f1-4ff5-a9ec-ef7e97281fc5" Title="ConditionalConstraint(T) Class" Url="html/T_Microsoft_Test_VariationGeneration_Constraints_ConditionalConstraint_1.htm">
+        <HelpTOCNode Title="ConditionalConstraint(T) Members" Url="html/AllMembers_T_Microsoft_Test_VariationGeneration_Constraints_ConditionalConstraint_1.htm" />
+        <HelpTOCNode Id="c95748f0-8382-4cfe-a8c7-7f771840845a" Title="ConditionalConstraint(T) Constructor " Url="html/Overload_Microsoft_Test_VariationGeneration_Constraints_ConditionalConstraint_1__ctor.htm">
+          <HelpTOCNode Title="ConditionalConstraint(T) Constructor " Url="html/M_Microsoft_Test_VariationGeneration_Constraints_ConditionalConstraint_1__ctor.htm" />
+          <HelpTOCNode Title="ConditionalConstraint(T) Constructor (Expression(Func(T, Boolean)))" Url="html/M_Microsoft_Test_VariationGeneration_Constraints_ConditionalConstraint_1__ctor_1.htm" />
+        </HelpTOCNode>
+        <HelpTOCNode Id="a3f09206-1487-4f02-b1b5-b74870d8953f" Title="ConditionalConstraint(T) Properties " Url="html/Properties_T_Microsoft_Test_VariationGeneration_Constraints_ConditionalConstraint_1.htm">
+          <HelpTOCNode Title="Condition Property " Url="html/P_Microsoft_Test_VariationGeneration_Constraints_ConditionalConstraint_1_Condition.htm" />
+        </HelpTOCNode>
+      </HelpTOCNode>
+      <HelpTOCNode Title="IfPredicate(T) Class" Url="html/T_Microsoft_Test_VariationGeneration_Constraints_IfPredicate_1.htm" />
+      <HelpTOCNode Id="5832b67a-1514-4661-a32e-4832bd736a14" Title="IfThenConstraint(T) Class" Url="html/T_Microsoft_Test_VariationGeneration_Constraints_IfThenConstraint_1.htm">
+        <HelpTOCNode Title="IfThenConstraint(T) Members" Url="html/AllMembers_T_Microsoft_Test_VariationGeneration_Constraints_IfThenConstraint_1.htm" />
+        <HelpTOCNode Title="IfThenConstraint(T) Properties " Url="html/Properties_T_Microsoft_Test_VariationGeneration_Constraints_IfThenConstraint_1.htm" />
+      </HelpTOCNode>
+      <HelpTOCNode Id="8334004c-a324-4211-b3a2-43beb5dbcf4d" Title="IfThenElseConstraint(T) Class" Url="html/T_Microsoft_Test_VariationGeneration_Constraints_IfThenElseConstraint_1.htm">
+        <HelpTOCNode Title="IfThenElseConstraint(T) Members" Url="html/AllMembers_T_Microsoft_Test_VariationGeneration_Constraints_IfThenElseConstraint_1.htm" />
+        <HelpTOCNode Title="IfThenElseConstraint(T) Properties " Url="html/Properties_T_Microsoft_Test_VariationGeneration_Constraints_IfThenElseConstraint_1.htm" />
+      </HelpTOCNode>
+    </HelpTOCNode>
+    <HelpTOCNode Id="7555b82a-7327-46a9-825a-d832c4296ca4" Title="Microsoft.Test.VisualVerification Namespace" Url="html/N_Microsoft_Test_VisualVerification.htm">
+      <HelpTOCNode Id="08e143d5-51e5-433d-b09a-16741656a015" Title="ColorDifference Class" Url="html/T_Microsoft_Test_VisualVerification_ColorDifference.htm">
+        <HelpTOCNode Title="ColorDifference Members" Url="html/AllMembers_T_Microsoft_Test_VisualVerification_ColorDifference.htm" />
+        <HelpTOCNode Id="4c975dbb-d5f2-420d-b81e-cb451bf02f33" Title="ColorDifference Constructor " Url="html/Overload_Microsoft_Test_VisualVerification_ColorDifference__ctor.htm">
+          <HelpTOCNode Title="ColorDifference Constructor " Url="html/M_Microsoft_Test_VisualVerification_ColorDifference__ctor.htm" />
+          <HelpTOCNode Title="ColorDifference Constructor (Byte, Byte, Byte, Byte)" Url="html/M_Microsoft_Test_VisualVerification_ColorDifference__ctor_1.htm" />
+        </HelpTOCNode>
+        <HelpTOCNode Id="799aa3d2-ba0f-4663-b47a-cc4d0cbf25f6" Title="ColorDifference Properties " Url="html/Properties_T_Microsoft_Test_VisualVerification_ColorDifference.htm">
+          <HelpTOCNode Title="A Property " Url="html/P_Microsoft_Test_VisualVerification_ColorDifference_A.htm" />
+          <HelpTOCNode Title="B Property " Url="html/P_Microsoft_Test_VisualVerification_ColorDifference_B.htm" />
+          <HelpTOCNode Title="G Property " Url="html/P_Microsoft_Test_VisualVerification_ColorDifference_G.htm" />
+          <HelpTOCNode Title="R Property " Url="html/P_Microsoft_Test_VisualVerification_ColorDifference_R.htm" />
+        </HelpTOCNode>
+      </HelpTOCNode>
+      <HelpTOCNode Id="8523ea0b-6ff1-413d-a947-5a76ed046905" Title="Histogram Class" Url="html/T_Microsoft_Test_VisualVerification_Histogram.htm">
+        <HelpTOCNode Title="Histogram Members" Url="html/AllMembers_T_Microsoft_Test_VisualVerification_Histogram.htm" />
+        <HelpTOCNode Id="a9a7c1fc-e510-4139-b0e8-dcd0145b3e10" Title="Histogram Methods " Url="html/Methods_T_Microsoft_Test_VisualVerification_Histogram.htm">
+          <HelpTOCNode Title="FromFile Method " Url="html/M_Microsoft_Test_VisualVerification_Histogram_FromFile.htm" />
+          <HelpTOCNode Title="FromSnapshot Method " Url="html/M_Microsoft_Test_VisualVerification_Histogram_FromSnapshot.htm" />
+          <HelpTOCNode Title="Merge Method " Url="html/M_Microsoft_Test_VisualVerification_Histogram_Merge.htm" />
+          <HelpTOCNode Title="ToFile Method " Url="html/M_Microsoft_Test_VisualVerification_Histogram_ToFile.htm" />
+          <HelpTOCNode Title="ToGraph Method " Url="html/M_Microsoft_Test_VisualVerification_Histogram_ToGraph.htm" />
+        </HelpTOCNode>
+        <HelpTOCNode Id="309d71cc-492e-4a78-9907-cc43b154c00b" Title="Histogram Properties " Url="html/Properties_T_Microsoft_Test_VisualVerification_Histogram.htm">
+          <HelpTOCNode Title="Item Property " Url="html/P_Microsoft_Test_VisualVerification_Histogram_Item.htm" />
+        </HelpTOCNode>
+      </HelpTOCNode>
+      <HelpTOCNode Id="24e94295-435c-40d6-ad7e-6db57b5a2bdd" Title="Snapshot Class" Url="html/T_Microsoft_Test_VisualVerification_Snapshot.htm">
+        <HelpTOCNode Title="Snapshot Members" Url="html/AllMembers_T_Microsoft_Test_VisualVerification_Snapshot.htm" />
+        <HelpTOCNode Id="d4ef3acc-cdc1-4755-9cf5-05df0e78f1f7" Title="Snapshot Methods " Url="html/Methods_T_Microsoft_Test_VisualVerification_Snapshot.htm">
+          <HelpTOCNode Title="And Method " Url="html/M_Microsoft_Test_VisualVerification_Snapshot_And.htm" />
+          <HelpTOCNode Title="Clone Method " Url="html/M_Microsoft_Test_VisualVerification_Snapshot_Clone.htm" />
+          <HelpTOCNode Id="3ac1e054-97b3-42fd-89b4-82c5dfd8c426" Title="CompareTo Method " Url="html/Overload_Microsoft_Test_VisualVerification_Snapshot_CompareTo.htm">
+            <HelpTOCNode Title="CompareTo Method (Snapshot)" Url="html/M_Microsoft_Test_VisualVerification_Snapshot_CompareTo.htm" />
+            <HelpTOCNode Title="CompareTo Method (Snapshot, Boolean)" Url="html/M_Microsoft_Test_VisualVerification_Snapshot_CompareTo_1.htm" />
+          </HelpTOCNode>
+          <HelpTOCNode Title="Crop Method " Url="html/M_Microsoft_Test_VisualVerification_Snapshot_Crop.htm" />
+          <HelpTOCNode Title="DrawLine Method " Url="html/M_Microsoft_Test_VisualVerification_Snapshot_DrawLine.htm" />
+          <HelpTOCNode Id="eb26167a-e2f5-4fee-bc33-5e981cefe283" Title="Find Method " Url="html/Overload_Microsoft_Test_VisualVerification_Snapshot_Find.htm">
+            <HelpTOCNode Title="Find Method (Snapshot)" Url="html/M_Microsoft_Test_VisualVerification_Snapshot_Find.htm" />
+            <HelpTOCNode Title="Find Method (Snapshot, SnapshotVerifier)" Url="html/M_Microsoft_Test_VisualVerification_Snapshot_Find_1.htm" />
+          </HelpTOCNode>
+          <HelpTOCNode Title="FromBitmap Method " Url="html/M_Microsoft_Test_VisualVerification_Snapshot_FromBitmap.htm" />
+          <HelpTOCNode Title="FromFile Method " Url="html/M_Microsoft_Test_VisualVerification_Snapshot_FromFile.htm" />
+          <HelpTOCNode Title="FromRectangle Method " Url="html/M_Microsoft_Test_VisualVerification_Snapshot_FromRectangle.htm" />
+          <HelpTOCNode Title="FromWindow Method " Url="html/M_Microsoft_Test_VisualVerification_Snapshot_FromWindow.htm" />
+          <HelpTOCNode Title="Or Method " Url="html/M_Microsoft_Test_VisualVerification_Snapshot_Or.htm" />
+          <HelpTOCNode Title="Resize Method " Url="html/M_Microsoft_Test_VisualVerification_Snapshot_Resize.htm" />
+          <HelpTOCNode Title="ToFile Method " Url="html/M_Microsoft_Test_VisualVerification_Snapshot_ToFile.htm" />
+        </HelpTOCNode>
+        <HelpTOCNode Id="2026f467-7d5d-472b-9c75-e64967457fc8" Title="Snapshot Properties " Url="html/Properties_T_Microsoft_Test_VisualVerification_Snapshot.htm">
+          <HelpTOCNode Title="Height Property " Url="html/P_Microsoft_Test_VisualVerification_Snapshot_Height.htm" />
+          <HelpTOCNode Title="Item Property " Url="html/P_Microsoft_Test_VisualVerification_Snapshot_Item.htm" />
+          <HelpTOCNode Title="Width Property " Url="html/P_Microsoft_Test_VisualVerification_Snapshot_Width.htm" />
+        </HelpTOCNode>
+      </HelpTOCNode>
+      <HelpTOCNode Id="83cbbbda-819e-461d-9254-8a171f519951" Title="SnapshotColorVerifier Class" Url="html/T_Microsoft_Test_VisualVerification_SnapshotColorVerifier.htm">
+        <HelpTOCNode Title="SnapshotColorVerifier Members" Url="html/AllMembers_T_Microsoft_Test_VisualVerification_SnapshotColorVerifier.htm" />
+        <HelpTOCNode Id="5bf1a135-0d0e-44ca-a3d0-2119dcee1531" Title="SnapshotColorVerifier Constructor " Url="html/Overload_Microsoft_Test_VisualVerification_SnapshotColorVerifier__ctor.htm">
+          <HelpTOCNode Title="SnapshotColorVerifier Constructor " Url="html/M_Microsoft_Test_VisualVerification_SnapshotColorVerifier__ctor.htm" />
+          <HelpTOCNode Title="SnapshotColorVerifier Constructor (Color, ColorDifference)" Url="html/M_Microsoft_Test_VisualVerification_SnapshotColorVerifier__ctor_1.htm" />
+        </HelpTOCNode>
+        <HelpTOCNode Id="324e0a91-793f-4283-8ff2-6e6579e50eb6" Title="SnapshotColorVerifier Methods " Url="html/Methods_T_Microsoft_Test_VisualVerification_SnapshotColorVerifier.htm">
+          <HelpTOCNode Title="Verify Method " Url="html/M_Microsoft_Test_VisualVerification_SnapshotColorVerifier_Verify.htm" />
+        </HelpTOCNode>
+        <HelpTOCNode Id="2a2b32ae-d8ca-4af1-b9ec-5e462cd2369e" Title="SnapshotColorVerifier Properties " Url="html/Properties_T_Microsoft_Test_VisualVerification_SnapshotColorVerifier.htm">
+          <HelpTOCNode Title="ExpectedColor Property " Url="html/P_Microsoft_Test_VisualVerification_SnapshotColorVerifier_ExpectedColor.htm" />
+          <HelpTOCNode Title="Tolerance Property " Url="html/P_Microsoft_Test_VisualVerification_SnapshotColorVerifier_Tolerance.htm" />
+        </HelpTOCNode>
+      </HelpTOCNode>
+      <HelpTOCNode Id="e02f3d87-518a-4be9-8d2a-312553f94e82" Title="SnapshotHelper Class" Url="html/T_Microsoft_Test_VisualVerification_SnapshotHelper.htm">
+        <HelpTOCNode Title="SnapshotHelper Members" Url="html/AllMembers_T_Microsoft_Test_VisualVerification_SnapshotHelper.htm" />
+        <HelpTOCNode Id="56606e63-e94d-400f-a49d-03db14516c81" Title="SnapshotHelper Methods " Url="html/Methods_T_Microsoft_Test_VisualVerification_SnapshotHelper.htm">
+          <HelpTOCNode Title="SnapshotFromWindow Method " Url="html/M_Microsoft_Test_VisualVerification_SnapshotHelper_SnapshotFromWindow.htm" />
+        </HelpTOCNode>
+      </HelpTOCNode>
+      <HelpTOCNode Id="7b1b19c9-ff4a-4f26-b548-542f9a59905b" Title="SnapshotHistogramVerifier Class" Url="html/T_Microsoft_Test_VisualVerification_SnapshotHistogramVerifier.htm">
+        <HelpTOCNode Title="SnapshotHistogramVerifier Members" Url="html/AllMembers_T_Microsoft_Test_VisualVerification_SnapshotHistogramVerifier.htm" />
+        <HelpTOCNode Id="ecf10484-5781-4a51-b389-2b63695ec9cb" Title="SnapshotHistogramVerifier Constructor " Url="html/Overload_Microsoft_Test_VisualVerification_SnapshotHistogramVerifier__ctor.htm">
+          <HelpTOCNode Title="SnapshotHistogramVerifier Constructor " Url="html/M_Microsoft_Test_VisualVerification_SnapshotHistogramVerifier__ctor.htm" />
+          <HelpTOCNode Title="SnapshotHistogramVerifier Constructor (Histogram)" Url="html/M_Microsoft_Test_VisualVerification_SnapshotHistogramVerifier__ctor_1.htm" />
+        </HelpTOCNode>
+        <HelpTOCNode Id="ce837d1f-6342-4ee9-93ff-9eea8906e1c0" Title="SnapshotHistogramVerifier Methods " Url="html/Methods_T_Microsoft_Test_VisualVerification_SnapshotHistogramVerifier.htm">
+          <HelpTOCNode Title="Verify Method " Url="html/M_Microsoft_Test_VisualVerification_SnapshotHistogramVerifier_Verify.htm" />
+        </HelpTOCNode>
+        <HelpTOCNode Id="d232d8ef-55c6-4bb2-84fd-49d56063940f" Title="SnapshotHistogramVerifier Properties " Url="html/Properties_T_Microsoft_Test_VisualVerification_SnapshotHistogramVerifier.htm">
+          <HelpTOCNode Title="Tolerance Property " Url="html/P_Microsoft_Test_VisualVerification_SnapshotHistogramVerifier_Tolerance.htm" />
+        </HelpTOCNode>
+      </HelpTOCNode>
+      <HelpTOCNode Id="0c01d567-ad33-438d-85fb-702c42792a6c" Title="SnapshotToleranceMapVerifier Class" Url="html/T_Microsoft_Test_VisualVerification_SnapshotToleranceMapVerifier.htm">
+        <HelpTOCNode Title="SnapshotToleranceMapVerifier Members" Url="html/AllMembers_T_Microsoft_Test_VisualVerification_SnapshotToleranceMapVerifier.htm" />
+        <HelpTOCNode Title="SnapshotToleranceMapVerifier Constructor " Url="html/M_Microsoft_Test_VisualVerification_SnapshotToleranceMapVerifier__ctor.htm" />
+        <HelpTOCNode Id="f2c3075b-299c-4a3a-9e48-2b280699e3ac" Title="SnapshotToleranceMapVerifier Methods " Url="html/Methods_T_Microsoft_Test_VisualVerification_SnapshotToleranceMapVerifier.htm">
+          <HelpTOCNode Title="Verify Method " Url="html/M_Microsoft_Test_VisualVerification_SnapshotToleranceMapVerifier_Verify.htm" />
+        </HelpTOCNode>
+        <HelpTOCNode Id="6b22d596-89db-4e58-b718-155227fb010f" Title="SnapshotToleranceMapVerifier Properties " Url="html/Properties_T_Microsoft_Test_VisualVerification_SnapshotToleranceMapVerifier.htm">
+          <HelpTOCNode Title="ToleranceMap Property " Url="html/P_Microsoft_Test_VisualVerification_SnapshotToleranceMapVerifier_ToleranceMap.htm" />
+        </HelpTOCNode>
+      </HelpTOCNode>
+      <HelpTOCNode Id="fe5e4b43-f4c9-4d79-a65d-8861f7f16e8c" Title="SnapshotVerifier Class" Url="html/T_Microsoft_Test_VisualVerification_SnapshotVerifier.htm">
+        <HelpTOCNode Title="SnapshotVerifier Members" Url="html/AllMembers_T_Microsoft_Test_VisualVerification_SnapshotVerifier.htm" />
+        <HelpTOCNode Title="SnapshotVerifier Constructor " Url="html/M_Microsoft_Test_VisualVerification_SnapshotVerifier__ctor.htm" />
+        <HelpTOCNode Id="eb575320-b53e-4875-b564-3edc7a9d7e31" Title="SnapshotVerifier Methods " Url="html/Methods_T_Microsoft_Test_VisualVerification_SnapshotVerifier.htm">
+          <HelpTOCNode Title="Verify Method " Url="html/M_Microsoft_Test_VisualVerification_SnapshotVerifier_Verify.htm" />
+        </HelpTOCNode>
+      </HelpTOCNode>
+      <HelpTOCNode Title="VerificationResult Enumeration" Url="html/T_Microsoft_Test_VisualVerification_VerificationResult.htm" />
+      <HelpTOCNode Title="WindowSnapshotMode Enumeration" Url="html/T_Microsoft_Test_VisualVerification_WindowSnapshotMode.htm" />
+    </HelpTOCNode>
+  </HelpTOCNode>
+</HelpTOC>

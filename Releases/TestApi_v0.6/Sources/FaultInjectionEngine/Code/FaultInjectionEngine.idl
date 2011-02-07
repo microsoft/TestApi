@@ -1,0 +1,42 @@
+// (c) Copyright Microsoft Corporation.
+// This source is subject to the Microsoft Public License (Ms-PL).
+// Please see http://go.microsoft.com/fwlink/?LinkID=131993 for details.
+// All other rights reserved.
+
+// FaultInjectionEngine.idl : IDL source for FaultInjectionEngine
+//
+
+// This file will be processed by the MIDL tool to
+// produce the type library (FaultInjectionEngine.tlb) and marshalling code.
+
+import "oaidl.idl";
+import "ocidl.idl";
+import "corprof.idl";
+
+[
+    object,
+    uuid(68BB3A4D-0387-4F15-A8F6-4F9D347A1299),
+    dual,
+    nonextensible,
+    helpstring("IEngine Interface"),
+    pointer_default(unique)
+]
+interface IEngine : ICorProfilerCallback2{
+};
+[
+    uuid(E0283982-4C3C-40C7-B3E0-1137821F5208),
+    version(1.0),
+    helpstring("FaultInjectionEngine 1.0 Type Library")
+]
+library FaultInjectionEngineLib
+{
+    importlib("stdole2.tlb");
+    [
+        uuid(2EB6DCDB-3250-4D7F-AA42-41B1B84113ED),
+        helpstring("Engine Class")
+    ]
+    coclass Engine
+    {
+        [default] interface IEngine;
+    };
+};
