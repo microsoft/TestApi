@@ -1,0 +1,2498 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+
+<head>
+<title>Table of Contents</title>
+<link rel="stylesheet" href="TOC.css">
+<script type="text/javascript" src="TOC.js"></script>
+</head>
+
+<body onload="javascript: Initialize();" onresize="javascript: ResizeTree();">
+<form id="IndexForm" runat="server">
+
+<div id="TOCDiv" class="TOCDiv">
+
+<div id="divSearchOpts" class="SearchOpts" style="height: 100px; display: none;">
+<img class="TOCLink" onclick="javascript: ShowHideSearch(false);"
+    src="CloseSearch.png" height="16" width="16" alt="Hide search" style="float: right;"/>
+Keyword(s) for which to search:
+<input id="txtSearchText" type="text" style="width: 100%;"
+  onkeypress="javascript: return OnSearchTextKeyPress(event);" /><br />
+<input id="chkSortByTitle" type="checkbox" /><label for="chkSortByTitle">&nbsp;Sort results by title</label><br />
+<input type="button" value="Search" onclick="javascript: return PerformSearch();" />
+</div>
+
+<div id="divIndexOpts" class="IndexOpts" style="height: 25px; display: none;">
+<img class="TOCLink" onclick="javascript: ShowHideIndex(false);"
+    src="CloseSearch.png" height="17" width="17" alt="Hide index" style="float: right;"/>
+Keyword Index
+</div>
+
+<div id="divNavOpts" class="NavOpts" style="height: 20px;">
+    <img class="TOCLink" onclick="javascript: SyncTOC();" src="SyncTOC.gif"
+        height="16" width="16" alt="Sync to TOC"/>
+    <img class="TOCLink" onclick="javascript: ExpandOrCollapseAll(true);"
+        src="ExpandAll.bmp" height="16" width="16" alt="Expand all "/>
+    <img class="TOCLink" onclick="javascript: ExpandOrCollapseAll(false);"
+        src="CollapseAll.bmp" height="16" width="16" alt="Collapse all" />
+</div>
+
+<div class="Tree" id="divSearchResults" style="display: none;"
+    onselectstart="javascript: return false;">
+</div>
+
+<div class="Tree" id="divIndexResults" style="display: none;"
+    onselectstart="javascript: return false;">
+</div>
+
+<div class="Tree" id="divTree" onselectstart="javascript: return false;">
+<div class="TreeNode">
+<img class="TreeNodeImg" onclick="javascript: Toggle(this);" src="Collapsed.gif"/><a class="UnselectedNode" onclick="javascript: return Expand(this);" href="html/R_Project.htm" target="TopicContent">TestApi 0.6</a>
+<div class="Hidden">
+<div class="TreeNode">
+<img class="TreeNodeImg" onclick="javascript: Toggle(this);" src="Collapsed.gif"/><a class="UnselectedNode" onclick="javascript: return Expand(this);" href="html/N_Microsoft_Test.htm" target="TopicContent">Microsoft.Test Namespace</a>
+<div class="Hidden">
+<div class="TreeNode">
+<img class="TreeNodeImg" onclick="javascript: Toggle(this);" src="Collapsed.gif"/><a class="UnselectedNode" onclick="javascript: return Expand(this);" href="html/T_Microsoft_Test_AutomationUtilities.htm" target="TopicContent">AutomationUtilities Class</a>
+<div class="Hidden">
+<div class="TreeItem">
+<img src="Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="html/AllMembers_T_Microsoft_Test_AutomationUtilities.htm" target="TopicContent">AutomationUtilities Members</a>
+</div>
+<div class="TreeNode">
+<img class="TreeNodeImg" onclick="javascript: Toggle(this);" src="Collapsed.gif"/><a class="UnselectedNode" onclick="javascript: return Expand(this);" href="html/Methods_T_Microsoft_Test_AutomationUtilities.htm" target="TopicContent">AutomationUtilities Methods </a>
+<div class="Hidden">
+<div class="TreeItem">
+<img src="Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="html/M_Microsoft_Test_AutomationUtilities_FindElementByIndex.htm" target="TopicContent">FindElementByIndex Method </a>
+</div>
+<div class="TreeItem">
+<img src="Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="html/M_Microsoft_Test_AutomationUtilities_FindElements.htm" target="TopicContent">FindElements Method </a>
+</div>
+<div class="TreeItem">
+<img src="Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="html/M_Microsoft_Test_AutomationUtilities_FindElementsByClassName.htm" target="TopicContent">FindElementsByClassName Method </a>
+</div>
+<div class="TreeItem">
+<img src="Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="html/M_Microsoft_Test_AutomationUtilities_FindElementsByControlType.htm" target="TopicContent">FindElementsByControlType Method </a>
+</div>
+<div class="TreeItem">
+<img src="Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="html/M_Microsoft_Test_AutomationUtilities_FindElementsById.htm" target="TopicContent">FindElementsById Method </a>
+</div>
+<div class="TreeItem">
+<img src="Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="html/M_Microsoft_Test_AutomationUtilities_FindElementsByName.htm" target="TopicContent">FindElementsByName Method </a>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="TreeNode">
+<img class="TreeNodeImg" onclick="javascript: Toggle(this);" src="Collapsed.gif"/><a class="UnselectedNode" onclick="javascript: return Expand(this);" href="html/T_Microsoft_Test_DispatcherOperations.htm" target="TopicContent">DispatcherOperations Class</a>
+<div class="Hidden">
+<div class="TreeItem">
+<img src="Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="html/AllMembers_T_Microsoft_Test_DispatcherOperations.htm" target="TopicContent">DispatcherOperations Members</a>
+</div>
+<div class="TreeNode">
+<img class="TreeNodeImg" onclick="javascript: Toggle(this);" src="Collapsed.gif"/><a class="UnselectedNode" onclick="javascript: return Expand(this);" href="html/Methods_T_Microsoft_Test_DispatcherOperations.htm" target="TopicContent">DispatcherOperations Methods </a>
+<div class="Hidden">
+<div class="TreeNode">
+<img class="TreeNodeImg" onclick="javascript: Toggle(this);" src="Collapsed.gif"/><a class="UnselectedNode" onclick="javascript: return Expand(this);" href="html/Overload_Microsoft_Test_DispatcherOperations_WaitFor.htm" target="TopicContent">WaitFor Method </a>
+<div class="Hidden">
+<div class="TreeItem">
+<img src="Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="html/M_Microsoft_Test_DispatcherOperations_WaitFor.htm" target="TopicContent">WaitFor Method (TimeSpan)</a>
+</div>
+<div class="TreeItem">
+<img src="Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="html/M_Microsoft_Test_DispatcherOperations_WaitFor_1.htm" target="TopicContent">WaitFor Method (DispatcherPriority)</a>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="TreeNode">
+<img class="TreeNodeImg" onclick="javascript: Toggle(this);" src="Collapsed.gif"/><a class="UnselectedNode" onclick="javascript: return Expand(this);" href="html/N_Microsoft_Test_ApplicationControl.htm" target="TopicContent">Microsoft.Test.ApplicationControl Namespace</a>
+<div class="Hidden">
+<div class="TreeNode">
+<img class="TreeNodeImg" onclick="javascript: Toggle(this);" src="Collapsed.gif"/><a class="UnselectedNode" onclick="javascript: return Expand(this);" href="html/T_Microsoft_Test_ApplicationControl_ApplicationSettings.htm" target="TopicContent">ApplicationSettings Class</a>
+<div class="Hidden">
+<div class="TreeItem">
+<img src="Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="html/AllMembers_T_Microsoft_Test_ApplicationControl_ApplicationSettings.htm" target="TopicContent">ApplicationSettings Members</a>
+</div>
+<div class="TreeItem">
+<img src="Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="html/M_Microsoft_Test_ApplicationControl_ApplicationSettings__ctor.htm" target="TopicContent">ApplicationSettings Constructor </a>
+</div>
+<div class="TreeNode">
+<img class="TreeNodeImg" onclick="javascript: Toggle(this);" src="Collapsed.gif"/><a class="UnselectedNode" onclick="javascript: return Expand(this);" href="html/Properties_T_Microsoft_Test_ApplicationControl_ApplicationSettings.htm" target="TopicContent">ApplicationSettings Properties </a>
+<div class="Hidden">
+<div class="TreeItem">
+<img src="Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="html/P_Microsoft_Test_ApplicationControl_ApplicationSettings_ApplicationImplementationFactory.htm" target="TopicContent">ApplicationImplementationFactory Property </a>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="TreeNode">
+<img class="TreeNodeImg" onclick="javascript: Toggle(this);" src="Collapsed.gif"/><a class="UnselectedNode" onclick="javascript: return Expand(this);" href="html/T_Microsoft_Test_ApplicationControl_AutomatedApplication.htm" target="TopicContent">AutomatedApplication Class</a>
+<div class="Hidden">
+<div class="TreeItem">
+<img src="Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="html/AllMembers_T_Microsoft_Test_ApplicationControl_AutomatedApplication.htm" target="TopicContent">AutomatedApplication Members</a>
+</div>
+<div class="TreeItem">
+<img src="Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="html/M_Microsoft_Test_ApplicationControl_AutomatedApplication__ctor.htm" target="TopicContent">AutomatedApplication Constructor </a>
+</div>
+<div class="TreeNode">
+<img class="TreeNodeImg" onclick="javascript: Toggle(this);" src="Collapsed.gif"/><a class="UnselectedNode" onclick="javascript: return Expand(this);" href="html/Methods_T_Microsoft_Test_ApplicationControl_AutomatedApplication.htm" target="TopicContent">AutomatedApplication Methods </a>
+<div class="Hidden">
+<div class="TreeItem">
+<img src="Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="html/M_Microsoft_Test_ApplicationControl_AutomatedApplication_AddEventHandler.htm" target="TopicContent">AddEventHandler Method </a>
+</div>
+<div class="TreeItem">
+<img src="Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="html/M_Microsoft_Test_ApplicationControl_AutomatedApplication_Close.htm" target="TopicContent">Close Method </a>
+</div>
+<div class="TreeItem">
+<img src="Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="html/M_Microsoft_Test_ApplicationControl_AutomatedApplication_OnExit.htm" target="TopicContent">OnExit Method </a>
+</div>
+<div class="TreeItem">
+<img src="Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="html/M_Microsoft_Test_ApplicationControl_AutomatedApplication_OnFocusChanged.htm" target="TopicContent">OnFocusChanged Method </a>
+</div>
+<div class="TreeItem">
+<img src="Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="html/M_Microsoft_Test_ApplicationControl_AutomatedApplication_OnMainWindowOpened.htm" target="TopicContent">OnMainWindowOpened Method </a>
+</div>
+<div class="TreeItem">
+<img src="Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="html/M_Microsoft_Test_ApplicationControl_AutomatedApplication_RemoveEventHandler.htm" target="TopicContent">RemoveEventHandler Method </a>
+</div>
+<div class="TreeItem">
+<img src="Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="html/M_Microsoft_Test_ApplicationControl_AutomatedApplication_Start.htm" target="TopicContent">Start Method </a>
+</div>
+<div class="TreeItem">
+<img src="Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="html/M_Microsoft_Test_ApplicationControl_AutomatedApplication_WaitForInputIdle.htm" target="TopicContent">WaitForInputIdle Method </a>
+</div>
+<div class="TreeItem">
+<img src="Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="html/M_Microsoft_Test_ApplicationControl_AutomatedApplication_WaitForMainWindow.htm" target="TopicContent">WaitForMainWindow Method </a>
+</div>
+<div class="TreeItem">
+<img src="Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="html/M_Microsoft_Test_ApplicationControl_AutomatedApplication_WaitForWindow.htm" target="TopicContent">WaitForWindow Method </a>
+</div>
+</div>
+</div>
+<div class="TreeNode">
+<img class="TreeNodeImg" onclick="javascript: Toggle(this);" src="Collapsed.gif"/><a class="UnselectedNode" onclick="javascript: return Expand(this);" href="html/Properties_T_Microsoft_Test_ApplicationControl_AutomatedApplication.htm" target="TopicContent">AutomatedApplication Properties </a>
+<div class="Hidden">
+<div class="TreeItem">
+<img src="Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="html/P_Microsoft_Test_ApplicationControl_AutomatedApplication_ApplicationImplementation.htm" target="TopicContent">ApplicationImplementation Property </a>
+</div>
+<div class="TreeItem">
+<img src="Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="html/P_Microsoft_Test_ApplicationControl_AutomatedApplication_IsApplicationRunning.htm" target="TopicContent">IsApplicationRunning Property </a>
+</div>
+<div class="TreeItem">
+<img src="Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="html/P_Microsoft_Test_ApplicationControl_AutomatedApplication_IsMainWindowOpened.htm" target="TopicContent">IsMainWindowOpened Property </a>
+</div>
+<div class="TreeItem">
+<img src="Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="html/P_Microsoft_Test_ApplicationControl_AutomatedApplication_MainWindow.htm" target="TopicContent">MainWindow Property </a>
+</div>
+</div>
+</div>
+<div class="TreeNode">
+<img class="TreeNodeImg" onclick="javascript: Toggle(this);" src="Collapsed.gif"/><a class="UnselectedNode" onclick="javascript: return Expand(this);" href="html/Events_T_Microsoft_Test_ApplicationControl_AutomatedApplication.htm" target="TopicContent">AutomatedApplication Events</a>
+<div class="Hidden">
+<div class="TreeItem">
+<img src="Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="html/E_Microsoft_Test_ApplicationControl_AutomatedApplication_Exited.htm" target="TopicContent">Exited Event</a>
+</div>
+<div class="TreeItem">
+<img src="Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="html/E_Microsoft_Test_ApplicationControl_AutomatedApplication_MainWindowOpened.htm" target="TopicContent">MainWindowOpened Event</a>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="TreeNode">
+<img class="TreeNodeImg" onclick="javascript: Toggle(this);" src="Collapsed.gif"/><a class="UnselectedNode" onclick="javascript: return Expand(this);" href="html/T_Microsoft_Test_ApplicationControl_AutomatedApplicationEventArgs.htm" target="TopicContent">AutomatedApplicationEventArgs Class</a>
+<div class="Hidden">
+<div class="TreeItem">
+<img src="Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="html/AllMembers_T_Microsoft_Test_ApplicationControl_AutomatedApplicationEventArgs.htm" target="TopicContent">AutomatedApplicationEventArgs Members</a>
+</div>
+<div class="TreeItem">
+<img src="Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="html/M_Microsoft_Test_ApplicationControl_AutomatedApplicationEventArgs__ctor.htm" target="TopicContent">AutomatedApplicationEventArgs Constructor </a>
+</div>
+<div class="TreeNode">
+<img class="TreeNodeImg" onclick="javascript: Toggle(this);" src="Collapsed.gif"/><a class="UnselectedNode" onclick="javascript: return Expand(this);" href="html/Properties_T_Microsoft_Test_ApplicationControl_AutomatedApplicationEventArgs.htm" target="TopicContent">AutomatedApplicationEventArgs Properties </a>
+<div class="Hidden">
+<div class="TreeItem">
+<img src="Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="html/P_Microsoft_Test_ApplicationControl_AutomatedApplicationEventArgs_AutomatedApplication.htm" target="TopicContent">AutomatedApplication Property </a>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="TreeItem">
+<img src="Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="html/T_Microsoft_Test_ApplicationControl_AutomatedApplicationEventType.htm" target="TopicContent">AutomatedApplicationEventType Enumeration</a>
+</div>
+<div class="TreeNode">
+<img class="TreeNodeImg" onclick="javascript: Toggle(this);" src="Collapsed.gif"/><a class="UnselectedNode" onclick="javascript: return Expand(this);" href="html/T_Microsoft_Test_ApplicationControl_AutomatedApplicationFocusChangedEventArgs.htm" target="TopicContent">AutomatedApplicationFocusChangedEventArgs Class</a>
+<div class="Hidden">
+<div class="TreeItem">
+<img src="Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="html/AllMembers_T_Microsoft_Test_ApplicationControl_AutomatedApplicationFocusChangedEventArgs.htm" target="TopicContent">AutomatedApplicationFocusChangedEventArgs Members</a>
+</div>
+<div class="TreeItem">
+<img src="Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="html/M_Microsoft_Test_ApplicationControl_AutomatedApplicationFocusChangedEventArgs__ctor.htm" target="TopicContent">AutomatedApplicationFocusChangedEventArgs Constructor </a>
+</div>
+<div class="TreeNode">
+<img class="TreeNodeImg" onclick="javascript: Toggle(this);" src="Collapsed.gif"/><a class="UnselectedNode" onclick="javascript: return Expand(this);" href="html/Properties_T_Microsoft_Test_ApplicationControl_AutomatedApplicationFocusChangedEventArgs.htm" target="TopicContent">AutomatedApplicationFocusChangedEventArgs Properties </a>
+<div class="Hidden">
+<div class="TreeItem">
+<img src="Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="html/P_Microsoft_Test_ApplicationControl_AutomatedApplicationFocusChangedEventArgs_NewFocusedElement.htm" target="TopicContent">NewFocusedElement Property </a>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="TreeNode">
+<img class="TreeNodeImg" onclick="javascript: Toggle(this);" src="Collapsed.gif"/><a class="UnselectedNode" onclick="javascript: return Expand(this);" href="html/T_Microsoft_Test_ApplicationControl_IAutomatedApplicationImpl.htm" target="TopicContent">IAutomatedApplicationImpl Interface</a>
+<div class="Hidden">
+<div class="TreeItem">
+<img src="Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="html/AllMembers_T_Microsoft_Test_ApplicationControl_IAutomatedApplicationImpl.htm" target="TopicContent">IAutomatedApplicationImpl Members</a>
+</div>
+<div class="TreeNode">
+<img class="TreeNodeImg" onclick="javascript: Toggle(this);" src="Collapsed.gif"/><a class="UnselectedNode" onclick="javascript: return Expand(this);" href="html/Methods_T_Microsoft_Test_ApplicationControl_IAutomatedApplicationImpl.htm" target="TopicContent">IAutomatedApplicationImpl Methods </a>
+<div class="Hidden">
+<div class="TreeItem">
+<img src="Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="html/M_Microsoft_Test_ApplicationControl_IAutomatedApplicationImpl_Close.htm" target="TopicContent">Close Method </a>
+</div>
+<div class="TreeItem">
+<img src="Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="html/M_Microsoft_Test_ApplicationControl_IAutomatedApplicationImpl_Start.htm" target="TopicContent">Start Method </a>
+</div>
+<div class="TreeItem">
+<img src="Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="html/M_Microsoft_Test_ApplicationControl_IAutomatedApplicationImpl_WaitForInputIdle.htm" target="TopicContent">WaitForInputIdle Method </a>
+</div>
+<div class="TreeItem">
+<img src="Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="html/M_Microsoft_Test_ApplicationControl_IAutomatedApplicationImpl_WaitForMainWindow.htm" target="TopicContent">WaitForMainWindow Method </a>
+</div>
+<div class="TreeItem">
+<img src="Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="html/M_Microsoft_Test_ApplicationControl_IAutomatedApplicationImpl_WaitForWindow.htm" target="TopicContent">WaitForWindow Method </a>
+</div>
+</div>
+</div>
+<div class="TreeNode">
+<img class="TreeNodeImg" onclick="javascript: Toggle(this);" src="Collapsed.gif"/><a class="UnselectedNode" onclick="javascript: return Expand(this);" href="html/Properties_T_Microsoft_Test_ApplicationControl_IAutomatedApplicationImpl.htm" target="TopicContent">IAutomatedApplicationImpl Properties </a>
+<div class="Hidden">
+<div class="TreeItem">
+<img src="Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="html/P_Microsoft_Test_ApplicationControl_IAutomatedApplicationImpl_ApplicationDriver.htm" target="TopicContent">ApplicationDriver Property </a>
+</div>
+<div class="TreeItem">
+<img src="Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="html/P_Microsoft_Test_ApplicationControl_IAutomatedApplicationImpl_IsMainWindowOpened.htm" target="TopicContent">IsMainWindowOpened Property </a>
+</div>
+<div class="TreeItem">
+<img src="Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="html/P_Microsoft_Test_ApplicationControl_IAutomatedApplicationImpl_MainWindow.htm" target="TopicContent">MainWindow Property </a>
+</div>
+</div>
+</div>
+<div class="TreeNode">
+<img class="TreeNodeImg" onclick="javascript: Toggle(this);" src="Collapsed.gif"/><a class="UnselectedNode" onclick="javascript: return Expand(this);" href="html/Events_T_Microsoft_Test_ApplicationControl_IAutomatedApplicationImpl.htm" target="TopicContent">IAutomatedApplicationImpl Events</a>
+<div class="Hidden">
+<div class="TreeItem">
+<img src="Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="html/E_Microsoft_Test_ApplicationControl_IAutomatedApplicationImpl_Exited.htm" target="TopicContent">Exited Event</a>
+</div>
+<div class="TreeItem">
+<img src="Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="html/E_Microsoft_Test_ApplicationControl_IAutomatedApplicationImpl_FocusChanged.htm" target="TopicContent">FocusChanged Event</a>
+</div>
+<div class="TreeItem">
+<img src="Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="html/E_Microsoft_Test_ApplicationControl_IAutomatedApplicationImpl_MainWindowOpened.htm" target="TopicContent">MainWindowOpened Event</a>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="TreeNode">
+<img class="TreeNodeImg" onclick="javascript: Toggle(this);" src="Collapsed.gif"/><a class="UnselectedNode" onclick="javascript: return Expand(this);" href="html/T_Microsoft_Test_ApplicationControl_IAutomatedApplicationImplFactory.htm" target="TopicContent">IAutomatedApplicationImplFactory Interface</a>
+<div class="Hidden">
+<div class="TreeItem">
+<img src="Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="html/AllMembers_T_Microsoft_Test_ApplicationControl_IAutomatedApplicationImplFactory.htm" target="TopicContent">IAutomatedApplicationImplFactory Members</a>
+</div>
+<div class="TreeNode">
+<img class="TreeNodeImg" onclick="javascript: Toggle(this);" src="Collapsed.gif"/><a class="UnselectedNode" onclick="javascript: return Expand(this);" href="html/Methods_T_Microsoft_Test_ApplicationControl_IAutomatedApplicationImplFactory.htm" target="TopicContent">IAutomatedApplicationImplFactory Methods </a>
+<div class="Hidden">
+<div class="TreeItem">
+<img src="Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="html/M_Microsoft_Test_ApplicationControl_IAutomatedApplicationImplFactory_Create.htm" target="TopicContent">Create Method </a>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="TreeNode">
+<img class="TreeNodeImg" onclick="javascript: Toggle(this);" src="Collapsed.gif"/><a class="UnselectedNode" onclick="javascript: return Expand(this);" href="html/T_Microsoft_Test_ApplicationControl_InProcessApplication.htm" target="TopicContent">InProcessApplication Class</a>
+<div class="Hidden">
+<div class="TreeItem">
+<img src="Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="html/AllMembers_T_Microsoft_Test_ApplicationControl_InProcessApplication.htm" target="TopicContent">InProcessApplication Members</a>
+</div>
+<div class="TreeItem">
+<img src="Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="html/M_Microsoft_Test_ApplicationControl_InProcessApplication__ctor.htm" target="TopicContent">InProcessApplication Constructor </a>
+</div>
+<div class="TreeNode">
+<img class="TreeNodeImg" onclick="javascript: Toggle(this);" src="Collapsed.gif"/><a class="UnselectedNode" onclick="javascript: return Expand(this);" href="html/Methods_T_Microsoft_Test_ApplicationControl_InProcessApplication.htm" target="TopicContent">InProcessApplication Methods </a>
+<div class="Hidden">
+<div class="TreeItem">
+<img src="Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="html/M_Microsoft_Test_ApplicationControl_InProcessApplication_Start.htm" target="TopicContent">Start Method </a>
+</div>
+</div>
+</div>
+<div class="TreeNode">
+<img class="TreeNodeImg" onclick="javascript: Toggle(this);" src="Collapsed.gif"/><a class="UnselectedNode" onclick="javascript: return Expand(this);" href="html/Properties_T_Microsoft_Test_ApplicationControl_InProcessApplication.htm" target="TopicContent">InProcessApplication Properties </a>
+<div class="Hidden">
+<div class="TreeItem">
+<img src="Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="html/P_Microsoft_Test_ApplicationControl_InProcessApplication_ApplicationDriver.htm" target="TopicContent">ApplicationDriver Property </a>
+</div>
+<div class="TreeItem">
+<img src="Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="html/P_Microsoft_Test_ApplicationControl_InProcessApplication_ApplicationSettings.htm" target="TopicContent">ApplicationSettings Property </a>
+</div>
+</div>
+</div>
+<div class="TreeItem">
+<img src="Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="html/Events_T_Microsoft_Test_ApplicationControl_InProcessApplication.htm" target="TopicContent">InProcessApplication Events</a>
+</div>
+</div>
+</div>
+<div class="TreeNode">
+<img class="TreeNodeImg" onclick="javascript: Toggle(this);" src="Collapsed.gif"/><a class="UnselectedNode" onclick="javascript: return Expand(this);" href="html/T_Microsoft_Test_ApplicationControl_InProcessApplicationSettings.htm" target="TopicContent">InProcessApplicationSettings Class</a>
+<div class="Hidden">
+<div class="TreeItem">
+<img src="Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="html/AllMembers_T_Microsoft_Test_ApplicationControl_InProcessApplicationSettings.htm" target="TopicContent">InProcessApplicationSettings Members</a>
+</div>
+<div class="TreeItem">
+<img src="Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="html/M_Microsoft_Test_ApplicationControl_InProcessApplicationSettings__ctor.htm" target="TopicContent">InProcessApplicationSettings Constructor </a>
+</div>
+<div class="TreeNode">
+<img class="TreeNodeImg" onclick="javascript: Toggle(this);" src="Collapsed.gif"/><a class="UnselectedNode" onclick="javascript: return Expand(this);" href="html/Properties_T_Microsoft_Test_ApplicationControl_InProcessApplicationSettings.htm" target="TopicContent">InProcessApplicationSettings Properties </a>
+<div class="Hidden">
+<div class="TreeItem">
+<img src="Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="html/P_Microsoft_Test_ApplicationControl_InProcessApplicationSettings_InProcessApplicationType.htm" target="TopicContent">InProcessApplicationType Property </a>
+</div>
+<div class="TreeItem">
+<img src="Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="html/P_Microsoft_Test_ApplicationControl_InProcessApplicationSettings_Path.htm" target="TopicContent">Path Property </a>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="TreeItem">
+<img src="Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="html/T_Microsoft_Test_ApplicationControl_InProcessApplicationType.htm" target="TopicContent">InProcessApplicationType Enumeration</a>
+</div>
+<div class="TreeNode">
+<img class="TreeNodeImg" onclick="javascript: Toggle(this);" src="Collapsed.gif"/><a class="UnselectedNode" onclick="javascript: return Expand(this);" href="html/T_Microsoft_Test_ApplicationControl_IOutOfProcessAutomatedApplicationImpl.htm" target="TopicContent">IOutOfProcessAutomatedApplicationImpl Interface</a>
+<div class="Hidden">
+<div class="TreeItem">
+<img src="Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="html/AllMembers_T_Microsoft_Test_ApplicationControl_IOutOfProcessAutomatedApplicationImpl.htm" target="TopicContent">IOutOfProcessAutomatedApplicationImpl Members</a>
+</div>
+<div class="TreeItem">
+<img src="Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="html/Methods_T_Microsoft_Test_ApplicationControl_IOutOfProcessAutomatedApplicationImpl.htm" target="TopicContent">IOutOfProcessAutomatedApplicationImpl Methods </a>
+</div>
+<div class="TreeNode">
+<img class="TreeNodeImg" onclick="javascript: Toggle(this);" src="Collapsed.gif"/><a class="UnselectedNode" onclick="javascript: return Expand(this);" href="html/Properties_T_Microsoft_Test_ApplicationControl_IOutOfProcessAutomatedApplicationImpl.htm" target="TopicContent">IOutOfProcessAutomatedApplicationImpl Properties </a>
+<div class="Hidden">
+<div class="TreeItem">
+<img src="Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="html/P_Microsoft_Test_ApplicationControl_IOutOfProcessAutomatedApplicationImpl_Process.htm" target="TopicContent">Process Property </a>
+</div>
+</div>
+</div>
+<div class="TreeItem">
+<img src="Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="html/Events_T_Microsoft_Test_ApplicationControl_IOutOfProcessAutomatedApplicationImpl.htm" target="TopicContent">IOutOfProcessAutomatedApplicationImpl Events</a>
+</div>
+</div>
+</div>
+<div class="TreeNode">
+<img class="TreeNodeImg" onclick="javascript: Toggle(this);" src="Collapsed.gif"/><a class="UnselectedNode" onclick="javascript: return Expand(this);" href="html/T_Microsoft_Test_ApplicationControl_OutOfProcessApplication.htm" target="TopicContent">OutOfProcessApplication Class</a>
+<div class="Hidden">
+<div class="TreeItem">
+<img src="Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="html/AllMembers_T_Microsoft_Test_ApplicationControl_OutOfProcessApplication.htm" target="TopicContent">OutOfProcessApplication Members</a>
+</div>
+<div class="TreeItem">
+<img src="Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="html/M_Microsoft_Test_ApplicationControl_OutOfProcessApplication__ctor.htm" target="TopicContent">OutOfProcessApplication Constructor </a>
+</div>
+<div class="TreeNode">
+<img class="TreeNodeImg" onclick="javascript: Toggle(this);" src="Collapsed.gif"/><a class="UnselectedNode" onclick="javascript: return Expand(this);" href="html/Methods_T_Microsoft_Test_ApplicationControl_OutOfProcessApplication.htm" target="TopicContent">OutOfProcessApplication Methods </a>
+<div class="Hidden">
+<div class="TreeItem">
+<img src="Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="html/M_Microsoft_Test_ApplicationControl_OutOfProcessApplication_Start.htm" target="TopicContent">Start Method </a>
+</div>
+</div>
+</div>
+<div class="TreeNode">
+<img class="TreeNodeImg" onclick="javascript: Toggle(this);" src="Collapsed.gif"/><a class="UnselectedNode" onclick="javascript: return Expand(this);" href="html/Properties_T_Microsoft_Test_ApplicationControl_OutOfProcessApplication.htm" target="TopicContent">OutOfProcessApplication Properties </a>
+<div class="Hidden">
+<div class="TreeItem">
+<img src="Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="html/P_Microsoft_Test_ApplicationControl_OutOfProcessApplication_ApplicationSettings.htm" target="TopicContent">ApplicationSettings Property </a>
+</div>
+<div class="TreeItem">
+<img src="Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="html/P_Microsoft_Test_ApplicationControl_OutOfProcessApplication_Process.htm" target="TopicContent">Process Property </a>
+</div>
+</div>
+</div>
+<div class="TreeItem">
+<img src="Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="html/Events_T_Microsoft_Test_ApplicationControl_OutOfProcessApplication.htm" target="TopicContent">OutOfProcessApplication Events</a>
+</div>
+</div>
+</div>
+<div class="TreeNode">
+<img class="TreeNodeImg" onclick="javascript: Toggle(this);" src="Collapsed.gif"/><a class="UnselectedNode" onclick="javascript: return Expand(this);" href="html/T_Microsoft_Test_ApplicationControl_OutOfProcessApplicationSettings.htm" target="TopicContent">OutOfProcessApplicationSettings Class</a>
+<div class="Hidden">
+<div class="TreeItem">
+<img src="Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="html/AllMembers_T_Microsoft_Test_ApplicationControl_OutOfProcessApplicationSettings.htm" target="TopicContent">OutOfProcessApplicationSettings Members</a>
+</div>
+<div class="TreeItem">
+<img src="Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="html/M_Microsoft_Test_ApplicationControl_OutOfProcessApplicationSettings__ctor.htm" target="TopicContent">OutOfProcessApplicationSettings Constructor </a>
+</div>
+<div class="TreeNode">
+<img class="TreeNodeImg" onclick="javascript: Toggle(this);" src="Collapsed.gif"/><a class="UnselectedNode" onclick="javascript: return Expand(this);" href="html/Properties_T_Microsoft_Test_ApplicationControl_OutOfProcessApplicationSettings.htm" target="TopicContent">OutOfProcessApplicationSettings Properties </a>
+<div class="Hidden">
+<div class="TreeItem">
+<img src="Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="html/P_Microsoft_Test_ApplicationControl_OutOfProcessApplicationSettings_ProcessStartInfo.htm" target="TopicContent">ProcessStartInfo Property </a>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="TreeNode">
+<img class="TreeNodeImg" onclick="javascript: Toggle(this);" src="Collapsed.gif"/><a class="UnselectedNode" onclick="javascript: return Expand(this);" href="html/T_Microsoft_Test_ApplicationControl_UIAutomationOutOfProcessApplicationFactory.htm" target="TopicContent">UIAutomationOutOfProcessApplicationFactory Class</a>
+<div class="Hidden">
+<div class="TreeItem">
+<img src="Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="html/AllMembers_T_Microsoft_Test_ApplicationControl_UIAutomationOutOfProcessApplicationFactory.htm" target="TopicContent">UIAutomationOutOfProcessApplicationFactory Members</a>
+</div>
+<div class="TreeItem">
+<img src="Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="html/M_Microsoft_Test_ApplicationControl_UIAutomationOutOfProcessApplicationFactory__ctor.htm" target="TopicContent">UIAutomationOutOfProcessApplicationFactory Constructor </a>
+</div>
+<div class="TreeNode">
+<img class="TreeNodeImg" onclick="javascript: Toggle(this);" src="Collapsed.gif"/><a class="UnselectedNode" onclick="javascript: return Expand(this);" href="html/Methods_T_Microsoft_Test_ApplicationControl_UIAutomationOutOfProcessApplicationFactory.htm" target="TopicContent">UIAutomationOutOfProcessApplicationFactory Methods </a>
+<div class="Hidden">
+<div class="TreeItem">
+<img src="Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="html/M_Microsoft_Test_ApplicationControl_UIAutomationOutOfProcessApplicationFactory_Create.htm" target="TopicContent">Create Method </a>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="TreeNode">
+<img class="TreeNodeImg" onclick="javascript: Toggle(this);" src="Collapsed.gif"/><a class="UnselectedNode" onclick="javascript: return Expand(this);" href="html/T_Microsoft_Test_ApplicationControl_WpfInProcessApplicationFactory.htm" target="TopicContent">WpfInProcessApplicationFactory Class</a>
+<div class="Hidden">
+<div class="TreeItem">
+<img src="Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="html/AllMembers_T_Microsoft_Test_ApplicationControl_WpfInProcessApplicationFactory.htm" target="TopicContent">WpfInProcessApplicationFactory Members</a>
+</div>
+<div class="TreeItem">
+<img src="Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="html/M_Microsoft_Test_ApplicationControl_WpfInProcessApplicationFactory__ctor.htm" target="TopicContent">WpfInProcessApplicationFactory Constructor </a>
+</div>
+<div class="TreeNode">
+<img class="TreeNodeImg" onclick="javascript: Toggle(this);" src="Collapsed.gif"/><a class="UnselectedNode" onclick="javascript: return Expand(this);" href="html/Methods_T_Microsoft_Test_ApplicationControl_WpfInProcessApplicationFactory.htm" target="TopicContent">WpfInProcessApplicationFactory Methods </a>
+<div class="Hidden">
+<div class="TreeItem">
+<img src="Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="html/M_Microsoft_Test_ApplicationControl_WpfInProcessApplicationFactory_Create.htm" target="TopicContent">Create Method </a>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="TreeNode">
+<img class="TreeNodeImg" onclick="javascript: Toggle(this);" src="Collapsed.gif"/><a class="UnselectedNode" onclick="javascript: return Expand(this);" href="html/T_Microsoft_Test_ApplicationControl_WpfInProcessApplicationSettings.htm" target="TopicContent">WpfInProcessApplicationSettings Class</a>
+<div class="Hidden">
+<div class="TreeItem">
+<img src="Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="html/AllMembers_T_Microsoft_Test_ApplicationControl_WpfInProcessApplicationSettings.htm" target="TopicContent">WpfInProcessApplicationSettings Members</a>
+</div>
+<div class="TreeItem">
+<img src="Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="html/M_Microsoft_Test_ApplicationControl_WpfInProcessApplicationSettings__ctor.htm" target="TopicContent">WpfInProcessApplicationSettings Constructor </a>
+</div>
+<div class="TreeNode">
+<img class="TreeNodeImg" onclick="javascript: Toggle(this);" src="Collapsed.gif"/><a class="UnselectedNode" onclick="javascript: return Expand(this);" href="html/Properties_T_Microsoft_Test_ApplicationControl_WpfInProcessApplicationSettings.htm" target="TopicContent">WpfInProcessApplicationSettings Properties </a>
+<div class="Hidden">
+<div class="TreeItem">
+<img src="Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="html/P_Microsoft_Test_ApplicationControl_WpfInProcessApplicationSettings_WindowClassName.htm" target="TopicContent">WindowClassName Property </a>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="TreeNode">
+<img class="TreeNodeImg" onclick="javascript: Toggle(this);" src="Collapsed.gif"/><a class="UnselectedNode" onclick="javascript: return Expand(this);" href="html/N_Microsoft_Test_CommandLineParsing.htm" target="TopicContent">Microsoft.Test.CommandLineParsing Namespace</a>
+<div class="Hidden">
+<div class="TreeNode">
+<img class="TreeNodeImg" onclick="javascript: Toggle(this);" src="Collapsed.gif"/><a class="UnselectedNode" onclick="javascript: return Expand(this);" href="html/T_Microsoft_Test_CommandLineParsing_Command.htm" target="TopicContent">Command Class</a>
+<div class="Hidden">
+<div class="TreeItem">
+<img src="Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="html/AllMembers_T_Microsoft_Test_CommandLineParsing_Command.htm" target="TopicContent">Command Members</a>
+</div>
+<div class="TreeItem">
+<img src="Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="html/M_Microsoft_Test_CommandLineParsing_Command__ctor.htm" target="TopicContent">Command Constructor </a>
+</div>
+<div class="TreeNode">
+<img class="TreeNodeImg" onclick="javascript: Toggle(this);" src="Collapsed.gif"/><a class="UnselectedNode" onclick="javascript: return Expand(this);" href="html/Methods_T_Microsoft_Test_CommandLineParsing_Command.htm" target="TopicContent">Command Methods </a>
+<div class="Hidden">
+<div class="TreeItem">
+<img src="Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="html/M_Microsoft_Test_CommandLineParsing_Command_Execute.htm" target="TopicContent">Execute Method </a>
+</div>
+</div>
+</div>
+<div class="TreeNode">
+<img class="TreeNodeImg" onclick="javascript: Toggle(this);" src="Collapsed.gif"/><a class="UnselectedNode" onclick="javascript: return Expand(this);" href="html/Properties_T_Microsoft_Test_CommandLineParsing_Command.htm" target="TopicContent">Command Properties </a>
+<div class="Hidden">
+<div class="TreeItem">
+<img src="Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="html/P_Microsoft_Test_CommandLineParsing_Command_Name.htm" target="TopicContent">Name Property </a>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="TreeNode">
+<img class="TreeNodeImg" onclick="javascript: Toggle(this);" src="Collapsed.gif"/><a class="UnselectedNode" onclick="javascript: return Expand(this);" href="html/T_Microsoft_Test_CommandLineParsing_CommandLineDictionary.htm" target="TopicContent">CommandLineDictionary Class</a>
+<div class="Hidden">
+<div class="TreeItem">
+<img src="Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="html/AllMembers_T_Microsoft_Test_CommandLineParsing_CommandLineDictionary.htm" target="TopicContent">CommandLineDictionary Members</a>
+</div>
+<div class="TreeNode">
+<img class="TreeNodeImg" onclick="javascript: Toggle(this);" src="Collapsed.gif"/><a class="UnselectedNode" onclick="javascript: return Expand(this);" href="html/Overload_Microsoft_Test_CommandLineParsing_CommandLineDictionary__ctor.htm" target="TopicContent">CommandLineDictionary Constructor </a>
+<div class="Hidden">
+<div class="TreeItem">
+<img src="Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="html/M_Microsoft_Test_CommandLineParsing_CommandLineDictionary__ctor.htm" target="TopicContent">CommandLineDictionary Constructor </a>
+</div>
+<div class="TreeItem">
+<img src="Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="html/M_Microsoft_Test_CommandLineParsing_CommandLineDictionary__ctor_1.htm" target="TopicContent">CommandLineDictionary Constructor (SerializationInfo, StreamingContext)</a>
+</div>
+</div>
+</div>
+<div class="TreeNode">
+<img class="TreeNodeImg" onclick="javascript: Toggle(this);" src="Collapsed.gif"/><a class="UnselectedNode" onclick="javascript: return Expand(this);" href="html/Methods_T_Microsoft_Test_CommandLineParsing_CommandLineDictionary.htm" target="TopicContent">CommandLineDictionary Methods </a>
+<div class="Hidden">
+<div class="TreeNode">
+<img class="TreeNodeImg" onclick="javascript: Toggle(this);" src="Collapsed.gif"/><a class="UnselectedNode" onclick="javascript: return Expand(this);" href="html/Overload_Microsoft_Test_CommandLineParsing_CommandLineDictionary_FromArguments.htm" target="TopicContent">FromArguments Method </a>
+<div class="Hidden">
+<div class="TreeItem">
+<img src="Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="html/M_Microsoft_Test_CommandLineParsing_CommandLineDictionary_FromArguments.htm" target="TopicContent">FromArguments Method (IEnumerable(String))</a>
+</div>
+<div class="TreeItem">
+<img src="Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="html/M_Microsoft_Test_CommandLineParsing_CommandLineDictionary_FromArguments_1.htm" target="TopicContent">FromArguments Method (IEnumerable(String), Char, Char)</a>
+</div>
+</div>
+</div>
+<div class="TreeItem">
+<img src="Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="html/M_Microsoft_Test_CommandLineParsing_CommandLineDictionary_GetObjectData.htm" target="TopicContent">GetObjectData Method </a>
+</div>
+<div class="TreeItem">
+<img src="Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="html/M_Microsoft_Test_CommandLineParsing_CommandLineDictionary_ToString.htm" target="TopicContent">ToString Method </a>
+</div>
+</div>
+</div>
+<div class="TreeItem">
+<img src="Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="html/Properties_T_Microsoft_Test_CommandLineParsing_CommandLineDictionary.htm" target="TopicContent">CommandLineDictionary Properties </a>
+</div>
+</div>
+</div>
+<div class="TreeNode">
+<img class="TreeNodeImg" onclick="javascript: Toggle(this);" src="Collapsed.gif"/><a class="UnselectedNode" onclick="javascript: return Expand(this);" href="html/T_Microsoft_Test_CommandLineParsing_CommandLineParser.htm" target="TopicContent">CommandLineParser Class</a>
+<div class="Hidden">
+<div class="TreeItem">
+<img src="Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="html/AllMembers_T_Microsoft_Test_CommandLineParsing_CommandLineParser.htm" target="TopicContent">CommandLineParser Members</a>
+</div>
+<div class="TreeNode">
+<img class="TreeNodeImg" onclick="javascript: Toggle(this);" src="Collapsed.gif"/><a class="UnselectedNode" onclick="javascript: return Expand(this);" href="html/Methods_T_Microsoft_Test_CommandLineParsing_CommandLineParser.htm" target="TopicContent">CommandLineParser Methods </a>
+<div class="Hidden">
+<div class="TreeItem">
+<img src="Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="html/M_Microsoft_Test_CommandLineParsing_CommandLineParser_ParseArguments.htm" target="TopicContent">ParseArguments Method </a>
+</div>
+<div class="TreeItem">
+<img src="Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="html/M_Microsoft_Test_CommandLineParsing_CommandLineParser_PrintCommands.htm" target="TopicContent">PrintCommands Method </a>
+</div>
+<div class="TreeItem">
+<img src="Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="html/M_Microsoft_Test_CommandLineParsing_CommandLineParser_PrintUsage.htm" target="TopicContent">PrintUsage Method </a>
+</div>
+<div class="TreeItem">
+<img src="Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="html/M_Microsoft_Test_CommandLineParsing_CommandLineParser_ToString.htm" target="TopicContent">ToString Method </a>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="TreeNode">
+<img class="TreeNodeImg" onclick="javascript: Toggle(this);" src="Collapsed.gif"/><a class="UnselectedNode" onclick="javascript: return Expand(this);" href="html/T_Microsoft_Test_CommandLineParsing_DirectoryInfoConverter.htm" target="TopicContent">DirectoryInfoConverter Class</a>
+<div class="Hidden">
+<div class="TreeItem">
+<img src="Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="html/AllMembers_T_Microsoft_Test_CommandLineParsing_DirectoryInfoConverter.htm" target="TopicContent">DirectoryInfoConverter Members</a>
+</div>
+<div class="TreeItem">
+<img src="Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="html/M_Microsoft_Test_CommandLineParsing_DirectoryInfoConverter__ctor.htm" target="TopicContent">DirectoryInfoConverter Constructor </a>
+</div>
+<div class="TreeNode">
+<img class="TreeNodeImg" onclick="javascript: Toggle(this);" src="Collapsed.gif"/><a class="UnselectedNode" onclick="javascript: return Expand(this);" href="html/Methods_T_Microsoft_Test_CommandLineParsing_DirectoryInfoConverter.htm" target="TopicContent">DirectoryInfoConverter Methods </a>
+<div class="Hidden">
+<div class="TreeItem">
+<img src="Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="html/M_Microsoft_Test_CommandLineParsing_DirectoryInfoConverter_CanConvertFrom.htm" target="TopicContent">CanConvertFrom Method </a>
+</div>
+<div class="TreeItem">
+<img src="Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="html/M_Microsoft_Test_CommandLineParsing_DirectoryInfoConverter_ConvertFrom.htm" target="TopicContent">ConvertFrom Method </a>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="TreeNode">
+<img class="TreeNodeImg" onclick="javascript: Toggle(this);" src="Collapsed.gif"/><a class="UnselectedNode" onclick="javascript: return Expand(this);" href="html/T_Microsoft_Test_CommandLineParsing_FileInfoConverter.htm" target="TopicContent">FileInfoConverter Class</a>
+<div class="Hidden">
+<div class="TreeItem">
+<img src="Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="html/AllMembers_T_Microsoft_Test_CommandLineParsing_FileInfoConverter.htm" target="TopicContent">FileInfoConverter Members</a>
+</div>
+<div class="TreeItem">
+<img src="Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="html/M_Microsoft_Test_CommandLineParsing_FileInfoConverter__ctor.htm" target="TopicContent">FileInfoConverter Constructor </a>
+</div>
+<div class="TreeNode">
+<img class="TreeNodeImg" onclick="javascript: Toggle(this);" src="Collapsed.gif"/><a class="UnselectedNode" onclick="javascript: return Expand(this);" href="html/Methods_T_Microsoft_Test_CommandLineParsing_FileInfoConverter.htm" target="TopicContent">FileInfoConverter Methods </a>
+<div class="Hidden">
+<div class="TreeItem">
+<img src="Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="html/M_Microsoft_Test_CommandLineParsing_FileInfoConverter_CanConvertFrom.htm" target="TopicContent">CanConvertFrom Method </a>
+</div>
+<div class="TreeItem">
+<img src="Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="html/M_Microsoft_Test_CommandLineParsing_FileInfoConverter_CanConvertTo.htm" target="TopicContent">CanConvertTo Method </a>
+</div>
+<div class="TreeItem">
+<img src="Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="html/M_Microsoft_Test_CommandLineParsing_FileInfoConverter_ConvertFrom.htm" target="TopicContent">ConvertFrom Method </a>
+</div>
+<div class="TreeItem">
+<img src="Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="html/M_Microsoft_Test_CommandLineParsing_FileInfoConverter_ConvertTo.htm" target="TopicContent">ConvertTo Method </a>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="TreeNode">
+<img class="TreeNodeImg" onclick="javascript: Toggle(this);" src="Collapsed.gif"/><a class="UnselectedNode" onclick="javascript: return Expand(this);" href="html/T_Microsoft_Test_CommandLineParsing_RequiredAttribute.htm" target="TopicContent">RequiredAttribute Class</a>
+<div class="Hidden">
+<div class="TreeItem">
+<img src="Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="html/AllMembers_T_Microsoft_Test_CommandLineParsing_RequiredAttribute.htm" target="TopicContent">RequiredAttribute Members</a>
+</div>
+<div class="TreeItem">
+<img src="Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="html/M_Microsoft_Test_CommandLineParsing_RequiredAttribute__ctor.htm" target="TopicContent">RequiredAttribute Constructor </a>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="TreeNode">
+<img class="TreeNodeImg" onclick="javascript: Toggle(this);" src="Collapsed.gif"/><a class="UnselectedNode" onclick="javascript: return Expand(this);" href="html/N_Microsoft_Test_FaultInjection.htm" target="TopicContent">Microsoft.Test.FaultInjection Namespace</a>
+<div class="Hidden">
+<div class="TreeNode">
+<img class="TreeNodeImg" onclick="javascript: Toggle(this);" src="Collapsed.gif"/><a class="UnselectedNode" onclick="javascript: return Expand(this);" href="html/T_Microsoft_Test_FaultInjection_BuiltInConditions.htm" target="TopicContent">BuiltInConditions Class</a>
+<div class="Hidden">
+<div class="TreeItem">
+<img src="Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="html/AllMembers_T_Microsoft_Test_FaultInjection_BuiltInConditions.htm" target="TopicContent">BuiltInConditions Members</a>
+</div>
+<div class="TreeNode">
+<img class="TreeNodeImg" onclick="javascript: Toggle(this);" src="Collapsed.gif"/><a class="UnselectedNode" onclick="javascript: return Expand(this);" href="html/Methods_T_Microsoft_Test_FaultInjection_BuiltInConditions.htm" target="TopicContent">BuiltInConditions Methods </a>
+<div class="Hidden">
+<div class="TreeNode">
+<img class="TreeNodeImg" onclick="javascript: Toggle(this);" src="Collapsed.gif"/><a class="UnselectedNode" onclick="javascript: return Expand(this);" href="html/Overload_Microsoft_Test_FaultInjection_BuiltInConditions_TriggerIfCalledBy.htm" target="TopicContent">TriggerIfCalledBy Method </a>
+<div class="Hidden">
+<div class="TreeItem">
+<img src="Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="html/M_Microsoft_Test_FaultInjection_BuiltInConditions_TriggerIfCalledBy.htm" target="TopicContent">TriggerIfCalledBy Method (MethodBase)</a>
+</div>
+<div class="TreeItem">
+<img src="Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="html/M_Microsoft_Test_FaultInjection_BuiltInConditions_TriggerIfCalledBy_1.htm" target="TopicContent">TriggerIfCalledBy Method (String)</a>
+</div>
+</div>
+</div>
+<div class="TreeNode">
+<img class="TreeNodeImg" onclick="javascript: Toggle(this);" src="Collapsed.gif"/><a class="UnselectedNode" onclick="javascript: return Expand(this);" href="html/Overload_Microsoft_Test_FaultInjection_BuiltInConditions_TriggerIfStackContains.htm" target="TopicContent">TriggerIfStackContains Method </a>
+<div class="Hidden">
+<div class="TreeItem">
+<img src="Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="html/M_Microsoft_Test_FaultInjection_BuiltInConditions_TriggerIfStackContains.htm" target="TopicContent">TriggerIfStackContains Method (MethodBase)</a>
+</div>
+<div class="TreeItem">
+<img src="Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="html/M_Microsoft_Test_FaultInjection_BuiltInConditions_TriggerIfStackContains_1.htm" target="TopicContent">TriggerIfStackContains Method (String)</a>
+</div>
+</div>
+</div>
+<div class="TreeItem">
+<img src="Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="html/M_Microsoft_Test_FaultInjection_BuiltInConditions_TriggerOnEveryNthCall.htm" target="TopicContent">TriggerOnEveryNthCall Method </a>
+</div>
+<div class="TreeItem">
+<img src="Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="html/M_Microsoft_Test_FaultInjection_BuiltInConditions_TriggerOnNthCall.htm" target="TopicContent">TriggerOnNthCall Method </a>
+</div>
+<div class="TreeNode">
+<img class="TreeNodeImg" onclick="javascript: Toggle(this);" src="Collapsed.gif"/><a class="UnselectedNode" onclick="javascript: return Expand(this);" href="html/Overload_Microsoft_Test_FaultInjection_BuiltInConditions_TriggerOnNthCallBy.htm" target="TopicContent">TriggerOnNthCallBy Method </a>
+<div class="Hidden">
+<div class="TreeItem">
+<img src="Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="html/M_Microsoft_Test_FaultInjection_BuiltInConditions_TriggerOnNthCallBy.htm" target="TopicContent">TriggerOnNthCallBy Method (Int32, MethodBase)</a>
+</div>
+<div class="TreeItem">
+<img src="Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="html/M_Microsoft_Test_FaultInjection_BuiltInConditions_TriggerOnNthCallBy_1.htm" target="TopicContent">TriggerOnNthCallBy Method (Int32, String)</a>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="TreeNode">
+<img class="TreeNodeImg" onclick="javascript: Toggle(this);" src="Collapsed.gif"/><a class="UnselectedNode" onclick="javascript: return Expand(this);" href="html/Properties_T_Microsoft_Test_FaultInjection_BuiltInConditions.htm" target="TopicContent">BuiltInConditions Properties </a>
+<div class="Hidden">
+<div class="TreeItem">
+<img src="Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="html/P_Microsoft_Test_FaultInjection_BuiltInConditions_NeverTrigger.htm" target="TopicContent">NeverTrigger Property </a>
+</div>
+<div class="TreeItem">
+<img src="Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="html/P_Microsoft_Test_FaultInjection_BuiltInConditions_TriggerOnEveryCall.htm" target="TopicContent">TriggerOnEveryCall Property </a>
+</div>
+<div class="TreeItem">
+<img src="Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="html/P_Microsoft_Test_FaultInjection_BuiltInConditions_TriggerOnFirstCall.htm" target="TopicContent">TriggerOnFirstCall Property </a>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="TreeNode">
+<img class="TreeNodeImg" onclick="javascript: Toggle(this);" src="Collapsed.gif"/><a class="UnselectedNode" onclick="javascript: return Expand(this);" href="html/T_Microsoft_Test_FaultInjection_BuiltInFaults.htm" target="TopicContent">BuiltInFaults Class</a>
+<div class="Hidden">
+<div class="TreeItem">
+<img src="Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="html/AllMembers_T_Microsoft_Test_FaultInjection_BuiltInFaults.htm" target="TopicContent">BuiltInFaults Members</a>
+</div>
+<div class="TreeNode">
+<img class="TreeNodeImg" onclick="javascript: Toggle(this);" src="Collapsed.gif"/><a class="UnselectedNode" onclick="javascript: return Expand(this);" href="html/Methods_T_Microsoft_Test_FaultInjection_BuiltInFaults.htm" target="TopicContent">BuiltInFaults Methods </a>
+<div class="Hidden">
+<div class="TreeItem">
+<img src="Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="html/M_Microsoft_Test_FaultInjection_BuiltInFaults_ReturnFault.htm" target="TopicContent">ReturnFault Method </a>
+</div>
+<div class="TreeItem">
+<img src="Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="html/M_Microsoft_Test_FaultInjection_BuiltInFaults_ReturnValueFault.htm" target="TopicContent">ReturnValueFault Method </a>
+</div>
+<div class="TreeItem">
+<img src="Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="html/M_Microsoft_Test_FaultInjection_BuiltInFaults_ReturnValueRuntimeFault.htm" target="TopicContent">ReturnValueRuntimeFault Method </a>
+</div>
+<div class="TreeItem">
+<img src="Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="html/M_Microsoft_Test_FaultInjection_BuiltInFaults_ThrowExceptionFault.htm" target="TopicContent">ThrowExceptionFault Method </a>
+</div>
+<div class="TreeItem">
+<img src="Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="html/M_Microsoft_Test_FaultInjection_BuiltInFaults_ThrowExceptionRuntimeFault.htm" target="TopicContent">ThrowExceptionRuntimeFault Method </a>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="TreeNode">
+<img class="TreeNodeImg" onclick="javascript: Toggle(this);" src="Collapsed.gif"/><a class="UnselectedNode" onclick="javascript: return Expand(this);" href="html/T_Microsoft_Test_FaultInjection_CallStack.htm" target="TopicContent">CallStack Class</a>
+<div class="Hidden">
+<div class="TreeItem">
+<img src="Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="html/AllMembers_T_Microsoft_Test_FaultInjection_CallStack.htm" target="TopicContent">CallStack Members</a>
+</div>
+<div class="TreeItem">
+<img src="Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="html/M_Microsoft_Test_FaultInjection_CallStack__ctor.htm" target="TopicContent">CallStack Constructor </a>
+</div>
+<div class="TreeNode">
+<img class="TreeNodeImg" onclick="javascript: Toggle(this);" src="Collapsed.gif"/><a class="UnselectedNode" onclick="javascript: return Expand(this);" href="html/Properties_T_Microsoft_Test_FaultInjection_CallStack.htm" target="TopicContent">CallStack Properties </a>
+<div class="Hidden">
+<div class="TreeItem">
+<img src="Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="html/P_Microsoft_Test_FaultInjection_CallStack_FrameCount.htm" target="TopicContent">FrameCount Property </a>
+</div>
+<div class="TreeItem">
+<img src="Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="html/P_Microsoft_Test_FaultInjection_CallStack_Item.htm" target="TopicContent">Item Property </a>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="TreeNode">
+<img class="TreeNodeImg" onclick="javascript: Toggle(this);" src="Collapsed.gif"/><a class="UnselectedNode" onclick="javascript: return Expand(this);" href="html/T_Microsoft_Test_FaultInjection_ComRegistrar.htm" target="TopicContent">ComRegistrar Class</a>
+<div class="Hidden">
+<div class="TreeItem">
+<img src="Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="html/AllMembers_T_Microsoft_Test_FaultInjection_ComRegistrar.htm" target="TopicContent">ComRegistrar Members</a>
+</div>
+<div class="TreeNode">
+<img class="TreeNodeImg" onclick="javascript: Toggle(this);" src="Collapsed.gif"/><a class="UnselectedNode" onclick="javascript: return Expand(this);" href="html/Fields_T_Microsoft_Test_FaultInjection_ComRegistrar.htm" target="TopicContent">ComRegistrar Fields</a>
+<div class="Hidden">
+<div class="TreeItem">
+<img src="Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="html/F_Microsoft_Test_FaultInjection_ComRegistrar_Clsid.htm" target="TopicContent">Clsid Field</a>
+</div>
+</div>
+</div>
+<div class="TreeNode">
+<img class="TreeNodeImg" onclick="javascript: Toggle(this);" src="Collapsed.gif"/><a class="UnselectedNode" onclick="javascript: return Expand(this);" href="html/Methods_T_Microsoft_Test_FaultInjection_ComRegistrar.htm" target="TopicContent">ComRegistrar Methods </a>
+<div class="Hidden">
+<div class="TreeItem">
+<img src="Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="html/M_Microsoft_Test_FaultInjection_ComRegistrar_IsRegistered.htm" target="TopicContent">IsRegistered Method </a>
+</div>
+<div class="TreeItem">
+<img src="Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="html/M_Microsoft_Test_FaultInjection_ComRegistrar_Register.htm" target="TopicContent">Register Method </a>
+</div>
+<div class="TreeItem">
+<img src="Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="html/M_Microsoft_Test_FaultInjection_ComRegistrar_SuppressAutoRegister.htm" target="TopicContent">SuppressAutoRegister Method </a>
+</div>
+<div class="TreeItem">
+<img src="Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="html/M_Microsoft_Test_FaultInjection_ComRegistrar_Unregister.htm" target="TopicContent">Unregister Method </a>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="TreeNode">
+<img class="TreeNodeImg" onclick="javascript: Toggle(this);" src="Collapsed.gif"/><a class="UnselectedNode" onclick="javascript: return Expand(this);" href="html/T_Microsoft_Test_FaultInjection_FaultDispatcher.htm" target="TopicContent">FaultDispatcher Class</a>
+<div class="Hidden">
+<div class="TreeItem">
+<img src="Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="html/AllMembers_T_Microsoft_Test_FaultInjection_FaultDispatcher.htm" target="TopicContent">FaultDispatcher Members</a>
+</div>
+<div class="TreeNode">
+<img class="TreeNodeImg" onclick="javascript: Toggle(this);" src="Collapsed.gif"/><a class="UnselectedNode" onclick="javascript: return Expand(this);" href="html/Methods_T_Microsoft_Test_FaultInjection_FaultDispatcher.htm" target="TopicContent">FaultDispatcher Methods </a>
+<div class="Hidden">
+<div class="TreeItem">
+<img src="Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="html/M_Microsoft_Test_FaultInjection_FaultDispatcher_Trap.htm" target="TopicContent">Trap Method </a>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="TreeNode">
+<img class="TreeNodeImg" onclick="javascript: Toggle(this);" src="Collapsed.gif"/><a class="UnselectedNode" onclick="javascript: return Expand(this);" href="html/T_Microsoft_Test_FaultInjection_FaultInjectionException.htm" target="TopicContent">FaultInjectionException Class</a>
+<div class="Hidden">
+<div class="TreeItem">
+<img src="Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="html/AllMembers_T_Microsoft_Test_FaultInjection_FaultInjectionException.htm" target="TopicContent">FaultInjectionException Members</a>
+</div>
+<div class="TreeNode">
+<img class="TreeNodeImg" onclick="javascript: Toggle(this);" src="Collapsed.gif"/><a class="UnselectedNode" onclick="javascript: return Expand(this);" href="html/Overload_Microsoft_Test_FaultInjection_FaultInjectionException__ctor.htm" target="TopicContent">FaultInjectionException Constructor </a>
+<div class="Hidden">
+<div class="TreeItem">
+<img src="Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="html/M_Microsoft_Test_FaultInjection_FaultInjectionException__ctor.htm" target="TopicContent">FaultInjectionException Constructor </a>
+</div>
+<div class="TreeItem">
+<img src="Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="html/M_Microsoft_Test_FaultInjection_FaultInjectionException__ctor_2.htm" target="TopicContent">FaultInjectionException Constructor (String)</a>
+</div>
+<div class="TreeItem">
+<img src="Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="html/M_Microsoft_Test_FaultInjection_FaultInjectionException__ctor_1.htm" target="TopicContent">FaultInjectionException Constructor (SerializationInfo, StreamingContext)</a>
+</div>
+<div class="TreeItem">
+<img src="Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="html/M_Microsoft_Test_FaultInjection_FaultInjectionException__ctor_3.htm" target="TopicContent">FaultInjectionException Constructor (String, Exception)</a>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="TreeNode">
+<img class="TreeNodeImg" onclick="javascript: Toggle(this);" src="Collapsed.gif"/><a class="UnselectedNode" onclick="javascript: return Expand(this);" href="html/T_Microsoft_Test_FaultInjection_FaultRule.htm" target="TopicContent">FaultRule Class</a>
+<div class="Hidden">
+<div class="TreeItem">
+<img src="Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="html/AllMembers_T_Microsoft_Test_FaultInjection_FaultRule.htm" target="TopicContent">FaultRule Members</a>
+</div>
+<div class="TreeNode">
+<img class="TreeNodeImg" onclick="javascript: Toggle(this);" src="Collapsed.gif"/><a class="UnselectedNode" onclick="javascript: return Expand(this);" href="html/Overload_Microsoft_Test_FaultInjection_FaultRule__ctor.htm" target="TopicContent">FaultRule Constructor </a>
+<div class="Hidden">
+<div class="TreeItem">
+<img src="Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="html/M_Microsoft_Test_FaultInjection_FaultRule__ctor_1.htm" target="TopicContent">FaultRule Constructor (String)</a>
+</div>
+<div class="TreeItem">
+<img src="Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="html/M_Microsoft_Test_FaultInjection_FaultRule__ctor.htm" target="TopicContent">FaultRule Constructor (MethodBase, ICondition, IFault)</a>
+</div>
+<div class="TreeItem">
+<img src="Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="html/M_Microsoft_Test_FaultInjection_FaultRule__ctor_2.htm" target="TopicContent">FaultRule Constructor (String, ICondition, IFault)</a>
+</div>
+</div>
+</div>
+<div class="TreeNode">
+<img class="TreeNodeImg" onclick="javascript: Toggle(this);" src="Collapsed.gif"/><a class="UnselectedNode" onclick="javascript: return Expand(this);" href="html/Properties_T_Microsoft_Test_FaultInjection_FaultRule.htm" target="TopicContent">FaultRule Properties </a>
+<div class="Hidden">
+<div class="TreeItem">
+<img src="Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="html/P_Microsoft_Test_FaultInjection_FaultRule_Condition.htm" target="TopicContent">Condition Property </a>
+</div>
+<div class="TreeItem">
+<img src="Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="html/P_Microsoft_Test_FaultInjection_FaultRule_Fault.htm" target="TopicContent">Fault Property </a>
+</div>
+<div class="TreeItem">
+<img src="Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="html/P_Microsoft_Test_FaultInjection_FaultRule_MethodSignature.htm" target="TopicContent">MethodSignature Property </a>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="TreeNode">
+<img class="TreeNodeImg" onclick="javascript: Toggle(this);" src="Collapsed.gif"/><a class="UnselectedNode" onclick="javascript: return Expand(this);" href="html/T_Microsoft_Test_FaultInjection_FaultScope.htm" target="TopicContent">FaultScope Class</a>
+<div class="Hidden">
+<div class="TreeItem">
+<img src="Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="html/AllMembers_T_Microsoft_Test_FaultInjection_FaultScope.htm" target="TopicContent">FaultScope Members</a>
+</div>
+<div class="TreeItem">
+<img src="Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="html/M_Microsoft_Test_FaultInjection_FaultScope__ctor.htm" target="TopicContent">FaultScope Constructor </a>
+</div>
+<div class="TreeNode">
+<img class="TreeNodeImg" onclick="javascript: Toggle(this);" src="Collapsed.gif"/><a class="UnselectedNode" onclick="javascript: return Expand(this);" href="html/Methods_T_Microsoft_Test_FaultInjection_FaultScope.htm" target="TopicContent">FaultScope Methods </a>
+<div class="Hidden">
+<div class="TreeItem">
+<img src="Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="html/M_Microsoft_Test_FaultInjection_FaultScope_AssertFaultInjectionEnabled.htm" target="TopicContent">AssertFaultInjectionEnabled Method </a>
+</div>
+<div class="TreeItem">
+<img src="Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="html/M_Microsoft_Test_FaultInjection_FaultScope_Dispose.htm" target="TopicContent">Dispose Method </a>
+</div>
+</div>
+</div>
+<div class="TreeNode">
+<img class="TreeNodeImg" onclick="javascript: Toggle(this);" src="Collapsed.gif"/><a class="UnselectedNode" onclick="javascript: return Expand(this);" href="html/Properties_T_Microsoft_Test_FaultInjection_FaultScope.htm" target="TopicContent">FaultScope Properties </a>
+<div class="Hidden">
+<div class="TreeItem">
+<img src="Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="html/P_Microsoft_Test_FaultInjection_FaultScope_Current.htm" target="TopicContent">Current Property </a>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="TreeNode">
+<img class="TreeNodeImg" onclick="javascript: Toggle(this);" src="Collapsed.gif"/><a class="UnselectedNode" onclick="javascript: return Expand(this);" href="html/T_Microsoft_Test_FaultInjection_FaultSession.htm" target="TopicContent">FaultSession Class</a>
+<div class="Hidden">
+<div class="TreeItem">
+<img src="Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="html/AllMembers_T_Microsoft_Test_FaultInjection_FaultSession.htm" target="TopicContent">FaultSession Members</a>
+</div>
+<div class="TreeItem">
+<img src="Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="html/M_Microsoft_Test_FaultInjection_FaultSession__ctor.htm" target="TopicContent">FaultSession Constructor </a>
+</div>
+<div class="TreeNode">
+<img class="TreeNodeImg" onclick="javascript: Toggle(this);" src="Collapsed.gif"/><a class="UnselectedNode" onclick="javascript: return Expand(this);" href="html/Methods_T_Microsoft_Test_FaultInjection_FaultSession.htm" target="TopicContent">FaultSession Methods </a>
+<div class="Hidden">
+<div class="TreeItem">
+<img src="Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="html/M_Microsoft_Test_FaultInjection_FaultSession_ClearGlobalFault.htm" target="TopicContent">ClearGlobalFault Method </a>
+</div>
+<div class="TreeItem">
+<img src="Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="html/M_Microsoft_Test_FaultInjection_FaultSession_FindRule.htm" target="TopicContent">FindRule Method </a>
+</div>
+<div class="TreeItem">
+<img src="Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="html/M_Microsoft_Test_FaultInjection_FaultSession_GetProcessStartInfo.htm" target="TopicContent">GetProcessStartInfo Method </a>
+</div>
+<div class="TreeItem">
+<img src="Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="html/M_Microsoft_Test_FaultInjection_FaultSession_NotifyRuleChanges.htm" target="TopicContent">NotifyRuleChanges Method </a>
+</div>
+<div class="TreeItem">
+<img src="Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="html/M_Microsoft_Test_FaultInjection_FaultSession_SetGlobalFault.htm" target="TopicContent">SetGlobalFault Method </a>
+</div>
+</div>
+</div>
+<div class="TreeNode">
+<img class="TreeNodeImg" onclick="javascript: Toggle(this);" src="Collapsed.gif"/><a class="UnselectedNode" onclick="javascript: return Expand(this);" href="html/Properties_T_Microsoft_Test_FaultInjection_FaultSession.htm" target="TopicContent">FaultSession Properties </a>
+<div class="Hidden">
+<div class="TreeItem">
+<img src="Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="html/P_Microsoft_Test_FaultInjection_FaultSession_LogDirectory.htm" target="TopicContent">LogDirectory Property </a>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="TreeNode">
+<img class="TreeNodeImg" onclick="javascript: Toggle(this);" src="Collapsed.gif"/><a class="UnselectedNode" onclick="javascript: return Expand(this);" href="html/T_Microsoft_Test_FaultInjection_ICondition.htm" target="TopicContent">ICondition Interface</a>
+<div class="Hidden">
+<div class="TreeItem">
+<img src="Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="html/AllMembers_T_Microsoft_Test_FaultInjection_ICondition.htm" target="TopicContent">ICondition Members</a>
+</div>
+<div class="TreeNode">
+<img class="TreeNodeImg" onclick="javascript: Toggle(this);" src="Collapsed.gif"/><a class="UnselectedNode" onclick="javascript: return Expand(this);" href="html/Methods_T_Microsoft_Test_FaultInjection_ICondition.htm" target="TopicContent">ICondition Methods </a>
+<div class="Hidden">
+<div class="TreeItem">
+<img src="Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="html/M_Microsoft_Test_FaultInjection_ICondition_Trigger.htm" target="TopicContent">Trigger Method </a>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="TreeNode">
+<img class="TreeNodeImg" onclick="javascript: Toggle(this);" src="Collapsed.gif"/><a class="UnselectedNode" onclick="javascript: return Expand(this);" href="html/T_Microsoft_Test_FaultInjection_IFault.htm" target="TopicContent">IFault Interface</a>
+<div class="Hidden">
+<div class="TreeItem">
+<img src="Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="html/AllMembers_T_Microsoft_Test_FaultInjection_IFault.htm" target="TopicContent">IFault Members</a>
+</div>
+<div class="TreeNode">
+<img class="TreeNodeImg" onclick="javascript: Toggle(this);" src="Collapsed.gif"/><a class="UnselectedNode" onclick="javascript: return Expand(this);" href="html/Methods_T_Microsoft_Test_FaultInjection_IFault.htm" target="TopicContent">IFault Methods </a>
+<div class="Hidden">
+<div class="TreeItem">
+<img src="Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="html/M_Microsoft_Test_FaultInjection_IFault_Retrieve.htm" target="TopicContent">Retrieve Method </a>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="TreeNode">
+<img class="TreeNodeImg" onclick="javascript: Toggle(this);" src="Collapsed.gif"/><a class="UnselectedNode" onclick="javascript: return Expand(this);" href="html/T_Microsoft_Test_FaultInjection_IRuntimeContext.htm" target="TopicContent">IRuntimeContext Interface</a>
+<div class="Hidden">
+<div class="TreeItem">
+<img src="Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="html/AllMembers_T_Microsoft_Test_FaultInjection_IRuntimeContext.htm" target="TopicContent">IRuntimeContext Members</a>
+</div>
+<div class="TreeNode">
+<img class="TreeNodeImg" onclick="javascript: Toggle(this);" src="Collapsed.gif"/><a class="UnselectedNode" onclick="javascript: return Expand(this);" href="html/Properties_T_Microsoft_Test_FaultInjection_IRuntimeContext.htm" target="TopicContent">IRuntimeContext Properties </a>
+<div class="Hidden">
+<div class="TreeItem">
+<img src="Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="html/P_Microsoft_Test_FaultInjection_IRuntimeContext_CalledTimes.htm" target="TopicContent">CalledTimes Property </a>
+</div>
+<div class="TreeItem">
+<img src="Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="html/P_Microsoft_Test_FaultInjection_IRuntimeContext_Caller.htm" target="TopicContent">Caller Property </a>
+</div>
+<div class="TreeItem">
+<img src="Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="html/P_Microsoft_Test_FaultInjection_IRuntimeContext_CallStack.htm" target="TopicContent">CallStack Property </a>
+</div>
+<div class="TreeItem">
+<img src="Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="html/P_Microsoft_Test_FaultInjection_IRuntimeContext_CallStackTrace.htm" target="TopicContent">CallStackTrace Property </a>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="TreeNode">
+<img class="TreeNodeImg" onclick="javascript: Toggle(this);" src="Collapsed.gif"/><a class="UnselectedNode" onclick="javascript: return Expand(this);" href="html/T_Microsoft_Test_FaultInjection_RuntimeContext.htm" target="TopicContent">RuntimeContext Class</a>
+<div class="Hidden">
+<div class="TreeItem">
+<img src="Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="html/AllMembers_T_Microsoft_Test_FaultInjection_RuntimeContext.htm" target="TopicContent">RuntimeContext Members</a>
+</div>
+<div class="TreeItem">
+<img src="Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="html/M_Microsoft_Test_FaultInjection_RuntimeContext__ctor.htm" target="TopicContent">RuntimeContext Constructor </a>
+</div>
+<div class="TreeNode">
+<img class="TreeNodeImg" onclick="javascript: Toggle(this);" src="Collapsed.gif"/><a class="UnselectedNode" onclick="javascript: return Expand(this);" href="html/Properties_T_Microsoft_Test_FaultInjection_RuntimeContext.htm" target="TopicContent">RuntimeContext Properties </a>
+<div class="Hidden">
+<div class="TreeItem">
+<img src="Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="html/P_Microsoft_Test_FaultInjection_RuntimeContext_CalledTimes.htm" target="TopicContent">CalledTimes Property </a>
+</div>
+<div class="TreeItem">
+<img src="Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="html/P_Microsoft_Test_FaultInjection_RuntimeContext_Caller.htm" target="TopicContent">Caller Property </a>
+</div>
+<div class="TreeItem">
+<img src="Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="html/P_Microsoft_Test_FaultInjection_RuntimeContext_CallStack.htm" target="TopicContent">CallStack Property </a>
+</div>
+<div class="TreeItem">
+<img src="Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="html/P_Microsoft_Test_FaultInjection_RuntimeContext_CallStackTrace.htm" target="TopicContent">CallStackTrace Property </a>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="TreeNode">
+<img class="TreeNodeImg" onclick="javascript: Toggle(this);" src="Collapsed.gif"/><a class="UnselectedNode" onclick="javascript: return Expand(this);" href="html/N_Microsoft_Test_Input.htm" target="TopicContent">Microsoft.Test.Input Namespace</a>
+<div class="Hidden">
+<div class="TreeItem">
+<img src="Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="html/T_Microsoft_Test_Input_Key.htm" target="TopicContent">Key Enumeration</a>
+</div>
+<div class="TreeNode">
+<img class="TreeNodeImg" onclick="javascript: Toggle(this);" src="Collapsed.gif"/><a class="UnselectedNode" onclick="javascript: return Expand(this);" href="html/T_Microsoft_Test_Input_Keyboard.htm" target="TopicContent">Keyboard Class</a>
+<div class="Hidden">
+<div class="TreeItem">
+<img src="Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="html/AllMembers_T_Microsoft_Test_Input_Keyboard.htm" target="TopicContent">Keyboard Members</a>
+</div>
+<div class="TreeItem">
+<img src="Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="html/M_Microsoft_Test_Input_Keyboard__ctor.htm" target="TopicContent">Keyboard Constructor </a>
+</div>
+<div class="TreeNode">
+<img class="TreeNodeImg" onclick="javascript: Toggle(this);" src="Collapsed.gif"/><a class="UnselectedNode" onclick="javascript: return Expand(this);" href="html/Methods_T_Microsoft_Test_Input_Keyboard.htm" target="TopicContent">Keyboard Methods </a>
+<div class="Hidden">
+<div class="TreeItem">
+<img src="Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="html/M_Microsoft_Test_Input_Keyboard_Press.htm" target="TopicContent">Press Method </a>
+</div>
+<div class="TreeItem">
+<img src="Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="html/M_Microsoft_Test_Input_Keyboard_Release.htm" target="TopicContent">Release Method </a>
+</div>
+<div class="TreeItem">
+<img src="Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="html/M_Microsoft_Test_Input_Keyboard_Reset.htm" target="TopicContent">Reset Method </a>
+</div>
+<div class="TreeNode">
+<img class="TreeNodeImg" onclick="javascript: Toggle(this);" src="Collapsed.gif"/><a class="UnselectedNode" onclick="javascript: return Expand(this);" href="html/Overload_Microsoft_Test_Input_Keyboard_Type.htm" target="TopicContent">Type Method </a>
+<div class="Hidden">
+<div class="TreeItem">
+<img src="Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="html/M_Microsoft_Test_Input_Keyboard_Type.htm" target="TopicContent">Type Method (Key)</a>
+</div>
+<div class="TreeItem">
+<img src="Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="html/M_Microsoft_Test_Input_Keyboard_Type_1.htm" target="TopicContent">Type Method (String)</a>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="TreeNode">
+<img class="TreeNodeImg" onclick="javascript: Toggle(this);" src="Collapsed.gif"/><a class="UnselectedNode" onclick="javascript: return Expand(this);" href="html/T_Microsoft_Test_Input_Mouse.htm" target="TopicContent">Mouse Class</a>
+<div class="Hidden">
+<div class="TreeItem">
+<img src="Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="html/AllMembers_T_Microsoft_Test_Input_Mouse.htm" target="TopicContent">Mouse Members</a>
+</div>
+<div class="TreeNode">
+<img class="TreeNodeImg" onclick="javascript: Toggle(this);" src="Collapsed.gif"/><a class="UnselectedNode" onclick="javascript: return Expand(this);" href="html/Methods_T_Microsoft_Test_Input_Mouse.htm" target="TopicContent">Mouse Methods </a>
+<div class="Hidden">
+<div class="TreeItem">
+<img src="Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="html/M_Microsoft_Test_Input_Mouse_Click.htm" target="TopicContent">Click Method </a>
+</div>
+<div class="TreeItem">
+<img src="Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="html/M_Microsoft_Test_Input_Mouse_DoubleClick.htm" target="TopicContent">DoubleClick Method </a>
+</div>
+<div class="TreeItem">
+<img src="Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="html/M_Microsoft_Test_Input_Mouse_Down.htm" target="TopicContent">Down Method </a>
+</div>
+<div class="TreeItem">
+<img src="Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="html/M_Microsoft_Test_Input_Mouse_DragTo.htm" target="TopicContent">DragTo Method </a>
+</div>
+<div class="TreeItem">
+<img src="Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="html/M_Microsoft_Test_Input_Mouse_MoveTo.htm" target="TopicContent">MoveTo Method </a>
+</div>
+<div class="TreeItem">
+<img src="Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="html/M_Microsoft_Test_Input_Mouse_Reset.htm" target="TopicContent">Reset Method </a>
+</div>
+<div class="TreeItem">
+<img src="Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="html/M_Microsoft_Test_Input_Mouse_Scroll.htm" target="TopicContent">Scroll Method </a>
+</div>
+<div class="TreeItem">
+<img src="Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="html/M_Microsoft_Test_Input_Mouse_Up.htm" target="TopicContent">Up Method </a>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="TreeItem">
+<img src="Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="html/T_Microsoft_Test_Input_MouseButton.htm" target="TopicContent">MouseButton Enumeration</a>
+</div>
+</div>
+</div>
+<div class="TreeNode">
+<img class="TreeNodeImg" onclick="javascript: Toggle(this);" src="Collapsed.gif"/><a class="UnselectedNode" onclick="javascript: return Expand(this);" href="html/N_Microsoft_Test_LeakDetection.htm" target="TopicContent">Microsoft.Test.LeakDetection Namespace</a>
+<div class="Hidden">
+<div class="TreeNode">
+<img class="TreeNodeImg" onclick="javascript: Toggle(this);" src="Collapsed.gif"/><a class="UnselectedNode" onclick="javascript: return Expand(this);" href="html/T_Microsoft_Test_LeakDetection_MemorySnapshot.htm" target="TopicContent">MemorySnapshot Class</a>
+<div class="Hidden">
+<div class="TreeItem">
+<img src="Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="html/AllMembers_T_Microsoft_Test_LeakDetection_MemorySnapshot.htm" target="TopicContent">MemorySnapshot Members</a>
+</div>
+<div class="TreeNode">
+<img class="TreeNodeImg" onclick="javascript: Toggle(this);" src="Collapsed.gif"/><a class="UnselectedNode" onclick="javascript: return Expand(this);" href="html/Methods_T_Microsoft_Test_LeakDetection_MemorySnapshot.htm" target="TopicContent">MemorySnapshot Methods </a>
+<div class="Hidden">
+<div class="TreeItem">
+<img src="Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="html/M_Microsoft_Test_LeakDetection_MemorySnapshot_CompareTo.htm" target="TopicContent">CompareTo Method </a>
+</div>
+<div class="TreeItem">
+<img src="Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="html/M_Microsoft_Test_LeakDetection_MemorySnapshot_FromFile.htm" target="TopicContent">FromFile Method </a>
+</div>
+<div class="TreeItem">
+<img src="Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="html/M_Microsoft_Test_LeakDetection_MemorySnapshot_FromProcess.htm" target="TopicContent">FromProcess Method </a>
+</div>
+<div class="TreeItem">
+<img src="Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="html/M_Microsoft_Test_LeakDetection_MemorySnapshot_ToFile.htm" target="TopicContent">ToFile Method </a>
+</div>
+</div>
+</div>
+<div class="TreeNode">
+<img class="TreeNodeImg" onclick="javascript: Toggle(this);" src="Collapsed.gif"/><a class="UnselectedNode" onclick="javascript: return Expand(this);" href="html/Properties_T_Microsoft_Test_LeakDetection_MemorySnapshot.htm" target="TopicContent">MemorySnapshot Properties </a>
+<div class="Hidden">
+<div class="TreeItem">
+<img src="Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="html/P_Microsoft_Test_LeakDetection_MemorySnapshot_GdiObjectCount.htm" target="TopicContent">GdiObjectCount Property </a>
+</div>
+<div class="TreeItem">
+<img src="Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="html/P_Microsoft_Test_LeakDetection_MemorySnapshot_HandleCount.htm" target="TopicContent">HandleCount Property </a>
+</div>
+<div class="TreeItem">
+<img src="Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="html/P_Microsoft_Test_LeakDetection_MemorySnapshot_PageFileBytes.htm" target="TopicContent">PageFileBytes Property </a>
+</div>
+<div class="TreeItem">
+<img src="Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="html/P_Microsoft_Test_LeakDetection_MemorySnapshot_PageFilePeakBytes.htm" target="TopicContent">PageFilePeakBytes Property </a>
+</div>
+<div class="TreeItem">
+<img src="Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="html/P_Microsoft_Test_LeakDetection_MemorySnapshot_PoolNonpagedBytes.htm" target="TopicContent">PoolNonpagedBytes Property </a>
+</div>
+<div class="TreeItem">
+<img src="Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="html/P_Microsoft_Test_LeakDetection_MemorySnapshot_PoolPagedBytes.htm" target="TopicContent">PoolPagedBytes Property </a>
+</div>
+<div class="TreeItem">
+<img src="Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="html/P_Microsoft_Test_LeakDetection_MemorySnapshot_ThreadCount.htm" target="TopicContent">ThreadCount Property </a>
+</div>
+<div class="TreeItem">
+<img src="Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="html/P_Microsoft_Test_LeakDetection_MemorySnapshot_Timestamp.htm" target="TopicContent">Timestamp Property </a>
+</div>
+<div class="TreeItem">
+<img src="Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="html/P_Microsoft_Test_LeakDetection_MemorySnapshot_UserObjectCount.htm" target="TopicContent">UserObjectCount Property </a>
+</div>
+<div class="TreeItem">
+<img src="Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="html/P_Microsoft_Test_LeakDetection_MemorySnapshot_VirtualMemoryBytes.htm" target="TopicContent">VirtualMemoryBytes Property </a>
+</div>
+<div class="TreeItem">
+<img src="Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="html/P_Microsoft_Test_LeakDetection_MemorySnapshot_VirtualMemoryPrivateBytes.htm" target="TopicContent">VirtualMemoryPrivateBytes Property </a>
+</div>
+<div class="TreeItem">
+<img src="Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="html/P_Microsoft_Test_LeakDetection_MemorySnapshot_WorkingSetBytes.htm" target="TopicContent">WorkingSetBytes Property </a>
+</div>
+<div class="TreeItem">
+<img src="Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="html/P_Microsoft_Test_LeakDetection_MemorySnapshot_WorkingSetPeakBytes.htm" target="TopicContent">WorkingSetPeakBytes Property </a>
+</div>
+<div class="TreeItem">
+<img src="Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="html/P_Microsoft_Test_LeakDetection_MemorySnapshot_WorkingSetPrivateBytes.htm" target="TopicContent">WorkingSetPrivateBytes Property </a>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="TreeNode">
+<img class="TreeNodeImg" onclick="javascript: Toggle(this);" src="Collapsed.gif"/><a class="UnselectedNode" onclick="javascript: return Expand(this);" href="html/T_Microsoft_Test_LeakDetection_MemorySnapshotCollection.htm" target="TopicContent">MemorySnapshotCollection Class</a>
+<div class="Hidden">
+<div class="TreeItem">
+<img src="Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="html/AllMembers_T_Microsoft_Test_LeakDetection_MemorySnapshotCollection.htm" target="TopicContent">MemorySnapshotCollection Members</a>
+</div>
+<div class="TreeItem">
+<img src="Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="html/M_Microsoft_Test_LeakDetection_MemorySnapshotCollection__ctor.htm" target="TopicContent">MemorySnapshotCollection Constructor </a>
+</div>
+<div class="TreeNode">
+<img class="TreeNodeImg" onclick="javascript: Toggle(this);" src="Collapsed.gif"/><a class="UnselectedNode" onclick="javascript: return Expand(this);" href="html/Methods_T_Microsoft_Test_LeakDetection_MemorySnapshotCollection.htm" target="TopicContent">MemorySnapshotCollection Methods </a>
+<div class="Hidden">
+<div class="TreeItem">
+<img src="Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="html/M_Microsoft_Test_LeakDetection_MemorySnapshotCollection_FromFile.htm" target="TopicContent">FromFile Method </a>
+</div>
+<div class="TreeItem">
+<img src="Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="html/M_Microsoft_Test_LeakDetection_MemorySnapshotCollection_ToFile.htm" target="TopicContent">ToFile Method </a>
+</div>
+</div>
+</div>
+<div class="TreeItem">
+<img src="Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="html/Properties_T_Microsoft_Test_LeakDetection_MemorySnapshotCollection.htm" target="TopicContent">MemorySnapshotCollection Properties </a>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="TreeNode">
+<img class="TreeNodeImg" onclick="javascript: Toggle(this);" src="Collapsed.gif"/><a class="UnselectedNode" onclick="javascript: return Expand(this);" href="html/N_Microsoft_Test_ObjectComparison.htm" target="TopicContent">Microsoft.Test.ObjectComparison Namespace</a>
+<div class="Hidden">
+<div class="TreeNode">
+<img class="TreeNodeImg" onclick="javascript: Toggle(this);" src="Collapsed.gif"/><a class="UnselectedNode" onclick="javascript: return Expand(this);" href="html/T_Microsoft_Test_ObjectComparison_GraphNode.htm" target="TopicContent">GraphNode Class</a>
+<div class="Hidden">
+<div class="TreeItem">
+<img src="Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="html/AllMembers_T_Microsoft_Test_ObjectComparison_GraphNode.htm" target="TopicContent">GraphNode Members</a>
+</div>
+<div class="TreeItem">
+<img src="Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="html/M_Microsoft_Test_ObjectComparison_GraphNode__ctor.htm" target="TopicContent">GraphNode Constructor </a>
+</div>
+<div class="TreeNode">
+<img class="TreeNodeImg" onclick="javascript: Toggle(this);" src="Collapsed.gif"/><a class="UnselectedNode" onclick="javascript: return Expand(this);" href="html/Methods_T_Microsoft_Test_ObjectComparison_GraphNode.htm" target="TopicContent">GraphNode Methods </a>
+<div class="Hidden">
+<div class="TreeItem">
+<img src="Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="html/M_Microsoft_Test_ObjectComparison_GraphNode_GetNodesInDepthFirstOrder.htm" target="TopicContent">GetNodesInDepthFirstOrder Method </a>
+</div>
+</div>
+</div>
+<div class="TreeNode">
+<img class="TreeNodeImg" onclick="javascript: Toggle(this);" src="Collapsed.gif"/><a class="UnselectedNode" onclick="javascript: return Expand(this);" href="html/Properties_T_Microsoft_Test_ObjectComparison_GraphNode.htm" target="TopicContent">GraphNode Properties </a>
+<div class="Hidden">
+<div class="TreeItem">
+<img src="Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="html/P_Microsoft_Test_ObjectComparison_GraphNode_Children.htm" target="TopicContent">Children Property </a>
+</div>
+<div class="TreeItem">
+<img src="Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="html/P_Microsoft_Test_ObjectComparison_GraphNode_ComparisonStrategy.htm" target="TopicContent">ComparisonStrategy Property </a>
+</div>
+<div class="TreeItem">
+<img src="Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="html/P_Microsoft_Test_ObjectComparison_GraphNode_Depth.htm" target="TopicContent">Depth Property </a>
+</div>
+<div class="TreeItem">
+<img src="Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="html/P_Microsoft_Test_ObjectComparison_GraphNode_Name.htm" target="TopicContent">Name Property </a>
+</div>
+<div class="TreeItem">
+<img src="Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="html/P_Microsoft_Test_ObjectComparison_GraphNode_ObjectType.htm" target="TopicContent">ObjectType Property </a>
+</div>
+<div class="TreeItem">
+<img src="Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="html/P_Microsoft_Test_ObjectComparison_GraphNode_ObjectValue.htm" target="TopicContent">ObjectValue Property </a>
+</div>
+<div class="TreeItem">
+<img src="Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="html/P_Microsoft_Test_ObjectComparison_GraphNode_Parent.htm" target="TopicContent">Parent Property </a>
+</div>
+<div class="TreeItem">
+<img src="Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="html/P_Microsoft_Test_ObjectComparison_GraphNode_QualifiedName.htm" target="TopicContent">QualifiedName Property </a>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="TreeNode">
+<img class="TreeNodeImg" onclick="javascript: Toggle(this);" src="Collapsed.gif"/><a class="UnselectedNode" onclick="javascript: return Expand(this);" href="html/T_Microsoft_Test_ObjectComparison_ObjectComparisonMismatch.htm" target="TopicContent">ObjectComparisonMismatch Class</a>
+<div class="Hidden">
+<div class="TreeItem">
+<img src="Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="html/AllMembers_T_Microsoft_Test_ObjectComparison_ObjectComparisonMismatch.htm" target="TopicContent">ObjectComparisonMismatch Members</a>
+</div>
+<div class="TreeItem">
+<img src="Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="html/M_Microsoft_Test_ObjectComparison_ObjectComparisonMismatch__ctor.htm" target="TopicContent">ObjectComparisonMismatch Constructor </a>
+</div>
+<div class="TreeNode">
+<img class="TreeNodeImg" onclick="javascript: Toggle(this);" src="Collapsed.gif"/><a class="UnselectedNode" onclick="javascript: return Expand(this);" href="html/Properties_T_Microsoft_Test_ObjectComparison_ObjectComparisonMismatch.htm" target="TopicContent">ObjectComparisonMismatch Properties </a>
+<div class="Hidden">
+<div class="TreeItem">
+<img src="Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="html/P_Microsoft_Test_ObjectComparison_ObjectComparisonMismatch_LeftObjectNode.htm" target="TopicContent">LeftObjectNode Property </a>
+</div>
+<div class="TreeItem">
+<img src="Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="html/P_Microsoft_Test_ObjectComparison_ObjectComparisonMismatch_MismatchType.htm" target="TopicContent">MismatchType Property </a>
+</div>
+<div class="TreeItem">
+<img src="Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="html/P_Microsoft_Test_ObjectComparison_ObjectComparisonMismatch_RightObjectNode.htm" target="TopicContent">RightObjectNode Property </a>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="TreeItem">
+<img src="Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="html/T_Microsoft_Test_ObjectComparison_ObjectComparisonMismatchType.htm" target="TopicContent">ObjectComparisonMismatchType Enumeration</a>
+</div>
+<div class="TreeNode">
+<img class="TreeNodeImg" onclick="javascript: Toggle(this);" src="Collapsed.gif"/><a class="UnselectedNode" onclick="javascript: return Expand(this);" href="html/T_Microsoft_Test_ObjectComparison_ObjectGraphCodec.htm" target="TopicContent">ObjectGraphCodec Class</a>
+<div class="Hidden">
+<div class="TreeItem">
+<img src="Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="html/AllMembers_T_Microsoft_Test_ObjectComparison_ObjectGraphCodec.htm" target="TopicContent">ObjectGraphCodec Members</a>
+</div>
+<div class="TreeItem">
+<img src="Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="html/M_Microsoft_Test_ObjectComparison_ObjectGraphCodec__ctor.htm" target="TopicContent">ObjectGraphCodec Constructor </a>
+</div>
+<div class="TreeNode">
+<img class="TreeNodeImg" onclick="javascript: Toggle(this);" src="Collapsed.gif"/><a class="UnselectedNode" onclick="javascript: return Expand(this);" href="html/Methods_T_Microsoft_Test_ObjectComparison_ObjectGraphCodec.htm" target="TopicContent">ObjectGraphCodec Methods </a>
+<div class="Hidden">
+<div class="TreeItem">
+<img src="Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="html/M_Microsoft_Test_ObjectComparison_ObjectGraphCodec_DecodeObjectGraph.htm" target="TopicContent">DecodeObjectGraph Method </a>
+</div>
+<div class="TreeItem">
+<img src="Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="html/M_Microsoft_Test_ObjectComparison_ObjectGraphCodec_EncodeObjectGraph.htm" target="TopicContent">EncodeObjectGraph Method </a>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="TreeNode">
+<img class="TreeNodeImg" onclick="javascript: Toggle(this);" src="Collapsed.gif"/><a class="UnselectedNode" onclick="javascript: return Expand(this);" href="html/T_Microsoft_Test_ObjectComparison_ObjectGraphComparer.htm" target="TopicContent">ObjectGraphComparer Class</a>
+<div class="Hidden">
+<div class="TreeItem">
+<img src="Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="html/AllMembers_T_Microsoft_Test_ObjectComparison_ObjectGraphComparer.htm" target="TopicContent">ObjectGraphComparer Members</a>
+</div>
+<div class="TreeItem">
+<img src="Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="html/M_Microsoft_Test_ObjectComparison_ObjectGraphComparer__ctor.htm" target="TopicContent">ObjectGraphComparer Constructor </a>
+</div>
+<div class="TreeNode">
+<img class="TreeNodeImg" onclick="javascript: Toggle(this);" src="Collapsed.gif"/><a class="UnselectedNode" onclick="javascript: return Expand(this);" href="html/Methods_T_Microsoft_Test_ObjectComparison_ObjectGraphComparer.htm" target="TopicContent">ObjectGraphComparer Methods </a>
+<div class="Hidden">
+<div class="TreeNode">
+<img class="TreeNodeImg" onclick="javascript: Toggle(this);" src="Collapsed.gif"/><a class="UnselectedNode" onclick="javascript: return Expand(this);" href="html/Overload_Microsoft_Test_ObjectComparison_ObjectGraphComparer_Compare.htm" target="TopicContent">Compare Method </a>
+<div class="Hidden">
+<div class="TreeItem">
+<img src="Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="html/M_Microsoft_Test_ObjectComparison_ObjectGraphComparer_Compare.htm" target="TopicContent">Compare Method (GraphNode, GraphNode)</a>
+</div>
+<div class="TreeItem">
+<img src="Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="html/M_Microsoft_Test_ObjectComparison_ObjectGraphComparer_Compare_1.htm" target="TopicContent">Compare Method (GraphNode, GraphNode, IEnumerable(ObjectComparisonMismatch))</a>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="TreeNode">
+<img class="TreeNodeImg" onclick="javascript: Toggle(this);" src="Collapsed.gif"/><a class="UnselectedNode" onclick="javascript: return Expand(this);" href="html/T_Microsoft_Test_ObjectComparison_ObjectGraphComparisonStrategy.htm" target="TopicContent">ObjectGraphComparisonStrategy Class</a>
+<div class="Hidden">
+<div class="TreeItem">
+<img src="Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="html/AllMembers_T_Microsoft_Test_ObjectComparison_ObjectGraphComparisonStrategy.htm" target="TopicContent">ObjectGraphComparisonStrategy Members</a>
+</div>
+<div class="TreeItem">
+<img src="Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="html/M_Microsoft_Test_ObjectComparison_ObjectGraphComparisonStrategy__ctor.htm" target="TopicContent">ObjectGraphComparisonStrategy Constructor </a>
+</div>
+<div class="TreeNode">
+<img class="TreeNodeImg" onclick="javascript: Toggle(this);" src="Collapsed.gif"/><a class="UnselectedNode" onclick="javascript: return Expand(this);" href="html/Methods_T_Microsoft_Test_ObjectComparison_ObjectGraphComparisonStrategy.htm" target="TopicContent">ObjectGraphComparisonStrategy Methods </a>
+<div class="Hidden">
+<div class="TreeItem">
+<img src="Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="html/M_Microsoft_Test_ObjectComparison_ObjectGraphComparisonStrategy_Compare.htm" target="TopicContent">Compare Method </a>
+</div>
+<div class="TreeItem">
+<img src="Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="html/M_Microsoft_Test_ObjectComparison_ObjectGraphComparisonStrategy_CompareChildNodes.htm" target="TopicContent">CompareChildNodes Method </a>
+</div>
+<div class="TreeItem">
+<img src="Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="html/M_Microsoft_Test_ObjectComparison_ObjectGraphComparisonStrategy_IsVisited.htm" target="TopicContent">IsVisited Method </a>
+</div>
+<div class="TreeItem">
+<img src="Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="html/M_Microsoft_Test_ObjectComparison_ObjectGraphComparisonStrategy_MarkVisited.htm" target="TopicContent">MarkVisited Method </a>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="TreeNode">
+<img class="TreeNodeImg" onclick="javascript: Toggle(this);" src="Collapsed.gif"/><a class="UnselectedNode" onclick="javascript: return Expand(this);" href="html/T_Microsoft_Test_ObjectComparison_ObjectGraphFactory.htm" target="TopicContent">ObjectGraphFactory Class</a>
+<div class="Hidden">
+<div class="TreeItem">
+<img src="Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="html/AllMembers_T_Microsoft_Test_ObjectComparison_ObjectGraphFactory.htm" target="TopicContent">ObjectGraphFactory Members</a>
+</div>
+<div class="TreeItem">
+<img src="Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="html/M_Microsoft_Test_ObjectComparison_ObjectGraphFactory__ctor.htm" target="TopicContent">ObjectGraphFactory Constructor </a>
+</div>
+<div class="TreeNode">
+<img class="TreeNodeImg" onclick="javascript: Toggle(this);" src="Collapsed.gif"/><a class="UnselectedNode" onclick="javascript: return Expand(this);" href="html/Methods_T_Microsoft_Test_ObjectComparison_ObjectGraphFactory.htm" target="TopicContent">ObjectGraphFactory Methods </a>
+<div class="Hidden">
+<div class="TreeItem">
+<img src="Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="html/M_Microsoft_Test_ObjectComparison_ObjectGraphFactory_CreateObjectGraph.htm" target="TopicContent">CreateObjectGraph Method </a>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="TreeNode">
+<img class="TreeNodeImg" onclick="javascript: Toggle(this);" src="Collapsed.gif"/><a class="UnselectedNode" onclick="javascript: return Expand(this);" href="html/T_Microsoft_Test_ObjectComparison_ObjectGraphFactoryMap.htm" target="TopicContent">ObjectGraphFactoryMap Class</a>
+<div class="Hidden">
+<div class="TreeItem">
+<img src="Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="html/AllMembers_T_Microsoft_Test_ObjectComparison_ObjectGraphFactoryMap.htm" target="TopicContent">ObjectGraphFactoryMap Members</a>
+</div>
+<div class="TreeItem">
+<img src="Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="html/M_Microsoft_Test_ObjectComparison_ObjectGraphFactoryMap__ctor.htm" target="TopicContent">ObjectGraphFactoryMap Constructor </a>
+</div>
+<div class="TreeNode">
+<img class="TreeNodeImg" onclick="javascript: Toggle(this);" src="Collapsed.gif"/><a class="UnselectedNode" onclick="javascript: return Expand(this);" href="html/Methods_T_Microsoft_Test_ObjectComparison_ObjectGraphFactoryMap.htm" target="TopicContent">ObjectGraphFactoryMap Methods </a>
+<div class="Hidden">
+<div class="TreeNode">
+<img class="TreeNodeImg" onclick="javascript: Toggle(this);" src="Collapsed.gif"/><a class="UnselectedNode" onclick="javascript: return Expand(this);" href="html/Overload_Microsoft_Test_ObjectComparison_ObjectGraphFactoryMap_Add.htm" target="TopicContent">Add Method </a>
+<div class="Hidden">
+<div class="TreeItem">
+<img src="Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="html/M_Microsoft_Test_ObjectComparison_ObjectGraphFactoryMap_Add.htm" target="TopicContent">Add Method (KeyValuePair(Type, ObjectGraphFactory))</a>
+</div>
+<div class="TreeItem">
+<img src="Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="html/M_Microsoft_Test_ObjectComparison_ObjectGraphFactoryMap_Add_1.htm" target="TopicContent">Add Method (Type, ObjectGraphFactory)</a>
+</div>
+</div>
+</div>
+<div class="TreeItem">
+<img src="Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="html/M_Microsoft_Test_ObjectComparison_ObjectGraphFactoryMap_Clear.htm" target="TopicContent">Clear Method </a>
+</div>
+<div class="TreeItem">
+<img src="Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="html/M_Microsoft_Test_ObjectComparison_ObjectGraphFactoryMap_Contains.htm" target="TopicContent">Contains Method </a>
+</div>
+<div class="TreeItem">
+<img src="Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="html/M_Microsoft_Test_ObjectComparison_ObjectGraphFactoryMap_ContainsKey.htm" target="TopicContent">ContainsKey Method </a>
+</div>
+<div class="TreeItem">
+<img src="Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="html/M_Microsoft_Test_ObjectComparison_ObjectGraphFactoryMap_CopyTo.htm" target="TopicContent">CopyTo Method </a>
+</div>
+<div class="TreeItem">
+<img src="Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="html/M_Microsoft_Test_ObjectComparison_ObjectGraphFactoryMap_GetEnumerator.htm" target="TopicContent">GetEnumerator Method </a>
+</div>
+<div class="TreeNode">
+<img class="TreeNodeImg" onclick="javascript: Toggle(this);" src="Collapsed.gif"/><a class="UnselectedNode" onclick="javascript: return Expand(this);" href="html/Overload_Microsoft_Test_ObjectComparison_ObjectGraphFactoryMap_Remove.htm" target="TopicContent">Remove Method </a>
+<div class="Hidden">
+<div class="TreeItem">
+<img src="Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="html/M_Microsoft_Test_ObjectComparison_ObjectGraphFactoryMap_Remove.htm" target="TopicContent">Remove Method (KeyValuePair(Type, ObjectGraphFactory))</a>
+</div>
+<div class="TreeItem">
+<img src="Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="html/M_Microsoft_Test_ObjectComparison_ObjectGraphFactoryMap_Remove_1.htm" target="TopicContent">Remove Method (Type)</a>
+</div>
+</div>
+</div>
+<div class="TreeItem">
+<img src="Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="html/M_Microsoft_Test_ObjectComparison_ObjectGraphFactoryMap_TryGetValue.htm" target="TopicContent">TryGetValue Method </a>
+</div>
+</div>
+</div>
+<div class="TreeNode">
+<img class="TreeNodeImg" onclick="javascript: Toggle(this);" src="Collapsed.gif"/><a class="UnselectedNode" onclick="javascript: return Expand(this);" href="html/Properties_T_Microsoft_Test_ObjectComparison_ObjectGraphFactoryMap.htm" target="TopicContent">ObjectGraphFactoryMap Properties </a>
+<div class="Hidden">
+<div class="TreeItem">
+<img src="Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="html/P_Microsoft_Test_ObjectComparison_ObjectGraphFactoryMap_Count.htm" target="TopicContent">Count Property </a>
+</div>
+<div class="TreeItem">
+<img src="Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="html/P_Microsoft_Test_ObjectComparison_ObjectGraphFactoryMap_IsReadOnly.htm" target="TopicContent">IsReadOnly Property </a>
+</div>
+<div class="TreeItem">
+<img src="Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="html/P_Microsoft_Test_ObjectComparison_ObjectGraphFactoryMap_Item.htm" target="TopicContent">Item Property </a>
+</div>
+<div class="TreeItem">
+<img src="Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="html/P_Microsoft_Test_ObjectComparison_ObjectGraphFactoryMap_Keys.htm" target="TopicContent">Keys Property </a>
+</div>
+<div class="TreeItem">
+<img src="Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="html/P_Microsoft_Test_ObjectComparison_ObjectGraphFactoryMap_Values.htm" target="TopicContent">Values Property </a>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="TreeNode">
+<img class="TreeNodeImg" onclick="javascript: Toggle(this);" src="Collapsed.gif"/><a class="UnselectedNode" onclick="javascript: return Expand(this);" href="html/T_Microsoft_Test_ObjectComparison_PublicPropertyObjectGraphFactory.htm" target="TopicContent">PublicPropertyObjectGraphFactory Class</a>
+<div class="Hidden">
+<div class="TreeItem">
+<img src="Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="html/AllMembers_T_Microsoft_Test_ObjectComparison_PublicPropertyObjectGraphFactory.htm" target="TopicContent">PublicPropertyObjectGraphFactory Members</a>
+</div>
+<div class="TreeItem">
+<img src="Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="html/M_Microsoft_Test_ObjectComparison_PublicPropertyObjectGraphFactory__ctor.htm" target="TopicContent">PublicPropertyObjectGraphFactory Constructor </a>
+</div>
+<div class="TreeNode">
+<img class="TreeNodeImg" onclick="javascript: Toggle(this);" src="Collapsed.gif"/><a class="UnselectedNode" onclick="javascript: return Expand(this);" href="html/Methods_T_Microsoft_Test_ObjectComparison_PublicPropertyObjectGraphFactory.htm" target="TopicContent">PublicPropertyObjectGraphFactory Methods </a>
+<div class="Hidden">
+<div class="TreeItem">
+<img src="Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="html/M_Microsoft_Test_ObjectComparison_PublicPropertyObjectGraphFactory_CreateObjectGraph.htm" target="TopicContent">CreateObjectGraph Method </a>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="TreeNode">
+<img class="TreeNodeImg" onclick="javascript: Toggle(this);" src="Collapsed.gif"/><a class="UnselectedNode" onclick="javascript: return Expand(this);" href="html/T_Microsoft_Test_ObjectComparison_XmlObjectGraphCodec.htm" target="TopicContent">XmlObjectGraphCodec Class</a>
+<div class="Hidden">
+<div class="TreeItem">
+<img src="Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="html/AllMembers_T_Microsoft_Test_ObjectComparison_XmlObjectGraphCodec.htm" target="TopicContent">XmlObjectGraphCodec Members</a>
+</div>
+<div class="TreeNode">
+<img class="TreeNodeImg" onclick="javascript: Toggle(this);" src="Collapsed.gif"/><a class="UnselectedNode" onclick="javascript: return Expand(this);" href="html/Overload_Microsoft_Test_ObjectComparison_XmlObjectGraphCodec__ctor.htm" target="TopicContent">XmlObjectGraphCodec Constructor </a>
+<div class="Hidden">
+<div class="TreeItem">
+<img src="Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="html/M_Microsoft_Test_ObjectComparison_XmlObjectGraphCodec__ctor.htm" target="TopicContent">XmlObjectGraphCodec Constructor </a>
+</div>
+<div class="TreeItem">
+<img src="Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="html/M_Microsoft_Test_ObjectComparison_XmlObjectGraphCodec__ctor_1.htm" target="TopicContent">XmlObjectGraphCodec Constructor (HashSet(ObjectGraphComparisonStrategy))</a>
+</div>
+</div>
+</div>
+<div class="TreeNode">
+<img class="TreeNodeImg" onclick="javascript: Toggle(this);" src="Collapsed.gif"/><a class="UnselectedNode" onclick="javascript: return Expand(this);" href="html/Fields_T_Microsoft_Test_ObjectComparison_XmlObjectGraphCodec.htm" target="TopicContent">XmlObjectGraphCodec Fields</a>
+<div class="Hidden">
+<div class="TreeItem">
+<img src="Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="html/F_Microsoft_Test_ObjectComparison_XmlObjectGraphCodec_ComparisonStrategyXmlAttribute.htm" target="TopicContent">ComparisonStrategyXmlAttribute Field</a>
+</div>
+</div>
+</div>
+<div class="TreeNode">
+<img class="TreeNodeImg" onclick="javascript: Toggle(this);" src="Collapsed.gif"/><a class="UnselectedNode" onclick="javascript: return Expand(this);" href="html/Methods_T_Microsoft_Test_ObjectComparison_XmlObjectGraphCodec.htm" target="TopicContent">XmlObjectGraphCodec Methods </a>
+<div class="Hidden">
+<div class="TreeItem">
+<img src="Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="html/M_Microsoft_Test_ObjectComparison_XmlObjectGraphCodec_DecodeObjectGraph.htm" target="TopicContent">DecodeObjectGraph Method </a>
+</div>
+<div class="TreeItem">
+<img src="Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="html/M_Microsoft_Test_ObjectComparison_XmlObjectGraphCodec_EncodeObjectGraph.htm" target="TopicContent">EncodeObjectGraph Method </a>
+</div>
+</div>
+</div>
+<div class="TreeNode">
+<img class="TreeNodeImg" onclick="javascript: Toggle(this);" src="Collapsed.gif"/><a class="UnselectedNode" onclick="javascript: return Expand(this);" href="html/Properties_T_Microsoft_Test_ObjectComparison_XmlObjectGraphCodec.htm" target="TopicContent">XmlObjectGraphCodec Properties </a>
+<div class="Hidden">
+<div class="TreeItem">
+<img src="Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="html/P_Microsoft_Test_ObjectComparison_XmlObjectGraphCodec_ThrowExceptionOnUnknownComparisonStrategy.htm" target="TopicContent">ThrowExceptionOnUnknownComparisonStrategy Property </a>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="TreeNode">
+<img class="TreeNodeImg" onclick="javascript: Toggle(this);" src="Collapsed.gif"/><a class="UnselectedNode" onclick="javascript: return Expand(this);" href="html/N_Microsoft_Test_Text.htm" target="TopicContent">Microsoft.Test.Text Namespace</a>
+<div class="Hidden">
+<div class="TreeNode">
+<img class="TreeNodeImg" onclick="javascript: Toggle(this);" src="Collapsed.gif"/><a class="UnselectedNode" onclick="javascript: return Expand(this);" href="html/T_Microsoft_Test_Text_CommonRegexPatterns.htm" target="TopicContent">CommonRegexPatterns Class</a>
+<div class="Hidden">
+<div class="TreeItem">
+<img src="Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="html/AllMembers_T_Microsoft_Test_Text_CommonRegexPatterns.htm" target="TopicContent">CommonRegexPatterns Members</a>
+</div>
+<div class="TreeNode">
+<img class="TreeNodeImg" onclick="javascript: Toggle(this);" src="Collapsed.gif"/><a class="UnselectedNode" onclick="javascript: return Expand(this);" href="html/Fields_T_Microsoft_Test_Text_CommonRegexPatterns.htm" target="TopicContent">CommonRegexPatterns Fields</a>
+<div class="Hidden">
+<div class="TreeItem">
+<img src="Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="html/F_Microsoft_Test_Text_CommonRegexPatterns_Date.htm" target="TopicContent">Date Field</a>
+</div>
+<div class="TreeItem">
+<img src="Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="html/F_Microsoft_Test_Text_CommonRegexPatterns_EmailAddress.htm" target="TopicContent">EmailAddress Field</a>
+</div>
+<div class="TreeItem">
+<img src="Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="html/F_Microsoft_Test_Text_CommonRegexPatterns_Guid.htm" target="TopicContent">Guid Field</a>
+</div>
+<div class="TreeItem">
+<img src="Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="html/F_Microsoft_Test_Text_CommonRegexPatterns_IpAddress.htm" target="TopicContent">IpAddress Field</a>
+</div>
+<div class="TreeItem">
+<img src="Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="html/F_Microsoft_Test_Text_CommonRegexPatterns_Time.htm" target="TopicContent">Time Field</a>
+</div>
+<div class="TreeItem">
+<img src="Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="html/F_Microsoft_Test_Text_CommonRegexPatterns_UsaPhoneNumber.htm" target="TopicContent">UsaPhoneNumber Field</a>
+</div>
+<div class="TreeItem">
+<img src="Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="html/F_Microsoft_Test_Text_CommonRegexPatterns_UsaSocialSecurityNumber.htm" target="TopicContent">UsaSocialSecurityNumber Field</a>
+</div>
+<div class="TreeItem">
+<img src="Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="html/F_Microsoft_Test_Text_CommonRegexPatterns_UsaZipCode.htm" target="TopicContent">UsaZipCode Field</a>
+</div>
+<div class="TreeItem">
+<img src="Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="html/F_Microsoft_Test_Text_CommonRegexPatterns_UsaZipCodeExtended.htm" target="TopicContent">UsaZipCodeExtended Field</a>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="TreeNode">
+<img class="TreeNodeImg" onclick="javascript: Toggle(this);" src="Collapsed.gif"/><a class="UnselectedNode" onclick="javascript: return Expand(this);" href="html/T_Microsoft_Test_Text_StringFactory.htm" target="TopicContent">StringFactory Class</a>
+<div class="Hidden">
+<div class="TreeItem">
+<img src="Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="html/AllMembers_T_Microsoft_Test_Text_StringFactory.htm" target="TopicContent">StringFactory Members</a>
+</div>
+<div class="TreeNode">
+<img class="TreeNodeImg" onclick="javascript: Toggle(this);" src="Collapsed.gif"/><a class="UnselectedNode" onclick="javascript: return Expand(this);" href="html/Methods_T_Microsoft_Test_Text_StringFactory.htm" target="TopicContent">StringFactory Methods </a>
+<div class="Hidden">
+<div class="TreeNode">
+<img class="TreeNodeImg" onclick="javascript: Toggle(this);" src="Collapsed.gif"/><a class="UnselectedNode" onclick="javascript: return Expand(this);" href="html/Overload_Microsoft_Test_Text_StringFactory_GenerateRandomString.htm" target="TopicContent">GenerateRandomString Method </a>
+<div class="Hidden">
+<div class="TreeItem">
+<img src="Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="html/M_Microsoft_Test_Text_StringFactory_GenerateRandomString.htm" target="TopicContent">GenerateRandomString Method (StringProperties, Int32)</a>
+</div>
+<div class="TreeItem">
+<img src="Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="html/M_Microsoft_Test_Text_StringFactory_GenerateRandomString_1.htm" target="TopicContent">GenerateRandomString Method (Regex, Int32)</a>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="TreeNode">
+<img class="TreeNodeImg" onclick="javascript: Toggle(this);" src="Collapsed.gif"/><a class="UnselectedNode" onclick="javascript: return Expand(this);" href="html/T_Microsoft_Test_Text_StringProperties.htm" target="TopicContent">StringProperties Class</a>
+<div class="Hidden">
+<div class="TreeItem">
+<img src="Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="html/AllMembers_T_Microsoft_Test_Text_StringProperties.htm" target="TopicContent">StringProperties Members</a>
+</div>
+<div class="TreeItem">
+<img src="Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="html/M_Microsoft_Test_Text_StringProperties__ctor.htm" target="TopicContent">StringProperties Constructor </a>
+</div>
+<div class="TreeNode">
+<img class="TreeNodeImg" onclick="javascript: Toggle(this);" src="Collapsed.gif"/><a class="UnselectedNode" onclick="javascript: return Expand(this);" href="html/Properties_T_Microsoft_Test_Text_StringProperties.htm" target="TopicContent">StringProperties Properties </a>
+<div class="Hidden">
+<div class="TreeItem">
+<img src="Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="html/P_Microsoft_Test_Text_StringProperties_HasNumbers.htm" target="TopicContent">HasNumbers Property </a>
+</div>
+<div class="TreeItem">
+<img src="Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="html/P_Microsoft_Test_Text_StringProperties_IsBidirectional.htm" target="TopicContent">IsBidirectional Property </a>
+</div>
+<div class="TreeItem">
+<img src="Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="html/P_Microsoft_Test_Text_StringProperties_MaxNumberOfCodePoints.htm" target="TopicContent">MaxNumberOfCodePoints Property </a>
+</div>
+<div class="TreeItem">
+<img src="Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="html/P_Microsoft_Test_Text_StringProperties_MinNumberOfCodePoints.htm" target="TopicContent">MinNumberOfCodePoints Property </a>
+</div>
+<div class="TreeItem">
+<img src="Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="html/P_Microsoft_Test_Text_StringProperties_MinNumberOfCombiningMarks.htm" target="TopicContent">MinNumberOfCombiningMarks Property </a>
+</div>
+<div class="TreeItem">
+<img src="Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="html/P_Microsoft_Test_Text_StringProperties_MinNumberOfEndUserDefinedCodePoints.htm" target="TopicContent">MinNumberOfEndUserDefinedCodePoints Property </a>
+</div>
+<div class="TreeItem">
+<img src="Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="html/P_Microsoft_Test_Text_StringProperties_MinNumberOfLineBreaks.htm" target="TopicContent">MinNumberOfLineBreaks Property </a>
+</div>
+<div class="TreeItem">
+<img src="Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="html/P_Microsoft_Test_Text_StringProperties_MinNumberOfSurrogatePairs.htm" target="TopicContent">MinNumberOfSurrogatePairs Property </a>
+</div>
+<div class="TreeItem">
+<img src="Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="html/P_Microsoft_Test_Text_StringProperties_MinNumberOfTextSegmentationCodePoints.htm" target="TopicContent">MinNumberOfTextSegmentationCodePoints Property </a>
+</div>
+<div class="TreeItem">
+<img src="Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="html/P_Microsoft_Test_Text_StringProperties_NormalizationForm.htm" target="TopicContent">NormalizationForm Property </a>
+</div>
+<div class="TreeItem">
+<img src="Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="html/P_Microsoft_Test_Text_StringProperties_UnicodeRanges.htm" target="TopicContent">UnicodeRanges Property </a>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="TreeItem">
+<img src="Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="html/T_Microsoft_Test_Text_UnicodeChart.htm" target="TopicContent">UnicodeChart Enumeration</a>
+</div>
+<div class="TreeNode">
+<img class="TreeNodeImg" onclick="javascript: Toggle(this);" src="Collapsed.gif"/><a class="UnselectedNode" onclick="javascript: return Expand(this);" href="html/T_Microsoft_Test_Text_UnicodeRange.htm" target="TopicContent">UnicodeRange Class</a>
+<div class="Hidden">
+<div class="TreeItem">
+<img src="Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="html/AllMembers_T_Microsoft_Test_Text_UnicodeRange.htm" target="TopicContent">UnicodeRange Members</a>
+</div>
+<div class="TreeNode">
+<img class="TreeNodeImg" onclick="javascript: Toggle(this);" src="Collapsed.gif"/><a class="UnselectedNode" onclick="javascript: return Expand(this);" href="html/Overload_Microsoft_Test_Text_UnicodeRange__ctor.htm" target="TopicContent">UnicodeRange Constructor </a>
+<div class="Hidden">
+<div class="TreeItem">
+<img src="Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="html/M_Microsoft_Test_Text_UnicodeRange__ctor.htm" target="TopicContent">UnicodeRange Constructor (UnicodeChart)</a>
+</div>
+<div class="TreeItem">
+<img src="Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="html/M_Microsoft_Test_Text_UnicodeRange__ctor_1.htm" target="TopicContent">UnicodeRange Constructor (UnicodeRange)</a>
+</div>
+<div class="TreeItem">
+<img src="Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="html/M_Microsoft_Test_Text_UnicodeRange__ctor_2.htm" target="TopicContent">UnicodeRange Constructor (Int32, Int32)</a>
+</div>
+</div>
+</div>
+<div class="TreeNode">
+<img class="TreeNodeImg" onclick="javascript: Toggle(this);" src="Collapsed.gif"/><a class="UnselectedNode" onclick="javascript: return Expand(this);" href="html/Properties_T_Microsoft_Test_Text_UnicodeRange.htm" target="TopicContent">UnicodeRange Properties </a>
+<div class="Hidden">
+<div class="TreeItem">
+<img src="Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="html/P_Microsoft_Test_Text_UnicodeRange_EndOfUnicodeRange.htm" target="TopicContent">EndOfUnicodeRange Property </a>
+</div>
+<div class="TreeItem">
+<img src="Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="html/P_Microsoft_Test_Text_UnicodeRange_StartOfUnicodeRange.htm" target="TopicContent">StartOfUnicodeRange Property </a>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="TreeNode">
+<img class="TreeNodeImg" onclick="javascript: Toggle(this);" src="Collapsed.gif"/><a class="UnselectedNode" onclick="javascript: return Expand(this);" href="html/N_Microsoft_Test_Theming.htm" target="TopicContent">Microsoft.Test.Theming Namespace</a>
+<div class="Hidden">
+<div class="TreeNode">
+<img class="TreeNodeImg" onclick="javascript: Toggle(this);" src="Collapsed.gif"/><a class="UnselectedNode" onclick="javascript: return Expand(this);" href="html/T_Microsoft_Test_Theming_Theme.htm" target="TopicContent">Theme Class</a>
+<div class="Hidden">
+<div class="TreeItem">
+<img src="Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="html/AllMembers_T_Microsoft_Test_Theming_Theme.htm" target="TopicContent">Theme Members</a>
+</div>
+<div class="TreeNode">
+<img class="TreeNodeImg" onclick="javascript: Toggle(this);" src="Collapsed.gif"/><a class="UnselectedNode" onclick="javascript: return Expand(this);" href="html/Methods_T_Microsoft_Test_Theming_Theme.htm" target="TopicContent">Theme Methods </a>
+<div class="Hidden">
+<div class="TreeItem">
+<img src="Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="html/M_Microsoft_Test_Theming_Theme_GetAvailableSystemThemes.htm" target="TopicContent">GetAvailableSystemThemes Method </a>
+</div>
+<div class="TreeItem">
+<img src="Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="html/M_Microsoft_Test_Theming_Theme_GetCurrent.htm" target="TopicContent">GetCurrent Method </a>
+</div>
+<div class="TreeNode">
+<img class="TreeNodeImg" onclick="javascript: Toggle(this);" src="Collapsed.gif"/><a class="UnselectedNode" onclick="javascript: return Expand(this);" href="html/Overload_Microsoft_Test_Theming_Theme_SetCurrent.htm" target="TopicContent">SetCurrent Method </a>
+<div class="Hidden">
+<div class="TreeItem">
+<img src="Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="html/M_Microsoft_Test_Theming_Theme_SetCurrent.htm" target="TopicContent">SetCurrent Method (Theme)</a>
+</div>
+<div class="TreeItem">
+<img src="Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="html/M_Microsoft_Test_Theming_Theme_SetCurrent_1.htm" target="TopicContent">SetCurrent Method (FileInfo)</a>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="TreeNode">
+<img class="TreeNodeImg" onclick="javascript: Toggle(this);" src="Collapsed.gif"/><a class="UnselectedNode" onclick="javascript: return Expand(this);" href="html/Properties_T_Microsoft_Test_Theming_Theme.htm" target="TopicContent">Theme Properties </a>
+<div class="Hidden">
+<div class="TreeItem">
+<img src="Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="html/P_Microsoft_Test_Theming_Theme_IsEnabled.htm" target="TopicContent">IsEnabled Property </a>
+</div>
+<div class="TreeItem">
+<img src="Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="html/P_Microsoft_Test_Theming_Theme_Name.htm" target="TopicContent">Name Property </a>
+</div>
+<div class="TreeItem">
+<img src="Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="html/P_Microsoft_Test_Theming_Theme_Path.htm" target="TopicContent">Path Property </a>
+</div>
+<div class="TreeItem">
+<img src="Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="html/P_Microsoft_Test_Theming_Theme_Style.htm" target="TopicContent">Style Property </a>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="TreeNode">
+<img class="TreeNodeImg" onclick="javascript: Toggle(this);" src="Collapsed.gif"/><a class="UnselectedNode" onclick="javascript: return Expand(this);" href="html/N_Microsoft_Test_VariationGeneration.htm" target="TopicContent">Microsoft.Test.VariationGeneration Namespace</a>
+<div class="Hidden">
+<div class="TreeNode">
+<img class="TreeNodeImg" onclick="javascript: Toggle(this);" src="Collapsed.gif"/><a class="UnselectedNode" onclick="javascript: return Expand(this);" href="html/T_Microsoft_Test_VariationGeneration_Constraint_1.htm" target="TopicContent">Constraint(T) Class</a>
+<div class="Hidden">
+<div class="TreeItem">
+<img src="Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="html/AllMembers_T_Microsoft_Test_VariationGeneration_Constraint_1.htm" target="TopicContent">Constraint(T) Members</a>
+</div>
+<div class="TreeItem">
+<img src="Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="html/M_Microsoft_Test_VariationGeneration_Constraint_1__ctor.htm" target="TopicContent">Constraint(T) Constructor </a>
+</div>
+<div class="TreeNode">
+<img class="TreeNodeImg" onclick="javascript: Toggle(this);" src="Collapsed.gif"/><a class="UnselectedNode" onclick="javascript: return Expand(this);" href="html/Methods_T_Microsoft_Test_VariationGeneration_Constraint_1.htm" target="TopicContent">Constraint(T) Methods </a>
+<div class="Hidden">
+<div class="TreeItem">
+<img src="Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="html/M_Microsoft_Test_VariationGeneration_Constraint_1_Conditional.htm" target="TopicContent">Conditional Method </a>
+</div>
+<div class="TreeItem">
+<img src="Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="html/M_Microsoft_Test_VariationGeneration_Constraint_1_If.htm" target="TopicContent">If Method </a>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="TreeNode">
+<img class="TreeNodeImg" onclick="javascript: Toggle(this);" src="Collapsed.gif"/><a class="UnselectedNode" onclick="javascript: return Expand(this);" href="html/T_Microsoft_Test_VariationGeneration_ConstraintExtensions.htm" target="TopicContent">ConstraintExtensions Class</a>
+<div class="Hidden">
+<div class="TreeItem">
+<img src="Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="html/AllMembers_T_Microsoft_Test_VariationGeneration_ConstraintExtensions.htm" target="TopicContent">ConstraintExtensions Members</a>
+</div>
+<div class="TreeNode">
+<img class="TreeNodeImg" onclick="javascript: Toggle(this);" src="Collapsed.gif"/><a class="UnselectedNode" onclick="javascript: return Expand(this);" href="html/Methods_T_Microsoft_Test_VariationGeneration_ConstraintExtensions.htm" target="TopicContent">ConstraintExtensions Methods </a>
+<div class="Hidden">
+<div class="TreeItem">
+<img src="Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="html/M_Microsoft_Test_VariationGeneration_ConstraintExtensions_Else__1.htm" target="TopicContent">Else(T) Method </a>
+</div>
+<div class="TreeItem">
+<img src="Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="html/M_Microsoft_Test_VariationGeneration_ConstraintExtensions_Then__1.htm" target="TopicContent">Then(T) Method </a>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="TreeNode">
+<img class="TreeNodeImg" onclick="javascript: Toggle(this);" src="Collapsed.gif"/><a class="UnselectedNode" onclick="javascript: return Expand(this);" href="html/T_Microsoft_Test_VariationGeneration_Model.htm" target="TopicContent">Model Class</a>
+<div class="Hidden">
+<div class="TreeItem">
+<img src="Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="html/AllMembers_T_Microsoft_Test_VariationGeneration_Model.htm" target="TopicContent">Model Members</a>
+</div>
+<div class="TreeNode">
+<img class="TreeNodeImg" onclick="javascript: Toggle(this);" src="Collapsed.gif"/><a class="UnselectedNode" onclick="javascript: return Expand(this);" href="html/Overload_Microsoft_Test_VariationGeneration_Model__ctor.htm" target="TopicContent">Model Constructor </a>
+<div class="Hidden">
+<div class="TreeItem">
+<img src="Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="html/M_Microsoft_Test_VariationGeneration_Model__ctor.htm" target="TopicContent">Model Constructor (IEnumerable(ParameterBase))</a>
+</div>
+<div class="TreeItem">
+<img src="Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="html/M_Microsoft_Test_VariationGeneration_Model__ctor_1.htm" target="TopicContent">Model Constructor (IEnumerable(ParameterBase), IEnumerable(Constraint(Variation)))</a>
+</div>
+</div>
+</div>
+<div class="TreeNode">
+<img class="TreeNodeImg" onclick="javascript: Toggle(this);" src="Collapsed.gif"/><a class="UnselectedNode" onclick="javascript: return Expand(this);" href="html/Methods_T_Microsoft_Test_VariationGeneration_Model.htm" target="TopicContent">Model Methods </a>
+<div class="Hidden">
+<div class="TreeItem">
+<img src="Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="html/Overload_Microsoft_Test_VariationGeneration_Model_GenerateVariations.htm" target="TopicContent">GenerateVariations Method </a>
+</div>
+</div>
+</div>
+<div class="TreeItem">
+<img src="Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="html/Properties_T_Microsoft_Test_VariationGeneration_Model.htm" target="TopicContent">Model Properties </a>
+</div>
+</div>
+</div>
+<div class="TreeNode">
+<img class="TreeNodeImg" onclick="javascript: Toggle(this);" src="Collapsed.gif"/><a class="UnselectedNode" onclick="javascript: return Expand(this);" href="html/T_Microsoft_Test_VariationGeneration_Model_1.htm" target="TopicContent">Model(T) Class</a>
+<div class="Hidden">
+<div class="TreeItem">
+<img src="Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="html/AllMembers_T_Microsoft_Test_VariationGeneration_Model_1.htm" target="TopicContent">Model(T) Members</a>
+</div>
+<div class="TreeNode">
+<img class="TreeNodeImg" onclick="javascript: Toggle(this);" src="Collapsed.gif"/><a class="UnselectedNode" onclick="javascript: return Expand(this);" href="html/Overload_Microsoft_Test_VariationGeneration_Model_1__ctor.htm" target="TopicContent">Model(T) Constructor </a>
+<div class="Hidden">
+<div class="TreeItem">
+<img src="Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="html/M_Microsoft_Test_VariationGeneration_Model_1__ctor.htm" target="TopicContent">Model(T) Constructor </a>
+</div>
+<div class="TreeItem">
+<img src="Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="html/M_Microsoft_Test_VariationGeneration_Model_1__ctor_1.htm" target="TopicContent">Model(T) Constructor (IEnumerable(ParameterBase))</a>
+</div>
+<div class="TreeItem">
+<img src="Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="html/M_Microsoft_Test_VariationGeneration_Model_1__ctor_2.htm" target="TopicContent">Model(T) Constructor (IEnumerable(ParameterBase), IEnumerable(Constraint(T)))</a>
+</div>
+</div>
+</div>
+<div class="TreeNode">
+<img class="TreeNodeImg" onclick="javascript: Toggle(this);" src="Collapsed.gif"/><a class="UnselectedNode" onclick="javascript: return Expand(this);" href="html/Methods_T_Microsoft_Test_VariationGeneration_Model_1.htm" target="TopicContent">Model(T) Methods </a>
+<div class="Hidden">
+<div class="TreeNode">
+<img class="TreeNodeImg" onclick="javascript: Toggle(this);" src="Collapsed.gif"/><a class="UnselectedNode" onclick="javascript: return Expand(this);" href="html/Overload_Microsoft_Test_VariationGeneration_Model_1_GenerateVariations.htm" target="TopicContent">GenerateVariations Method </a>
+<div class="Hidden">
+<div class="TreeItem">
+<img src="Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="html/M_Microsoft_Test_VariationGeneration_Model_1_GenerateVariations.htm" target="TopicContent">GenerateVariations Method (Int32)</a>
+</div>
+<div class="TreeItem">
+<img src="Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="html/M_Microsoft_Test_VariationGeneration_Model_1_GenerateVariations_1.htm" target="TopicContent">GenerateVariations Method (Int32, Int32)</a>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="TreeNode">
+<img class="TreeNodeImg" onclick="javascript: Toggle(this);" src="Collapsed.gif"/><a class="UnselectedNode" onclick="javascript: return Expand(this);" href="html/Properties_T_Microsoft_Test_VariationGeneration_Model_1.htm" target="TopicContent">Model(T) Properties </a>
+<div class="Hidden">
+<div class="TreeItem">
+<img src="Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="html/P_Microsoft_Test_VariationGeneration_Model_1_Constraints.htm" target="TopicContent">Constraints Property </a>
+</div>
+<div class="TreeItem">
+<img src="Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="html/P_Microsoft_Test_VariationGeneration_Model_1_DefaultVariationTag.htm" target="TopicContent">DefaultVariationTag Property </a>
+</div>
+<div class="TreeItem">
+<img src="Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="html/P_Microsoft_Test_VariationGeneration_Model_1_Parameters.htm" target="TopicContent">Parameters Property </a>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="TreeNode">
+<img class="TreeNodeImg" onclick="javascript: Toggle(this);" src="Collapsed.gif"/><a class="UnselectedNode" onclick="javascript: return Expand(this);" href="html/T_Microsoft_Test_VariationGeneration_Parameter_1.htm" target="TopicContent">Parameter(T) Class</a>
+<div class="Hidden">
+<div class="TreeItem">
+<img src="Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="html/AllMembers_T_Microsoft_Test_VariationGeneration_Parameter_1.htm" target="TopicContent">Parameter(T) Members</a>
+</div>
+<div class="TreeItem">
+<img src="Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="html/M_Microsoft_Test_VariationGeneration_Parameter_1__ctor.htm" target="TopicContent">Parameter(T) Constructor </a>
+</div>
+<div class="TreeNode">
+<img class="TreeNodeImg" onclick="javascript: Toggle(this);" src="Collapsed.gif"/><a class="UnselectedNode" onclick="javascript: return Expand(this);" href="html/Methods_T_Microsoft_Test_VariationGeneration_Parameter_1.htm" target="TopicContent">Parameter(T) Methods </a>
+<div class="Hidden">
+<div class="TreeNode">
+<img class="TreeNodeImg" onclick="javascript: Toggle(this);" src="Collapsed.gif"/><a class="UnselectedNode" onclick="javascript: return Expand(this);" href="html/Overload_Microsoft_Test_VariationGeneration_Parameter_1_Add.htm" target="TopicContent">Add Method </a>
+<div class="Hidden">
+<div class="TreeItem">
+<img src="Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="html/M_Microsoft_Test_VariationGeneration_Parameter_1_Add.htm" target="TopicContent">Add Method (ParameterValue(T))</a>
+</div>
+<div class="TreeItem">
+<img src="Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="html/M_Microsoft_Test_VariationGeneration_Parameter_1_Add_1.htm" target="TopicContent">Add Method (T)</a>
+</div>
+</div>
+</div>
+<div class="TreeItem">
+<img src="Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="html/M_Microsoft_Test_VariationGeneration_Parameter_1_Clear.htm" target="TopicContent">Clear Method </a>
+</div>
+<div class="TreeItem">
+<img src="Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="html/M_Microsoft_Test_VariationGeneration_Parameter_1_Contains.htm" target="TopicContent">Contains Method </a>
+</div>
+<div class="TreeItem">
+<img src="Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="html/M_Microsoft_Test_VariationGeneration_Parameter_1_CopyTo.htm" target="TopicContent">CopyTo Method </a>
+</div>
+<div class="TreeItem">
+<img src="Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="html/M_Microsoft_Test_VariationGeneration_Parameter_1_GetAt.htm" target="TopicContent">GetAt Method </a>
+</div>
+<div class="TreeItem">
+<img src="Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="html/M_Microsoft_Test_VariationGeneration_Parameter_1_GetEnumerator.htm" target="TopicContent">GetEnumerator Method </a>
+</div>
+<div class="TreeItem">
+<img src="Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="html/M_Microsoft_Test_VariationGeneration_Parameter_1_GetValue.htm" target="TopicContent">GetValue Method </a>
+</div>
+<div class="TreeItem">
+<img src="Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="html/M_Microsoft_Test_VariationGeneration_Parameter_1_IndexOf.htm" target="TopicContent">IndexOf Method </a>
+</div>
+<div class="TreeItem">
+<img src="Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="html/M_Microsoft_Test_VariationGeneration_Parameter_1_Insert.htm" target="TopicContent">Insert Method </a>
+</div>
+<div class="TreeItem">
+<img src="Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="html/M_Microsoft_Test_VariationGeneration_Parameter_1_Remove.htm" target="TopicContent">Remove Method </a>
+</div>
+<div class="TreeItem">
+<img src="Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="html/M_Microsoft_Test_VariationGeneration_Parameter_1_RemoveAt.htm" target="TopicContent">RemoveAt Method </a>
+</div>
+</div>
+</div>
+<div class="TreeNode">
+<img class="TreeNodeImg" onclick="javascript: Toggle(this);" src="Collapsed.gif"/><a class="UnselectedNode" onclick="javascript: return Expand(this);" href="html/Properties_T_Microsoft_Test_VariationGeneration_Parameter_1.htm" target="TopicContent">Parameter(T) Properties </a>
+<div class="Hidden">
+<div class="TreeItem">
+<img src="Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="html/P_Microsoft_Test_VariationGeneration_Parameter_1_Count.htm" target="TopicContent">Count Property </a>
+</div>
+<div class="TreeItem">
+<img src="Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="html/P_Microsoft_Test_VariationGeneration_Parameter_1_IsReadOnly.htm" target="TopicContent">IsReadOnly Property </a>
+</div>
+<div class="TreeItem">
+<img src="Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="html/P_Microsoft_Test_VariationGeneration_Parameter_1_Item.htm" target="TopicContent">Item Property </a>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="TreeNode">
+<img class="TreeNodeImg" onclick="javascript: Toggle(this);" src="Collapsed.gif"/><a class="UnselectedNode" onclick="javascript: return Expand(this);" href="html/T_Microsoft_Test_VariationGeneration_ParameterAttribute.htm" target="TopicContent">ParameterAttribute Class</a>
+<div class="Hidden">
+<div class="TreeItem">
+<img src="Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="html/AllMembers_T_Microsoft_Test_VariationGeneration_ParameterAttribute.htm" target="TopicContent">ParameterAttribute Members</a>
+</div>
+<div class="TreeItem">
+<img src="Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="html/M_Microsoft_Test_VariationGeneration_ParameterAttribute__ctor.htm" target="TopicContent">ParameterAttribute Constructor </a>
+</div>
+<div class="TreeNode">
+<img class="TreeNodeImg" onclick="javascript: Toggle(this);" src="Collapsed.gif"/><a class="UnselectedNode" onclick="javascript: return Expand(this);" href="html/Properties_T_Microsoft_Test_VariationGeneration_ParameterAttribute.htm" target="TopicContent">ParameterAttribute Properties </a>
+<div class="Hidden">
+<div class="TreeItem">
+<img src="Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="html/P_Microsoft_Test_VariationGeneration_ParameterAttribute_Tag.htm" target="TopicContent">Tag Property </a>
+</div>
+<div class="TreeItem">
+<img src="Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="html/P_Microsoft_Test_VariationGeneration_ParameterAttribute_Values.htm" target="TopicContent">Values Property </a>
+</div>
+<div class="TreeItem">
+<img src="Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="html/P_Microsoft_Test_VariationGeneration_ParameterAttribute_Weight.htm" target="TopicContent">Weight Property </a>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="TreeNode">
+<img class="TreeNodeImg" onclick="javascript: Toggle(this);" src="Collapsed.gif"/><a class="UnselectedNode" onclick="javascript: return Expand(this);" href="html/T_Microsoft_Test_VariationGeneration_ParameterBase.htm" target="TopicContent">ParameterBase Class</a>
+<div class="Hidden">
+<div class="TreeItem">
+<img src="Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="html/AllMembers_T_Microsoft_Test_VariationGeneration_ParameterBase.htm" target="TopicContent">ParameterBase Members</a>
+</div>
+<div class="TreeItem">
+<img src="Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="html/M_Microsoft_Test_VariationGeneration_ParameterBase__ctor.htm" target="TopicContent">ParameterBase Constructor </a>
+</div>
+<div class="TreeNode">
+<img class="TreeNodeImg" onclick="javascript: Toggle(this);" src="Collapsed.gif"/><a class="UnselectedNode" onclick="javascript: return Expand(this);" href="html/Methods_T_Microsoft_Test_VariationGeneration_ParameterBase.htm" target="TopicContent">ParameterBase Methods </a>
+<div class="Hidden">
+<div class="TreeItem">
+<img src="Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="html/M_Microsoft_Test_VariationGeneration_ParameterBase_GetAt.htm" target="TopicContent">GetAt Method </a>
+</div>
+</div>
+</div>
+<div class="TreeNode">
+<img class="TreeNodeImg" onclick="javascript: Toggle(this);" src="Collapsed.gif"/><a class="UnselectedNode" onclick="javascript: return Expand(this);" href="html/Properties_T_Microsoft_Test_VariationGeneration_ParameterBase.htm" target="TopicContent">ParameterBase Properties </a>
+<div class="Hidden">
+<div class="TreeItem">
+<img src="Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="html/P_Microsoft_Test_VariationGeneration_ParameterBase_Count.htm" target="TopicContent">Count Property </a>
+</div>
+<div class="TreeItem">
+<img src="Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="html/P_Microsoft_Test_VariationGeneration_ParameterBase_Name.htm" target="TopicContent">Name Property </a>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="TreeNode">
+<img class="TreeNodeImg" onclick="javascript: Toggle(this);" src="Collapsed.gif"/><a class="UnselectedNode" onclick="javascript: return Expand(this);" href="html/T_Microsoft_Test_VariationGeneration_ParameterValue_1.htm" target="TopicContent">ParameterValue(T) Class</a>
+<div class="Hidden">
+<div class="TreeItem">
+<img src="Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="html/AllMembers_T_Microsoft_Test_VariationGeneration_ParameterValue_1.htm" target="TopicContent">ParameterValue(T) Members</a>
+</div>
+<div class="TreeNode">
+<img class="TreeNodeImg" onclick="javascript: Toggle(this);" src="Collapsed.gif"/><a class="UnselectedNode" onclick="javascript: return Expand(this);" href="html/Overload_Microsoft_Test_VariationGeneration_ParameterValue_1__ctor.htm" target="TopicContent">ParameterValue(T) Constructor </a>
+<div class="Hidden">
+<div class="TreeItem">
+<img src="Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="html/M_Microsoft_Test_VariationGeneration_ParameterValue_1__ctor.htm" target="TopicContent">ParameterValue(T) Constructor (T)</a>
+</div>
+<div class="TreeItem">
+<img src="Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="html/M_Microsoft_Test_VariationGeneration_ParameterValue_1__ctor_1.htm" target="TopicContent">ParameterValue(T) Constructor (T, Double)</a>
+</div>
+<div class="TreeItem">
+<img src="Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="html/M_Microsoft_Test_VariationGeneration_ParameterValue_1__ctor_2.htm" target="TopicContent">ParameterValue(T) Constructor (T, Object)</a>
+</div>
+<div class="TreeItem">
+<img src="Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="html/M_Microsoft_Test_VariationGeneration_ParameterValue_1__ctor_3.htm" target="TopicContent">ParameterValue(T) Constructor (T, Object, Double)</a>
+</div>
+</div>
+</div>
+<div class="TreeNode">
+<img class="TreeNodeImg" onclick="javascript: Toggle(this);" src="Collapsed.gif"/><a class="UnselectedNode" onclick="javascript: return Expand(this);" href="html/Methods_T_Microsoft_Test_VariationGeneration_ParameterValue_1.htm" target="TopicContent">ParameterValue(T) Methods </a>
+<div class="Hidden">
+<div class="TreeItem">
+<img src="Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="html/M_Microsoft_Test_VariationGeneration_ParameterValue_1_GetValue.htm" target="TopicContent">GetValue Method </a>
+</div>
+</div>
+</div>
+<div class="TreeNode">
+<img class="TreeNodeImg" onclick="javascript: Toggle(this);" src="Collapsed.gif"/><a class="UnselectedNode" onclick="javascript: return Expand(this);" href="html/Properties_T_Microsoft_Test_VariationGeneration_ParameterValue_1.htm" target="TopicContent">ParameterValue(T) Properties </a>
+<div class="Hidden">
+<div class="TreeItem">
+<img src="Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="html/P_Microsoft_Test_VariationGeneration_ParameterValue_1_Value.htm" target="TopicContent">Value Property </a>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="TreeNode">
+<img class="TreeNodeImg" onclick="javascript: Toggle(this);" src="Collapsed.gif"/><a class="UnselectedNode" onclick="javascript: return Expand(this);" href="html/T_Microsoft_Test_VariationGeneration_ParameterValueBase.htm" target="TopicContent">ParameterValueBase Class</a>
+<div class="Hidden">
+<div class="TreeItem">
+<img src="Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="html/AllMembers_T_Microsoft_Test_VariationGeneration_ParameterValueBase.htm" target="TopicContent">ParameterValueBase Members</a>
+</div>
+<div class="TreeItem">
+<img src="Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="html/M_Microsoft_Test_VariationGeneration_ParameterValueBase__ctor.htm" target="TopicContent">ParameterValueBase Constructor </a>
+</div>
+<div class="TreeNode">
+<img class="TreeNodeImg" onclick="javascript: Toggle(this);" src="Collapsed.gif"/><a class="UnselectedNode" onclick="javascript: return Expand(this);" href="html/Methods_T_Microsoft_Test_VariationGeneration_ParameterValueBase.htm" target="TopicContent">ParameterValueBase Methods </a>
+<div class="Hidden">
+<div class="TreeItem">
+<img src="Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="html/M_Microsoft_Test_VariationGeneration_ParameterValueBase_GetValue.htm" target="TopicContent">GetValue Method </a>
+</div>
+</div>
+</div>
+<div class="TreeNode">
+<img class="TreeNodeImg" onclick="javascript: Toggle(this);" src="Collapsed.gif"/><a class="UnselectedNode" onclick="javascript: return Expand(this);" href="html/Properties_T_Microsoft_Test_VariationGeneration_ParameterValueBase.htm" target="TopicContent">ParameterValueBase Properties </a>
+<div class="Hidden">
+<div class="TreeItem">
+<img src="Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="html/P_Microsoft_Test_VariationGeneration_ParameterValueBase_Tag.htm" target="TopicContent">Tag Property </a>
+</div>
+<div class="TreeItem">
+<img src="Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="html/P_Microsoft_Test_VariationGeneration_ParameterValueBase_Weight.htm" target="TopicContent">Weight Property </a>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="TreeNode">
+<img class="TreeNodeImg" onclick="javascript: Toggle(this);" src="Collapsed.gif"/><a class="UnselectedNode" onclick="javascript: return Expand(this);" href="html/T_Microsoft_Test_VariationGeneration_Variation.htm" target="TopicContent">Variation Class</a>
+<div class="Hidden">
+<div class="TreeItem">
+<img src="Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="html/AllMembers_T_Microsoft_Test_VariationGeneration_Variation.htm" target="TopicContent">Variation Members</a>
+</div>
+<div class="TreeNode">
+<img class="TreeNodeImg" onclick="javascript: Toggle(this);" src="Collapsed.gif"/><a class="UnselectedNode" onclick="javascript: return Expand(this);" href="html/Overload_Microsoft_Test_VariationGeneration_Variation__ctor.htm" target="TopicContent">Variation Constructor </a>
+<div class="Hidden">
+<div class="TreeItem">
+<img src="Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="html/M_Microsoft_Test_VariationGeneration_Variation__ctor.htm" target="TopicContent">Variation Constructor </a>
+</div>
+<div class="TreeItem">
+<img src="Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="html/M_Microsoft_Test_VariationGeneration_Variation__ctor_1.htm" target="TopicContent">Variation Constructor (Object)</a>
+</div>
+</div>
+</div>
+<div class="TreeItem">
+<img src="Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="html/Methods_T_Microsoft_Test_VariationGeneration_Variation.htm" target="TopicContent">Variation Methods </a>
+</div>
+<div class="TreeNode">
+<img class="TreeNodeImg" onclick="javascript: Toggle(this);" src="Collapsed.gif"/><a class="UnselectedNode" onclick="javascript: return Expand(this);" href="html/Properties_T_Microsoft_Test_VariationGeneration_Variation.htm" target="TopicContent">Variation Properties </a>
+<div class="Hidden">
+<div class="TreeItem">
+<img src="Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="html/P_Microsoft_Test_VariationGeneration_Variation_Tag.htm" target="TopicContent">Tag Property </a>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="TreeNode">
+<img class="TreeNodeImg" onclick="javascript: Toggle(this);" src="Collapsed.gif"/><a class="UnselectedNode" onclick="javascript: return Expand(this);" href="html/N_Microsoft_Test_VariationGeneration_Constraints.htm" target="TopicContent">Microsoft.Test.VariationGeneration.Constraints Namespace</a>
+<div class="Hidden">
+<div class="TreeNode">
+<img class="TreeNodeImg" onclick="javascript: Toggle(this);" src="Collapsed.gif"/><a class="UnselectedNode" onclick="javascript: return Expand(this);" href="html/T_Microsoft_Test_VariationGeneration_Constraints_ConditionalConstraint_1.htm" target="TopicContent">ConditionalConstraint(T) Class</a>
+<div class="Hidden">
+<div class="TreeItem">
+<img src="Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="html/AllMembers_T_Microsoft_Test_VariationGeneration_Constraints_ConditionalConstraint_1.htm" target="TopicContent">ConditionalConstraint(T) Members</a>
+</div>
+<div class="TreeNode">
+<img class="TreeNodeImg" onclick="javascript: Toggle(this);" src="Collapsed.gif"/><a class="UnselectedNode" onclick="javascript: return Expand(this);" href="html/Overload_Microsoft_Test_VariationGeneration_Constraints_ConditionalConstraint_1__ctor.htm" target="TopicContent">ConditionalConstraint(T) Constructor </a>
+<div class="Hidden">
+<div class="TreeItem">
+<img src="Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="html/M_Microsoft_Test_VariationGeneration_Constraints_ConditionalConstraint_1__ctor.htm" target="TopicContent">ConditionalConstraint(T) Constructor </a>
+</div>
+<div class="TreeItem">
+<img src="Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="html/M_Microsoft_Test_VariationGeneration_Constraints_ConditionalConstraint_1__ctor_1.htm" target="TopicContent">ConditionalConstraint(T) Constructor (Expression(Func(T, Boolean)))</a>
+</div>
+</div>
+</div>
+<div class="TreeNode">
+<img class="TreeNodeImg" onclick="javascript: Toggle(this);" src="Collapsed.gif"/><a class="UnselectedNode" onclick="javascript: return Expand(this);" href="html/Properties_T_Microsoft_Test_VariationGeneration_Constraints_ConditionalConstraint_1.htm" target="TopicContent">ConditionalConstraint(T) Properties </a>
+<div class="Hidden">
+<div class="TreeItem">
+<img src="Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="html/P_Microsoft_Test_VariationGeneration_Constraints_ConditionalConstraint_1_Condition.htm" target="TopicContent">Condition Property </a>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="TreeItem">
+<img src="Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="html/T_Microsoft_Test_VariationGeneration_Constraints_IfPredicate_1.htm" target="TopicContent">IfPredicate(T) Class</a>
+</div>
+<div class="TreeNode">
+<img class="TreeNodeImg" onclick="javascript: Toggle(this);" src="Collapsed.gif"/><a class="UnselectedNode" onclick="javascript: return Expand(this);" href="html/T_Microsoft_Test_VariationGeneration_Constraints_IfThenConstraint_1.htm" target="TopicContent">IfThenConstraint(T) Class</a>
+<div class="Hidden">
+<div class="TreeItem">
+<img src="Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="html/AllMembers_T_Microsoft_Test_VariationGeneration_Constraints_IfThenConstraint_1.htm" target="TopicContent">IfThenConstraint(T) Members</a>
+</div>
+<div class="TreeItem">
+<img src="Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="html/Properties_T_Microsoft_Test_VariationGeneration_Constraints_IfThenConstraint_1.htm" target="TopicContent">IfThenConstraint(T) Properties </a>
+</div>
+</div>
+</div>
+<div class="TreeNode">
+<img class="TreeNodeImg" onclick="javascript: Toggle(this);" src="Collapsed.gif"/><a class="UnselectedNode" onclick="javascript: return Expand(this);" href="html/T_Microsoft_Test_VariationGeneration_Constraints_IfThenElseConstraint_1.htm" target="TopicContent">IfThenElseConstraint(T) Class</a>
+<div class="Hidden">
+<div class="TreeItem">
+<img src="Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="html/AllMembers_T_Microsoft_Test_VariationGeneration_Constraints_IfThenElseConstraint_1.htm" target="TopicContent">IfThenElseConstraint(T) Members</a>
+</div>
+<div class="TreeItem">
+<img src="Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="html/Properties_T_Microsoft_Test_VariationGeneration_Constraints_IfThenElseConstraint_1.htm" target="TopicContent">IfThenElseConstraint(T) Properties </a>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="TreeNode">
+<img class="TreeNodeImg" onclick="javascript: Toggle(this);" src="Collapsed.gif"/><a class="UnselectedNode" onclick="javascript: return Expand(this);" href="html/N_Microsoft_Test_VisualVerification.htm" target="TopicContent">Microsoft.Test.VisualVerification Namespace</a>
+<div class="Hidden">
+<div class="TreeNode">
+<img class="TreeNodeImg" onclick="javascript: Toggle(this);" src="Collapsed.gif"/><a class="UnselectedNode" onclick="javascript: return Expand(this);" href="html/T_Microsoft_Test_VisualVerification_ColorDifference.htm" target="TopicContent">ColorDifference Class</a>
+<div class="Hidden">
+<div class="TreeItem">
+<img src="Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="html/AllMembers_T_Microsoft_Test_VisualVerification_ColorDifference.htm" target="TopicContent">ColorDifference Members</a>
+</div>
+<div class="TreeNode">
+<img class="TreeNodeImg" onclick="javascript: Toggle(this);" src="Collapsed.gif"/><a class="UnselectedNode" onclick="javascript: return Expand(this);" href="html/Overload_Microsoft_Test_VisualVerification_ColorDifference__ctor.htm" target="TopicContent">ColorDifference Constructor </a>
+<div class="Hidden">
+<div class="TreeItem">
+<img src="Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="html/M_Microsoft_Test_VisualVerification_ColorDifference__ctor.htm" target="TopicContent">ColorDifference Constructor </a>
+</div>
+<div class="TreeItem">
+<img src="Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="html/M_Microsoft_Test_VisualVerification_ColorDifference__ctor_1.htm" target="TopicContent">ColorDifference Constructor (Byte, Byte, Byte, Byte)</a>
+</div>
+</div>
+</div>
+<div class="TreeNode">
+<img class="TreeNodeImg" onclick="javascript: Toggle(this);" src="Collapsed.gif"/><a class="UnselectedNode" onclick="javascript: return Expand(this);" href="html/Properties_T_Microsoft_Test_VisualVerification_ColorDifference.htm" target="TopicContent">ColorDifference Properties </a>
+<div class="Hidden">
+<div class="TreeItem">
+<img src="Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="html/P_Microsoft_Test_VisualVerification_ColorDifference_A.htm" target="TopicContent">A Property </a>
+</div>
+<div class="TreeItem">
+<img src="Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="html/P_Microsoft_Test_VisualVerification_ColorDifference_B.htm" target="TopicContent">B Property </a>
+</div>
+<div class="TreeItem">
+<img src="Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="html/P_Microsoft_Test_VisualVerification_ColorDifference_G.htm" target="TopicContent">G Property </a>
+</div>
+<div class="TreeItem">
+<img src="Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="html/P_Microsoft_Test_VisualVerification_ColorDifference_R.htm" target="TopicContent">R Property </a>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="TreeNode">
+<img class="TreeNodeImg" onclick="javascript: Toggle(this);" src="Collapsed.gif"/><a class="UnselectedNode" onclick="javascript: return Expand(this);" href="html/T_Microsoft_Test_VisualVerification_Histogram.htm" target="TopicContent">Histogram Class</a>
+<div class="Hidden">
+<div class="TreeItem">
+<img src="Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="html/AllMembers_T_Microsoft_Test_VisualVerification_Histogram.htm" target="TopicContent">Histogram Members</a>
+</div>
+<div class="TreeNode">
+<img class="TreeNodeImg" onclick="javascript: Toggle(this);" src="Collapsed.gif"/><a class="UnselectedNode" onclick="javascript: return Expand(this);" href="html/Methods_T_Microsoft_Test_VisualVerification_Histogram.htm" target="TopicContent">Histogram Methods </a>
+<div class="Hidden">
+<div class="TreeItem">
+<img src="Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="html/M_Microsoft_Test_VisualVerification_Histogram_FromFile.htm" target="TopicContent">FromFile Method </a>
+</div>
+<div class="TreeItem">
+<img src="Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="html/M_Microsoft_Test_VisualVerification_Histogram_FromSnapshot.htm" target="TopicContent">FromSnapshot Method </a>
+</div>
+<div class="TreeItem">
+<img src="Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="html/M_Microsoft_Test_VisualVerification_Histogram_Merge.htm" target="TopicContent">Merge Method </a>
+</div>
+<div class="TreeItem">
+<img src="Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="html/M_Microsoft_Test_VisualVerification_Histogram_ToFile.htm" target="TopicContent">ToFile Method </a>
+</div>
+<div class="TreeItem">
+<img src="Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="html/M_Microsoft_Test_VisualVerification_Histogram_ToGraph.htm" target="TopicContent">ToGraph Method </a>
+</div>
+</div>
+</div>
+<div class="TreeNode">
+<img class="TreeNodeImg" onclick="javascript: Toggle(this);" src="Collapsed.gif"/><a class="UnselectedNode" onclick="javascript: return Expand(this);" href="html/Properties_T_Microsoft_Test_VisualVerification_Histogram.htm" target="TopicContent">Histogram Properties </a>
+<div class="Hidden">
+<div class="TreeItem">
+<img src="Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="html/P_Microsoft_Test_VisualVerification_Histogram_Item.htm" target="TopicContent">Item Property </a>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="TreeNode">
+<img class="TreeNodeImg" onclick="javascript: Toggle(this);" src="Collapsed.gif"/><a class="UnselectedNode" onclick="javascript: return Expand(this);" href="html/T_Microsoft_Test_VisualVerification_Snapshot.htm" target="TopicContent">Snapshot Class</a>
+<div class="Hidden">
+<div class="TreeItem">
+<img src="Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="html/AllMembers_T_Microsoft_Test_VisualVerification_Snapshot.htm" target="TopicContent">Snapshot Members</a>
+</div>
+<div class="TreeNode">
+<img class="TreeNodeImg" onclick="javascript: Toggle(this);" src="Collapsed.gif"/><a class="UnselectedNode" onclick="javascript: return Expand(this);" href="html/Methods_T_Microsoft_Test_VisualVerification_Snapshot.htm" target="TopicContent">Snapshot Methods </a>
+<div class="Hidden">
+<div class="TreeItem">
+<img src="Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="html/M_Microsoft_Test_VisualVerification_Snapshot_And.htm" target="TopicContent">And Method </a>
+</div>
+<div class="TreeItem">
+<img src="Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="html/M_Microsoft_Test_VisualVerification_Snapshot_Clone.htm" target="TopicContent">Clone Method </a>
+</div>
+<div class="TreeNode">
+<img class="TreeNodeImg" onclick="javascript: Toggle(this);" src="Collapsed.gif"/><a class="UnselectedNode" onclick="javascript: return Expand(this);" href="html/Overload_Microsoft_Test_VisualVerification_Snapshot_CompareTo.htm" target="TopicContent">CompareTo Method </a>
+<div class="Hidden">
+<div class="TreeItem">
+<img src="Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="html/M_Microsoft_Test_VisualVerification_Snapshot_CompareTo.htm" target="TopicContent">CompareTo Method (Snapshot)</a>
+</div>
+<div class="TreeItem">
+<img src="Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="html/M_Microsoft_Test_VisualVerification_Snapshot_CompareTo_1.htm" target="TopicContent">CompareTo Method (Snapshot, Boolean)</a>
+</div>
+</div>
+</div>
+<div class="TreeItem">
+<img src="Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="html/M_Microsoft_Test_VisualVerification_Snapshot_Crop.htm" target="TopicContent">Crop Method </a>
+</div>
+<div class="TreeItem">
+<img src="Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="html/M_Microsoft_Test_VisualVerification_Snapshot_DrawLine.htm" target="TopicContent">DrawLine Method </a>
+</div>
+<div class="TreeNode">
+<img class="TreeNodeImg" onclick="javascript: Toggle(this);" src="Collapsed.gif"/><a class="UnselectedNode" onclick="javascript: return Expand(this);" href="html/Overload_Microsoft_Test_VisualVerification_Snapshot_Find.htm" target="TopicContent">Find Method </a>
+<div class="Hidden">
+<div class="TreeItem">
+<img src="Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="html/M_Microsoft_Test_VisualVerification_Snapshot_Find.htm" target="TopicContent">Find Method (Snapshot)</a>
+</div>
+<div class="TreeItem">
+<img src="Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="html/M_Microsoft_Test_VisualVerification_Snapshot_Find_1.htm" target="TopicContent">Find Method (Snapshot, SnapshotVerifier)</a>
+</div>
+</div>
+</div>
+<div class="TreeItem">
+<img src="Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="html/M_Microsoft_Test_VisualVerification_Snapshot_FromBitmap.htm" target="TopicContent">FromBitmap Method </a>
+</div>
+<div class="TreeItem">
+<img src="Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="html/M_Microsoft_Test_VisualVerification_Snapshot_FromFile.htm" target="TopicContent">FromFile Method </a>
+</div>
+<div class="TreeItem">
+<img src="Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="html/M_Microsoft_Test_VisualVerification_Snapshot_FromRectangle.htm" target="TopicContent">FromRectangle Method </a>
+</div>
+<div class="TreeItem">
+<img src="Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="html/M_Microsoft_Test_VisualVerification_Snapshot_FromWindow.htm" target="TopicContent">FromWindow Method </a>
+</div>
+<div class="TreeItem">
+<img src="Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="html/M_Microsoft_Test_VisualVerification_Snapshot_Or.htm" target="TopicContent">Or Method </a>
+</div>
+<div class="TreeItem">
+<img src="Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="html/M_Microsoft_Test_VisualVerification_Snapshot_Resize.htm" target="TopicContent">Resize Method </a>
+</div>
+<div class="TreeItem">
+<img src="Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="html/M_Microsoft_Test_VisualVerification_Snapshot_ToFile.htm" target="TopicContent">ToFile Method </a>
+</div>
+</div>
+</div>
+<div class="TreeNode">
+<img class="TreeNodeImg" onclick="javascript: Toggle(this);" src="Collapsed.gif"/><a class="UnselectedNode" onclick="javascript: return Expand(this);" href="html/Properties_T_Microsoft_Test_VisualVerification_Snapshot.htm" target="TopicContent">Snapshot Properties </a>
+<div class="Hidden">
+<div class="TreeItem">
+<img src="Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="html/P_Microsoft_Test_VisualVerification_Snapshot_Height.htm" target="TopicContent">Height Property </a>
+</div>
+<div class="TreeItem">
+<img src="Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="html/P_Microsoft_Test_VisualVerification_Snapshot_Item.htm" target="TopicContent">Item Property </a>
+</div>
+<div class="TreeItem">
+<img src="Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="html/P_Microsoft_Test_VisualVerification_Snapshot_Width.htm" target="TopicContent">Width Property </a>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="TreeNode">
+<img class="TreeNodeImg" onclick="javascript: Toggle(this);" src="Collapsed.gif"/><a class="UnselectedNode" onclick="javascript: return Expand(this);" href="html/T_Microsoft_Test_VisualVerification_SnapshotColorVerifier.htm" target="TopicContent">SnapshotColorVerifier Class</a>
+<div class="Hidden">
+<div class="TreeItem">
+<img src="Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="html/AllMembers_T_Microsoft_Test_VisualVerification_SnapshotColorVerifier.htm" target="TopicContent">SnapshotColorVerifier Members</a>
+</div>
+<div class="TreeNode">
+<img class="TreeNodeImg" onclick="javascript: Toggle(this);" src="Collapsed.gif"/><a class="UnselectedNode" onclick="javascript: return Expand(this);" href="html/Overload_Microsoft_Test_VisualVerification_SnapshotColorVerifier__ctor.htm" target="TopicContent">SnapshotColorVerifier Constructor </a>
+<div class="Hidden">
+<div class="TreeItem">
+<img src="Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="html/M_Microsoft_Test_VisualVerification_SnapshotColorVerifier__ctor.htm" target="TopicContent">SnapshotColorVerifier Constructor </a>
+</div>
+<div class="TreeItem">
+<img src="Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="html/M_Microsoft_Test_VisualVerification_SnapshotColorVerifier__ctor_1.htm" target="TopicContent">SnapshotColorVerifier Constructor (Color, ColorDifference)</a>
+</div>
+</div>
+</div>
+<div class="TreeNode">
+<img class="TreeNodeImg" onclick="javascript: Toggle(this);" src="Collapsed.gif"/><a class="UnselectedNode" onclick="javascript: return Expand(this);" href="html/Methods_T_Microsoft_Test_VisualVerification_SnapshotColorVerifier.htm" target="TopicContent">SnapshotColorVerifier Methods </a>
+<div class="Hidden">
+<div class="TreeItem">
+<img src="Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="html/M_Microsoft_Test_VisualVerification_SnapshotColorVerifier_Verify.htm" target="TopicContent">Verify Method </a>
+</div>
+</div>
+</div>
+<div class="TreeNode">
+<img class="TreeNodeImg" onclick="javascript: Toggle(this);" src="Collapsed.gif"/><a class="UnselectedNode" onclick="javascript: return Expand(this);" href="html/Properties_T_Microsoft_Test_VisualVerification_SnapshotColorVerifier.htm" target="TopicContent">SnapshotColorVerifier Properties </a>
+<div class="Hidden">
+<div class="TreeItem">
+<img src="Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="html/P_Microsoft_Test_VisualVerification_SnapshotColorVerifier_ExpectedColor.htm" target="TopicContent">ExpectedColor Property </a>
+</div>
+<div class="TreeItem">
+<img src="Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="html/P_Microsoft_Test_VisualVerification_SnapshotColorVerifier_Tolerance.htm" target="TopicContent">Tolerance Property </a>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="TreeNode">
+<img class="TreeNodeImg" onclick="javascript: Toggle(this);" src="Collapsed.gif"/><a class="UnselectedNode" onclick="javascript: return Expand(this);" href="html/T_Microsoft_Test_VisualVerification_SnapshotHelper.htm" target="TopicContent">SnapshotHelper Class</a>
+<div class="Hidden">
+<div class="TreeItem">
+<img src="Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="html/AllMembers_T_Microsoft_Test_VisualVerification_SnapshotHelper.htm" target="TopicContent">SnapshotHelper Members</a>
+</div>
+<div class="TreeNode">
+<img class="TreeNodeImg" onclick="javascript: Toggle(this);" src="Collapsed.gif"/><a class="UnselectedNode" onclick="javascript: return Expand(this);" href="html/Methods_T_Microsoft_Test_VisualVerification_SnapshotHelper.htm" target="TopicContent">SnapshotHelper Methods </a>
+<div class="Hidden">
+<div class="TreeItem">
+<img src="Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="html/M_Microsoft_Test_VisualVerification_SnapshotHelper_SnapshotFromWindow.htm" target="TopicContent">SnapshotFromWindow Method </a>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="TreeNode">
+<img class="TreeNodeImg" onclick="javascript: Toggle(this);" src="Collapsed.gif"/><a class="UnselectedNode" onclick="javascript: return Expand(this);" href="html/T_Microsoft_Test_VisualVerification_SnapshotHistogramVerifier.htm" target="TopicContent">SnapshotHistogramVerifier Class</a>
+<div class="Hidden">
+<div class="TreeItem">
+<img src="Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="html/AllMembers_T_Microsoft_Test_VisualVerification_SnapshotHistogramVerifier.htm" target="TopicContent">SnapshotHistogramVerifier Members</a>
+</div>
+<div class="TreeNode">
+<img class="TreeNodeImg" onclick="javascript: Toggle(this);" src="Collapsed.gif"/><a class="UnselectedNode" onclick="javascript: return Expand(this);" href="html/Overload_Microsoft_Test_VisualVerification_SnapshotHistogramVerifier__ctor.htm" target="TopicContent">SnapshotHistogramVerifier Constructor </a>
+<div class="Hidden">
+<div class="TreeItem">
+<img src="Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="html/M_Microsoft_Test_VisualVerification_SnapshotHistogramVerifier__ctor.htm" target="TopicContent">SnapshotHistogramVerifier Constructor </a>
+</div>
+<div class="TreeItem">
+<img src="Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="html/M_Microsoft_Test_VisualVerification_SnapshotHistogramVerifier__ctor_1.htm" target="TopicContent">SnapshotHistogramVerifier Constructor (Histogram)</a>
+</div>
+</div>
+</div>
+<div class="TreeNode">
+<img class="TreeNodeImg" onclick="javascript: Toggle(this);" src="Collapsed.gif"/><a class="UnselectedNode" onclick="javascript: return Expand(this);" href="html/Methods_T_Microsoft_Test_VisualVerification_SnapshotHistogramVerifier.htm" target="TopicContent">SnapshotHistogramVerifier Methods </a>
+<div class="Hidden">
+<div class="TreeItem">
+<img src="Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="html/M_Microsoft_Test_VisualVerification_SnapshotHistogramVerifier_Verify.htm" target="TopicContent">Verify Method </a>
+</div>
+</div>
+</div>
+<div class="TreeNode">
+<img class="TreeNodeImg" onclick="javascript: Toggle(this);" src="Collapsed.gif"/><a class="UnselectedNode" onclick="javascript: return Expand(this);" href="html/Properties_T_Microsoft_Test_VisualVerification_SnapshotHistogramVerifier.htm" target="TopicContent">SnapshotHistogramVerifier Properties </a>
+<div class="Hidden">
+<div class="TreeItem">
+<img src="Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="html/P_Microsoft_Test_VisualVerification_SnapshotHistogramVerifier_Tolerance.htm" target="TopicContent">Tolerance Property </a>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="TreeNode">
+<img class="TreeNodeImg" onclick="javascript: Toggle(this);" src="Collapsed.gif"/><a class="UnselectedNode" onclick="javascript: return Expand(this);" href="html/T_Microsoft_Test_VisualVerification_SnapshotToleranceMapVerifier.htm" target="TopicContent">SnapshotToleranceMapVerifier Class</a>
+<div class="Hidden">
+<div class="TreeItem">
+<img src="Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="html/AllMembers_T_Microsoft_Test_VisualVerification_SnapshotToleranceMapVerifier.htm" target="TopicContent">SnapshotToleranceMapVerifier Members</a>
+</div>
+<div class="TreeItem">
+<img src="Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="html/M_Microsoft_Test_VisualVerification_SnapshotToleranceMapVerifier__ctor.htm" target="TopicContent">SnapshotToleranceMapVerifier Constructor </a>
+</div>
+<div class="TreeNode">
+<img class="TreeNodeImg" onclick="javascript: Toggle(this);" src="Collapsed.gif"/><a class="UnselectedNode" onclick="javascript: return Expand(this);" href="html/Methods_T_Microsoft_Test_VisualVerification_SnapshotToleranceMapVerifier.htm" target="TopicContent">SnapshotToleranceMapVerifier Methods </a>
+<div class="Hidden">
+<div class="TreeItem">
+<img src="Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="html/M_Microsoft_Test_VisualVerification_SnapshotToleranceMapVerifier_Verify.htm" target="TopicContent">Verify Method </a>
+</div>
+</div>
+</div>
+<div class="TreeNode">
+<img class="TreeNodeImg" onclick="javascript: Toggle(this);" src="Collapsed.gif"/><a class="UnselectedNode" onclick="javascript: return Expand(this);" href="html/Properties_T_Microsoft_Test_VisualVerification_SnapshotToleranceMapVerifier.htm" target="TopicContent">SnapshotToleranceMapVerifier Properties </a>
+<div class="Hidden">
+<div class="TreeItem">
+<img src="Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="html/P_Microsoft_Test_VisualVerification_SnapshotToleranceMapVerifier_ToleranceMap.htm" target="TopicContent">ToleranceMap Property </a>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="TreeNode">
+<img class="TreeNodeImg" onclick="javascript: Toggle(this);" src="Collapsed.gif"/><a class="UnselectedNode" onclick="javascript: return Expand(this);" href="html/T_Microsoft_Test_VisualVerification_SnapshotVerifier.htm" target="TopicContent">SnapshotVerifier Class</a>
+<div class="Hidden">
+<div class="TreeItem">
+<img src="Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="html/AllMembers_T_Microsoft_Test_VisualVerification_SnapshotVerifier.htm" target="TopicContent">SnapshotVerifier Members</a>
+</div>
+<div class="TreeItem">
+<img src="Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="html/M_Microsoft_Test_VisualVerification_SnapshotVerifier__ctor.htm" target="TopicContent">SnapshotVerifier Constructor </a>
+</div>
+<div class="TreeNode">
+<img class="TreeNodeImg" onclick="javascript: Toggle(this);" src="Collapsed.gif"/><a class="UnselectedNode" onclick="javascript: return Expand(this);" href="html/Methods_T_Microsoft_Test_VisualVerification_SnapshotVerifier.htm" target="TopicContent">SnapshotVerifier Methods </a>
+<div class="Hidden">
+<div class="TreeItem">
+<img src="Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="html/M_Microsoft_Test_VisualVerification_SnapshotVerifier_Verify.htm" target="TopicContent">Verify Method </a>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="TreeItem">
+<img src="Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="html/T_Microsoft_Test_VisualVerification_VerificationResult.htm" target="TopicContent">VerificationResult Enumeration</a>
+</div>
+<div class="TreeItem">
+<img src="Item.gif"/><a class="UnselectedNode" onclick="javascript: return SelectNode(this);" href="html/T_Microsoft_Test_VisualVerification_WindowSnapshotMode.htm" target="TopicContent">WindowSnapshotMode Enumeration</a>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+</div>
+
+</div>
+
+<div id="TOCSizer" class="TOCSizer" onmousedown="OnMouseDown(event)" onselectstart="javascript: return false;"></div>
+
+<iframe id="TopicContent" name="TopicContent" class="TopicContent" src="html/R_Project.htm">
+This page uses an IFRAME but your browser does not support it.
+</iframe>
+
+</form>
+
+</body>
+
+</html>

@@ -1,0 +1,110 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2010
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestApiCore", "TestApiCore\Code\TestApiCore.csproj", "{11195B2B-C8B1-41C3-BE64-82857E2A72BB}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestApiCoreAcceptanceTests", "TestApiCore\AcceptanceTests\TestApiCoreAcceptanceTests.csproj", "{25B9D442-AF99-4CDB-94DF-EDD0B2B8C881}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestApiWpf", "TestApiWpf\Code\TestApiWpf.csproj", "{86539067-0E47-4800-959C-8035CB3ECC22}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestApiWpfAcceptanceTests", "TestApiWpf\AcceptanceTests\TestApiWpfAcceptanceTests.csproj", "{20DDCC29-96AF-4D98-808A-382E24B45E50}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WpfTestApplication", "TestApiWpf\AcceptanceTests\ApplicationControlTestApp\WpfTestApplication.csproj", "{FFA4DDA9-A706-43D9-8151-357D4FFC3E9A}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "FaultInjectionEngine", "FaultInjectionEngine\Code\FaultInjectionEngine.vcxproj", "{D0666C5C-22E7-40CB-81F6-5B651351BF92}"
+EndProject
+Global
+	GlobalSection(TeamFoundationVersionControl) = preSolution
+		SccNumberOfProjects = 7
+		SccEnterpriseProvider = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
+		SccTeamFoundationServer = https://tfs.codeplex.com/tfs/tfs03
+		SccLocalPath0 = .
+		SccProjectUniqueName1 = TestApiCore\\Code\\TestApiCore.csproj
+		SccProjectName1 = TestApiCore/Code
+		SccLocalPath1 = TestApiCore\\Code
+		SccProjectUniqueName2 = TestApiCore\\AcceptanceTests\\TestApiCoreAcceptanceTests.csproj
+		SccProjectName2 = TestApiCore/AcceptanceTests
+		SccLocalPath2 = TestApiCore\\AcceptanceTests
+		SccProjectUniqueName3 = TestApiWpf\\Code\\TestApiWpf.csproj
+		SccProjectName3 = TestApiWpf/Code
+		SccLocalPath3 = TestApiWpf\\Code
+		SccProjectUniqueName4 = TestApiWpf\\AcceptanceTests\\TestApiWpfAcceptanceTests.csproj
+		SccProjectName4 = TestApiWpf/AcceptanceTests
+		SccLocalPath4 = TestApiWpf\\AcceptanceTests
+		SccProjectUniqueName5 = TestApiWpf\\AcceptanceTests\\ApplicationControlTestApp\\WpfTestApplication.csproj
+		SccProjectName5 = TestApiWpf/AcceptanceTests/ApplicationControlTestApp
+		SccLocalPath5 = TestApiWpf\\AcceptanceTests\\ApplicationControlTestApp
+		SccProjectUniqueName6 = FaultInjectionEngine\\Code\\FaultInjectionEngine.vcxproj
+		SccProjectName6 = FaultInjectionEngine/Code
+		SccLocalPath6 = FaultInjectionEngine\\Code
+	EndGlobalSection
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Debug|Mixed Platforms = Debug|Mixed Platforms
+		Debug|Win32 = Debug|Win32
+		DebugAndAcceptanceTests|Any CPU = DebugAndAcceptanceTests|Any CPU
+		DebugAndAcceptanceTests|Mixed Platforms = DebugAndAcceptanceTests|Mixed Platforms
+		DebugAndAcceptanceTests|Win32 = DebugAndAcceptanceTests|Win32
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{11195B2B-C8B1-41C3-BE64-82857E2A72BB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{11195B2B-C8B1-41C3-BE64-82857E2A72BB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{11195B2B-C8B1-41C3-BE64-82857E2A72BB}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
+		{11195B2B-C8B1-41C3-BE64-82857E2A72BB}.Debug|Mixed Platforms.Build.0 = Debug|Any CPU
+		{11195B2B-C8B1-41C3-BE64-82857E2A72BB}.Debug|Win32.ActiveCfg = Debug|Any CPU
+		{11195B2B-C8B1-41C3-BE64-82857E2A72BB}.DebugAndAcceptanceTests|Any CPU.ActiveCfg = DebugWithTests|Any CPU
+		{11195B2B-C8B1-41C3-BE64-82857E2A72BB}.DebugAndAcceptanceTests|Any CPU.Build.0 = DebugWithTests|Any CPU
+		{11195B2B-C8B1-41C3-BE64-82857E2A72BB}.DebugAndAcceptanceTests|Mixed Platforms.ActiveCfg = DebugWithTests|Any CPU
+		{11195B2B-C8B1-41C3-BE64-82857E2A72BB}.DebugAndAcceptanceTests|Mixed Platforms.Build.0 = DebugWithTests|Any CPU
+		{11195B2B-C8B1-41C3-BE64-82857E2A72BB}.DebugAndAcceptanceTests|Win32.ActiveCfg = DebugWithTests|Any CPU
+		{25B9D442-AF99-4CDB-94DF-EDD0B2B8C881}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{25B9D442-AF99-4CDB-94DF-EDD0B2B8C881}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
+		{25B9D442-AF99-4CDB-94DF-EDD0B2B8C881}.Debug|Win32.ActiveCfg = Debug|Any CPU
+		{25B9D442-AF99-4CDB-94DF-EDD0B2B8C881}.DebugAndAcceptanceTests|Any CPU.ActiveCfg = DebugWithTests|Any CPU
+		{25B9D442-AF99-4CDB-94DF-EDD0B2B8C881}.DebugAndAcceptanceTests|Any CPU.Build.0 = DebugWithTests|Any CPU
+		{25B9D442-AF99-4CDB-94DF-EDD0B2B8C881}.DebugAndAcceptanceTests|Mixed Platforms.ActiveCfg = DebugWithTests|Any CPU
+		{25B9D442-AF99-4CDB-94DF-EDD0B2B8C881}.DebugAndAcceptanceTests|Mixed Platforms.Build.0 = DebugWithTests|Any CPU
+		{25B9D442-AF99-4CDB-94DF-EDD0B2B8C881}.DebugAndAcceptanceTests|Win32.ActiveCfg = DebugWithTests|Any CPU
+		{86539067-0E47-4800-959C-8035CB3ECC22}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{86539067-0E47-4800-959C-8035CB3ECC22}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{86539067-0E47-4800-959C-8035CB3ECC22}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
+		{86539067-0E47-4800-959C-8035CB3ECC22}.Debug|Mixed Platforms.Build.0 = Debug|Any CPU
+		{86539067-0E47-4800-959C-8035CB3ECC22}.Debug|Win32.ActiveCfg = Debug|Any CPU
+		{86539067-0E47-4800-959C-8035CB3ECC22}.DebugAndAcceptanceTests|Any CPU.ActiveCfg = DebugWithTests|Any CPU
+		{86539067-0E47-4800-959C-8035CB3ECC22}.DebugAndAcceptanceTests|Any CPU.Build.0 = DebugWithTests|Any CPU
+		{86539067-0E47-4800-959C-8035CB3ECC22}.DebugAndAcceptanceTests|Mixed Platforms.ActiveCfg = DebugWithTests|Any CPU
+		{86539067-0E47-4800-959C-8035CB3ECC22}.DebugAndAcceptanceTests|Mixed Platforms.Build.0 = DebugWithTests|Any CPU
+		{86539067-0E47-4800-959C-8035CB3ECC22}.DebugAndAcceptanceTests|Win32.ActiveCfg = DebugWithTests|Any CPU
+		{20DDCC29-96AF-4D98-808A-382E24B45E50}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{20DDCC29-96AF-4D98-808A-382E24B45E50}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
+		{20DDCC29-96AF-4D98-808A-382E24B45E50}.Debug|Win32.ActiveCfg = Debug|Any CPU
+		{20DDCC29-96AF-4D98-808A-382E24B45E50}.DebugAndAcceptanceTests|Any CPU.ActiveCfg = DebugWithTests|Any CPU
+		{20DDCC29-96AF-4D98-808A-382E24B45E50}.DebugAndAcceptanceTests|Any CPU.Build.0 = DebugWithTests|Any CPU
+		{20DDCC29-96AF-4D98-808A-382E24B45E50}.DebugAndAcceptanceTests|Mixed Platforms.ActiveCfg = DebugWithTests|Any CPU
+		{20DDCC29-96AF-4D98-808A-382E24B45E50}.DebugAndAcceptanceTests|Mixed Platforms.Build.0 = DebugWithTests|Any CPU
+		{20DDCC29-96AF-4D98-808A-382E24B45E50}.DebugAndAcceptanceTests|Win32.ActiveCfg = DebugWithTests|Any CPU
+		{FFA4DDA9-A706-43D9-8151-357D4FFC3E9A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FFA4DDA9-A706-43D9-8151-357D4FFC3E9A}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
+		{FFA4DDA9-A706-43D9-8151-357D4FFC3E9A}.Debug|Win32.ActiveCfg = Debug|Any CPU
+		{FFA4DDA9-A706-43D9-8151-357D4FFC3E9A}.DebugAndAcceptanceTests|Any CPU.ActiveCfg = DebugWithTests|Any CPU
+		{FFA4DDA9-A706-43D9-8151-357D4FFC3E9A}.DebugAndAcceptanceTests|Any CPU.Build.0 = DebugWithTests|Any CPU
+		{FFA4DDA9-A706-43D9-8151-357D4FFC3E9A}.DebugAndAcceptanceTests|Mixed Platforms.ActiveCfg = DebugWithTests|Any CPU
+		{FFA4DDA9-A706-43D9-8151-357D4FFC3E9A}.DebugAndAcceptanceTests|Mixed Platforms.Build.0 = DebugWithTests|Any CPU
+		{FFA4DDA9-A706-43D9-8151-357D4FFC3E9A}.DebugAndAcceptanceTests|Win32.ActiveCfg = DebugWithTests|Any CPU
+		{D0666C5C-22E7-40CB-81F6-5B651351BF92}.Debug|Any CPU.ActiveCfg = Debug|Win32
+		{D0666C5C-22E7-40CB-81F6-5B651351BF92}.Debug|Any CPU.Build.0 = Debug|Win32
+		{D0666C5C-22E7-40CB-81F6-5B651351BF92}.Debug|Mixed Platforms.ActiveCfg = Debug|Win32
+		{D0666C5C-22E7-40CB-81F6-5B651351BF92}.Debug|Mixed Platforms.Build.0 = Debug|Win32
+		{D0666C5C-22E7-40CB-81F6-5B651351BF92}.Debug|Win32.ActiveCfg = Debug|Win32
+		{D0666C5C-22E7-40CB-81F6-5B651351BF92}.Debug|Win32.Build.0 = Debug|Win32
+		{D0666C5C-22E7-40CB-81F6-5B651351BF92}.DebugAndAcceptanceTests|Any CPU.ActiveCfg = DebugWithTests|Win32
+		{D0666C5C-22E7-40CB-81F6-5B651351BF92}.DebugAndAcceptanceTests|Any CPU.Build.0 = DebugWithTests|Win32
+		{D0666C5C-22E7-40CB-81F6-5B651351BF92}.DebugAndAcceptanceTests|Mixed Platforms.ActiveCfg = DebugWithTests|Win32
+		{D0666C5C-22E7-40CB-81F6-5B651351BF92}.DebugAndAcceptanceTests|Mixed Platforms.Build.0 = DebugWithTests|Win32
+		{D0666C5C-22E7-40CB-81F6-5B651351BF92}.DebugAndAcceptanceTests|Win32.ActiveCfg = DebugWithTests|Win32
+		{D0666C5C-22E7-40CB-81F6-5B651351BF92}.DebugAndAcceptanceTests|Win32.Build.0 = DebugWithTests|Win32
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

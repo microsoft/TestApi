@@ -1,0 +1,281 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="4.0">
+  <PropertyGroup>
+    <AssemblyName>TestApiCore</AssemblyName>
+    <RootNamespace>Microsoft.Test</RootNamespace>
+    <OutputType>Library</OutputType>
+    <ProjectGuid>{11195B2B-C8B1-41C3-BE64-82857E2A72BB}</ProjectGuid>
+    <DocumentationFile>obj\$(Configuration)\$(AssemblyName).xml</DocumentationFile>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <OldToolsVersion>3.5</OldToolsVersion>
+    <UpgradeBackupLocation />
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>..\..\..\Binaries\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>..\..\..\BinariesAndAcceptanceTests\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'DebugWithTests|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>..\..\..\BinariesAndAcceptanceTests\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+    <DocumentationFile>obj\Debug\TestApiCore.xml</DocumentationFile>
+    <DebugType>full</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <CodeAnalysisUseTypeNameInSuppression>true</CodeAnalysisUseTypeNameInSuppression>
+    <CodeAnalysisModuleSuppressionsFile>GlobalSuppressions.cs</CodeAnalysisModuleSuppressionsFile>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Include="ApplicationControl\ApplicationSettings.cs" />
+    <Compile Include="ApplicationControl\AutomatedApplication.cs" />
+    <Compile Include="ApplicationControl\AutomatedApplicationEventArgs.cs" />
+    <Compile Include="ApplicationControl\AutomatedApplicationEventType.cs" />
+    <Compile Include="ApplicationControl\AutomatedApplicationFocusChangedEventArgs.cs" />
+    <Compile Include="ApplicationControl\IAutomatedApplicationImpl.cs" />
+    <Compile Include="ApplicationControl\IAutomatedApplicationImplFactory.cs" />
+    <Compile Include="ApplicationControl\InProcessApplication.cs" />
+    <Compile Include="ApplicationControl\InProcessApplicationSettings.cs" />
+    <Compile Include="ApplicationControl\InProcessApplicationType.cs" />
+    <Compile Include="ApplicationControl\IOutOfProcessAutomatedApplicationImpl.cs" />
+    <Compile Include="ApplicationControl\NamespaceDoc.cs" />
+    <Compile Include="ApplicationControl\OutOfProcessApplication.cs" />
+    <Compile Include="ApplicationControl\OutOfProcessApplicationSettings.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="CommandLineParsing\Command.cs" />
+    <Compile Include="CommandLineParsing\CommandLineDictionary.cs" />
+    <Compile Include="CommandLineParsing\CommandLineParser.cs" />
+    <Compile Include="CommandLineParsing\DirectoryInfoConverter.cs" />
+    <Compile Include="CommandLineParsing\FileInfoConverter.cs" />
+    <Compile Include="CommandLineParsing\NamespaceDoc.cs" />
+    <Compile Include="CommandLineParsing\RequiredAttribute.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="FaultInjection\BuiltInConditions.cs" />
+    <Compile Include="FaultInjection\BuiltInFaults.cs" />
+    <Compile Include="FaultInjection\ComRegistrar.cs" />
+    <Compile Include="FaultInjection\Conditions\TriggerOnEveryCall.cs" />
+    <Compile Include="FaultInjection\Conditions\TriggerOnEveryNthCall.cs" />
+    <Compile Include="FaultInjection\Conditions\TriggerOnFirstCall.cs" />
+    <Compile Include="FaultInjection\Constants\ApiErrorMessages.cs" />
+    <Compile Include="FaultInjection\Constants\EnvironmentVariable.cs" />
+    <Compile Include="FaultInjection\Constants\XmlErrorMessages.cs" />
+    <Compile Include="FaultInjection\BuiltInType.cs" />
+    <Compile Include="FaultInjection\CallStack.cs" />
+    <Compile Include="FaultInjection\Constants\EngineInfo.cs" />
+    <Compile Include="FaultInjection\FaultDispatcher.cs" />
+    <Compile Include="FaultInjection\Constants\FaultDispatcherMessages.cs" />
+    <Compile Include="FaultInjection\FaultInjectionException.cs" />
+    <Compile Include="FaultInjection\FaultRule.cs" />
+    <Compile Include="FaultInjection\FaultRuleLoader.cs" />
+    <Compile Include="FaultInjection\FaultScope.cs" />
+    <Compile Include="FaultInjection\FaultSession.cs" />
+    <Compile Include="FaultInjection\Faults\ReturnFault.cs" />
+    <Compile Include="FaultInjection\ICondition.cs" />
+    <Compile Include="FaultInjection\IFault.cs" />
+    <Compile Include="FaultInjection\IRuntimeContext.cs" />
+    <Compile Include="FaultInjection\MethodFilter.cs" />
+    <Compile Include="FaultInjection\Conditions\NeverTrigger.cs" />
+    <Compile Include="FaultInjection\Faults\ReturnValueFault.cs" />
+    <Compile Include="FaultInjection\Faults\ReturnValueRuntimeFault.cs" />
+    <Compile Include="FaultInjection\NamespaceDoc.cs" />
+    <Compile Include="FaultInjection\RuntimeContext.cs" />
+    <Compile Include="FaultInjection\Faults\RuntimeFaultAttribute.cs" />
+    <Compile Include="FaultInjection\Serializer.cs" />
+    <Compile Include="FaultInjection\Faults\ThrowExceptionFault.cs" />
+    <Compile Include="FaultInjection\Faults\ThrowExceptionRuntimeFault.cs" />
+    <Compile Include="FaultInjection\Conditions\TriggerIfCalledBy.cs" />
+    <Compile Include="FaultInjection\Conditions\TriggerIfStackContains.cs" />
+    <Compile Include="FaultInjection\Conditions\TriggerOnNthCall.cs" />
+    <Compile Include="FaultInjection\Conditions\TriggerOnNthCallBy.cs" />
+    <Compile Include="FaultInjection\SignatureParsing\Expression.cs" />
+    <Compile Include="FaultInjection\SignatureParsing\MethodSignatureTranslator.cs" />
+    <Compile Include="FaultInjection\SignatureParsing\Signature.cs" />
+    <Compile Include="FaultInjection\SignatureParsing\SignatureStyle.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Input\Key.cs" />
+    <Compile Include="Input\Keyboard.cs" />
+    <Compile Include="Input\Mouse.cs" />
+    <Compile Include="Input\MouseButton.cs" />
+    <Compile Include="Input\MouseButtonState.cs" />
+    <Compile Include="Input\NamespaceDoc.cs" />
+    <Compile Include="Input\NativeMethods.cs" />
+    <Compile Include="Input\SendMouseInputFlags.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="LeakDetection\MemoryInterop.cs" />
+    <Compile Include="LeakDetection\MemorySnapshot.cs" />
+    <Compile Include="LeakDetection\MemorySnapshotCollection.cs" />
+    <Compile Include="LeakDetection\NamespaceDoc.cs" />
+    <Compile Include="LeakDetection\NativeMethods.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="ObjectComparison\GraphNode.cs" />
+    <Compile Include="ObjectComparison\GraphNodeTuple.cs" />
+    <Compile Include="ObjectComparison\NamespaceDoc.cs" />
+    <None    Include="ObjectComparison\ObjectComparisonAPI.cd" />
+    <Compile Include="ObjectComparison\ObjectComparisonMismatch.cs" />
+    <Compile Include="ObjectComparison\ObjectComparisonMismatchType.cs" />
+    <Compile Include="ObjectComparison\ObjectGraphCodec.cs" />
+    <Compile Include="ObjectComparison\ObjectGraphComparer.cs" />
+    <Compile Include="ObjectComparison\ObjectGraphComparisonStrategy.cs" />
+    <Compile Include="ObjectComparison\ObjectGraphFactory.cs" />
+    <Compile Include="ObjectComparison\ObjectGraphFactoryMap.cs" />
+    <Compile Include="ObjectComparison\PublicPropertyObjectGraphFactory.cs" />
+    <Compile Include="ObjectComparison\XmlObjectGraphCodec.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Text\BidiProperty.cs" />
+    <Compile Include="Text\CombiningMarksProperty.cs" />
+    <Compile Include="Text\CommonRegexPatterns.cs" />
+    <Compile Include="Text\EudcProperty.cs" />
+    <Compile Include="Text\IStringProperty.cs" />
+    <Compile Include="Text\Group.cs" />
+    <Compile Include="Text\GroupAttributes.cs" />
+    <Compile Include="Text\LineBreakProperty.cs" />
+    <Compile Include="Text\NamespaceDoc.cs" />
+    <Compile Include="Text\NumberProperty.cs" />
+    <Compile Include="Text\PropertyFactory.cs" />
+    <Compile Include="Text\RangePropertyCollector.cs" />
+    <Compile Include="Text\RegexAndNode.cs" />
+    <Compile Include="Text\RegexCompiler.cs" />
+    <Compile Include="Text\RegexNode.cs" />
+    <Compile Include="Text\RegexOrNode.cs" />
+    <Compile Include="Text\RegexRepeatNode.cs" />
+    <Compile Include="Text\RegexSetNode.cs" />
+    <Compile Include="Text\RegexSubExprNode.cs" />
+    <Compile Include="Text\RegexTextNode.cs" />
+    <Compile Include="Text\StringFactory.cs" />
+    <Compile Include="Text\StringProperties.cs" />
+    <Compile Include="Text\SubGroup.cs" />
+    <Compile Include="Text\SurrogatePairProperty.cs" />
+    <Compile Include="Text\TextNormalizationProperty.cs" />
+    <Compile Include="Text\TextSegmentationProperty.cs" />
+    <Compile Include="Text\TextUtil.cs" />
+    <Compile Include="Text\UnicodeChart.cs" />
+    <Compile Include="Text\UnicodeRange.cs" />
+    <Compile Include="Text\UnicodeRangeDatabase.cs" />
+    <Compile Include="Text\UnicodeRangeProperty.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Theming\NamespaceDoc.cs" />
+    <Compile Include="Theming\Theme.cs" />
+    <Compile Include="Theming\HwndInfo.cs" />
+    <Compile Include="Theming\NativeMethods.cs" />
+    <Compile Include="Theming\WindowEnumerator.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="VariationGeneration\CandidateCoverage.cs" />
+    <Compile Include="VariationGeneration\Constraint.cs" />
+    <Compile Include="VariationGeneration\ConstraintExtensions.cs" />
+    <Compile Include="VariationGeneration\ConstraintSatisfaction.cs" />
+    <Compile Include="VariationGeneration\Constraints\CachedExpressionConstraintData.cs" />
+    <Compile Include="VariationGeneration\Constraints\ConditionalConstraint.cs" />
+    <Compile Include="VariationGeneration\Constraints\ConstraintSatisfactionExpressionVisitor.cs" />
+    <Compile Include="VariationGeneration\Constraints\ExpressionVisitor.cs" />
+    <Compile Include="VariationGeneration\Constraints\IfPredicate.cs" />
+    <Compile Include="VariationGeneration\Constraints\IfThenConstraint.cs" />
+    <Compile Include="VariationGeneration\Constraints\IfThenElseConstraint.cs" />
+    <Compile Include="VariationGeneration\Constraints\LambdaParameterExpressionVisitor.cs" />
+    <Compile Include="VariationGeneration\Constraints\NamespaceDoc.cs" />
+    <Compile Include="VariationGeneration\Constraints\ParameterListBuilder.cs" />
+    <Compile Include="VariationGeneration\Constraints\TaggedValueConstraint.cs" />
+    <Compile Include="VariationGeneration\InternalConstraintHelpers.cs" />
+    <Compile Include="VariationGeneration\InternalVariationGenerationException.cs" />
+    <Compile Include="VariationGeneration\Model.cs" />
+    <Compile Include="VariationGeneration\NamespaceDoc.cs" />
+    <Compile Include="VariationGeneration\Parameter.cs" />
+    <Compile Include="VariationGeneration\ParameterAttribute.cs" />
+    <Compile Include="VariationGeneration\ParameterBase.cs" />
+    <Compile Include="VariationGeneration\ParameterInteraction.cs" />
+    <Compile Include="VariationGeneration\ParameterInteractionTable.cs" />
+    <Compile Include="VariationGeneration\ParameterValue.cs" />
+    <Compile Include="VariationGeneration\ParameterValueBase.cs" />
+    <Compile Include="VariationGeneration\ValueCombination.cs" />
+    <Compile Include="VariationGeneration\ValueCombinationState.cs" />
+    <Compile Include="VariationGeneration\Variation.cs" />
+    <Compile Include="VariationGeneration\VariationGenerator.cs" />
+    <Compile Include="VariationGeneration\VariationIndexTagPair.cs" />
+    <Compile Include="VariationGeneration\VariationsWrapper.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="VisualVerification\ColorDifference.cs" />
+    <Compile Include="VisualVerification\ColorExtensions.cs" />
+    <Compile Include="VisualVerification\HighFidelityColor.cs" />
+    <Compile Include="VisualVerification\Histogram.cs" />
+    <Compile Include="VisualVerification\NamespaceDoc.cs" />
+    <Compile Include="VisualVerification\NativeMethods.cs" />
+    <Compile Include="VisualVerification\Snapshot.cs" />
+    <Compile Include="VisualVerification\SnapshotColorVerifier.cs" />
+    <Compile Include="VisualVerification\SnapshotHistogramVerifier.cs" />
+    <Compile Include="VisualVerification\SnapshotToleranceMapVerifier.cs" />
+    <Compile Include="VisualVerification\SnapshotVerifier.cs" />
+    <Compile Include="VisualVerification\VerificationResult.cs" />
+    <Compile Include="VisualVerification\WindowSnapshotMode.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Core" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Windows.Installer.3.1">
+      <Visible>False</Visible>
+      <ProductName>Windows Installer 3.1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

@@ -1,0 +1,263 @@
+﻿<html xmlns:MSHelp="http://msdn.microsoft.com/mshelp" xmlns:mshelp="http://msdn.microsoft.com/mshelp" xmlns:ddue="http://ddue.schemas.microsoft.com/authoring/2003/5" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:msxsl="urn:schemas-microsoft-com:xslt">
+  <head>
+    <META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=UTF-8" />
+    <META NAME="save" CONTENT="history" />
+    <title>TestApi 0.6</title>
+    <link rel="stylesheet" type="text/css" href="../styles/presentation.css" />
+    <link rel="stylesheet" type="text/css" href="ms-help://Hx/HxRuntime/HxLink.css" />
+    <script type="text/javascript" src="../scripts/EventUtilities.js"> </script>
+    <script type="text/javascript" src="../scripts/SplitScreen.js"> </script>
+    <script type="text/javascript" src="../scripts/Dropdown.js"> </script>
+    <script type="text/javascript" src="../scripts/script_manifold.js"> </script>
+    <script type="text/javascript" src="../scripts/script_feedBack.js"> </script>
+    <script type="text/javascript" src="../scripts/CheckboxMenu.js"> </script>
+    <script type="text/javascript" src="../scripts/CommonUtilities.js"> </script>
+    <meta name="container" content="unknown" />
+    <meta name="file" content="R_Project" />
+    <meta name="guid" content="R_Project" />
+    <xml>
+      <MSHelp:Attr Name="AssetID" Value="R:Project" />
+      <MSHelp:TOCTitle Title="TestApi 0.6" />
+      <MSHelp:RLTitle Title="TestApi 0.6 ()" />
+      <MSHelp:Keyword Index="A" Term="R:Project" />
+      <MSHelp:Attr Name="DevLang" Value="CSharp" />
+      <MSHelp:Attr Name="DevLang" Value="VB" />
+      <MSHelp:Attr Name="DevLang" Value="C++" />
+      <MSHelp:Attr Name="Locale" Value="en-us" />
+      <MSHelp:Attr Name="TopicType" Value="kbSyntax" />
+      <MSHelp:Attr Name="TopicType" Value="apiref" />
+      <MSHelp:Attr Name="Abstract" Value="TestApi is a library of test and utility APIs that enables developers and testers to create testing tools and automated tests for .NET and Win32 applications. TestApi provides a set of common test building blocks -- types, data-structures and algorit ..." />
+      <MSHelp:Attr Name="NoName" Value="" />
+    </xml>
+  </head>
+  <body>
+    <input type="hidden" id="userDataCache" class="userDataStyle" />
+    <input type="hidden" id="hiddenScrollOffset" />
+    <img id="collapseImage" style="display:none; height:0; width:0;" src="../icons/collapse_all.gif" title="Collapse image" />
+    <img id="expandImage" style="display:none; height:0; width:0;" src="../icons/expand_all.gif" title="Expand Image" />
+    <img id="collapseAllImage" style="display:none; height:0; width:0;" src="../icons/collapse_all.gif" />
+    <img id="expandAllImage" style="display:none; height:0; width:0;" src="../icons/expand_all.gif" />
+    <img id="dropDownImage" style="display:none; height:0; width:0;" src="../icons/dropdown.gif" />
+    <img id="dropDownHoverImage" style="display:none; height:0; width:0;" src="../icons/dropdownHover.gif" />
+    <img id="copyImage" style="display:none; height:0; width:0;" src="../icons/copycode.gif" title="Copy image" />
+    <img id="copyHoverImage" style="display:none; height:0; width:0;" src="../icons/copycodeHighlight.gif" title="CopyHover image" />
+    <div id="header">
+      <table id="topTable" cellspacing="0" cellpadding="0">
+        <tr>
+          <td>
+            <span onclick="ExpandCollapseAll(toggleAllImage)" style="cursor:default;" onkeypress="ExpandCollapseAll_CheckKey(toggleAllImage, event)" tabindex="0">
+              <img ID="toggleAllImage" class="toggleAll" src="../icons/collapse_all.gif" /> <label id="collapseAllLabel" for="toggleAllImage" style="display: none;">Collapse All</label><label id="expandAllLabel" for="toggleAllImage" style="display: none;">Expand All</label> </span>
+            <span>    </span>
+            <span id="devlangsDropdown" class="filter" tabindex="0">
+              <img id="devlangsDropdownImage" src="../icons/dropdown.gif" /> <label id="devlangsMenuAllLabel" for="devlangsDropdownImage" style="display: none;"><nobr>Code: All </nobr></label><label id="devlangsMenuMultipleLabel" for="devlangsDropdownImage" style="display: none;"><nobr>Code: Multiple </nobr></label><label id="devlangsMenuCSharpLabel" for="devlangsDropdownImage" style="display: none;"><nobr>Code: C# </nobr></label><label id="devlangsMenuVisualBasicLabel" for="devlangsDropdownImage" style="display: none;"><nobr>Code: Visual Basic </nobr></label><label id="devlangsMenuManagedCPlusPlusLabel" for="devlangsDropdownImage" style="display: none;"><nobr>Code: Visual C++ </nobr></label></span>
+          </td>
+        </tr>
+      </table>
+      <div id="devlangsMenu">
+        <input id="CSharpCheckbox" type="checkbox" data="CSharp,cs,'persist'" value="on" onClick="SetLanguage(this)" />
+        <label class="checkboxLabel" for="CSharpCheckbox">C#</label>
+        <br />
+        <input id="VisualBasicCheckbox" type="checkbox" data="VisualBasic,vb,'persist'" value="on" onClick="SetLanguage(this)" />
+        <label class="checkboxLabel" for="VisualBasicCheckbox">Visual Basic</label>
+        <br />
+        <input id="ManagedCPlusPlusCheckbox" type="checkbox" data="ManagedCPlusPlus,cpp,'persist'" value="on" onClick="SetLanguage(this)" />
+        <label class="checkboxLabel" for="ManagedCPlusPlusCheckbox">Visual C++</label>
+        <br />
+      </div>
+      <table id="bottomTable" cellpadding="0" cellspacing="0">
+        <tr id="headerTableRow1">
+          <td align="left">
+            <span id="runningHeaderText">.</span>
+          </td>
+        </tr>
+        <tr id="headerTableRow2">
+          <td align="left">
+            <span id="nsrTitle">TestApi 0.6</span>
+          </td>
+        </tr>
+        <tr id="headerTableRow3">
+          <td align="left">
+  <span id="headfeedbackarea" class="feedbackhead">
+      <a href="javascript:SubmitFeedback('testapi@microsoft.com','.','','','','%0\dYour%20feedback%20is%20used%20to%20improve%20the%20documentation%20and%20the%20product.%20Your%20e-mail%20address%20will%20not%20be%20used%20for%20any%20other%20purpose%20and%20is%20disposed%20of%20after%20the%20issue%20you%20report%20is%20resolved.%20%20While%20working%20to%20resolve%20the%20issue%20that%20you%20report,%20you%20may%20be%20contacted%20via%20e-mail%20to%20get%20further%20details%20or%20clarification%20on%20the%20feedback%20you%20sent.%20After%20the%20issue%20you%20report%20has%20been%20addressed,%20you%20may%20receive%20an%20e-mail%20to%20let%20you%20know%20that%20your%20feedback%20has%20been%20addressed.%0\A%0\d','Customer%20Feedback');">
+        
+        Send Feedback
+      </a>
+	</span>
+</td>
+        </tr>
+      </table>
+      <table id="gradientTable">
+        <tr>
+          <td class="nsrBottom" background="../icons/gradient.gif" />
+        </tr>
+      </table>
+    </div>
+    <div id="mainSection">
+      <div id="mainBody">
+        <div id="allHistory" class="saveHistory" onsave="saveAll()" onload="loadAll()" />
+        <span style="color: DarkGray"> </span>
+        <div class="summary">TestApi is a library of test and utility APIs that enables developers and testers to create testing tools and automated tests for .NET and Win32 applications. TestApi provides a set of common test building blocks -- types, data-structures and algorithms -- in a simple, layered, componentized and documented stack.
+TestApi is developed and released on <a href="http://testapi.codeplex.com">http://testapi.codeplex.com</a> as shared source.
+</div>
+        <h1 class="heading">
+          <span onclick="ExpandCollapse(namespacesToggle)" style="cursor:default;" onkeypress="ExpandCollapse_CheckKey(namespacesToggle, event)" tabindex="0">
+            <img id="namespacesToggle" class="toggle" name="toggleSwitch" src="../icons/collapse_all.gif" />Namespaces</span>
+        </h1>
+        <div id="namespacesSection" class="section" name="collapseableSection" style="">
+          <table class="members" id="memberList" frame="lhs" cellpadding="2">
+            <tr>
+              <th class="nameColumn">Namespace</th>
+              <th class="descriptionColumn">Description</th>
+            </tr>
+            <tr>
+              <td>
+                <a href="N_Microsoft_Test.htm">Microsoft.Test</a>
+              </td>
+              <td>
+                <div class="summary">
+            Contains various helper classes for interaction with the WPF dispatcher, 
+            helper wrappers of User Interface Automation (UIA), etc.
+            </div>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <a href="N_Microsoft_Test_ApplicationControl.htm">Microsoft.Test.ApplicationControl</a>
+              </td>
+              <td>
+                <div class="summary">
+            Contains facilities allowing an automated test to control and monitor 
+            an arbitrary application. The namespace provides both in-process and 
+            out-of-process control facilities.
+            </div>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <a href="N_Microsoft_Test_CommandLineParsing.htm">Microsoft.Test.CommandLineParsing</a>
+              </td>
+              <td>
+                <div class="summary">
+            Contains a full-featured API for command-line parsing. The API is exposed 
+            in several decoupled layers – from a string-based command-line dictionary, 
+            to a strongly-typed command-line parser.  
+            </div>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <a href="N_Microsoft_Test_FaultInjection.htm">Microsoft.Test.FaultInjection</a>
+              </td>
+              <td>
+                <div class="summary">
+            Contains facilities for runtime fault injection in managed code. 
+            The API allows a test to simulate various faults in order to better exercise 
+            code-paths in the tested system.
+            </div>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <a href="N_Microsoft_Test_Input.htm">Microsoft.Test.Input</a>
+              </td>
+              <td>
+                <div class="summary">
+            Contains facilities for realistic simulation of user input 
+            (keyboard, mouse, pen, multi-touch).
+            </div>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <a href="N_Microsoft_Test_LeakDetection.htm">Microsoft.Test.LeakDetection</a>
+              </td>
+              <td>
+                <div class="summary">
+            Contains facilities for capturing and analysis of the memory used by a process. 
+            </div>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <a href="N_Microsoft_Test_ObjectComparison.htm">Microsoft.Test.ObjectComparison</a>
+              </td>
+              <td>
+                <div class="summary">
+            Contains facilities for comparing of two objects for equivalence. 
+            </div>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <a href="N_Microsoft_Test_Text.htm">Microsoft.Test.Text</a>
+              </td>
+              <td>
+                <div class="summary">
+            Contains types for the generation, manipulation and validation of strings and text, 
+            for testing purposes.  
+            </div>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <a href="N_Microsoft_Test_Theming.htm">Microsoft.Test.Theming</a>
+              </td>
+              <td>
+                <div class="summary">
+            Contains facilities for system themes configuration. 
+            </div>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <a href="N_Microsoft_Test_VariationGeneration.htm">Microsoft.Test.VariationGeneration</a>
+              </td>
+              <td>
+                <div class="summary">
+            Contains facilities for combinatorial generation variation and test matrix design.
+            The API allows a test to quickly construct variations of any order 
+            (exhaustive, pairwise, etc.) based on a set of parameter values and parameter constraints.
+            </div>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <a href="N_Microsoft_Test_VariationGeneration_Constraints.htm">Microsoft.Test.VariationGeneration.Constraints</a>
+              </td>
+              <td>
+                <div class="summary">
+            Contains a set of standard constraints for use with the 
+            combinatorial variation generation API.
+            </div>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <a href="N_Microsoft_Test_VisualVerification.htm">Microsoft.Test.VisualVerification</a>
+              </td>
+              <td>
+                <div class="summary">
+            Contains facilities for verification of the application display. 
+            </div>
+              </td>
+            </tr>
+          </table>
+        </div>
+      </div>
+      <div id="footer">
+        <div class="footerLine">
+          <img width="100%" height="3px" src="../icons/footer.gif" title="Footer image" />
+        </div>
+        <A NAME="feedback"></A>
+        <span id="fb" class="feedbackcss" style="display: none;"> </span>
+<p />Send comments on this topic to
+        <a id="HT_MailLink" href="mailto:testapi%40microsoft.com?Subject=.">testapi@microsoft.com</a>
+        <script type="text/javascript">
+        var HT_mailLink = document.getElementById("HT_MailLink");
+        var HT_mailLinkText = HT_mailLink.innerHTML;
+        HT_mailLink.href += ": " + document.title;
+        HT_mailLink.innerHTML = HT_mailLinkText;
+        </script> </div>
+    </div>
+  </body>
+</html>
