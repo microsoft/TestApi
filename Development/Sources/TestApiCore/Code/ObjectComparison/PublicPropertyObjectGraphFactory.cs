@@ -225,7 +225,7 @@ namespace Microsoft.Test.ObjectComparison
             root = null;
 
             ObjectGraphFactory foreignFactory;
-            if (factoryMap != null && factoryMap.TryGetValue(value.GetType(), out foreignFactory))
+            if (value != null && factoryMap != null && factoryMap.TryGetValue(value.GetType(), out foreignFactory))
             {
                 root = foreignFactory.CreateObjectGraph(value, factoryMap);
             }

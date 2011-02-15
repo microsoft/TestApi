@@ -5,6 +5,9 @@
 
 using Microsoft.Test.ObjectComparison;
 using Xunit;
+using System.Collections.Generic;
+using System.Reflection;
+using System.Linq;
 
 namespace Microsoft.Test.AcceptanceTests.ObjectComparison
 {
@@ -95,6 +98,50 @@ namespace Microsoft.Test.AcceptanceTests.ObjectComparison
             public string Name { get; set; }
 
             public TypeWithAttributedProperty Value { get; set; }
+        }
+
+        [Fact]
+        public void HandlesPropertiesWithNullValues()
+        {
+            // There was a bug that PublicPropertyObjectGraphFactory threw
+            // NullReferenceException when
+            //   1. factoryMap is not null
+            //   2. Property value is null
+            // This test case is to make sure that this bug has been fixed and
+            // does not come back
+
+            var left = typeof(string);
+            var right = typeof(string);
+
+            var fac = new PublicPropertyObjectGraphFactory();
+            var comparer = new ObjectGraphComparer();
+
+            var factoryMap = new ObjectGraphFactoryMap(false);
+            factoryMap.Add(typeof(MethodBase), new StubGraphFactory());
+            factoryMap.Add(typeof(Assembly), new StubGraphFactory());
+
+            var leftNode = fac.CreateObjectGraph(left, factoryMap); // With StubFactory
+            var rightNode = fac.CreateObjectGraph(right); // Without StubFactory
+
+            bool noDifferences = comparer.Compare(leftNode, rightNode);
+            Assert.False(noDifferences);
+
+            var leftChildrenCount = leftNode.GetNodesInDepthFirstOrder().Count();
+            var rightChildrenCount = rightNode.GetNodesInDepthFirstOrder().Count();
+            // Make sure that we reduced size of the object graph by using StubFactory
+            Assert.True(leftChildrenCount < rightChildrenCount); 
+        }
+
+        class StubGraphFactory : ObjectGraphFactory
+        {
+            public override GraphNode CreateObjectGraph(object value, ObjectGraphFactoryMap factoryMap = null)
+            {
+                return new GraphNode
+                {
+                    Name = value == null ? "null" : value.GetType().Name,
+                    ObjectValue = value
+                };
+            }
         }
 
         #endregion
