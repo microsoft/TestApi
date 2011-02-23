@@ -45,19 +45,21 @@ namespace Tests
 
             // Create the object graph factory
             ObjectGraphFactory factory = new PublicPropertyObjectGraphFactory();
-            
+            var leftGraph = factory.CreateObjectGraph(leftObject);
+            var rightGraph = factory.CreateObjectGraph(rightObject);
+
             // Create a comparer using the factory
-            ObjectComparer comparer = new ObjectComparer(factory);
+            ObjectGraphComparer comparer = new ObjectGraphComparer();
             
             // Compare the objects
             IEnumerable<ObjectComparisonMismatch> mismatches;
-            bool match = comparer.Compare(leftObject, rightObject, out mismatches);
+            bool match = comparer.Compare(leftGraph, rightGraph, out mismatches);
 
             // Validate the mismatches when the objects do not match
             string[] expectedMismatches = new string[]
             {
-                "ObjectValuesDoNotMatch:Left=RootObject.Parent.Name(ParentOfPerson1) Right=RootObject.Parent.Name(ParentOfPerson2)",
                 "ObjectValuesDoNotMatch:Left=RootObject.Name(Person1) Right=RootObject.Name(Person2)",
+                "ObjectValuesDoNotMatch:Left=RootObject.Parent.Name(ParentOfPerson1) Right=RootObject.Parent.Name(ParentOfPerson2)",
             };
 
             string[] actualMismatches = StringFromMismatches(mismatches);

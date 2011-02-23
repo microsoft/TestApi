@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Project ToolsVersion="3.5" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
@@ -31,14 +31,6 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="TestApiCore, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\Binaries\TestApiCore.dll</HintPath>
-    </Reference>
-    <Reference Include="TestApiWpf, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\Binaries\TestApiWpf.dll</HintPath>
-    </Reference>
     <Reference Include="nunit.framework, Version=2.4.8.0, Culture=neutral, PublicKeyToken=96d09a1eb7f44a77, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\..\Tools\NUnit 2.4.8\nunit.framework.dll</HintPath>
@@ -82,6 +74,14 @@
     <Compile Include="UIAutomationTests.cs" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\..\..\Sources\TestApiCore\Code\TestApiCore.csproj">
+      <Project>{11195B2B-C8B1-41C3-BE64-82857E2A72BB}</Project>
+      <Name>TestApiCore</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\Sources\TestApiWpf\Code\TestApiWpf.csproj">
+      <Project>{86539067-0E47-4800-959C-8035CB3ECC22}</Project>
+      <Name>TestApiWpf</Name>
+    </ProjectReference>
     <ProjectReference Include="..\..\SampleApp\SampleApp.csproj">
       <Project>{6E51C9B7-5038-472A-A0F1-60F8B1F5E316}</Project>
       <Name>SampleApp</Name>
@@ -94,22 +94,22 @@
     <Content Include="ToleranceMap.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="..\..\..\Binaries\FaultInjectionEngine\x64\FaultInjectionEngine.dll">
-      <Link>FaultInjectionEngine\x64\FaultInjectionEngine.dll</Link>
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="..\..\..\Binaries\FaultInjectionEngine\x64\FaultInjectionEngine.pdb">
-      <Link>FaultInjectionEngine\x64\FaultInjectionEngine.pdb</Link>
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="..\..\..\Binaries\FaultInjectionEngine\x86\FaultInjectionEngine.dll">
-      <Link>FaultInjectionEngine\x86\FaultInjectionEngine.dll</Link>
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="..\..\..\Binaries\FaultInjectionEngine\x86\FaultInjectionEngine.pdb">
-      <Link>FaultInjectionEngine\x86\FaultInjectionEngine.pdb</Link>
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
+      <Content Include="..\..\..\Binaries\FaultInjectionEngine\x64\FaultInjectionEngine.dll">
+          <Link>FaultInjectionEngine\x64\FaultInjectionEngine.dll</Link>
+          <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      </Content>
+      <Content Include="..\..\..\Binaries\FaultInjectionEngine\x64\FaultInjectionEngine.pdb">
+          <Link>FaultInjectionEngine\x64\FaultInjectionEngine.pdb</Link>
+          <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      </Content>
+      <Content Include="..\..\..\Binaries\FaultInjectionEngine\x86\FaultInjectionEngine.dll">
+          <Link>FaultInjectionEngine\x86\FaultInjectionEngine.dll</Link>
+          <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      </Content>
+      <Content Include="..\..\..\Binaries\FaultInjectionEngine\x86\FaultInjectionEngine.pdb">
+          <Link>FaultInjectionEngine\x86\FaultInjectionEngine.pdb</Link>
+          <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      </Content>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

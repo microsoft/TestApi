@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Project ToolsVersion="3.5" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
@@ -31,14 +31,6 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="TestApiCore, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\Binaries\TestApiCore.dll</HintPath>
-    </Reference>
-    <Reference Include="TestApiWpf, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\Binaries\TestApiWpf.dll</HintPath>
-    </Reference>
     <Reference Include="PresentationCore">
       <RequiredTargetFramework>3.0</RequiredTargetFramework>
     </Reference>
@@ -80,6 +72,14 @@
     <Compile Include="UIAutomationTests.cs" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\..\..\Sources\TestApiCore\Code\TestApiCore.csproj">
+      <Project>{11195B2B-C8B1-41C3-BE64-82857E2A72BB}</Project>
+      <Name>TestApiCore</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\Sources\TestApiWpf\Code\TestApiWpf.csproj">
+      <Project>{86539067-0E47-4800-959C-8035CB3ECC22}</Project>
+      <Name>TestApiWpf</Name>
+    </ProjectReference>
     <ProjectReference Include="..\..\SampleApp\SampleApp.csproj">
       <Project>{6E51C9B7-5038-472A-A0F1-60F8B1F5E316}</Project>
       <Name>SampleApp</Name>
@@ -89,13 +89,13 @@
     <Content Include="Master.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Histogram-Graph-Expected.png" >
+    <Content Include="Histogram-Graph-Expected.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Mandelbrot01.png" >
+    <Content Include="Mandelbrot01.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Mandelbrot02.png" >
+    <Content Include="Mandelbrot02.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="ToleranceMap.png">
