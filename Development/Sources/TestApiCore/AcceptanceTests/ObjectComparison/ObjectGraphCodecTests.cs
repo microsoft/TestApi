@@ -263,28 +263,25 @@ namespace Microsoft.Test.AcceptanceTests.ObjectComparison
             var factory = new PublicPropertyObjectGraphFactory();
             var graph1 = factory.CreateObjectGraph(p1);
 
-            // Save the object graph into a file
-            var codec = new XmlObjectGraphCodec();
-            var filePath = Path.Combine(Path.GetTempPath(), Path.GetRandomFileName());
-            using (var file = new FileStream(filePath, FileMode.Create, FileAccess.Write))
-            {
-                codec.EncodeObjectGraph(graph1, file);
-            }
-
-            // Read the object graph from the file
-            GraphNode actual;
-            using (var file = new FileStream(filePath, FileMode.Open, FileAccess.Read))
-            {
-                actual = codec.DecodeObjectGraph(file);
-            }
-
-            File.Delete(filePath);
-
-            var stream = new MemoryStream();
-            codec.EncodeObjectGraph(graph1, stream);
-            var expected = codec.DecodeObjectGraph(stream);
+            var actual = TestHelpers.XmlCodecFileRoundtrip(graph1);
+            var expected = TestHelpers.XmlCodecRoundtrip(graph1);
 
             Assert.True(new ObjectGraphComparer().Compare(expected, actual));
+        }
+
+        [Fact]
+        public void EncodesAndDecodesChar()
+        {
+            var graphName = "MyGraph";
+            var graphValue = 'a';
+            var graph = new GraphNode
+            {
+                Name = graphName,
+                ObjectValue = graphValue
+            };
+
+            var actual = TestHelpers.XmlCodecRoundtrip(graph);
+            Assert.Equal(graphValue.ToString(), actual.ObjectValue);
         }
 
         class IgnoreCaseComparisonStrategy : ObjectGraphComparisonStrategy

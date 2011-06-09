@@ -85,5 +85,27 @@ namespace Microsoft.Test.AcceptanceTests.ObjectComparison
             codec.EncodeObjectGraph(root, stream);
             return codec.DecodeObjectGraph(stream);
         }
+
+        public static GraphNode XmlCodecFileRoundtrip(GraphNode graph)
+        {
+            // Save the object graph into a file
+            var codec = new XmlObjectGraphCodec();
+            var filePath = Path.Combine(Path.GetTempPath(), Path.GetRandomFileName());
+            using (var file = new FileStream(filePath, FileMode.Create, FileAccess.Write))
+            {
+                codec.EncodeObjectGraph(graph, file);
+            }
+
+            // Read the object graph from the file
+            GraphNode actual;
+            using (var file = new FileStream(filePath, FileMode.Open, FileAccess.Read))
+            {
+                actual = codec.DecodeObjectGraph(file);
+            }
+
+            File.Delete(filePath);
+
+            return actual;
+        }
     }
 }
