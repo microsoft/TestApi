@@ -6,7 +6,9 @@
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
+using System.Globalization;
 using System.IO;
+using System.Threading;
 using System.Xml;
 
 namespace Microsoft.Test.ObjectComparison
@@ -164,11 +166,24 @@ namespace Microsoft.Test.ObjectComparison
             }
             
             stream.Position = 0;
-            using (var reader = XmlReader.Create(stream))
+
+            // We might be deserializing culture sensitive information, so set invariant culture
+            var currentCulture = Thread.CurrentThread.CurrentCulture;
+            Thread.CurrentThread.CurrentCulture = CultureInfo.InvariantCulture;
+
+            XmlReader reader = null;
+            try
             {
+                reader = XmlReader.Create(stream, new XmlReaderSettings { CheckCharacters = false });
+
                 // Move to the first content
                 reader.MoveToContent();
                 return CreateObjectGraphFromXml(reader);
+            }
+            finally
+            {
+                Thread.CurrentThread.CurrentCulture = currentCulture;
+                if (reader != null) reader.Close();
             }
         }
 
@@ -201,9 +216,20 @@ namespace Microsoft.Test.ObjectComparison
                 throw new ArgumentNullException("stream");
             }
 
-            using (var writer = XmlWriter.Create(stream, new XmlWriterSettings { Indent = true }))
+            // We might be serializing culture sensitive information, so set invariant culture
+            var currentCulture = Thread.CurrentThread.CurrentCulture;
+            Thread.CurrentThread.CurrentCulture = CultureInfo.InvariantCulture;
+
+            XmlWriter writer = null;
+            try
             {
+                writer = XmlWriter.Create(stream, new XmlWriterSettings { Indent = true, CheckCharacters = false });
                 SaveObjectGraphToXml(root, writer, new HashSet<GraphNode>());
+            }
+            finally
+            {
+                Thread.CurrentThread.CurrentCulture = currentCulture;
+                if (writer != null) writer.Close();
             }
         }
 
@@ -312,12 +338,17 @@ namespace Microsoft.Test.ObjectComparison
             {
                 if (root.ObjectValue != null)
                 {
-                    if (root.ObjectValue.GetType().IsPrimitive || 
+                    if ((root.ObjectValue.GetType().IsPrimitive &&
+                         root.ObjectValue.GetType() != typeof(Char)) ||
                         root.ObjectValue.GetType() == typeof(String) ||
                         root.ObjectValue.GetType() == typeof(DateTime))
+                    {
                         writer.WriteValue(root.ObjectValue);
+                    }
                     else
+                    {
                         writer.WriteValue(root.ObjectValue.ToString());
+                    }
                 }
             }
 
