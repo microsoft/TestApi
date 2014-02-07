@@ -156,8 +156,8 @@ BOOL CSignatureBlob::ParseTypeSig(CorElementType nElementType, PCCOR_SIGNATURE& 
     case ELEMENT_TYPE_MODIFIER       :
     case ELEMENT_TYPE_SENTINEL       :
     case ELEMENT_TYPE_PINNED         :
-    case ELEMENT_TYPE_R4_HFA         :
-    case ELEMENT_TYPE_R8_HFA         :
+    //case ELEMENT_TYPE_R4_HFA         :
+    //case ELEMENT_TYPE_R8_HFA         :
     default:
         ASSERT(FALSE);
         return FALSE;
