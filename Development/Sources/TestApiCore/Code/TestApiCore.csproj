@@ -81,6 +81,7 @@
     <Compile Include="ApplicationControl\OutOfProcessApplicationSettings.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CommandLineParsing\AdditionalPropertiesAttribute.cs" />
     <Compile Include="CommandLineParsing\Command.cs" />
     <Compile Include="CommandLineParsing\CommandLineDictionary.cs" />
     <Compile Include="CommandLineParsing\CommandLineParser.cs" />
@@ -153,7 +154,7 @@
     <Compile Include="ObjectComparison\GraphNode.cs" />
     <Compile Include="ObjectComparison\GraphNodeTuple.cs" />
     <Compile Include="ObjectComparison\NamespaceDoc.cs" />
-    <None    Include="ObjectComparison\ObjectComparisonAPI.cd" />
+    <None Include="ObjectComparison\ObjectComparisonAPI.cd" />
     <Compile Include="ObjectComparison\ObjectComparisonMismatch.cs" />
     <Compile Include="ObjectComparison\ObjectComparisonMismatchType.cs" />
     <Compile Include="ObjectComparison\ObjectGraphCodec.cs" />

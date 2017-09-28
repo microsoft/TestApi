@@ -115,6 +115,8 @@ namespace Microsoft.Test.CommandLineParsing
             CommandLineDictionary commandLineDictionary = CommandLineDictionary.FromArguments(args);
 
             PropertyDescriptorCollection properties = TypeDescriptor.GetProperties(valueToPopulate);
+            bool hasAdditionalProperties = false;            
+            Dictionary<string, string> additionalPropertiesDictionary = new Dictionary<string, string>(StringComparer.OrdinalIgnoreCase);
 
             // Ensure required properties are specified.
             foreach (PropertyDescriptor property in properties)
@@ -126,8 +128,19 @@ namespace Microsoft.Test.CommandLineParsing
                     // the property's name, it means that a required property isn't specified.
                     if (!commandLineDictionary.ContainsKey(property.Name))
                     {
-                        throw new ArgumentException("A value for the " + property.Name + " property is required.");
+                        throw new ArgumentException(string.Format("A value for the {0} property is required.", property.Name ));
                     }
+                }
+
+                if (property.Attributes.Cast<Attribute>().Any(attribute => attribute is AdditionalPropertiesAttribute))
+                {                    
+                    if (property.PropertyType != typeof(Dictionary<string, string>))
+                    {
+                        throw new ArgumentException("AdditionalProperties property must be of type Dictionary<string, string>.");
+                    }
+
+                    hasAdditionalProperties = true;
+                    property.SetValue(valueToPopulate, additionalPropertiesDictionary);
                 }
             }
 
@@ -135,7 +148,20 @@ namespace Microsoft.Test.CommandLineParsing
             {
                 // Find a property whose name matches the kvp's key, ignoring case.
                 // We can't just use the indexer because that is case-sensitive.                
-                PropertyDescriptor property = MatchProperty(keyValuePair.Key, properties,valueToPopulate.GetType());
+                PropertyDescriptor property = MatchProperty(keyValuePair.Key, properties);
+
+                if (null == property)
+                {
+                    if (hasAdditionalProperties == false)
+                    {
+                        throw new ArgumentException(string.Format("A matching public property of name {0} on type {1} could not be found.", keyValuePair.Key, valueToPopulate.GetType()));
+                    }
+                    else
+                    {
+                        additionalPropertiesDictionary.Add(keyValuePair.Key, keyValuePair.Value);
+                        continue;
+                    }
+                }
 
                 // If the value is null/empty and the property is a bool, we
                 // treat it as a flag, which means its presence means true.
@@ -168,7 +194,7 @@ namespace Microsoft.Test.CommandLineParsing
                         TypeConverter typeConverter = TypeDescriptor.GetConverter(property.PropertyType);
                         if (typeConverter == null || !typeConverter.CanConvertFrom(typeof(string)))
                         {
-                            throw new ArgumentException("Unable to convert from a string to a property of type " + property.PropertyType + ".");
+                            throw new ArgumentException(string.Format("Unable to convert from a string to a property of type {0}.", property.PropertyType));
                         }
                         valueToSet = typeConverter.ConvertFromInvariantString(keyValuePair.Value);
                         break;
@@ -185,7 +211,7 @@ namespace Microsoft.Test.CommandLineParsing
         /// 
         /// If match cannot be found, throw an argument exception
         /// </summary>        
-        private static PropertyDescriptor MatchProperty(string keyName, PropertyDescriptorCollection properties, Type targetType)
+        private static PropertyDescriptor MatchProperty(string keyName, PropertyDescriptorCollection properties)
         {
             foreach(PropertyDescriptor prop in properties)
             {
@@ -194,7 +220,8 @@ namespace Microsoft.Test.CommandLineParsing
                     return prop;
                 }
             }
-            throw new ArgumentException("A matching public property of name " + keyName + " on type " + targetType + " could not be found.");            
+
+            return null;            
         }
 
         /// <summary>
