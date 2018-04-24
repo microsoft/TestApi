@@ -4,6 +4,7 @@
 // All other rights reserved.
 
 using System;
+using System.Collections.Generic;
 using Microsoft.Test.CommandLineParsing;
 using Xunit;
 using Xunit.Extensions;
@@ -96,6 +97,29 @@ namespace Microsoft.Test.AcceptanceTests.CommandLineParsing
         }
 
         [Fact]
+        public void AdditionalPropertiesAttributeRequiresDictionary()
+        {
+            CommandLineArgumentsWithInvalidAdditionalProperties a = new CommandLineArgumentsWithInvalidAdditionalProperties();
+            string[] args = new string[] { "/Hello=World", "/Foo=Bar" };
+            Assert.Throws<ArgumentException>(delegate 
+            {
+                a.ParseArguments(args);
+            });
+        }
+
+        [Fact]
+        public void AdditionalPropertiesAttribute()
+        {
+            CommandLineArgumentsWithAdditionalProperties a = new CommandLineArgumentsWithAdditionalProperties();
+            string[] args = new string[] { "/Hello=World", "/Foo=Bar" };
+            a.ParseArguments(args);
+
+            Assert.Equal("World", a.Hello);
+            Assert.Equal(1, a.AdditionalProperties.Count);
+            Assert.Equal("Bar", a.AdditionalProperties["Foo"]);
+        }
+
+        [Fact]
         public void ExceptionWhenTryingToParseInProtectedFields()
         {
             CommandLineArgumentsWithProtectedFields a = new CommandLineArgumentsWithProtectedFields();
@@ -139,6 +163,20 @@ namespace Microsoft.Test.AcceptanceTests.CommandLineParsing
         {
             private bool? Verbose { get; set; }
             private int? RunId { get; set; }
+        }
+
+        protected class CommandLineArgumentsWithInvalidAdditionalProperties
+        {
+            [AdditionalProperties]
+            public System.Collections.Generic.Dictionary<string, object> AdditionalProperties { get; set; }
+        }
+
+        protected class CommandLineArgumentsWithAdditionalProperties
+        {
+            public string Hello { get; set; }
+
+            [AdditionalProperties]
+            public Dictionary<string, string> AdditionalProperties { get; set; }
         }
     }
 }
