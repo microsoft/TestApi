@@ -15,7 +15,7 @@ namespace Microsoft.Test.VisualVerification
         #region Constructors
 
         /// <summary>
-        /// Initializes a new instance of the ColorDifference class using values of zero, indicating no difference. 
+        /// Initializes a new instance of the ColorDifference class using values of zero, indicating no difference.
         /// </summary>
         public ColorDifference()
         {

@@ -34,7 +34,7 @@ namespace Microsoft.Test.Text
             CultureIDs = null;
             Range = new UnicodeRange(0, 0);
         }
-        
+
         /// <summary>
         /// type of the property
         /// </summary>

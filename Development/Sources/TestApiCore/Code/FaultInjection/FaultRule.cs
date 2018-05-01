@@ -14,21 +14,21 @@ using Microsoft.Test.FaultInjection.SignatureParsing;
 namespace Microsoft.Test.FaultInjection
 {
     /// <summary>
-    /// Defines which method to fault, under what conditions the fault will occur, 
+    /// Defines which method to fault, under what conditions the fault will occur,
     /// and how the method will fail. See also the <see cref="FaultSession"/> class.
     /// </summary>
     /// <remarks>
     /// There can only be one fault rule per target method.
-    /// </remarks> 
-    /// 
+    /// </remarks>
+    ///
     /// <example>
-    /// The following example creates a new FaultSession with several different 
+    /// The following example creates a new FaultSession with several different
     /// FaultRules and launches the application.
-    /// <code>
+    /// <code lang="C#" >
     /// string sampleAppPath = "SampleApp.exe";
     ///
     /// FaultRule[] ruleArray = new FaultRule[]
-    /// {     
+    /// {
     ///     // Instance method
     ///     new FaultRule(
     ///         "SampleApp.TargetType.TargetMethod(string, string)",
@@ -53,7 +53,7 @@ namespace Microsoft.Test.FaultInjection
     ///         BuiltInConditions.TriggerOnEveryCall,
     ///         BuiltInFaults.ReturnFault()),
     ///
-    ///     // Property 
+    ///     // Property
     ///     new FaultRule(
     ///         "SampleApp.TargetType.get_TargetProperty()",
     ///         BuiltInConditions.TriggerOnEveryNthCall(3),
@@ -64,7 +64,7 @@ namespace Microsoft.Test.FaultInjection
     ///         "SampleApp.TargetType.op_Increment(int, int)",
     ///         BuiltInConditions.TriggerOnEveryCall,
     ///         BuiltInFaults.ThrowExceptionFault(new InvalidOperationException()))
-    /// };     
+    /// };
     ///
     /// FaultSession session = new FaultSession(ruleArray);
     /// ProcessStartInfo psi = session.GetProcessStartInfo(sampleAppPath);
@@ -132,7 +132,7 @@ namespace Microsoft.Test.FaultInjection
         public string MethodSignature
         {
             get { return method; }
-        }        
+        }
 
         /// <summary>
         /// The condition that defines when the fault should occur.
@@ -164,7 +164,7 @@ namespace Microsoft.Test.FaultInjection
                 }
                 fault = value;
             }
-        }        
+        }
 
         #endregion
 
@@ -187,7 +187,7 @@ namespace Microsoft.Test.FaultInjection
         }
 
         /// <summary>
-        /// Increments and returns the number of times that the associated method has been called. 
+        /// Increments and returns the number of times that the associated method has been called.
         /// This needs to be stored in order to be passed to the RuntimeContext object.
         /// </summary>
         internal int IncrementAndReturnNumTimesCalled()
@@ -196,7 +196,7 @@ namespace Microsoft.Test.FaultInjection
         }
 
         /// <summary>
-        /// Copies the number of times the FaultRule has been called from another fault rule. 
+        /// Copies the number of times the FaultRule has been called from another fault rule.
         /// This is used when this is a new fault rule that has just been deserialized and it
         /// is replacing an old fault rule.
         /// </summary>

@@ -14,13 +14,13 @@ namespace Microsoft.Test.AcceptanceTests.FaultInjection
 {
     /// <summary>
     /// Tests which verify the built in conditions
-    /// </summary>    
+    /// </summary>
     public class BuiltInTriggerTests
     {
         #region TriggerIfCalledByTest
 
         /// <summary>
-        /// Verifies the condition is triggered when the specified method is 
+        /// Verifies the condition is triggered when the specified method is
         /// on the top of the call stack. Created using the factory method that
         /// takes a string.
         /// </summary>
@@ -33,7 +33,7 @@ namespace Microsoft.Test.AcceptanceTests.FaultInjection
         }
 
         /// <summary>
-        /// Verifies the condition is triggered when the specified method is 
+        /// Verifies the condition is triggered when the specified method is
         /// on the top of the call stack. Created using the factory method that
         /// takes a MethodBase.
         /// </summary>
@@ -175,17 +175,17 @@ namespace Microsoft.Test.AcceptanceTests.FaultInjection
             int loopTimes = 5;
             for (int i = 0; i < loopTimes; ++i)
             {
-                Assert.False(TesteeTriggerOnNthCallBy());   
+                Assert.False(TesteeTriggerOnNthCallBy());
             }
             for (int i = 0; i < loopTimes; ++i)
             {
-                Assert.False(TesterTriggerOnNthCallBy());   
+                Assert.False(TesterTriggerOnNthCallBy());
             }
             for (int i = 0; i < loopTimes; ++i)
             {
                 if (i < 4)
                 {
-                    Assert.False(TesterTriggerOnNthCallBy());        
+                    Assert.False(TesterTriggerOnNthCallBy());
                 }
                 if (i == 4)
                 {

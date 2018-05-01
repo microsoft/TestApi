@@ -15,19 +15,19 @@ namespace Microsoft.Test.Text
     {
         /// <summary>
         /// Define number of scripts in Unicode
-        /// <a href="http://www.unicode.org/charts/#scripts">Newline</a> 
+        /// <a href="http://www.unicode.org/charts/#scripts">Newline</a>
         /// </summary>
         public static readonly int NUMOFSCRIPTS = 103;
 
         /// <summary>
         /// Define number of symbols and punctuation in Unicode
-        /// <a href="http://www.unicode.org/charts/#symbols">Newline</a> 
+        /// <a href="http://www.unicode.org/charts/#symbols">Newline</a>
         /// </summary>
         public static readonly int NUMOFSYMBOLSANDPUNCTUATION = 44;
 
         /// <summary>
         /// Maximum Unicode Point value
-        /// <a href="http://www.unicode.org/reports/tr19/tr19-9.html">Newline</a> 
+        /// <a href="http://www.unicode.org/reports/tr19/tr19-9.html">Newline</a>
         /// </summary>
         public static readonly int MaxUnicodePoint = 0x10FFFF;
 
@@ -44,7 +44,7 @@ namespace Microsoft.Test.Text
         /// <summary>
         /// Defined ids to help identifying which country/region where the script or symbol is used. If id is defined in LCID,
         ///  LCID is used. Otherwise, spell the full name in lower case. '-' is used to omitted.
-        /// <a href="http://www.unicode.org/charts/">Newline</a> 
+        /// <a href="http://www.unicode.org/charts/">Newline</a>
         /// </summary>
         public enum CultureIds
         {
@@ -89,17 +89,17 @@ namespace Microsoft.Test.Text
             cameroon,
 
             /// <summary>
-            /// Carians 
+            /// Carians
             /// </summary>
             carians,
 
             /// <summary>
-            /// Cuneiform 
+            /// Cuneiform
             /// </summary>
             cuneiform,
 
             /// <summary>
-            /// Cyprus 
+            /// Cyprus
             /// </summary>
             cyprus,
 
@@ -121,7 +121,7 @@ namespace Microsoft.Test.Text
             /// <summary>
             /// English speaking countries
             /// </summary>
-            en, 
+            en,
 
             /// <summary>
             /// Ethiopia
@@ -134,7 +134,7 @@ namespace Microsoft.Test.Text
             georgia,
 
             /// <summary>
-            /// Glagolitsa 
+            /// Glagolitsa
             /// </summary>
             glagolitsa,
 
@@ -174,7 +174,7 @@ namespace Microsoft.Test.Text
             ja,
 
             /// <summary>
-            /// Kharoshthi 
+            /// Kharoshthi
             /// </summary>
             kharoshthi,
 
@@ -194,7 +194,7 @@ namespace Microsoft.Test.Text
             latin,
 
             /// <summary>
-            /// Lycian 
+            /// Lycian
             /// </summary>
             lycia,
 
@@ -244,12 +244,12 @@ namespace Microsoft.Test.Text
             phaistosdisc,
 
             /// <summary>
-            /// Phoenician 
+            /// Phoenician
             /// </summary>
             phoenicia,
 
             /// <summary>
-            /// Samaritan 
+            /// Samaritan
             /// </summary>
             samaria,
 
@@ -327,12 +327,12 @@ namespace Microsoft.Test.Text
         /// <summary>
         /// Unicode character code chart types
         /// </summary>
-        public enum UnicodeChartType 
-        { 
+        public enum UnicodeChartType
+        {
             /// <summary>
             /// Unicode character code chart types is Script
             /// </summary>
-            Script=1, 
+            Script=1,
 
             /// <summary>
             /// Unicode character code chart types is Symbol
@@ -363,7 +363,7 @@ namespace Microsoft.Test.Text
             {
                 Array.Sort(exclusions);
             }
-            
+
             for (int i=0; i < iterations; i++)
             {
                 codePoint = rand.Next(range.StartOfUnicodeRange, range.EndOfUnicodeRange);
@@ -378,13 +378,13 @@ namespace Microsoft.Test.Text
                         ctr ++;
                         if (MAXNUMITERATION == ctr)
                         {
-                            throw new ArgumentOutOfRangeException("TextUtil, " + ctr + " loop has been reached. GetRandomCodePoint may have infinite loop." + 
-                                " Range " + String.Format(CultureInfo.InvariantCulture, "0x{0:X}", range.StartOfUnicodeRange) + " - " + 
+                            throw new ArgumentOutOfRangeException("TextUtil, " + ctr + " loop has been reached. GetRandomCodePoint may have infinite loop." +
+                                " Range " + String.Format(CultureInfo.InvariantCulture, "0x{0:X}", range.StartOfUnicodeRange) + " - " +
                                 String.Format(CultureInfo.InvariantCulture,"0x{0:X}", range.EndOfUnicodeRange) + " are likely excluded ");
                         }
                     }
                 }
-                
+
                 if (codePoint > 0xFFFF)
                 {
                      // In case it is surrogate
@@ -396,7 +396,7 @@ namespace Microsoft.Test.Text
                     retStr += Convert.ToChar(codePoint);
                 }
             }
-            
+
             return retStr;
         }
 
@@ -406,7 +406,7 @@ namespace Microsoft.Test.Text
         public static string IntToString(int codePoint)
         {
             string retStr = string.Empty;
-            
+
             if (codePoint > 0xFFFF)
             {
                  // In case it is surrogate

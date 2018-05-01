@@ -20,7 +20,7 @@ namespace Microsoft.Test.Text
         /// </summary>
         private Dictionary<string, char[]> numberDictionary = new Dictionary<string, char[]>();
 
-        private List<UnicodeRangeProperty> numberDigitRangeList = new List<UnicodeRangeProperty>(); 
+        private List<UnicodeRangeProperty> numberDigitRangeList = new List<UnicodeRangeProperty>();
 
         private int [] numberCodePoints;
 
@@ -28,9 +28,9 @@ namespace Microsoft.Test.Text
         /// Define minimum code point needed to be a string has number
         /// </summary>
         public static readonly int MINNUMOFCODEPOINT = 1;
-        
+
         /// <summary>
-        /// Define NumberProperty class, 
+        /// Define NumberProperty class,
         /// <a href="http://unicode.org/reports/tr13/tr13-5.html">Newline</a>
         /// </summary>
         public NumberProperty(UnicodeRangeDatabase unicodeDb, Collection<UnicodeRange> expectedRanges)
@@ -49,7 +49,7 @@ namespace Microsoft.Test.Text
                     isValid = true;
                 }
             }
-            
+
             if (InitializeNumberCharDictionary(expectedRanges))
             {
                 isValid = true;
@@ -92,7 +92,7 @@ namespace Microsoft.Test.Text
                 }
             }
             Array.Resize(ref numberCodePoints, i);
-            
+
             return isValid;
         }
 

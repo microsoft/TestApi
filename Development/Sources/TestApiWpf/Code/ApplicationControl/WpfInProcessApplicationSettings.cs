@@ -14,7 +14,7 @@ namespace Microsoft.Test.ApplicationControl
     public class WpfInProcessApplicationSettings : InProcessApplicationSettings
     {
         /// <summary>
-        /// The window class to start. 
+        /// The window class to start.
         /// </summary>
         /// <remarks>
         /// This must be the full class name.

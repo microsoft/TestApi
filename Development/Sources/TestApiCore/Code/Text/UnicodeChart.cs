@@ -10,10 +10,10 @@ namespace Microsoft.Test.Text
     /// </summary>
     ///
     /// <remarks>
-    /// The Unicode standard defines a number of different character subsets, which are called 
-    /// <b>Unicode character code charts</b> (or <b>Unicode charts</b> for short). These charts are available 
+    /// The Unicode standard defines a number of different character subsets, which are called
+    /// <b>Unicode character code charts</b> (or <b>Unicode charts</b> for short). These charts are available
     /// on <a href="http://unicode.org/charts">http://unicode.org/charts</a>. The charts divide and categorize
-    /// all symbols available in the Unicode range (0x0000 - 0x10FFFF) according to their common characteristics. 
+    /// all symbols available in the Unicode range (0x0000 - 0x10FFFF) according to their common characteristics.
     /// </remarks>
     public enum UnicodeChart
     {
@@ -43,7 +43,7 @@ namespace Microsoft.Test.Text
         AncientGreekMusicalNotation,
         /// <summary>
         /// Ancient Greek Numbers Chart
-        /// </summary> 
+        /// </summary>
         AncientGreekNumbers,
         /// <summary>
         /// Ancient Symbols Chart
@@ -95,7 +95,7 @@ namespace Microsoft.Test.Text
         AsciiDigits,
         /// <summary>
         /// ASCII Punctuation Chart
-        /// </summary> 
+        /// </summary>
         AsciiPunctuation,
         /// <summary>
         /// Same as BMP Chart
@@ -141,7 +141,7 @@ namespace Microsoft.Test.Text
         Bopomofo,
         /// <summary>
         /// Bopomofo Extended Chart
-        /// </summary> 
+        /// </summary>
         BopomofoExtended,
         /// <summary>
         /// Box Drawing Chart
@@ -257,11 +257,11 @@ namespace Microsoft.Test.Text
         CjkUnifiedIdeographs,
         /// <summary>
         /// Combining Diacritical Marks Chart
-        /// </summary>   
+        /// </summary>
         CombiningDiacriticalMarks,
         /// <summary>
         /// Combining Diacritical Marks for Symbols Chart
-        /// </summary>   
+        /// </summary>
         CombiningDiacriticalMarksForSymbols,
         /// <summary>
         /// Combining Diacritical Marks Supplement Chart
@@ -277,7 +277,7 @@ namespace Microsoft.Test.Text
         CommonIndicNumberForms,
         /// <summary>
         /// Control Pictures Chart
-        /// </summary>  
+        /// </summary>
         ControlPictures,
         /// <summary>
         /// C0 and C1 Chart
@@ -289,11 +289,11 @@ namespace Microsoft.Test.Text
         Coptic,
         /// <summary>
         /// Coptic in Greek Block Chart
-        /// </summary> 
+        /// </summary>
         CopticInGreekBlock,
         /// <summary>
         /// Counting Rod Numerals Chart
-        /// </summary> 
+        /// </summary>
         CountingRodNumerals,
         /// <summary>
         /// Cuneiform Chart
@@ -301,15 +301,15 @@ namespace Microsoft.Test.Text
         Cuneiform,
         /// <summary>
         /// Cuneiform Numbers and Punctuation Chart
-        /// </summary> 
+        /// </summary>
         CuneiformNumbersAndPunctuation,
         /// <summary>
         /// Currency Symbols Chart
         /// </summary>
         CurrencySymbols,
         /// <summary>
-        /// Cypriot Syllabary Chart 
-        /// </summary> 
+        /// Cypriot Syllabary Chart
+        /// </summary>
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Naming", "CA1704")]
         CypriotSyllabary,
         /// <summary>
@@ -329,7 +329,7 @@ namespace Microsoft.Test.Text
         /// </summary>
         CyrillicSupplement,
         /// <summary>
-        /// Deseret Chart 
+        /// Deseret Chart
         /// </summary>
         Deseret,
         /// <summary>
@@ -382,7 +382,7 @@ namespace Microsoft.Test.Text
         Ethiopic,
         /// <summary>
         /// Ethiopic Extended Chart
-        /// </summary> 
+        /// </summary>
         EthiopicExtended,
         /// <summary>
         /// Ethiopic Supplement Chart
@@ -394,7 +394,7 @@ namespace Microsoft.Test.Text
         EuroSign,
         /// <summary>
         /// Floors and ceilings
-        /// </summary>  
+        /// </summary>
         FloorsAndCeilings,
         /// <summary>
         /// Fullwidth ASCII Digits Chart
@@ -447,11 +447,11 @@ namespace Microsoft.Test.Text
         Gothic,
         /// <summary>
         /// Greek Chart
-        /// </summary> 
+        /// </summary>
         Greek,
         /// <summary>
         /// Greek Extended Chart
-        /// </summary> 
+        /// </summary>
         GreekExtended,
         /// <summary>
         /// Gujarati Chart
@@ -510,7 +510,7 @@ namespace Microsoft.Test.Text
         /// Hebrew Chart
         /// </summary>
         Hebrew,
-        /// <summary> 
+        /// <summary>
         /// Hebrew Presentation Forms Chart
         /// </summary>
         HebrewPresentationForms,
@@ -532,10 +532,10 @@ namespace Microsoft.Test.Text
         InvisibleOperators,
         /// <summary>
         /// IPA Extensions Chart
-        /// </summary> 
+        /// </summary>
         IpaExtensions,
         /// <summary>
-        /// Japanese Chess Chart 
+        /// Japanese Chess Chart
         /// </summary>
         JapaneseChess,
         /// <summary>
@@ -577,7 +577,7 @@ namespace Microsoft.Test.Text
         Kharoshthi,
         /// <summary>
         /// Khmer Chart
-        /// </summary> 
+        /// </summary>
         Khmer,
         /// <summary>
         /// Khmer Symbols Chart
@@ -589,7 +589,7 @@ namespace Microsoft.Test.Text
         Lao,
         /// <summary>
         /// Latin Chart
-        /// </summary> 
+        /// </summary>
         Latin,
         /// <summary>
         /// Latin-1 Punctuation Chart
@@ -605,7 +605,7 @@ namespace Microsoft.Test.Text
         LatinExtendedA,
         /// <summary>
         /// Latin Extended Additional Chart
-        /// </summary> 
+        /// </summary>
         LatinExtendedAdditional,
         /// <summary>
         /// Latin Extended-B Chart
@@ -687,7 +687,7 @@ namespace Microsoft.Test.Text
         Mark,
         /// <summary>
         /// Mathematical Alphanumeric Symbols Chart
-        /// </summary> 
+        /// </summary>
         MathematicalAlphanumericSymbols,
         /// <summary>
         /// Mathematical Operators Chart
@@ -774,7 +774,7 @@ namespace Microsoft.Test.Text
         OldPersian,
         /// <summary>
         /// Old South Arabian Chart
-        /// </summary> 
+        /// </summary>
         OldSouthArabian,
         /// <summary>
         /// Old Turkic Chart
@@ -909,7 +909,7 @@ namespace Microsoft.Test.Text
         ReservedRange,
         /// <summary>
         /// Rial Sign Chart
-        /// </summary> 
+        /// </summary>
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Naming", "CA1704")]
         RialSign,
         /// <summary>
@@ -969,7 +969,7 @@ namespace Microsoft.Test.Text
         SuperscriptsAndSubscripts,
         /// <summary>
         /// Supplemental Arrows-A Chart
-        /// </summary> 
+        /// </summary>
         SupplementalArrowsA,
         /// <summary>
         /// Supplemental Arrows-B Chart
@@ -1066,11 +1066,11 @@ namespace Microsoft.Test.Text
         Ugaritic,
         /// <summary>
         /// Unified Canadian Aboriginal Syllabics Chart
-        /// </summary> 
+        /// </summary>
         UnifiedCanadianAboriginalSyllabics,
         /// <summary>
         /// Unified Canadian Aboriginal Syllabics ExtendedChart
-        /// </summary> 
+        /// </summary>
         UnifiedCanadianAboriginalSyllabicsExtended,
         /// <summary>
         /// Vai Chart

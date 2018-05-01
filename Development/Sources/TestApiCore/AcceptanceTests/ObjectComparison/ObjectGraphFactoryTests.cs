@@ -12,7 +12,7 @@ using System.Linq;
 namespace Microsoft.Test.AcceptanceTests.ObjectComparison
 {
     public class ObjectGraphFactoryTests
-    {  
+    {
         #region CustomFactory tests
 
         [Fact]
@@ -71,13 +71,13 @@ namespace Microsoft.Test.AcceptanceTests.ObjectComparison
             var o = new NamedTypeWithAttributedProperty
             {
                 Name = "Ralph",
-                Value = new TypeWithAttributedProperty 
+                Value = new TypeWithAttributedProperty
                 {
                     PropertyWithTestAttribute = "TestValue",
                     PropertyWithoutTestAttribute = "ShouldBeIgnored"
                 }
             };
-            
+
             var map = new ObjectGraphFactoryMap(true);
             map[typeof(TypeWithAttributedProperty)] = new ExtractAttributeObjectGraphFactory();
 
@@ -129,7 +129,7 @@ namespace Microsoft.Test.AcceptanceTests.ObjectComparison
             var leftChildrenCount = leftNode.GetNodesInDepthFirstOrder().Count();
             var rightChildrenCount = rightNode.GetNodesInDepthFirstOrder().Count();
             // Make sure that we reduced size of the object graph by using StubFactory
-            Assert.True(leftChildrenCount < rightChildrenCount); 
+            Assert.True(leftChildrenCount < rightChildrenCount);
         }
 
         class StubGraphFactory : ObjectGraphFactory

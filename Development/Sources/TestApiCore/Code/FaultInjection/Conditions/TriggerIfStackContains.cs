@@ -8,7 +8,7 @@ using Microsoft.Test.FaultInjection.SignatureParsing;
 
 namespace Microsoft.Test.FaultInjection.Conditions
 {
-    [Serializable()] 
+    [Serializable()]
     internal sealed class TriggerIfStackContains : ICondition
     {
         public TriggerIfStackContains(String aTargetFunction)
@@ -32,5 +32,5 @@ namespace Microsoft.Test.FaultInjection.Conditions
             return false;
         }
         private String targetFunction;
-    }  
+    }
 }

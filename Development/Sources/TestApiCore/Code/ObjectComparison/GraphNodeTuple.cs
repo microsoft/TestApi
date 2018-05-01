@@ -6,7 +6,7 @@
 namespace Microsoft.Test.ObjectComparison
 {
     /// <summary>
-    /// Represents a helper (<see cref="GraphNode"/> x <see cref="System.Boolean"/>) tuple 
+    /// Represents a helper (<see cref="GraphNode"/> x <see cref="System.Boolean"/>) tuple
     /// used by <see cref="PublicPropertyObjectGraphFactory"/>.
     /// </summary>
     /// <remarks>

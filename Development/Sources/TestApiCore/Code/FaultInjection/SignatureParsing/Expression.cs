@@ -30,7 +30,7 @@ namespace Microsoft.Test.FaultInjection.SignatureParsing
         private static Regex isString = new Regex(@"'(?<String>.*)'", RegexOptions.CultureInvariant);
         private static Regex isObject = new Regex(@"(?<ClassName>[\w\.<>\[\]]+)\x20*(\(\x20*(?<Parameters>.*)\x20*\))?(\x20*@\x20*(?<Assembly>[\w\.:\\/=,'\x20]+)\x20*)?", RegexOptions.CultureInvariant);
         private static Regex isArray = new Regex(@"(?<ClassName>[\w\.<>\[\]]+)\x20*\[\x20*\]\x20*{\x20*(?<Parameters>.*)\x20*}(\x20*@\x20*(?<Assembly>[\w\.:\\/=,'\x20]+))?\x20*", RegexOptions.CultureInvariant);
-       
+
         #endregion
 
         #region Public Members
@@ -527,7 +527,7 @@ namespace Microsoft.Test.FaultInjection.SignatureParsing
 
         #endregion
 
-        
+
     }
 }
 

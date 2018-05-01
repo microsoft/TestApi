@@ -9,7 +9,7 @@ using Microsoft.Test.FaultInjection;
 using Xunit;
 
 namespace Microsoft.Test.AcceptanceTests.FaultInjection
-{ 
+{
     /// <summary>
     /// Tests which verify the ability to inject exceptions
     /// </summary>

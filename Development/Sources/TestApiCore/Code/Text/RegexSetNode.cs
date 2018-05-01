@@ -101,7 +101,7 @@ namespace Microsoft.Test.Text
                 int randIndex = random.Next(mMapSize - mNumChoices);
 
                 int i = -1;
-                while (randIndex >= 0)  //seek to the available element 
+                while (randIndex >= 0)  //seek to the available element
                 {
                     i++;
                     //invert positive and negative sets
@@ -119,7 +119,7 @@ namespace Microsoft.Test.Text
                 int randIndex = random.Next(mNumChoices);
 
                 int i = -1;
-                while (randIndex >= 0)  //seek to the available element 
+                while (randIndex >= 0)  //seek to the available element
                 {
                     i++;
                     if ((mPositiveSet && mMap[i] == 1) || (!mPositiveSet && mMap[i] == 0))

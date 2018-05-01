@@ -9,14 +9,14 @@ using System.Globalization;
 namespace Microsoft.Test.Text
 {
     /// <summary>
-    /// Represents a Unicode range.<para/> 
-    /// A UnicodeRange instance can be created by either providing start and end of the 
+    /// Represents a Unicode range.<para/>
+    /// A UnicodeRange instance can be created by either providing start and end of the
     /// desired Unicode range or by providing a <see cref="UnicodeChart"/>.
     /// </summary>
     public class UnicodeRange
     {
         /// <summary>
-        /// Create a UnicodeRange instance, using the provided UnicodeChart Enum type. 
+        /// Create a UnicodeRange instance, using the provided UnicodeChart Enum type.
         /// </summary>
         /// <param name="chart">Group name of scripts, symbols or punctuations (e.g. "European Scripts", "Punctuation", etc.)</param>
         public UnicodeRange(UnicodeChart chart)
@@ -27,7 +27,7 @@ namespace Microsoft.Test.Text
         }
 
         /// <summary>
-        /// Create a UnicodeRange instance, using the provided start and end of the Unicode range 
+        /// Create a UnicodeRange instance, using the provided start and end of the Unicode range
         /// </summary>
         /// <param name="start">Start of the Unicode range (e.g. 0x0000, etc.)</param>
         /// <param name="end">End of the Unicode range (e.g. 0xFFFF, etc.)</param>
@@ -58,13 +58,13 @@ namespace Microsoft.Test.Text
             }
             else if (high > TextUtil.MaxUnicodePoint)
             {
-                throw new ArgumentOutOfRangeException ("UnicodeRange, high cannot be greater than " + 
+                throw new ArgumentOutOfRangeException ("UnicodeRange, high cannot be greater than " +
                     String.Format(CultureInfo.InvariantCulture, "0x{0:X}", TextUtil.MaxUnicodePoint) + ".");
             }
             startOfUnicodeRange = low;
             endOfUnicodeRange = high;
         }
-        
+
         /// <summary>
         /// Get the start of the Unicode range
         /// </summary>

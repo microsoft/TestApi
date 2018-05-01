@@ -170,8 +170,8 @@ namespace Microsoft.Test.AcceptanceTests.VariationGeneration
             var lang2 = new Parameter<string>("Lang2") { "EN", "DEU", "JPN" };
 
             var parameters = new List<ParameterBase> { os1, os2, sku1, sku2, lang1, lang2 };
-            var constraints = new List<Constraint<Variation>> 
-            { 
+            var constraints = new List<Constraint<Variation>>
+            {
                 Constraint<Variation>.Conditional(v => os1.GetValue(v) != os2.GetValue(v) && sku1.GetValue(v) != sku2.GetValue(v) && lang1.GetValue(v) != lang2.GetValue(v))
             };
 
@@ -219,8 +219,8 @@ namespace Microsoft.Test.AcceptanceTests.VariationGeneration
             var lang2 = new Parameter<string>("Lang2") { "EN", "DEU", "JPN" };
 
             var parameters = new List<ParameterBase> { os1, os2, sku1, sku2, lang1, lang2 };
-            var constraints = new List<Constraint<UpgradeVariation>> 
-            { 
+            var constraints = new List<Constraint<UpgradeVariation>>
+            {
                 Constraint<UpgradeVariation>.Conditional(v => v.OS1 != v.OS2 && v.SKU1 != v.SKU2 && v.Lang1 != v.Lang2)
             };
 
@@ -277,8 +277,8 @@ namespace Microsoft.Test.AcceptanceTests.VariationGeneration
             };
 
             var parameters = new List<ParameterBase> { a, b, c };
-            var constraints = new List<Constraint<Variation>> 
-            { 
+            var constraints = new List<Constraint<Variation>>
+            {
                 Constraint<Variation>.Conditional(v => a.GetValue(v) != a.GetValue(v))
             };
 
@@ -292,13 +292,13 @@ namespace Microsoft.Test.AcceptanceTests.VariationGeneration
         {
             var clientType = new Parameter<string>("ClientType") { "Win2k", "WinXP", "Win2k3" };
 
-            var serverType = new Parameter<string>("ServerType") 
+            var serverType = new Parameter<string>("ServerType")
             {
                 "SameMachineSameProc", "SameMachineDiffProcs", "Win2kAdvancedServer", "XPPro", "NetServer"
             };
 
             var accounts = new Parameter<string>("Accounts")
-            { 
+            {
                 "ClientRegularUserServerAdministrator", "BothAdministrator", "ClientRegularUserServerLocalSystem"
             };
 
@@ -365,13 +365,13 @@ namespace Microsoft.Test.AcceptanceTests.VariationGeneration
         {
             var clientType = new Parameter<string>("ClientType") { "Win2k", "WinXP", "Win2k3" };
 
-            var serverType = new Parameter<string>("ServerType") 
+            var serverType = new Parameter<string>("ServerType")
             {
                 "SameMachineSameProc", "SameMachineDiffProcs", "Win2kAdvancedServer", "XPPro", "NetServer"
             };
 
             var accounts = new Parameter<string>("Accounts")
-            { 
+            {
                 "ClientRegularUserServerAdministrator", "BothAdministrator", "ClientRegularUserServerLocalSystem"
             };
 
@@ -488,8 +488,8 @@ namespace Microsoft.Test.AcceptanceTests.VariationGeneration
                     .If(v => location.GetValue(v) == "InProc" || location.GetValue(v) == "RoutedInProc")
                     .Then(v => servertype.GetValue(v) == "SameMachineSameProc"),
                 Constraint<Variation>
-                    .If(v => 
-                        servertype.GetValue(v) == "SameMachineSameProc" && 
+                    .If(v =>
+                        servertype.GetValue(v) == "SameMachineSameProc" &&
                         (tokenAvailability.GetValue(v) == "WinAuth_Set" || tokenAvailability.GetValue(v) == "WinAuth_Get" || tokenAvailability.GetValue(v) == "All_Get" || tokenAvailability.GetValue(v) == "All_Set"))
                     .Then(v => accounts.GetValue(v) == "BothAdmin")
             };
@@ -842,21 +842,21 @@ namespace Microsoft.Test.AcceptanceTests.VariationGeneration
         [Fact]
         public void SampleWithExpectedResultsTest()
         {
-            var destination = new Parameter<string>("Destination") 
-            { 
-                "Whistler", 
+            var destination = new Parameter<string>("Destination")
+            {
+                "Whistler",
                 "Hawaii",
                 new ParameterValue<string>("Las Vegas") { Weight = 5.0 },
                 new ParameterValue<string>("Cleveland") { Tag = Results.ReturnsFalse }
             };
 
-            var hotelQuality = new Parameter<int>("Hotel Quality") 
-            { 5, 
+            var hotelQuality = new Parameter<int>("Hotel Quality")
+            { 5,
               4,
               3,
               2,
               1,
-              new ParameterValue<int>(-1){ Tag = Results.ThrowsOutOfRangeException } 
+              new ParameterValue<int>(-1){ Tag = Results.ThrowsOutOfRangeException }
             };
 
             var activity = new Parameter<string>("Activity") { "gambling", "swimming", "shopping", "skiing" };
@@ -970,7 +970,7 @@ namespace Microsoft.Test.AcceptanceTests.VariationGeneration
                 builder.Append(v.SKU1 + " ");
                 builder.Append(v.SKU2 + " ");
                 builder.Append(v.Lang1 + " ");
-                builder.Append(v.Lang2 + " ");                
+                builder.Append(v.Lang2 + " ");
                 strings.Add(builder.ToString().TrimEnd());
             }
 

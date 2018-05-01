@@ -9,7 +9,7 @@ using System.Diagnostics;
 using System.Runtime.InteropServices;
 
 namespace Microsoft.Test.LeakDetection
-{   
+{
     internal static class MemoryInterop
     {
         internal static PROCESS_MEMORY_COUNTERS_EX GetCounters(IntPtr hProcess)
@@ -34,7 +34,7 @@ namespace Microsoft.Test.LeakDetection
             SYSTEM_INFO sysinfo = new SYSTEM_INFO();
             NativeMethods.GetSystemInfo(ref sysinfo);
 
-            int wsInfoLength = (int)(Marshal.SizeOf(new PSAPI_WORKING_SET_INFORMATION()) + 
+            int wsInfoLength = (int)(Marshal.SizeOf(new PSAPI_WORKING_SET_INFORMATION()) +
                                      Marshal.SizeOf(new PSAPI_WORKING_SET_BLOCK()) * (process.WorkingSet64 / (sysinfo.dwPageSize)));
             IntPtr workingSetPointer = Marshal.AllocHGlobal(wsInfoLength);
 
@@ -56,7 +56,7 @@ namespace Microsoft.Test.LeakDetection
 
             PSAPI_WORKING_SET_INFORMATION workingSet = new PSAPI_WORKING_SET_INFORMATION();
             workingSet.NumberOfEntries = entries;
-            workingSet.WorkingSetInfo = new PSAPI_WORKING_SET_BLOCK[entries];            
+            workingSet.WorkingSetInfo = new PSAPI_WORKING_SET_BLOCK[entries];
 
             for (int i = 0; i < entries; i++)
             {
@@ -79,8 +79,8 @@ namespace Microsoft.Test.LeakDetection
                     privatePages++;
                 }
             }
-            
-            return privatePages;   
-        }        
+
+            return privatePages;
+        }
     }
 }

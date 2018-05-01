@@ -66,7 +66,7 @@ namespace Microsoft.Test.FaultInjection.SignatureParsing
                 type = type.DeclaringType;
                 stack.Push(type);
             }
-            
+
             Type outterType = stack.Pop();
             methodString = outterType.ToString().Replace('+','.');
             int genericIndex = 0;

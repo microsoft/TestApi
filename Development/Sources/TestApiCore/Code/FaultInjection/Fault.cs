@@ -30,7 +30,7 @@ namespace Microsoft.Test.FaultInjection
     /// (e.g. a ReturnValueFault can fault a method into returning a user-specified value)
     /// </summary>
     public static class BuiltInFaults
-    {   
+    {
         /// <summary>
         /// Built-in fault which always return null when triggered, call this method also when the method has a void return type.
         /// </summary>
@@ -42,7 +42,7 @@ namespace Microsoft.Test.FaultInjection
         /// Built-in fault which return the specified object when triggered.
         /// </summary>
         /// <param name="returnValue">The object that user put in. Faulted method will eventually return this object when fault condition triggered.</param>
-        
+
         public static IFault ReturnValueFault(object returnValue)
         {
             return new ReturnValueFault(returnValue);
@@ -54,7 +54,7 @@ namespace Microsoft.Test.FaultInjection
         /// (int)3, (double)6.6, (bool)true, ‘Hello World’ which means "Hello World",
         /// System.Exception(‘This is a fault’).
         /// For more information about the format, please refer to 'User Guide.doc', 'Expression Format in XML' section.</param>
-        
+
         public static IFault ReturnValueRuntimeFault(string returnValueExpression)
         {
             return new ReturnValueRuntimeFault(returnValueExpression);
@@ -63,7 +63,7 @@ namespace Microsoft.Test.FaultInjection
         /// Built-in fault which throw the specified exception object when triggered.
         /// </summary>
         /// <param name="exceptionValue">This Exception object is constructed at the process that calls Fault Injection API.
-        /// It needs to be serializable (All System Excetpions are serializable already).</param>    
+        /// It needs to be serializable (All System Excetpions are serializable already).</param>
         public static IFault ThrowExceptionFault(Exception exceptionValue)
         {
             return new ThrowExceptionFault(exceptionValue);

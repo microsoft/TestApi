@@ -24,7 +24,7 @@ namespace Microsoft.Test.Text
         /// Define minimum code point needed to be an EUDC string
         /// </summary>
         public static readonly int MINNUMOFCODEPOINT = 1;
-        
+
 
         /// <summary>
         /// Define SurrogatePairDictionary class
@@ -53,7 +53,7 @@ namespace Microsoft.Test.Text
                 throw new ArgumentOutOfRangeException("expectedRanges", "EudcProperty, EUDC ranges are beyond expected range. " +
                     "Refer to Private Use range.");
             }
-            
+
             foreach (UnicodeRangeProperty data in eudcRangeList)
             {
                 if (data.Name.Equals("Private Use Area", StringComparison.OrdinalIgnoreCase))
@@ -82,7 +82,7 @@ namespace Microsoft.Test.Text
 
             return isIn;
         }
-        
+
         /// <summary>
         /// Get random EUDC code points
         /// </summary>

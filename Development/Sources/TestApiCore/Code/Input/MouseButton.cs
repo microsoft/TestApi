@@ -8,7 +8,7 @@ namespace Microsoft.Test.Input
     /// <summary>
     /// Defines values that specify the buttons on a mouse device.
     /// </summary>
-    public enum MouseButton 
+    public enum MouseButton
     {
         /// <summary>
         /// The left mouse button.

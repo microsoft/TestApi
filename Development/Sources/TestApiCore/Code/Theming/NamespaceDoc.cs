@@ -6,7 +6,7 @@
 namespace Microsoft.Test.Theming
 {
     /// <summary>
-    /// Contains facilities for system themes configuration. 
+    /// Contains facilities for system themes configuration.
     /// </summary>
     [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Performance", "CA1812")]
     [System.Runtime.CompilerServices.CompilerGenerated()]

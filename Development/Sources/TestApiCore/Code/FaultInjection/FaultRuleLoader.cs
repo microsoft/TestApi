@@ -21,7 +21,7 @@ namespace Microsoft.Test.FaultInjection
         private static object accessCurrentRuleLock = new object();
         private static string serializationFileName = Environment.GetEnvironmentVariable(EnvironmentVariable.RuleRepository);
 
-        #endregion  
+        #endregion
 
         #region Public Members
 
@@ -66,9 +66,9 @@ namespace Microsoft.Test.FaultInjection
             }
 
             return currentRules;
-        }        
+        }
 
-        #endregion  
+        #endregion
 
         #region Private Members
 

@@ -70,7 +70,7 @@ namespace Microsoft.Test.AcceptanceTests.ObjectComparison
                 created = new Dictionary<Sample, GraphNode>();
                 return CreateObjectGraph((Sample)value, null);
             }
-            
+
             // Visits all nodes recursively
             private GraphNode CreateObjectGraph(Sample value, GraphNode parent)
             {

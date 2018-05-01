@@ -18,7 +18,7 @@ namespace Microsoft.Test.Input
     /// The following code types "Hello, world!" with the specified casing,
     /// and then types "hello, capitalized world!" which will be in all caps because
     /// the left shift key is being held down.
-    /// <code>
+    /// <code lang="C#" >
     /// Keyboard.Type("Hello, world!");
     /// Keyboard.Type(Key.Enter);
     /// Keyboard.Press(Key.LeftShift);
@@ -35,7 +35,7 @@ namespace Microsoft.Test.Input
             KeyBoardKeys.Add(Key.Back, new KeySpec((ushort)Key.Back, false, "backspace"));
             KeyBoardKeys.Add(Key.Tab, new KeySpec((ushort)Key.Tab, false, "tab"));
             KeyBoardKeys.Add(Key.Clear, new KeySpec((ushort)Key.Clear, false, "clear"));
-            KeyBoardKeys.Add(Key.Return, new KeySpec((ushort)Key.Return, false, "return"));            
+            KeyBoardKeys.Add(Key.Return, new KeySpec((ushort)Key.Return, false, "return"));
             KeyBoardKeys.Add(Key.Shift, new KeySpec((ushort)Key.Shift, false, "shift"));
             KeyBoardKeys.Add(Key.Ctrl, new KeySpec((ushort)Key.Ctrl, false, "ctrl"));
             KeyBoardKeys.Add(Key.Alt, new KeySpec((ushort)Key.Alt, false, "alt"));
@@ -44,14 +44,14 @@ namespace Microsoft.Test.Input
             KeyBoardKeys.Add(Key.KanaMode, new KeySpec((ushort)Key.KanaMode, false, "kanamode"));
             KeyBoardKeys.Add(Key.JunjaMode, new KeySpec((ushort)Key.JunjaMode, false, "junjamode"));
             KeyBoardKeys.Add(Key.FinalMode, new KeySpec((ushort)Key.FinalMode, false, "finalmode"));
-            KeyBoardKeys.Add(Key.HanjaMode, new KeySpec((ushort)Key.HanjaMode, false, "hanjamode"));           
+            KeyBoardKeys.Add(Key.HanjaMode, new KeySpec((ushort)Key.HanjaMode, false, "hanjamode"));
             KeyBoardKeys.Add(Key.Escape, new KeySpec((ushort)Key.Escape, false, "esc"));
             KeyBoardKeys.Add(Key.ImeConvert, new KeySpec((ushort)Key.ImeConvert, false, "imeconvert"));
             KeyBoardKeys.Add(Key.ImeNonConvert, new KeySpec((ushort)Key.ImeNonConvert, false, "imenonconvert"));
             KeyBoardKeys.Add(Key.ImeAccept, new KeySpec((ushort)Key.ImeAccept, false, "imeaccept"));
             KeyBoardKeys.Add(Key.ImeModeChange, new KeySpec((ushort)Key.ImeAccept, false, "imemodechange"));
             KeyBoardKeys.Add(Key.Space, new KeySpec((ushort)Key.Space, false, " "));
-            KeyBoardKeys.Add(Key.Prior, new KeySpec((ushort)Key.Prior, true, "prior"));            
+            KeyBoardKeys.Add(Key.Prior, new KeySpec((ushort)Key.Prior, true, "prior"));
             KeyBoardKeys.Add(Key.Next, new KeySpec((ushort)Key.Next, true, "next"));
             KeyBoardKeys.Add(Key.End, new KeySpec((ushort)Key.End, true, "end"));
             KeyBoardKeys.Add(Key.Home, new KeySpec((ushort)Key.Home, true, "home"));
@@ -62,7 +62,7 @@ namespace Microsoft.Test.Input
             KeyBoardKeys.Add(Key.Select, new KeySpec((ushort)Key.Select, false, "select"));
             KeyBoardKeys.Add(Key.Print, new KeySpec((ushort)Key.Print, false, "print"));
             KeyBoardKeys.Add(Key.Execute, new KeySpec((ushort)Key.Execute, false, "execute"));
-            KeyBoardKeys.Add(Key.Snapshot, new KeySpec((ushort)Key.Snapshot, true, "snapshot"));           
+            KeyBoardKeys.Add(Key.Snapshot, new KeySpec((ushort)Key.Snapshot, true, "snapshot"));
             KeyBoardKeys.Add(Key.Insert, new KeySpec((ushort)Key.Insert, true, "insert"));
             KeyBoardKeys.Add(Key.Delete, new KeySpec((ushort)Key.Delete, true, "delete"));
             KeyBoardKeys.Add(Key.Help, new KeySpec((ushort)Key.Help, false, "help"));
@@ -181,8 +181,8 @@ namespace Microsoft.Test.Input
             KeyBoardKeys.Add(Key.SelectMedia, new KeySpec((ushort)Key.SelectMedia, false, "SelectMedia"));
             KeyBoardKeys.Add(Key.LaunchApplication1, new KeySpec((ushort)Key.LaunchApplication1, false, "LaunchApplication1"));
             KeyBoardKeys.Add(Key.LaunchApplication2, new KeySpec((ushort)Key.LaunchApplication2, false, "LaunchApplication2"));
-            
-            KeyBoardKeys.Add(Key.Oem1, new KeySpec((ushort)Key.Oem1, false, ";"));           
+
+            KeyBoardKeys.Add(Key.Oem1, new KeySpec((ushort)Key.Oem1, false, ";"));
             KeyBoardKeys.Add(Key.OemPlus, new KeySpec((ushort)Key.OemPlus, false, "+"));
             KeyBoardKeys.Add(Key.OemComma, new KeySpec((ushort)Key.OemComma, false, ","));
             KeyBoardKeys.Add(Key.OemMinus, new KeySpec((ushort)Key.OemMinus, false, "-"));
@@ -202,7 +202,7 @@ namespace Microsoft.Test.Input
             KeyBoardKeys.Add(Key.OemFinish, new KeySpec((ushort)Key.OemFinish, false, "OemFinish"));
             KeyBoardKeys.Add(Key.OemCopy, new KeySpec((ushort)Key.OemCopy, false, "OemCopy"));
             KeyBoardKeys.Add(Key.OemAuto, new KeySpec((ushort)Key.OemAuto, false, "OemAuto"));
-            KeyBoardKeys.Add(Key.OemEnlw, new KeySpec((ushort)Key.OemEnlw, false, "OemEnlw"));          
+            KeyBoardKeys.Add(Key.OemEnlw, new KeySpec((ushort)Key.OemEnlw, false, "OemEnlw"));
             KeyBoardKeys.Add(Key.OemBackTab, new KeySpec((ushort)Key.OemBackTab, false, "OemBackTab"));
             KeyBoardKeys.Add(Key.Attn, new KeySpec((ushort)Key.Attn, false, "Attn"));
             KeyBoardKeys.Add(Key.CrSel, new KeySpec((ushort)Key.CrSel, false, "CrSel"));
@@ -267,7 +267,7 @@ namespace Microsoft.Test.Input
         /// </summary>
         /// <remarks>
         /// Note that a combination of a combination of Key.Shift or Key.Capital and a Unicode point above 0xFE
-        /// is not considered valid and will not result in the Unicode point being types without 
+        /// is not considered valid and will not result in the Unicode point being types without
         /// applying of the modifier key.
         /// </remarks>
         /// <param name="text">The text to type.</param>

@@ -12,7 +12,7 @@ namespace Microsoft.Test.ObjectComparison
     /// </summary>
     /// <example>
     /// The following example demonstrates the use of a simple factory to do shallow comparison of two objects.
-    /// <code>
+    /// <code lang="C#" >
     /// class Person
     /// {
     ///     public Person(string name)
@@ -24,7 +24,7 @@ namespace Microsoft.Test.ObjectComparison
     ///     public Collection&lt;Person&gt; Children { get; private set; }
     /// }
     /// </code>
-    /// <code>
+    /// <code lang="C#" >
     /// class SimpleObjectGraphFactory : ObjectGraphFactory
     /// {
     ///     public override GraphNode CreateObjectGraph(object o, ObjectGraphFactoryMap factoryMap = null)
@@ -38,7 +38,7 @@ namespace Microsoft.Test.ObjectComparison
     ///     }
     /// }
     /// </code>
-    /// <code>
+    /// <code lang="C#" >
     /// Person p1 = new Person("John");
     /// p1.Children.Add(new Person("Peter"));
     /// p1.Children.Add(new Person("Mary"));

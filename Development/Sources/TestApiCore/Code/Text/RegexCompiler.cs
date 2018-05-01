@@ -335,7 +335,7 @@ namespace Microsoft.Test.Text
             return node;
         }
 
-        //Compile token 
+        //Compile token
         public RegexNode CompileAtom()
         {
             RegexNode atom = null;
@@ -361,7 +361,7 @@ namespace Microsoft.Test.Text
                     int refIndex = 0; //-2 -> don't capture, -1 -> named capture, 0-> indexed capture
                     NextChar();
 
-                    //By default, subexpressions must be captured for future reference, 
+                    //By default, subexpressions must be captured for future reference,
                     if (mCurrent == '?')
                     {
                         NextChar();

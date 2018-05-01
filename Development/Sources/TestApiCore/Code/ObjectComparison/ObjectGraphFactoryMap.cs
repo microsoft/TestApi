@@ -25,14 +25,14 @@ namespace Microsoft.Test.ObjectComparison
         /// Constructs a new instaince of <see cref="ObjectGraphFactoryMap"/>.
         /// </summary>
         /// <param name="exactTypeMatch">
-        /// The value indicating whether exact type match should be performed. 
+        /// The value indicating whether exact type match should be performed.
         /// If it equals <see lang="true"/> the type match is exact. That is, type B matches only
         /// type B and does not match any other type.
-        /// If it equals <see lang="false"/>, types are matched based on their type compatibility. 
-        /// That is, type B matches not only itself, but also any other type compatible with it. 
-        /// E.g., type D, derived from B. That effectively allows factories to be registered 
+        /// If it equals <see lang="false"/>, types are matched based on their type compatibility.
+        /// That is, type B matches not only itself, but also any other type compatible with it.
+        /// E.g., type D, derived from B. That effectively allows factories to be registered
         /// not only for types, but for interfaces as well. In case there is no exact match for a
-        /// type, a factory for the 'closest' compatible type is chosen. That type is determined by 
+        /// type, a factory for the 'closest' compatible type is chosen. That type is determined by
         /// the following algorithm:
         /// <list type="number">
         /// <item>
@@ -45,8 +45,8 @@ namespace Microsoft.Test.ObjectComparison
         /// <item>
         ///     <description>
         ///     The map is searched for types of interfaces implemented by the type in question.
-        ///     If the map contains an entry for a certain interface the corresponding 
-        ///     <see cref="ObjectGraphFactory"/> is returned. If no entries are found the 
+        ///     If the map contains an entry for a certain interface the corresponding
+        ///     <see cref="ObjectGraphFactory"/> is returned. If no entries are found the
         ///     <see cref="KeyNotFoundException"/> is thrown. If more than one entry is found
         ///     the <see cref="ArgumentException"/> is thrown.
         ///     </description>
@@ -83,27 +83,27 @@ namespace Microsoft.Test.ObjectComparison
         }
 
         /// <summary>
-        /// Determines whether the <see cref="ObjectGraphFactoryMap"/> contains an 
+        /// Determines whether the <see cref="ObjectGraphFactoryMap"/> contains an
         /// <see cref="ObjectGraphFactory"/> for the specified key.
         /// </summary>
         /// <param name="key">
         /// The key to locate in the <see cref="ObjectGraphFactoryMap"/>.</param>
         /// <returns>
-        /// <see lang="true"/> if the <see cref="ObjectGraphFactoryMap"/> contains 
-        /// an <see cref="ObjectGraphFactory"/> for the specified key; otherwise, 
+        /// <see lang="true"/> if the <see cref="ObjectGraphFactoryMap"/> contains
+        /// an <see cref="ObjectGraphFactory"/> for the specified key; otherwise,
         /// <see lang="false"/>.
         /// </returns>
         /// <exception cref="T:System.ArgumentNullException">
         /// <paramref name="key"/> is null.
         /// </exception>
         /// <remarks>
-        /// Note that search is always performed for generic type definitions of types. 
+        /// Note that search is always performed for generic type definitions of types.
         /// That is if the type specified by <paramref name="key"/> is <c>MyType&lt;int&gt;</c>
         /// the actual search will be performed for <c>MyType&lt;T&gt;</c>.
         /// <para/>Note that if this method returns <see lang="true"/> for a given type,
-        /// then <see cref="TryGetValue(Type, out ObjectGraphFactory)"/> or <see cref="this[Type]"/> 
+        /// then <see cref="TryGetValue(Type, out ObjectGraphFactory)"/> or <see cref="this[Type]"/>
         /// can thrown an <see cref="ArgumentException"/> exception for the same type if a non-exact
-        /// type match is on and there are ambiguous entries in the map. 
+        /// type match is on and there are ambiguous entries in the map.
         /// See <see cref="TryGetValue(Type, out ObjectGraphFactory)"/> for more details.
         /// </remarks>
         public bool ContainsKey(Type key)
@@ -128,9 +128,9 @@ namespace Microsoft.Test.ObjectComparison
         /// </summary>
         /// <param name="key">The key of the element to remove.</param>
         /// <returns>
-        /// <see lang="true"/> if the element is successfully removed; 
-        /// otherwise, <see lang="false"/>.  
-        /// This method also returns false if <paramref name="key"/> was not found in the original 
+        /// <see lang="true"/> if the element is successfully removed;
+        /// otherwise, <see lang="false"/>.
+        /// This method also returns false if <paramref name="key"/> was not found in the original
         /// <see cref="ObjectGraphFactoryMap"/>.
         /// </returns>
         /// <exception cref="T:System.ArgumentNullException">
@@ -152,7 +152,7 @@ namespace Microsoft.Test.ObjectComparison
         /// <param name="key">The type to get an object graph factory for.</param>
         /// <param name="value">The object graph factory for the specified type.</param>
         /// <returns>
-        /// <see lang="true"/> if the map contains an object graph factory for the specified 
+        /// <see lang="true"/> if the map contains an object graph factory for the specified
         /// type or a compatible type, depending on what kind of search was performed;
         /// otherwise, <see lang="false"/>.
         /// </returns>
@@ -161,9 +161,9 @@ namespace Microsoft.Test.ObjectComparison
         /// </exception>
         /// <exception cref="ArgumentException">
         /// if the map does not contain any entries for base types of <paramref name="key"/>, but does
-        /// contain entries for at least two interfaces implemented by <paramref name="key"/> and 
+        /// contain entries for at least two interfaces implemented by <paramref name="key"/> and
         /// those entries contain <see cref="ObjectGraphFactory"/> of different types. Since
-        /// no order applies to interface types, there is an ambiguity about which 
+        /// no order applies to interface types, there is an ambiguity about which
         /// <see cref="ObjectGraphFactory"/> should be returned.
         /// </exception>
         /// <remarks>
@@ -200,9 +200,9 @@ namespace Microsoft.Test.ObjectComparison
         /// </exception>
         /// <exception cref="ArgumentException">
         /// if the map does not contain any entries for base types of <paramref name="key"/>, but does
-        /// contain entries for at least two interfaces implemented by <paramref name="key"/> and 
+        /// contain entries for at least two interfaces implemented by <paramref name="key"/> and
         /// those entries contain <see cref="ObjectGraphFactory"/> of different types. Since
-        /// no order applies to interface types, there is an ambiguity about which 
+        /// no order applies to interface types, there is an ambiguity about which
         /// <see cref="ObjectGraphFactory"/> should be returned.
         /// </exception>
         public ObjectGraphFactory this[Type key]
@@ -254,7 +254,7 @@ namespace Microsoft.Test.ObjectComparison
         /// The object to locate in the <see cref="ObjectGraphFactoryMap"/>.
         /// </param>
         /// <returns>
-        /// true if <paramref name="item"/> is found in the <see cref="ObjectGraphFactoryMap"/>; 
+        /// true if <paramref name="item"/> is found in the <see cref="ObjectGraphFactoryMap"/>;
         /// otherwise, false.
         /// </returns>
         public bool Contains(KeyValuePair<Type, ObjectGraphFactory> item)
@@ -301,9 +301,9 @@ namespace Microsoft.Test.ObjectComparison
         /// The object to remove from the <see cref="ObjectGraphFactoryMap"/>.
         /// </param>
         /// <returns>
-        /// true if <paramref name="item"/> was successfully removed from the 
-        /// <see cref="ObjectGraphFactoryMap"/>; otherwise, false. 
-        /// This method also returns false if <paramref name="item"/> is not found in the original 
+        /// true if <paramref name="item"/> was successfully removed from the
+        /// <see cref="ObjectGraphFactoryMap"/>; otherwise, false.
+        /// This method also returns false if <paramref name="item"/> is not found in the original
         /// <see cref="ObjectGraphFactoryMap"/>.
         /// </returns>
         public bool Remove(KeyValuePair<Type, ObjectGraphFactory> item)
@@ -319,7 +319,7 @@ namespace Microsoft.Test.ObjectComparison
         /// Returns an enumerator that iterates through the collection.
         /// </summary>
         /// <returns>
-        /// A <see cref="T:System.Collections.Generic.IEnumerator{KeyValuePair{Type,ObjectGraphFactory}}"/> 
+        /// A <see cref="T:System.Collections.Generic.IEnumerator{KeyValuePair{Type,ObjectGraphFactory}}"/>
         /// that can be used to iterate through the collection.
         /// </returns>
         public IEnumerator<KeyValuePair<Type, ObjectGraphFactory>> GetEnumerator()
@@ -335,7 +335,7 @@ namespace Microsoft.Test.ObjectComparison
         /// Returns an enumerator that iterates through a collection.
         /// </summary>
         /// <returns>
-        /// An <see cref="T:System.Collections.IEnumerator"/> object that can be used to 
+        /// An <see cref="T:System.Collections.IEnumerator"/> object that can be used to
         /// iterate through the collection.
         /// </returns>
         IEnumerator IEnumerable.GetEnumerator()
@@ -354,7 +354,7 @@ namespace Microsoft.Test.ObjectComparison
                 throw new ArgumentNullException("key");
             }
 
-            return key.IsGenericType 
+            return key.IsGenericType
                 ? key.GetGenericTypeDefinition()
                 : key;
         }

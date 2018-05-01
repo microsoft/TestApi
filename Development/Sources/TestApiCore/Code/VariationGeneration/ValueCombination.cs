@@ -9,7 +9,7 @@ using System.Collections.Generic;
 
 namespace Microsoft.Test.VariationGeneration
 {
-    
+
 
     /// <summary>
     /// A single value in the model
@@ -46,7 +46,7 @@ namespace Microsoft.Test.VariationGeneration
         /// Dictionary that maps a parameter to its value
         /// </summary>
         public IDictionary<int, int> ParameterToValueMap { get { return parameterToValueMap; } }
-        
+
 
         public IEnumerable<int> Keys { get { return keys; } }
 

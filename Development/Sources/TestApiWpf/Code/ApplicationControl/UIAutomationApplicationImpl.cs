@@ -26,16 +26,16 @@ namespace Microsoft.Test.ApplicationControl
             Process.StartInfo = settings.ProcessStartInfo;
             Process.EnableRaisingEvents = true;
             Process.Exited += this.OnApplicationExit;
-                        
+
             Automation.AddAutomationEventHandler(
                 WindowPatternIdentifiers.WindowOpenedEvent,
                 AutomationElement.RootElement,
                 TreeScope.Subtree,
                 OnActivated);
 
-            Automation.AddAutomationFocusChangedEventHandler(OnFocusChanged);            
+            Automation.AddAutomationFocusChangedEventHandler(OnFocusChanged);
         }
-        
+
         #region Properties
 
         internal AutomationElement MainWindowAutomationElement
@@ -122,13 +122,13 @@ namespace Microsoft.Test.ApplicationControl
         public void WaitForInputIdle(TimeSpan timeSpan)
         {
             if (Process != null && MainWindowAutomationElement != null)
-            {             
+            {
                 Process.WaitForInputIdle((int)timeSpan.TotalMilliseconds);
             }
         }
 
         /// <summary>
-        /// Blocks execution of the current thread until the main window of the 
+        /// Blocks execution of the current thread until the main window of the
         /// application is displayed or until the specified timeout interval elapses.
         /// </summary>
         /// <param name="timeout">The timeout interval.</param>
@@ -199,7 +199,7 @@ namespace Microsoft.Test.ApplicationControl
                 var closeThread = new Thread(CloseProcessWorker);
                 closeThread.Start();
 
-                waitThread.Join(60000);    
+                waitThread.Join(60000);
             }
         }
 

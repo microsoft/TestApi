@@ -26,16 +26,16 @@ namespace Microsoft.Test.Text
         /// Define minimum code point needed to be a string has line break
         /// </summary>
         public static readonly int MINNUMOFCODEPOINT = 1;
-        
+
         /// <summary>
-        /// Define LineBreakProperty class, 
+        /// Define LineBreakProperty class,
         /// <a href="http://unicode.org/reports/tr13/tr13-5.html">Newline</a>
         /// </summary>
         public LineBreakProperty(Collection<UnicodeRange> expectedRangse)
         {
             if (!InitializeLineBreakCharDictionary(expectedRangse))
             {
-                throw new ArgumentOutOfRangeException("expectedRangse", "LineBreakProperty, Linebreak ranges are beyond expected range. " + 
+                throw new ArgumentOutOfRangeException("expectedRangse", "LineBreakProperty, Linebreak ranges are beyond expected range. " +
                     "Refert to CR, LF, CRLF, NEL, VT, FF, LS, and PS.");
             }
         }
@@ -53,7 +53,7 @@ namespace Microsoft.Test.Text
             char [] vt = {'\u000B'};
             lineBreakCharDictionary.Add("VT", vt);
             char [] ff = {'\u000C'};
-            lineBreakCharDictionary.Add("FF", ff); 
+            lineBreakCharDictionary.Add("FF", ff);
             char [] ls = {'\u2028'};
             lineBreakCharDictionary.Add("LS", ls);
             char [] ps = {'\u2029'};
@@ -100,7 +100,7 @@ namespace Microsoft.Test.Text
         }
 
         /// <summary>
-        /// Get next line break points 
+        /// Get next line break points
         /// </summary>
         public string GetRandomCodePoints(int numOfProperty, int seed)
         {

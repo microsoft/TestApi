@@ -15,17 +15,17 @@ using Microsoft.Test.FaultInjection.SignatureParsing;
 namespace Microsoft.Test.FaultInjection
 {
     /// <summary>
-    /// Maintains information needed for injecting faults into a test application. 
+    /// Maintains information needed for injecting faults into a test application.
     /// For general information on fault injection see <a href="http://en.wikipedia.org/wiki/Fault_injection">this page</a>.
     /// </summary>
     /// <remarks>
     /// Users can launch the faulted application by calling GetProcessStartInfo(string) and calling Process.Start()
     /// with the returned ProcessStartInfo.
     /// </remarks>
-    /// 
+    ///
     /// <example>
     /// The following example creates a new FaultSession with a single FaultRule and launches the application under test.
-    /// <code>
+    /// <code lang="C#" >
     /// string sampleAppPath = "SampleApp.exe";
     ///
     /// FaultRule rule = new FaultRule(
@@ -38,10 +38,10 @@ namespace Microsoft.Test.FaultInjection
     /// Process.Start(psi);
     /// </code>
     /// </example>
-    /// 
+    ///
     /// <example>
     /// The following example creates a new FaultSession with multiple FaultRules and launches the application under test.
-    /// <code>
+    /// <code lang="C#" >
     /// string sampleAppPath = "SampleApp.exe";
     ///
     /// FaultRule[] ruleArray = new FaultRule[]
@@ -60,18 +60,18 @@ namespace Microsoft.Test.FaultInjection
     ///         "static SampleApp.StaticTargetMethod()",
     ///         BuiltInConditions.TriggerOnEveryNthCall(2),
     ///         BuiltInFaults.ThrowExceptionFault(new InvalidOperationException()))
-    /// };     
+    /// };
     ///
     /// FaultSession session = new FaultSession(ruleArray);
     /// ProcessStartInfo psi = session.GetProcessStartInfo(sampleAppPath);
     /// Process.Start(psi);
     /// </code>
     /// </example>
-    /// 
+    ///
     /// <example>The following example demonstrates how to modify a fault rule in an existing session.
-    /// <code>
+    /// <code lang="C#" >
     /// ...
-    /// string sampleAppPath = "SampleApp.exe";     
+    /// string sampleAppPath = "SampleApp.exe";
     /// FaultSession session = new FaultSession(rule);
     /// ...
     ///
@@ -98,7 +98,7 @@ namespace Microsoft.Test.FaultInjection
         private readonly string methodFilterFileName;
         private string logDirectory = Directory.GetCurrentDirectory();
 
-        #endregion  
+        #endregion
 
         #region Constructors
 
@@ -108,12 +108,12 @@ namespace Microsoft.Test.FaultInjection
         /// <param name="rules">FaultRule objects defining how to fault the test application.</param>
         /// <exception cref="FaultInjectionException">Two FaultRule objects corresponding to the same method.</exception>
         public FaultSession(params FaultRule[] rules)
-        {            
+        {
             ComRegistrar.AutoRegister();
-            
+
             AddRulesToDict(rules);
 
-            serializationFileName = Path.Combine(this.logDirectory, DateTime.Now.ToString("yyyyMMddHHmmssff", CultureInfo.CurrentCulture) + ".rul"); 
+            serializationFileName = Path.Combine(this.logDirectory, DateTime.Now.ToString("yyyyMMddHHmmssff", CultureInfo.CurrentCulture) + ".rul");
             {
                 string mutexName = Path.GetFileName(serializationFileName);
 
@@ -132,7 +132,7 @@ namespace Microsoft.Test.FaultInjection
             MethodFilterHelper.WriteMethodFilter(methodFilterFileName, rules);
         }
 
-        #endregion 
+        #endregion
 
         #region Public Members
 
@@ -160,7 +160,7 @@ namespace Microsoft.Test.FaultInjection
         public void NotifyRuleChanges()
         {
             SerializeRules();
-        }       
+        }
 
         /// <summary>
         /// Creates a ProcessStartInfo with the appropriate environment variables set
@@ -195,9 +195,9 @@ namespace Microsoft.Test.FaultInjection
                     Directory.CreateDirectory(logDirectory);
                 }
             }
-        }        
+        }
 
-        #endregion        
+        #endregion
 
         #region Private Members
 
@@ -242,9 +242,9 @@ namespace Microsoft.Test.FaultInjection
             }
 
             Serializer.SerializeRules(serializationFileName, rules.ToArray(), serializationMutex);
-        }      
+        }
 
-        #endregion 
+        #endregion
 
         #region Static Members
 
@@ -263,13 +263,13 @@ namespace Microsoft.Test.FaultInjection
         }
 
         /// <summary>
-        /// Destroys the global fault session. 
+        /// Destroys the global fault session.
         /// </summary>
         public static void ClearGlobalFault()
         {
             ClearEnvironmentVariable(EnvironmentVariableTarget.Machine);
             ClearEnvironmentVariable(EnvironmentVariableTarget.Process);
-        }        
+        }
 
         private static void SetProcessEnvironmentVariables(FaultSession session, ProcessStartInfo processStartInfo)
         {

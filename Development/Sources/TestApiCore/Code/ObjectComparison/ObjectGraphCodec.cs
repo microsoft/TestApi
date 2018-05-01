@@ -11,10 +11,10 @@ namespace Microsoft.Test.ObjectComparison
     /// Represents a base class for object graph codecs.
     /// </summary>
     /// <remarks>
-    /// Object graph codecs are used for encoding object graphs into 
-    /// and decoding them from data streams. In other words a codec 
+    /// Object graph codecs are used for encoding object graphs into
+    /// and decoding them from data streams. In other words a codec
     /// knows how to serialize object graphs into a specific data
-    /// format (e.g., XML) and how to deserialize them from that 
+    /// format (e.g., XML) and how to deserialize them from that
     /// format.
     /// </remarks>
     /// <example>
@@ -36,10 +36,10 @@ namespace Microsoft.Test.ObjectComparison
     ///             child.Parent = root;
     ///             root.Children.Add(child);
     ///         }
-    /// 
+    ///
     ///         return root;
     ///     }
-    /// 
+    ///
     ///     public override void EncodeObjectGraph(GraphNode root, Stream stream)
     ///     {
     ///         var builder = new StringBuilder();
@@ -48,17 +48,17 @@ namespace Microsoft.Test.ObjectComparison
     ///         {
     ///             EncodeGraphNode(c, builder);
     ///         }
-    /// 
+    ///
     ///         var bytes = Encoding.UTF8.GetBytes(builder.ToString());
     ///         stream.Write(bytes, 0, bytes.Length);
     ///     }
-    /// 
+    ///
     ///     private void EncodeGraphNode(GraphNode node, StringBuilder builder)
     ///     {
     ///         builder.AppendFormat("[{0}]:{1}", node.Name, node.ObjectValue);
     ///         builder.AppendLine();
     ///     }
-    /// 
+    ///
     ///     private GraphNode DecodeGraphNode(string line)
     ///     {
     ///         var match = Regex.Match(line, @"^\[(.*)\]:(.*)");
@@ -69,7 +69,7 @@ namespace Microsoft.Test.ObjectComparison
     ///             Name = match.Groups[1].Value,
     ///             ObjectValue = match.Groups[2].Value
     ///         };
-    /// 
+    ///
     ///         return node;
     ///     }
     /// }
@@ -90,22 +90,22 @@ namespace Microsoft.Test.ObjectComparison
     /// var p1 = new Person("John");
     /// p1.Children.Add(new Person("Peter"));
     /// p1.Children.Add(new Person("Mary"));
-    /// 
+    ///
     /// // Create a sample object graph
     /// var factory = new PublicPropertyObjectGraphFactory();
     /// var graph1 = factory.CreateObjectGraph(p1);
-    /// 
+    ///
     /// // Encode that object graph
     /// var stream = new MemoryStream();
     /// var codec = new SimpleCodec();
     /// codec.EncodeObjectGraph(graph1, stream);
-    ///         
+    ///
     /// // Print the result
     /// Console.WriteLine(Encoding.UTF8.GetString(stream.GetBuffer()));
-    /// 
+    ///
     /// // Decode the object graph
     /// var graph2 = codec.DecodeObjectGraph(stream);
-    /// 
+    ///
     /// // Result should be false, because we encoded only tree top nodes
     /// // from the whole object graph
     /// var result = new ObjectGraphComparer().Compare(graph1, graph2);

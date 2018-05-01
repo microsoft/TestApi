@@ -16,15 +16,15 @@ namespace Microsoft.Test.CommandLineParsing
     /// <summary>
     /// Provides utilities for parsing command-line values.
     /// </summary>
-    /// 
+    ///
     /// <example>
     /// The following example shows parsing of a command-line such as "Test.exe /verbose /runId=10"
     /// into a strongly-typed structure.
-    /// <code>
+    /// <code lang="C#" >
     /// using System;
     /// using System.Linq;
     /// using Microsoft.Test.CommandLineParsing;
-    /// 
+    ///
     /// public class CommandLineArguments
     /// {
     ///     public bool? Verbose { get; set; }
@@ -37,21 +37,21 @@ namespace Microsoft.Test.CommandLineParsing
     ///     {
     ///         CommandLineArguments a = new CommandLineArguments();
     ///         a.ParseArguments(args);  // or CommandLineParser.ParseArguments(a, args);
-    ///         
+    ///
     ///         Console.WriteLine("Verbose: {0}, RunId: {1}", a.Verbose, a.RunId);
     ///     }
     /// }
     /// </code>
     /// </example>
-    /// 
+    ///
     /// <example>
     /// The following example shows parsing of a command-line such as "Test.exe RUN /verbose /runId=10"
     /// into a strongly-typed Command, that can then be excuted.
-    /// <code>
+    /// <code lang="C#" >
     /// using System;
     /// using System.Linq;
     /// using Microsoft.Test.CommandLineParsing;
-    /// 
+    ///
     /// public class RunCommand : Command
     /// {
     ///     public bool? Verbose { get; set; }
@@ -59,7 +59,7 @@ namespace Microsoft.Test.CommandLineParsing
     ///
     ///     public override void Execute()
     ///     {
-    ///         Console.WriteLine("RunCommand: Verbose={0} RunId={1}", Verbose, RunId);  
+    ///         Console.WriteLine("RunCommand: Verbose={0} RunId={1}", Verbose, RunId);
     ///     }
     /// }
     ///
@@ -115,7 +115,7 @@ namespace Microsoft.Test.CommandLineParsing
             CommandLineDictionary commandLineDictionary = CommandLineDictionary.FromArguments(args);
 
             PropertyDescriptorCollection properties = TypeDescriptor.GetProperties(valueToPopulate);
-            bool hasAdditionalProperties = false;            
+            bool hasAdditionalProperties = false;
             Dictionary<string, string> additionalPropertiesDictionary = new Dictionary<string, string>(StringComparer.OrdinalIgnoreCase);
 
             // Ensure required properties are specified.
@@ -133,7 +133,7 @@ namespace Microsoft.Test.CommandLineParsing
                 }
 
                 if (property.Attributes.Cast<Attribute>().Any(attribute => attribute is AdditionalPropertiesAttribute))
-                {                    
+                {
                     if (property.PropertyType != typeof(Dictionary<string, string>))
                     {
                         throw new ArgumentException("AdditionalProperties property must be of type Dictionary<string, string>.");
@@ -147,7 +147,7 @@ namespace Microsoft.Test.CommandLineParsing
             foreach (KeyValuePair<string, string> keyValuePair in commandLineDictionary)
             {
                 // Find a property whose name matches the kvp's key, ignoring case.
-                // We can't just use the indexer because that is case-sensitive.                
+                // We can't just use the indexer because that is case-sensitive.
                 PropertyDescriptor property = MatchProperty(keyValuePair.Key, properties);
 
                 if (null == property)
@@ -208,9 +208,9 @@ namespace Microsoft.Test.CommandLineParsing
 
         /// <summary>
         /// Match the property to the specified keyName
-        /// 
+        ///
         /// If match cannot be found, throw an argument exception
-        /// </summary>        
+        /// </summary>
         private static PropertyDescriptor MatchProperty(string keyName, PropertyDescriptorCollection properties)
         {
             foreach(PropertyDescriptor prop in properties)
@@ -221,7 +221,7 @@ namespace Microsoft.Test.CommandLineParsing
                 }
             }
 
-            return null;            
+            return null;
         }
 
         /// <summary>
@@ -261,9 +261,9 @@ namespace Microsoft.Test.CommandLineParsing
         }
 
         /// <summary>
-        /// Creates a string that represents key/value arguments for the properties of the 
-        /// specified object. For example, an object with a name (string) of "example" and a 
-        /// priority value (integer) of 1 translates to '/name=example  /priority=1'. This 
+        /// Creates a string that represents key/value arguments for the properties of the
+        /// specified object. For example, an object with a name (string) of "example" and a
+        /// priority value (integer) of 1 translates to '/name=example  /priority=1'. This
         /// can be used to send data structures through the command line.
         /// </summary>
         /// <param name="valueToConvert">Value to create key/value arguments from.</param>

@@ -15,6 +15,6 @@ namespace Microsoft.Test.AcceptanceTests.WpfTestApplication
         public TestDialog()
         {
             InitializeComponent();
-        }       
+        }
     }
 }

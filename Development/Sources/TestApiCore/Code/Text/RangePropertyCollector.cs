@@ -77,7 +77,7 @@ namespace Microsoft.Test.Text
             int high = expectedRange.EndOfUnicodeRange < range.EndOfUnicodeRange ? expectedRange.EndOfUnicodeRange : range.EndOfUnicodeRange;
             return new UnicodeRange(low, high);
         }
-        
+
         /// <summary>
         /// Walk through Unicode range database to build up property according to Group attribute
         /// </summary>
@@ -89,13 +89,13 @@ namespace Microsoft.Test.Text
             GroupAttributes attribute)
         {
             bool isAdded = false;
-            
+
             foreach (Group script in unicodeDb.Scripts)
             {
                 string scriptAttrib = script.GroupName;
                 if (attribute == GroupAttributes.Name) scriptAttrib = script.Name;
                 else if (attribute == GroupAttributes.Ids) scriptAttrib = script.Ids;
-                
+
                 if (scriptAttrib.Equals(name, StringComparison.OrdinalIgnoreCase))
                 {
                     UnicodeRange range = GetRange(script.UnicodeRange, expectedRange);
@@ -114,8 +114,8 @@ namespace Microsoft.Test.Text
                             {
                                 dataList.Add(new UnicodeRangeProperty(
                                     TextUtil.UnicodeChartType.Script,
-                                    subScript.SubGroupName, 
-                                    subScript.SubIds, 
+                                    subScript.SubGroupName,
+                                    subScript.SubIds,
                                     range));
                                 isAdded = true;
                             }
@@ -123,22 +123,22 @@ namespace Microsoft.Test.Text
                     }
                 }
             }
-            
+
             foreach (Group symbol in unicodeDb.SymbolsAndPunctuation)
             {
                 string symbolAttrib = symbol.GroupName;
                 if (attribute == GroupAttributes.Name) symbolAttrib = symbol.Name;
                 else if (attribute == GroupAttributes.Ids) symbolAttrib = symbol.Ids;
-                
+
                 if (symbolAttrib.Equals(name, StringComparison.OrdinalIgnoreCase))
                 {
                     TextUtil.UnicodeChartType type = TextUtil.UnicodeChartType.Other;
-                    if ((symbol.GroupName.ToLower(CultureInfo.InvariantCulture)).Contains("symbols") || 
+                    if ((symbol.GroupName.ToLower(CultureInfo.InvariantCulture)).Contains("symbols") ||
                         (symbol.Name.ToLower(CultureInfo.InvariantCulture)).Contains("symbols"))
                     {
                         type = TextUtil.UnicodeChartType.Symbol;
                     }
-                    else if((symbol.GroupName.ToLower(CultureInfo.InvariantCulture)).Contains("punctuation") || 
+                    else if((symbol.GroupName.ToLower(CultureInfo.InvariantCulture)).Contains("punctuation") ||
                         (symbol.Name.ToLower(CultureInfo.InvariantCulture)).Contains("punctuation"))
                     {
                         type = TextUtil.UnicodeChartType.Punctuation;

@@ -19,5 +19,5 @@ namespace Microsoft.Test.FaultInjection.Constants
 
         // File name for profiling callback COM dll
         public const string FaultEngineFileName = "FaultInjectionEngine.dll";
-    } 
+    }
 }

@@ -22,7 +22,7 @@ namespace Microsoft.Test.AcceptanceTests.LeakDetection
 
         public MemorySnapshotTests()
         {
-            //Launch Notepad application            
+            //Launch Notepad application
             notepad = new Process();
             notepad.StartInfo.FileName = "Notepad.exe";
             notepad.Start();
@@ -153,7 +153,7 @@ namespace Microsoft.Test.AcceptanceTests.LeakDetection
             SYSTEM_INFO sysinfo = new SYSTEM_INFO();
             NativeMemoryMethods.GetSystemInfo(ref sysinfo);
 
-            int wsInfoLength = (int)(Marshal.SizeOf(new PSAPI_WORKING_SET_INFORMATION()) + 
+            int wsInfoLength = (int)(Marshal.SizeOf(new PSAPI_WORKING_SET_INFORMATION()) +
                                      Marshal.SizeOf(new PSAPI_WORKING_SET_BLOCK()) * (process.WorkingSet64 / (sysinfo.dwPageSize)));
             IntPtr workingSetPointer = Marshal.AllocHGlobal(wsInfoLength);
 
@@ -172,10 +172,10 @@ namespace Microsoft.Test.AcceptanceTests.LeakDetection
         private static PSAPI_WORKING_SET_INFORMATION GenerateWorkingSetArray(IntPtr workingSetPointer)
         {
             int entries = Marshal.ReadInt32(workingSetPointer);
-                        
+
             PSAPI_WORKING_SET_INFORMATION workingSet = new PSAPI_WORKING_SET_INFORMATION();
             workingSet.NumberOfEntries = entries;
-            workingSet.WorkingSetInfo = new PSAPI_WORKING_SET_BLOCK[entries];            
+            workingSet.WorkingSetInfo = new PSAPI_WORKING_SET_BLOCK[entries];
 
 
             for (int i = 0; i < entries; i++)
@@ -248,7 +248,7 @@ namespace Microsoft.Test.AcceptanceTests.LeakDetection
         {
             Dictionary<string, long> diffOracle = new Dictionary<string, long>();
 
-            // Create oracle with correct data to verify against.            
+            // Create oracle with correct data to verify against.
             diffOracle.Add("GdiObjectCount", latestSnapshot.GdiObjectCount - originalSnapshot.GdiObjectCount);
             diffOracle.Add("HandleCount", latestSnapshot.HandleCount - originalSnapshot.HandleCount);
             diffOracle.Add("PageFileBytes", latestSnapshot.PageFileBytes.ToInt64() - originalSnapshot.PageFileBytes.ToInt64());

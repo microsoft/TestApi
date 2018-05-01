@@ -92,7 +92,7 @@ namespace Microsoft.Test.AcceptanceTests.FaultInjection
             rules[15].Condition = BuiltInConditions.TriggerOnNthCallBy(10, "Microsoft.Test.AcceptanceTests.FaultInjection.BuiltInTriggerTests.TesterTriggerOnNthCallBy()");
             rules[15].Fault = BuiltInFaults.ReturnValueFault(true);   //Take no effect
 
-            return rules;            
+            return rules;
         }
     }
 }

@@ -27,8 +27,8 @@ namespace Microsoft.Test.VisualVerification
         Snapshot actual = Snapshot.FromRectangle(new Rectangle(0, 0, 800, 600));
         Snapshot expected = Snapshot.FromFile("Expected.bmp");
         Snapshot diff = actual.CompareTo(expected);
-     
-        // The SnapshotColorVerifier.Verify() method compares every pixel of a diff bitmap 
+
+        // The SnapshotColorVerifier.Verify() method compares every pixel of a diff bitmap
         // against the threshold defined by the ColorDifference tolerance. If all pixels
         // fall within the tolerance, then the method returns VerificationResult.Pass
         SnapshotVerifier v = new SnapshotColorVerifier(Color.Black, new ColorDifference(0, 0, 0, 0));
@@ -44,7 +44,7 @@ namespace Microsoft.Test.VisualVerification
         #region Constructor
 
         /// <summary>
-        /// Snapshot Constructor - Creates buffer of black, opaque pixels 
+        /// Snapshot Constructor - Creates buffer of black, opaque pixels
         /// </summary>
         internal Snapshot(int height, int width)
         {
@@ -178,7 +178,7 @@ namespace Microsoft.Test.VisualVerification
         #region Public Methods
 
         /// <summary>
-        /// Compares the current Snapshot instance to the specified Snapshot to produce a difference image. 
+        /// Compares the current Snapshot instance to the specified Snapshot to produce a difference image.
         /// Note: This does not compare alpha channels.
         /// </summary>
         /// <param name="snapshot">The Snapshot to be compared to.</param>
@@ -189,7 +189,7 @@ namespace Microsoft.Test.VisualVerification
         }
 
         /// <summary>
-        /// Compares the current Snapshot instance to the specified Snapshot to produce a difference image. 
+        /// Compares the current Snapshot instance to the specified Snapshot to produce a difference image.
         /// </summary>
         /// <param name="snapshot">The target Snapshot to be compared to.</param>
         /// <param name="compareAlphaChannel">If true, compares alpha channels. If false, the alpha channel difference values are fixed to 255.</param>
@@ -271,7 +271,7 @@ namespace Microsoft.Test.VisualVerification
         }
 
         /// <summary>
-        /// Creates a new Snapshot of the specified size from the original using bilinear interpolation. 
+        /// Creates a new Snapshot of the specified size from the original using bilinear interpolation.
         /// </summary>
         /// <param name="size">Desired size of new image</param>
         /// <returns></returns>
@@ -295,7 +295,7 @@ namespace Microsoft.Test.VisualVerification
         }
 
         /// <summary>
-        /// Modifies the current image to contain the result of a bitwise OR of this Snapshot 
+        /// Modifies the current image to contain the result of a bitwise OR of this Snapshot
         /// and the mask.  This technique can be used to merge data from two images.
         /// http://en.wikipedia.org/wiki/Bitmask#Image_masks
         /// </summary>
@@ -321,7 +321,7 @@ namespace Microsoft.Test.VisualVerification
         }
 
         /// <summary>
-        /// Modifies the current image to contain the result of a bitwise AND of this Snapshot 
+        /// Modifies the current image to contain the result of a bitwise AND of this Snapshot
         /// and the mask.  This technique can be used to remove data from an image.
         /// http://en.wikipedia.org/wiki/Bitmask#Image_masks
         /// </summary>
@@ -347,7 +347,7 @@ namespace Microsoft.Test.VisualVerification
         }
 
         /// <summary>
-        /// Find all instances of a subimage in this image. 
+        /// Find all instances of a subimage in this image.
         /// </summary>
         /// <param name="subimage">The subimage to find in the larger image. Must be smaller than the image in both dimensions.</param>
         /// <returns>A Collection of rectangles indicating the matching locations.
@@ -358,7 +358,7 @@ namespace Microsoft.Test.VisualVerification
         }
 
         /// <summary>
-        /// Find all instances of a subimage in this image. 
+        /// Find all instances of a subimage in this image.
         /// </summary>
         /// <param name="subimage">The subimage to find in the larger image. Must be smaller than the image in both dimensions.</param>
         /// <param name="verifier">Custom SnapshotVerifier, used to compare the subimages.</param>
@@ -372,7 +372,7 @@ namespace Microsoft.Test.VisualVerification
             }
 
             Collection<Rectangle> resultList = new Collection<Rectangle>();
-            
+
             // This is a binary 2D convolve with early exit on any imperfect match.
             // Future optimisations will test the middle pixel first, then a diagonal through the subarea, then the full image.
             // This will make pathological cases much faster.
@@ -381,7 +381,7 @@ namespace Microsoft.Test.VisualVerification
                 for (int column = 0; column < Width - subimage.Width; column++)
                 {
                     // This is our success condition, add this location to the Collection.
-                    if (CompareSubImage(subimage, row, column, verifier)) 
+                    if (CompareSubImage(subimage, row, column, verifier))
                     {
                         resultList.Add((new Rectangle(column, row, subimage.Width, subimage.Height)));
                     }
@@ -450,16 +450,16 @@ namespace Microsoft.Test.VisualVerification
         /// <param name="verifier">Custom subimage comparison verifier, if specified.</param>
         /// <returns></returns>
         private bool CompareSubImage(
-            Snapshot subimage, 
-            int startingRow, 
+            Snapshot subimage,
+            int startingRow,
             int startingColumn,
             SnapshotVerifier verifier)
-        {         
+        {
             //compare pixel-by-pixel
             for (int row = 0; row < subimage.Height; row++)
             {
                 for (int column = 0; column < subimage.Width; column++)
-                {       
+                {
                     // Use the custom verifier if the user has specified one
                     if (verifier != null)
                     {
@@ -488,8 +488,8 @@ namespace Microsoft.Test.VisualVerification
                             return false;
                         }
                     }
-                        
-                    
+
+
                 }
             }
 
@@ -641,7 +641,7 @@ namespace Microsoft.Test.VisualVerification
 
         #region Private Fields and Structures
         /// <summary>
-        /// A BGRA pixel data structure - This is only used for data conversion and export purposes for conversion with Bitmap buffer. 
+        /// A BGRA pixel data structure - This is only used for data conversion and export purposes for conversion with Bitmap buffer.
         /// NOTE: This order aligns with 32 bpp ARGB pixel Format.
         /// </summary>
         private struct PixelData

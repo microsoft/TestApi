@@ -6,7 +6,7 @@
 namespace Microsoft.Test.LeakDetection
 {
     /// <summary>
-    /// Contains facilities for capturing and analysis of the memory used by a process. 
+    /// Contains facilities for capturing and analysis of the memory used by a process.
     /// </summary>
     [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Performance", "CA1812")]
     [System.Runtime.CompilerServices.CompilerGenerated()]

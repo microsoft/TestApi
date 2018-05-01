@@ -34,20 +34,20 @@ namespace Microsoft.Test.FaultInjection
         {
             get { return new TriggerAllCalls(); }
         }
-        
-        
+
+
         /// <summary>
         /// Built-in condition which triggers fault if injected method is called by a specified method.</summary>
         /// <param name="caller">Example of the string format would be:
         /// System.Console.WriteLine(string),
         /// Namespace&lt;T&gt;.OuterClass&lt;E&gt;.InnerClass&lt;F,G&gt;.MethodName&lt;H&gt;(T, E, F, H, List&lt;H&gt;)
-        /// For more information about the format, please refer to 'User Guide.doc', 'Method Signature Format' section</param> 
+        /// For more information about the format, please refer to 'User Guide.doc', 'Method Signature Format' section</param>
         public static ICondition TriggerIfCalledBy(string caller)
         {
             return new TriggerIfCalledBy(caller);
         }
-        
-        
+
+
         /// <summary>
         /// Built-in condition which triggers fault if current call stack contains a specified method.
         /// </summary>
@@ -59,19 +59,19 @@ namespace Microsoft.Test.FaultInjection
         {
             return new TriggerIfStackContains(method);
         }
-        
-        
+
+
         /// <summary>
         /// Built-in condition which triggers fault for every N times injected method is called.
         /// </summary>
-        /// <param name="n">The value should be a positive number, otherwise a System.Argument will be thrown</param>      
+        /// <param name="n">The value should be a positive number, otherwise a System.Argument will be thrown</param>
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Naming", "CA1704")]
         public static ICondition TriggerEveryNthCall(int n)
         {
             return new TriggerEveryNthCall(n);
         }
-        
-        
+
+
         /// <summary>
         /// Built-in condition which triggers fault if injected method is called N times.
         /// </summary>
@@ -81,8 +81,8 @@ namespace Microsoft.Test.FaultInjection
         {
             return new TriggerOnNthCall(n);
         }
-        
-        
+
+
         /// <summary>
         /// Built-in condition which triggers fault only once after this condition takes effect.
         /// </summary>
@@ -90,8 +90,8 @@ namespace Microsoft.Test.FaultInjection
         {
             get { return new TriggerOnlyOnce(); }
         }
-       
-        
+
+
         /// <summary>
         /// Built-in condition which never triggers fault. This condition can be used to TURN OFF a fault rule.
         /// </summary>
@@ -107,13 +107,13 @@ namespace Microsoft.Test.FaultInjection
         /// <param name="caller">Example of the string format would be:
         /// System.Console.WriteLine(string),
         /// Namespace&lt;T&gt;.OuterClass&lt;E&gt;.InnerClass&lt;F,G&gt;.MethodName&lt;H&gt;(T, E, F, H, List&lt;H&gt;)
-        /// For more information about the format, please refer to 'User Guide.doc', 'Method Signature Format' section</param>   
+        /// For more information about the format, please refer to 'User Guide.doc', 'Method Signature Format' section</param>
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Naming", "CA1704")]
         public static ICondition TriggerOnNthCallBy(int n, string caller)
         {
             return new TriggerOnNthCallBy(n, caller);
         }
-        
+
     }
 
     [Serializable()]

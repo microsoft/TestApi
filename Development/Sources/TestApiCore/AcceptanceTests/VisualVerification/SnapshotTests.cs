@@ -64,7 +64,7 @@ namespace Microsoft.Test.AcceptanceTests.VisualVerification
             s2.ToFile("TopExcludeBorder.png", ImageFormat.Png);
 
             Assert.Equal<int>(wr.Right - wr.X, s1.Width);
-            Assert.Equal<int>(wr.Bottom - wr.Y, s1.Height); 
+            Assert.Equal<int>(wr.Bottom - wr.Y, s1.Height);
             Assert.True(s1.Width > s2.Width);
             Assert.True(s1.Height > s2.Height);
         }
@@ -102,7 +102,7 @@ namespace Microsoft.Test.AcceptanceTests.VisualVerification
             // in the capture results in a larger capture than the one that does
             // not include the border for SOME child windows (those with slidebars)
             //
-            Assert.True(s1.Width >= s2.Width);   
+            Assert.True(s1.Width >= s2.Width);
             Assert.True(s1.Height >= s2.Height);
         }
 
@@ -112,7 +112,7 @@ namespace Microsoft.Test.AcceptanceTests.VisualVerification
         [InlineData(@".\VisualVerification\Images\Red468x304.png", 0, 0, 468, 304)]
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Naming", "CA1704")]
         public void Crop(
-            string fileName, 
+            string fileName,
             int x, int y, int width, int height)
         {
             Snapshot s1 = Snapshot.FromFile(fileName);
@@ -220,7 +220,7 @@ namespace Microsoft.Test.AcceptanceTests.VisualVerification
                 string[] ordinates = pointString.Split(' ');
                 points.Add(new Rectangle(Int32.Parse(ordinates[0]), Int32.Parse(ordinates[1]), subimage.Width, subimage.Height));
             }
-        
+
             Collection<Rectangle> rects = image.Find(subimage);
             foreach (Rectangle rect in points)
             {

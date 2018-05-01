@@ -14,18 +14,18 @@ namespace Microsoft.Test.LeakDetection
 {
     /// <summary>
     /// Represents a snapshot in time of the memory consumed by a specified OS process.
-    /// MemorySnapshot objects can be instantiated from a running process or from a file. 
-    /// <p>MemorySnapshot objects are used for detection of <a href="http://en.wikipedia.org/wiki/Memory_leak">memory leaks</a>.</p> 
+    /// MemorySnapshot objects can be instantiated from a running process or from a file.
+    /// <p>MemorySnapshot objects are used for detection of <a href="http://en.wikipedia.org/wiki/Memory_leak">memory leaks</a>.</p>
     /// </summary>
     ///
     /// <example>
     /// The following example demonstrates taking two memory snapshots of Notepad and comparing them for leaks.
-    /// <code>
+    /// <code lang="C#" >
     /// Process p = Process.Start("notepad.exe");
     /// p.WaitForInputIdle(5000);
     /// Thread.Sleep(3000);
     /// MemorySnapshot s1 = MemorySnapshot.FromProcess(p.Id);
-    /// 
+    ///
     /// // Perform operations that may cause a leak...
     ///
     /// MemorySnapshot s2 = MemorySnapshot.FromProcess(p.Id);
@@ -37,7 +37,7 @@ namespace Microsoft.Test.LeakDetection
     ///     s2.ToFile(@"\s2.xml");
     ///     Console.WriteLine("Possible GDI handle leak! Review the saved memory snapshots.");
     /// }
-    /// 
+    ///
     /// p.CloseMainWindow();
     /// p.Close();
     /// </code>
@@ -45,7 +45,7 @@ namespace Microsoft.Test.LeakDetection
     ///
     /// <remarks>
     /// <p>For more information on memory leak detection in native code, refer to the <a href="http://msdn.microsoft.com/en-us/library/x98tx3cf.aspx">
-    /// Memory Leak Detection and Isolation</a> article. The table below provides a relationship between the metrics reported by the different tools: 
+    /// Memory Leak Detection and Isolation</a> article. The table below provides a relationship between the metrics reported by the different tools:
     /// </p>
     /// <table style="font-size:xx-small" border="1" bordercolor="#CCCCCC" cellpadding="1" cellspacing="0">
     /// <tr>
@@ -125,19 +125,19 @@ namespace Microsoft.Test.LeakDetection
     ///   <td>WorkingSet</td>
     ///   <td>Physical Memory : WorkingSet</td>
     ///   <td>Working Set (Memory)</td>
-    /// </tr>    
+    /// </tr>
     /// <tr>
     ///   <td><see cref="WorkingSetPeakBytes"/></td>
     ///   <td>WorkingSetPeak</td>
     ///   <td>Physical Memory : Peak Working Set</td>
     ///   <td>Peak Working Set (Memory)</td>
-    /// </tr>    
+    /// </tr>
     /// <tr>
     ///   <td><see cref="WorkingSetPrivateBytes"/></td>
     ///   <td>WorkingSetPrivate</td>
     ///   <td>Physical Memory : Working Set : WS Private</td>
     ///   <td>Memory (Private Working Set)</td>
-    /// </tr>    
+    /// </tr>
     /// </table>
     /// </remarks>
     public class MemorySnapshot
@@ -148,15 +148,15 @@ namespace Microsoft.Test.LeakDetection
         /// Creates a MemorySnapshot instance for the specified OS process.
         /// </summary>
         /// <param name="processId">The ID of the process for which to generate the memory snapshot.</param>
-        /// <returns>A MemorySnapshot instance containing memory information for the specified process,  
-        /// at the time of the snapshot.</returns>                
+        /// <returns>A MemorySnapshot instance containing memory information for the specified process,
+        /// at the time of the snapshot.</returns>
         public static MemorySnapshot FromProcess(int processId)
         {
             MemorySnapshot memorySnapshot = new MemorySnapshot();
             Process process = Process.GetProcessById(processId);
             process.Refresh();
-            PROCESS_MEMORY_COUNTERS_EX counters = MemoryInterop.GetCounters(process.Handle);            
-            
+            PROCESS_MEMORY_COUNTERS_EX counters = MemoryInterop.GetCounters(process.Handle);
+
             // Populate memory statistics.
             memorySnapshot.GdiObjectCount = NativeMethods.GetGuiResources(process.Handle, NativeMethods.GR_GDIOBJECTS);
             memorySnapshot.HandleCount = process.HandleCount;
@@ -165,14 +165,14 @@ namespace Microsoft.Test.LeakDetection
             memorySnapshot.PoolNonpagedBytes = counters.QuotaNonPagedPoolUsage;
             memorySnapshot.PoolPagedBytes = counters.QuotaPagedPoolUsage;
             memorySnapshot.ThreadCount = process.Threads.Count;
-            memorySnapshot.UserObjectCount = NativeMethods.GetGuiResources(process.Handle, NativeMethods.GR_USEROBJECTS); 
-            memorySnapshot.VirtualMemoryBytes = process.VirtualMemorySize64;            
+            memorySnapshot.UserObjectCount = NativeMethods.GetGuiResources(process.Handle, NativeMethods.GR_USEROBJECTS);
+            memorySnapshot.VirtualMemoryBytes = process.VirtualMemorySize64;
             memorySnapshot.VirtualMemoryPrivateBytes = counters.PrivateUsage;
             memorySnapshot.WorkingSetBytes = process.WorkingSet64;
             memorySnapshot.WorkingSetPeakBytes = process.PeakWorkingSet64;
             memorySnapshot.WorkingSetPrivateBytes = MemoryInterop.GetPrivateWorkingSet(process);
             memorySnapshot.Timestamp = DateTime.Now;
-                        
+
             return memorySnapshot;
         }
 
@@ -198,12 +198,12 @@ namespace Microsoft.Test.LeakDetection
                 }
             }
 
-            // Grab memory stats.            
+            // Grab memory stats.
             XmlNode rootNode = xmlDoc.DocumentElement;
             memorySnapshot = Deserialize(rootNode);
 
             return memorySnapshot;
-        }        
+        }
 
         /// <summary>
         /// Writes the current MemorySnapshot to a file.
@@ -217,8 +217,8 @@ namespace Microsoft.Test.LeakDetection
             }
 
             XmlDocument xmlDoc = new XmlDocument();
-            XmlNode rootNode = Serialize(xmlDoc);         
-            
+            XmlNode rootNode = Serialize(xmlDoc);
+
             xmlDoc.AppendChild(rootNode);
             xmlDoc.Save(filePath);
         }
@@ -227,7 +227,7 @@ namespace Microsoft.Test.LeakDetection
         /// Compares the current MemorySnapshot instance to the specified MemorySnapshot to produce a difference.
         /// </summary>
         /// <param name="memorySnapshot">The MemorySnapshot to be compared to.</param>
-        /// <returns>A new MemorySnapshot object representing the difference between the two memory snapshots 
+        /// <returns>A new MemorySnapshot object representing the difference between the two memory snapshots
         /// (i.e. the result of the comparison).</returns>
         public MemorySnapshot CompareTo(MemorySnapshot memorySnapshot)
         {
@@ -241,22 +241,22 @@ namespace Microsoft.Test.LeakDetection
             diff.PoolPagedBytes = new IntPtr(PoolPagedBytes.ToInt64() - memorySnapshot.PoolPagedBytes.ToInt64());
             diff.ThreadCount = ThreadCount - memorySnapshot.ThreadCount;
             diff.UserObjectCount = UserObjectCount - memorySnapshot.UserObjectCount;
-            diff.VirtualMemoryBytes = VirtualMemoryBytes - memorySnapshot.VirtualMemoryBytes;            
+            diff.VirtualMemoryBytes = VirtualMemoryBytes - memorySnapshot.VirtualMemoryBytes;
             diff.VirtualMemoryPrivateBytes = new IntPtr(VirtualMemoryPrivateBytes.ToInt64() - memorySnapshot.VirtualMemoryPrivateBytes.ToInt64());
             diff.WorkingSetBytes = WorkingSetBytes - memorySnapshot.WorkingSetBytes;
             diff.WorkingSetPeakBytes = WorkingSetPeakBytes - memorySnapshot.WorkingSetPeakBytes;
-            diff.WorkingSetPrivateBytes = WorkingSetPrivateBytes - memorySnapshot.WorkingSetPrivateBytes;            
+            diff.WorkingSetPrivateBytes = WorkingSetPrivateBytes - memorySnapshot.WorkingSetPrivateBytes;
 
             return diff;
         }
 
         /// <summary>
-        /// The number of handles to GDI objects in use by the process. For more information see the 
-        /// <a href="http://msdn.microsoft.com/en-us/library/ms683192(VS.85).aspx">GetGuiResources</a> function. 
+        /// The number of handles to GDI objects in use by the process. For more information see the
+        /// <a href="http://msdn.microsoft.com/en-us/library/ms683192(VS.85).aspx">GetGuiResources</a> function.
         /// </summary>
         ///
         /// <remarks>
-        /// <p> This metric is reported as follows by the other tools: </p> 
+        /// <p> This metric is reported as follows by the other tools: </p>
         /// <table style="font-size:xx-small" border="1" bordercolor="#CCCCCC" cellpadding="1" cellspacing="0">
         /// <tr><td><strong>Tool</strong></td><td><strong>Metric</strong></td></tr>
         /// <tr>
@@ -276,12 +276,12 @@ namespace Microsoft.Test.LeakDetection
         public long GdiObjectCount { get; private set; }
 
         /// <summary>
-        /// The total number of handles currently open by the process. This number is equal to the sum of the handles 
+        /// The total number of handles currently open by the process. This number is equal to the sum of the handles
         /// currently open by each thread in this process.
         /// </summary>
         ///
         /// <remarks>
-        /// <p> This metric is reported as follows by the other tools: </p> 
+        /// <p> This metric is reported as follows by the other tools: </p>
         /// <table style="font-size:xx-small" border="1" bordercolor="#CCCCCC" cellpadding="1" cellspacing="0">
         /// <tr><td><strong>Tool</strong></td><td><strong>Metric</strong></td></tr>
         /// <tr>
@@ -305,7 +305,7 @@ namespace Microsoft.Test.LeakDetection
         /// </summary>
         ///
         /// <remarks>
-        /// <p> This metric is reported as follows by the other tools: </p> 
+        /// <p> This metric is reported as follows by the other tools: </p>
         /// <table style="font-size:xx-small" border="1" bordercolor="#CCCCCC" cellpadding="1" cellspacing="0">
         /// <tr><td><strong>Tool</strong></td><td><strong>Metric</strong></td></tr>
         /// <tr>
@@ -326,12 +326,12 @@ namespace Microsoft.Test.LeakDetection
         public IntPtr PageFileBytes { get; private set; }
 
         /// <summary>
-        /// The maximum amount of virtual memory that this process has reserved for use in 
-        /// the paging file or files. 
+        /// The maximum amount of virtual memory that this process has reserved for use in
+        /// the paging file or files.
         /// </summary>
-        ///        
+        ///
         /// <remarks>
-        /// <p> This metric is reported as follows by the other tools: </p> 
+        /// <p> This metric is reported as follows by the other tools: </p>
         /// <table style="font-size:xx-small" border="1" bordercolor="#CCCCCC" cellpadding="1" cellspacing="0">
         /// <tr><td><strong>Tool</strong></td><td><strong>Metric</strong></td></tr>
         /// <tr>
@@ -352,14 +352,14 @@ namespace Microsoft.Test.LeakDetection
         public IntPtr PageFilePeakBytes { get; private set; }
 
         /// <summary>
-        /// The size of the <i>nonpaged pool</i>, an area of system memory (physical memory used by the operating 
-        /// system) for objects that cannot be written to disk but must remain in physical memory as long as they are 
+        /// The size of the <i>nonpaged pool</i>, an area of system memory (physical memory used by the operating
+        /// system) for objects that cannot be written to disk but must remain in physical memory as long as they are
         /// allocated.  For more information, see the <a href="http://msdn.microsoft.com/en-us/library/ms683219(VS.85).aspx">GetProcessMemoryInfo</a>
         /// function and the <a href="http://msdn.microsoft.com/en-us/library/ms684874(VS.85).aspx">PROCESS_MEMORY_COUNTERS_EX</a> structure.
         /// </summary>
         ///
         /// <remarks>
-        /// <p> This metric is reported as follows by the other tools: </p> 
+        /// <p> This metric is reported as follows by the other tools: </p>
         /// <table style="font-size:xx-small" border="1" bordercolor="#CCCCCC" cellpadding="1" cellspacing="0">
         /// <tr><td><strong>Tool</strong></td><td><strong>Metric</strong></td></tr>
         /// <tr>
@@ -379,15 +379,15 @@ namespace Microsoft.Test.LeakDetection
         public IntPtr PoolNonpagedBytes { get; private set; }
 
         /// <summary>
-        /// The size of the <i>paged pool</i>, an area of system memory (physical memory used by the operating system) 
-        /// for objects that can be written to disk when they are not being used. For more information, see 
-        /// the <a href="http://msdn.microsoft.com/en-us/library/ms683219(VS.85).aspx">GetProcessMemoryInfo</a> function 
-        /// and the <a href="http://msdn.microsoft.com/en-us/library/ms684874(VS.85).aspx">PROCESS_MEMORY_COUNTERS_EX</a> 
+        /// The size of the <i>paged pool</i>, an area of system memory (physical memory used by the operating system)
+        /// for objects that can be written to disk when they are not being used. For more information, see
+        /// the <a href="http://msdn.microsoft.com/en-us/library/ms683219(VS.85).aspx">GetProcessMemoryInfo</a> function
+        /// and the <a href="http://msdn.microsoft.com/en-us/library/ms684874(VS.85).aspx">PROCESS_MEMORY_COUNTERS_EX</a>
         /// structure.
         /// </summary>
         ///
         /// <remarks>
-        /// <p> This metric is reported as follows by the other tools: </p> 
+        /// <p> This metric is reported as follows by the other tools: </p>
         /// <table style="font-size:xx-small" border="1" bordercolor="#CCCCCC" cellpadding="1" cellspacing="0">
         /// <tr><td><strong>Tool</strong></td><td><strong>Metric</strong></td></tr>
         /// <tr>
@@ -406,11 +406,11 @@ namespace Microsoft.Test.LeakDetection
         public IntPtr PoolPagedBytes { get; private set; }
 
         /// <summary>
-        /// The number of threads currently active in the process. 
+        /// The number of threads currently active in the process.
         /// </summary>
         ///
         /// <remarks>
-        /// <p> This metric is reported as follows by the other tools: </p> 
+        /// <p> This metric is reported as follows by the other tools: </p>
         /// <table style="font-size:xx-small" border="1" bordercolor="#CCCCCC" cellpadding="1" cellspacing="0">
         /// <tr><td><strong>Tool</strong></td><td><strong>Metric</strong></td></tr>
         /// <tr>
@@ -434,12 +434,12 @@ namespace Microsoft.Test.LeakDetection
         public DateTime Timestamp { get; private set; }
 
         /// <summary>
-        /// The number of handles to USER objects in use by the process. For more information see the 
-        /// <a href="http://msdn.microsoft.com/en-us/library/ms683192(VS.85).aspx">GetGuiResources</a> function. 
+        /// The number of handles to USER objects in use by the process. For more information see the
+        /// <a href="http://msdn.microsoft.com/en-us/library/ms683192(VS.85).aspx">GetGuiResources</a> function.
         /// </summary>
         ///
         /// <remarks>
-        /// <p> This metric is reported as follows by the other tools: </p> 
+        /// <p> This metric is reported as follows by the other tools: </p>
         /// <table style="font-size:xx-small" border="1" bordercolor="#CCCCCC" cellpadding="1" cellspacing="0">
         /// <tr><td><strong>Tool</strong></td><td><strong>Metric</strong></td></tr>
         /// <tr>
@@ -458,16 +458,16 @@ namespace Microsoft.Test.LeakDetection
         public long UserObjectCount { get; private set; }
 
         /// <summary>
-        /// The current size of the virtual address space that the process is using. Use of virtual address space does 
+        /// The current size of the virtual address space that the process is using. Use of virtual address space does
         /// not necessarily imply corresponding use of either disk or main memory pages. Virtual space is finite,
-        /// and the process can limit its ability to load libraries. For more information see the 
-        /// <a href="http://msdn.microsoft.com/en-us/library/aa366589(VS.85).aspx">GlobalMemoryStatusEx</a> function 
+        /// and the process can limit its ability to load libraries. For more information see the
+        /// <a href="http://msdn.microsoft.com/en-us/library/aa366589(VS.85).aspx">GlobalMemoryStatusEx</a> function
         /// and the <a href="http://msdn.microsoft.com/en-us/library/aa366770(VS.85).aspx">MEMORYSTATUSEX</a> structure.
         /// This metric is calculated as MEMORYSTATUSEX.ullTotalVirtual – MEMORYSTATUSEX.ullAvailVirtual.
         /// </summary>
         ///
         /// <remarks>
-        /// <p> This metric is reported as follows by the other tools: </p> 
+        /// <p> This metric is reported as follows by the other tools: </p>
         /// <table style="font-size:xx-small" border="1" bordercolor="#CCCCCC" cellpadding="1" cellspacing="0">
         /// <tr><td><strong>Tool</strong></td><td><strong>Metric</strong></td></tr>
         /// <tr>
@@ -483,7 +483,7 @@ namespace Microsoft.Test.LeakDetection
         ///   <td>n/a</td></tr>
         /// </table>
         /// </remarks>
-        public long VirtualMemoryBytes { get; private set; }        
+        public long VirtualMemoryBytes { get; private set; }
 
         /// <summary>
         /// The current size of memory that this process has allocated that cannot be shared with other processes. For more
@@ -493,7 +493,7 @@ namespace Microsoft.Test.LeakDetection
         /// </summary>
         ///
         /// <remarks>
-        /// <p> This metric is reported as follows by the other tools: </p> 
+        /// <p> This metric is reported as follows by the other tools: </p>
         /// <table style="font-size:xx-small" border="1" bordercolor="#CCCCCC" cellpadding="1" cellspacing="0">
         /// <tr><td><strong>Tool</strong></td><td><strong>Metric</strong></td></tr>
         /// <tr>
@@ -512,14 +512,14 @@ namespace Microsoft.Test.LeakDetection
         public IntPtr VirtualMemoryPrivateBytes { get; private set; }
 
         /// <summary>
-        /// The current size of the <i>working set</i> of the process. The working set is the set of memory pages recently touched 
-        /// by the threads in the process. If free memory in the computer is above a threshold, pages are left in the working set 
+        /// The current size of the <i>working set</i> of the process. The working set is the set of memory pages recently touched
+        /// by the threads in the process. If free memory in the computer is above a threshold, pages are left in the working set
         /// of a process even if they are not in use.  When free memory falls below a threshold, pages are trimmed from working sets.
-        /// If they are needed they will then be soft-faulted back into the working set before leaving main memory. 
+        /// If they are needed they will then be soft-faulted back into the working set before leaving main memory.
         /// </summary>
         ///
         /// <remarks>
-        /// <p> This metric is reported as follows by the other tools: </p> 
+        /// <p> This metric is reported as follows by the other tools: </p>
         /// <table style="font-size:xx-small" border="1" bordercolor="#CCCCCC" cellpadding="1" cellspacing="0">
         /// <tr><td><strong>Tool</strong></td><td><strong>Metric</strong></td></tr>
         /// <tr>
@@ -538,13 +538,13 @@ namespace Microsoft.Test.LeakDetection
         public long WorkingSetBytes { get; private set; }
 
         /// <summary>
-        /// The maximum size, in bytes, of the working set of the process at any one time. 
+        /// The maximum size, in bytes, of the working set of the process at any one time.
         /// For more information see the <a href="http://msdn.microsoft.com/en-us/library/ms683219(VS.85).aspx">GetProcessMemoryInfo</a>
         /// function and the <a href="http://msdn.microsoft.com/en-us/library/ms684874(VS.85).aspx">PROCESS_MEMORY_COUNTERS_EX</a> structure.
         /// </summary>
         ///
         /// <remarks>
-        /// <p> This metric is reported as follows by the other tools: </p> 
+        /// <p> This metric is reported as follows by the other tools: </p>
         /// <table style="font-size:xx-small" border="1" bordercolor="#CCCCCC" cellpadding="1" cellspacing="0">
         /// <tr><td><strong>Tool</strong></td><td><strong>Metric</strong></td></tr>
         /// <tr>
@@ -563,12 +563,12 @@ namespace Microsoft.Test.LeakDetection
         public long WorkingSetPeakBytes { get; private set; }
 
         /// <summary>
-        /// The size of the working set that is only used for the process and not shared nor shareable by other processes. 
-        /// For more information see the <a href="http://msdn.microsoft.com/en-us/library/aa965225%28VS.85%29.aspx">Memory Performance Information</a> article.        
+        /// The size of the working set that is only used for the process and not shared nor shareable by other processes.
+        /// For more information see the <a href="http://msdn.microsoft.com/en-us/library/aa965225%28VS.85%29.aspx">Memory Performance Information</a> article.
         /// </summary>
         ///
         /// <remarks>
-        /// <p> This metric is reported as follows by the other tools: </p> 
+        /// <p> This metric is reported as follows by the other tools: </p>
         /// <table style="font-size:xx-small" border="1" bordercolor="#CCCCCC" cellpadding="1" cellspacing="0">
         /// <tr><td><strong>Tool</strong></td><td><strong>Metric</strong></td></tr>
         /// <tr>
@@ -583,9 +583,9 @@ namespace Microsoft.Test.LeakDetection
         ///   <td>Task Manager (Windows 7)</td>
         ///   <td>Memory (Private Working Set)</td></tr>
         /// </table>
-        ///         
+        ///
         /// </remarks>
-        public long WorkingSetPrivateBytes { get; private set; }        
+        public long WorkingSetPrivateBytes { get; private set; }
 
         /// <summary>
         /// An instance of the class can only be created by using one of the static From* methods.
@@ -593,7 +593,7 @@ namespace Microsoft.Test.LeakDetection
         private MemorySnapshot()
         {
             // Nothing
-        }        
+        }
 
         #endregion
 
@@ -618,11 +618,11 @@ namespace Microsoft.Test.LeakDetection
             SerializeNodes(xmlDoc, rootNode, "PoolPagedBytes", PoolPagedBytes);
             SerializeNodes(xmlDoc, rootNode, "ThreadCount", ThreadCount);
             SerializeNodes(xmlDoc, rootNode, "UserObjectCount", UserObjectCount);
-            SerializeNodes(xmlDoc, rootNode, "VirtualMemoryBytes", VirtualMemoryBytes);            
+            SerializeNodes(xmlDoc, rootNode, "VirtualMemoryBytes", VirtualMemoryBytes);
             SerializeNodes(xmlDoc, rootNode, "VirtualMemoryPrivateBytes", VirtualMemoryPrivateBytes);
             SerializeNodes(xmlDoc, rootNode, "WorkingSetBytes", WorkingSetBytes);
             SerializeNodes(xmlDoc, rootNode, "WorkingSetPeakBytes", WorkingSetPeakBytes);
-            SerializeNodes(xmlDoc, rootNode, "WorkingSetPrivateBytes", WorkingSetPrivateBytes);            
+            SerializeNodes(xmlDoc, rootNode, "WorkingSetPrivateBytes", WorkingSetPrivateBytes);
 
             // Save Timestamp.
             XmlNode TimestampNode = xmlDoc.CreateElement("Timestamp");
@@ -651,11 +651,11 @@ namespace Microsoft.Test.LeakDetection
             memorySnapshot.PoolPagedBytes = DeserializeNode(rootNode, "PoolPagedBytes");
             memorySnapshot.ThreadCount = (long)DeserializeNode(rootNode, "ThreadCount");
             memorySnapshot.UserObjectCount = (long)DeserializeNode(rootNode, "UserObjectCount");
-            memorySnapshot.VirtualMemoryBytes = (long)DeserializeNode(rootNode, "VirtualMemoryBytes");            
+            memorySnapshot.VirtualMemoryBytes = (long)DeserializeNode(rootNode, "VirtualMemoryBytes");
             memorySnapshot.VirtualMemoryPrivateBytes = DeserializeNode(rootNode, "VirtualMemoryPrivateBytes");
             memorySnapshot.WorkingSetBytes = (long)DeserializeNode(rootNode, "WorkingSetBytes");
             memorySnapshot.WorkingSetPeakBytes = (long)DeserializeNode(rootNode, "WorkingSetPeakBytes");
-            memorySnapshot.WorkingSetPrivateBytes = (long)DeserializeNode(rootNode, "WorkingSetPrivateBytes");            
+            memorySnapshot.WorkingSetPrivateBytes = (long)DeserializeNode(rootNode, "WorkingSetPrivateBytes");
 
             // Grab Timestamp.
             XmlNode memoryStatNode = rootNode.SelectSingleNode("Timestamp");

@@ -22,9 +22,9 @@ namespace Microsoft.Test.AcceptanceTests.VisualVerification
             Snapshot s = Snapshot.FromFile(filePath);
             Histogram h = Histogram.FromSnapshot(s);
             h.ToFile(filePath + ".xml");
-            
-            
-            // TODO: read the resulting XML and confirm that 
+
+
+            // TODO: read the resulting XML and confirm that
             // the saved histogram properly represents the files.
         }
     }

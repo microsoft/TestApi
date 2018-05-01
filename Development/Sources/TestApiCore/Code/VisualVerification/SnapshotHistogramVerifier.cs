@@ -6,7 +6,7 @@
 namespace Microsoft.Test.VisualVerification
 {
     /// <summary>
-    /// Verifies a diffed image based on the number of pixels of a given brightness per color. 
+    /// Verifies a diffed image based on the number of pixels of a given brightness per color.
     /// A tolerance Histogram curve can be created from an XML file, produced from a reference image, or manually created for use as a tolerance.
     /// <p/>
     /// For more information on histograms, refer to the description of <see cref="Histogram"/>.
@@ -15,7 +15,7 @@ namespace Microsoft.Test.VisualVerification
     /// <example>
     /// This examples shows how to verify a snapshot against an expected master image, using
     /// a tolerance histogram.
-    /// <code>
+    /// <code lang="C#" >
     /// Snapshot actual = Snapshot.FromRectangle(new Rectangle(0, 0, 800, 600));
     /// Snapshot expected = Snapshot.FromFile("Expected.bmp");
     /// Snapshot diff = actual.CompareTo(expected);
@@ -51,7 +51,7 @@ namespace Microsoft.Test.VisualVerification
 
         #region Public Members
         /// <summary>
-        /// Verifies a diffed image based on the number of pixels of a given brightness per color. 
+        /// Verifies a diffed image based on the number of pixels of a given brightness per color.
         /// A tolerance Histogram curve can be created from an XML file, produced from a reference image, or manually created for use as a tolerance.
         /// </summary>
         /// <param name="image">The actual Snapshot to be verified.</param>

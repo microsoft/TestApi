@@ -13,38 +13,38 @@ namespace Microsoft.Test.LeakDetection
     /// <summary>
     /// A collection of MemorySnapshots that can be serialized to an XML file.
     /// </summary>
-    /// 
+    ///
     /// <example>
-    /// The following example demonstrates taking multiple memory snapshots of Notepad 
+    /// The following example demonstrates taking multiple memory snapshots of Notepad
     /// and saving them on disk for later analysis.
-    /// <code>
-    /// MemorySnapshotCollection c = new MemorySnapshotCollection();     
-    /// 
+    /// <code lang="C#" >
+    /// MemorySnapshotCollection c = new MemorySnapshotCollection();
+    ///
     /// Process p = Process.Start("notepad.exe");
     /// p.WaitForInputIdle(5000);
     /// MemorySnapshot s1 = MemorySnapshot.FromProcess(p.Id);
     /// c.Add(s1);
-    /// 
+    ///
     /// // Perform operations that may cause a leak...
-    /// 
+    ///
     /// MemorySnapshot s2 = MemorySnapshot.FromProcess(p.Id);
     /// c.Add(s2);
-    /// 
+    ///
     /// c.ToFile(@"MemorySnapshots.xml");
-    /// 
+    ///
     /// p.CloseMainWindow();
     /// p.Close();
     /// </code>
     /// </example>
-    /// 
+    ///
     /// <example>
     /// A MemorySnapshotCollection can also be loaded from a XML file.
-    /// <code>
+    /// <code lang="C#" >
     /// MemorySnapshotCollection c = MemorySnapshotCollection.FromFile(@"MemorySnapshots.xml");
     /// </code>
     /// </example>
     public class MemorySnapshotCollection : Collection<MemorySnapshot>
-    {   
+    {
         /// <summary>
         /// Creates a MemorySnapshotCollection instance from data in the specified file.
         /// </summary>
@@ -102,10 +102,10 @@ namespace Microsoft.Test.LeakDetection
 
                 // Append to MemorySnapshotCollection.
                 rootNode.AppendChild(msNode);
-            }            
+            }
 
             xmlDoc.AppendChild(rootNode);
-            xmlDoc.Save(filePath);            
-        }        
+            xmlDoc.Save(filePath);
+        }
     }
 }

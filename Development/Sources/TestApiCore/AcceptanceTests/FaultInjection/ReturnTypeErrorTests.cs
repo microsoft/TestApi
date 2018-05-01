@@ -12,7 +12,7 @@ namespace Microsoft.Test.AcceptanceTests.FaultInjection
     /// <summary>
     /// Tests which verify the handling of errors produced by attempting to
     /// return incorrect types
-    /// </summary>    
+    /// </summary>
     public class ReturnTypeErrorTests
     {
         #region NullValueTypeTestInt
@@ -26,7 +26,7 @@ namespace Microsoft.Test.AcceptanceTests.FaultInjection
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Naming", "CA1720")] //int in name
         public void NullValueTypeTestInt()
         {
-            NullValueTypeInt();            
+            NullValueTypeInt();
         }
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Naming", "CA1720")] //int in name

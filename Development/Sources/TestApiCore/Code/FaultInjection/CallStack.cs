@@ -49,7 +49,7 @@ namespace Microsoft.Test.FaultInjection
             {
                 return stackTrace.FrameCount;
             }
-        }        
+        }
 
         /// <summary>
         /// C#-style method signature for the specified frame.
@@ -70,7 +70,7 @@ namespace Microsoft.Test.FaultInjection
         private String GetCallStackFunction(int index)
         {
             StackFrame stackFrame = stackTrace.GetFrame(index);
-            
+
             if (stackFrame == null)
             {
                 return null;

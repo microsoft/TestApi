@@ -33,9 +33,9 @@ namespace Microsoft.Test.VariationGeneration
         /// Test whether all value combinations are Covered or Excluded
         /// </summary>
         /// <returns>The result</returns>
-        public bool IsCovered() 
-        { 
-            return !Interactions.Any((i) => i.Combinations.Any((c) => c.State == ValueCombinationState.Uncovered)); 
+        public bool IsCovered()
+        {
+            return !Interactions.Any((i) => i.Combinations.Any((c) => c.State == ValueCombinationState.Uncovered));
         }
 
         List<ValueCombination> excludedCombinations;
@@ -269,7 +269,7 @@ namespace Microsoft.Test.VariationGeneration
                 var individualInteractionExcludedCombinations =
                     from interaction in Interactions
                     from combination in interaction.Combinations
-                    where !combination.ParameterToValueMap.Any((p) => !completeInteraction.Parameters.Contains(p.Key)) 
+                    where !combination.ParameterToValueMap.Any((p) => !completeInteraction.Parameters.Contains(p.Key))
                         && !allowedCombinations.Any((c) => MatchCombination(combination, c))
                     select combination;
 

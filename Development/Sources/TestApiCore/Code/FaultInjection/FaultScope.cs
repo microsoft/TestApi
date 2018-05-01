@@ -14,14 +14,14 @@ using Microsoft.Test.FaultInjection.SignatureParsing;
 namespace Microsoft.Test.FaultInjection
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public class FaultScope : IDisposable
     {
         private static object syncRoot = new object();
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="rules"></param>
         public FaultScope(params FaultRule[] rules)
@@ -43,7 +43,7 @@ namespace Microsoft.Test.FaultInjection
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public void Dispose()
         {
@@ -57,7 +57,7 @@ namespace Microsoft.Test.FaultInjection
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static FaultScope Current
         {
@@ -66,7 +66,7 @@ namespace Microsoft.Test.FaultInjection
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         internal FaultRule[] FaultRules
         {
@@ -75,7 +75,7 @@ namespace Microsoft.Test.FaultInjection
         }
 
         /// <summary>
-        /// Checks that 
+        /// Checks that
         /// </summary>
         public void AssertFaultInjectionEnabled()
         {

@@ -14,7 +14,7 @@ namespace Microsoft.Test.ApplicationControl
     public class UIAutomationOutOfProcessApplicationFactory : IAutomatedApplicationImplFactory
     {
         /// <summary>
-        /// Factory method for creating the IAutomatedApplicationImpl instance 
+        /// Factory method for creating the IAutomatedApplicationImpl instance
         /// to be used by AutomatedApplication.
         /// </summary>
         /// <param name="settings">The settings needed to create the specific instance</param>
@@ -25,7 +25,7 @@ namespace Microsoft.Test.ApplicationControl
             IAutomatedApplicationImpl appImp = null;
             if (settings != null)
             {
-                appImp = new UIAutomationApplicationImpl(settings as OutOfProcessApplicationSettings);                                
+                appImp = new UIAutomationApplicationImpl(settings as OutOfProcessApplicationSettings);
             }
 
             return appImp;

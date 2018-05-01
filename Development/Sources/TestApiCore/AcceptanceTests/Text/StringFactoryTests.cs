@@ -22,7 +22,7 @@ namespace Microsoft.Test.AcceptanceTests.Text
             properties.MinNumberOfCodePoints = 10;
             properties.MaxNumberOfCodePoints = 30;
             string s1 = StringFactory.GenerateRandomString(properties, 1234);
-            
+
             Assert.NotNull(s1);
         }
 
@@ -36,7 +36,7 @@ namespace Microsoft.Test.AcceptanceTests.Text
 
             properties.MinNumberOfCodePoints = properties.MaxNumberOfCodePoints = 5;
             string s2 = StringFactory.GenerateRandomString(properties, 1234);
-            
+
             Assert.True(s1.Length >= 20 && s1.Length <= 60);
             Assert.True(s2.Length >= 5 && s2.Length <= 10);
         }
@@ -59,7 +59,7 @@ namespace Microsoft.Test.AcceptanceTests.Text
             Assert.Equal<string>(s1, s2);
             Assert.NotEqual<string>(s1, s3);
         }
-        
+
         [Fact]
         public void GenerateRandomStringsWithProvidedRangeAsArabicSupplement()
         {
@@ -77,7 +77,7 @@ namespace Microsoft.Test.AcceptanceTests.Text
                     isInTheRange = false;
                 }
             }
-            
+
             Assert.NotNull(s1);
             Assert.True(s1.Length >= 5 && s1.Length <= 20);
             Assert.True(isInTheRange);
@@ -115,7 +115,7 @@ namespace Microsoft.Test.AcceptanceTests.Text
             properties.UnicodeRanges.Add(new UnicodeRange(0x0000, 0xFFFF));
             properties.IsBidirectional = true;
             String s1 = StringFactory.GenerateRandomString(properties, 1234);
-            
+
             bool isInTheRange = false;
             foreach (char c in s1)
             {
@@ -139,7 +139,7 @@ namespace Microsoft.Test.AcceptanceTests.Text
             properties.UnicodeRanges.Add(new UnicodeRange(0x0000, 0x03FF));
             properties.MinNumberOfCombiningMarks = 5;
             String s1 = StringFactory.GenerateRandomString(properties, 1234);
-            
+
             bool isInTheRange = false;
             foreach (char c in s1)
             {
@@ -187,7 +187,7 @@ namespace Microsoft.Test.AcceptanceTests.Text
             properties.UnicodeRanges.Add(new UnicodeRange(0x0000, 0xFFFF));
             properties.MinNumberOfLineBreaks = 5;
             String s1 = StringFactory.GenerateRandomString(properties, 1234);
-            
+
             bool isInTheRange = false;
             foreach (char c in s1)
             {
@@ -259,7 +259,7 @@ namespace Microsoft.Test.AcceptanceTests.Text
             properties.UnicodeRanges.Add(new UnicodeRange(0x0000, 0x1FFFF));
             properties.NormalizationForm = NormalizationForm.FormC;
             String s1 = StringFactory.GenerateRandomString(properties, 1234);
-            
+
             bool isFormC = s1.IsNormalized(NormalizationForm.FormC);
 
             Assert.NotNull(s1);
@@ -276,7 +276,7 @@ namespace Microsoft.Test.AcceptanceTests.Text
             properties.UnicodeRanges.Add(new UnicodeRange(0x0000, 0xFFFF));
             properties.MinNumberOfTextSegmentationCodePoints = 5;
             String s1 = StringFactory.GenerateRandomString(properties, 1234);
-            
+
             bool isInTheRange = false;
             foreach (char c in s1)
             {
@@ -285,7 +285,7 @@ namespace Microsoft.Test.AcceptanceTests.Text
                     isInTheRange = true;
                 }
             }
-            
+
             Assert.NotNull(s1);
             Assert.True(s1.Length >= 10 && s1.Length <= 40);
             Assert.True(isInTheRange);
@@ -320,7 +320,7 @@ namespace Microsoft.Test.AcceptanceTests.Text
                     numOfEUDCs++;
                 }
             }
-            
+
             Assert.NotNull(s1);
             Assert.True(s1.Length >= 10 && s1.Length <= 40);
             Assert.True(numOfEUDCs >= 6);
@@ -407,7 +407,7 @@ namespace Microsoft.Test.AcceptanceTests.Text
             properties.UnicodeRanges.Add(new UnicodeRange(UnicodeChart.TaiLe));
             properties.UnicodeRanges.Add(new UnicodeRange(UnicodeChart.NewTaiLue));
             String s1 = StringFactory.GenerateRandomString(properties, 1234);
-            
+
             bool isInTheRange = false;
             foreach (char c in s1)
             {
@@ -450,15 +450,15 @@ namespace Microsoft.Test.AcceptanceTests.Text
             StringProperties properties = new StringProperties();
             properties.MinNumberOfCodePoints = 10;
             properties.MaxNumberOfCodePoints = 20;
-            
+
             properties.UnicodeRanges.Add(new UnicodeRange(UnicodeChart.Arabic));
             properties.UnicodeRanges.Clear();
-            
+
             properties.UnicodeRanges.Add(new UnicodeRange(0x0030, 0x007A));
             properties.UnicodeRanges.Add(new UnicodeRange(UnicodeChart.Hebrew));
             properties.IsBidirectional = true;
             String s1 = StringFactory.GenerateRandomString(properties, 1234);
-            
+
             bool isInTheRange = false;
             foreach (char c in s1)
             {

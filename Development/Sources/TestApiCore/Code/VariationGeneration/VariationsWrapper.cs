@@ -46,7 +46,7 @@ namespace Microsoft.Test.VariationGeneration
         /// <summary>
         /// Initializes new wrapper.
         /// </summary>
-        /// <param name="propertiesMap">Map of properties to use when mapping 
+        /// <param name="propertiesMap">Map of properties to use when mapping
         /// generic variation object to strongly typed T instance.</param>
         /// <param name="variations">List of generic variations to wrap.</param>
         public VariationsWrapper(Dictionary<string, PropertyInfo> propertiesMap, IEnumerable<Variation> variations)

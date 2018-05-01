@@ -20,7 +20,7 @@ namespace Microsoft.Test.FaultInjection
     /// Calls the appropriate fault for a given faulted method.
     /// </summary>
     /// <remarks>
-    /// The FaultDispatcher class contains a static method <see cref="Trap"/>, which is called by the MSIL code, 
+    /// The FaultDispatcher class contains a static method <see cref="Trap"/>, which is called by the MSIL code,
     /// injected in the faulted method, in order to dispatch to the specific fault.
     /// </remarks>
     public static class FaultDispatcher
@@ -135,7 +135,7 @@ namespace Microsoft.Test.FaultInjection
         {
             //
             // If the return type is <T> or List<T>, we simply omit it.
-            // 
+            //
             if (returnTypeOfTrappedMethod.IsGenericParameter || returnTypeOfTrappedMethod.ContainsGenericParameters)
             {
                 return true;

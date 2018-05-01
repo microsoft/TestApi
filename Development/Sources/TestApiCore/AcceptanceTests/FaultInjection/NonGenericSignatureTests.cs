@@ -11,7 +11,7 @@ namespace Microsoft.Test.AcceptanceTests.FaultInjection
 {
     /// <summary>
     /// Tests which varify the handling of non-generic methods
-    /// </summary>    
+    /// </summary>
     public class NonGenericSignatureTests
     {
         #region NonGenericSignatureTest
@@ -35,9 +35,9 @@ namespace Microsoft.Test.AcceptanceTests.FaultInjection
             intArray = null;
             Exception a;
             object b;
-            
-            // BUG: The code below used to Assert than FD.Trap returns true. 
-            // In the latest version of TestApi (which uses xUnit 1.5), this changed. We have  
+
+            // BUG: The code below used to Assert than FD.Trap returns true.
+            // In the latest version of TestApi (which uses xUnit 1.5), this changed. We have
             // confirmed that the FI functionality works as expected, so we are capturing this fault
             //  as current expected behavior for AppCompat reasons.
             Assert.True(FaultDispatcher.Trap(out a, out b) == false);
@@ -52,7 +52,7 @@ namespace Microsoft.Test.AcceptanceTests.FaultInjection
         { }
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Naming", "CA1711")] //Don't end in "Enum"
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1034")] //Don't nest class        
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1034")] //Don't nest class
         public enum TestEnum
         {
             Aaa,

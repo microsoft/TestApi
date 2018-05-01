@@ -13,7 +13,7 @@ namespace Microsoft.Test.AcceptanceTests
 {
     /// <summary>
     /// Tests which verify the built in conditions
-    /// </summary>    
+    /// </summary>
     public class SignatureTests
     {
         #region Test Helpers
@@ -102,7 +102,7 @@ namespace Microsoft.Test.AcceptanceTests
             bool ret = FaultDispatcher.Trap(out e, out o);
             AssertTrapSuccess(ret, e, o);
         }
-        
+
         #endregion
 
         #region Out param
@@ -304,14 +304,14 @@ namespace Microsoft.Test.AcceptanceTests
         [Fact]
         public void TestStaticConstructor()
         {
-            // It isn't possible to do fault injection on a static constructor 
+            // It isn't possible to do fault injection on a static constructor
             // using the FaultRule(MethodBase, ...) constructor.
             //
             // You can get the static constructor's MethodBase like this:
             //      typeof(TargetNestedClass).TypeInitializer;
             //
-            // However, referencing the type will force the static constructor 
-            // to be executed. It is only ever executed once, so by the time 
+            // However, referencing the type will force the static constructor
+            // to be executed. It is only ever executed once, so by the time
             // the FaultRule/FaultScope have been made, it is too late to then
             // do a fault injection on it.
         }

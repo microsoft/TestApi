@@ -14,13 +14,13 @@ using System.Xml;
 namespace Microsoft.Test.VisualVerification
 {
     /// <summary>
-    /// The Histogram class represents a histogram curve, expressed in terms of frequency (proportion of total pixels) 
-    /// over brightness (from 0 to 255). In other words, the Histogram class represents the percentage (proportion) of 
-    /// pixels that have brightness of 0, 1, etc. <a href="http://en.wikipedia.org/wiki/Image_histogram">This page</a> provides 
+    /// The Histogram class represents a histogram curve, expressed in terms of frequency (proportion of total pixels)
+    /// over brightness (from 0 to 255). In other words, the Histogram class represents the percentage (proportion) of
+    /// pixels that have brightness of 0, 1, etc. <a href="http://en.wikipedia.org/wiki/Image_histogram">This page</a> provides
     /// a good introduction to <i>image histograms</i>.
     /// <p/>
     /// For testing purposes "brightness" is often equated to "difference". Thus, one is able to construct a "difference
-    /// histogram" from a "difference shapshot" and compare that histogram to a histogram of "expected maximum differences" 
+    /// histogram" from a "difference shapshot" and compare that histogram to a histogram of "expected maximum differences"
     /// (also knows as a "tolerance histogram") in order to determine whether a visual verification test passes or fails.
     /// <p/>
     /// A Histogram object can be loaded from a XML file or generated from a Snapshot object.
@@ -86,7 +86,7 @@ namespace Microsoft.Test.VisualVerification
             }
             XmlNode toleranceNode = toleranceNodeList[0];
 
-            //Point nodes can be incompletely defined - these will be interpolated in 
+            //Point nodes can be incompletely defined - these will be interpolated in
             XmlNodeList nodeList = toleranceNode.SelectNodes("Point");
             if (nodeList.Count == 0)
             {
@@ -142,7 +142,7 @@ namespace Microsoft.Test.VisualVerification
             }
 
             //frame the data. We could use some more explanatory text perhaps
-            s.DrawLine(0, 0, histogramSize - 1, VisualizationMGColor); // left side 
+            s.DrawLine(0, 0, histogramSize - 1, VisualizationMGColor); // left side
 
             //ensure that the drawn values are normalized (defensive coding)
             double maxHeight = 0;
@@ -161,7 +161,7 @@ namespace Microsoft.Test.VisualVerification
                 //if (col > 0) { heightPrev = (int)(graph[col - 1] * VisualizationHeight); }
                 // draw a vertical line between this columns value and the previous ones
                 // that's the near-vertical case taken care of. The loop covers the near-horizontal,
-                // so there's no need to code up a full Bresenham line drawing function 
+                // so there's no need to code up a full Bresenham line drawing function
                 s.DrawLine(col + 1, Math.Min(heightPrev, height), s.Height, VisualizationMGColor);
                 s.DrawLine(col + 1, Math.Min(heightPrev, height) - 1, Math.Max(heightPrev, height), VisualizationFGColor);
                 heightPrev = height;
@@ -171,8 +171,8 @@ namespace Microsoft.Test.VisualVerification
         }
 
         /// <summary>
-        /// Merges the specified input histogram curve with the current histogram by accumulating the 
-        /// per-brightness peak error quantities of two histograms. The Merge operation merges the peak 
+        /// Merges the specified input histogram curve with the current histogram by accumulating the
+        /// per-brightness peak error quantities of two histograms. The Merge operation merges the peak
         /// values of the two histograms.
         /// </summary>
         /// <param name="histogram">The histogram curve to be merged with.</param>

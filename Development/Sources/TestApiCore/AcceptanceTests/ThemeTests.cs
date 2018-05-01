@@ -69,7 +69,7 @@ namespace Microsoft.Test.AcceptanceTests
                 Debug.WriteLine("set theme: " + theme.Path.FullName);
                 Theme.SetCurrent(new FileInfo(theme.Path.FullName));
                 WaitForThemeSet(theme.Path.FullName);
-                
+
                 Debug.WriteLine("Verifying theme: " + theme.Path);
                 var curTheme = Theme.GetCurrent();
                 VerifyThemes(theme, curTheme);
@@ -95,7 +95,7 @@ namespace Microsoft.Test.AcceptanceTests
 
         private void CleanUp()
         {
-            // set theme back to original 
+            // set theme back to original
             var theme = Theme.GetCurrent();
             if (theme.Path != _currentTheme.Path)
             {

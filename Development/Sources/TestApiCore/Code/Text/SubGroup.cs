@@ -11,7 +11,7 @@ namespace Microsoft.Test.Text
     internal class SubGroup
     {
         /// <summary>
-        /// Define LineBreakDatabase class, 
+        /// Define LineBreakDatabase class,
         /// <a href="http://www.unicode.org/charts/">Newline</a>
         /// </summary>
         public SubGroup(UnicodeRange range, string name, string ids, UnicodeChart chart)

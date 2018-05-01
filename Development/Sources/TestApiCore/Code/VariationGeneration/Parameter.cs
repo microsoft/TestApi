@@ -15,9 +15,9 @@ namespace Microsoft.Test.VariationGeneration
     /// <remarks>
     /// Exhaustively testing all possible inputs to any nontrivial software component is generally not possible
     /// because of the enormous number of variations. Combinatorial testing is one approach to achieve high coverage
-    /// with a much smaller set of variations. Pairwise, the most common combinatorial strategy, tests every possible 
+    /// with a much smaller set of variations. Pairwise, the most common combinatorial strategy, tests every possible
     /// pair of values. Higher orders of combinations (three-wise, four-wise, and so on) can also be used for higher coverage
-    /// at the expense of more variations. See <a href="http://pairwise.org">Pairwise Testing</a> and 
+    /// at the expense of more variations. See <a href="http://pairwise.org">Pairwise Testing</a> and
     /// <a href="http://www.pairwise.org/docs/pnsqc2006/PNSQC%20140%20-%20Jacek%20Czerwonka%20-%20Pairwise%20Testing%20-%20BW.pdf">
     /// Pairwise Testing in Real World</a> for more resources.
     /// </remarks>
