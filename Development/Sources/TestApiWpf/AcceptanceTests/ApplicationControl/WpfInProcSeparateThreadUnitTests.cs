@@ -20,7 +20,7 @@ namespace Microsoft.Test.AcceptanceTests.ApplicationControl
     /// <summary>
     /// This is a test class for AutomatedApplicationTest and is intended
     /// to contain all AutomatedApplicationTest Unit Tests
-    /// </summary>    
+    /// </summary>
     public class WpfInProcSeparateThreadCreateUnitTest : AutomatedApplicationTestBase
     {
         protected override void MyTestInitialize()
@@ -44,7 +44,7 @@ namespace Microsoft.Test.AcceptanceTests.ApplicationControl
         [Fact]
         public override void StartTest()
         {
-            StartTestHelper();      
+            StartTestHelper();
         }
 
         [Fact]
@@ -73,7 +73,7 @@ namespace Microsoft.Test.AcceptanceTests.ApplicationControl
         {
             Debug.WriteLine("starting automated app...");
             TestAutomatedApp.Start();
-            TestAutomatedApp.WaitForMainWindow(DefaultTimeoutTimeSpan);         
+            TestAutomatedApp.WaitForMainWindow(DefaultTimeoutTimeSpan);
 
             bool isInitialized = false;
             var dispatcher = ((TestAutomatedApp as InProcessApplication).ApplicationDriver as Application).Dispatcher;

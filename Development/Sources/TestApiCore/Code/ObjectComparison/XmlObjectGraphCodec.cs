@@ -17,7 +17,7 @@ namespace Microsoft.Test.ObjectComparison
     /// Represents a codec for encoding object graphs to and decoding them from XML.
     /// </summary>
     /// <remarks>
-    /// Please note that there is a possible data loss associated with encoding an object 
+    /// Please note that there is a possible data loss associated with encoding an object
     /// graph into an XML format. E.g., <see cref="XmlObjectGraphCodec"/> does not
     /// persist information about data types. In particular it affects graph node comparison.
     /// Consider two object graphs: the first one, OG1, was built from a 'live' object, the
@@ -67,11 +67,11 @@ namespace Microsoft.Test.ObjectComparison
     /// var p1 = new Person("John");
     /// p1.Children.Add(new Person("Peter"));
     /// p1.Children.Add(new Person("Mary"));
-    /// 
+    ///
     /// // Create an object graph
     /// var factory = new PublicPropertyObjectGraphFactory();
     /// var graph1 = factory.CreateObjectGraph(p1);
-    /// 
+    ///
     /// // Simulate round-trip data loss
     /// {
     ///     var roundtripStream = new MemoryStream();
@@ -79,10 +79,10 @@ namespace Microsoft.Test.ObjectComparison
     ///     xmlCodec.EncodeObjectGraph(graph1, roundtripStream);
     ///     graph1 = xmlCodec.DecodeObjectGraph(stream);
     /// }
-    /// 
+    ///
     /// // Decode a baseline graph from the earlier prepared stream
     /// var graph2 = new XmlObjectGraphCodec().DecodeObjectGraph(stream);
-    /// 
+    ///
     /// var result = new ObjectGraphComparer().Compare(graph1, graph2);
     /// Trace.WriteLine("{0}", result ? "Object graphs are equal!" : "Object graphs are NOT equal!");
     /// </c>
@@ -126,13 +126,13 @@ namespace Microsoft.Test.ObjectComparison
         #endregion
 
         /// <summary>
-        /// Gets or sets a value indicating whether an exception should be thrown 
+        /// Gets or sets a value indicating whether an exception should be thrown
         /// during decoding of an object graph, if XML data for some node of the graph
         /// specifies a comparison strategy unknown to the <see cref="XmlObjectGraphCodec"/>.
         /// </summary>
         /// <value>
-        /// 	<c>true</c> if an exception should be thrown; otherwise, <c>false</c>. 
-        /// 	The default is <c>true</c>.
+        ///     <c>true</c> if an exception should be thrown; otherwise, <c>false</c>.
+        ///     The default is <c>true</c>.
         /// </value>
         /// <remarks>
         /// Comparison strategies can be specified during construction time using the
@@ -147,15 +147,15 @@ namespace Microsoft.Test.ObjectComparison
         /// <param name="stream">The stream containing XML data to decode an object graph from.</param>
         /// <returns>The decoded object graph.</returns>
         /// <remarks>
-        /// The collection of comparison strategies passed into the 
+        /// The collection of comparison strategies passed into the
         /// <see cref="XmlObjectGraphCodec(HashSet{ObjectGraphComparisonStrategy})"/>
         /// constructor is used to restore comparison strategies used to be attached to graph nodes.
         /// </remarks>
         /// <exception cref="XmlException">
         /// XML data for a graph node specifies a strategy which name is empty or whitespaces
         /// -or-
-        /// XML data for a graph node specifies a strategy that cannot be found in comparison strategies 
-        /// collection and the value of the <see cref="ThrowExceptionOnUnknownComparisonStrategy"/> 
+        /// XML data for a graph node specifies a strategy that cannot be found in comparison strategies
+        /// collection and the value of the <see cref="ThrowExceptionOnUnknownComparisonStrategy"/>
         /// property is <see lang="true"/>.
         /// </exception>
         public override GraphNode DecodeObjectGraph(Stream stream)
@@ -164,7 +164,7 @@ namespace Microsoft.Test.ObjectComparison
             {
                 throw new ArgumentNullException("stream");
             }
-            
+
             stream.Position = 0;
 
             // We might be deserializing culture sensitive information, so set invariant culture
@@ -188,7 +188,7 @@ namespace Microsoft.Test.ObjectComparison
         }
 
         /// <summary>
-        /// Encodes a given object graph into XML representation and saves it 
+        /// Encodes a given object graph into XML representation and saves it
         /// into a <paramref name="stream"/>.
         /// </summary>
         /// <param name="root">The root of an object graph to be encoded.</param>
@@ -196,11 +196,11 @@ namespace Microsoft.Test.ObjectComparison
         /// <remarks>
         /// If nodes of the object graph have comparison strategy attached, an additional
         /// XML attribute is created for those nodes to store type names of comparison
-        /// strategies. The name of this attribute can be retrieved from 
+        /// strategies. The name of this attribute can be retrieved from
         /// <see cref="ComparisonStrategyXmlAttribute"/>.
         /// <para/><see cref="System.Text.Encoding.UTF8"/> encoding is used for XML.
-        /// <para/>Please note that <see cref="XmlObjectGraphCodec"/> encodes into XML 
-        /// only leaf node values. That is if <see cref="GraphNode.ObjectValue"/> of a non-leaf 
+        /// <para/>Please note that <see cref="XmlObjectGraphCodec"/> encodes into XML
+        /// only leaf node values. That is if <see cref="GraphNode.ObjectValue"/> of a non-leaf
         /// node is not <see lang="null"/> it is ignored.
         /// <para/>Cyclic object graphs are encoded in the depth-first order.
         /// </remarks>
@@ -285,7 +285,7 @@ namespace Microsoft.Test.ObjectComparison
                         //    XmlNodeType.Whitespace
                         //    XmlNodeType.DocumentType
                         //    XmlNodeType.Comment
-                        // XmlNodeType.XmlDeclaration and XmlNodeType.Document should be 
+                        // XmlNodeType.XmlDeclaration and XmlNodeType.Document should be
                         // skipped over in the very beginning.
                         // The following node types are not supported:
                         //    XmlNodeType.Notation

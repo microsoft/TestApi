@@ -6,7 +6,7 @@
 namespace Microsoft.Test.ObjectComparison
 {
     /// <summary>
-    /// Contains facilities for comparing of two objects for equivalence. 
+    /// Contains facilities for comparing of two objects for equivalence.
     /// </summary>
     [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Performance", "CA1812")]
     [System.Runtime.CompilerServices.CompilerGenerated()]

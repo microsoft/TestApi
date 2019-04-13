@@ -19,7 +19,7 @@ namespace Microsoft.Test.ApplicationControl
         InProcessSeparateThread = 0,
 
         /// <summary>
-        /// The application runs in-process, on a separate thread and 
+        /// The application runs in-process, on a separate thread and
         /// in a separate AppDomain.
         /// </summary>
         InProcessSeparateThreadAndAppDomain,

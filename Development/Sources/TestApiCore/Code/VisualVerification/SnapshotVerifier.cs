@@ -6,7 +6,7 @@
 namespace Microsoft.Test.VisualVerification
 {
     /// <summary>
-    /// Base class for all Snapshot verifier types. 
+    /// Base class for all Snapshot verifier types.
     /// This establishes a single method contract: Verify(Snapshot).
     /// </summary>
     public abstract class SnapshotVerifier

@@ -11,7 +11,7 @@ namespace Microsoft.Test.AcceptanceTests.FaultInjection
 {
     /// <summary>
     /// Tests which verify handling of constructor methods
-    /// </summary>    
+    /// </summary>
     public class ConstructorTests
     {
         #region StaticConstructorTest
@@ -68,7 +68,7 @@ namespace Microsoft.Test.AcceptanceTests.FaultInjection
             {
                 Exception a;
                 object b;
-                Assert.True(FaultDispatcher.Trap(out a, out b) == true);            
+                Assert.True(FaultDispatcher.Trap(out a, out b) == true);
             }
         }
     }

@@ -13,10 +13,10 @@ namespace Microsoft.Test.FaultInjection
     /// <remarks>
     /// For more information on how to use a fault, see the <see cref="FaultSession"/> class.
     /// </remarks>
-    /// 
+    ///
     /// <example>
     /// Define a custom fault, which returns a random int when triggered.
-    /// <code>
+    /// <code lang="C#" >
     /// public class ReturnRandomIntFault : IFault
     /// {
     ///     private Random rand;
@@ -47,6 +47,6 @@ namespace Microsoft.Test.FaultInjection
         /// is only checked when <paramref name="exceptionValue"/> returns null.
         /// </remarks>
         void Retrieve(IRuntimeContext context, out Exception exceptionValue, out object returnValue);
-    }  
+    }
 
 }

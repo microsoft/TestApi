@@ -29,7 +29,7 @@ namespace Microsoft.Test.LeakDetection
 
         [DllImport("kernel32.dll", SetLastError = true)]
         internal static extern int GetLastError();
-    }    
+    }
 
     [StructLayout(LayoutKind.Sequential)]
     internal struct SYSTEM_INFO

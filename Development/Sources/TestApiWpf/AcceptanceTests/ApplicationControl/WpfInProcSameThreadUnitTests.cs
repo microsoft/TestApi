@@ -266,7 +266,7 @@ namespace Microsoft.Test.AcceptanceTests.ApplicationControl
                     });
                 });
 
-            // create AutomatedApplication with correct path but no WindowClassName 
+            // create AutomatedApplication with correct path but no WindowClassName
             Assert.Throws<InvalidOperationException>(
                 () =>
                 {
@@ -277,7 +277,7 @@ namespace Microsoft.Test.AcceptanceTests.ApplicationControl
                     });
                 });
 
-            // create AutomatedApplication with correct path but empty WindowClassName 
+            // create AutomatedApplication with correct path but empty WindowClassName
             Assert.Throws<InvalidOperationException>(
                 () =>
                 {

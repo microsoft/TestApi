@@ -16,7 +16,7 @@ namespace Microsoft.Test.Text
     {
         private List<UnicodeRangeProperty> surrogatePairRangeList = new List<UnicodeRangeProperty>();
         private UnicodeRange surrogateRange;
-        
+
         private int highMin = 0; // 0xD800 V5.2
         private int highMax = 0; // 0xDBFF V5.2
         private int lowMin  = 0; // 0xDC00 V5.2
@@ -70,7 +70,7 @@ namespace Microsoft.Test.Text
 
             if (!isValid)
             {
-                throw new ArgumentOutOfRangeException("expectedRanges", "SurrogatePairProperty, SurrogatePair ranges are beyond expected range. " + 
+                throw new ArgumentOutOfRangeException("expectedRanges", "SurrogatePairProperty, SurrogatePair ranges are beyond expected range. " +
                     "Refert to Surrogates range and UTF32.");
             }
         }
@@ -102,7 +102,7 @@ namespace Microsoft.Test.Text
 
             return isIn;
         }
-        
+
         /// <summary>
         /// Get random Surrogate pairs
         /// </summary>

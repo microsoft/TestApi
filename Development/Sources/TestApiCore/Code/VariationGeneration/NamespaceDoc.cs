@@ -7,7 +7,7 @@ namespace Microsoft.Test.VariationGeneration
 {
     /// <summary>
     /// Contains facilities for combinatorial generation variation and test matrix design.
-    /// The API allows a test to quickly construct variations of any order 
+    /// The API allows a test to quickly construct variations of any order
     /// (exhaustive, pairwise, etc.) based on a set of parameter values and parameter constraints.
     /// </summary>
     [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Performance", "CA1812")]

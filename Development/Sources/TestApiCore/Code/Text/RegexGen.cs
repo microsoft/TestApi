@@ -49,7 +49,7 @@ class RegExGen
             //Mark REOrNodes and RERepeatNodes to ensure that the invalid node will be part of the string
             RECompiler.InvalidNode.ReservePath(null);
         }
-        
+
         //generate and return the string
         string result = node.Generate();
 

@@ -6,7 +6,7 @@
 namespace Microsoft.Test.VisualVerification
 {
     /// <summary>
-    /// Contains facilities for verification of the application display. 
+    /// Contains facilities for verification of the application display.
     /// </summary>
     [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Performance", "CA1812")]
     [System.Runtime.CompilerServices.CompilerGenerated()]

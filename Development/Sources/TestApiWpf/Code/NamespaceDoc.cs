@@ -6,7 +6,7 @@
 namespace Microsoft.Test
 {
     /// <summary>
-    /// Contains various helper classes for interaction with the WPF dispatcher, 
+    /// Contains various helper classes for interaction with the WPF dispatcher,
     /// helper wrappers of User Interface Automation (UIA), etc.
     /// </summary>
     [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Performance", "CA1812")]

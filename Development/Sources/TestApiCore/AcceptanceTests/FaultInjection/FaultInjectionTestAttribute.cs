@@ -11,7 +11,7 @@ using Xunit;
 namespace Microsoft.Test.AcceptanceTests.FaultInjection
 {
     /// <summary>
-    /// Enable setup and teardown of the Fault Injection test environment 
+    /// Enable setup and teardown of the Fault Injection test environment
     /// </summary>
     [AttributeUsage(AttributeTargets.Method, AllowMultiple = true, Inherited = true)]
     public sealed class FaultInjectionTestAttribute : BeforeAfterTestAttribute

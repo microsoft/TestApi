@@ -14,7 +14,7 @@ namespace Microsoft.Test.ApplicationControl
     public class InProcessApplicationSettings : ApplicationSettings
     {
         /// <summary>
-        /// Path to the application. 
+        /// Path to the application.
         /// </summary>
         public string Path
         {
@@ -29,6 +29,6 @@ namespace Microsoft.Test.ApplicationControl
         {
             get;
             set;
-        }        
+        }
     }
 }

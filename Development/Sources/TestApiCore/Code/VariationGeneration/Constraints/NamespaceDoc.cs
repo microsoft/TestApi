@@ -6,7 +6,7 @@
 namespace Microsoft.Test.VariationGeneration.Constraints
 {
     /// <summary>
-    /// Contains a set of standard constraints for use with the 
+    /// Contains a set of standard constraints for use with the
     /// combinatorial variation generation API.
     /// </summary>
     [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Performance", "CA1812")]

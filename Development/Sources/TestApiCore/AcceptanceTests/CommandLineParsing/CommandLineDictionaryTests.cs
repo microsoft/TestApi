@@ -66,7 +66,7 @@ namespace Microsoft.Test.AcceptanceTests.CommandLineParsing
         {
             string[] args = new string[] { arg1, arg2 };
             Assert.Throws<ArgumentException>(
-                delegate 
+                delegate
                 {
                     CommandLineDictionary d = CommandLineDictionary.FromArguments(args);
                 });

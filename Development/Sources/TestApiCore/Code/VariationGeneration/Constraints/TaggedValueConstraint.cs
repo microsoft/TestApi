@@ -53,7 +53,7 @@ namespace Microsoft.Test.VariationGeneration.Constraints
             return new ParameterInteraction(CachedInteraction);
         }
 
-        
+
         internal override ConstraintSatisfaction SatisfiesContraint(Model<T> model, ValueCombination combination)
         {
             if (CachedInteraction == null)

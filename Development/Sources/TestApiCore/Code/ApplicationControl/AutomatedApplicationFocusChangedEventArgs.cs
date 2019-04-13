@@ -18,7 +18,7 @@ namespace Microsoft.Test.ApplicationControl
         /// The AutomatedApplication data to pass to the listeners.
         /// </param>
         /// <param name="newFocusedElement">
-        /// The new focused element data to pass the listeners. This can be an AutomationElement 
+        /// The new focused element data to pass the listeners. This can be an AutomationElement
         /// for an out-of-process scenario or a UIElement for an in-process WPF scenario.
         /// </param>
         public AutomatedApplicationFocusChangedEventArgs(AutomatedApplication automatedApp, object newFocusedElement)

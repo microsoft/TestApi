@@ -43,6 +43,6 @@ namespace Microsoft.Test.FaultInjection
         String Caller
         {
             get;
-        }   
+        }
     }
 }

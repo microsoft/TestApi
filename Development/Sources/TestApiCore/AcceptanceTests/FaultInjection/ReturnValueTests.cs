@@ -12,7 +12,7 @@ namespace Microsoft.Test.AcceptanceTests.FaultInjection
     /// <summary>
     /// Tests which verify the proper value is returned by a
     /// ReturnValueFault
-    /// </summary>    
+    /// </summary>
     public class ReturnValueTests
     {
         #region ReturnNullTest

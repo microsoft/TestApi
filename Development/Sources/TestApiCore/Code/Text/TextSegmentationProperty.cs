@@ -22,7 +22,7 @@ namespace Microsoft.Test.Text
         private Dictionary<string, char[]> wordBreakPropertyValuesDictionary = new Dictionary<string, char[]>();
         private Dictionary<string, char[]> sentenceBreakPropertyValuesDictionary = new Dictionary<string, char[]>();
 
-        private List<UnicodeRangeProperty> textSegmentationRangeList = new List<UnicodeRangeProperty>(); 
+        private List<UnicodeRangeProperty> textSegmentationRangeList = new List<UnicodeRangeProperty>();
 
         private int [] textSegmentationCodePoints;
 
@@ -30,9 +30,9 @@ namespace Microsoft.Test.Text
         /// Define minimum code point needed to be a text segmentation string
         /// </summary>
         public static readonly int MINNUMOFCODEPOINT = 1;
-        
+
         /// <summary>
-        /// Define LineBreakDictionary class, 
+        /// Define LineBreakDictionary class,
         /// <a href="http://www.unicode.org/reports/tr29/">Newline</a>
         /// </summary>
         public TextSegmentationProperty(UnicodeRangeDatabase unicodeDb, Collection<UnicodeRange> expectedRanges)
@@ -51,7 +51,7 @@ namespace Microsoft.Test.Text
                     isValid = true;
                 }
             }
-                
+
             if (InitializeDictionaries(expectedRanges))
             {
                 isValid = true;
@@ -59,7 +59,7 @@ namespace Microsoft.Test.Text
 
             if (!isValid)
             {
-                throw new ArgumentOutOfRangeException("expectedRanges", "TextSegmentationProperty, " + 
+                throw new ArgumentOutOfRangeException("expectedRanges", "TextSegmentationProperty, " +
                     "code points for text segmentation ranges are beyond expected range. " + "Refert to Controls ranges");
             }
         }
@@ -109,8 +109,8 @@ namespace Microsoft.Test.Text
             graphemeClusterBreakPropertyValuesDictionary.Add("ko", ko1);
 
             char [] all1 = {'\u000A', '\u000D', '\u000B', '\u000C', '\u0020', '\u0027', '\u0085', '\u002D', '\u002E', '\u202F','\u00A0', '\u2028', '\u2029',
-                '\u2000', '\u2001', '\u2002', '\u2003', '\u2004', '\u2005', '\u2006', '\u2007', '\u2008', '\u2009', '\u200A', '\u2010', '\u2011', '\u2018', 
-                '\u2019', '\u201B', '\u2024', '\uFE52', '\uFF07', '\uFF0E', '\u00B7', '\u05F4', '\u2027', '\u003A', '\u0387', '\uFE13', '\uFE55', '\uFF1A', 
+                '\u2000', '\u2001', '\u2002', '\u2003', '\u2004', '\u2005', '\u2006', '\u2007', '\u2008', '\u2009', '\u200A', '\u2010', '\u2011', '\u2018',
+                '\u2019', '\u201B', '\u2024', '\uFE52', '\uFF07', '\uFF0E', '\u00B7', '\u05F4', '\u2027', '\u003A', '\u0387', '\uFE13', '\uFE55', '\uFF1A',
                 '\u066C', '\uFE50', '\uFE54', '\uFE63', '\uFF0D', '\uFF0C', '\uFF1B'};
             wordBreakPropertyValuesDictionary.Add("all", all1);
             char [] katakana = {'\u3031', '\u3032', '\u3033', '\u3034', '\u3035', '\u309B', '\u309C', '\u30A0', '\u30FC', '\uFF70'};
@@ -126,7 +126,7 @@ namespace Microsoft.Test.Text
 
             char [] all2 = {'\u000A', '\u000D', '\u0085', '\u00A0', '\u05F3', '\u2000', '\u2001', '\u2002', '\u2003', '\u2004', '\u2005', '\u2006', '\u2007',
                 '\u2008', '\u2009', '\u200A', '\u2028', '\u2029', '\u002E', '\u2024', '\uFE52', '\uFF0E', '\u002D', '\u003A', '\u055D', '\u060C', '\u060D',
-                '\u07F8', '\u1802', '\u1808', '\u2013', '\u2014', '\u3001', '\uFE10', '\uFE11', '\uFE13', '\uFE31', '\uFE32', '\uFE50', '\uFE51', '\uFE55', 
+                '\u07F8', '\u1802', '\u1808', '\u2013', '\u2014', '\u3001', '\uFE10', '\uFE11', '\uFE13', '\uFE31', '\uFE32', '\uFE50', '\uFE51', '\uFE55',
                 '\uFE58', '\uFE63', '\uFF0C', '\uFF0D', '\uFF1A', '\uFF64'};
             sentenceBreakPropertyValuesDictionary.Add("all", all2);
 
@@ -150,7 +150,7 @@ namespace Microsoft.Test.Text
                     }
                 }
             }
-            
+
             Dictionary<string, char[]>.ValueCollection valueColl2 = graphemeClusterBreakPropertyValuesDictionary.Values;
             foreach (char [] values in valueColl2)
             {
@@ -200,7 +200,7 @@ namespace Microsoft.Test.Text
             }
             Array.Resize(ref textSegmentationCodePoints, i);
             Array.Sort(textSegmentationCodePoints);
-            
+
             return isValid;
         }
 

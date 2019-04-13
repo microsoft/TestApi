@@ -227,7 +227,7 @@ namespace Microsoft.Test.AcceptanceTests.WpfTestApplication
 
         #endregion Public Properties
 
-        #region Public Members        
+        #region Public Members
 
         public override string ToString()
         {

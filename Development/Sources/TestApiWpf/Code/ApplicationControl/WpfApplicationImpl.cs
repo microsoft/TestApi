@@ -16,7 +16,7 @@ using System.Windows.Navigation;
 using System.Windows.Threading;
 
 namespace Microsoft.Test.ApplicationControl
-{  
+{
     internal class WpfApplicationImpl : MarshalByRefObject, IAutomatedApplicationImpl
     {
         internal WpfApplicationImpl(WpfInProcessApplicationSettings settings)
@@ -65,10 +65,10 @@ namespace Microsoft.Test.ApplicationControl
         /// <summary>
         /// Gets the value indicating whether the main window is opened
         /// </summary>
-        public bool IsMainWindowOpened 
-        { 
-            get; 
-            private set; 
+        public bool IsMainWindowOpened
+        {
+            get;
+            private set;
         }
 
         /// <summary>
@@ -98,7 +98,7 @@ namespace Microsoft.Test.ApplicationControl
         }
 
         /// <summary>
-        /// Starts the application 
+        /// Starts the application
         /// </summary>
         public void Start()
         {
@@ -149,7 +149,7 @@ namespace Microsoft.Test.ApplicationControl
         }
 
         /// <summary>
-        /// Blocks execution of the current thread until the main window of the 
+        /// Blocks execution of the current thread until the main window of the
         /// application is displayed or until the specified timeout interval elapses.
         /// </summary>
         /// <param name="timeout">The timeout interval.</param>
@@ -275,7 +275,7 @@ namespace Microsoft.Test.ApplicationControl
                 Exited(this, null);
             }
         }
-        
+
         [SuppressMessage("Microsoft.Reliability", "CA2001:AvoidCallingProblematicMethods", MessageId = "System.Type.InvokeMember", Scope = "member", Target = "Microsoft.Test.ApplicationControl.WpfApplicationImpl.#InitializeApplication()", Justification = "Private members must be reflected here to init/close Application settings for in-proc scenarios")]
         private void InitializeApplication()
         {
@@ -320,9 +320,9 @@ namespace Microsoft.Test.ApplicationControl
 
             //
             // simulates implementation for: Application.ResourceAssembly = assembly;
-            // This is needed for cases when the currently executing assembly needs to 
+            // This is needed for cases when the currently executing assembly needs to
             // launch an application.
-            // 
+            //
             typeof(Application).InvokeMember(
                                AppResourceAssemblyString,
                                BindingFlags.Static | BindingFlags.NonPublic | BindingFlags.SetField,
@@ -341,8 +341,8 @@ namespace Microsoft.Test.ApplicationControl
 
             if (!string.IsNullOrEmpty(settings.WindowClassName))
             {
-                // if WindowClassName is specified create the specified window 
-                // and make that the main window           
+                // if WindowClassName is specified create the specified window
+                // and make that the main window
                 var windowType = assembly.GetType(settings.WindowClassName, true);
                 window = (Window)Activator.CreateInstance(windowType);
                 window.Activated += OnActivated;

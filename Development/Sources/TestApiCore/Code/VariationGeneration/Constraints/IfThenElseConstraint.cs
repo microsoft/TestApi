@@ -14,8 +14,8 @@ namespace Microsoft.Test.VariationGeneration.Constraints
     /// <typeparam name="T">The type of variation being operated on.</typeparam>
     public class IfThenElseConstraint<T> : ConditionalConstraint<T> where T : new()
     {
-        internal IfThenElseConstraint(IfThenConstraint<T> ifThen, Expression<Func<T, bool>> predicate) 
-        { 
+        internal IfThenElseConstraint(IfThenConstraint<T> ifThen, Expression<Func<T, bool>> predicate)
+        {
             Condition = predicate;
             IfThen = ifThen;
 

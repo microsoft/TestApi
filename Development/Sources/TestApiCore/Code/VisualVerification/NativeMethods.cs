@@ -71,7 +71,7 @@ namespace Microsoft.Test.VisualVerification
     /// </summary>
     internal static class NativeMethods
     {
-        //wrappers cover API's for used for Visual Verification/Screen Capture        
+        //wrappers cover API's for used for Visual Verification/Screen Capture
         private const string Gdi32Dll = "GDI32.dll";
         private const string User32Dll = "User32.dll";
 

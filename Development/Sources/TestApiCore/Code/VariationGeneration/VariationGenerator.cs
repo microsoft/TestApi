@@ -25,7 +25,7 @@ namespace Microsoft.Test.VariationGeneration
         /// <returns>Generated Variations</returns>
         public static IEnumerable<Variation> GenerateVariations<T>(Model<T> model, int order, int seed) where T : new()
         {
-            // calculate the number variations to exhaustively test the model, 
+            // calculate the number variations to exhaustively test the model,
             // useful to determine if something is wrong during generation
             long maxVariations = model.Parameters.Aggregate((long)1, (total, next) => total * (long)next.Count);
             var variationIndices = GenerateVariationIndices(Prepare(model, order),model.Parameters.Count, seed, maxVariations, model.DefaultVariationTag);
@@ -125,7 +125,7 @@ namespace Microsoft.Test.VariationGeneration
                                 proposedCandidates.Add(coverage);
                             }
 
-                        }                            
+                        }
 
                         // if any of the proposed candidates isn't exclude
                         if (proposedCandidates.Count > 0)

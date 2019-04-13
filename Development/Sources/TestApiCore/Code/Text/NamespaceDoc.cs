@@ -6,8 +6,8 @@
 namespace Microsoft.Test.Text
 {
     /// <summary>
-    /// Contains types for the generation, manipulation and validation of strings and text, 
-    /// for testing purposes.  
+    /// Contains types for the generation, manipulation and validation of strings and text,
+    /// for testing purposes.
     /// </summary>
     [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Performance", "CA1812")]
     [System.Runtime.CompilerServices.CompilerGenerated()]

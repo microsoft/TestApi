@@ -10,7 +10,7 @@ using System.Text.RegularExpressions;
 using Microsoft.Test.FaultInjection.Constants;
 
 namespace Microsoft.Test.FaultInjection.SignatureParsing
-{    
+{
     internal static class Signature
     {
         #region Public Members
@@ -39,8 +39,8 @@ namespace Microsoft.Test.FaultInjection.SignatureParsing
             }
         }
 
-        #endregion 
-        
+        #endregion
+
         #region Private Members
 
         private sealed class Lex
@@ -149,7 +149,7 @@ namespace Microsoft.Test.FaultInjection.SignatureParsing
                 return (symbol != null);
             }
 
-            #endregion  
+            #endregion
         }
 
         private sealed class Yacc
@@ -192,7 +192,7 @@ namespace Microsoft.Test.FaultInjection.SignatureParsing
                 return result;
             }
 
-            #endregion 
+            #endregion
 
             #region Private Members
 
@@ -630,9 +630,9 @@ namespace Microsoft.Test.FaultInjection.SignatureParsing
                 return result;
             }
 
-            #endregion 
+            #endregion
         }
 
-        #endregion  
+        #endregion
     }
 }

@@ -10,14 +10,14 @@ using System.Threading;
 namespace Microsoft.Test.ApplicationControl
 {
     /// <summary>
-    /// Loads and starts a test application either in the current process or in a new, 
+    /// Loads and starts a test application either in the current process or in a new,
     /// separate process.
     /// </summary>
     ///
     /// <example>
     /// The following example shows in-process usage. The code runs the target
     /// application in a separate thread within the current process.
-    /// <code>
+    /// <code lang="C#" >
     /// public void MyTest()
     /// {
     ///    var path = Path.Combine(executionDir, "WpfTestApplication.exe");
@@ -27,12 +27,12 @@ namespace Microsoft.Test.ApplicationControl
     ///         InProcessApplicationType = InProcessApplicationType.InProcessSeparateThread,
     ///         ApplicationImplementationFactory = new WpfInProcessApplicationFactory()
     ///    });
-    /// 
+    ///
     ///    a.Start();
     ///    a.WaitForMainWindow(TimeSpan.FromMilliseconds(5000));
-    ///    
+    ///
     ///    // Perform various tests...
-    ///    
+    ///
     ///    a.Close();
     /// }
     /// </code>
@@ -40,7 +40,7 @@ namespace Microsoft.Test.ApplicationControl
     ///
     /// <example>
     /// The following example demonstrates out-of-process usage:
-    /// <code>
+    /// <code lang="C#" >
     /// public void MyTest()
     /// {
     ///    var path = Path.Combine(executionDir, "WpfTestApplication.exe");
@@ -49,12 +49,12 @@ namespace Microsoft.Test.ApplicationControl
     ///        ProcessStartInfo = new ProcessStartInfo(path),
     ///        ApplicationImplementationFactory = new UIAutomationOutOfProcessApplicationFactory()
     ///    });
-    ///  
+    ///
     ///    a.Start();
     ///    a.WaitForMainWindow(TimeSpan.FromMilliseconds(5000));
-    ///    
+    ///
     ///    // Perform various tests...
-    ///    
+    ///
     ///    a.Close();
     /// }
     /// </code>
@@ -91,7 +91,7 @@ namespace Microsoft.Test.ApplicationControl
         #region Public Properties
 
         /// <summary>
-        /// The main window of the test application. 
+        /// The main window of the test application.
         /// </summary>
         /// <remarks>
         /// This is an AutomationElement for an OutOfProcessApplication and a System.Windows.Window
@@ -127,7 +127,7 @@ namespace Microsoft.Test.ApplicationControl
         /// Waits for the test application to display its main window.
         /// </summary>
         /// <remarks>
-        /// Blocks execution of the current thread until the window is displayed 
+        /// Blocks execution of the current thread until the window is displayed
         /// or until the specified timeout interval elapses.
         /// </remarks>
         /// <param name="timeout">The timeout interval.</param>
@@ -159,7 +159,7 @@ namespace Microsoft.Test.ApplicationControl
         /// Waits for the test application to display a window with a specified name.
         /// </summary>
         /// <remarks>
-        /// Blocks execution of the current thread until the window is displayed 
+        /// Blocks execution of the current thread until the window is displayed
         /// or until the specified timeout interval elapses.
         /// </remarks>
         /// <param name="windowName">The window to wait for.</param>
@@ -194,7 +194,7 @@ namespace Microsoft.Test.ApplicationControl
         /// Waits for the test application to enter an idle state.
         /// </summary>
         /// <remarks>
-        /// Blocks execution of the current thread until the window is displayed 
+        /// Blocks execution of the current thread until the window is displayed
         /// or until the specified timeout interval elapses.
         /// </remarks>
         /// <param name="timeout">The timeout interval.</param>
@@ -250,7 +250,7 @@ namespace Microsoft.Test.ApplicationControl
         #region Internal and Protected Properties
 
         /// <summary>
-        /// Gets or sets the automated application implementation.  
+        /// Gets or sets the automated application implementation.
         /// </summary>
         /// <remarks>
         /// This is the 'implementation' following the bridge pattern.

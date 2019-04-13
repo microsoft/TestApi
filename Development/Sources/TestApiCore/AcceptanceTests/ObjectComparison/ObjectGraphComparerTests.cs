@@ -86,7 +86,7 @@ namespace Microsoft.Test.AcceptanceTests.ObjectComparison
             var right = factory.CreateObjectGraph(rightObject);
             bool match = comparer.Compare(left, right);
 
-            Assert.False(match, "Basic types matched when they should not");            
+            Assert.False(match, "Basic types matched when they should not");
         }
 
         [Fact]
@@ -244,14 +244,14 @@ namespace Microsoft.Test.AcceptanceTests.ObjectComparison
             {
                 Name = "RootElement",
             };
-            // child points to parent 
+            // child points to parent
             leftObject.Content = leftObject;
 
             Element rightObject = new Element()
             {
                 Name = "RootElement",
             };
-            // child points to parent 
+            // child points to parent
             rightObject.Content = rightObject;
 
             ObjectGraphFactory factory = new PublicPropertyObjectGraphFactory();
@@ -275,7 +275,7 @@ namespace Microsoft.Test.AcceptanceTests.ObjectComparison
                 }
             };
 
-            // child points to root 
+            // child points to root
             ((Element)leftObject.Content).Content = leftObject;
 
             Element rightObject = new Element()
@@ -287,7 +287,7 @@ namespace Microsoft.Test.AcceptanceTests.ObjectComparison
                 }
             };
 
-            // child points to parent 
+            // child points to parent
             ((Element)rightObject.Content).Content = rightObject;
 
             ObjectGraphFactory factory = new PublicPropertyObjectGraphFactory();
@@ -306,8 +306,8 @@ namespace Microsoft.Test.AcceptanceTests.ObjectComparison
             Element leftObject = new Element()
             {
                 Name = "RootElement",
-                Content = new List<Element>() 
-                { 
+                Content = new List<Element>()
+                {
                    sharedLeftObject,
                    sharedLeftObject,
                 },
@@ -317,8 +317,8 @@ namespace Microsoft.Test.AcceptanceTests.ObjectComparison
             Element rightObject = new Element()
             {
                 Name = "RootElement",
-                Content = new List<Element>() 
-                { 
+                Content = new List<Element>()
+                {
                    sharedRightObject,
                    sharedRightObject,
                 },
@@ -502,7 +502,7 @@ namespace Microsoft.Test.AcceptanceTests.ObjectComparison
             var right = factory.CreateObjectGraph(rightObject);
             IEnumerable<ObjectComparisonMismatch> mismatches;
             bool match = comparer.Compare(left, right, out mismatches);
-                       
+
             string[] expectedMismatches = new string[]
             {
                 "ObjectValuesDoNotMatch:Left=RootObject.Name(Content1) Right=RootObject.Name(Content2)",

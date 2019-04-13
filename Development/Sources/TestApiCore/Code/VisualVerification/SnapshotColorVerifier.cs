@@ -23,7 +23,7 @@ namespace Microsoft.Test.VisualVerification
         }
 
         /// <summary>
-        /// Initializes a new instance of the SnapshotColorVerifier class, using the specified tolerance value. 
+        /// Initializes a new instance of the SnapshotColorVerifier class, using the specified tolerance value.
         /// </summary>
         /// <param name="expectedColor">The expected color to test against.</param>
         /// <param name="tolerance">A ColorDifference instance specifying the desired tolerance.</param>
@@ -61,7 +61,7 @@ namespace Microsoft.Test.VisualVerification
         #region Public Properties
 
         /// <summary>
-        /// The color tolerance range for verification. To pass verification, all Snapshot pixels must 
+        /// The color tolerance range for verification. To pass verification, all Snapshot pixels must
         /// be within range of the expected color tolerance.
         /// </summary>
         public ColorDifference Tolerance { get; set; }

@@ -9,10 +9,10 @@ using System.Diagnostics.CodeAnalysis;
 namespace Microsoft.Test.AcceptanceTests.ObjectComparison
 {
     public class BasicTypes
-    {   
+    {
         [SuppressMessage("Microsoft.Naming", "CA1720:IdentifiersShouldNotContainTypeNames", MessageId = "short")]
         public short ShortPrimitive { get; set;}
-        
+
         [SuppressMessage("Microsoft.Naming", "CA1720:IdentifiersShouldNotContainTypeNames", MessageId = "int")]
         public int IntPrimitive { get; set; }
 

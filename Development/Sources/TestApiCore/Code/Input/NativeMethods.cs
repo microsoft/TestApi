@@ -98,7 +98,7 @@ namespace Microsoft.Test.Input
         public struct INPUT
         {
             /// <summary>
-            /// Specifies the type of the input event. This member can be one of the following values. 
+            /// Specifies the type of the input event. This member can be one of the following values.
             /// InputType.MOUSE - The event is a mouse event. Use the mi structure of the union.
             /// InputType.KEYBOARD - The event is a keyboard event. Use the ki structure of the union.
             /// InputType.HARDWARE - Windows 95/98/Me: The event is from input hardware other than a keyboard or mouse. Use the hi structure of the union.

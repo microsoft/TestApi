@@ -13,7 +13,7 @@ using System.Threading;
 using Microsoft.Test.Input;
 using Microsoft.Win32;
 
-namespace Microsoft.Test.Theming 
+namespace Microsoft.Test.Theming
 {
     /// <summary>
     /// Enables changing of the Theme configuration of the system.
@@ -21,11 +21,11 @@ namespace Microsoft.Test.Theming
     ///
     /// <example>
     /// The following example demonstrates changing the OS theme to each available
-    /// system theme to verify a control's appearance. 
+    /// system theme to verify a control's appearance.
     ///
-    /// <code>
+    /// <code lang="C#" >
     /// Theme originalTheme = Theme.GetCurrent();
-    /// 
+    ///
     /// try
     /// {
     ///     Theme[] availableThemes = Theme.GetAvailableSystemThemes();
@@ -76,7 +76,7 @@ namespace Microsoft.Test.Theming
         /// <summary>
         /// Constructor that takes a file and retrieves the rest
         /// of the info directly from the theme file.
-        /// </summary>        
+        /// </summary>
         private Theme(FileInfo path)
         {
             Path = path;
@@ -129,7 +129,7 @@ namespace Microsoft.Test.Theming
                 {
                     // Copy the file to another location before setting the theme.
                     // The reason for this is that if the custom theme is left after the test
-                    // executes and a test harness possibly deletes the current theme, the system 
+                    // executes and a test harness possibly deletes the current theme, the system
                     // issues an error that prevents the system from restoring the default theme
                     string destFilename = System.IO.Path.Combine(
                         Environment.GetFolderPath(Environment.SpecialFolder.InternetCache),
@@ -190,7 +190,7 @@ namespace Microsoft.Test.Theming
         }
 
         /// <summary>
-        /// Gets the path of the theme.  
+        /// Gets the path of the theme.
         /// </summary>
         /// <remarks>
         /// Should be of type *.theme.
@@ -266,7 +266,7 @@ namespace Microsoft.Test.Theming
             string themeActive = (string)Registry.GetValue(@"HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\ThemeManager", "ThemeActive", string.Empty);
             return string.Compare(themeActive, "1") == 0;
         }
-        
+
         private static void SetThemeProperties(Theme theme)
         {
             EnsureTheme(theme);
@@ -352,14 +352,14 @@ namespace Microsoft.Test.Theming
         /// <remarks>
         /// For the case of OS versons below 6.1 the process for setting
         /// the theme is as follows:
-        /// 
+        ///
         /// 1. launch the .theme file
         /// 2. wait for the new rundll32 to start.
         /// 3. press enter to select the theme and close the dialog
         /// </remarks>
         private static void MonitorProcess(string processName, string themeFilename)
         {
-            // Get the active window since the window activation will be lost             
+            // Get the active window since the window activation will be lost
             IntPtr activehWnd = IntPtr.Zero;
             ManualResetEvent waitEvent = new ManualResetEvent(false);
             System.Timers.Timer timer = null;
@@ -367,7 +367,7 @@ namespace Microsoft.Test.Theming
 
             try
             {
-                // initialize the wait event                
+                // initialize the wait event
                 waitEvent.Reset();
                 activehWnd = NativeMethods.GetForegroundWindow();
 
@@ -378,7 +378,7 @@ namespace Microsoft.Test.Theming
 
                 bool themeSet = false;
 
-                // wait for the window to activate                
+                // wait for the window to activate
                 timer = new System.Timers.Timer(1500);
                 timer.Elapsed += (s, e) =>
                 {
@@ -411,7 +411,7 @@ namespace Microsoft.Test.Theming
                         }
                         else
                         {
-                            // For good measure                     
+                            // For good measure
                             Thread.Sleep(1000);
                             waitEvent.Set();
                         }
@@ -492,17 +492,17 @@ namespace Microsoft.Test.Theming
         /// <remarks>
         /// For the case of OS versons 6.1 and above the process for setting
         /// the theme is as follows:
-        /// 
+        ///
         /// 1. launch the .theme file (theme is automatically selected)
-        /// 2. wait for explorer to launch the 'personalization' child window 
+        /// 2. wait for explorer to launch the 'personalization' child window
         /// 3. close the 'personalization' window
-        /// 
+        ///
         /// Unlike MonitorProcess, explorer.exe is already running and a subwindow is launched for
-        /// this process.  
+        /// this process.
         /// </remarks>
         private static void SetThemeThroughExplorer(string themeFilename)
         {
-            // Get the active window since the window activation will be lost 
+            // Get the active window since the window activation will be lost
             // by lauching the ControlPanel.Personalization window.
             IntPtr activehWnd = IntPtr.Zero;
             ManualResetEvent waitEvent = new ManualResetEvent(false);
@@ -511,7 +511,7 @@ namespace Microsoft.Test.Theming
 
             try
             {
-                // initialize the wait event                
+                // initialize the wait event
                 waitEvent.Reset();
                 activehWnd = NativeMethods.GetForegroundWindow();
 
@@ -520,7 +520,7 @@ namespace Microsoft.Test.Theming
                 themeChangeProcess.StartInfo.FileName = themeFilename;
                 themeChangeProcess.Start();
 
-                // wait for the window to activate                
+                // wait for the window to activate
                 timer = new System.Timers.Timer(1500);
                 timer.Elapsed += (s, e) =>
                 {
@@ -535,7 +535,7 @@ namespace Microsoft.Test.Theming
                                 IntPtr hWnd = WindowEnumerator.FindFirstWindowWithCaption(process, "personalization");
                                 if (hWnd != IntPtr.Zero)
                                 {
-                                    // first make sure it's active 
+                                    // first make sure it's active
                                     int maxCounter = 20;
                                     int counter = 0;
                                     IntPtr foregroundHWnd = NativeMethods.GetForegroundWindow();

@@ -22,7 +22,7 @@ namespace Microsoft.Test.AcceptanceTests.ApplicationControl
         }
 
         #region IAutomatedApplicationImpl Members
-         
+
 #pragma warning disable 0067
         public event EventHandler Exited;
         public event EventHandler FocusChanged;
@@ -37,7 +37,7 @@ namespace Microsoft.Test.AcceptanceTests.ApplicationControl
         public void Close()
         {
             throw new MockApplicationException();
-        }              
+        }
 
         public bool IsMainWindowOpened
         {
@@ -87,7 +87,7 @@ namespace Microsoft.Test.AcceptanceTests.ApplicationControl
         /// </summary>
         public IAutomatedApplicationImpl Create(ApplicationSettings settings, AppDomain appDomain)
         {
-            return new MockApplicationProxy();           
+            return new MockApplicationProxy();
         }
     }
 

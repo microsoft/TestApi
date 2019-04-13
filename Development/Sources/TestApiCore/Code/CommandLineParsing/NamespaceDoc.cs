@@ -6,9 +6,9 @@
 namespace Microsoft.Test.CommandLineParsing
 {
     /// <summary>
-    /// Contains a full-featured API for command-line parsing. The API is exposed 
-    /// in several decoupled layers – from a string-based command-line dictionary, 
-    /// to a strongly-typed command-line parser.  
+    /// Contains a full-featured API for command-line parsing. The API is exposed
+    /// in several decoupled layers – from a string-based command-line dictionary,
+    /// to a strongly-typed command-line parser.
     /// </summary>
     [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Performance", "CA1812")]
     [System.Runtime.CompilerServices.CompilerGenerated()]

@@ -13,9 +13,9 @@ namespace Microsoft.Test.FaultInjection
     /// Contains all built-in fault injection conditions.
     /// </summary>
     /// <remarks>
-    /// For more information on how to use the BuiltInConditions class, see the <see cref="FaultSession"/> class. 
+    /// For more information on how to use the BuiltInConditions class, see the <see cref="FaultSession"/> class.
     /// All fault injection conditions implement the <see cref="ICondition"/> interface.
-    /// </remarks> 
+    /// </remarks>
     public static class BuiltInConditions
     {
         #region Public Members
@@ -26,14 +26,14 @@ namespace Microsoft.Test.FaultInjection
         public static ICondition TriggerOnEveryCall
         {
             get { return new TriggerOnEveryCall(); }
-        }        
-        
+        }
+
         /// <summary>
         /// A built-in condition which triggers a fault if the faulted method is called by a specified method.</summary>
         /// <param name="caller">A string in the format:
         /// System.Console.WriteLine(string),
         /// Namespace&lt;T&gt;.OuterClass&lt;E&gt;.InnerClass&lt;F,G&gt;.MethodName&lt;H&gt;(T, E, F, H, List&lt;H&gt;).
-        /// </param> 
+        /// </param>
         public static ICondition TriggerIfCalledBy(string caller)
         {
             return new TriggerIfCalledBy(caller);
@@ -42,12 +42,12 @@ namespace Microsoft.Test.FaultInjection
         /// <summary>
         /// A built-in condition which triggers a fault if the faulted method is called by a specified method.</summary>
         /// <param name="caller">The target method's caller.
-        /// </param> 
+        /// </param>
         public static ICondition TriggerIfCalledBy(MethodBase caller)
         {
             return new TriggerIfCalledBy(MethodSignatureTranslator.GetCSharpMethodString(caller));
         }
-        
+
         /// <summary>
         /// A built-in condition which triggers a fault if the current call stack contains a specified method.
         /// </summary>
@@ -69,11 +69,11 @@ namespace Microsoft.Test.FaultInjection
         {
             return new TriggerIfStackContains(MethodSignatureTranslator.GetCSharpMethodString(method));
         }
-        
+
         /// <summary>
         /// A built-in condition which triggers a fault after every n times the faulted method is called.
         /// </summary>
-        /// <param name="n">A positive number.</param>      
+        /// <param name="n">A positive number.</param>
         /// <remarks>
         /// A System.Argument exception is thrown if n is not positive.
         /// </remarks>
@@ -82,12 +82,12 @@ namespace Microsoft.Test.FaultInjection
         {
             return new TriggerOnEveryNthCall(n);
         }
-        
-        
+
+
         /// <summary>
         /// A built-in condition which triggers a fault after the first n times the faulted method is called.
         /// </summary>
-        /// <param name="n">A positive number.</param>      
+        /// <param name="n">A positive number.</param>
         /// <remarks>
         /// A System.Argument exception is thrown if n is not positive.
         /// </remarks>
@@ -96,8 +96,8 @@ namespace Microsoft.Test.FaultInjection
         {
             return new TriggerOnNthCall(n);
         }
-        
-        
+
+
         /// <summary>
         /// A built-in condition which triggers a fault the first time the faulted method is called.
         /// </summary>
@@ -105,8 +105,8 @@ namespace Microsoft.Test.FaultInjection
         {
             get { return new TriggerOnFirstCall(); }
         }
-       
-        
+
+
         /// <summary>
         /// A built-in condition which never triggers a fault. This condition can be used to turn off a fault rule.
         /// </summary>
@@ -122,7 +122,7 @@ namespace Microsoft.Test.FaultInjection
         /// <param name="caller">A string in the format:
         /// System.Console.WriteLine(string),
         /// Namespace&lt;T&gt;.OuterClass&lt;E&gt;.InnerClass&lt;F,G&gt;.MethodName&lt;H&gt;(T, E, F, H, List&lt;H&gt;).
-        /// </param>   
+        /// </param>
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Naming", "CA1704")]
         public static ICondition TriggerOnNthCallBy(int n, string caller)
         {
@@ -133,7 +133,7 @@ namespace Microsoft.Test.FaultInjection
         /// A built-in condition which triggers a fault after the faulted method is called n times by the specified caller.
         /// </summary>
         /// <param name="n">A positive number.</param>
-        /// <param name="caller">The target method's caller.</param>   
+        /// <param name="caller">The target method's caller.</param>
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Naming", "CA1704")]
         public static ICondition TriggerOnNthCallBy(int n, MethodBase caller)
         {

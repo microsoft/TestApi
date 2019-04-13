@@ -11,11 +11,11 @@ using System.Reflection;
 namespace Microsoft.Test.VariationGeneration
 {
     /// <summary>
-    /// Contains all the parameters and constraints for the system under test, and produces a 
+    /// Contains all the parameters and constraints for the system under test, and produces a
     /// set of variations by using combinatorial testing techniques.
     /// </summary>
     /// <typeparam name="T">The type of variations that should be generated.</typeparam>
-    /// 
+    ///
     /// <example>
     /// For examples, refer to <see cref="Model"/> and <see cref="ParameterAttribute"/>.
     /// </example>
@@ -104,7 +104,7 @@ namespace Microsoft.Test.VariationGeneration
                     propertiesMap = CreatePropertyMapFromParameters();
                 }
             }
-            
+
 
             // validate parameters
             if (order < 1 || order > Parameters.Count)
@@ -147,7 +147,7 @@ namespace Microsoft.Test.VariationGeneration
         /// </summary>
         /// <typeparam name="TAttribute">Attribute type.</typeparam>
         /// <param name="memberInfo">Class member.</param>
-        /// <returns>Array of attributes defined for the member; if none 
+        /// <returns>Array of attributes defined for the member; if none
         /// defined the array is zero length.</returns>
         static TAttribute[] GetAttributes<TAttribute>(MemberInfo memberInfo) where TAttribute : Attribute
         {
@@ -160,7 +160,7 @@ namespace Microsoft.Test.VariationGeneration
         }
 
         /// <summary>
-        /// Iterates over model properties, validates them and 
+        /// Iterates over model properties, validates them and
         /// retrieves properly attributed ones.
         /// </summary>
         /// <returns>Dictionary of properties keyed off by the name.</returns>
@@ -200,7 +200,7 @@ namespace Microsoft.Test.VariationGeneration
         /// Creates model parameters based on attributes set on
         /// model properties.
         /// </summary>
-        /// <param name="seed">Seed used to select values for equivalnce 
+        /// <param name="seed">Seed used to select values for equivalnce
         /// classes generation.</param>
         Dictionary<string, PropertyInfo> CreateParameters(int seed)
         {
@@ -228,7 +228,7 @@ namespace Microsoft.Test.VariationGeneration
                 else
                 {
                     // since the properties here are always attributed
-                    // there exist at least one attribute; 
+                    // there exist at least one attribute;
                     // just adding all values from attribute
                     values.AddRange(attributes[0].Values);
                 }
@@ -242,7 +242,7 @@ namespace Microsoft.Test.VariationGeneration
         }
 
         /// <summary>
-        /// Returns list of values selected\created based on attributes 
+        /// Returns list of values selected\created based on attributes
         /// provided.
         /// <remarks>Equivalence class functionality is achieved by using
         /// seed provided to create random generator and then use it to
@@ -260,9 +260,9 @@ namespace Microsoft.Test.VariationGeneration
             {
                 Type parameterValueType = null;
                 Random random = new Random(seed);
-                
+
                 object value = attribute.Values[random.Next(attribute.Values.Length - 1)];
-                
+
                 // if weight or tag is defined, need to create parameter value
                 // o\w just using value from attribute
                 if (attribute.Weight > 0 || attribute.Tag != null)
@@ -284,7 +284,7 @@ namespace Microsoft.Test.VariationGeneration
         }
 
         /// <summary>
-        /// Creates parameter with name and type as specified and 
+        /// Creates parameter with name and type as specified and
         /// add values to it.
         /// </summary>
         /// <param name="parameterName">Name of the parameter.</param>
@@ -293,7 +293,7 @@ namespace Microsoft.Test.VariationGeneration
         static ParameterBase CreateParameter(string parameterName, Type parameterType, List<object> parameterValues)
         {
             // create generic parameter of the right type (based off type supplied)
-            Type genericParameterType = typeof(Parameter<>).MakeGenericType(parameterType);            
+            Type genericParameterType = typeof(Parameter<>).MakeGenericType(parameterType);
             ParameterBase parameter = Activator.CreateInstance(genericParameterType, parameterName)
                     as ParameterBase;
 
@@ -303,7 +303,7 @@ namespace Microsoft.Test.VariationGeneration
                 new Type[] { parameterType });
             MethodInfo methodParameterValue = parameter.GetType().GetMethod("Add",
                 new Type[] { typeof(ParameterValue<>).MakeGenericType(parameterType) });
-            
+
             // call appropriate generic add method based on type of every value
             foreach (object value in parameterValues)
             {
@@ -325,24 +325,24 @@ namespace Microsoft.Test.VariationGeneration
 
 
     /// <summary>
-    /// Provides a general-purpose model that generates a <see cref="Variation"/>. 
+    /// Provides a general-purpose model that generates a <see cref="Variation"/>.
     /// See also <see cref="Model{T}"/>.
     /// </summary>
-    /// 
+    ///
     /// <remarks>
     /// Exhaustively testing all possible inputs to any nontrivial software component is generally not possible
     /// because of the enormous number of variations. Combinatorial testing is one approach to achieve high coverage
-    /// with a much smaller set of variations. Pairwise, the most common combinatorial strategy, tests every possible 
+    /// with a much smaller set of variations. Pairwise, the most common combinatorial strategy, tests every possible
     /// pair of values. Higher orders of combinations (three-wise, four-wise, and so on) can also be used for higher coverage
-    /// at the expense of more variations. See <a href="http://pairwise.org">Pairwise Testing</a> and 
+    /// at the expense of more variations. See <a href="http://pairwise.org">Pairwise Testing</a> and
     /// <a href="http://www.pairwise.org/docs/pnsqc2006/PNSQC%20140%20-%20Jacek%20Czerwonka%20-%20Pairwise%20Testing%20-%20BW.pdf">
     /// Pairwise Testing in Real World</a> for more resources.
     /// </remarks>
-    /// 
+    ///
     /// <example>
-    /// The following example shows how to create a set of test-run configurations by using 
+    /// The following example shows how to create a set of test-run configurations by using
     /// a model that only uses variables.
-    /// <code>
+    /// <code lang="C#" >
     /// // Specify the parameters and parameter values
     /// var os = new Parameter&lt;string&gt;("OS") { "WinXP", "Win2k3", "Vista", "Win7" };
     /// var memory = new Parameter&lt;int&gt;("Memory") { 512, 1024, 2048, 4096 };
@@ -364,12 +364,12 @@ namespace Microsoft.Test.VariationGeneration
     /// }
     /// </code>
     /// </example>
-    /// 
+    ///
     /// <example>
     /// The following example shows how to create variations for a vacation planner that has a signature like this:
     /// CallVacationPlanner(string destination, int hotelQuality, string activity). This example demonstrates that certain
     /// activities are only available for certain destinations.
-    /// <code>
+    /// <code lang="C#" >
     /// var de = new Parameter&lt;string&gt;("Destination") { "Whistler", "Hawaii", "Las Vegas" };
     /// var ho = new Parameter&lt;int&gt;("Hotel Quality") { 5, 4, 3, 2, 1 };
     /// var ac = new Parameter&lt;string&gt;("Activity") { "gambling", "swimming", "shopping", "skiing" };
@@ -409,10 +409,10 @@ namespace Microsoft.Test.VariationGeneration
     /// The following example shows how to create variations for a vacation planner that adds weights and tags
     /// to certain values.  Adding weights changes the frequency in which a value will occur. Adding tags allows expected values
     /// to be added to variations.
-    /// <code>
-    /// var de = new Parameter&lt;string&gt;("Destination") 
-    /// { 
-    ///     "Whistler", 
+    /// <code lang="C#" >
+    /// var de = new Parameter&lt;string&gt;("Destination")
+    /// {
+    ///     "Whistler",
     ///     "Hawaii",
     ///     new ParameterValue&lt;string&gt;("Las Vegas") { Weight = 10.0 },
     ///     new ParameterValue&lt;string&gt;("Cleveland") { Tag = false }
@@ -449,7 +449,7 @@ namespace Microsoft.Test.VariationGeneration
         /// </summary>
         /// <param name="parameters">The parameters.</param>
         /// <param name="constraints">The constraints.</param>
-        public Model(IEnumerable<ParameterBase> parameters, IEnumerable<Constraint<Variation>> constraints) 
+        public Model(IEnumerable<ParameterBase> parameters, IEnumerable<Constraint<Variation>> constraints)
             : base(parameters, constraints)
         {
         }

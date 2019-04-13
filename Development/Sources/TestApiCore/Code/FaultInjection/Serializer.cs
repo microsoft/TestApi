@@ -93,7 +93,7 @@ namespace Microsoft.Test.FaultInjection
             }
         }
 
-        #endregion  
+        #endregion
 
         #region Private Members
 
@@ -142,14 +142,14 @@ namespace Microsoft.Test.FaultInjection
 #if TESTBUILD_CLR40
                     return Assembly.LoadFrom(location);
 #endif
-      
+
                 }
                 return null;    // Should I do log here?
             }
 
             private Dictionary<string, string> locations = new Dictionary<string, string>();
-        }       
+        }
 
-        #endregion  
+        #endregion
     }
 }

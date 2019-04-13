@@ -14,7 +14,7 @@ namespace Microsoft.Test.Text
         private static readonly Group [] symbolsAndPunctuation = new Group[TextUtil.NUMOFSYMBOLSANDPUNCTUATION];
 
         /// <summary>
-        /// Define UnicodeRangeDatabase class, 
+        /// Define UnicodeRangeDatabase class,
         /// <a href="http://www.unicode.org/charts/">Newline</a>
         /// </summary>
         public UnicodeRangeDatabase( )
@@ -45,12 +45,12 @@ namespace Microsoft.Test.Text
             // For the 3rd parameter ids - all lower cases
             // If LCID exists, Short String description is used; otherwise, spell out the whole name in lower case.
             // If it applies to the root culture e.g. zh-cn, zh-hk, zh-tw, the root culture id is used e.g. "zh". '-' is omitted.
-            // If it can be used for various culuture, "any" is used. 
+            // If it can be used for various culuture, "any" is used.
             // If LCID does not exist, full spell of the culture is the id and space is omitted.
             scripts[0] = new Group(new UnicodeRange(0x0530, 0x058F), "European Scripts", "Armenian", "hy", UnicodeChart.Armenian);
             scripts[0].SubGroups = new SubGroup[1];
             scripts[0].SubGroups[0] = new SubGroup(new UnicodeRange(0xFB00, 0xFB4F), "Armenian Ligatures", "hy", UnicodeChart.ArmenianLigatures);
-            
+
             scripts[1] = new Group(new UnicodeRange(0x2C80, 0x2CFF), "European Scripts", "Coptic", "eg", UnicodeChart.Coptic);
             scripts[1].SubGroups = new SubGroup[1];
             scripts[1].SubGroups[0] = new SubGroup(new UnicodeRange(0x0370, 0x03FF), "Coptic in Greek block", "eg,el", UnicodeChart.CopticInGreekBlock);
@@ -70,7 +70,7 @@ namespace Microsoft.Test.Text
             scripts[5] = new Group(new UnicodeRange(0x2C00, 0x2C5F), "European Scripts", "Glagolitic", "glagolitsa", UnicodeChart.Glagolitic);
             scripts[6] = new Group(new UnicodeRange(0x10330, 0x1034F), "European Scripts", "Gothic", "de", UnicodeChart.Gothic);
 
-            scripts[7] = new Group(new UnicodeRange(0x0370, 0x03FF), "European Scripts", "Greek", "el", UnicodeChart.Greek); 
+            scripts[7] = new Group(new UnicodeRange(0x0370, 0x03FF), "European Scripts", "Greek", "el", UnicodeChart.Greek);
             scripts[7].SubGroups = new SubGroup[1];
             scripts[7].SubGroups[0] = new SubGroup(new UnicodeRange(0x1F00, 0x1FFF), "Greek Extended", "el", UnicodeChart.GreekExtended);
 
@@ -115,12 +115,12 @@ namespace Microsoft.Test.Text
 
             scripts[22] = new Group(new UnicodeRange(0xA6A0, 0xA6FF), "African Scripts", "Bamum", "cameroon", UnicodeChart.Bamum);
             scripts[23] = new Group(new UnicodeRange(0x13000, 0x1342F), "African Scripts", "Egyptian Hieroglyphs", "eg", UnicodeChart.EgyptianHieroglyphs);
-            
+
             scripts[24] = new Group(new UnicodeRange(0x1200, 0x137F), "African Scripts", "Ethiopic", "ethiopia", UnicodeChart.Ethiopic);
             scripts[24].SubGroups = new SubGroup[2];
             scripts[24].SubGroups[0] = new SubGroup(new UnicodeRange(0x1380, 0x139F), "Ethiopic Supplement", "ethiopia", UnicodeChart.EthiopicSupplement);
             scripts[24].SubGroups[1] = new SubGroup(new UnicodeRange(0x2D80, 0x2DDF), "Ethiopic Extended", "ethiopia", UnicodeChart.EthiopicExtended);
-            
+
             scripts[25] = new Group(new UnicodeRange(0xA700, 0xA71F), "African Scripts", "N'ko", "nko", UnicodeChart.NKo);
             scripts[26] = new Group(new UnicodeRange(0x10480, 0x104AF), "African Scripts", "Osmanya", "somalia", UnicodeChart.Osmanya);
             scripts[27] = new Group(new UnicodeRange(0x2D30, 0x2D7F), "African Scripts", "Tifinagh", "tifinagh", UnicodeChart.Tifinagh);
@@ -131,21 +131,21 @@ namespace Microsoft.Test.Text
             scripts[29].SubGroups[0] = new SubGroup(new UnicodeRange(0x0750, 0x077F), "Arabic Supplement", "ar", UnicodeChart.ArabicSupplement);
             scripts[29].SubGroups[1] = new SubGroup(new UnicodeRange(0xFB50, 0xFDFF), "Arabic Presentation Forms-A", "ar", UnicodeChart.ArabicPresentationFormsA);
             scripts[29].SubGroups[2] = new SubGroup(new UnicodeRange(0xFE70, 0xFEFF), "Arabic Presentation Forms-B", "ar", UnicodeChart.ArabicPresentationFormsB);
-            
+
             scripts[30] = new Group(new UnicodeRange(0x10840, 0x1085F), "Middle Eastern Scripts", "Aramaic, Imperial", "he", UnicodeChart.AramaicImperial);
             scripts[31] = new Group(new UnicodeRange(0x10B00, 0x10B3F), "Middle Eastern Scripts", "Avestan", "iran", UnicodeChart.Avestan);
             scripts[32] = new Group(new UnicodeRange(0x102A0, 0x102DF), "Middle Eastern Scripts", "Carian", "carians", UnicodeChart.Carian);
-            
+
             scripts[33] = new Group(new UnicodeRange(0x12000, 0x123FF), "Middle Eastern Scripts", "Cuneiform", "cuneiform", UnicodeChart.Cuneiform);
             scripts[33].SubGroups = new SubGroup[3];
             scripts[33].SubGroups[0] = new SubGroup(new UnicodeRange(0x12400, 0x1247F), "Cuneiform Numbers and Punctuation", "cuneiform", UnicodeChart.CuneiformNumbersAndPunctuation);
             scripts[33].SubGroups[1] = new SubGroup(new UnicodeRange(0x103A0, 0x103DF), "Old Persian", "cuneiform", UnicodeChart.OldPersian);
             scripts[33].SubGroups[2] = new SubGroup(new UnicodeRange(0x10380, 0x1039F), "Ugaritic", "cuneiform", UnicodeChart.Ugaritic);
-            
+
             scripts[34] = new Group(new UnicodeRange(0x0590, 0x05FF), "Middle Eastern Scripts", "Hebrew", "he", UnicodeChart.Hebrew);
             scripts[34].SubGroups = new SubGroup[1];
             scripts[34].SubGroups[0] = new SubGroup(new UnicodeRange(0xFB00, 0xFB4F), "Hebrew Presentation Forms", "he", UnicodeChart.HebrewPresentationForms);
-            
+
             scripts[35] = new Group(new UnicodeRange(0x10280, 0x1029F), "Middle Eastern Scripts", "Lycian", "lycia", UnicodeChart.Lycian);
             scripts[36] = new Group(new UnicodeRange(0x10920, 0x1093F), "Middle Eastern Scripts", "Lydian", "lycia", UnicodeChart.Lydian);
             scripts[37] = new Group(new UnicodeRange(0x10A60, 0x10A7F), "Middle Eastern Scripts", "Old South Arabian", "ar", UnicodeChart.OldSouthArabian);
@@ -161,11 +161,11 @@ namespace Microsoft.Test.Text
             scripts[46] = new Group(new UnicodeRange(0x0F00, 0x0FFF), "Central Asian Scripts", "Tibetan", "zh", UnicodeChart.Tibetan);
 
             scripts[47] = new Group(new UnicodeRange(0x0980, 0x09FF), "South Asian Scripts", "Bengali", "bangladesh,hi", UnicodeChart.Bengali);
-            
-            scripts[48] = new Group(new UnicodeRange(0x0900, 0x097F), "South Asian Scripts", "Devanagari", "hi,nepal", UnicodeChart.Devanagari); 
+
+            scripts[48] = new Group(new UnicodeRange(0x0900, 0x097F), "South Asian Scripts", "Devanagari", "hi,nepal", UnicodeChart.Devanagari);
             scripts[48].SubGroups = new SubGroup[1];
             scripts[48].SubGroups[0] = new SubGroup(new UnicodeRange(0xA8E0, 0xA8FF), "Devanagari Extended", "hi", UnicodeChart.DevanagariExtended);
-            
+
             scripts[49] = new Group(new UnicodeRange(0x0A80, 0x0AFF), "South Asian Scripts", "Gujarati", "hi", UnicodeChart.Gujarati);
             scripts[50] = new Group(new UnicodeRange(0x0A00, 0x0A7F), "South Asian Scripts", "Gurmukhi", "hi", UnicodeChart.Gurmukhi);
             scripts[51] = new Group(new UnicodeRange(0x11080, 0x110CF), "South Asian Scripts", "Kaithi", "hi", UnicodeChart.Kaithi);
@@ -186,33 +186,33 @@ namespace Microsoft.Test.Text
             scripts[66] = new Group(new UnicodeRange(0x1CD0, 0x1CFF), "South Asian Scripts", "Vedic Extensions", "hi", UnicodeChart.VedicExtensions);
 
             scripts[67] = new Group(new UnicodeRange(0x1B00, 0x1B7F), "Southeast Asian Scripts", "Balinese", "id", UnicodeChart.Balinese);
-            scripts[68] = new Group(new UnicodeRange(0x1A00, 0x1A1F), "Southeast Asian Scripts", "Buginese", "id", UnicodeChart.Buginese); 
-            scripts[69] = new Group(new UnicodeRange(0xAA00, 0xAA5F), "Southeast Asian Scripts", "Cham", "vi,th,cambodia", UnicodeChart.Cham); 
-            scripts[70] = new Group(new UnicodeRange(0xA980, 0xA9DF), "Southeast Asian Scripts", "Javanese", "id", UnicodeChart.Javanese); 
+            scripts[68] = new Group(new UnicodeRange(0x1A00, 0x1A1F), "Southeast Asian Scripts", "Buginese", "id", UnicodeChart.Buginese);
+            scripts[69] = new Group(new UnicodeRange(0xAA00, 0xAA5F), "Southeast Asian Scripts", "Cham", "vi,th,cambodia", UnicodeChart.Cham);
+            scripts[70] = new Group(new UnicodeRange(0xA980, 0xA9DF), "Southeast Asian Scripts", "Javanese", "id", UnicodeChart.Javanese);
             scripts[71] = new Group(new UnicodeRange(0xA900, 0xA92F), "Southeast Asian Scripts", "Kayah Li", "myanmar", UnicodeChart.KayahLi);
 
-            scripts[72] = new Group(new UnicodeRange(0x1780, 0x17FF), "Southeast Asian Scripts", "Khmer", "cambodia", UnicodeChart.Khmer); 
+            scripts[72] = new Group(new UnicodeRange(0x1780, 0x17FF), "Southeast Asian Scripts", "Khmer", "cambodia", UnicodeChart.Khmer);
             scripts[72].SubGroups = new SubGroup[1];
             scripts[72].SubGroups[0] = new SubGroup(new UnicodeRange(0x17E0, 0x17FF), "Khmer Symbols", "cambodia", UnicodeChart.KhmerSymbols);
 
-            scripts[73] = new Group(new UnicodeRange(0x0E80, 0x0EFF), "Southeast Asian Scripts", "Lao", "lao", UnicodeChart.Lao); 
+            scripts[73] = new Group(new UnicodeRange(0x0E80, 0x0EFF), "Southeast Asian Scripts", "Lao", "lao", UnicodeChart.Lao);
 
-            scripts[74] = new Group(new UnicodeRange(0x1000, 0x109F), "Southeast Asian Scripts", "Myanmar", "myanmar", UnicodeChart.Myanmar); 
+            scripts[74] = new Group(new UnicodeRange(0x1000, 0x109F), "Southeast Asian Scripts", "Myanmar", "myanmar", UnicodeChart.Myanmar);
             scripts[74].SubGroups = new SubGroup[1];
             scripts[74].SubGroups[0] = new SubGroup(new UnicodeRange(0xAA60, 0xAA7F), "Myanmar Extended-A", "myanmar", UnicodeChart.MyanmarExtendedA);
 
             scripts[75] = new Group(new UnicodeRange(0x1980, 0x19DF), "Southeast Asian Scripts", "New Tai Lue", "zh", UnicodeChart.NewTaiLue);
-            scripts[76] = new Group(new UnicodeRange(0xA930, 0xA95F), "Southeast Asian Scripts", "Rejang", "id", UnicodeChart.Rejang); 
-            scripts[77] = new Group(new UnicodeRange(0x1B80, 0x1BBF), "Southeast Asian Scripts", "Sundanese", "id", UnicodeChart.Sundanese); 
-            scripts[78] = new Group(new UnicodeRange(0x1950, 0x197F), "Southeast Asian Scripts", "Tai Le", "zh", UnicodeChart.TaiLe); 
+            scripts[76] = new Group(new UnicodeRange(0xA930, 0xA95F), "Southeast Asian Scripts", "Rejang", "id", UnicodeChart.Rejang);
+            scripts[77] = new Group(new UnicodeRange(0x1B80, 0x1BBF), "Southeast Asian Scripts", "Sundanese", "id", UnicodeChart.Sundanese);
+            scripts[78] = new Group(new UnicodeRange(0x1950, 0x197F), "Southeast Asian Scripts", "Tai Le", "zh", UnicodeChart.TaiLe);
             scripts[79] = new Group(new UnicodeRange(0x1A20, 0x1AAF), "Southeast Asian Scripts", "Tai Tham", "th", UnicodeChart.TaiTham);
-            scripts[80] = new Group(new UnicodeRange(0xAA80, 0xAADF), "Southeast Asian Scripts", "Tai Viet", "vi", UnicodeChart.TaiViet); 
-            scripts[81] = new Group(new UnicodeRange(0x0E00, 0x0E7F), "Southeast Asian Scripts", "Thai", "th", UnicodeChart.Thai); 
+            scripts[80] = new Group(new UnicodeRange(0xAA80, 0xAADF), "Southeast Asian Scripts", "Tai Viet", "vi", UnicodeChart.TaiViet);
+            scripts[81] = new Group(new UnicodeRange(0x0E00, 0x0E7F), "Southeast Asian Scripts", "Thai", "th", UnicodeChart.Thai);
 
             scripts[82] = new Group(new UnicodeRange(0x1740, 0x175F), "Philippine Scripts", "Buhid", "ph", UnicodeChart.Buhid);
-            scripts[83] = new Group(new UnicodeRange(0x1720, 0x173F), "Philippine Scripts", "Hanunoo", "ph", UnicodeChart.Hanunoo); 
-            scripts[84] = new Group(new UnicodeRange(0x1700, 0x171F), "Philippine Scripts", "Tagalog", "ph", UnicodeChart.Tagalog); 
-            scripts[85] = new Group(new UnicodeRange(0x1760, 0x177F), "Philippine Scripts", "Tagbanwa", "ph", UnicodeChart.Tagbanwa); 
+            scripts[83] = new Group(new UnicodeRange(0x1720, 0x173F), "Philippine Scripts", "Hanunoo", "ph", UnicodeChart.Hanunoo);
+            scripts[84] = new Group(new UnicodeRange(0x1700, 0x171F), "Philippine Scripts", "Tagalog", "ph", UnicodeChart.Tagalog);
+            scripts[85] = new Group(new UnicodeRange(0x1760, 0x177F), "Philippine Scripts", "Tagbanwa", "ph", UnicodeChart.Tagbanwa);
 
             scripts[86] = new Group(new UnicodeRange(0x3100, 0x312F), "East Asian Scripts", "Bopomofo", "zhtw", UnicodeChart.Bopomofo);
             scripts[86].SubGroups = new SubGroup[1];
@@ -228,13 +228,13 @@ namespace Microsoft.Test.Text
             scripts[88].SubGroups = new SubGroup[1];
             scripts[88].SubGroups[0] = new SubGroup(new UnicodeRange(0x2F800, 0x2FA1F), "CJK Compatibility Ideographs Supplement", "zh,ja,ko", UnicodeChart.CjkCompatibilityIdeographsSupplement);
 
-            scripts[89] = new Group(new UnicodeRange(0x2F00, 0x2FDF), "East Asian Scripts", "CJK Radicals // KangXi Radicals", "zh,ja,ko", UnicodeChart.CjkKangXiRadicals); 
+            scripts[89] = new Group(new UnicodeRange(0x2F00, 0x2FDF), "East Asian Scripts", "CJK Radicals // KangXi Radicals", "zh,ja,ko", UnicodeChart.CjkKangXiRadicals);
             scripts[89].SubGroups = new SubGroup[3];
             scripts[89].SubGroups[0] = new SubGroup(new UnicodeRange(0x2E80, 0x2EFF), "CJK Radicals Supplement", "zh,ja,ko", UnicodeChart.CjkRadicalsSupplement);
             scripts[89].SubGroups[1] = new SubGroup(new UnicodeRange(0x2E80, 0x2EFF), "CJK Strokes", "zh,ja,ko", UnicodeChart.CjkStrokes);
             scripts[89].SubGroups[2] = new SubGroup(new UnicodeRange(0x31C0, 0x31EF), "Ideographic Description Characters", "zh,ja,ko", UnicodeChart.IdeographicDescriptionCharacters);
 
-            scripts[90] = new Group(new UnicodeRange(0x1100, 0x11FF), "East Asian Scripts", "Hangul Jamo", "ko", UnicodeChart.HangulJamo); 
+            scripts[90] = new Group(new UnicodeRange(0x1100, 0x11FF), "East Asian Scripts", "Hangul Jamo", "ko", UnicodeChart.HangulJamo);
             scripts[90].SubGroups = new SubGroup[4];
             scripts[90].SubGroups[0] = new SubGroup(new UnicodeRange(0xA960, 0xA97F), "Hangul Jamo Extended-A", "ko", UnicodeChart.HangulJamoExtendedA);
             scripts[90].SubGroups[1] = new SubGroup(new UnicodeRange(0xD7B0, 0xD7FF), "Hangul Jamo Extended-B", "ko", UnicodeChart.HangulJamoExtendedB);
@@ -280,7 +280,7 @@ namespace Microsoft.Test.Text
             symbolsAndPunctuation[0].SubGroups[3] = new SubGroup(new UnicodeRange(0x2E00, 0x2E7F), "Supplemental Punctuation", "other", UnicodeChart.SupplementalPunctuation);
 
             symbolsAndPunctuation[1] = new Group(new UnicodeRange(0x3000, 0x303F), "Punctuation", "CJK Symbols and Punctuation", "zh,ja,ko", UnicodeChart.CjkSymbolsAndPunctuation);
-            symbolsAndPunctuation[1].SubGroups = new SubGroup[3]; 
+            symbolsAndPunctuation[1].SubGroups = new SubGroup[3];
             symbolsAndPunctuation[1].SubGroups[0] = new SubGroup(new UnicodeRange(0xFE30, 0xFE4F), "CJK Compatibility Forms", "zh,ja,ko", UnicodeChart.CjkCompatibilityForms);
             symbolsAndPunctuation[1].SubGroups[1] = new SubGroup(new UnicodeRange(0xFF00, 0xFFEF), "Fullwidth ASCII Punctuation", "zh,ja,ko", UnicodeChart.FullwidthAsciiPunctuation);
             symbolsAndPunctuation[1].SubGroups[2] = new SubGroup(new UnicodeRange(0xFE10, 0xFE1F), "Vertical Forms", "zh,ja,ko", UnicodeChart.VerticalForms);
@@ -292,15 +292,15 @@ namespace Microsoft.Test.Text
             symbolsAndPunctuation[3] = new Group(new UnicodeRange(0x1D400, 0x1D7FF), "Alphanumeric Symbols", "Mathematical Alphanumeric Symbols", "any", UnicodeChart.MathematicalAlphanumericSymbols);
 
             symbolsAndPunctuation[4] = new Group(new UnicodeRange(0x2460, 0x124FF), "Alphanumeric Symbols", "Enclosed Alphanumerics", "any", UnicodeChart.EnclosedAlphanumerics);
-            symbolsAndPunctuation[4].SubGroups = new SubGroup[1]; 
+            symbolsAndPunctuation[4].SubGroups = new SubGroup[1];
             symbolsAndPunctuation[4].SubGroups[0] = new SubGroup(new UnicodeRange(0x1F100, 0x1F1FF), "Enclosed Alphanumerics Supplement", "any", UnicodeChart.EnclosedAlphanumericSupplement);
 
             symbolsAndPunctuation[5] = new Group(new UnicodeRange(0x3200, 0x32FF), "Alphanumeric Symbols", "Enclosed CJK Letters and Months", "zh,ja,ko", UnicodeChart.EnclosedCjkLettersAndMonths);
-            symbolsAndPunctuation[5].SubGroups = new SubGroup[1]; 
+            symbolsAndPunctuation[5].SubGroups = new SubGroup[1];
             symbolsAndPunctuation[5].SubGroups[0] = new SubGroup(new UnicodeRange(0x1F200, 0x1F2FF), "Enclosed Ideographic Supplement", "zh,ja,ko", UnicodeChart.EnclosedIdeographicSupplement);
 
             symbolsAndPunctuation[6] = new Group(new UnicodeRange(0x3300, 0x33FF), "Alphanumeric Symbols", "CJK Compatibility", "zh,ja,ko", UnicodeChart.CjkCompatibility);
-            symbolsAndPunctuation[6].SubGroups = new SubGroup[1]; 
+            symbolsAndPunctuation[6].SubGroups = new SubGroup[1];
             symbolsAndPunctuation[6].SubGroups[0] = new SubGroup(new UnicodeRange(0x2100, 0x214F), "Additional Squared Symbols", "zh,ja,ko", UnicodeChart.AdditionalSquaredSymbols);
 
             symbolsAndPunctuation[7] = new Group(new UnicodeRange(0x2300, 0x23FF), "Technical Symbols", "APL symbols", "any", UnicodeChart.AplSymbols);
@@ -308,12 +308,12 @@ namespace Microsoft.Test.Text
             symbolsAndPunctuation[9] = new Group(new UnicodeRange(0x2300, 0x23FF), "Technical Symbols", "Miscellaneous  Technical", "any", UnicodeChart.MiscellaneousTechnical);
             symbolsAndPunctuation[10] = new Group(new UnicodeRange(0x2440, 0x245F), "Technical Symbols", "Optical Character Recognition (OCR)", "any", UnicodeChart.OpticalCharacterRecognition);
             symbolsAndPunctuation[11] = new Group(new UnicodeRange(0x20D0, 0x20FF), "Combining Diacritics", "Combining Diacritical Marks for Symbols", "other", UnicodeChart.CombiningDiacriticalMarksForSymbols);
-            
+
             symbolsAndPunctuation[12] = new Group(new UnicodeRange(0x10100, 0x1013F), "Numbers and Digits", "Aegean", "el", UnicodeChart.AegeanNumbers);
             symbolsAndPunctuation[13] = new Group(new UnicodeRange(0x10140, 0x1018F), "Numbers and Digits", "Ancient Greek Numbers", "el", UnicodeChart.AncientGreekNumbers);
 
             symbolsAndPunctuation[14] = new Group(new UnicodeRange(0x0000, 0x007F), "Numbers and Digits", "ASCII Digits", "latin", UnicodeChart.AsciiDigits);
-            symbolsAndPunctuation[14].SubGroups = new SubGroup[1]; 
+            symbolsAndPunctuation[14].SubGroups = new SubGroup[1];
             symbolsAndPunctuation[14].SubGroups[0] = new SubGroup(new UnicodeRange(0xFF00, 0xFFEF), "Fullwidth ASCII Digits", "latin,ja", UnicodeChart.FullwidthAsciiDigits);
 
             symbolsAndPunctuation[15] = new Group(new UnicodeRange(0xA830, 0xA83F), "Numbers and Digits", "Common Indic Number Forms", "hi", UnicodeChart.CommonIndicNumberForms);
@@ -324,13 +324,13 @@ namespace Microsoft.Test.Text
             symbolsAndPunctuation[20] = new Group(new UnicodeRange(0x2070, 0x209F), "Numbers and Digits", "Super and Subscripts", "any", UnicodeChart. SuperAndSubscripts);
 
             symbolsAndPunctuation[21] = new Group(new UnicodeRange(0x2190, 0x21FF), "Mathematical Symbols", "Arrows", "latin", UnicodeChart.Arrows);
-            symbolsAndPunctuation[21].SubGroups = new SubGroup[3]; 
+            symbolsAndPunctuation[21].SubGroups = new SubGroup[3];
             symbolsAndPunctuation[21].SubGroups[0] = new SubGroup(new UnicodeRange(0x27F0, 0x27FF), "Supplemental Arrows-A", "latin", UnicodeChart.SupplementalArrowsA);
             symbolsAndPunctuation[21].SubGroups[1] = new SubGroup(new UnicodeRange(0x2900, 0x297F), "Supplemental Arrows-B", "latin", UnicodeChart.SupplementalArrowsB);
             symbolsAndPunctuation[21].SubGroups[2] = new SubGroup(new UnicodeRange(0x2B00, 0x2BFF), "Additional Arrows", "latin", UnicodeChart.AdditionalArrows);
 
             symbolsAndPunctuation[22] = new Group(new UnicodeRange(0x1D400, 0x1D7FF), "Mathematical Symbols", "Mathematical Alphanumeric Symbols", "latin", UnicodeChart.MathematicalAlphanumericSymbols);
-            symbolsAndPunctuation[22].SubGroups = new SubGroup[1]; 
+            symbolsAndPunctuation[22].SubGroups = new SubGroup[1];
             symbolsAndPunctuation[22].SubGroups[0] = new SubGroup(new UnicodeRange(0x2100, 0x214F), "Letterlike Symbols", "latin", UnicodeChart.LetterlikeSymbols);
 
             symbolsAndPunctuation[23] = new Group(new UnicodeRange(0x2200, 0x22FF), "Mathematical Symbols", "Mathematical Operators", "any", UnicodeChart.MathematicalOperators);
@@ -343,7 +343,7 @@ namespace Microsoft.Test.Text
             symbolsAndPunctuation[23].SubGroups[5] = new SubGroup(new UnicodeRange(0x2300, 0x23FF), "Floors and Ceilings", "any", UnicodeChart.FloorsAndCeilings);
 
             symbolsAndPunctuation[24] = new Group(new UnicodeRange(0x25A0, 0x25FF), "Mathematical Symbols", "Geometric Shapes", "any", UnicodeChart.GeometricShapes);
-            symbolsAndPunctuation[24].SubGroups = new SubGroup[3]; 
+            symbolsAndPunctuation[24].SubGroups = new SubGroup[3];
             symbolsAndPunctuation[24].SubGroups[0] = new SubGroup(new UnicodeRange(0x2B00, 0x2BFF), "Additional Shapes", "any", UnicodeChart.AdditionalShapes);
             symbolsAndPunctuation[24].SubGroups[1] = new SubGroup(new UnicodeRange(0x2500, 0x257F), "Box Drawing", "any", UnicodeChart.BoxDrawing);
             symbolsAndPunctuation[24].SubGroups[2] = new SubGroup(new UnicodeRange(0x2580, 0x259F), "Block Elements", "any", UnicodeChart.BlockElements);
@@ -352,7 +352,7 @@ namespace Microsoft.Test.Text
             symbolsAndPunctuation[26] = new Group(new UnicodeRange(0x2800, 0x28FF), "Other Symbols", "Braille Patterns", "other", UnicodeChart.BraillePatterns);
 
             symbolsAndPunctuation[27] = new Group(new UnicodeRange(0x20A0, 0x20CF), "Other Symbols", "Currency Symbols", "any", UnicodeChart.CurrencySymbols);
-            symbolsAndPunctuation[27].SubGroups = new SubGroup[7]; 
+            symbolsAndPunctuation[27].SubGroups = new SubGroup[7];
             symbolsAndPunctuation[27].SubGroups[0] = new SubGroup(new UnicodeRange(0x0000, 0x007F), "Dollar Sign", "any", UnicodeChart.DollarSign);
             symbolsAndPunctuation[27].SubGroups[1] = new SubGroup(new UnicodeRange(0x20A0, 0x20CF), "Euro Sign", "any", UnicodeChart.EuroSign);
             symbolsAndPunctuation[27].SubGroups[2] = new SubGroup(new UnicodeRange(0x0080, 0x00FF), "Yen, Pound and Cent", "any", UnicodeChart.YenPoundAndCent);
@@ -365,7 +365,7 @@ namespace Microsoft.Test.Text
 
             // Game Symbols range is not defined. Use checker/chess range.
             symbolsAndPunctuation[29] = new Group(new UnicodeRange(0x2600, 0x26FF), "Other Symbols", "Game Symbols", "other", UnicodeChart.GameSymbols);
-            symbolsAndPunctuation[29].SubGroups = new SubGroup[5]; 
+            symbolsAndPunctuation[29].SubGroups = new SubGroup[5];
             symbolsAndPunctuation[29].SubGroups[0] = new SubGroup(new UnicodeRange(0x2600, 0x26FF), "Chess//Checkers", "other", UnicodeChart.ChessCheckers);
             symbolsAndPunctuation[29].SubGroups[1] = new SubGroup(new UnicodeRange(0x1F030, 0x1F09F), "Domino Tiles", "other", UnicodeChart.DominoTiles);
             symbolsAndPunctuation[29].SubGroups[2] = new SubGroup(new UnicodeRange(0x2600, 0x26FF), "Japanese Chess", "ja", UnicodeChart.JapaneseChess);
@@ -373,24 +373,24 @@ namespace Microsoft.Test.Text
             symbolsAndPunctuation[29].SubGroups[4] = new SubGroup(new UnicodeRange(0x2600, 0x26FF), "Card suits", "other", UnicodeChart.CardSuits);
 
             symbolsAndPunctuation[30] = new Group(new UnicodeRange(0x2600, 0x26FF), "Other Symbols", "Miscellaneous Symbols", "any", UnicodeChart.MiscellaneousSymbols);
-            symbolsAndPunctuation[30].SubGroups = new SubGroup[1]; 
+            symbolsAndPunctuation[30].SubGroups = new SubGroup[1];
             symbolsAndPunctuation[30].SubGroups[0] = new SubGroup(new UnicodeRange(0x2B00, 0x2BFF), "Miscellaneous Symbols and Arrows", "any", UnicodeChart.MiscellaneousSymbolsAndArrows);
 
             symbolsAndPunctuation[31] = new Group(new UnicodeRange(0x1D100, 0x1D1FF), "Other Symbols", "Musical Symbols", "any", UnicodeChart.MusicalSymbols);
-            symbolsAndPunctuation[31].SubGroups = new SubGroup[2]; 
+            symbolsAndPunctuation[31].SubGroups = new SubGroup[2];
             symbolsAndPunctuation[31].SubGroups[0] = new SubGroup(new UnicodeRange(0x1D200, 0x1D24F), "Ancient Greek Musical Notation", "el", UnicodeChart.AncientGreekMusicalNotation);
             symbolsAndPunctuation[31].SubGroups[1] = new SubGroup(new UnicodeRange(0x1D000, 0x1D0FF), "Byzantine Musical Symbols", "other", UnicodeChart.ByzantineMusicalSymbols);
 
             // Yijing Symbols is not defined. Use Yijing Mono-, Di- and Trigrams range.
             symbolsAndPunctuation[32] = new Group(new UnicodeRange(0x2600, 0x26FF), "Other Symbols", "Yijing Symbols", "zh", UnicodeChart.YijingSymbols);
-            symbolsAndPunctuation[32].SubGroups = new SubGroup[3]; 
+            symbolsAndPunctuation[32].SubGroups = new SubGroup[3];
             symbolsAndPunctuation[32].SubGroups[0] = new SubGroup(new UnicodeRange(0x2600, 0x26FF), "Yijing Mono-, Di- and Trigrams", "zh", UnicodeChart.YijingMonoDiAndTrigrams);
             symbolsAndPunctuation[32].SubGroups[1] = new SubGroup(new UnicodeRange(0x4DC0, 0x4DFF), "Yijing Hexagram Symbols", "zh", UnicodeChart.YijingHexagramSymbols);
             symbolsAndPunctuation[32].SubGroups[2] = new SubGroup(new UnicodeRange(0x1D300, 0x1D35F), "Tai Xuan Jing Symbols", "zh", UnicodeChart.TaiXuanJingSymbols);
 
             // Controls is not defined. Use C0 and C1 range.
             symbolsAndPunctuation[33] = new Group(new UnicodeRange(0x0000, 0x00FF), "Specials", "Controls", "any", UnicodeChart.Controls);
-            symbolsAndPunctuation[33].SubGroups = new SubGroup[4]; 
+            symbolsAndPunctuation[33].SubGroups = new SubGroup[4];
             symbolsAndPunctuation[33].SubGroups[0] = new SubGroup(new UnicodeRange(0x0000, 0x007F), "C0", "any", UnicodeChart.C0);
             symbolsAndPunctuation[33].SubGroups[1] = new SubGroup(new UnicodeRange(0x0080, 0x00FF), "C1", "any", UnicodeChart.C1);
             symbolsAndPunctuation[33].SubGroups[2] = new SubGroup(new UnicodeRange(0x2000, 0x206F), "Layout Controls", "any", UnicodeChart.LayoutControls);
@@ -400,21 +400,21 @@ namespace Microsoft.Test.Text
             symbolsAndPunctuation[35] = new Group(new UnicodeRange(0xE0000, 0xE007F), "Specials", "Tags", "any", UnicodeChart.Tags);
 
             symbolsAndPunctuation[36] = new Group(new UnicodeRange(0xFE00, 0xFE0F), "Specials", "Variation Selectors", "any", UnicodeChart.VariationSelectors);
-            symbolsAndPunctuation[36].SubGroups = new SubGroup[1]; 
+            symbolsAndPunctuation[36].SubGroups = new SubGroup[1];
             symbolsAndPunctuation[36].SubGroups[0] = new SubGroup(new UnicodeRange(0xE0100, 0xE01EF), "Variation Selectors Supplement", "any", UnicodeChart.VariationSelectorsSupplement);
 
             symbolsAndPunctuation[37] = new Group(new UnicodeRange(0xE000, 0xF8FF), "Private Use", "Private Use Area", "any", UnicodeChart.PrivateUseArea);
             symbolsAndPunctuation[38] = new Group(new UnicodeRange(0xF0000, 0xFFFFD), "Private Use", "Supplementary Private Use Area-A", "any", UnicodeChart.SupplementaryPrivateUseAreaA);
             symbolsAndPunctuation[39] = new Group(new UnicodeRange(0x100000, 0x10FFFD), "Private Use", "Supplementary Private Use Area-B", "any", UnicodeChart.SupplementaryPrivateUseAreaB);
-            
+
             symbolsAndPunctuation[40] = new Group(new UnicodeRange(0xD800, 0xDBFF), "Surrogates", "High Surrogates", "zh", UnicodeChart.HighSurrogates);
             symbolsAndPunctuation[41] = new Group(new UnicodeRange(0xDC00, 0xDFFF), "Surrogates", "Low Surrogates", "zh", UnicodeChart.LowSurrogates);
-            
+
             symbolsAndPunctuation[42] = new Group(new UnicodeRange(0xFB50, 0xFDFF), "Noncharacters in UnicodeCharts", "Reserved range", "any", UnicodeChart.ReservedRange);
 
             // at end of... is not defined. Use BMP range.
             symbolsAndPunctuation[43] = new Group(new UnicodeRange(0xFFF0, 0xFFFF), "Noncharacters in UnicodeCharts", "at end of...", "any", UnicodeChart.AtEndOf);
-            symbolsAndPunctuation[43].SubGroups = new SubGroup[17]; 
+            symbolsAndPunctuation[43].SubGroups = new SubGroup[17];
             symbolsAndPunctuation[43].SubGroups[0] = new SubGroup(new UnicodeRange(0xFFF0, 0xFFFF), "BMP", "any", UnicodeChart.Bmp);
             symbolsAndPunctuation[43].SubGroups[1] = new SubGroup(new UnicodeRange(0x1FF80, 0x1FFFF), "Plane 1", "any", UnicodeChart.Plane1);
             symbolsAndPunctuation[43].SubGroups[2] = new SubGroup(new UnicodeRange(0x2FF80, 0x2FFFF), "Plane 2", "any", UnicodeChart.Plane2);

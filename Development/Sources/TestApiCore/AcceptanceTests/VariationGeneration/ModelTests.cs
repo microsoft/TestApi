@@ -148,7 +148,7 @@ namespace Microsoft.Test.AcceptanceTests.VariationGeneration
         {
             var type = new Parameter<string>("Type")
             {
-                "Single", 
+                "Single",
                 "Spanned",
                 "Striped",
                 "Mirror",
@@ -212,7 +212,7 @@ namespace Microsoft.Test.AcceptanceTests.VariationGeneration
             var ieVersion = new Parameter<string>("ieVersion") { "osDefault", "ie7", "ie8" };
             var highDpi = new Parameter<string>("hiDpi") { "yes", "no" };
             var theme = new Parameter<string>("theme") { "Classic", "Luna", "Royale", "Classic High Contrast", "Aero Basic", "Aero Glass" };
-            var sxs = new Parameter<string>("sxs") 
+            var sxs = new Parameter<string>("sxs")
             {
                 "3.5 SP1 + 4 (3.5 tests)",
                 "3.5 SP1 + 4 (4 tests)",

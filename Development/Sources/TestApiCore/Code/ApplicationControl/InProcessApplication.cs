@@ -18,7 +18,7 @@ namespace Microsoft.Test.ApplicationControl
     /// <example>
     /// The following example demonstrates how to use this class. The code runs the target
     /// application in a separate thread within the current process.
-    /// <code>
+    /// <code lang="C#" >
     /// public void MyTest()
     /// {
     ///    var path = Path.Combine(executionDir, "WpfTestApplication.exe");
@@ -28,12 +28,12 @@ namespace Microsoft.Test.ApplicationControl
     ///         InProcessApplicationType = InProcessApplicationType.InProcessSeparateThread,
     ///         ApplicationImplementationFactory = new WpfInProcessApplicationFactory()
     ///    });
-    /// 
+    ///
     ///    a.Start();
     ///    a.WaitForMainWindow(TimeSpan.FromMilliseconds(5000));
-    ///    
+    ///
     ///    // Perform various tests...
-    ///    
+    ///
     ///    a.Close();
     /// }
     /// </code>
@@ -53,7 +53,7 @@ namespace Microsoft.Test.ApplicationControl
         #region Public Properties
 
         /// <summary>
-        /// Access to the UI thread dispatcher.  
+        /// Access to the UI thread dispatcher.
         /// </summary>
         /// <remarks>
         /// This is used only for the in-proc/separate thread scenario.
@@ -86,12 +86,12 @@ namespace Microsoft.Test.ApplicationControl
         #region Override Members
 
         /// <summary>
-        /// Creates and starts the test application. 
-        /// </summary>        
+        /// Creates and starts the test application.
+        /// </summary>
         /// <remarks>
         /// Depending on the AutomatedApplicationType
         /// this can be on the same thread or on a separate thread.
-        /// </remarks>        
+        /// </remarks>
         public override void Start()
         {
             if (IsApplicationRunning)
@@ -139,18 +139,18 @@ namespace Microsoft.Test.ApplicationControl
             if (string.IsNullOrEmpty(settings.Path))
             {
                 throw new InvalidOperationException("For InProc scenarios, Path cannot be null or empty.");
-            }            
+            }
         }
 
         #endregion Override Members
 
-        #region Private Methods       
+        #region Private Methods
 
         /// <summary>
-        /// Thread worker that creates the AutomatedApplication implementation and 
+        /// Thread worker that creates the AutomatedApplication implementation and
         /// starts the application. If InProcessSeparateThreadAndAppDomain is specified
         /// then the AutomatedApplication implementation is created in a new AppDomain.
-        /// </summary>        
+        /// </summary>
         private void ApplicationStartWorker()
         {
             AppDomain testAppDomain = null;

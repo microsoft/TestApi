@@ -38,6 +38,6 @@ namespace Microsoft.Test.VariationGeneration
             }
 
             return ConstraintSatisfaction.Satisfied;
-        }        
+        }
     }
 }

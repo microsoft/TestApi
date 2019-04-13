@@ -45,7 +45,7 @@ namespace Microsoft.Test.FaultInjection
             set
             {
                 calledTimes = value;
-                
+
             }
         }
 
@@ -60,7 +60,7 @@ namespace Microsoft.Test.FaultInjection
             }
             set
             {
-                callStackTrace = value;          
+                callStackTrace = value;
             }
         }
 
@@ -74,8 +74,8 @@ namespace Microsoft.Test.FaultInjection
                 return callStack;
             }
             set
-            {              
-                callStack = value;              
+            {
+                callStack = value;
             }
         }
 
@@ -97,6 +97,6 @@ namespace Microsoft.Test.FaultInjection
             }
         }
 
-        #endregion    
+        #endregion
     }
 }

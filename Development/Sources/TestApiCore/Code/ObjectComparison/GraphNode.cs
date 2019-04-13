@@ -23,8 +23,8 @@ namespace Microsoft.Test.ObjectComparison
         /// A name to identify this node. When comparing,
         /// the left and right nodes are matched by name.
         /// </summary>
-        public string Name 
-        { 
+        public string Name
+        {
             get
             {
                 return this.name;
@@ -61,7 +61,7 @@ namespace Microsoft.Test.ObjectComparison
 
         /// <summary>
         /// Represents the immediate parent to this node.
-        /// The parent node of the root of the graph is null. 
+        /// The parent node of the root of the graph is null.
         /// </summary>
         public GraphNode Parent { get; set; }
 
@@ -72,10 +72,10 @@ namespace Microsoft.Test.ObjectComparison
         public object ObjectValue { get; set; }
 
         /// <summary>
-        /// Provides the System.Type of the object represented by 
+        /// Provides the System.Type of the object represented by
         /// this node. Returns null if the object value is null.
         /// </summary>
-        public Type ObjectType 
+        public Type ObjectType
         {
             get
             {
@@ -135,7 +135,7 @@ namespace Microsoft.Test.ObjectComparison
         /// <remarks>
         /// The comparison strategy is attached by an object graph factory
         /// to a node if it needs some special comparison algorithm.
-        /// If no comparison strategy is attached, then the default 
+        /// If no comparison strategy is attached, then the default
         /// comparison is performed.
         /// </remarks>
         public ObjectGraphComparisonStrategy ComparisonStrategy
@@ -144,7 +144,7 @@ namespace Microsoft.Test.ObjectComparison
         }
 
         /// <summary>
-        /// Performs a depth-first traversal of the graph with 
+        /// Performs a depth-first traversal of the graph with
         /// this node as root, and provides the nodes visited, in that
         /// order.
         /// </summary>

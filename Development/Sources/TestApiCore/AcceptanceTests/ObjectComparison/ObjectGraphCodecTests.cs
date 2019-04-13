@@ -205,7 +205,7 @@ namespace Microsoft.Test.AcceptanceTests.ObjectComparison
 
             var root2 = new GraphNode { Name = "RootNode" };
             {
-                
+
                 var child1 = new GraphNode { Name = "Name", Parent = root2, ObjectValue = "Peter" };
                 var child3 = new GraphNode { Name = "Value", Parent = root2, ObjectValue = "Milk" };
                 var child2 = new GraphNode { Name = "Value", Parent = root2 };
@@ -384,7 +384,7 @@ namespace Microsoft.Test.AcceptanceTests.ObjectComparison
             var stream = new MemoryStream();
             var codec = new SimpleCodec();
             codec.EncodeObjectGraph(graph1, stream);
-            
+
             // Print the result
             Console.WriteLine(Encoding.UTF8.GetString(stream.GetBuffer()));
 

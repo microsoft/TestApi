@@ -11,9 +11,9 @@ namespace Microsoft.Test.VisualVerification
     /// Verifies that all pixels in a Snapshot are within the tolerance range, defined by the tolerance map.
     /// </summary>
     /// <example>
-    /// The following code demonstrates how to use SnapshotToleranceMapVerifier 
+    /// The following code demonstrates how to use SnapshotToleranceMapVerifier
     /// for visual verification purposes.
-    /// <code>
+    /// <code lang="C#" >
     /// // Take a snapshot, compare to the master image and generate a diff
     /// WindowSnapshotMode wsm = WindowSnapshotMode.ExcludeWindowBorder;
     ///
@@ -38,11 +38,11 @@ namespace Microsoft.Test.VisualVerification
         #region Constructors
 
         /// <summary>
-        /// Initializes a new instance of the SnapshotToleranceMapVerifier class, using the specified tolerance map. 
+        /// Initializes a new instance of the SnapshotToleranceMapVerifier class, using the specified tolerance map.
         /// </summary>
         /// <param name="toleranceMap">
         /// A Snapshot instance defining the tolerance map, used by the verifier.
-        /// A black tolerance map (a snapshot, where all pixels are with zero values) means zero tolerance. 
+        /// A black tolerance map (a snapshot, where all pixels are with zero values) means zero tolerance.
         /// A white tolerance map (a snapshot, where all pixels are with value 0xFF) means infinitely high tolerance.
         /// </param>
         public SnapshotToleranceMapVerifier(Snapshot toleranceMap)
@@ -89,7 +89,7 @@ namespace Microsoft.Test.VisualVerification
 
         /// <summary>
         /// A Snapshot defining the tolerance map used by the verifier.
-        /// A black tolerance map (a snapshot, where all pixels are with zero values) means zero tolerance. 
+        /// A black tolerance map (a snapshot, where all pixels are with zero values) means zero tolerance.
         /// A white tolerance map (a snapshot, where all pixels are with value 0xFF) means infinitely high tolerance.
         /// </summary>
         public Snapshot ToleranceMap { get; set; }

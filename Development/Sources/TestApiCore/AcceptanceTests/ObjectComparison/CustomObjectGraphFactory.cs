@@ -21,13 +21,13 @@ namespace Microsoft.Test.AcceptanceTests.ObjectComparison
     {
         public override GraphNode CreateObjectGraph(object value, ObjectGraphFactoryMap factoryMap = null)
         {
-            // Queue of pending nodes 
+            // Queue of pending nodes
             Queue<GraphNode> pendingQueue = new Queue<GraphNode>();
 
-            // Dictionary of < object hashcode, node > - to lookup already visited objects 
+            // Dictionary of < object hashcode, node > - to lookup already visited objects
             Dictionary<int, GraphNode> visitedObjects = new Dictionary<int, GraphNode>();
 
-            // Build the root node and enqueue it 
+            // Build the root node and enqueue it
             GraphNode root = new GraphNode()
             {
                 Name = "RootObject",
@@ -49,7 +49,7 @@ namespace Microsoft.Test.AcceptanceTests.ObjectComparison
                     continue;
                 }
 
-                // Handle loops by checking the visted objects 
+                // Handle loops by checking the visted objects
                 if (visitedObjects.Keys.Contains(nodeData.GetHashCode()))
                 {
                     // Caused by a cycle - we have alredy seen this node so
@@ -87,9 +87,9 @@ namespace Microsoft.Test.AcceptanceTests.ObjectComparison
                 return childNodes;
             }
 
-            // Get all properties with the [ExtractProperty] attribute on it 
+            // Get all properties with the [ExtractProperty] attribute on it
             PropertyDescriptorCollection properties = TypeDescriptor.GetProperties(
-                nodeData, 
+                nodeData,
                 new Attribute[] { new ExtractPropertyAttribute() });
 
             // Add the properties to the children collection

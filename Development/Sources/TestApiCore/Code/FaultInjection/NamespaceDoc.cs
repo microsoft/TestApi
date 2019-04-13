@@ -6,8 +6,8 @@
 namespace Microsoft.Test.FaultInjection
 {
     /// <summary>
-    /// Contains facilities for runtime fault injection in managed code. 
-    /// The API allows a test to simulate various faults in order to better exercise 
+    /// Contains facilities for runtime fault injection in managed code.
+    /// The API allows a test to simulate various faults in order to better exercise
     /// code-paths in the tested system.
     /// </summary>
     [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Performance", "CA1812")]

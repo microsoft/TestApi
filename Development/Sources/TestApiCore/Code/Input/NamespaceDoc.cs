@@ -6,7 +6,7 @@
 namespace Microsoft.Test.Input
 {
     /// <summary>
-    /// Contains facilities for realistic simulation of user input 
+    /// Contains facilities for realistic simulation of user input
     /// (keyboard, mouse, pen, multi-touch).
     /// </summary>
     [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Performance", "CA1812")]

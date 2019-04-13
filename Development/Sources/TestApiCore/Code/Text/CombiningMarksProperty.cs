@@ -30,9 +30,9 @@ namespace Microsoft.Test.Text
         /// Define minimum code points needed to be a combining mark string
         /// </summary>
         public static readonly int MINNUMOFCODEPOINT = 2;
-        
+
        /// <summary>
-       /// Define CombiningMarksProperty class 
+       /// Define CombiningMarksProperty class
        /// <a href="http://www.unicode.org/charts/PDF/U0300.pdf">Newline</a>
        /// <a href="http://www.unicode.org/charts/PDF/U1DC0.pdf">Newline</a>
        /// <a href="http://www.unicode.org/charts/PDF/UFE20.pdf">Newline</a>
@@ -65,13 +65,13 @@ namespace Microsoft.Test.Text
                     "Refer to Combining Diacritics range.");
             }
         }
-       
+
         private bool InitializeCombiningMarksDictionary(Collection<UnicodeRange> expectedRanges)
         {
             // Grave and acute accent
-            char [] other = {'\u0302', '\u0307', '\u030A', '\u0315', '\u0316', '\u0317', '\u0318', '\u0319', '\u031A', '\u031C', '\u031D', 
-                '\u031E', '\u031F', '\u0320', '\u0321', '\u0322', '\u0324', '\u032A', '\u032B', '\u032C', '\u032E', '\u0330', '\u0332', 
-                '\u0333', '\u0334', '\u0335', '\u0336', '\u0337', '\u0338', '\u0339', '\u033A', '\u033B', '\u033C', '\u033D', '\u033F', 
+            char [] other = {'\u0302', '\u0307', '\u030A', '\u0315', '\u0316', '\u0317', '\u0318', '\u0319', '\u031A', '\u031C', '\u031D',
+                '\u031E', '\u031F', '\u0320', '\u0321', '\u0322', '\u0324', '\u032A', '\u032B', '\u032C', '\u032E', '\u0330', '\u0332',
+                '\u0333', '\u0334', '\u0335', '\u0336', '\u0337', '\u0338', '\u0339', '\u033A', '\u033B', '\u033C', '\u033D', '\u033F',
                 '\u0346', '\u0347', '\u0348', '\u0349', '\u034A', '\u034B', '\u034C', '\u034D', '\u034E', '\u034F', '\u0358', '\u0359',
                 '\u035A', '\u035B', '\u035C', '\u035D', '\u035E', '\u0360', '\u0361', '\u0362', '\u0323', '\u0328', '\u032D', '\u032F',
                 '\u1DC8', '\u1DC9', '\u1DCA', '\u1DCE', '\u1DCF', '\u1DD0', '\u1DD1', '\u1DD2', '\u1DD3',  '\u1DD4', '\u1DD5', '\u1DD6',
@@ -80,9 +80,9 @@ namespace Microsoft.Test.Text
             combiningMarksDictionary.Add("other", other);
             char [] vi = {'\u0303', '\u0308', '\u031B', '\u0323', '\u0340', '\u0341'};
             combiningMarksDictionary.Add("vi", vi);
-            char [] el = {'\u0300','\u0301', '\u0304', '\u0305', '\u0306', '\u0308', '\u0313', '\u0314', '\u0331', '\u0342', '\u0343', 
+            char [] el = {'\u0300','\u0301', '\u0304', '\u0305', '\u0306', '\u0308', '\u0313', '\u0314', '\u0331', '\u0342', '\u0343',
                 '\u0344', '\u0345', '\u1DC0', '\u1DC1', '\u1DC4', '\u1DC5', '\u1DC6', '\u1DC7', '\uFE24', '\uFE25', '\uFE26'};
-            combiningMarksDictionary.Add("el", el); 
+            combiningMarksDictionary.Add("el", el);
             char [] hu = {'\u030B', '\u0350', '\u0351', '\u0352', '\u0353', '\u0354', '\u0355', '\u0356', '\u0357'};
             combiningMarksDictionary.Add("hu", hu);
             char [] cs = {'\u030C'};
@@ -91,7 +91,7 @@ namespace Microsoft.Test.Text
             combiningMarksDictionary.Add("id", id);
             char [] ms = {'\u030D', '\u030E'};
             combiningMarksDictionary.Add("ms", ms);
-            char [] srsp = {'\u030F', '\u0311', '\u0313', '\u0314', '\u033E', '\u0351', '\u0352', '\u0353', '\u0354', '\u0355', '\u0356', 
+            char [] srsp = {'\u030F', '\u0311', '\u0313', '\u0314', '\u033E', '\u0351', '\u0352', '\u0353', '\u0354', '\u0355', '\u0356',
                 '\u0357', '\u1DC3'};
             combiningMarksDictionary.Add("sr-sp", srsp);
             char [] hr = {'\u030F', '\u1DC3'};
@@ -124,7 +124,7 @@ namespace Microsoft.Test.Text
             combiningMarksDictionary.Add("lt", lt);
             char [] yoruba = {'\u0329'};
             combiningMarksDictionary.Add("yoruba", yoruba);
-            char [] de = {'\u0329', '\u0363', '\u0364', '\u0365', '\u0366', '\u0367', '\u0368', '\u0369', '\u036A', '\u036B', '\u036C', '\u036D', 
+            char [] de = {'\u0329', '\u0363', '\u0364', '\u0365', '\u0366', '\u0367', '\u0368', '\u0369', '\u036A', '\u036B', '\u036C', '\u036D',
                 '\u036E', '\u036F'};
             combiningMarksDictionary.Add("de", de);
             char [] et = {'\u0350', '\u0351', '\u0352', '\u0353', '\u0354', '\u0355', '\u0356', '\u0357'};
@@ -143,16 +143,16 @@ namespace Microsoft.Test.Text
             combiningMarksDictionary.Add("sl", sl);
             char [] uk = {'\u1DC3'};
             combiningMarksDictionary.Add("uk", uk);
-            char [] symbol = {'\u20D0', '\u20D1', '\u20D2', '\u20D3', '\u20D4', '\u20D5', '\u20D6', '\u20D7', '\u20D8', '\u20D9', '\u20DA', 
-                '\u20DF', '\u20E0', '\u20E1', '\u20E2', '\u20E3', '\u20E4', '\u20E5', '\u20E6', '\u20E7', '\u20E8', '\u20E9', '\u20EA', '\u20EB', 
+            char [] symbol = {'\u20D0', '\u20D1', '\u20D2', '\u20D3', '\u20D4', '\u20D5', '\u20D6', '\u20D7', '\u20D8', '\u20D9', '\u20DA',
+                '\u20DF', '\u20E0', '\u20E1', '\u20E2', '\u20E3', '\u20E4', '\u20E5', '\u20E6', '\u20E7', '\u20E8', '\u20E9', '\u20EA', '\u20EB',
                 '\u20EC', '\u20ED', '\u20EF', '\u20F0'};
             combiningMarksDictionary.Add("symbol", symbol);
 
             bool isValid = false;
             int i = 0;
-            combiningMarks = new int [other.Length + vi.Length + el.Length + hu.Length + cs.Length + id.Length + ms.Length + srsp.Length + hr.Length + 
-                hi.Length + azaz.Length + uzuz.Length + lv.Length + fi.Length + hy.Length + he.Length + ar.Length + ro.Length + fr.Length + tr.Length + 
-                pl.Length + lt.Length + yoruba.Length + de.Length + et.Length + ru.Length + sk.Length + be.Length + bg.Length + mk.Length + sl.Length + 
+            combiningMarks = new int [other.Length + vi.Length + el.Length + hu.Length + cs.Length + id.Length + ms.Length + srsp.Length + hr.Length +
+                hi.Length + azaz.Length + uzuz.Length + lv.Length + fi.Length + hy.Length + he.Length + ar.Length + ro.Length + fr.Length + tr.Length +
+                pl.Length + lt.Length + yoruba.Length + de.Length + et.Length + ru.Length + sk.Length + be.Length + bg.Length + mk.Length + sl.Length +
                 uk.Length + symbol.Length];
             Dictionary<string, char[]>.ValueCollection valueColl = combiningMarksDictionary.Values;
             foreach (char [] values in valueColl)

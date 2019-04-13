@@ -48,7 +48,7 @@ namespace Microsoft.Test.Input
         /// <summary>
         ///     The ENTER key.
         /// </summary>
-        Enter = Return,        
+        Enter = Return,
 
         /// <summary>
         ///     The SHIFT key.
@@ -198,7 +198,7 @@ namespace Microsoft.Test.Input
         /// <summary>
         ///     The PRINT key.
         /// </summary>
-        Print = 0x2A,        
+        Print = 0x2A,
 
         /// <summary>
         ///     The EXECUTE key.
@@ -801,9 +801,9 @@ namespace Microsoft.Test.Input
         OemQuestion = Oem2,
 
         /// <summary>
-        ///     The Oem 3 key.  '`~' for US            
+        ///     The Oem 3 key.  '`~' for US
         /// </summary>
-        Oem3 = 0xC0,   
+        Oem3 = 0xC0,
 
          /// <summary>
         ///     The Oem tilde key.
@@ -819,47 +819,47 @@ namespace Microsoft.Test.Input
         ///     The ABNT_C2 (Brazilian) key.
         /// </summary>
         AbntC2 = 0xC2,
-        
+
         /// <summary>
         ///     The Oem 4 key.
         /// </summary>
         Oem4 = 0xDB,
-        
+
         /// <summary>
         ///     The Oem Open Brackets key.
         /// </summary>
         OemOpenBrackets = Oem4,
-        
+
         /// <summary>
         ///     The Oem 5 key.
         /// </summary>
         Oem5 = 0xDC,
-        
+
         /// <summary>
         ///     The Oem Pipe key.
         /// </summary>
         OemPipe       = Oem5,
-        
+
         /// <summary>
         ///     The Oem 6 key.
         /// </summary>
         Oem6 = 0xDD,
-        
+
         /// <summary>
         ///     The Oem Close Brackets key.
         /// </summary>
         OemCloseBrackets = Oem6,
-        
+
         /// <summary>
         ///     The Oem 7 key.
         /// </summary>
         Oem7 = 0xDE,
-        
+
         /// <summary>
         ///     The Oem Quotes key.
         /// </summary>
         OemQuotes     = Oem7,
-        
+
         /// <summary>
         ///     The Oem8 key.
         /// </summary>
@@ -869,7 +869,7 @@ namespace Microsoft.Test.Input
         ///     The Oem 102 key.
         /// </summary>
         Oem102 = 0xE2,
-        
+
         /// <summary>
         ///     The Oem Backslash key.
         /// </summary>
@@ -954,7 +954,7 @@ namespace Microsoft.Test.Input
         ///     The DBE_NOROMAN key.
         /// </summary>
         DbeNoRoman = Attn,
-        
+
         /// <summary>
         ///     The CRSEL key.
         /// </summary>
@@ -974,7 +974,7 @@ namespace Microsoft.Test.Input
         ///     The DBE_ENTERIMECONFIGMODE key.
         /// </summary>
         DbeEnterImeConfigureMode = ExSel,
-        
+
         /// <summary>
         ///     The ERASE EOF key.
         /// </summary>
@@ -984,7 +984,7 @@ namespace Microsoft.Test.Input
         ///     The DBE_FLUSHSTRING key.
         /// </summary>
         DbeFlushString = EraseEof,
-        
+
         /// <summary>
         ///     The PLAY key.
         /// </summary>
@@ -994,7 +994,7 @@ namespace Microsoft.Test.Input
         ///     The DBE_CODEINPUT key.
         /// </summary>
         DbeCodeInput = Play,
-        
+
         /// <summary>
         ///     The ZOOM key.
         /// </summary>
@@ -1004,7 +1004,7 @@ namespace Microsoft.Test.Input
         ///     The DBE_NOCODEINPUT key.
         /// </summary>
         DbeNoCodeInput = Zoom,
-        
+
         /// <summary>
         ///     A constant reserved for future use.
         /// </summary>
@@ -1014,7 +1014,7 @@ namespace Microsoft.Test.Input
         ///     The DBE_DETERMINESTRING key.
         /// </summary>
         DbeDetermineString = NoName,
-        
+
         /// <summary>
         ///     The PA1 key.
         /// </summary>
@@ -1024,7 +1024,7 @@ namespace Microsoft.Test.Input
         ///     The DBE_ENTERDLGCONVERSIONMODE key.
         /// </summary>
         DbeEnterDialogConversionMode = Pa1,
-        
+
         /// <summary>
         ///     The CLEAR key.
         /// </summary>

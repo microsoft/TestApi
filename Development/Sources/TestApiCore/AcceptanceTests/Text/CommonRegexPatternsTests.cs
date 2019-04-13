@@ -60,7 +60,7 @@ namespace Microsoft.Test.AcceptanceTests.Text
                 yield return new object[] { CommonRegexPatterns.Guid, @"0f8fad5b-d9cb-469f-a165-70867728950", false };
                 yield return new object[] { CommonRegexPatterns.Guid, @"0f8fad5b-d9cb-469f-a165-70867728950ee", false };
 
-                yield return new object[] { CommonRegexPatterns.IpAddress, @"127.0.0.1", true }; 
+                yield return new object[] { CommonRegexPatterns.IpAddress, @"127.0.0.1", true };
                 yield return new object[] { CommonRegexPatterns.IpAddress, @"127.0.0.0", true };
                 yield return new object[] { CommonRegexPatterns.IpAddress, @"255.255.255.255", true };
                 yield return new object[] { CommonRegexPatterns.IpAddress, @"255.255.255.256", false };
@@ -68,7 +68,7 @@ namespace Microsoft.Test.AcceptanceTests.Text
                 yield return new object[] { CommonRegexPatterns.IpAddress, @"256.0.0.1", false };
                 yield return new object[] { CommonRegexPatterns.IpAddress, @"127.0.0.1.", false };
                 yield return new object[] { CommonRegexPatterns.IpAddress, @"127.0.0.", false };
-                yield return new object[] { CommonRegexPatterns.IpAddress, @"127.0.0", false }; 
+                yield return new object[] { CommonRegexPatterns.IpAddress, @"127.0.0", false };
 
                 yield return new object[] { CommonRegexPatterns.Time, @"13:01", true };
                 yield return new object[] { CommonRegexPatterns.Time, @"01:01", true };

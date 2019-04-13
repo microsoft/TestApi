@@ -33,7 +33,7 @@ namespace Microsoft.Test.AcceptanceTests.FaultInjection
             }
 
             #endregion
-            
+
             [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1034")] //Don't nest class
             public class DoublyNestedClass
             {

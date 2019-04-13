@@ -11,14 +11,14 @@ namespace Microsoft.Test.FaultInjection
     #region Public Members
 
     /// <summary>
-    /// Contains all built-in faults. 
+    /// Contains all built-in faults.
     /// </summary>
     /// <remarks>
-    /// For more information on how to use the BuiltInFaults class, see the <see cref="FaultSession"/> class. 
+    /// For more information on how to use the BuiltInFaults class, see the <see cref="FaultSession"/> class.
     /// All fault injection faults implement the <see cref="IFault"/> interface.
     /// </remarks>
     public static class BuiltInFaults
-    {   
+    {
         /// <summary>
         /// A built-in fault which returns when triggered.
         /// </summary>
@@ -47,7 +47,7 @@ namespace Microsoft.Test.FaultInjection
         /// (int)3, (double)6.6, (bool)true, ‘Hello World’ which means "Hello World",
         /// System.Exception(‘This is a fault’).
         /// </param>
-        
+
         public static IFault ReturnValueRuntimeFault(string returnValueExpression)
         {
             return new ReturnValueRuntimeFault(returnValueExpression);

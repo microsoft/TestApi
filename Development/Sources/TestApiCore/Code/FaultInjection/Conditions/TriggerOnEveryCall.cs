@@ -14,5 +14,5 @@ namespace Microsoft.Test.FaultInjection.Conditions
         {
             return true;
         }
-    }    
+    }
 }

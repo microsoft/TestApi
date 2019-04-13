@@ -15,7 +15,7 @@ namespace Microsoft.Test.Input
     /// Exposes a simple interface to common mouse operations, allowing the user to simulate mouse input.
     /// </summary>
     /// <example>The following code moves to screen coordinate 100,100 and left clicks.
-    /// <code>
+    /// <code lang="C#" >
     /// Mouse.MoveTo(new Point(100, 100));
     /// Mouse.Click(MouseButton.Left);
     /// </code>
@@ -57,7 +57,7 @@ namespace Microsoft.Test.Input
 
         /// <summary>
         /// Drags the mouse pointer to the specified screen coordinates, using the specified mouse button.
-        /// Dragging involves pressing and holding the mouse button, moving to the specified location, and 
+        /// Dragging involves pressing and holding the mouse button, moving to the specified location, and
         /// releasing the mouse button.
         /// </summary>
         /// <param name="mouseButton">The mouse button to use.</param>
@@ -115,7 +115,7 @@ namespace Microsoft.Test.Input
         /// Simulates scrolling of the mouse wheel up or down.
         /// </summary>
         /// <param name="lines">
-        /// The number of lines to scroll. Use positive numbers to 
+        /// The number of lines to scroll. Use positive numbers to
         /// scroll up and negative numbers to scroll down.
         /// </param>
         public static void Scroll(double lines)

@@ -15,7 +15,7 @@ namespace Microsoft.Test.ObjectComparison
     /// <summary>
     /// Creates a graph by extracting public instance properties in the object. If the
     /// property is an IEnumerable, extract the items. If an exception is thrown
-    /// when accessing a property on the left object, it is considered a match if 
+    /// when accessing a property on the left object, it is considered a match if
     /// the same exception type is thrown when accessing the property on the right
     /// object.
     /// </summary>
@@ -33,7 +33,7 @@ namespace Microsoft.Test.ObjectComparison
         /// <param name="value">The object to convert.</param>
         /// <param name="factoryMap">
         /// If this parameter is not equal <see lang="null"/>, the map is used
-        /// for each inner object to find out whether some other factory wants 
+        /// for each inner object to find out whether some other factory wants
         /// to process it.
         /// </param>
         /// <returns>The root node of the created graph.</returns>
@@ -44,10 +44,10 @@ namespace Microsoft.Test.ObjectComparison
                 throw new ArgumentNullException("value");
             }
 
-            // Queue of pending nodes 
+            // Queue of pending nodes
             Queue<GraphNode> pendingQueue = new Queue<GraphNode>();
 
-            // Dictionary of < object hashcode, node > - to lookup already visited objects 
+            // Dictionary of < object hashcode, node > - to lookup already visited objects
             Dictionary<int, GraphNode> visitedObjects = new Dictionary<int, GraphNode>();
 
             GraphNode root;
@@ -79,7 +79,7 @@ namespace Microsoft.Test.ObjectComparison
                     continue;
                 }
 
-                // Handle loops by checking the visited objects 
+                // Handle loops by checking the visited objects
                 if (visitedObjects.Keys.Contains(nodeData.GetHashCode()))
                 {
                     // Caused by a cycle - we have already seen this node so
@@ -125,13 +125,13 @@ namespace Microsoft.Test.ObjectComparison
         {
             var childNodes = new Collection<GraphNodeTuple>();
 
-            // Extract and add properties 
+            // Extract and add properties
             foreach (var child in ExtractProperties(nodeData, factoryMap))
             {
                 childNodes.Add(child);
             }
 
-            // Extract and add IEnumerable content 
+            // Extract and add IEnumerable content
             if (IsIEnumerable(nodeData))
             {
                 foreach (var child in GetIEnumerableChildNodes(nodeData, factoryMap))
@@ -164,7 +164,7 @@ namespace Microsoft.Test.ObjectComparison
                     {
                         // If accessing the property threw an exception
                         // then make the type of exception as the child.
-                        // Do we want to validate the entire exception object 
+                        // Do we want to validate the entire exception object
                         // here ? - currently not doing to improve perf.
                         value = ex.GetType().ToString();
                     }

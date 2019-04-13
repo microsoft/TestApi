@@ -20,7 +20,7 @@ namespace Microsoft.Test.FaultInjection
         /// Initializes a new instance of the FaultInjectionException class.
         /// </summary>
         public FaultInjectionException() { }
-        
+
         /// <summary>
         /// Initializes a new instance of the FaultInjectionException class using the specified message.
         /// </summary>
@@ -31,7 +31,7 @@ namespace Microsoft.Test.FaultInjection
         /// exception.
         /// </summary>
         public FaultInjectionException(string message, Exception innerException) : base(message, innerException) { }
-        
+
         /// <summary>
         /// Constructor used for serialization purposes.
         /// </summary>

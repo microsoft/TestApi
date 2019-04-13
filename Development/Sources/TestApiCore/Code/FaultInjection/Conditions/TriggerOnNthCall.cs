@@ -28,5 +28,5 @@ namespace Microsoft.Test.FaultInjection.Conditions
             return false;
         }
         private int n;
-    } 
+    }
 }

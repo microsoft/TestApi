@@ -17,7 +17,7 @@ namespace Microsoft.Test.CommandLineParsing
     ///
     /// <example>
     /// The example below demonstrates parsing a command line such as "Test.exe /verbose /runId=10"
-    /// <code>
+    /// <code lang="C#" >
     /// CommandLineDictionary d = CommandLineDictionary.FromArguments(args);
     ///
     /// bool verbose = d.ContainsKey("verbose");
@@ -27,10 +27,10 @@ namespace Microsoft.Test.CommandLineParsing
     ///
     /// <example>
     /// You can also explicitly provide key and value identifiers for the cases
-    /// that use other characters (rather than '/' and '=') as key/value identifiers. 
+    /// that use other characters (rather than '/' and '=') as key/value identifiers.
     /// The example below demonstrates parsing a command line such as "Test.exe -verbose -runId:10"
-    /// <code>
-    /// CommandLineDictionary d = CommandLineDictionary.FromArguments(args, '-', ':');  
+    /// <code lang="C#" >
+    /// CommandLineDictionary d = CommandLineDictionary.FromArguments(args, '-', ':');
     ///
     /// bool verbose = d.ContainsKey("verbose");
     /// int runId = Int32.Parse(d["runId"]);
@@ -68,8 +68,8 @@ namespace Microsoft.Test.CommandLineParsing
         #region Public Members
 
         /// <summary>
-        /// Initializes a new instance of the CommandLineDictionary class, populating a 
-        /// dictionary with key/value pairs from a command line that supports syntax 
+        /// Initializes a new instance of the CommandLineDictionary class, populating a
+        /// dictionary with key/value pairs from a command line that supports syntax
         /// where options are provided in the form "/key=value".
         /// </summary>
         /// <param name="arguments">Key/value pairs.</param>
@@ -80,9 +80,9 @@ namespace Microsoft.Test.CommandLineParsing
         }
 
         /// <summary>
-        /// Creates a dictionary that is populated with key/value pairs from a command line 
-        /// that supports syntax where options are provided in the form "/key=value". 
-        /// This method supports the ability to specify delimiter characters for options in 
+        /// Creates a dictionary that is populated with key/value pairs from a command line
+        /// that supports syntax where options are provided in the form "/key=value".
+        /// This method supports the ability to specify delimiter characters for options in
         /// the command line.
         /// </summary>
         /// <param name="arguments">Key/value pairs.</param>

@@ -14,7 +14,7 @@ namespace Microsoft.Test.ApplicationControl
     ///
     /// <example>
     /// The following example demonstrates how to use this class:
-    /// <code>
+    /// <code lang="C#" >
     /// public void MyTest()
     /// {
     ///    var path = Path.Combine(executionDir, "WpfTestApplication.exe");
@@ -23,12 +23,12 @@ namespace Microsoft.Test.ApplicationControl
     ///        ProcessStartInfo = new ProcessStartInfo(path),
     ///        ApplicationImplementationFactory = new UIAutomationOutOfProcessApplicationFactory()
     ///    });
-    ///  
+    ///
     ///    a.Start();
     ///    a.WaitForMainWindow(TimeSpan.FromMilliseconds(5000));
-    ///    
+    ///
     ///    // Perform various tests...
-    ///    
+    ///
     ///    a.Close();
     /// }
     /// </code>
@@ -42,7 +42,7 @@ namespace Microsoft.Test.ApplicationControl
         public OutOfProcessApplication(OutOfProcessApplicationSettings settings)
         {
             ValidateApplicationSettings(settings);
-            ApplicationSettings = settings;            
+            ApplicationSettings = settings;
         }
 
         /// <summary>

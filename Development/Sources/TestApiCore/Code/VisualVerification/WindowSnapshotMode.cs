@@ -15,7 +15,7 @@ namespace Microsoft.Test.VisualVerification
         /// </summary>
         ExcludeWindowBorder = 0,
         /// <summary>
-        /// Capture a snapshot of the entire window area. This mode includes the window border. 
+        /// Capture a snapshot of the entire window area. This mode includes the window border.
         /// </summary>
         IncludeWindowBorder = 1
     }

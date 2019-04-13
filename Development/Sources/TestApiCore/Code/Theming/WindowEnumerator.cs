@@ -39,7 +39,7 @@ namespace Microsoft.Test.Theming
             foreach (ProcessThread thread in process.Threads)
             {
                 NativeMethods.EnumThreadWindows(
-                    thread.Id, 
+                    thread.Id,
                     (IntPtr hWnd, IntPtr lParam) =>
                     {
                         if (NativeMethods.IsWindowVisible(hWnd))
@@ -48,7 +48,7 @@ namespace Microsoft.Test.Theming
                         }
 
                         return true;
-                    }, 
+                    },
                     IntPtr.Zero);
             }
 
@@ -68,7 +68,7 @@ namespace Microsoft.Test.Theming
 
                 // search child windows
                 NativeMethods.EnumChildWindows(
-                    window.hWnd, 
+                    window.hWnd,
                     (IntPtr hWnd, IntPtr lParam) =>
                     {
                         if (NativeMethods.IsWindowVisible(hWnd))
@@ -77,14 +77,14 @@ namespace Microsoft.Test.Theming
                         }
 
                         return true;
-                    }, 
+                    },
                     IntPtr.Zero);
 
             }
 
             return list.ToArray();
         }
-              
+
         internal static IntPtr FindFirstWindowWithClassName(Process process, string classname)
         {
             var foundhWnd = IntPtr.Zero;
@@ -98,7 +98,7 @@ namespace Microsoft.Test.Theming
 
                 //search child windows
                 NativeMethods.EnumChildWindows(
-                    window.hWnd, 
+                    window.hWnd,
                     (IntPtr hWnd, IntPtr lParam) =>
                     {
                         if (IsVisibleWithClassName(hWnd, classname))
@@ -107,7 +107,7 @@ namespace Microsoft.Test.Theming
                             return false;
                         }
                         return true;
-                    }, 
+                    },
                     IntPtr.Zero);
 
             }
@@ -135,7 +135,7 @@ namespace Microsoft.Test.Theming
 
                 //search child windows
                 NativeMethods.EnumChildWindows(
-                    window.hWnd, 
+                    window.hWnd,
                     (IntPtr hWnd, IntPtr lParam) =>
                     {
                         if (IsVisibleWithCaption(hWnd, caption))
@@ -145,7 +145,7 @@ namespace Microsoft.Test.Theming
                         }
 
                         return true;
-                    }, 
+                    },
                     IntPtr.Zero);
             }
 
@@ -164,7 +164,7 @@ namespace Microsoft.Test.Theming
             var parentWindow = new HwndInfo(parenthWnd);
             var list = new List<HwndInfo>();
             NativeMethods.EnumChildWindows(
-                parenthWnd, 
+                parenthWnd,
                 (IntPtr hWnd, IntPtr lParam) =>
                 {
                     var childWindow = new HwndInfo(hWnd);
@@ -174,7 +174,7 @@ namespace Microsoft.Test.Theming
                     }
 
                     return true;
-                }, 
+                },
                 IntPtr.Zero);
 
             return list.ToArray();

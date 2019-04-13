@@ -18,15 +18,15 @@ namespace Microsoft.Test.Text
         }
 
         public UnicodeRange UnicodeRange { get; set; }
-        
+
         public string GroupName { get; set; }
-        
+
         public string Name { get; set; }
-        
+
         public string Ids { get; set; }
-        
+
         public UnicodeChart UnicodeChart { get; set; }
-        
+
         public SubGroup [] SubGroups { get; set; }
     }
 }

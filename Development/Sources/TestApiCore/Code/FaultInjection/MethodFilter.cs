@@ -30,6 +30,6 @@ namespace Microsoft.Test.FaultInjection
             }
         }
 
-        #endregion  
+        #endregion
     }
 }

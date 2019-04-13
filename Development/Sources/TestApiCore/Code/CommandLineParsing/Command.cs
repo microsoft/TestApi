@@ -10,15 +10,15 @@ namespace Microsoft.Test.CommandLineParsing
     /// <summary>
     /// Provides a base class for the functionality that all commands must implement.
     /// </summary>
-    /// 
+    ///
     /// <example>
     /// The following example shows parsing of a command-line such as "Test.exe RUN /verbose /runId=10"
     /// into a strongly-typed Command, that can then be excuted.
-    /// <code>
+    /// <code lang="C#" >
     /// using System;
     /// using System.Linq;
     /// using Microsoft.Test.CommandLineParsing;
-    /// 
+    ///
     /// public class RunCommand : Command
     /// {
     ///     public bool? Verbose { get; set; }
@@ -26,7 +26,7 @@ namespace Microsoft.Test.CommandLineParsing
     ///
     ///     public override void Execute()
     ///     {
-    ///         Console.WriteLine("RunCommand: Verbose={0} RunId={1}", Verbose, RunId);  
+    ///         Console.WriteLine("RunCommand: Verbose={0} RunId={1}", Verbose, RunId);
     ///     }
     /// }
     ///
@@ -49,8 +49,8 @@ namespace Microsoft.Test.CommandLineParsing
         /// <summary>
         /// The name of the command. The base implementation is to strip off the last
         /// instance of "Command" from the end of the type name. So "DiscoverCommand"
-        /// would become "Discover". If the type name does not have the string "Command" in it, 
-        /// then the name of the command is the same as the type name. This behavior can be 
+        /// would become "Discover". If the type name does not have the string "Command" in it,
+        /// then the name of the command is the same as the type name. This behavior can be
         /// overridden, but most derived classes are going to be of the form [Command Name] + Command.
         /// </summary>
         public virtual string Name

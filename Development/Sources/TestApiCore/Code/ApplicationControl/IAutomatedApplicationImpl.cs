@@ -11,7 +11,7 @@ namespace Microsoft.Test.ApplicationControl
     /// Defines the contract for an AutomatedApplication.
     /// </summary>
     /// <remarks>
-    /// Represents the 'Implemention' inteface for the AutomatedApplication bridge. As such, 
+    /// Represents the 'Implemention' inteface for the AutomatedApplication bridge. As such,
     /// this can vary from the public interface of AutomatedApplication.
     /// </remarks>
     [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Naming", "CA1704:IdentifiersShouldBeSpelledCorrectly", MessageId = "Impl")]
@@ -39,7 +39,7 @@ namespace Microsoft.Test.ApplicationControl
         /// </summary>
         /// <param name="windowName">The window id of the window to wait for.</param>
         /// <param name="timeout">The timeout interval.</param>
-        void WaitForWindow(string windowName, TimeSpan timeout);        
+        void WaitForWindow(string windowName, TimeSpan timeout);
 
         /// <summary>
         /// Waits for the test application to become idle.

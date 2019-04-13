@@ -7,7 +7,7 @@ using System.Xml;
 namespace Microsoft.Test.VisualVerification
 {
     /// <summary>
-    /// This class will consist of just the set of data points loaded out of the Tolerance.xml. 
+    /// This class will consist of just the set of data points loaded out of the Tolerance.xml.
     /// </summary>
     public class ToleranceCurve
     {
@@ -164,7 +164,7 @@ namespace Microsoft.Test.VisualVerification
         /// <summary>
         /// Get a copy of the points generated from Tolerance.xml
         /// </summary>
-        /// <returns></returns>  
+        /// <returns></returns>
         public SortedDictionary<byte, double> GetGraph()
         {
             SortedDictionary<byte, double> result = new SortedDictionary<byte, double>();

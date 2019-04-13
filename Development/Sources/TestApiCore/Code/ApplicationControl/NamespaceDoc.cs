@@ -6,8 +6,8 @@
 namespace Microsoft.Test.ApplicationControl
 {
     /// <summary>
-    /// Contains facilities allowing an automated test to control and monitor 
-    /// an arbitrary application. The namespace provides both in-process and 
+    /// Contains facilities allowing an automated test to control and monitor
+    /// an arbitrary application. The namespace provides both in-process and
     /// out-of-process control facilities.
     /// </summary>
     [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Performance", "CA1812")]

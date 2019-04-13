@@ -35,7 +35,7 @@ namespace Microsoft.Test.VisualVerification
         /// </summary>
         /// <param name="color1">The first color</param>
         /// <param name="color2">The second color</param>
-        /// <param name="subtractAlpha">If set to false, the Alpha channel is overridden to full opacity, rather than the difference. 
+        /// <param name="subtractAlpha">If set to false, the Alpha channel is overridden to full opacity, rather than the difference.
         /// This is important for visualization, especially if both colors are fully opaque, as the difference produces a fully transparent difference.</param>
         /// <returns></returns>
         internal static Color Subtract(this Color color1, Color color2, bool subtractAlpha)

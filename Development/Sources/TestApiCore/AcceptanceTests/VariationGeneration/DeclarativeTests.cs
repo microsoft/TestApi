@@ -213,7 +213,7 @@ namespace Microsoft.Test.AcceptanceTests.VariationGeneration
             Model<NonWeightedVariation> modelNoWeight = new Model<NonWeightedVariation>();
             ITestVariation[] variationsNoWeight = modelNoWeight.GenerateVariations(2).ToArray();
             int countNoWeight = variationsNoWeight.Count(v => v.BoolValue == true);
-            
+
             Assert.True(countLessWeight < countNoWeight);
             Assert.True(countMoreWeight > countNoWeight);
         }

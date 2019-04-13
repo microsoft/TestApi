@@ -11,27 +11,25 @@ using System.Windows.Threading;
 namespace Microsoft.Test
 {
     /// <summary>
-    /// Helper class for the WPF Dispatcher. This class provides simple and 
+    /// Helper class for the WPF Dispatcher. This class provides simple and
     /// consistent wrappers for common dispatcher operations.
     /// </summary>
     /// <example>
-    /// <code>
-    /**
-        // SAMPLE USAGE #1:
-        // Move the mouse to a certain location on the screen. Wait for a popup to appear. 
-        // Verify that it appeared.
-        TimeSpan defaultPopupDelay = TimeSpan.FromSeconds(2);
-        Mouse.MoveTo(new System.Drawing.Point(100, 100));
-        DispatcherOperations.WaitFor(defaultPopupDelay);
-        // verify that the popup showed up.
-
-        // SAMPLE USAGE #2:
-        // Click on a button and verify that a mouse click event handler gets called.
-        Mouse.MoveTo(new System.Drawing.Point(100, 100));
-        Mouse.Click(System.Windows.Input.MouseButton.Left);
-        DispatcherOperations.WaitFor(DispatcherPriority.SystemIdle);
-        // verify that the handler has been clicked (e.g. check a isClicked variable)
-    */
+    /// <code lang="C#" >
+    /// // SAMPLE USAGE #1:
+    /// // Move the mouse to a certain location on the screen. Wait for a popup to appear.
+    /// // Verify that it appeared.
+    /// TimeSpan defaultPopupDelay = TimeSpan.FromSeconds(2);
+    /// Mouse.MoveTo(new System.Drawing.Point(100, 100));
+    /// DispatcherOperations.WaitFor(defaultPopupDelay);
+    /// // verify that the popup showed up.
+    ///
+    /// // SAMPLE USAGE #2:
+    /// // Click on a button and verify that a mouse click event handler gets called.
+    /// Mouse.MoveTo(new System.Drawing.Point(100, 100));
+    /// Mouse.Click(System.Windows.Input.MouseButton.Left);
+    /// DispatcherOperations.WaitFor(DispatcherPriority.SystemIdle);
+    /// // verify that the handler has been clicked (e.g. check a isClicked variable)
     /// </code>
     /// </example>
     public static class DispatcherOperations
@@ -54,9 +52,9 @@ namespace Microsoft.Test
         /// <summary>
         /// This method will wait for the specified TimeSpan, allowing pending
         /// DispatcherOperations (such as UI rendering) to continue during that
-        /// time. This method should be used with caution. Waiting for time is 
-        /// generally discouraged, because it may have an adverse effect on the 
-        /// overall run time of a test suite when the test suite has a large 
+        /// time. This method should be used with caution. Waiting for time is
+        /// generally discouraged, because it may have an adverse effect on the
+        /// overall run time of a test suite when the test suite has a large
         /// number of tests.
         /// </summary>
         /// <param name="time">Amount of time to wait.</param>

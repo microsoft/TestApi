@@ -9,7 +9,7 @@ namespace Microsoft.Test.VariationGeneration.Constraints
 {
     class LambdaParameterExpressionVisitor : ExpressionVisitor
     {
-        
+
         public LambdaParameterExpressionVisitor(ParameterExpression parameter)
         {
             this.parameter = parameter;
@@ -27,6 +27,6 @@ namespace Microsoft.Test.VariationGeneration.Constraints
             return this.parameter;
         }
 
-        
+
     }
 }

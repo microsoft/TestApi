@@ -73,7 +73,7 @@ namespace Microsoft.Test.AcceptanceTests.FaultInjection
                 Object o;
                 bool trapped = FaultDispatcher.Trap(out e, out o);
 
-                // This is not strictly needed, but it safeguards the test from succeeding 
+                // This is not strictly needed, but it safeguards the test from succeeding
                 // when it should fail
                 Assert.Equal(FaultScope.Current != null, trapped);
             }

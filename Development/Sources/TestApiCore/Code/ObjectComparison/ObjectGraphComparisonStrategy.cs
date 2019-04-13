@@ -14,27 +14,27 @@ namespace Microsoft.Test.ObjectComparison
     /// Represents a base class for all comparison strategies.
     /// </summary>
     /// <remarks>
-    /// Comparison strategies are used to specify such things like ordered/unordered 
-    /// collection comparison, case sensitive/insensitive string match, non-exact match and so on. 
-    /// Each <see cref="GraphNode"/> has strategy associated (if a node does not have a strategy 
-    /// associated a default one will be used). Those strategies are useful for a general 
-    /// object comparison scenario. Each strategy is uniquely identified by its type name. 
-    /// Usually, the name is saved into XML (or whatever format a chosen codec uses) to be able to 
+    /// Comparison strategies are used to specify such things like ordered/unordered
+    /// collection comparison, case sensitive/insensitive string match, non-exact match and so on.
+    /// Each <see cref="GraphNode"/> has strategy associated (if a node does not have a strategy
+    /// associated a default one will be used). Those strategies are useful for a general
+    /// object comparison scenario. Each strategy is uniquely identified by its type name.
+    /// Usually, the name is saved into XML (or whatever format a chosen codec uses) to be able to
     /// restore that back during decoding.
     /// <para/>This class is not thread safe.
     /// </remarks>
     /// <example>
-    /// The following example demonstrates how to create a custom comparison strategy. Since 
-    /// comparison strategies are assigned to nodes by a graph factory, we will need a 
+    /// The following example demonstrates how to create a custom comparison strategy. Since
+    /// comparison strategies are assigned to nodes by a graph factory, we will need a
     /// graph factory as well.
     /// </example>
-    /// <code>
+    /// <code lang="C#" >
     /// class Sample
     /// {
     ///     public string Value { get; set; }
-    /// 
+    ///
     ///     public Sample Child { get; set; }
-    /// 
+    ///
     ///     public Sample(string value, Sample sample)
     ///     {
     ///         Value = value;
@@ -42,17 +42,17 @@ namespace Microsoft.Test.ObjectComparison
     ///     }
     /// }
     /// </code>
-    /// <code>
+    /// <code lang="C#" >
     /// class SampleFactory : ObjectGraphFactory
     /// {
     ///     private static readonly ObjectGraphComparisonStrategy strategy = new SampleComparisonStrategy();
-    /// 
+    ///
     ///     public override GraphNode CreateObjectGraph(object value, ObjectGraphFactoryMap factoryMap = null)
     ///     {
     ///         created = new Dictionary&lt;Sample, GraphNode&gt;();
     ///         return CreateObjectGraph((Sample)value, null);
     ///     }
-    /// 
+    ///
     ///     // Visits all nodes recursively
     ///     private GraphNode CreateObjectGraph(Sample value, GraphNode parent)
     ///     {
@@ -60,7 +60,7 @@ namespace Microsoft.Test.ObjectComparison
     ///         {
     ///             return created[value];
     ///         }
-    /// 
+    ///
     ///         var root = new GraphNode();
     ///         root.ObjectValue = value.Value;
     ///         root.ComparisonStrategy = strategy;
@@ -72,21 +72,21 @@ namespace Microsoft.Test.ObjectComparison
     ///             var child = CreateObjectGraph(value.Child, root);
     ///             root.Children.Add(child);
     ///         }
-    /// 
+    ///
     ///         return root;
     ///     }
-    /// 
+    ///
     ///     // Keeps track of visited nodes
     ///     private Dictionary&lt;Sample, GraphNode&gt; created;
     /// }
     /// </code>
-    /// <code>
+    /// <code lang="C#" >
     /// class SampleComparisonStrategy : ObjectGraphComparisonStrategy
     /// {
     ///     protected override IEnumerable&lt;ObjectComparisonMismatch&gt; Compare(GraphNode left, GraphNode right)
     ///     {
     ///         // This comparison strategy assumes that it is attached to correct nodes
-    /// 
+    ///
     ///         var leftString = (string)left.ObjectValue;
     ///         var rightString = (string)right.ObjectValue;
     ///         var mismatches = new List&lt;ObjectComparisonMismatch&gt;();
@@ -95,11 +95,11 @@ namespace Microsoft.Test.ObjectComparison
     ///             mismatches.Add(new ObjectComparisonMismatch(
     ///                 left, right, ObjectComparisonMismatchType.ObjectValuesDoNotMatch));
     ///         }
-    /// 
+    ///
     ///         // Mark nodes as visited
     ///         MarkVisited(left);
     ///         MarkVisited(right);
-    /// 
+    ///
     ///         // Compare inner nodes if any
     ///         CompareChildNodes(left, right);
     ///         return mismatches;
@@ -183,7 +183,7 @@ namespace Microsoft.Test.ObjectComparison
         /// by using <see cref="MarkVisited"/> method. That prevents possible infinite loops
         /// while comparing cyclic object graphs. The strategy can use <see cref="IsVisited"/>
         /// to determine whether the given node has been visited already.
-        /// <para/>If a strategy compares non-lead nodes, it might need to call 
+        /// <para/>If a strategy compares non-lead nodes, it might need to call
         /// <see cref="CompareChildNodes"/> method for corresponding nodes to compare their
         /// child nodes.
         /// </remarks>
@@ -199,7 +199,7 @@ namespace Microsoft.Test.ObjectComparison
         /// <param name="left">The left.</param>
         /// <param name="right">The right.</param>
         /// <param name="comparer">
-        /// The calling comparer to compare object sub-graphs, which the given strategy does 
+        /// The calling comparer to compare object sub-graphs, which the given strategy does
         /// not work with and perform other interactions.
         /// </param>
         /// <returns>

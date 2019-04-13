@@ -41,7 +41,7 @@ namespace Microsoft.Test.AcceptanceTests.ApplicationControl
         [Fact]
         public override void StartTest()
         {
-            StartTestHelper();    
+            StartTestHelper();
         }
 
         [Fact]

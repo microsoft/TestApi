@@ -15,7 +15,7 @@ namespace Microsoft.Test.ApplicationControl
     {
         /// <summary>
         /// The interface used for creation of the AutomatedApplicationImplementation.
-        /// </summary>        
+        /// </summary>
         public IAutomatedApplicationImplFactory ApplicationImplementationFactory
         {
             get;

@@ -37,7 +37,7 @@ namespace Microsoft.Test.VariationGeneration
 
         public int GetUncoveredCombinationsCount()
         {
-            return Combinations.Count((c) => c.State == ValueCombinationState.Uncovered);   
+            return Combinations.Count((c) => c.State == ValueCombinationState.Uncovered);
         }
 
         /// <summary>
@@ -88,7 +88,7 @@ namespace Microsoft.Test.VariationGeneration
         /// <param name="second">Second table</param>
         /// <param name="newState">Function to calculate state of merged value combinations</param>
         /// <returns>The new table</returns>
-        public static ParameterInteraction Merge<T>(IList<ParameterBase> parameters, ParameterInteraction first, ParameterInteraction second, Func<ValueCombinationState, ValueCombinationState, ValueCombinationState> newState) 
+        public static ParameterInteraction Merge<T>(IList<ParameterBase> parameters, ParameterInteraction first, ParameterInteraction second, Func<ValueCombinationState, ValueCombinationState, ValueCombinationState> newState)
             where T : new()
         {
             List<int> parameterIndices = first.Parameters.Union(second.Parameters).ToList();

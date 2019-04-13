@@ -44,7 +44,7 @@ namespace Microsoft.Test.VariationGeneration.Constraints
             }
 
             parameters = new ParameterListBuilder(mapExpressionsToRequiredParams, model.Parameters, typeof(T)).GetParameters(Condition);
-            
+
             CachedInteraction = CreateInteraction(model, Condition, parameters, Condition.Parameters[0]);
 
             foreach (var item in mapExpressionsToRequiredParams)
@@ -55,19 +55,19 @@ namespace Microsoft.Test.VariationGeneration.Constraints
                     continue;
                 }
 
-                mapExpressionsToRequiredParams[item.Key].Interaction = CreateInteraction(model, item.Key, item.Value.Parameters, Condition.Parameters[0]);                
+                mapExpressionsToRequiredParams[item.Key].Interaction = CreateInteraction(model, item.Key, item.Value.Parameters, Condition.Parameters[0]);
             }
-            
+
             return CachedInteraction;
         }
 
         static ParameterInteraction CreateInteraction(Model<T> model, Expression expression, IList<ParameterBase> parameters, ParameterExpression parameterExpr)
         {
-            
+
             Func<T, bool> filter = expression is Expression<Func<T, bool>> ?
                 ((Expression<Func<T, bool>>)expression).Compile() :
                 Expression.Lambda<Func<T, bool>>(expression, parameterExpr).Compile();
-            
+
 
             var parameterIndices = (from parameter in parameters
                                     select model.Parameters.IndexOf(parameter)).ToList();

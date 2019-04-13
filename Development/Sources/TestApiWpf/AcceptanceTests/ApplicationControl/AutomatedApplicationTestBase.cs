@@ -15,7 +15,7 @@ namespace Microsoft.Test.AcceptanceTests.ApplicationControl
 {
     /// <summary>
     /// Summary description for UnitTest1
-    /// </summary>    
+    /// </summary>
     public abstract class AutomatedApplicationTestBase : IDisposable
     {
         public const int DefaultTimeoutInMS = 60000;
@@ -184,14 +184,14 @@ namespace Microsoft.Test.AcceptanceTests.ApplicationControl
                                   TestAutomatedApp,
                                   null,
                                   CultureInfo.CurrentCulture);
-            Assert.NotNull(appImp);     
+            Assert.NotNull(appImp);
         }
 
         protected void WaitForMainWindowHelper()
         {
             Debug.WriteLine("starting automated app...");
             TestAutomatedApp.Start();
-            TestAutomatedApp.WaitForMainWindow(DefaultTimeoutTimeSpan);           
+            TestAutomatedApp.WaitForMainWindow(DefaultTimeoutTimeSpan);
             Assert.NotNull(TestAutomatedApp.MainWindow);
         }
 

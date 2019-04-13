@@ -1,6 +1,8 @@
 ﻿
-Microsoft Visual Studio Solution File, Format Version 11.00
-# Visual Studio 2010
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.25420.1
+MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestApiCore", "TestApiCore\Code\TestApiCore.csproj", "{11195B2B-C8B1-41C3-BE64-82857E2A72BB}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestApiCoreAcceptanceTests", "TestApiCore\AcceptanceTests\TestApiCoreAcceptanceTests.csproj", "{25B9D442-AF99-4CDB-94DF-EDD0B2B8C881}"
@@ -14,30 +16,6 @@ EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "FaultInjectionEngine", "FaultInjectionEngine\Code\FaultInjectionEngine.vcxproj", "{D0666C5C-22E7-40CB-81F6-5B651351BF92}"
 EndProject
 Global
-	GlobalSection(TeamFoundationVersionControl) = preSolution
-		SccNumberOfProjects = 7
-		SccEnterpriseProvider = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
-		SccTeamFoundationServer = https://tfs.codeplex.com/tfs/tfs03
-		SccLocalPath0 = .
-		SccProjectUniqueName1 = TestApiCore\\Code\\TestApiCore.csproj
-		SccProjectName1 = TestApiCore/Code
-		SccLocalPath1 = TestApiCore\\Code
-		SccProjectUniqueName2 = TestApiCore\\AcceptanceTests\\TestApiCoreAcceptanceTests.csproj
-		SccProjectName2 = TestApiCore/AcceptanceTests
-		SccLocalPath2 = TestApiCore\\AcceptanceTests
-		SccProjectUniqueName3 = TestApiWpf\\Code\\TestApiWpf.csproj
-		SccProjectName3 = TestApiWpf/Code
-		SccLocalPath3 = TestApiWpf\\Code
-		SccProjectUniqueName4 = TestApiWpf\\AcceptanceTests\\TestApiWpfAcceptanceTests.csproj
-		SccProjectName4 = TestApiWpf/AcceptanceTests
-		SccLocalPath4 = TestApiWpf\\AcceptanceTests
-		SccProjectUniqueName5 = TestApiWpf\\AcceptanceTests\\ApplicationControlTestApp\\WpfTestApplication.csproj
-		SccProjectName5 = TestApiWpf/AcceptanceTests/ApplicationControlTestApp
-		SccLocalPath5 = TestApiWpf\\AcceptanceTests\\ApplicationControlTestApp
-		SccProjectUniqueName6 = FaultInjectionEngine\\Code\\FaultInjectionEngine.vcxproj
-		SccProjectName6 = FaultInjectionEngine/Code
-		SccLocalPath6 = FaultInjectionEngine\\Code
-	EndGlobalSection
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
 		Debug|Mixed Platforms = Debug|Mixed Platforms

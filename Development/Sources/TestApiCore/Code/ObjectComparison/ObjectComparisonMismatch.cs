@@ -14,7 +14,7 @@ namespace Microsoft.Test.ObjectComparison
     /// <example>
     /// The following example shows how to derive the list of comparison mismatches.
     ///
-    /// <code>
+    /// <code lang="C#" >
     /// Person p1 = new Person("John");
     /// p1.Children.Add(new Person("Peter"));
     /// p1.Children.Add(new Person("Mary"));
@@ -27,26 +27,26 @@ namespace Microsoft.Test.ObjectComparison
     /// ObjectComparer comparer = new ObjectComparer(factory);
     /// IEnumerable&lt;ObjectComparisonMismatch&gt; m12 = new List&lt;ObjectComparisonMismatch&gt;();
     /// Console.WriteLine(
-    ///     "Objects p1 and p2 {0}", 
+    ///     "Objects p1 and p2 {0}",
     ///     comparer.Compare(p1, p2, out m12) ? "match!" : "do NOT match!");
-    ///     
+    ///
     /// foreach (ObjectComparisonMismatch m in m12)
     /// {
     ///     Console.WriteLine(
     ///         "Nodes '{0}' and '{1}' do not match. Mismatch message: '{2}'",
     ///         m.LeftObjectNode != null ? m.LeftObjectNode.Name : "null",
     ///         m.RightObjectNode != null ? m.LeftObjectNode.Name : "null",
-    ///         m.MismatchType); 
+    ///         m.MismatchType);
     /// }
     /// </code>
     ///
     /// where Person is declared as follows:
     ///
-    /// <code>
+    /// <code lang="C#" >
     /// class Person
     /// {
-    ///     public Person(string name) 
-    ///     { 
+    ///     public Person(string name)
+    ///     {
     ///         Name = name;
     ///         Children = new Collection&lt;Person&gt;();
     ///     }
@@ -103,7 +103,7 @@ namespace Microsoft.Test.ObjectComparison
         /// <summary>
         /// Represents the type of mismatch.
         /// </summary>
-        public ObjectComparisonMismatchType MismatchType 
+        public ObjectComparisonMismatchType MismatchType
         {
             get
             {

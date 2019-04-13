@@ -19,7 +19,7 @@ namespace Microsoft.Test.AcceptanceTests.WpfTestApplication
         {
             InitializeComponent();
 
-            MyListView.ItemsSource = new PeopleCollection();                       
+            MyListView.ItemsSource = new PeopleCollection();
         }
 
         private void btn_Open_Click(object sender, RoutedEventArgs e)
@@ -31,15 +31,15 @@ namespace Microsoft.Test.AcceptanceTests.WpfTestApplication
         private void btn_Animation_Click(object sender, RoutedEventArgs e)
         {
             var doubleAnimation = new DoubleAnimation(
-                btn_Animation.ActualWidth, 
-                btn_Animation.ActualWidth + 100.0, 
+                btn_Animation.ActualWidth,
+                btn_Animation.ActualWidth + 100.0,
                 new Duration(TimeSpan.FromMilliseconds(5000)));
             btn_Animation.BeginAnimation(Control.WidthProperty, doubleAnimation);
         }
 
         private void btn_Debug_Click(object sender, RoutedEventArgs e)
         {
-            
+
         }
     }
 }

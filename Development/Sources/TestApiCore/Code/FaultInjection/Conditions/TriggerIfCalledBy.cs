@@ -8,7 +8,7 @@ using Microsoft.Test.FaultInjection.SignatureParsing;
 
 namespace Microsoft.Test.FaultInjection.Conditions
 {
-    [Serializable()] 
+    [Serializable()]
     internal sealed class TriggerIfCalledBy : ICondition
     {
         public TriggerIfCalledBy(String aTargetCaller)
@@ -25,5 +25,5 @@ namespace Microsoft.Test.FaultInjection.Conditions
             return false;
         }
         private String targetCaller;
-    }   
+    }
 }

@@ -14,7 +14,7 @@ namespace Microsoft.Test.ApplicationControl
     public interface IAutomatedApplicationImplFactory
     {
         /// <summary>
-        /// Factory method for creating the IAutomatedApplicationImpl instance 
+        /// Factory method for creating the IAutomatedApplicationImpl instance
         /// to be used by AutomatedApplication.
         /// </summary>
         /// <param name="settings">The settings to be passed the the implementation instance.</param>

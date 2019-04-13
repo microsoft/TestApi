@@ -17,7 +17,7 @@ namespace Microsoft.Test.AcceptanceTests.CommandLineParsing
         [InlineData("/Verbose", "/RunId=10", true, 10)]      // bug!
         [InlineData("/Verbose=true", "/RunId=10", true, 10)]
         [InlineData("/Verbose=True", "/RunId=10", true, 10)]
-        [InlineData("/RunId=10", "/Verbose=true", true, 10)]  
+        [InlineData("/RunId=10", "/Verbose=true", true, 10)]
         public void TestCommonUsage(string arg1, string arg2, bool? expectedVerbose, int? expectedRunId)
         {
             CommandLineArguments a = new CommandLineArguments();
@@ -39,7 +39,7 @@ namespace Microsoft.Test.AcceptanceTests.CommandLineParsing
             a.ParseArguments(args);
 
             Assert.Equal<bool?>(expectedVerbose, a.Verbose);
-            Assert.Equal<int?>(expectedRunId, a.RunId);            
+            Assert.Equal<int?>(expectedRunId, a.RunId);
         }
 
         [Theory]
@@ -101,7 +101,7 @@ namespace Microsoft.Test.AcceptanceTests.CommandLineParsing
         {
             CommandLineArgumentsWithInvalidAdditionalProperties a = new CommandLineArgumentsWithInvalidAdditionalProperties();
             string[] args = new string[] { "/Hello=World", "/Foo=Bar" };
-            Assert.Throws<ArgumentException>(delegate 
+            Assert.Throws<ArgumentException>(delegate
             {
                 a.ParseArguments(args);
             });
